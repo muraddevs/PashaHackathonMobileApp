@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { askAI, getInsights } from "./src/services/ai";
+import { askAI, getInsights, analyzeProduct } from "./src/services/ai";
 import { login } from "./src/services/auth";
 import {
   getAnalytics,
@@ -1160,9 +1160,32 @@ const SearchScreen = ({ onProduct, onNav }) => {
 };
 
 // ── SCREEN 5: Product Detail ─────────────────────────────────────────────────
-const ProductScreen = ({ product, onBack, onNav }) => {
+const ProductScreen = ({ product, onBack, onNav, user }) => {
   const [tab, setTab] = useState("Details");
   const [favorite, setFavorite] = useState(false);
+  const [aiAnalysis, setAiAnalysis] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState(null);
+
+  const isAdmin = user?.role === "admin";
+  const recommendation = useMemo(() => {
+    if (!isAdmin || !product || product.product_id == null) return null;
+    return recommend(product);
+  }, [isAdmin, product]);
+
+  const fetchAiAnalysis = async () => {
+    if (!product) return;
+    setAiLoading(true);
+    setAiError(null);
+    try {
+      const text = await analyzeProduct(product);
+      setAiAnalysis(text);
+    } catch (e) {
+      setAiError(e.message);
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   // Normalise: enriched products come from the catalog; older mock callers
   // (e.g. the scanner) still pass simpler shapes.
@@ -1276,6 +1299,17 @@ const ProductScreen = ({ product, onBack, onNav }) => {
             </View>
           </View>
         </View>
+
+        {isAdmin && recommendation && (
+          <ManagerCard
+            product={p}
+            recommendation={recommendation}
+            aiAnalysis={aiAnalysis}
+            aiLoading={aiLoading}
+            aiError={aiError}
+            onGenerate={fetchAiAnalysis}
+          />
+        )}
 
         <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
           <Text style={{ fontSize: 11, fontWeight: "700", color: GRAY, letterSpacing: 1, marginBottom: 4 }}>
@@ -1682,7 +1716,7 @@ const INITIAL_BOT_GREETING = {
   text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
 };
 
-const AssistantScreen = ({ onNav }) => {
+const AssistantScreen = ({ onNav, onProduct }) => {
   const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -1715,8 +1749,8 @@ const AssistantScreen = ({ onNav }) => {
         replyLower.includes(p.name.toLowerCase().split(" ").slice(0, 2).join(" "))
       );
       const products = mentioned.slice(0, 3).map((p) => ({
-        name: p.name,
-        price: parseFloat(p.price_azn).toFixed(2),
+        ...p, // keep full enriched product so we can navigate to its detail screen
+        displayPrice: parseFloat(p.price_azn).toFixed(2),
         aisle: p.location || `${p.category} · ${p.subcategory}`,
         emoji: emojiFor(p.category),
       }));
@@ -1822,7 +1856,7 @@ const AssistantScreen = ({ onNav }) => {
                   </View>
                   {m.products?.map((p) => (
                     <View
-                      key={p.name}
+                      key={p.product_id || p.name}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
@@ -1832,7 +1866,11 @@ const AssistantScreen = ({ onNav }) => {
                         marginTop: 8,
                       }}
                     >
-                      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+                      <TouchableOpacity
+                        onPress={() => onProduct && onProduct(p)}
+                        activeOpacity={0.7}
+                        style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}
+                      >
                         <View
                           style={{
                             width: 44,
@@ -1846,29 +1884,51 @@ const AssistantScreen = ({ onNav }) => {
                           <Text style={{ fontSize: 22 }}>{p.emoji}</Text>
                         </View>
                         <View style={{ marginLeft: 12, flex: 1 }}>
-                          <Text style={{ fontWeight: "600", fontSize: 13, color: DARK, marginBottom: 2 }}>
+                          <Text style={{ fontWeight: "600", fontSize: 13, color: DARK, marginBottom: 2 }} numberOfLines={1}>
                             {p.name}
                           </Text>
-                          <Price amount={p.price} size={14} />
-                          <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }}>📍 {p.aisle}</Text>
+                          <Price amount={p.displayPrice || p.price} size={14} />
+                          <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }} numberOfLines={1}>📍 {p.aisle}</Text>
                         </View>
-                      </View>
-                      <TouchableOpacity
-                        onPress={() => onNav("map")}
-                        style={{
-                          paddingVertical: 9,
-                          borderRadius: 10,
-                          backgroundColor: GREEN,
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Icon name="navigate" size={14} color="white" />
-                        <Text style={{ fontSize: 13, fontWeight: "700", color: "white", marginLeft: 6 }}>
-                          Start Navigation
-                        </Text>
                       </TouchableOpacity>
+                      <View style={{ flexDirection: "row", gap: 8 }}>
+                        <TouchableOpacity
+                          onPress={() => onProduct && onProduct(p)}
+                          style={{
+                            flex: 1,
+                            paddingVertical: 9,
+                            borderRadius: 10,
+                            borderWidth: 1,
+                            borderColor: BORDER,
+                            backgroundColor: "white",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Icon name="orders" size={13} color={DARK} />
+                          <Text style={{ fontSize: 13, fontWeight: "700", color: DARK, marginLeft: 6 }}>
+                            View Details
+                          </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() => onNav("map")}
+                          style={{
+                            flex: 1,
+                            paddingVertical: 9,
+                            borderRadius: 10,
+                            backgroundColor: GREEN,
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Icon name="navigate" size={14} color="white" />
+                          <Text style={{ fontSize: 13, fontWeight: "700", color: "white", marginLeft: 6 }}>
+                            Navigate
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
                     </View>
                   ))}
                 </View>
@@ -2619,6 +2679,185 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
   );
 };
 
+const ManagerCard = ({ product, recommendation, aiAnalysis, aiLoading, aiError, onGenerate }) => {
+  const color = SEVERITY_COLOR[product.status] || GREEN;
+  const tag =
+    SEVERITY_LABEL[product.status] ||
+    (recommendation.severity === 0 ? "HEALTHY" : "REVIEW");
+  return (
+    <View style={{ marginHorizontal: 16, marginTop: 16, marginBottom: 4 }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          borderRadius: 14,
+          borderWidth: 1,
+          borderColor: BORDER,
+          overflow: "hidden",
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: color,
+            paddingHorizontal: 14,
+            paddingVertical: 8,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={{ fontSize: 14, marginRight: 6 }}>⚡</Text>
+            <Text style={{ color: "white", fontSize: 11, fontWeight: "800", letterSpacing: 1 }}>
+              {tag} · MANAGER VIEW
+            </Text>
+          </View>
+          <Text style={{ color: "white", fontSize: 11, fontWeight: "700" }}>
+            {recommendation.action}
+          </Text>
+        </View>
+
+        <View style={{ padding: 14 }}>
+          <Text style={{ fontSize: 13, color: DARK, lineHeight: 19 }}>
+            {recommendation.narrative}
+          </Text>
+
+          <View style={{ flexDirection: "row", marginTop: 10, gap: 8, flexWrap: "wrap" }}>
+            {recommendation.markdownPct > 0 && (
+              <View
+                style={{
+                  backgroundColor: "#FEF3C7",
+                  paddingHorizontal: 10,
+                  paddingVertical: 5,
+                  borderRadius: 8,
+                }}
+              >
+                <Text style={{ fontSize: 11, fontWeight: "800", color: "#B45309" }}>
+                  ↓ {recommendation.markdownPct}% markdown
+                </Text>
+              </View>
+            )}
+            {recommendation.reorderQty > 0 && (
+              <View
+                style={{
+                  backgroundColor: "#DBEAFE",
+                  paddingHorizontal: 10,
+                  paddingVertical: 5,
+                  borderRadius: 8,
+                }}
+              >
+                <Text style={{ fontSize: 11, fontWeight: "800", color: "#1E40AF" }}>
+                  + Reorder {recommendation.reorderQty} units
+                </Text>
+              </View>
+            )}
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              marginTop: 12,
+              gap: 10,
+              backgroundColor: LIGHT_GRAY,
+              borderRadius: 10,
+              padding: 10,
+            }}
+          >
+            <ManagerStat label="Stock" value={product.stock_qty} />
+            <ManagerStat label="Sold/30d" value={product.units_sold} />
+            <ManagerStat
+              label="Days cover"
+              value={product.days_of_stock > 99 ? "99+" : product.days_of_stock}
+            />
+            {product.is_fresh && (
+              <ManagerStat label="Expires" value={`${product.expires_in_days}d`} />
+            )}
+            <ManagerStat
+              label="Revenue/30d"
+              value={`${Math.round(product.units_sold * product.price_azn)} ₼`}
+            />
+            <ManagerStat
+              label="Stock value"
+              value={`${Math.round(product.stock_qty * product.price_azn)} ₼`}
+            />
+          </View>
+
+          <View
+            style={{
+              marginTop: 12,
+              borderTopWidth: 1,
+              borderTopColor: BORDER,
+              paddingTop: 12,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+              <View
+                style={{
+                  width: 24,
+                  height: 24,
+                  borderRadius: 12,
+                  backgroundColor: DARK,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon name="robot" size={14} color={GREEN} />
+              </View>
+              <Text style={{ fontWeight: "800", fontSize: 13, color: DARK, marginLeft: 8, flex: 1 }}>
+                AI Analysis
+              </Text>
+              <TouchableOpacity
+                onPress={onGenerate}
+                disabled={aiLoading}
+                style={{
+                  backgroundColor: GREEN,
+                  paddingHorizontal: 12,
+                  paddingVertical: 6,
+                  borderRadius: 8,
+                  opacity: aiLoading ? 0.6 : 1,
+                }}
+              >
+                <Text style={{ color: "white", fontSize: 11, fontWeight: "700" }}>
+                  {aiAnalysis ? "Refresh" : "Generate"}
+                </Text>
+              </TouchableOpacity>
+            </View>
+            {aiLoading && (
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <ActivityIndicator size="small" color={GREEN} />
+                <Text style={{ color: GRAY, marginLeft: 8, fontSize: 12 }}>
+                  Generating tailored analysis…
+                </Text>
+              </View>
+            )}
+            {aiError && (
+              <Text style={{ color: RED, fontSize: 12 }}>⚠️ {aiError}</Text>
+            )}
+            {aiAnalysis && !aiLoading && (
+              <Text style={{ fontSize: 13, color: DARK, lineHeight: 19 }}>{aiAnalysis}</Text>
+            )}
+            {!aiAnalysis && !aiLoading && !aiError && (
+              <Text style={{ fontSize: 12, color: GRAY, fontStyle: "italic" }}>
+                Tap "Generate" for a tailored AI analysis of this specific SKU's
+                situation and recommended action.
+              </Text>
+            )}
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const ManagerStat = ({ label, value }) => (
+  <View style={{ minWidth: "30%" }}>
+    <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 0.5 }}>
+      {label.toUpperCase()}
+    </Text>
+    <Text style={{ fontSize: 13, fontWeight: "800", color: DARK, marginTop: 2 }}>{value}</Text>
+  </View>
+);
+
 const CriticalCard = ({ product, onPress }) => {
   const rec = product.recommendation;
   const color = SEVERITY_COLOR[product.status] || GRAY;
@@ -2908,11 +3147,11 @@ export default function App() {
       case "onsite-search":
         return <SearchScreen onProduct={handleProduct} onNav={nav} />;
       case "product":
-        return <ProductScreen product={selectedProduct} onBack={goBack} onNav={nav} />;
+        return <ProductScreen product={selectedProduct} onBack={goBack} onNav={nav} user={user} />;
       case "scanner":
         return <ScannerScreen onBack={goBack} onProduct={handleProduct} />;
       case "assistant":
-        return <AssistantScreen onNav={nav} />;
+        return <AssistantScreen onNav={nav} onProduct={handleProduct} />;
       case "map":
         return <MapScreen onBack={goBack} />;
       default:
