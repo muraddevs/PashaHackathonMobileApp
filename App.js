@@ -34,6 +34,7 @@ import {
   getTrafficByAisle,
   getPlacementSuggestions,
   getRestockPlan,
+  getProducts,
 } from "./src/data/productHelpers";
 import Svg, {
   Path,
@@ -2442,13 +2443,18 @@ const FLOOR_PLANS = [
   },
 ];
 
+// Build a Manhattan (axis-aligned) path so the route always travels through
+// halls and aisle walkways — never diagonally through a shelf. The strategy
+// for every stop is: hall → highway → highway → target-hall → aisle-column
+// → walk into aisle → walk back out. Always going via HIGHWAY_X keeps every
+// segment perpendicular.
 function buildRoute(stops, plan) {
   if (!stops.length) return [];
   const pts = [];
   const start = plan.entrance;
   pts.push(start);
 
-  // Walk along the bottom hall from entrance to the highway
+  // Walk from the entrance along the bottom hall to the central highway.
   pts.push({ x: HIGHWAY_X, y: HALL_Y.bottom });
 
   let prevExitY = HALL_Y.bottom;
@@ -2456,25 +2462,24 @@ function buildRoute(stops, plan) {
     const g = stops[i].g;
     const exitY = ROW_EXIT_Y[g.row];
 
-    // Travel along the highway to the target row's hall.
+    // 1. Always get back to the highway via the previous hall (no-op if
+    //    we're already there).
+    pts.push({ x: HIGHWAY_X, y: prevExitY });
+    // 2. Travel along the highway to the target row's hall.
     if (prevExitY !== exitY) {
       pts.push({ x: HIGHWAY_X, y: exitY });
     }
-    // Travel along the row's hall to the target aisle's walkway.
+    // 3. Walk along that hall to the target aisle's walkway entrance.
     pts.push({ x: g.walkX, y: exitY });
-    // Walk into the aisle to the centre.
+    // 4. Walk into the aisle to the centre (the stop pin).
     pts.push({ x: g.walkX, y: g.centre.y });
-
-    // On the way out (for the next leg), step back to the hall.
-    if (i < stops.length - 1) {
-      pts.push({ x: g.walkX, y: exitY });
-    }
+    // 5. Walk back out of the aisle to the hall.
+    pts.push({ x: g.walkX, y: exitY });
 
     prevExitY = exitY;
   }
 
-  // After the final stop, walk to cashiers via the highway + top hall.
-  pts.push({ x: stops[stops.length - 1].g.walkX, y: prevExitY });
+  // After the final stop, walk to the cashier wall.
   pts.push({ x: HIGHWAY_X, y: prevExitY });
   pts.push({ x: HIGHWAY_X, y: HALL_Y.top });
   const cashier = plan.cashiers[Math.floor(plan.cashiers.length / 2)];
@@ -2485,16 +2490,29 @@ function buildRoute(stops, plan) {
 }
 
 const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, onNav }) => {
-  // Priority: explicit products array (from "Start Route") > single product >
-  // user's shopping list. So tapping the Map tab with items already on the
-  // list shows the list's route immediately.
-  const items = Array.isArray(products) && products.length > 0
+  const [demoItems, setDemoItems] = useState(null);
+
+  const loadDemo = () => {
+    const all = getProducts();
+    const wantedAisles = [2, 4, 6, 9, 11];
+    const picks = wantedAisles
+      .map((aisle) => all.find((p) => p.aisle_num === aisle && p.stock_qty > 0))
+      .filter(Boolean);
+    setDemoItems(picks);
+  };
+
+  // Priority: explicit demo items > products array (from "Start Route") >
+  // single product > user's shopping list.
+  const items = demoItems && demoItems.length > 0
+    ? demoItems
+    : Array.isArray(products) && products.length > 0
     ? products
     : product
     ? [product]
     : shoppingList;
   const usingShoppingList =
-    !products?.length && !product && shoppingList.length > 0;
+    !demoItems && !products?.length && !product && shoppingList.length > 0;
+  const usingDemo = !!demoItems;
 
   // Pick a mock floor plan deterministically from the first item.
   const seedId = items[0]?.product_id || product?.product_id;
@@ -2966,7 +2984,11 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
           </View>
           <View style={{ marginLeft: 14, flex: 1 }}>
             <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
-              {usingShoppingList ? "FROM YOUR LIST" : "CURRENT INSTRUCTION"}
+              {usingDemo
+                ? "DEMO ROUTE"
+                : usingShoppingList
+                ? "FROM YOUR LIST"
+                : "CURRENT INSTRUCTION"}
             </Text>
             <Text style={{ fontSize: 18, fontWeight: "800", color: DARK, marginVertical: 2 }} numberOfLines={1}>
               {isMulti
@@ -2985,43 +3007,63 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
           </View>
         </View>
         {stops.length === 0 && (
-          <View style={{ flexDirection: "row", gap: 8, marginBottom: 12 }}>
+          <View style={{ marginBottom: 12 }}>
             <TouchableOpacity
-              onPress={() => onNav && onNav("list")}
+              onPress={loadDemo}
               style={{
-                flex: 1,
-                paddingVertical: 11,
+                paddingVertical: 12,
                 borderRadius: 10,
                 backgroundColor: GREEN,
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
+                marginBottom: 8,
               }}
             >
-              <Icon name="list" size={14} color="white" />
-              <Text style={{ color: "white", fontWeight: "700", fontSize: 13, marginLeft: 6 }}>
-                Open My List
+              <Text style={{ color: "white", fontWeight: "800", fontSize: 13 }}>
+                ✨ Try a demo route through 5 aisles
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => onNav && onNav("onsite-search")}
-              style={{
-                flex: 1,
-                paddingVertical: 11,
-                borderRadius: 10,
-                borderWidth: 1,
-                borderColor: BORDER,
-                backgroundColor: "white",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Icon name="search" size={14} color={DARK} />
-              <Text style={{ color: DARK, fontWeight: "700", fontSize: 13, marginLeft: 6 }}>
-                Search a product
-              </Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: "row", gap: 8 }}>
+              <TouchableOpacity
+                onPress={() => onNav && onNav("list")}
+                style={{
+                  flex: 1,
+                  paddingVertical: 10,
+                  borderRadius: 10,
+                  borderWidth: 1,
+                  borderColor: BORDER,
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon name="list" size={13} color={DARK} />
+                <Text style={{ color: DARK, fontWeight: "700", fontSize: 12, marginLeft: 6 }}>
+                  My List
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => onNav && onNav("onsite-search")}
+                style={{
+                  flex: 1,
+                  paddingVertical: 10,
+                  borderRadius: 10,
+                  borderWidth: 1,
+                  borderColor: BORDER,
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon name="search" size={13} color={DARK} />
+                <Text style={{ color: DARK, fontWeight: "700", fontSize: 12, marginLeft: 6 }}>
+                  Search
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
         {isMulti && (
@@ -3322,7 +3364,18 @@ const RescueScreen = ({ onProduct, onBack, onAddToList }) => {
 };
 
 // ── SCREEN 11: Shopping List ─────────────────────────────────────────────────
-const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute }) => {
+const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, onAddToList }) => {
+  // Demo helper: pulls 4 distinct products from across different aisles so a
+  // user can immediately see a multi-stop route on the map.
+  const seedDemoItems = () => {
+    if (!onAddToList) return;
+    const all = getProducts();
+    const wantedAisles = [2, 4, 6, 9]; // produce, meat, snacks, cleaning
+    for (const aisle of wantedAisles) {
+      const pick = all.find((p) => p.aisle_num === aisle && p.stock_qty > 0);
+      if (pick) onAddToList(pick);
+    }
+  };
   // Sort items by aisle so the UI matches the actual walking order.
   const sorted = useMemo(
     () => [...list].sort((a, b) => (a.aisle_num || 99) - (b.aisle_num || 99)),
@@ -3432,7 +3485,7 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute }
             style={{
               backgroundColor: "white",
               borderRadius: 12,
-              padding: 32,
+              padding: 24,
               alignItems: "center",
               marginTop: 24,
             }}
@@ -3441,9 +3494,28 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute }
             <Text style={{ color: DARK, fontWeight: "700", fontSize: 14, marginBottom: 4 }}>
               Your list is empty
             </Text>
-            <Text style={{ color: GRAY, fontSize: 12, textAlign: "center" }}>
+            <Text style={{ color: GRAY, fontSize: 12, textAlign: "center", marginBottom: 16 }}>
               Add items from search, the AI assistant, or Rescue Today and we'll
               route you through the store.
+            </Text>
+            <TouchableOpacity
+              onPress={seedDemoItems}
+              activeOpacity={0.85}
+              style={{
+                backgroundColor: GREEN_LIGHT,
+                borderWidth: 1,
+                borderColor: GREEN,
+                paddingHorizontal: 14,
+                paddingVertical: 10,
+                borderRadius: 10,
+              }}
+            >
+              <Text style={{ color: GREEN, fontWeight: "800", fontSize: 13 }}>
+                ✨ Try with 4 demo items
+              </Text>
+            </TouchableOpacity>
+            <Text style={{ color: GRAY, fontSize: 10, marginTop: 6 }}>
+              Drops products from aisles 2, 4, 6, 9 so you can see the route immediately.
             </Text>
           </View>
         )}
@@ -4614,6 +4686,7 @@ export default function App() {
             onClear={clearList}
             onBack={goBack}
             onStartRoute={handleNavigateList}
+            onAddToList={addToList}
           />
         );
       default:
