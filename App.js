@@ -2484,10 +2484,17 @@ function buildRoute(stops, plan) {
   return pts;
 }
 
-const MapScreen = ({ onBack, product, products }) => {
+const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, onNav }) => {
+  // Priority: explicit products array (from "Start Route") > single product >
+  // user's shopping list. So tapping the Map tab with items already on the
+  // list shows the list's route immediately.
   const items = Array.isArray(products) && products.length > 0
     ? products
-    : (product ? [product] : []);
+    : product
+    ? [product]
+    : shoppingList;
+  const usingShoppingList =
+    !products?.length && !product && shoppingList.length > 0;
 
   // Pick a mock floor plan deterministically from the first item.
   const seedId = items[0]?.product_id || product?.product_id;
@@ -2959,24 +2966,64 @@ const MapScreen = ({ onBack, product, products }) => {
           </View>
           <View style={{ marginLeft: 14, flex: 1 }}>
             <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
-              CURRENT INSTRUCTION
+              {usingShoppingList ? "FROM YOUR LIST" : "CURRENT INSTRUCTION"}
             </Text>
             <Text style={{ fontSize: 18, fontWeight: "800", color: DARK, marginVertical: 2 }} numberOfLines={1}>
               {isMulti
                 ? `Stop 1 of ${stops.length}: Aisle ${stops[0].aisle}`
                 : target
                 ? `Head to Aisle ${target.aisle}`
-                : "Choose a product"}
+                : "Pick an item to navigate"}
             </Text>
             <Text style={{ fontSize: 13, color: GRAY }} numberOfLines={1}>
               {isMulti
-                ? `${stops[0].dept.label} · ${stops[0].product.name}`
+                ? `${stops[0].g.label} · ${stops[0].product.name}`
                 : target
                 ? `${target.label} section · ${meters}m`
-                : "Pick an item from search or chat"}
+                : "Add items to your list or search a product"}
             </Text>
           </View>
         </View>
+        {stops.length === 0 && (
+          <View style={{ flexDirection: "row", gap: 8, marginBottom: 12 }}>
+            <TouchableOpacity
+              onPress={() => onNav && onNav("list")}
+              style={{
+                flex: 1,
+                paddingVertical: 11,
+                borderRadius: 10,
+                backgroundColor: GREEN,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="list" size={14} color="white" />
+              <Text style={{ color: "white", fontWeight: "700", fontSize: 13, marginLeft: 6 }}>
+                Open My List
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => onNav && onNav("onsite-search")}
+              style={{
+                flex: 1,
+                paddingVertical: 11,
+                borderRadius: 10,
+                borderWidth: 1,
+                borderColor: BORDER,
+                backgroundColor: "white",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="search" size={14} color={DARK} />
+              <Text style={{ color: DARK, fontWeight: "700", fontSize: 13, marginLeft: 6 }}>
+                Search a product
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
         {isMulti && (
           <View
             style={{
@@ -4545,6 +4592,9 @@ export default function App() {
             }}
             product={selectedProduct}
             products={routeProducts}
+            shoppingList={shoppingList}
+            onProduct={handleProduct}
+            onNav={nav}
           />
         );
       case "rescue":
