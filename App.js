@@ -1005,7 +1005,7 @@ const OnSiteScreen = ({ onNav }) => {
 };
 
 // ── SCREEN 4: Search Results ─────────────────────────────────────────────────
-const SearchScreen = ({ onProduct, onNav }) => {
+const SearchScreen = ({ onProduct, onNav, onBack }) => {
   const [query, setQuery] = useState("Milk");
   const [activeFilter, setActiveFilter] = useState("All");
   const filters = ["All", "Dairy", "Bakery", "Snacks", "Beverages"];
@@ -1034,7 +1034,7 @@ const SearchScreen = ({ onProduct, onNav }) => {
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View style={{ paddingHorizontal: 20, paddingTop: 16 }}>
         <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 4 }}>
-          <TouchableOpacity onPress={() => onNav("onsite")} style={{ padding: 4 }}>
+          <TouchableOpacity onPress={onBack || (() => onNav("onsite"))} style={{ padding: 4 }}>
             <Icon name="back" size={22} color={DARK} />
           </TouchableOpacity>
           <View style={{ marginLeft: 12 }}>
@@ -1716,7 +1716,7 @@ const INITIAL_BOT_GREETING = {
   text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
 };
 
-const AssistantScreen = ({ onNav, onProduct }) => {
+const AssistantScreen = ({ onNav, onProduct, onBack }) => {
   const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -1784,6 +1784,11 @@ const AssistantScreen = ({ onNav, onProduct }) => {
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
+          {onBack && (
+            <TouchableOpacity onPress={onBack} style={{ marginRight: 8, padding: 4 }}>
+              <Icon name="back" size={22} color={DARK} />
+            </TouchableOpacity>
+          )}
           <View
             style={{
               width: 36,
@@ -2052,14 +2057,106 @@ const AssistantScreen = ({ onNav, onProduct }) => {
 };
 
 // ── SCREEN 8: Map / Indoor Navigation ────────────────────────────────────────
-const MapScreen = ({ onBack }) => {
-  const aisles = [
-    { id: 1, x: 60, y: 60, w: 80, h: 100, label: "Aisle 1" },
-    { id: 2, x: 160, y: 60, w: 80, h: 100, label: "Aisle 2" },
-    { id: 3, x: 260, y: 60, w: 80, h: 100, label: "Aisle 3" },
-    { id: 4, x: 60, y: 200, w: 70, h: 120, label: "Aisle 4" },
-    { id: 5, x: 160, y: 200, w: 90, h: 120, label: "Aisle 5", active: true },
-  ];
+// Two mock supermarket floor plans. Department blocks include their aisle
+// number so we can highlight the one matching the selected product's
+// aisle_num. Routes are computed dynamically from entrance to the target.
+const FLOOR_PLANS = [
+  {
+    name: "Gənclik Mall",
+    width: 380,
+    height: 420,
+    entrance: { x: 32, y: 405 },
+    cashiers: [
+      { x: 16, y: 376, w: 84, h: 22 },
+      { x: 112, y: 376, w: 84, h: 22 },
+      { x: 208, y: 376, w: 84, h: 22 },
+    ],
+    departments: [
+      // Front-of-store / fresh
+      { aisle: 2, label: "Produce", color: "#DCFCE7", x: 24, y: 40, w: 100, h: 70 },
+      { aisle: 1, label: "Bakery", color: "#FEF3C7", x: 132, y: 40, w: 110, h: 70 },
+      { aisle: 3, label: "Dairy", color: "#DBEAFE", x: 250, y: 40, w: 110, h: 70 },
+      // Middle aisles
+      { aisle: 6, label: "Snacks", color: "#FCE7F3", x: 24, y: 132, w: 64, h: 90 },
+      { aisle: 5, label: "Beverages", color: "#E0E7FF", x: 96, y: 132, w: 64, h: 90 },
+      { aisle: 7, label: "Pantry", color: "#F5F5F5", x: 168, y: 132, w: 64, h: 90 },
+      { aisle: 8, label: "Frozen", color: "#CFFAFE", x: 240, y: 132, w: 60, h: 90 },
+      { aisle: 9, label: "Cleaning", color: "#E5E7EB", x: 308, y: 132, w: 52, h: 90 },
+      // Back-of-store
+      { aisle: 4, label: "Meat & Fish", color: "#FECACA", x: 24, y: 244, w: 110, h: 80 },
+      { aisle: 10, label: "Personal Care", color: "#FCE7F3", x: 142, y: 244, w: 100, h: 80 },
+      { aisle: 11, label: "Baby", color: "#FEE2E2", x: 250, y: 244, w: 50, h: 80 },
+      { aisle: 12, label: "Pet", color: "#FEF3C7", x: 308, y: 244, w: 52, h: 80 },
+    ],
+  },
+  {
+    name: "28 Mall",
+    width: 380,
+    height: 420,
+    entrance: { x: 348, y: 405 },
+    cashiers: [
+      { x: 188, y: 376, w: 80, h: 22 },
+      { x: 276, y: 376, w: 80, h: 22 },
+    ],
+    departments: [
+      { aisle: 1, label: "Bakery", color: "#FEF3C7", x: 24, y: 40, w: 76, h: 80 },
+      { aisle: 2, label: "Produce", color: "#DCFCE7", x: 108, y: 40, w: 80, h: 80 },
+      { aisle: 3, label: "Dairy", color: "#DBEAFE", x: 196, y: 40, w: 76, h: 80 },
+      { aisle: 4, label: "Meat & Fish", color: "#FECACA", x: 280, y: 40, w: 80, h: 80 },
+      { aisle: 6, label: "Snacks", color: "#FCE7F3", x: 24, y: 140, w: 80, h: 90 },
+      { aisle: 5, label: "Beverages", color: "#E0E7FF", x: 112, y: 140, w: 80, h: 90 },
+      { aisle: 8, label: "Frozen", color: "#CFFAFE", x: 200, y: 140, w: 80, h: 90 },
+      { aisle: 7, label: "Pantry", color: "#F5F5F5", x: 288, y: 140, w: 72, h: 90 },
+      { aisle: 9, label: "Cleaning", color: "#E5E7EB", x: 24, y: 250, w: 80, h: 80 },
+      { aisle: 10, label: "Personal Care", color: "#FCE7F3", x: 112, y: 250, w: 92, h: 80 },
+      { aisle: 11, label: "Baby", color: "#FEE2E2", x: 212, y: 250, w: 70, h: 80 },
+      { aisle: 12, label: "Pet", color: "#FEF3C7", x: 290, y: 250, w: 70, h: 80 },
+    ],
+  },
+];
+
+const MapScreen = ({ onBack, product }) => {
+  // Pick a mock floor plan deterministically from the product id (so the
+  // same product always uses the same map). Falls back to plan 0.
+  const planIdx = product?.product_id
+    ? Math.abs(parseInt(product.product_id, 10) || 0) % FLOOR_PLANS.length
+    : 0;
+  const plan = FLOOR_PLANS[planIdx];
+
+  const targetAisle = product?.aisle_num
+    ? parseInt(product.aisle_num, 10)
+    : null;
+  const target = plan.departments.find((d) => d.aisle === targetAisle);
+
+  // Centre of target dept (where we draw the destination pin).
+  const dest = target
+    ? { x: target.x + target.w / 2, y: target.y + target.h / 2 }
+    : { x: plan.width / 2, y: plan.height / 2 };
+  const start = plan.entrance;
+
+  // Simple L-shaped route: from entrance up to dest's y, then across.
+  const routePoints = [
+    `${start.x},${start.y}`,
+    `${start.x},${dest.y + 20}`,
+    `${dest.x},${dest.y + 20}`,
+    `${dest.x},${dest.y}`,
+  ].join(" ");
+
+  // Very rough walking time/distance for the demo header chip.
+  const dist = Math.round(
+    Math.abs(dest.x - start.x) + Math.abs(dest.y - start.y)
+  );
+  const meters = Math.round(dist * 0.15);
+  const mins = Math.max(1, Math.round(meters / 50));
+
+  const productName = product?.name || "Selected product";
+  const productEmoji = product?.category ? emojiFor(product.category) : "🛒";
+  const productPrice = product?.price_azn != null
+    ? `${parseFloat(product.price_azn).toFixed(2)} ₼`
+    : "—";
+  const productLocation = product?.location || target
+    ? `${target ? `Aisle ${target.aisle} · ${target.label}` : product?.location || ""}`
+    : "Unknown location";
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
@@ -2107,21 +2204,35 @@ const MapScreen = ({ onBack }) => {
               justifyContent: "center",
             }}
           >
-            <Text style={{ fontSize: 22 }}>🥔</Text>
+            <Text style={{ fontSize: 22 }}>{productEmoji}</Text>
           </View>
           <View style={{ marginLeft: 12, flex: 1 }}>
-            <Text style={{ fontWeight: "700", fontSize: 14, color: DARK }}>Lays Classic Çipsi 150q</Text>
+            <Text style={{ fontWeight: "700", fontSize: 14, color: DARK }} numberOfLines={1}>
+              {productName}
+            </Text>
             <View style={{ flexDirection: "row", alignItems: "center", marginTop: 3 }}>
-              <Badge text="2.80 ₼" />
+              <Badge text={productPrice} />
               <View style={{ flexDirection: "row", alignItems: "center", marginLeft: 8 }}>
                 <Icon name="shelf" size={12} color={GRAY} />
-                <Text style={{ fontSize: 12, color: GRAY, marginLeft: 4 }}>Aisle 5, Shelf B</Text>
+                <Text style={{ fontSize: 12, color: GRAY, marginLeft: 4 }} numberOfLines={1}>
+                  {productLocation}
+                </Text>
               </View>
             </View>
           </View>
         </View>
 
-        <View style={{ alignItems: "center", marginTop: 10 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 10,
+          }}
+        >
+          <Text style={{ fontSize: 11, color: GRAY, fontWeight: "600" }}>
+            🏬 {plan.name}
+          </Text>
           <View
             style={{
               backgroundColor: GREEN,
@@ -2131,57 +2242,147 @@ const MapScreen = ({ onBack }) => {
               flexDirection: "row",
             }}
           >
-            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>2 min</Text>
-            <Text style={{ color: "white", fontSize: 13, fontWeight: "700", marginHorizontal: 12 }}>•</Text>
-            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>45m</Text>
+            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>
+              {mins} min
+            </Text>
+            <Text
+              style={{ color: "white", fontSize: 13, fontWeight: "700", marginHorizontal: 12 }}
+            >
+              •
+            </Text>
+            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>{meters}m</Text>
           </View>
         </View>
       </View>
 
-      <View style={{ flex: 1, backgroundColor: "#F0F0EB" }}>
-        <Svg width="100%" height="100%" viewBox="0 0 380 320">
-          {[40, 80, 120, 160, 200, 240, 280, 320].map((y) => (
-            <Line key={`h-${y}`} x1="0" y1={y} x2="380" y2={y} stroke="#E0DDD5" strokeWidth="1" />
-          ))}
-          {[40, 80, 120, 160, 200, 240, 280, 320, 360].map((x) => (
-            <Line key={`v-${x}`} x1={x} y1="0" x2={x} y2="320" stroke="#E0DDD5" strokeWidth="1" />
-          ))}
-          {aisles.map((a) => (
-            <G key={a.id}>
-              <Rect
-                x={a.x}
-                y={a.y}
-                width={a.w}
-                height={a.h}
-                rx="6"
-                fill={a.active ? GREEN_LIGHT : "white"}
-                stroke={a.active ? GREEN : "#D0CCC0"}
-                strokeWidth={a.active ? 2 : 1}
-              />
+      <View style={{ flex: 1, backgroundColor: "#F5F1E8" }}>
+        <Svg width="100%" height="100%" viewBox={`0 0 ${plan.width} ${plan.height}`}>
+          {/* outer store boundary */}
+          <Rect
+            x="6"
+            y="6"
+            width={plan.width - 12}
+            height={plan.height - 12}
+            rx="8"
+            fill="white"
+            stroke="#B8B19F"
+            strokeWidth="2"
+          />
+
+          {/* "FRONT DOOR" entrance label */}
+          <Rect
+            x={start.x - 22}
+            y={start.y - 4}
+            width="44"
+            height="14"
+            rx="3"
+            fill={GREEN}
+          />
+          <SvgText
+            x={start.x}
+            y={start.y + 6}
+            textAnchor="middle"
+            fontSize="9"
+            fontWeight="700"
+            fill="white"
+          >
+            ENTRY
+          </SvgText>
+
+          {/* Cashiers */}
+          {plan.cashiers.map((c, i) => (
+            <G key={`c-${i}`}>
+              <Rect x={c.x} y={c.y} width={c.w} height={c.h} rx="3" fill="#1E40AF" opacity="0.18" />
               <SvgText
-                x={a.x + a.w / 2}
-                y={a.y + a.h / 2}
+                x={c.x + c.w / 2}
+                y={c.y + c.h / 2 + 3}
                 textAnchor="middle"
-                fontSize="12"
-                fontWeight="600"
-                fill={a.active ? GREEN : GRAY}
+                fontSize="9"
+                fontWeight="700"
+                fill="#1E40AF"
               >
-                {a.label}
+                CASHIER
               </SvgText>
             </G>
           ))}
-          <Polyline
-            points="205,290 205,200 140,200 140,160"
-            fill="none"
-            stroke={GREEN}
-            strokeWidth="3"
-            strokeDasharray="8,4"
-            strokeLinecap="round"
-          />
-          <Circle cx="205" cy="240" r="10" fill={RED} />
-          <Circle cx="205" cy="240" r="6" fill="white" />
-          <Circle cx="140" cy="165" r="10" fill="white" stroke={GREEN} strokeWidth="2" />
-          <Circle cx="140" cy="165" r="5" fill={GREEN} />
+
+          {/* Department blocks */}
+          {plan.departments.map((d) => {
+            const active = d.aisle === targetAisle;
+            return (
+              <G key={d.aisle}>
+                <Rect
+                  x={d.x}
+                  y={d.y}
+                  width={d.w}
+                  height={d.h}
+                  rx="6"
+                  fill={active ? GREEN_LIGHT : d.color}
+                  stroke={active ? GREEN : "#C5BDA8"}
+                  strokeWidth={active ? 2.5 : 1}
+                />
+                {/* Faux shelf lines inside the block to feel like aisles */}
+                {[0.3, 0.6].map((f, i) => (
+                  <Line
+                    key={i}
+                    x1={d.x + 6}
+                    x2={d.x + d.w - 6}
+                    y1={d.y + d.h * f}
+                    y2={d.y + d.h * f}
+                    stroke={active ? GREEN : "#C5BDA8"}
+                    strokeOpacity="0.4"
+                    strokeWidth="1"
+                  />
+                ))}
+                <SvgText
+                  x={d.x + d.w / 2}
+                  y={d.y + 14}
+                  textAnchor="middle"
+                  fontSize="9"
+                  fontWeight="800"
+                  fill={active ? GREEN : "#6B5E48"}
+                >
+                  {d.label.toUpperCase()}
+                </SvgText>
+                <SvgText
+                  x={d.x + d.w / 2}
+                  y={d.y + d.h - 6}
+                  textAnchor="middle"
+                  fontSize="8"
+                  fontWeight="600"
+                  fill={active ? GREEN : "#9A8E72"}
+                >
+                  AISLE {d.aisle}
+                </SvgText>
+              </G>
+            );
+          })}
+
+          {/* Route */}
+          {target && (
+            <Polyline
+              points={routePoints}
+              fill="none"
+              stroke={GREEN}
+              strokeWidth="4"
+              strokeDasharray="10,5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          )}
+
+          {/* You-are-here marker at entrance */}
+          <Circle cx={start.x} cy={start.y} r="10" fill="white" stroke={GREEN} strokeWidth="2.5" />
+          <Circle cx={start.x} cy={start.y} r="5" fill={GREEN} />
+
+          {/* Destination pin */}
+          {target && (
+            <>
+              <Circle cx={dest.x} cy={dest.y} r="14" fill={RED} opacity="0.18" />
+              <Circle cx={dest.x} cy={dest.y} r="9" fill={RED} />
+              <Circle cx={dest.x} cy={dest.y} r="3.5" fill="white" />
+            </>
+          )}
         </Svg>
 
         <View style={{ position: "absolute", right: 16, top: 16 }}>
@@ -2259,30 +2460,40 @@ const MapScreen = ({ onBack }) => {
           >
             <Icon name="arrowUp" size={24} color="white" />
           </View>
-          <View style={{ marginLeft: 14 }}>
+          <View style={{ marginLeft: 14, flex: 1 }}>
             <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
               CURRENT INSTRUCTION
             </Text>
-            <Text style={{ fontSize: 20, fontWeight: "800", color: DARK, marginVertical: 2 }}>Go straight 20m</Text>
-            <Text style={{ fontSize: 13, color: GRAY }}>towards Bakery section</Text>
+            <Text style={{ fontSize: 18, fontWeight: "800", color: DARK, marginVertical: 2 }} numberOfLines={1}>
+              {target ? `Head to Aisle ${target.aisle}` : "Choose a product"}
+            </Text>
+            <Text style={{ fontSize: 13, color: GRAY }} numberOfLines={1}>
+              {target ? `${target.label} section · ${meters}m` : "Pick an item from search or chat"}
+            </Text>
           </View>
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            paddingHorizontal: 14,
-            paddingVertical: 10,
-            backgroundColor: LIGHT_GRAY,
-            borderRadius: 10,
-            marginBottom: 12,
-          }}
-        >
-          <Icon name="question" size={16} color={GRAY} />
-          <Text style={{ fontSize: 13, color: GRAY, marginLeft: 8 }}>
-            Then <Text style={{ fontWeight: "700", color: DARK }}>turn left at Bakery</Text>
-          </Text>
-        </View>
+        {target && (
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              paddingHorizontal: 14,
+              paddingVertical: 10,
+              backgroundColor: LIGHT_GRAY,
+              borderRadius: 10,
+              marginBottom: 12,
+            }}
+          >
+            <Icon name="question" size={16} color={GRAY} />
+            <Text style={{ fontSize: 13, color: GRAY, marginLeft: 8, flex: 1 }}>
+              Then look for{" "}
+              <Text style={{ fontWeight: "700", color: DARK }}>
+                shelf {product?.shelf_letter || "B"}
+              </Text>{" "}
+              · {target.label}
+            </Text>
+          </View>
+        )}
         <View style={{ flexDirection: "row", gap: 12 }}>
           <TouchableOpacity
             style={{
@@ -2366,9 +2577,9 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
       <View
         style={{
           backgroundColor: "white",
-          paddingHorizontal: 20,
-          paddingTop: 16,
-          paddingBottom: 14,
+          paddingHorizontal: 16,
+          paddingTop: 12,
+          paddingBottom: 10,
           borderBottomWidth: 1,
           borderBottomColor: BORDER,
           flexDirection: "row",
@@ -2379,22 +2590,22 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <View
             style={{
-              width: 40,
-              height: 40,
-              borderRadius: 20,
+              width: 32,
+              height: 32,
+              borderRadius: 16,
               backgroundColor: "#FEF3C7",
-              borderWidth: 2,
+              borderWidth: 1.5,
               borderColor: "#F59E0B",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "#B45309", fontWeight: "800", fontSize: 16 }}>A</Text>
+            <Text style={{ color: "#B45309", fontWeight: "800", fontSize: 14 }}>A</Text>
           </View>
-          <View style={{ marginLeft: 10 }}>
-            <Text style={{ fontWeight: "800", fontSize: 16, color: DARK }}>Admin Panel</Text>
-            <Text style={{ fontSize: 12, color: GRAY }}>
-              {user?.name || "Manager"} • Gənclik Mall
+          <View style={{ marginLeft: 8 }}>
+            <Text style={{ fontWeight: "800", fontSize: 15, color: DARK }}>Admin</Text>
+            <Text style={{ fontSize: 11, color: GRAY }}>
+              {user?.name || "Manager"} · Gənclik Mall
             </Text>
           </View>
         </View>
@@ -2403,47 +2614,56 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           style={{
             borderWidth: 1,
             borderColor: BORDER,
-            borderRadius: 10,
-            paddingHorizontal: 12,
-            paddingVertical: 8,
+            borderRadius: 8,
+            paddingHorizontal: 10,
+            paddingVertical: 6,
           }}
         >
-          <Text style={{ fontSize: 12, fontWeight: "600", color: GRAY }}>Logout</Text>
+          <Text style={{ fontSize: 11, fontWeight: "600", color: GRAY }}>Logout</Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }} decelerationRate="fast" scrollEventThrottle={16}>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 24 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
+      >
+        {/* Compact KPI strip — counts only, no big cards */}
+        <View
+          style={{
+            flexDirection: "row",
+            backgroundColor: "white",
+            paddingHorizontal: 12,
+            paddingVertical: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: BORDER,
+          }}
+        >
+          <KpiInline label="Revenue 30d" value={`${(analytics.totalRevenue / 1000).toFixed(0)}K ₼`} />
+          <KpiInline label="Expiring" value={analytics.expiring.length} accent="#DC2626" />
+          <KpiInline label="Low stock" value={analytics.lowStock.length} accent={RED} />
+          <KpiInline label="Overstock" value={analytics.overstocked.length} accent={ORANGE} last />
+        </View>
+
         {/* 1. CRITICAL ACTIONS (top) */}
-        <View style={{ paddingHorizontal: 16, paddingTop: 16 }}>
+        <View style={{ paddingHorizontal: 12, paddingTop: 12 }}>
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginBottom: 10,
+              marginBottom: 8,
             }}
           >
-            <View
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: 14,
-                backgroundColor: "#FEE2E2",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Text style={{ fontSize: 14 }}>⚡</Text>
-            </View>
+            <Text style={{ fontSize: 14 }}>⚡</Text>
             <Text
-              style={{ fontWeight: "800", fontSize: 16, color: DARK, marginLeft: 8, flex: 1 }}
+              style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}
             >
               Critical Actions
             </Text>
-            <Text style={{ fontSize: 12, color: GRAY }}>
-              {critical.length} items
-            </Text>
+            <Text style={{ fontSize: 11, color: GRAY }}>{critical.length}</Text>
           </View>
-          {critical.slice(0, 5).map((p) => (
+          {critical.slice(0, 3).map((p) => (
             <CriticalCard key={p.product_id} product={p} onPress={() => onSelect(p)} />
           ))}
         </View>
@@ -2451,164 +2671,140 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
         {/* 2. AI summary card */}
         <View
           style={{
-            marginHorizontal: 16,
-            marginTop: 8,
-            marginBottom: 16,
+            marginHorizontal: 12,
+            marginTop: 4,
+            marginBottom: 12,
             backgroundColor: DARK,
-            borderRadius: 14,
-            padding: 16,
+            borderRadius: 12,
+            padding: 12,
           }}
         >
-          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
             <View
               style={{
-                width: 32,
-                height: 32,
-                borderRadius: 16,
+                width: 26,
+                height: 26,
+                borderRadius: 13,
                 backgroundColor: GREEN,
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <Icon name="robot" size={18} color="white" />
+              <Icon name="robot" size={14} color="white" />
             </View>
-            <View style={{ marginLeft: 10, flex: 1 }}>
-              <Text style={{ fontWeight: "800", fontSize: 15, color: "white" }}>
-                AI Store Manager
-              </Text>
-              <Text style={{ fontSize: 12, color: "#aaa" }}>
-                Cross-catalogue narrative
-              </Text>
-            </View>
+            <Text style={{ fontWeight: "800", fontSize: 13, color: "white", marginLeft: 8, flex: 1 }}>
+              AI Store Manager
+            </Text>
             <TouchableOpacity
               onPress={loadInsights}
               disabled={insightsLoading}
               style={{
                 backgroundColor: GREEN,
-                paddingHorizontal: 14,
-                paddingVertical: 8,
-                borderRadius: 10,
+                paddingHorizontal: 10,
+                paddingVertical: 6,
+                borderRadius: 8,
                 opacity: insightsLoading ? 0.6 : 1,
               }}
             >
-              <Text style={{ color: "white", fontSize: 12, fontWeight: "700" }}>
+              <Text style={{ color: "white", fontSize: 11, fontWeight: "700" }}>
                 {insights ? "Refresh" : "Generate"}
               </Text>
             </TouchableOpacity>
           </View>
           {insightsLoading && (
-            <View style={{ flexDirection: "row", alignItems: "center", paddingVertical: 12 }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
               <ActivityIndicator size="small" color={GREEN} />
-              <Text style={{ color: "#aaa", marginLeft: 8, fontSize: 13 }}>
-                Analyzing {analytics.totalProducts.toLocaleString()} SKUs…
-              </Text>
+              <Text style={{ color: "#aaa", marginLeft: 8, fontSize: 12 }}>Analyzing…</Text>
             </View>
           )}
           {insightsError && (
-            <Text style={{ color: "#FCA5A5", fontSize: 13, marginTop: 4 }}>
-              ⚠️ {insightsError}
-            </Text>
+            <Text style={{ color: "#FCA5A5", fontSize: 12 }}>⚠️ {insightsError}</Text>
           )}
           {insights && !insightsLoading && (
-            <Text style={{ fontSize: 13, color: "#E5E7EB", lineHeight: 20, marginTop: 4 }}>
-              {insights}
-            </Text>
+            <Text style={{ fontSize: 12, color: "#E5E7EB", lineHeight: 18 }}>{insights}</Text>
           )}
           {!insights && !insightsLoading && !insightsError && (
-            <Text style={{ fontSize: 13, color: "#9CA3AF", fontStyle: "italic", marginTop: 4 }}>
-              Tap "Generate" for a manager-level summary of priorities — restocks, markdowns,
-              and expiring clearance — based on 30-day velocity.
+            <Text style={{ fontSize: 12, color: "#9CA3AF", fontStyle: "italic" }}>
+              Tap "Generate" for a 130-word manager briefing.
             </Text>
           )}
         </View>
 
-        {/* 3. Charts row */}
-        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
-          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
-            Stock Health
-          </Text>
+        {/* 3. Charts row — donut + bars side by side */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
           <View
             style={{
-              flexDirection: "row",
               backgroundColor: "white",
-              borderRadius: 14,
+              borderRadius: 12,
               borderWidth: 1,
               borderColor: BORDER,
-              padding: 14,
+              padding: 12,
+              flexDirection: "row",
+              alignItems: "center",
             }}
           >
             <Donut health={health} />
-            <View style={{ flex: 1, marginLeft: 16, justifyContent: "center" }}>
+            <View style={{ flex: 1, marginLeft: 12 }}>
+              <Text style={{ fontWeight: "800", fontSize: 12, color: DARK, marginBottom: 6 }}>
+                Stock Health
+              </Text>
               <Legend color={GREEN} label="Healthy" value={health.ok} total={health.total} />
-              <Legend color="#EF4444" label="Low stock" value={health.low} total={health.total} />
-              <Legend color="#F97316" label="Overstocked" value={health.over} total={health.total} />
+              <Legend color="#EF4444" label="Low" value={health.low} total={health.total} />
+              <Legend color="#F97316" label="Over" value={health.over} total={health.total} />
               <Legend color="#DC2626" label="Expiring" value={health.exp} total={health.total} />
             </View>
           </View>
         </View>
 
-        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
-          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
-            Top Categories (30d revenue)
-          </Text>
+        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
           <View
             style={{
               backgroundColor: "white",
-              borderRadius: 14,
+              borderRadius: 12,
               borderWidth: 1,
               borderColor: BORDER,
-              padding: 14,
+              padding: 12,
             }}
           >
+            <Text style={{ fontWeight: "800", fontSize: 12, color: DARK, marginBottom: 8 }}>
+              Top Categories (30d revenue)
+            </Text>
             <CategoryBars categories={topCategories} />
           </View>
         </View>
 
-        {/* 4. KPIs */}
-        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
-          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
-            Store KPIs
-          </Text>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10 }}>
-            <KpiCard label="SKUs" value={analytics.totalProducts.toLocaleString()} accent={GREEN} />
-            <KpiCard label="Units sold / 30d" value={analytics.totalUnits.toLocaleString()} accent={GREEN_MID} />
-            <KpiCard label="Revenue 30d" value={`${(analytics.totalRevenue / 1000).toFixed(0)}K ₼`} accent="#0EA5E9" />
-            <KpiCard label="Stock value" value={`${(analytics.totalStockValue / 1000).toFixed(0)}K ₼`} accent="#8B5CF6" />
-            <KpiCard label="Low stock" value={analytics.lowStock.length} accent={RED} />
-            <KpiCard label="Overstock" value={analytics.overstocked.length} accent={ORANGE} />
-          </View>
-        </View>
-
-        {/* 5. Full lists */}
+        {/* 4. Full lists */}
         <View
           style={{
             flexDirection: "row",
-            marginHorizontal: 16,
+            marginHorizontal: 12,
             backgroundColor: "white",
-            borderRadius: 12,
-            padding: 4,
-            marginBottom: 12,
+            borderRadius: 10,
+            padding: 3,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: BORDER,
           }}
         >
           {[
-            { id: "restock", label: `Restock (${analytics.lowStock.length})` },
-            { id: "overstock", label: `Overstock (${analytics.overstocked.length})` },
-            { id: "expiring", label: `Expiring (${analytics.expiring.length})` },
+            { id: "restock", label: `Restock · ${analytics.lowStock.length}` },
+            { id: "overstock", label: `Over · ${analytics.overstocked.length}` },
+            { id: "expiring", label: `Exp · ${analytics.expiring.length}` },
           ].map((t) => (
             <TouchableOpacity
               key={t.id}
               onPress={() => setTab(t.id)}
               style={{
                 flex: 1,
-                paddingVertical: 9,
-                borderRadius: 8,
+                paddingVertical: 7,
+                borderRadius: 7,
                 backgroundColor: tab === t.id ? GREEN : "transparent",
                 alignItems: "center",
               }}
             >
               <Text
                 style={{
-                  fontSize: 12,
+                  fontSize: 11,
                   fontWeight: "700",
                   color: tab === t.id ? "white" : GRAY,
                 }}
@@ -2619,58 +2815,56 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           ))}
         </View>
 
-        <View style={{ paddingHorizontal: 16 }}>
-          {list.slice(0, 40).map((p) => (
+        <View style={{ paddingHorizontal: 12 }}>
+          {list.slice(0, 30).map((p) => (
             <TouchableOpacity
               key={p.product_id}
               onPress={() => onSelect(p)}
               activeOpacity={0.85}
               style={{
                 backgroundColor: "white",
-                borderRadius: 12,
+                borderRadius: 10,
                 borderWidth: 1,
                 borderColor: BORDER,
-                padding: 12,
-                marginBottom: 8,
+                padding: 10,
+                marginBottom: 6,
                 flexDirection: "row",
                 alignItems: "center",
               }}
             >
               <View
                 style={{
-                  width: 8,
-                  height: 48,
-                  borderRadius: 4,
+                  width: 5,
+                  height: 36,
+                  borderRadius: 3,
                   backgroundColor: SEVERITY_COLOR[p.status] || GRAY,
-                  marginRight: 12,
+                  marginRight: 10,
                 }}
               />
               <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }} numberOfLines={1}>
                   {p.name}
                 </Text>
-                <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }} numberOfLines={1}>
-                  {p.brand} • {p.location}
+                <Text style={{ fontSize: 10, color: GRAY, marginTop: 1 }} numberOfLines={1}>
+                  {p.location} · Stock {p.stock_qty} · Sold/30d {p.units_sold}
+                  {p.is_fresh ? ` · Exp ${p.expires_in_days}d` : ""}
                 </Text>
-                <View style={{ flexDirection: "row", marginTop: 6, flexWrap: "wrap", gap: 6 }}>
-                  <StatChip label="Stock" value={p.stock_qty} />
-                  <StatChip label="Sold/30d" value={p.units_sold} />
-                  {p.is_fresh && <StatChip label="Expires" value={`${p.expires_in_days}d`} />}
-                  <StatChip label="Price" value={`${p.price_azn.toFixed(2)} ₼`} />
-                </View>
               </View>
+              <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }}>
+                {p.price_azn.toFixed(2)} ₼
+              </Text>
             </TouchableOpacity>
           ))}
           {list.length === 0 && (
             <View
               style={{
                 backgroundColor: "white",
-                borderRadius: 12,
-                padding: 24,
+                borderRadius: 10,
+                padding: 18,
                 alignItems: "center",
               }}
             >
-              <Text style={{ color: GRAY }}>Nothing flagged in this bucket. 🎉</Text>
+              <Text style={{ color: GRAY, fontSize: 12 }}>Nothing flagged. 🎉</Text>
             </View>
           )}
         </View>
@@ -2678,6 +2872,32 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
     </View>
   );
 };
+
+const KpiInline = ({ label, value, accent, last }) => (
+  <View
+    style={{
+      flex: 1,
+      borderRightWidth: last ? 0 : 1,
+      borderRightColor: BORDER,
+      paddingHorizontal: 6,
+      alignItems: "center",
+    }}
+  >
+    <Text style={{ fontSize: 9, color: GRAY, fontWeight: "700", letterSpacing: 0.5 }}>
+      {label.toUpperCase()}
+    </Text>
+    <Text
+      style={{
+        fontSize: 16,
+        fontWeight: "800",
+        color: accent || DARK,
+        marginTop: 1,
+      }}
+    >
+      {value}
+    </Text>
+  </View>
+);
 
 const ManagerCard = ({ product, recommendation, aiAnalysis, aiLoading, aiError, onGenerate }) => {
   const color = SEVERITY_COLOR[product.status] || GREEN;
@@ -2869,48 +3089,48 @@ const CriticalCard = ({ product, onPress }) => {
       activeOpacity={0.85}
       style={{
         backgroundColor: "white",
-        borderRadius: 12,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: BORDER,
-        marginBottom: 10,
+        marginBottom: 6,
         overflow: "hidden",
       }}
     >
       <View
         style={{
           backgroundColor: color,
-          paddingHorizontal: 12,
-          paddingVertical: 5,
+          paddingHorizontal: 10,
+          paddingVertical: 4,
           flexDirection: "row",
           justifyContent: "space-between",
         }}
       >
-        <Text style={{ color: "white", fontSize: 10, fontWeight: "800", letterSpacing: 1 }}>
-          {tag} • {rec.action.toUpperCase()}
+        <Text style={{ color: "white", fontSize: 9, fontWeight: "800", letterSpacing: 1 }}>
+          {tag} · {rec.action.toUpperCase()}
         </Text>
-        <Text style={{ color: "white", fontSize: 10, fontWeight: "700" }}>
+        <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>
           {product.location}
         </Text>
       </View>
-      <View style={{ padding: 12 }}>
-        <Text style={{ fontSize: 14, fontWeight: "800", color: DARK }} numberOfLines={1}>
+      <View style={{ padding: 10 }}>
+        <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
           {product.name}
         </Text>
-        <Text style={{ fontSize: 13, color: DARK, lineHeight: 19, marginTop: 6 }}>
+        <Text style={{ fontSize: 12, color: DARK, lineHeight: 17, marginTop: 4 }} numberOfLines={3}>
           {rec.narrative}
         </Text>
-        <View style={{ flexDirection: "row", marginTop: 10, gap: 8, flexWrap: "wrap" }}>
+        <View style={{ flexDirection: "row", marginTop: 6, gap: 6, flexWrap: "wrap" }}>
           {rec.markdownPct > 0 && (
             <View
               style={{
                 backgroundColor: "#FEF3C7",
-                paddingHorizontal: 8,
-                paddingVertical: 4,
-                borderRadius: 6,
+                paddingHorizontal: 6,
+                paddingVertical: 2,
+                borderRadius: 5,
               }}
             >
-              <Text style={{ fontSize: 11, fontWeight: "800", color: "#B45309" }}>
-                ↓ {rec.markdownPct}% markdown
+              <Text style={{ fontSize: 10, fontWeight: "800", color: "#B45309" }}>
+                ↓ {rec.markdownPct}%
               </Text>
             </View>
           )}
@@ -2918,30 +3138,30 @@ const CriticalCard = ({ product, onPress }) => {
             <View
               style={{
                 backgroundColor: "#DBEAFE",
-                paddingHorizontal: 8,
-                paddingVertical: 4,
-                borderRadius: 6,
+                paddingHorizontal: 6,
+                paddingVertical: 2,
+                borderRadius: 5,
               }}
             >
-              <Text style={{ fontSize: 11, fontWeight: "800", color: "#1E40AF" }}>
-                + Reorder {rec.reorderQty}
+              <Text style={{ fontSize: 10, fontWeight: "800", color: "#1E40AF" }}>
+                +{rec.reorderQty} units
               </Text>
             </View>
           )}
           <View
             style={{
               backgroundColor: LIGHT_GRAY,
-              paddingHorizontal: 8,
-              paddingVertical: 4,
-              borderRadius: 6,
+              paddingHorizontal: 6,
+              paddingVertical: 2,
+              borderRadius: 5,
             }}
           >
-            <Text style={{ fontSize: 11, color: GRAY }}>
-              Stock <Text style={{ color: DARK, fontWeight: "700" }}>{product.stock_qty}</Text> · Sold/30d{" "}
+            <Text style={{ fontSize: 10, color: GRAY }}>
+              Stk <Text style={{ color: DARK, fontWeight: "700" }}>{product.stock_qty}</Text> · Sold{" "}
               <Text style={{ color: DARK, fontWeight: "700" }}>{product.units_sold}</Text>
               {product.is_fresh && (
                 <>
-                  {" "}· Expires{" "}
+                  {" "}· Exp{" "}
                   <Text style={{ color: DARK, fontWeight: "700" }}>{product.expires_in_days}d</Text>
                 </>
               )}
@@ -2954,8 +3174,8 @@ const CriticalCard = ({ product, onPress }) => {
 };
 
 const Donut = ({ health }) => {
-  const SIZE = 110;
-  const R = 45;
+  const SIZE = 88;
+  const R = 36;
   const C = 2 * Math.PI * R;
   const segs = [
     { v: health.ok, color: GREEN },
@@ -3104,18 +3324,22 @@ const StatChip = ({ label, value }) => (
 // ── ROOT APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [user, setUser] = useState(null);
-  const [screen, setScreen] = useState("login");
+  const [stack, setStack] = useState(["login"]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [prevScreen, setPrevScreen] = useState(null);
 
-  const nav = (to) => {
-    setPrevScreen(screen);
-    setScreen(to);
-  };
+  const screen = stack[stack.length - 1];
 
-  const goBack = () => {
-    setScreen(prevScreen || (user?.role === "admin" ? "admin" : "home"));
-  };
+  // Inline navigation pushes onto the stack so back-button can pop back
+  // along the path (chat → product → map → back goes map → product → chat).
+  const nav = (to) =>
+    setStack((s) => (s[s.length - 1] === to ? s : [...s, to]));
+
+  // Bottom-nav taps are tab switches, not pushes — reset the stack so the
+  // tab is the only entry.
+  const switchTab = (to) => setStack([to]);
+
+  const goBack = () =>
+    setStack((s) => (s.length > 1 ? s.slice(0, -1) : s));
 
   const handleProduct = (p) => {
     setSelectedProduct(p);
@@ -3124,15 +3348,16 @@ export default function App() {
 
   const handleLogin = (u) => {
     setUser(u);
-    setScreen(u.role === "admin" ? "admin" : "home");
+    setStack([u.role === "admin" ? "admin" : "home"]);
   };
 
   const handleLogout = () => {
     setUser(null);
-    setScreen("login");
-    setPrevScreen(null);
+    setStack(["login"]);
     setSelectedProduct(null);
   };
+
+  const canGoBack = stack.length > 1;
 
   const renderScreen = () => {
     switch (screen) {
@@ -3145,29 +3370,55 @@ export default function App() {
       case "onsite":
         return <OnSiteScreen onNav={nav} />;
       case "onsite-search":
-        return <SearchScreen onProduct={handleProduct} onNav={nav} />;
+        return <SearchScreen onProduct={handleProduct} onNav={nav} onBack={goBack} />;
       case "product":
-        return <ProductScreen product={selectedProduct} onBack={goBack} onNav={nav} user={user} />;
+        return (
+          <ProductScreen
+            product={selectedProduct}
+            onBack={goBack}
+            onNav={nav}
+            user={user}
+          />
+        );
       case "scanner":
         return <ScannerScreen onBack={goBack} onProduct={handleProduct} />;
       case "assistant":
-        return <AssistantScreen onNav={nav} onProduct={handleProduct} />;
+        return (
+          <AssistantScreen
+            onNav={nav}
+            onProduct={handleProduct}
+            onBack={canGoBack ? goBack : null}
+          />
+        );
       case "map":
-        return <MapScreen onBack={goBack} />;
+        return <MapScreen onBack={goBack} product={selectedProduct} />;
       default:
         return <HomeScreen onNav={nav} />;
     }
   };
 
-  const noBottomNav = ["login", "scanner", "admin"].includes(screen) || user?.role === "admin";
+  const noBottomNav =
+    ["login", "scanner", "admin"].includes(screen) || user?.role === "admin";
   const activeTab =
-    ["home", "onsite", "onsite-search", "assistant", "map"].find((t) => screen.startsWith(t)) || "home";
+    ["home", "onsite", "onsite-search", "assistant", "map"].find((t) =>
+      screen.startsWith(t)
+    ) || "home";
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: screen === "scanner" ? DARK : "white" }}>
-      <StatusBar barStyle={screen === "scanner" ? "light-content" : "dark-content"} />
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: screen === "scanner" ? DARK : "white" }}
+    >
+      <StatusBar
+        barStyle={screen === "scanner" ? "light-content" : "dark-content"}
+      />
       <View style={{ flex: 1, backgroundColor: "white" }}>{renderScreen()}</View>
-      {!noBottomNav && <BottomNav active={activeTab} onNav={nav} onScan={() => nav("scanner")} />}
+      {!noBottomNav && (
+        <BottomNav
+          active={activeTab}
+          onNav={switchTab}
+          onScan={() => switchTab("scanner")}
+        />
+      )}
     </SafeAreaView>
   );
 }
