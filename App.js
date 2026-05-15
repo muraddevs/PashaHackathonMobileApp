@@ -343,6 +343,8 @@ const LoginScreen = ({ onLogin }) => {
       style={{ flex: 1, backgroundColor: "white" }}
       contentContainerStyle={{ alignItems: "center", paddingHorizontal: 24, paddingTop: 48, paddingBottom: 32 }}
       keyboardShouldPersistTaps="handled"
+      decelerationRate="fast"
+      scrollEventThrottle={16}
     >
       <View
         style={{
@@ -515,7 +517,7 @@ const HomeScreen = ({ onNav }) => {
     { name: "Fresh Farm Honey 500g", aisle: "Aisle 2, Shelf A", price: "7.80", orig: "9.50", discount: "-15%" },
   ];
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }} decelerationRate="fast" scrollEventThrottle={16}>
       <View style={{ backgroundColor: "white", paddingHorizontal: 20, paddingTop: 16, paddingBottom: 12 }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -673,7 +675,7 @@ const HomeScreen = ({ onNav }) => {
 
       <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
         <Text style={{ fontSize: 16, fontWeight: "700", marginBottom: 12 }}>Featured Deals</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="fast">
           <View style={{ flexDirection: "row", gap: 12, paddingBottom: 4 }}>
             {deals.map((d) => (
               <View
@@ -766,7 +768,7 @@ const OnSiteScreen = ({ onNav }) => {
   };
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }} decelerationRate="fast" scrollEventThrottle={16}>
       <View style={{ backgroundColor: "white", paddingHorizontal: 20, paddingTop: 16, paddingBottom: 12 }}>
         <View
           style={{
@@ -1067,7 +1069,7 @@ const SearchScreen = ({ onProduct, onNav }) => {
           <View style={{ width: 1, height: 16, backgroundColor: BORDER, marginHorizontal: 10 }} />
           <Icon name="filter" size={16} color={GRAY} />
         </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="fast">
           <View style={{ flexDirection: "row", gap: 8, paddingBottom: 4 }}>
             {filters.map((f) => (
               <TouchableOpacity
@@ -1093,7 +1095,7 @@ const SearchScreen = ({ onProduct, onNav }) => {
           </View>
         </ScrollView>
       </View>
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 16 }}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 16 }} decelerationRate="fast" scrollEventThrottle={16}>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
           {products.map((p) => (
             <TouchableOpacity
@@ -1202,7 +1204,7 @@ const ProductScreen = ({ product, onBack, onNav }) => {
       };
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} decelerationRate="fast" scrollEventThrottle={16}>
         <View style={{ backgroundColor: LIGHT_GRAY, paddingVertical: 20, position: "relative" }}>
           <TouchableOpacity
             onPress={onBack}
@@ -1783,6 +1785,8 @@ const AssistantScreen = ({ onNav }) => {
         ref={scrollRef}
         style={{ flex: 1 }}
         contentContainerStyle={{ paddingHorizontal: 20, paddingVertical: 16 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
       >
         <Text style={{ textAlign: "center", fontSize: 12, color: GRAY, marginBottom: 16 }}>Bugün, 14:30</Text>
         {messages.map((m, i) => (
@@ -1925,7 +1929,7 @@ const AssistantScreen = ({ onNav }) => {
       </ScrollView>
 
       <View style={{ borderTopWidth: 1, borderTopColor: BORDER, paddingHorizontal: 20, paddingTop: 10, paddingBottom: 12 }}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="fast">
           <View style={{ flexDirection: "row", gap: 8, marginBottom: 10, paddingBottom: 2 }}>
             {chips.map((c) => (
               <TouchableOpacity
@@ -2348,7 +2352,7 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }} decelerationRate="fast" scrollEventThrottle={16}>
         {/* 1. CRITICAL ACTIONS (top) */}
         <View style={{ paddingHorizontal: 16, paddingTop: 16 }}>
           <View
