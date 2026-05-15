@@ -2332,63 +2332,159 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
 // Two mock supermarket floor plans. Department blocks include their aisle
 // number so we can highlight the one matching the selected product's
 // aisle_num. Routes are computed dynamically from entrance to the target.
+// ── Supermarket floor plan ──────────────────────────────────────────────────
+// 12 aisles laid out as 3 rows of 4 — each aisle is a walkable corridor
+// flanked by two parallel SHELF UNITS. Horizontal "halls" run between the
+// shelf rows; a central "highway" connects the entrance, halls, and cashiers.
+//
+//   ┌──────────────────────────────────────────────┐
+//   │   ◯ ◯ ◯ ◯  ← cashiers       (TOP)            │
+//   │ ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ← aisles 1-4    │
+//   │ ─────── hall ───────                        │
+//   │ ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ← aisles 5-8    │
+//   │ ─────── hall ───────                        │
+//   │ ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ▮ ║ ▮  ← aisles 9-12   │
+//   │              ENTRY ↑                         │
+//   └──────────────────────────────────────────────┘
+const PLAN_W = 380;
+const PLAN_H = 560;
+const MARGIN_X = 12;
+const ROW_H = 110;
+const HALL_H = 30;
+const TOP_OFFSET = 70; // space for cashiers
+const ENTRY_OFFSET = 32;
+
+// 4 aisle columns
+const COL_COUNT = 4;
+const AVAILABLE_W = PLAN_W - MARGIN_X * 2;
+const COL_W = AVAILABLE_W / COL_COUNT;
+const SHELF_W = 18;
+const WALK_W = COL_W - SHELF_W * 2 - 8; // walkway between the two shelves
+
+const ROW_Y = [
+  TOP_OFFSET,
+  TOP_OFFSET + ROW_H + HALL_H,
+  TOP_OFFSET + (ROW_H + HALL_H) * 2,
+];
+
+// Aisle definitions. Each aisle has two shelf units and a walkway between.
+const AISLES = [
+  { id: 1, row: 0, col: 0, label: "Bakery", color: "#FEF3C7" },
+  { id: 2, row: 0, col: 1, label: "Produce", color: "#DCFCE7" },
+  { id: 3, row: 0, col: 2, label: "Dairy", color: "#DBEAFE" },
+  { id: 4, row: 0, col: 3, label: "Meat & Fish", color: "#FECACA" },
+  { id: 5, row: 1, col: 0, label: "Beverages", color: "#E0E7FF" },
+  { id: 6, row: 1, col: 1, label: "Snacks", color: "#FCE7F3" },
+  { id: 7, row: 1, col: 2, label: "Pantry", color: "#FFF7ED" },
+  { id: 8, row: 1, col: 3, label: "Frozen", color: "#CFFAFE" },
+  { id: 9, row: 2, col: 0, label: "Cleaning", color: "#E5E7EB" },
+  { id: 10, row: 2, col: 1, label: "Personal Care", color: "#FCE7F3" },
+  { id: 11, row: 2, col: 2, label: "Baby", color: "#FEE2E2" },
+  { id: 12, row: 2, col: 3, label: "Pet", color: "#FEF3C7" },
+];
+
+// Geometry helpers
+function aisleGeom(aisle) {
+  const a = AISLES.find((x) => x.id === aisle);
+  if (!a) return null;
+  const colLeft = MARGIN_X + a.col * COL_W + 4;
+  const walkX = colLeft + SHELF_W + WALK_W / 2; // centre of the walkway
+  const rowTop = ROW_Y[a.row];
+  return {
+    aisle,
+    label: a.label,
+    color: a.color,
+    row: a.row,
+    leftShelf: { x: colLeft, y: rowTop, w: SHELF_W, h: ROW_H },
+    rightShelf: { x: colLeft + SHELF_W + WALK_W, y: rowTop, w: SHELF_W, h: ROW_H },
+    walkway: { x: colLeft + SHELF_W, y: rowTop, w: WALK_W, h: ROW_H },
+    centre: { x: walkX, y: rowTop + ROW_H / 2 },
+    walkX,
+    rowTop,
+    rowBottom: rowTop + ROW_H,
+  };
+}
+
+// Horizontal halls between rows (and entrance/cashier areas)
+const HALL_Y = {
+  top: TOP_OFFSET - HALL_H / 2 - 6, // below cashiers, above row 0
+  mid1: ROW_Y[0] + ROW_H + HALL_H / 2, // between rows 0 and 1
+  mid2: ROW_Y[1] + ROW_H + HALL_H / 2, // between rows 1 and 2
+  bottom: ROW_Y[2] + ROW_H + HALL_H / 2 + 4, // between row 2 and entrance
+};
+
+// The corridor *below* a given aisle's row — used to plot route exits.
+const ROW_EXIT_Y = [HALL_Y.mid1, HALL_Y.mid2, HALL_Y.bottom];
+
+// Central "highway" x — vertical corridor down the middle for inter-row movement
+const HIGHWAY_X = PLAN_W / 2;
+
+// Plan metadata (we expose just the bits the screen actually uses)
 const FLOOR_PLANS = [
   {
     name: "Gənclik Mall",
-    width: 380,
-    height: 420,
-    entrance: { x: 32, y: 405 },
+    entrance: { x: HIGHWAY_X, y: PLAN_H - ENTRY_OFFSET },
     cashiers: [
-      { x: 16, y: 376, w: 84, h: 22 },
-      { x: 112, y: 376, w: 84, h: 22 },
-      { x: 208, y: 376, w: 84, h: 22 },
-    ],
-    departments: [
-      // Front-of-store / fresh
-      { aisle: 2, label: "Produce", color: "#DCFCE7", x: 24, y: 40, w: 100, h: 70 },
-      { aisle: 1, label: "Bakery", color: "#FEF3C7", x: 132, y: 40, w: 110, h: 70 },
-      { aisle: 3, label: "Dairy", color: "#DBEAFE", x: 250, y: 40, w: 110, h: 70 },
-      // Middle aisles
-      { aisle: 6, label: "Snacks", color: "#FCE7F3", x: 24, y: 132, w: 64, h: 90 },
-      { aisle: 5, label: "Beverages", color: "#E0E7FF", x: 96, y: 132, w: 64, h: 90 },
-      { aisle: 7, label: "Pantry", color: "#F5F5F5", x: 168, y: 132, w: 64, h: 90 },
-      { aisle: 8, label: "Frozen", color: "#CFFAFE", x: 240, y: 132, w: 60, h: 90 },
-      { aisle: 9, label: "Cleaning", color: "#E5E7EB", x: 308, y: 132, w: 52, h: 90 },
-      // Back-of-store
-      { aisle: 4, label: "Meat & Fish", color: "#FECACA", x: 24, y: 244, w: 110, h: 80 },
-      { aisle: 10, label: "Personal Care", color: "#FCE7F3", x: 142, y: 244, w: 100, h: 80 },
-      { aisle: 11, label: "Baby", color: "#FEE2E2", x: 250, y: 244, w: 50, h: 80 },
-      { aisle: 12, label: "Pet", color: "#FEF3C7", x: 308, y: 244, w: 52, h: 80 },
+      { x: MARGIN_X + 16, y: 24, w: 56, h: 22 },
+      { x: MARGIN_X + 92, y: 24, w: 56, h: 22 },
+      { x: MARGIN_X + 168, y: 24, w: 56, h: 22 },
+      { x: MARGIN_X + 244, y: 24, w: 56, h: 22 },
     ],
   },
   {
     name: "28 Mall",
-    width: 380,
-    height: 420,
-    entrance: { x: 348, y: 405 },
+    entrance: { x: PLAN_W - 60, y: PLAN_H - ENTRY_OFFSET },
     cashiers: [
-      { x: 188, y: 376, w: 80, h: 22 },
-      { x: 276, y: 376, w: 80, h: 22 },
-    ],
-    departments: [
-      { aisle: 1, label: "Bakery", color: "#FEF3C7", x: 24, y: 40, w: 76, h: 80 },
-      { aisle: 2, label: "Produce", color: "#DCFCE7", x: 108, y: 40, w: 80, h: 80 },
-      { aisle: 3, label: "Dairy", color: "#DBEAFE", x: 196, y: 40, w: 76, h: 80 },
-      { aisle: 4, label: "Meat & Fish", color: "#FECACA", x: 280, y: 40, w: 80, h: 80 },
-      { aisle: 6, label: "Snacks", color: "#FCE7F3", x: 24, y: 140, w: 80, h: 90 },
-      { aisle: 5, label: "Beverages", color: "#E0E7FF", x: 112, y: 140, w: 80, h: 90 },
-      { aisle: 8, label: "Frozen", color: "#CFFAFE", x: 200, y: 140, w: 80, h: 90 },
-      { aisle: 7, label: "Pantry", color: "#F5F5F5", x: 288, y: 140, w: 72, h: 90 },
-      { aisle: 9, label: "Cleaning", color: "#E5E7EB", x: 24, y: 250, w: 80, h: 80 },
-      { aisle: 10, label: "Personal Care", color: "#FCE7F3", x: 112, y: 250, w: 92, h: 80 },
-      { aisle: 11, label: "Baby", color: "#FEE2E2", x: 212, y: 250, w: 70, h: 80 },
-      { aisle: 12, label: "Pet", color: "#FEF3C7", x: 290, y: 250, w: 70, h: 80 },
+      { x: MARGIN_X + 40, y: 24, w: 56, h: 22 },
+      { x: MARGIN_X + 110, y: 24, w: 56, h: 22 },
+      { x: MARGIN_X + 180, y: 24, w: 56, h: 22 },
     ],
   },
 ];
 
+function buildRoute(stops, plan) {
+  if (!stops.length) return [];
+  const pts = [];
+  const start = plan.entrance;
+  pts.push(start);
+
+  // Walk along the bottom hall from entrance to the highway
+  pts.push({ x: HIGHWAY_X, y: HALL_Y.bottom });
+
+  let prevExitY = HALL_Y.bottom;
+  for (let i = 0; i < stops.length; i++) {
+    const g = stops[i].g;
+    const exitY = ROW_EXIT_Y[g.row];
+
+    // Travel along the highway to the target row's hall.
+    if (prevExitY !== exitY) {
+      pts.push({ x: HIGHWAY_X, y: exitY });
+    }
+    // Travel along the row's hall to the target aisle's walkway.
+    pts.push({ x: g.walkX, y: exitY });
+    // Walk into the aisle to the centre.
+    pts.push({ x: g.walkX, y: g.centre.y });
+
+    // On the way out (for the next leg), step back to the hall.
+    if (i < stops.length - 1) {
+      pts.push({ x: g.walkX, y: exitY });
+    }
+
+    prevExitY = exitY;
+  }
+
+  // After the final stop, walk to cashiers via the highway + top hall.
+  pts.push({ x: stops[stops.length - 1].g.walkX, y: prevExitY });
+  pts.push({ x: HIGHWAY_X, y: prevExitY });
+  pts.push({ x: HIGHWAY_X, y: HALL_Y.top });
+  const cashier = plan.cashiers[Math.floor(plan.cashiers.length / 2)];
+  pts.push({ x: cashier.x + cashier.w / 2, y: HALL_Y.top });
+  pts.push({ x: cashier.x + cashier.w / 2, y: cashier.y + cashier.h + 4 });
+
+  return pts;
+}
+
 const MapScreen = ({ onBack, product, products }) => {
-  // Multi-stop list takes precedence; otherwise route to the single product.
   const items = Array.isArray(products) && products.length > 0
     ? products
     : (product ? [product] : []);
@@ -2399,32 +2495,19 @@ const MapScreen = ({ onBack, product, products }) => {
     ? Math.abs(parseInt(seedId, 10) || 0) % FLOOR_PLANS.length
     : 0;
   const plan = FLOOR_PLANS[planIdx];
-  const start = plan.entrance;
 
   // Stops sorted by aisle for an efficient walking route.
   const stops = items
     .map((p) => {
       const a = parseInt(p.aisle_num, 10);
-      const dept = plan.departments.find((d) => d.aisle === a);
-      if (!dept) return null;
-      return {
-        product: p,
-        aisle: a,
-        dept,
-        x: dept.x + dept.w / 2,
-        y: dept.y + dept.h / 2,
-      };
+      const g = aisleGeom(a);
+      if (!g) return null;
+      return { product: p, aisle: a, g };
     })
     .filter(Boolean)
     .sort((a, b) => a.aisle - b.aisle);
 
-  // Build a route: entrance → aisle-1 corridor → ... → cashiers.
-  const cashier = plan.cashiers[Math.floor(plan.cashiers.length / 2)];
-  const cashierPoint = cashier
-    ? { x: cashier.x + cashier.w / 2, y: cashier.y }
-    : { x: plan.width / 2, y: plan.height - 30 };
-  const routePts = [start, ...stops.flatMap((s) => [{ x: s.x, y: s.y + 24 }, s])];
-  if (stops.length > 0) routePts.push(cashierPoint);
+  const routePts = buildRoute(stops, plan);
   const routePoints = routePts.map((pt) => `${pt.x},${pt.y}`).join(" ");
 
   // Walking distance / time estimate.
@@ -2442,20 +2525,26 @@ const MapScreen = ({ onBack, product, products }) => {
   const productName = isMulti
     ? `${stops.length} items on your list`
     : firstItem?.name || "Select a product";
-  const productEmoji = isMulti ? "🛒" : (firstItem?.category ? emojiFor(firstItem.category) : "🛒");
+  const productEmoji = isMulti
+    ? "🛒"
+    : firstItem?.category
+    ? emojiFor(firstItem.category)
+    : "🛒";
   const productPrice = isMulti
     ? `${stops.length} stops`
     : firstItem?.price_azn != null
     ? `${parseFloat(firstItem.price_azn).toFixed(2)} ₼`
     : "—";
   const productLocation = isMulti
-    ? stops.map((s) => `Aisle ${s.aisle}`).join(" → ")
+    ? stops.map((s) => `A${s.aisle}`).join(" → ")
     : stops[0]
-    ? `Aisle ${stops[0].aisle} · ${stops[0].dept.label}`
+    ? `Aisle ${stops[0].aisle} · ${stops[0].g.label}`
     : firstItem?.location || "Unknown location";
 
-  const target = stops[0]?.dept || null;
-  const dest = stops[0] ? { x: stops[0].x, y: stops[0].y } : null;
+  const target = stops[0]
+    ? { aisle: stops[0].aisle, label: stops[0].g.label }
+    : null;
+  const start = plan.entrance;
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
@@ -2554,140 +2643,240 @@ const MapScreen = ({ onBack, product, products }) => {
         </View>
       </View>
 
-      <View style={{ flex: 1, backgroundColor: "#F5F1E8" }}>
-        <Svg width="100%" height="100%" viewBox={`0 0 ${plan.width} ${plan.height}`}>
-          {/* outer store boundary */}
+      <View style={{ flex: 1, backgroundColor: "#EFE9DA" }}>
+        <Svg width="100%" height="100%" viewBox={`0 0 ${PLAN_W} ${PLAN_H}`}>
+          {/* Outer store walls */}
           <Rect
-            x="6"
-            y="6"
-            width={plan.width - 12}
-            height={plan.height - 12}
-            rx="8"
-            fill="white"
-            stroke="#B8B19F"
-            strokeWidth="2"
+            x="4"
+            y="4"
+            width={PLAN_W - 8}
+            height={PLAN_H - 8}
+            rx="10"
+            fill="#FDFBF5"
+            stroke="#8B7E5F"
+            strokeWidth="3"
           />
 
-          {/* "FRONT DOOR" entrance label */}
+          {/* Subtle tiled-floor pattern for the halls */}
+          {Array.from({ length: 18 }, (_, i) => (
+            <Line
+              key={`floorH-${i}`}
+              x1="6"
+              x2={PLAN_W - 6}
+              y1={30 + i * 30}
+              y2={30 + i * 30}
+              stroke="#E5DEC8"
+              strokeWidth="0.5"
+            />
+          ))}
+          {Array.from({ length: 9 }, (_, i) => (
+            <Line
+              key={`floorV-${i}`}
+              x1={20 + i * 40}
+              x2={20 + i * 40}
+              y1="6"
+              y2={PLAN_H - 6}
+              stroke="#E5DEC8"
+              strokeWidth="0.5"
+            />
+          ))}
+
+          {/* Cashier counter back-wall (a single bar along the top) */}
           <Rect
-            x={start.x - 22}
-            y={start.y - 4}
-            width="44"
-            height="14"
-            rx="3"
-            fill={GREEN}
+            x={MARGIN_X}
+            y={20}
+            width={PLAN_W - MARGIN_X * 2}
+            height={32}
+            rx="4"
+            fill="#1E40AF"
+            opacity="0.07"
           />
           <SvgText
-            x={start.x}
-            y={start.y + 6}
-            textAnchor="middle"
-            fontSize="9"
+            x={PLAN_W - MARGIN_X - 6}
+            y={36}
+            textAnchor="end"
+            fontSize="8"
             fontWeight="700"
-            fill="white"
+            fill="#1E40AF"
+            opacity="0.7"
           >
-            ENTRY
+            CHECKOUTS
           </SvgText>
 
-          {/* Cashiers */}
+          {/* Individual cashiers */}
           {plan.cashiers.map((c, i) => (
             <G key={`c-${i}`}>
-              <Rect x={c.x} y={c.y} width={c.w} height={c.h} rx="3" fill="#1E40AF" opacity="0.18" />
+              <Rect
+                x={c.x}
+                y={c.y}
+                width={c.w}
+                height={c.h}
+                rx="3"
+                fill="#1E40AF"
+                opacity="0.18"
+                stroke="#1E40AF"
+                strokeOpacity="0.4"
+                strokeWidth="1"
+              />
               <SvgText
                 x={c.x + c.w / 2}
                 y={c.y + c.h / 2 + 3}
                 textAnchor="middle"
                 fontSize="9"
                 fontWeight="700"
-                fill="#1E40AF"
+                fill="#1E3A8A"
               >
-                CASHIER
+                ◯ {i + 1}
               </SvgText>
             </G>
           ))}
 
-          {/* Department blocks */}
-          {plan.departments.map((d) => {
-            const active = stops.some((s) => s.aisle === d.aisle);
-            return (
-              <G key={d.aisle}>
+          {/* Horizontal halls (lighter background to suggest walkable space) */}
+          {[HALL_Y.top, HALL_Y.mid1, HALL_Y.mid2, HALL_Y.bottom].map((y, i) => (
+            <Rect
+              key={`hall-${i}`}
+              x={MARGIN_X}
+              y={y - HALL_H / 2}
+              width={PLAN_W - MARGIN_X * 2}
+              height={HALL_H}
+              fill="#F7F1E0"
+              stroke="#D7CDAD"
+              strokeWidth="0.5"
+            />
+          ))}
+
+          {/* Aisles: two parallel shelf units with a walkway between */}
+          {AISLES.map((a) => {
+            const g = aisleGeom(a.id);
+            const active = stops.some((s) => s.aisle === a.id);
+            const labelStroke = active ? GREEN : "#7A6F52";
+
+            const shelf = (s, key) => (
+              <G key={key}>
                 <Rect
-                  x={d.x}
-                  y={d.y}
-                  width={d.w}
-                  height={d.h}
-                  rx="6"
-                  fill={active ? GREEN_LIGHT : d.color}
-                  stroke={active ? GREEN : "#C5BDA8"}
-                  strokeWidth={active ? 2.5 : 1}
+                  x={s.x}
+                  y={s.y}
+                  width={s.w}
+                  height={s.h}
+                  rx="2"
+                  fill={active ? "#BDF2D2" : a.color}
+                  stroke={active ? GREEN : "#8B7E5F"}
+                  strokeWidth={active ? 1.5 : 1}
                 />
-                {/* Faux shelf lines inside the block to feel like aisles */}
-                {[0.3, 0.6].map((f, i) => (
+                {/* Horizontal lines = individual shelf planks */}
+                {[0.18, 0.36, 0.54, 0.72, 0.9].map((f, i) => (
                   <Line
                     key={i}
-                    x1={d.x + 6}
-                    x2={d.x + d.w - 6}
-                    y1={d.y + d.h * f}
-                    y2={d.y + d.h * f}
-                    stroke={active ? GREEN : "#C5BDA8"}
-                    strokeOpacity="0.4"
-                    strokeWidth="1"
+                    x1={s.x + 1.5}
+                    x2={s.x + s.w - 1.5}
+                    y1={s.y + s.h * f}
+                    y2={s.y + s.h * f}
+                    stroke={active ? GREEN : "#A89878"}
+                    strokeOpacity="0.55"
+                    strokeWidth="0.7"
                   />
                 ))}
+              </G>
+            );
+
+            return (
+              <G key={a.id}>
+                {/* Walkway floor (light strip between the two shelves) */}
+                <Rect
+                  x={g.walkway.x}
+                  y={g.walkway.y}
+                  width={g.walkway.w}
+                  height={g.walkway.h}
+                  fill={active ? "#E8F8EF" : "#FAF6E9"}
+                />
+                {shelf(g.leftShelf, "L")}
+                {shelf(g.rightShelf, "R")}
+                {/* Department label above */}
                 <SvgText
-                  x={d.x + d.w / 2}
-                  y={d.y + 14}
-                  textAnchor="middle"
-                  fontSize="9"
-                  fontWeight="800"
-                  fill={active ? GREEN : "#6B5E48"}
-                >
-                  {d.label.toUpperCase()}
-                </SvgText>
-                <SvgText
-                  x={d.x + d.w / 2}
-                  y={d.y + d.h - 6}
+                  x={g.centre.x}
+                  y={g.rowTop - 4}
                   textAnchor="middle"
                   fontSize="8"
-                  fontWeight="600"
-                  fill={active ? GREEN : "#9A8E72"}
+                  fontWeight="800"
+                  fill={labelStroke}
                 >
-                  AISLE {d.aisle}
+                  {a.label.toUpperCase()}
+                </SvgText>
+                {/* Aisle number in the walkway */}
+                <SvgText
+                  x={g.centre.x}
+                  y={g.rowBottom - 4}
+                  textAnchor="middle"
+                  fontSize="10"
+                  fontWeight="800"
+                  fill={active ? GREEN : "#7A6F52"}
+                  opacity={active ? 1 : 0.6}
+                >
+                  {a.id}
                 </SvgText>
               </G>
             );
           })}
 
-          {/* Route */}
+          {/* Route — drawn AFTER shelves, so it sits on top */}
           {stops.length > 0 && (
             <Polyline
               points={routePoints}
               fill="none"
               stroke={GREEN}
-              strokeWidth="4"
-              strokeDasharray="10,5"
+              strokeWidth="4.5"
+              strokeDasharray="9,5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              opacity="0.95"
             />
           )}
 
           {/* You-are-here marker at entrance */}
-          <Circle cx={start.x} cy={start.y} r="10" fill="white" stroke={GREEN} strokeWidth="2.5" />
-          <Circle cx={start.x} cy={start.y} r="5" fill={GREEN} />
+          <G>
+            <Circle cx={start.x} cy={start.y} r="12" fill="white" stroke={GREEN} strokeWidth="2.5" />
+            <Circle cx={start.x} cy={start.y} r="6" fill={GREEN} />
+            <Rect
+              x={start.x - 24}
+              y={start.y + 14}
+              width="48"
+              height="14"
+              rx="3"
+              fill={GREEN}
+            />
+            <SvgText
+              x={start.x}
+              y={start.y + 24}
+              textAnchor="middle"
+              fontSize="9"
+              fontWeight="800"
+              fill="white"
+            >
+              ENTRANCE
+            </SvgText>
+          </G>
 
-          {/* Destination pins — one per stop, numbered for multi-stop routes */}
+          {/* Stop pins (numbered) */}
           {stops.map((s, i) => (
             <G key={`stop-${s.product.product_id}`}>
-              <Circle cx={s.x} cy={s.y} r="14" fill={RED} opacity="0.18" />
-              <Circle cx={s.x} cy={s.y} r="11" fill={RED} />
+              <Circle cx={s.g.centre.x} cy={s.g.centre.y} r="15" fill={RED} opacity="0.2" />
+              <Circle
+                cx={s.g.centre.x}
+                cy={s.g.centre.y}
+                r="11"
+                fill={RED}
+                stroke="white"
+                strokeWidth="2"
+              />
               <SvgText
-                x={s.x}
-                y={s.y + 4}
+                x={s.g.centre.x}
+                y={s.g.centre.y + 4}
                 textAnchor="middle"
                 fontSize="11"
                 fontWeight="800"
                 fill="white"
               >
-                {isMulti ? i + 1 : "•"}
+                {isMulti ? i + 1 : "★"}
               </SvgText>
             </G>
           ))}
