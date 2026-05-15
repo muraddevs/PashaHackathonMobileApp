@@ -80,6 +80,67 @@ Structure:
 
 Each paragraph must be 2–3 sentences max. Total reply ≤ 130 words. Never invent numbers — only use what's in the snapshot. Match the manager's professional tone, not casual.`;
 
+const PRODUCT_ANALYSIS_SYSTEM = `You are a senior retail inventory analyst at Bravo, speaking directly to the store manager about ONE specific product.
+
+Write a 3–4 sentence conversational analysis. Use the exact numbers provided. Cover:
+1) What's the current situation (stock, velocity, expiry if relevant).
+2) Why this matters (revenue at risk / opportunity cost / waste risk).
+3) Recommended concrete action with a number (e.g. "discount by 20% for the next 7 days", "reorder 250 units", "move to clearance shelf today").
+
+No bullets, no markdown, no preamble. Second person ("you"). Plain professional tone. ≤ 90 words.`;
+
+export async function analyzeProduct(product) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const lines = [
+    `Product: ${product.name} (${product.brand})`,
+    `SKU: ${product.sku}`,
+    `Category: ${product.category} / ${product.subcategory}`,
+    `Size: ${product.size}`,
+    `Price: ${product.price_azn} ₼`,
+    `Stock on hand: ${product.stock_qty} units`,
+    `Sold last 30 days: ${product.units_sold} units`,
+    `Days of stock at current pace: ${product.days_of_stock}`,
+    product.is_fresh
+      ? `Fresh item — days until expiry: ${product.expires_in_days}`
+      : `Shelf-stable — days until expiry: ${product.expires_in_days}`,
+    product.fat_percentage != null ? `Fat: ${product.fat_percentage}%` : null,
+    `Location: ${product.location}`,
+    `Status flag: ${product.status}`,
+    `Rating: ${product.rating}/5`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: PRODUCT_ANALYSIS_SYSTEM },
+        { role: "user", content: lines },
+      ],
+      temperature: 0.3,
+      max_tokens: 250,
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
+  return (
+    data?.choices?.[0]?.message?.content?.trim() ||
+    "Could not generate analysis."
+  );
+}
+
 export async function getInsights() {
   if (!API_KEY) {
     throw new Error(
