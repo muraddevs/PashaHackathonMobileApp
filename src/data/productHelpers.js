@@ -3,95 +3,38 @@ import { PRODUCTS_CSV } from "./products";
 let _parsed = null;
 let _headerLine = null;
 
-function hash(s) {
-  let h = 2166136261 >>> 0;
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 16777619) >>> 0;
-  }
-  return h;
-}
+// All static fields (location, units_sold, expires_in_days, fat_percentage,
+// is_fresh, aisle_num, shelf_letter) live in the CSV — see
+// scripts/enrichCsv.js. We only compute days_of_stock and the status flag
+// here because those depend on combinations of velocity and price.
+function fromRow(obj) {
+  const stock_qty = parseInt(obj.stock_qty, 10) || 0;
+  const price_azn = parseFloat(obj.price_azn) || 0;
+  const units_sold = parseInt(obj.units_sold, 10) || 0;
+  const expires_in_days = parseFloat(obj.expires_in_days) || 0;
+  const is_fresh = obj.is_fresh === "true";
+  const fat_percentage = obj.fat_percentage === "" || obj.fat_percentage == null
+    ? null
+    : parseFloat(obj.fat_percentage);
 
-function seed(id, salt) {
-  return hash(`${id}:${salt}`);
-}
-
-const FRESH_RE = /bak|dairy|meat|fish|produce|fruit|veget|seafood|deli/i;
-const FATTY_RE = /milk|cream|butter|cheese|yogurt|oil|meat|beef|chicken|pork|lamb/i;
-const AISLE_BY_CAT = {
-  bakery: 1,
-  produce: 2,
-  dairy: 3,
-  meat: 4,
-  fish: 4,
-  seafood: 4,
-  beverages: 5,
-  drinks: 5,
-  snacks: 6,
-  pantry: 7,
-  frozen: 8,
-  household: 9,
-  cleaning: 9,
-  personal: 10,
-  beauty: 10,
-  baby: 11,
-  pet: 12,
-};
-
-function aisleFor(p) {
-  const text = `${p.category} ${p.subcategory}`.toLowerCase();
-  for (const k of Object.keys(AISLE_BY_CAT)) {
-    if (text.includes(k)) return AISLE_BY_CAT[k];
-  }
-  return (seed(p.product_id, "aisle") % 12) + 1;
-}
-
-function enrich(p) {
-  const id = p.product_id;
-  const haystack = `${p.name} ${p.category} ${p.subcategory}`.toLowerCase();
-  const fresh = FRESH_RE.test(haystack);
-
-  // Units sold in last 30 days — fresh items move faster.
-  const baseSold = fresh ? 120 : 40;
-  const units_sold = baseSold + (seed(id, "sold") % (fresh ? 600 : 250));
-
-  // Expiry — fresh items 0.2 – 1.7 days; non-fresh 5 – 90 days.
-  const expires_in_days = fresh
-    ? Math.round(((seed(id, "exp") % 1500) / 1000 + 0.2) * 10) / 10
-    : 5 + (seed(id, "exp") % 85);
-
-  const fat_percentage = FATTY_RE.test(haystack)
-    ? Math.round((seed(id, "fat") % 350) / 10) / 10 + 0.5
-    : null;
-
-  const aisle = aisleFor(p);
-  const shelf = String.fromCharCode(65 + (seed(id, "shelf") % 6));
-  const location = `Aisle ${aisle} · Shelf ${shelf}`;
-
-  const stock = parseInt(p.stock_qty, 10) || 0;
-  const price = parseFloat(p.price_azn) || 0;
-
-  // Daily sell-through ≈ units_sold / 30. Days of stock left.
   const daily = units_sold / 30;
-  const days_of_stock = daily > 0 ? stock / daily : 999;
+  const days_of_stock = daily > 0 ? stock_qty / daily : 999;
 
   let status = "ok";
-  if (expires_in_days <= 1.0) status = "expiring";
+  if (is_fresh && expires_in_days <= 1.0) status = "expiring";
   else if (days_of_stock < 3) status = "low_stock";
   else if (days_of_stock > 60 && units_sold < 100) status = "overstocked";
 
   return {
-    ...p,
-    stock_qty: stock,
-    price_azn: price,
-    rating: parseFloat(p.rating) || 0,
+    ...obj,
+    stock_qty,
+    price_azn,
     units_sold,
     expires_in_days,
+    is_fresh,
     fat_percentage,
-    aisle_num: aisle,
-    shelf_letter: shelf,
-    location,
-    is_fresh: fresh,
+    aisle_num: parseInt(obj.aisle_num, 10) || 0,
+    rating: parseFloat(obj.rating) || 0,
     days_of_stock: Math.round(days_of_stock * 10) / 10,
     status,
   };
@@ -107,7 +50,7 @@ export function getProducts() {
     const cols = lines[i].split(",");
     const obj = {};
     for (let j = 0; j < headers.length; j++) obj[headers[j]] = cols[j];
-    _parsed.push(enrich(obj));
+    _parsed.push(fromRow(obj));
   }
   return _parsed;
 }
