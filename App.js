@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { askGemini } from "./src/services/gemini";
+import { askAI } from "./src/services/ai";
 import Svg, {
   Path,
   Circle,
@@ -1598,7 +1598,7 @@ const AssistantScreen = ({ onNav }) => {
     setLoading(true);
 
     try {
-      const { text: reply, relevant } = await askGemini({
+      const { text: reply, relevant } = await askAI({
         message: trimmed,
         history,
       });
