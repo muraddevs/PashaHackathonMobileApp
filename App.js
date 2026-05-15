@@ -48,6 +48,25 @@ import Svg, {
 } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
 
+// Apple-style spacing / radius scale. Keep usage consistent across screens.
+const R = {
+  sm: 10,
+  md: 14,
+  lg: 18,
+  xl: 24,
+};
+const SP = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
+};
+const SOFT_BG = "#F2F2F7"; // iOS grouped table background
+const SUBTLE_BORDER = "#E5E5EA";
+const TEXT_MUTED = "#8E8E93";
+const TEXT_TITLE = "#1C1C1E";
+
 const GREEN = "#1A7A4A";
 const GREEN_LIGHT = "#E8F5EE";
 const GREEN_MID = "#2EA865";
@@ -622,48 +641,70 @@ const HomeScreen = ({ onNav, shoppingListCount = 0 }) => {
       </LinearGradient>
 
       <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
-        <Text style={{ fontSize: 16, fontWeight: "700", color: DARK, marginBottom: 14 }}>Quick Actions</Text>
-        <View style={{ flexDirection: "row", gap: 10 }}>
+        <Text style={{ fontSize: 17, fontWeight: "700", color: TEXT_TITLE, marginBottom: 12 }}>
+          Quick Actions
+        </Text>
+        <View style={{ flexDirection: "row", gap: 8 }}>
           {[
-            { label: "Store Map", icon: "map", target: "map", emoji: null },
-            { label: "Rescue Today", icon: "deals", target: "rescue", emoji: "💚" },
+            { label: "Map", icon: "map", target: "map", tint: "#0EA5E9" },
+            { label: "Rescue", icon: "deals", target: "rescue", tint: GREEN },
             {
               label: "My List",
               icon: "list",
               target: "list",
+              tint: "#8B5CF6",
               badge: shoppingListCount > 0 ? shoppingListCount : null,
             },
-            { label: "Recipes", icon: "robot", target: "assistant" },
+            { label: "Recipes", icon: "robot", target: "assistant", tint: "#F59E0B" },
           ].map((a) => (
             <TouchableOpacity
               key={a.label}
               onPress={() => onNav(a.target)}
-              activeOpacity={0.8}
+              activeOpacity={0.7}
               style={{
                 flex: 1,
                 alignItems: "center",
                 backgroundColor: "white",
-                borderWidth: 1,
-                borderColor: BORDER,
-                borderRadius: 12,
-                paddingVertical: 12,
-                paddingHorizontal: 8,
+                borderRadius: R.md,
+                paddingVertical: 14,
+                paddingHorizontal: 4,
+                ...Platform.select({
+                  ios: {
+                    shadowColor: "#000",
+                    shadowOffset: { width: 0, height: 1 },
+                    shadowOpacity: 0.04,
+                    shadowRadius: 4,
+                  },
+                  android: { elevation: 1 },
+                }),
               }}
             >
-              <View>
-                <Icon name={a.icon} size={22} color={GREEN} />
+              <View
+                style={{
+                  width: 36,
+                  height: 36,
+                  borderRadius: 18,
+                  backgroundColor: `${a.tint}1A`, // 10% alpha
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 6,
+                }}
+              >
+                <Icon name={a.icon} size={18} color={a.tint} />
                 {a.badge != null && (
                   <View
                     style={{
                       position: "absolute",
-                      top: -6,
-                      right: -10,
-                      backgroundColor: GREEN,
+                      top: -2,
+                      right: -6,
+                      backgroundColor: RED,
                       borderRadius: 8,
                       minWidth: 16,
                       paddingHorizontal: 4,
                       paddingVertical: 1,
                       alignItems: "center",
+                      borderWidth: 1.5,
+                      borderColor: "white",
                     }}
                   >
                     <Text style={{ color: "white", fontSize: 10, fontWeight: "800" }}>
@@ -673,9 +714,9 @@ const HomeScreen = ({ onNav, shoppingListCount = 0 }) => {
                 )}
               </View>
               <Text
-                style={{ fontSize: 11, fontWeight: "600", color: DARK, textAlign: "center", marginTop: 6 }}
+                style={{ fontSize: 12, fontWeight: "600", color: TEXT_TITLE, textAlign: "center" }}
               >
-                {a.emoji ? `${a.emoji} ` : ""}{a.label}
+                {a.label}
               </Text>
             </TouchableOpacity>
           ))}
@@ -1261,7 +1302,7 @@ const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [] }) =>
 };
 
 // ── SCREEN 5: Product Detail ─────────────────────────────────────────────────
-const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [] }) => {
+const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [], onShowRoute }) => {
   const onListAlready = inList.some((x) => x.product_id === product?.product_id);
   const [tab, setTab] = useState("Details");
   const [favorite, setFavorite] = useState(false);
@@ -1610,7 +1651,7 @@ const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [] 
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => onNav("map")}
+          onPress={() => (onShowRoute ? onShowRoute(p) : onNav("map"))}
           style={{
             flex: 1.5,
             paddingVertical: 14,
@@ -1825,7 +1866,7 @@ const INITIAL_BOT_GREETING = {
   text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
 };
 
-const RecipeCard = ({ recipe, onProduct, onAddAll, onNav }) => {
+const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
   return (
     <View
       style={{
@@ -1913,7 +1954,13 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav }) => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => onNav && onNav("map")}
+          onPress={() => {
+            const items = recipe.ingredients
+              .map((ing) => ing.product)
+              .filter(Boolean);
+            if (onShowRoute) onShowRoute(items);
+            else onNav && onNav("map");
+          }}
           style={{
             flex: 1,
             paddingVertical: 10,
@@ -1936,7 +1983,7 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav }) => {
   );
 };
 
-const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
+const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList, onShowRoute }) => {
   const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -2115,6 +2162,7 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
                         }
                       }}
                       onNav={onNav}
+                      onShowRoute={onShowRoute}
                     />
                   )}
                   {m.products?.map((p) => (
@@ -2190,7 +2238,7 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
                           </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                          onPress={() => onNav("map")}
+                          onPress={() => (onShowRoute ? onShowRoute(p) : onNav("map"))}
                           style={{
                             flex: 1,
                             paddingVertical: 9,
@@ -2273,16 +2321,15 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
               <TouchableOpacity
                 key={c}
                 onPress={() => send(c)}
+                activeOpacity={0.7}
                 style={{
                   paddingHorizontal: 14,
-                  paddingVertical: 6,
-                  borderRadius: 20,
-                  borderWidth: 1,
-                  borderColor: BORDER,
-                  backgroundColor: "white",
+                  paddingVertical: 8,
+                  borderRadius: 18,
+                  backgroundColor: GREEN_LIGHT,
                 }}
               >
-                <Text style={{ fontSize: 12, fontWeight: "500", color: DARK }}>{c}</Text>
+                <Text style={{ fontSize: 13, fontWeight: "600", color: GREEN }}>{c}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -2291,37 +2338,41 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: LIGHT_GRAY,
-            borderRadius: 24,
-            paddingHorizontal: 14,
-            paddingVertical: 8,
+            backgroundColor: SOFT_BG,
+            borderRadius: 22,
+            paddingLeft: 16,
+            paddingRight: 4,
+            paddingVertical: 4,
           }}
         >
           <TextInput
             value={input}
             onChangeText={setInput}
             onSubmitEditing={() => send(input)}
-            placeholder="Məhsul axtarın və ya soruşun..."
-            placeholderTextColor="#999"
-            style={{ flex: 1, fontSize: 14, color: DARK, paddingVertical: 0 }}
+            placeholder="Ask anything…"
+            placeholderTextColor={TEXT_MUTED}
+            style={{
+              flex: 1,
+              fontSize: 15,
+              color: TEXT_TITLE,
+              paddingVertical: 8,
+              paddingRight: 8,
+            }}
           />
-          <TouchableOpacity style={{ marginHorizontal: 8 }}>
-            <Icon name="mic" size={20} color={GRAY} />
-          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => send(input)}
             disabled={loading || !input.trim()}
+            activeOpacity={0.7}
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: 18,
-              backgroundColor: GREEN,
-              opacity: loading || !input.trim() ? 0.5 : 1,
+              width: 34,
+              height: 34,
+              borderRadius: 17,
+              backgroundColor: input.trim() && !loading ? GREEN : "#C7C7CC",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <Icon name="send" size={16} color="white" />
+            <Icon name="arrowUp" size={16} color="white" />
           </TouchableOpacity>
         </View>
       </View>
@@ -3194,7 +3245,7 @@ const PriceWithDiscount = ({ product, size = 14 }) => {
 };
 
 // ── SCREEN 10: Rescue Today (marked-down items) ─────────────────────────────
-const RescueScreen = ({ onProduct, onBack, onAddToList }) => {
+const RescueScreen = ({ onProduct, onBack, onAddToList, onShowRoute }) => {
   const items = useMemo(() => getRescueItems(60), []);
   const totalSaving = items.reduce(
     (s, p) => s + (p.price_azn - effectivePrice(p)),
@@ -4602,6 +4653,19 @@ export default function App() {
     nav("map");
   };
 
+  // Whenever any "Show route / Navigate / Map" action is fired in the app
+  // we hand the relevant product(s) to the map so the route is set
+  // automatically — no manual list curation needed.
+  const handleShowRoute = (productOrList) => {
+    if (!productOrList) return;
+    const list = Array.isArray(productOrList) ? productOrList : [productOrList];
+    const filtered = list.filter((p) => p && p.product_id != null);
+    if (filtered.length === 0) return;
+    setSelectedProduct(filtered[0]);
+    setRouteProducts(filtered.length > 1 ? filtered : null);
+    nav("map");
+  };
+
   const renderScreen = () => {
     switch (screen) {
       case "login":
@@ -4631,6 +4695,7 @@ export default function App() {
             onBack={goBack}
             onAddToList={addToList}
             inList={shoppingList}
+            onShowRoute={handleShowRoute}
           />
         );
       case "product":
@@ -4642,6 +4707,7 @@ export default function App() {
             user={user}
             onAddToList={addToList}
             inList={shoppingList}
+            onShowRoute={handleShowRoute}
           />
         );
       case "scanner":
@@ -4653,6 +4719,7 @@ export default function App() {
             onProduct={handleProduct}
             onBack={canGoBack ? goBack : null}
             onAddToList={addToList}
+            onShowRoute={handleShowRoute}
           />
         );
       case "map":
@@ -4675,6 +4742,7 @@ export default function App() {
             onProduct={handleProduct}
             onBack={goBack}
             onAddToList={addToList}
+            onShowRoute={handleShowRoute}
           />
         );
       case "list":
@@ -4785,16 +4853,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    backgroundColor: "white",
-    borderTopWidth: 1,
-    borderTopColor: BORDER,
+    backgroundColor: "rgba(255,255,255,0.96)",
+    borderTopWidth: 0.5,
+    borderTopColor: "#D1D1D6",
     paddingTop: 8,
-    paddingBottom: 8,
+    paddingBottom: 10,
   },
   bottomNavTab: {
     alignItems: "center",
     justifyContent: "center",
-    minWidth: 48,
-    paddingVertical: 2,
+    minWidth: 56,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
   },
 });
