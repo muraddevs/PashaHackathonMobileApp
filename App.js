@@ -130,7 +130,7 @@ const LoginScreen = ({ onLogin }) => {
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 24px 32px", minHeight: "100%", background: "white" }}>
+    <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 24px 32px", background: "white", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
       <div style={{
         width: 80, height: 80, borderRadius: "50%",
         background: GREEN_LIGHT, border: `2px solid ${GREEN}`,
@@ -919,10 +919,12 @@ export default function App() {
   const activeTab = ["home", "onsite", "onsite-search", "assistant", "map"].find(t => screen.startsWith(t)) || "home";
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", minHeight: "100vh", background: "#E5E7EB", padding: "20px 0" }}>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh", background: "#E5E7EB" }}>
       <div style={{
-        width: 375, minHeight: 700, maxHeight: 820,
-        background: "white", borderRadius: 36,
+        width: "min(100%, 420px)",
+        height: "min(100dvh, 860px)",
+        background: "white",
+        borderRadius: "clamp(0px, calc((100dvh - 860px) * 999), 36px)",
         boxShadow: "0 24px 60px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08)",
         overflow: "hidden", display: "flex", flexDirection: "column",
         fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -937,7 +939,7 @@ export default function App() {
           </div>
         </div>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
           {renderScreen()}
         </div>
 
