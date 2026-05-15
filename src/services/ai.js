@@ -1,4 +1,8 @@
-import { findRelevant, toCSV, buildInsightContext } from "../data/productHelpers";
+import {
+  findRelevant,
+  toCSV,
+  buildInsightContext,
+} from "../data/productHelpers";
 
 const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
@@ -79,6 +83,77 @@ Structure:
 3. Closing paragraph: slow-movers — name 2–3 overstocked items and suggest specific markdowns to clear them.
 
 Each paragraph must be 2–3 sentences max. Total reply ≤ 130 words. Never invent numbers — only use what's in the snapshot. Match the manager's professional tone, not casual.`;
+
+// ── Recipe → ingredients flow ─────────────────────────────────────────────
+const RECIPE_INTENT_RE =
+  /(i\s*want\s*to\s*(make|cook|prepare)|how\s*(do\s*i|to)\s*(make|cook|prepare)|recipe\s*(for|of)|give\s*me\s*(a\s*)?recipe|hazırla|hazırlaya|bişir|necə\s*hazırlanır|necə\s*bişiril|reseptini|resept|готовить|рецепт)/i;
+
+export function isRecipeIntent(text) {
+  return RECIPE_INTENT_RE.test(text);
+}
+
+const RECIPE_SYSTEM = `You are a recipe assistant. The user wants to cook something.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "dish": "Spaghetti Bolognese",
+  "language": "en",
+  "ingredients": ["pasta", "ground beef", "tomato sauce", "onion", "garlic", "olive oil", "parmesan"]
+}
+
+Rules:
+- "ingredients" must use simple, generic, common English nouns (just "pasta", not "Barilla spaghetti"). Even if the user wrote in Azerbaijani, ingredients stay in English so they match the product catalog.
+- 4–8 ingredients max — only the essentials, not seasoning/water/salt unless the dish requires it specifically.
+- "language" is the user's language code ("en", "az", "ru").
+- If the user's message isn't asking how to make a dish, return {"dish": null, "language": "en", "ingredients": []}.
+- Output JSON only.`;
+
+export async function getRecipe(query) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: RECIPE_SYSTEM },
+        { role: "user", content: query },
+      ],
+      temperature: 0.2,
+      max_tokens: 300,
+      response_format: { type: "json_object" },
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(data.choices[0].message.content);
+  } catch (_) {
+    return null;
+  }
+  if (!parsed?.dish || !Array.isArray(parsed.ingredients) || !parsed.ingredients.length) {
+    return null;
+  }
+  // Match each ingredient to a single product from the catalog (top score).
+  const seenIds = new Set();
+  const matched = parsed.ingredients.map((name) => {
+    const hits = findRelevant(name, 4);
+    const product = hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+    if (product) seenIds.add(product.product_id);
+    return { name, product };
+  });
+  return { dish: parsed.dish, language: parsed.language || "en", ingredients: matched };
+}
 
 const PRODUCT_ANALYSIS_SYSTEM = `You are a senior retail inventory analyst at Bravo, speaking directly to the store manager about ONE specific product.
 

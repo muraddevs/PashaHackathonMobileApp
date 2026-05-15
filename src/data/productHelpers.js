@@ -197,6 +197,194 @@ export function toCSV(products) {
   return lines.join("\n");
 }
 
+// ── Smart markdown engine ──────────────────────────────────────────────────
+// Progressive auto-discount based on expiry urgency / slow movement.
+// Returns { pct, reason } — pct is 0..50.
+export function getDiscount(p) {
+  if (p.is_fresh) {
+    if (p.expires_in_days <= 0.5) return { pct: 50, reason: "Expires today" };
+    if (p.expires_in_days <= 1) return { pct: 30, reason: "Expires tomorrow" };
+    if (p.expires_in_days <= 1.5) return { pct: 15, reason: "Last day of freshness" };
+  }
+  if (p.status === "overstocked") {
+    if (p.days_of_stock > 120) return { pct: 30, reason: "Clearance — heavy overstock" };
+    if (p.days_of_stock > 60) return { pct: 20, reason: "Slow mover" };
+  }
+  return { pct: 0, reason: null };
+}
+
+export function effectivePrice(p) {
+  const d = getDiscount(p);
+  return d.pct > 0
+    ? Math.round(p.price_azn * (1 - d.pct / 100) * 100) / 100
+    : p.price_azn;
+}
+
+// ── Dietary tags ───────────────────────────────────────────────────────────
+const DIET_PATTERNS = {
+  halal: /pork|bacon|ham|sausage|salami|prosciutto|beer|wine|vodka|whisky|alcohol|rum|gin|liqueur/i,
+  vegan:
+    /meat|chicken|beef|lamb|pork|fish|seafood|tuna|salmon|dairy|milk|cream|butter|cheese|yogurt|egg|honey|gelatin/i,
+  vegetarian:
+    /meat|chicken|beef|lamb|pork|fish|seafood|tuna|salmon|sausage|bacon|ham|gelatin/i,
+  glutenfree: /bread|pasta|wheat|baguette|biscuit|cracker|cookie|cake|cereal|flour|noodle/i,
+  lactosefree: /milk|cream|butter|cheese|yogurt|dairy|ice cream/i,
+};
+
+export function dietaryTags(p) {
+  const h = `${p.name} ${p.category} ${p.subcategory}`.toLowerCase();
+  const tags = [];
+  if (!DIET_PATTERNS.halal.test(h)) tags.push("halal");
+  if (!DIET_PATTERNS.vegan.test(h)) tags.push("vegan");
+  if (!DIET_PATTERNS.vegetarian.test(h)) tags.push("vegetarian");
+  if (!DIET_PATTERNS.glutenfree.test(h)) tags.push("glutenfree");
+  if (!DIET_PATTERNS.lactosefree.test(h)) tags.push("lactosefree");
+  return tags;
+}
+
+export function filterByDiet(products, tag) {
+  if (!tag) return products;
+  return products.filter((p) => {
+    if (!p._diet) p._diet = dietaryTags(p);
+    return p._diet.includes(tag);
+  });
+}
+
+// ── Rescue Today: items currently marked down by the engine ────────────────
+export function getRescueItems(limit = 60) {
+  const products = getProducts();
+  return products
+    .map((p) => ({ ...p, discount: getDiscount(p) }))
+    .filter((p) => p.discount.pct > 0)
+    .sort((a, b) => {
+      // Most urgent first: expiring beats overstocked, then higher discount.
+      if (a.is_fresh !== b.is_fresh) return a.is_fresh ? -1 : 1;
+      if (a.is_fresh && b.is_fresh) return a.expires_in_days - b.expires_in_days;
+      return b.discount.pct - a.discount.pct;
+    })
+    .slice(0, limit);
+}
+
+// ── Aisle traffic (mock) ───────────────────────────────────────────────────
+// Deterministic per-aisle visitor counts for the week, modelled on typical
+// supermarket traffic distribution (entrance + bakery & produce highest,
+// pet/baby lowest).
+const AISLE_NAMES = {
+  1: "Bakery",
+  2: "Produce",
+  3: "Dairy",
+  4: "Meat & Fish",
+  5: "Beverages",
+  6: "Snacks",
+  7: "Pantry",
+  8: "Frozen",
+  9: "Cleaning",
+  10: "Personal Care",
+  11: "Baby",
+  12: "Pet",
+};
+const AISLE_POPULARITY = {
+  1: 0.92,
+  2: 0.95,
+  3: 0.88,
+  4: 0.62,
+  5: 0.78,
+  6: 0.74,
+  7: 0.55,
+  8: 0.42,
+  9: 0.28,
+  10: 0.48,
+  11: 0.22,
+  12: 0.18,
+};
+
+export function getTrafficByAisle() {
+  return Object.keys(AISLE_NAMES)
+    .map((k) => {
+      const aisle = parseInt(k, 10);
+      return {
+        aisle,
+        name: AISLE_NAMES[aisle],
+        visitors: Math.round(2400 * AISLE_POPULARITY[aisle]),
+        popularity: AISLE_POPULARITY[aisle],
+      };
+    })
+    .sort((a, b) => b.visitors - a.visitors);
+}
+
+// ── Smart placement (move overstocked items to high-traffic aisles) ────────
+export function getPlacementSuggestions(limit = 3) {
+  const a = getAnalytics();
+  const traffic = getTrafficByAisle();
+  const high = traffic.slice(0, 3);
+  const lowestVisitors = traffic[traffic.length - 1].visitors || 1;
+
+  // Pair the slowest-moving overstocked items with the busiest aisles.
+  return a.overstocked
+    .filter((p) => {
+      const currentTraffic = AISLE_POPULARITY[p.aisle_num] || 0.5;
+      return currentTraffic < 0.6; // currently in a low-traffic aisle
+    })
+    .slice(0, limit)
+    .map((p, i) => {
+      const target = high[i % high.length];
+      const ratio = Math.max(2, Math.round(target.visitors / lowestVisitors));
+      return {
+        product: p,
+        currentAisle: p.aisle_num,
+        currentDept: AISLE_NAMES[p.aisle_num] || "—",
+        suggestedAisle: target.aisle,
+        suggestedDept: target.name,
+        narrative: `Move a display of ${p.name} from Aisle ${p.aisle_num} (${
+          AISLE_NAMES[p.aisle_num] || "low traffic"
+        }) to a secondary end-cap near Aisle ${target.aisle} (${
+          target.name
+        }) — that zone gets ${target.visitors.toLocaleString()} visits/week, ${ratio}× more than its current placement. ${
+          p.stock_qty
+        } units in stock; expected to move ~${Math.round(
+          p.stock_qty * 0.35
+        )} extra units over the next 2 weeks at the higher-visibility spot.`,
+      };
+    });
+}
+
+// ── Restock plan ────────────────────────────────────────────────────────────
+// Concrete reorder list with quantities, timing, and waste-aware narrative
+// (fresh items get a smaller order even if velocity is high, to avoid the
+// next batch expiring on the shelf).
+export function getRestockPlan(limit = 12) {
+  const products = getProducts();
+  return products
+    .filter((p) => p.status === "low_stock")
+    .map((p) => {
+      const daily = p.units_sold / 30;
+      const targetCoverDays = p.is_fresh ? Math.min(7, p.expires_in_days * 3 + 5) : 14;
+      const reorderQty = Math.max(p.is_fresh ? 30 : 60, Math.round(daily * targetCoverDays));
+      const urgency =
+        p.days_of_stock < 1 ? "today" :
+        p.days_of_stock < 3 ? "within 24h" :
+        "this week";
+      const waste = p.is_fresh
+        ? ` Fresh item — limiting order to ${targetCoverDays}-day cover (~${reorderQty} units) to avoid the next batch expiring on shelf.`
+        : ` Order ${reorderQty} units to cover the next 2 weeks at the current ${Math.round(
+            daily
+          )} units/day pace.`;
+      const narrative =
+        `${p.name} (Aisle ${p.aisle_num} · ${AISLE_NAMES[p.aisle_num] || "?"}) — ${p.stock_qty} units left, selling ~${Math.round(
+          daily
+        )} units/day, ${p.days_of_stock} day${p.days_of_stock === 1 ? "" : "s"} of cover remaining. Reorder ${urgency}.${waste}`;
+      return {
+        ...p,
+        reorderQty,
+        urgency,
+        targetCoverDays,
+        narrative,
+      };
+    })
+    .sort((a, b) => a.days_of_stock - b.days_of_stock)
+    .slice(0, limit);
+}
+
 // Rule-based recommendation: severity (urgency rank), action verb, narrative.
 export function recommend(p) {
   const daily = p.units_sold / 30;

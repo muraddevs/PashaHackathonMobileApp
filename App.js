@@ -12,7 +12,13 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { askAI, getInsights, analyzeProduct } from "./src/services/ai";
+import {
+  askAI,
+  getInsights,
+  analyzeProduct,
+  getRecipe,
+  isRecipeIntent,
+} from "./src/services/ai";
 import { login } from "./src/services/auth";
 import {
   getAnalytics,
@@ -20,6 +26,14 @@ import {
   getCriticalActions,
   getStockHealth,
   recommend,
+  getDiscount,
+  effectivePrice,
+  dietaryTags,
+  filterByDiet,
+  getRescueItems,
+  getTrafficByAisle,
+  getPlacementSuggestions,
+  getRestockPlan,
 } from "./src/data/productHelpers";
 import Svg, {
   Path,
@@ -505,7 +519,7 @@ const LoginScreen = ({ onLogin }) => {
 };
 
 // ── SCREEN 2: Home ───────────────────────────────────────────────────────────
-const HomeScreen = ({ onNav }) => {
+const HomeScreen = ({ onNav, shoppingListCount = 0 }) => {
   const categories = [
     { name: "Vegetables", emoji: "🥦" },
     { name: "Sea Fish", emoji: "🐟" },
@@ -610,10 +624,15 @@ const HomeScreen = ({ onNav }) => {
         <Text style={{ fontSize: 16, fontWeight: "700", color: DARK, marginBottom: 14 }}>Quick Actions</Text>
         <View style={{ flexDirection: "row", gap: 10 }}>
           {[
-            { label: "Store Map", icon: "map", target: "map" },
-            { label: "Deals", icon: "deals", target: "onsite" },
-            { label: "My List", icon: "list", target: "onsite-search" },
-            { label: "Orders", icon: "orders", target: "assistant" },
+            { label: "Store Map", icon: "map", target: "map", emoji: null },
+            { label: "Rescue Today", icon: "deals", target: "rescue", emoji: "💚" },
+            {
+              label: "My List",
+              icon: "list",
+              target: "list",
+              badge: shoppingListCount > 0 ? shoppingListCount : null,
+            },
+            { label: "Recipes", icon: "robot", target: "assistant" },
           ].map((a) => (
             <TouchableOpacity
               key={a.label}
@@ -630,11 +649,32 @@ const HomeScreen = ({ onNav }) => {
                 paddingHorizontal: 8,
               }}
             >
-              <Icon name={a.icon} size={22} color={GREEN} />
+              <View>
+                <Icon name={a.icon} size={22} color={GREEN} />
+                {a.badge != null && (
+                  <View
+                    style={{
+                      position: "absolute",
+                      top: -6,
+                      right: -10,
+                      backgroundColor: GREEN,
+                      borderRadius: 8,
+                      minWidth: 16,
+                      paddingHorizontal: 4,
+                      paddingVertical: 1,
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={{ color: "white", fontSize: 10, fontWeight: "800" }}>
+                      {a.badge}
+                    </Text>
+                  </View>
+                )}
+              </View>
               <Text
                 style={{ fontSize: 11, fontWeight: "600", color: DARK, textAlign: "center", marginTop: 6 }}
               >
-                {a.label}
+                {a.emoji ? `${a.emoji} ` : ""}{a.label}
               </Text>
             </TouchableOpacity>
           ))}
@@ -1005,14 +1045,24 @@ const OnSiteScreen = ({ onNav }) => {
 };
 
 // ── SCREEN 4: Search Results ─────────────────────────────────────────────────
-const SearchScreen = ({ onProduct, onNav, onBack }) => {
+const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [] }) => {
   const [query, setQuery] = useState("Milk");
   const [activeFilter, setActiveFilter] = useState("All");
+  const [diet, setDiet] = useState(null);
   const filters = ["All", "Dairy", "Bakery", "Snacks", "Beverages"];
+  const diets = [
+    { id: "halal", label: "Halal" },
+    { id: "vegan", label: "Vegan" },
+    { id: "vegetarian", label: "Vegetarian" },
+    { id: "glutenfree", label: "Gluten-free" },
+    { id: "lactosefree", label: "Lactose-free" },
+  ];
 
   const products = useMemo(() => {
     const q = activeFilter === "All" ? query : `${query} ${activeFilter}`;
-    return findRelevant(q, 24).map((p) => {
+    let results = findRelevant(q, 60);
+    if (diet) results = filterByDiet(results, diet);
+    return results.slice(0, 24).map((p) => {
       const statusLabel =
         p.stock_qty === 0 ? "Out of Stock" :
         p.status === "low_stock" || p.status === "expiring" ? "Low Stock" :
@@ -1023,13 +1073,15 @@ const SearchScreen = ({ onProduct, onNav, onBack }) => {
         GREEN;
       return {
         ...p,
-        displayPrice: p.price_azn.toFixed(2),
+        displayPrice: effectivePrice(p).toFixed(2),
         statusLabel,
         statusColor,
         emoji: emojiFor(p.category),
       };
     });
-  }, [query, activeFilter]);
+  }, [query, activeFilter, diet]);
+
+  const inListIds = new Set(inList.map((p) => p.product_id));
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View style={{ paddingHorizontal: 20, paddingTop: 16 }}>
@@ -1094,6 +1146,35 @@ const SearchScreen = ({ onProduct, onNav, onBack }) => {
             ))}
           </View>
         </ScrollView>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} decelerationRate="fast">
+          <View style={{ flexDirection: "row", gap: 6, paddingTop: 8 }}>
+            <Text style={{ fontSize: 11, color: GRAY, fontWeight: "700", letterSpacing: 0.5, alignSelf: "center", marginRight: 4 }}>
+              DIET:
+            </Text>
+            {diets.map((d) => {
+              const active = diet === d.id;
+              return (
+                <TouchableOpacity
+                  key={d.id}
+                  onPress={() => setDiet(active ? null : d.id)}
+                  activeOpacity={0.8}
+                  style={{
+                    paddingHorizontal: 10,
+                    paddingVertical: 4,
+                    borderRadius: 14,
+                    borderWidth: 1,
+                    borderColor: active ? GREEN : BORDER,
+                    backgroundColor: active ? GREEN_LIGHT : "white",
+                  }}
+                >
+                  <Text style={{ color: active ? GREEN : GRAY, fontSize: 11, fontWeight: "600" }}>
+                    {d.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </ScrollView>
       </View>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 16 }} decelerationRate="fast" scrollEventThrottle={16}>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
@@ -1125,30 +1206,49 @@ const SearchScreen = ({ onProduct, onNav, onBack }) => {
                 <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, lineHeight: 16, marginBottom: 2 }} numberOfLines={2}>
                   {p.name}
                 </Text>
-                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 6 }}>{p.size}</Text>
-                <Price amount={p.displayPrice} size={15} />
+                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 4 }}>{p.size}</Text>
+                <PriceWithDiscount product={p} size={14} />
                 <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 6 }}>
                   <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: p.statusColor, marginRight: 4 }} />
                   <Text style={{ fontSize: 11, color: p.statusColor, fontWeight: "600" }}>{p.statusLabel}</Text>
                 </View>
-                <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
                   <Icon name="shelf" size={12} color={GRAY} />
-                  <Text style={{ fontSize: 11, color: GRAY, marginLeft: 4 }}>{p.location}</Text>
+                  <Text style={{ fontSize: 11, color: GRAY, marginLeft: 4 }} numberOfLines={1}>
+                    {p.location}
+                  </Text>
                 </View>
                 <TouchableOpacity
+                  onPress={(e) => {
+                    e.stopPropagation && e.stopPropagation();
+                    onAddToList && onAddToList(p);
+                  }}
                   style={{
                     paddingVertical: 7,
                     borderRadius: 10,
                     borderWidth: 1,
-                    borderColor: BORDER,
-                    backgroundColor: "white",
+                    borderColor: inListIds.has(p.product_id) ? GREEN : BORDER,
+                    backgroundColor: inListIds.has(p.product_id) ? GREEN_LIGHT : "white",
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <Icon name="navigate" size={12} color={GREEN} />
-                  <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, marginLeft: 4 }}>Navigate</Text>
+                  <Icon
+                    name={inListIds.has(p.product_id) ? "check" : "plus"}
+                    size={12}
+                    color={GREEN}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      fontWeight: "700",
+                      color: inListIds.has(p.product_id) ? GREEN : DARK,
+                      marginLeft: 4,
+                    }}
+                  >
+                    {inListIds.has(p.product_id) ? "On List" : "Add to List"}
+                  </Text>
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -1160,7 +1260,8 @@ const SearchScreen = ({ onProduct, onNav, onBack }) => {
 };
 
 // ── SCREEN 5: Product Detail ─────────────────────────────────────────────────
-const ProductScreen = ({ product, onBack, onNav, user }) => {
+const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [] }) => {
+  const onListAlready = inList.some((x) => x.product_id === product?.product_id);
   const [tab, setTab] = useState("Details");
   const [favorite, setFavorite] = useState(false);
   const [aiAnalysis, setAiAnalysis] = useState(null);
@@ -1330,7 +1431,11 @@ const ProductScreen = ({ product, onBack, onNav, user }) => {
               ({p.units_sold || 0} sold/30d)
             </Text>
             <View style={{ marginLeft: 12 }}>
-              <Price amount={p.displayPrice} size={18} />
+              {p.product_id != null ? (
+                <PriceWithDiscount product={p} size={18} />
+              ) : (
+                <Price amount={p.displayPrice} size={18} />
+              )}
             </View>
           </View>
           <View style={{ flexDirection: "row", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
@@ -1485,20 +1590,23 @@ const ProductScreen = ({ product, onBack, onNav, user }) => {
         }}
       >
         <TouchableOpacity
+          onPress={() => p && p.product_id != null && onAddToList && onAddToList(p)}
           style={{
             flex: 1,
             paddingVertical: 14,
             borderRadius: 12,
             borderWidth: 1,
-            borderColor: BORDER,
-            backgroundColor: "white",
+            borderColor: onListAlready ? GREEN : BORDER,
+            backgroundColor: onListAlready ? GREEN_LIGHT : "white",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Icon name="list" size={16} color={DARK} />
-          <Text style={{ fontSize: 14, fontWeight: "600", color: DARK, marginLeft: 6 }}>Add to List</Text>
+          <Icon name={onListAlready ? "check" : "list"} size={16} color={onListAlready ? GREEN : DARK} />
+          <Text style={{ fontSize: 14, fontWeight: "600", color: onListAlready ? GREEN : DARK, marginLeft: 6 }}>
+            {onListAlready ? "On Your List" : "Add to List"}
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => onNav("map")}
@@ -1716,11 +1824,126 @@ const INITIAL_BOT_GREETING = {
   text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
 };
 
-const AssistantScreen = ({ onNav, onProduct, onBack }) => {
+const RecipeCard = ({ recipe, onProduct, onAddAll, onNav }) => {
+  return (
+    <View
+      style={{
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: BORDER,
+        borderRadius: 14,
+        padding: 12,
+        marginTop: 8,
+      }}
+    >
+      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+        <Text style={{ fontSize: 22, marginRight: 8 }}>🍳</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontSize: 10, fontWeight: "700", color: GREEN, letterSpacing: 0.5 }}>
+            RECIPE
+          </Text>
+          <Text style={{ fontSize: 14, fontWeight: "800", color: DARK }} numberOfLines={1}>
+            {recipe.dish}
+          </Text>
+        </View>
+      </View>
+      {recipe.ingredients.map((ing, i) => {
+        const p = ing.product;
+        if (!p) return null;
+        const aisleNum = p.aisle_num;
+        return (
+          <TouchableOpacity
+            key={`${i}-${p.product_id}`}
+            onPress={() => onProduct && onProduct(p)}
+            activeOpacity={0.7}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              paddingVertical: 6,
+              borderTopWidth: 1,
+              borderTopColor: BORDER,
+            }}
+          >
+            <View
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: 13,
+                backgroundColor: GREEN_LIGHT,
+                alignItems: "center",
+                justifyContent: "center",
+                marginRight: 8,
+              }}
+            >
+              <Text style={{ color: GREEN, fontWeight: "800", fontSize: 11 }}>
+                {aisleNum || "?"}
+              </Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 12, color: DARK }} numberOfLines={1}>
+                <Text style={{ fontWeight: "700" }}>{ing.name}</Text>
+                {" — "}
+                <Text style={{ color: GRAY }}>{p.name}</Text>
+              </Text>
+              <Text style={{ fontSize: 10, color: GRAY }}>
+                Aisle {aisleNum} · {p.subcategory || p.category} ·{" "}
+                {effectivePrice(p).toFixed(2)} ₼
+              </Text>
+            </View>
+          </TouchableOpacity>
+        );
+      })}
+      <View style={{ flexDirection: "row", gap: 8, marginTop: 10 }}>
+        <TouchableOpacity
+          onPress={onAddAll}
+          style={{
+            flex: 1,
+            paddingVertical: 10,
+            borderRadius: 10,
+            backgroundColor: GREEN,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon name="list" size={14} color="white" />
+          <Text style={{ color: "white", fontSize: 12, fontWeight: "800", marginLeft: 6 }}>
+            Add all to list
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onNav && onNav("map")}
+          style={{
+            flex: 1,
+            paddingVertical: 10,
+            borderRadius: 10,
+            borderWidth: 1,
+            borderColor: BORDER,
+            backgroundColor: "white",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon name="navigate" size={14} color={DARK} />
+          <Text style={{ color: DARK, fontSize: 12, fontWeight: "800", marginLeft: 6 }}>
+            Show route
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList }) => {
   const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const chips = ["5 AZN altı qəlyanaltılar", "Halal protein", "Allergensiz"];
+  const chips = [
+    "I want to make pasta today",
+    "5 AZN altı qəlyanaltılar",
+    "Halal protein",
+  ];
   const scrollRef = useRef();
   useEffect(() => {
     scrollRef.current?.scrollToEnd({ animated: true });
@@ -1737,6 +1960,28 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
     setLoading(true);
 
     try {
+      // Recipe intent? Route to the recipe flow instead of general chat.
+      if (isRecipeIntent(trimmed)) {
+        const recipe = await getRecipe(trimmed);
+        if (recipe && recipe.ingredients.some((i) => i.product)) {
+          const matched = recipe.ingredients.filter((i) => i.product);
+          const reply = `For ${recipe.dish}, here's where to find each ingredient in-store:`;
+          setMessages((m) => [
+            ...m,
+            {
+              from: "bot",
+              text: reply,
+              recipe: {
+                dish: recipe.dish,
+                ingredients: matched,
+              },
+            },
+          ]);
+          return;
+        }
+        // fall through to normal chat if recipe match was empty
+      }
+
       const { text: reply, relevant } = await askAI({
         message: trimmed,
         history,
@@ -1750,7 +1995,7 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
       );
       const products = mentioned.slice(0, 3).map((p) => ({
         ...p, // keep full enriched product so we can navigate to its detail screen
-        displayPrice: parseFloat(p.price_azn).toFixed(2),
+        displayPrice: effectivePrice(p).toFixed(2),
         aisle: p.location || `${p.category} · ${p.subcategory}`,
         emoji: emojiFor(p.category),
       }));
@@ -1859,6 +2104,18 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
                   >
                     <Text style={{ fontSize: 14, color: DARK, lineHeight: 21 }}>{m.text}</Text>
                   </View>
+                  {m.recipe && (
+                    <RecipeCard
+                      recipe={m.recipe}
+                      onProduct={onProduct}
+                      onAddAll={() => {
+                        for (const ing of m.recipe.ingredients) {
+                          if (ing.product) onAddToList && onAddToList(ing.product);
+                        }
+                      }}
+                      onNav={onNav}
+                    />
+                  )}
                   {m.products?.map((p) => (
                     <View
                       key={p.product_id || p.name}
@@ -1896,7 +2153,7 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
                           <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }} numberOfLines={1}>📍 {p.aisle}</Text>
                         </View>
                       </TouchableOpacity>
-                      <View style={{ flexDirection: "row", gap: 8 }}>
+                      <View style={{ flexDirection: "row", gap: 6 }}>
                         <TouchableOpacity
                           onPress={() => onProduct && onProduct(p)}
                           style={{
@@ -1906,14 +2163,29 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
                             borderWidth: 1,
                             borderColor: BORDER,
                             backgroundColor: "white",
-                            flexDirection: "row",
                             alignItems: "center",
                             justifyContent: "center",
                           }}
                         >
-                          <Icon name="orders" size={13} color={DARK} />
-                          <Text style={{ fontSize: 13, fontWeight: "700", color: DARK, marginLeft: 6 }}>
-                            View Details
+                          <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }}>
+                            Details
+                          </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() => onAddToList && onAddToList(p)}
+                          style={{
+                            flex: 1,
+                            paddingVertical: 9,
+                            borderRadius: 10,
+                            borderWidth: 1,
+                            borderColor: GREEN,
+                            backgroundColor: GREEN_LIGHT,
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Text style={{ fontSize: 12, fontWeight: "700", color: GREEN }}>
+                            + List
                           </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -1928,9 +2200,9 @@ const AssistantScreen = ({ onNav, onProduct, onBack }) => {
                             justifyContent: "center",
                           }}
                         >
-                          <Icon name="navigate" size={14} color="white" />
-                          <Text style={{ fontSize: 13, fontWeight: "700", color: "white", marginLeft: 6 }}>
-                            Navigate
+                          <Icon name="navigate" size={12} color="white" />
+                          <Text style={{ fontSize: 12, fontWeight: "700", color: "white", marginLeft: 4 }}>
+                            Map
                           </Text>
                         </TouchableOpacity>
                       </View>
@@ -2115,48 +2387,75 @@ const FLOOR_PLANS = [
   },
 ];
 
-const MapScreen = ({ onBack, product }) => {
-  // Pick a mock floor plan deterministically from the product id (so the
-  // same product always uses the same map). Falls back to plan 0.
-  const planIdx = product?.product_id
-    ? Math.abs(parseInt(product.product_id, 10) || 0) % FLOOR_PLANS.length
+const MapScreen = ({ onBack, product, products }) => {
+  // Multi-stop list takes precedence; otherwise route to the single product.
+  const items = Array.isArray(products) && products.length > 0
+    ? products
+    : (product ? [product] : []);
+
+  // Pick a mock floor plan deterministically from the first item.
+  const seedId = items[0]?.product_id || product?.product_id;
+  const planIdx = seedId
+    ? Math.abs(parseInt(seedId, 10) || 0) % FLOOR_PLANS.length
     : 0;
   const plan = FLOOR_PLANS[planIdx];
-
-  const targetAisle = product?.aisle_num
-    ? parseInt(product.aisle_num, 10)
-    : null;
-  const target = plan.departments.find((d) => d.aisle === targetAisle);
-
-  // Centre of target dept (where we draw the destination pin).
-  const dest = target
-    ? { x: target.x + target.w / 2, y: target.y + target.h / 2 }
-    : { x: plan.width / 2, y: plan.height / 2 };
   const start = plan.entrance;
 
-  // Simple L-shaped route: from entrance up to dest's y, then across.
-  const routePoints = [
-    `${start.x},${start.y}`,
-    `${start.x},${dest.y + 20}`,
-    `${dest.x},${dest.y + 20}`,
-    `${dest.x},${dest.y}`,
-  ].join(" ");
+  // Stops sorted by aisle for an efficient walking route.
+  const stops = items
+    .map((p) => {
+      const a = parseInt(p.aisle_num, 10);
+      const dept = plan.departments.find((d) => d.aisle === a);
+      if (!dept) return null;
+      return {
+        product: p,
+        aisle: a,
+        dept,
+        x: dept.x + dept.w / 2,
+        y: dept.y + dept.h / 2,
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.aisle - b.aisle);
 
-  // Very rough walking time/distance for the demo header chip.
-  const dist = Math.round(
-    Math.abs(dest.x - start.x) + Math.abs(dest.y - start.y)
-  );
-  const meters = Math.round(dist * 0.15);
+  // Build a route: entrance → aisle-1 corridor → ... → cashiers.
+  const cashier = plan.cashiers[Math.floor(plan.cashiers.length / 2)];
+  const cashierPoint = cashier
+    ? { x: cashier.x + cashier.w / 2, y: cashier.y }
+    : { x: plan.width / 2, y: plan.height - 30 };
+  const routePts = [start, ...stops.flatMap((s) => [{ x: s.x, y: s.y + 24 }, s])];
+  if (stops.length > 0) routePts.push(cashierPoint);
+  const routePoints = routePts.map((pt) => `${pt.x},${pt.y}`).join(" ");
+
+  // Walking distance / time estimate.
+  let pixelDist = 0;
+  for (let i = 1; i < routePts.length; i++) {
+    pixelDist +=
+      Math.abs(routePts[i].x - routePts[i - 1].x) +
+      Math.abs(routePts[i].y - routePts[i - 1].y);
+  }
+  const meters = Math.max(1, Math.round(pixelDist * 0.15));
   const mins = Math.max(1, Math.round(meters / 50));
 
-  const productName = product?.name || "Selected product";
-  const productEmoji = product?.category ? emojiFor(product.category) : "🛒";
-  const productPrice = product?.price_azn != null
-    ? `${parseFloat(product.price_azn).toFixed(2)} ₼`
+  const isMulti = stops.length > 1;
+  const firstItem = items[0];
+  const productName = isMulti
+    ? `${stops.length} items on your list`
+    : firstItem?.name || "Select a product";
+  const productEmoji = isMulti ? "🛒" : (firstItem?.category ? emojiFor(firstItem.category) : "🛒");
+  const productPrice = isMulti
+    ? `${stops.length} stops`
+    : firstItem?.price_azn != null
+    ? `${parseFloat(firstItem.price_azn).toFixed(2)} ₼`
     : "—";
-  const productLocation = product?.location || target
-    ? `${target ? `Aisle ${target.aisle} · ${target.label}` : product?.location || ""}`
-    : "Unknown location";
+  const productLocation = isMulti
+    ? stops.map((s) => `Aisle ${s.aisle}`).join(" → ")
+    : stops[0]
+    ? `Aisle ${stops[0].aisle} · ${stops[0].dept.label}`
+    : firstItem?.location || "Unknown location";
+
+  const target = stops[0]?.dept || null;
+  const dest = stops[0] ? { x: stops[0].x, y: stops[0].y } : null;
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
@@ -2308,7 +2607,7 @@ const MapScreen = ({ onBack, product }) => {
 
           {/* Department blocks */}
           {plan.departments.map((d) => {
-            const active = d.aisle === targetAisle;
+            const active = stops.some((s) => s.aisle === d.aisle);
             return (
               <G key={d.aisle}>
                 <Rect
@@ -2359,7 +2658,7 @@ const MapScreen = ({ onBack, product }) => {
           })}
 
           {/* Route */}
-          {target && (
+          {stops.length > 0 && (
             <Polyline
               points={routePoints}
               fill="none"
@@ -2375,14 +2674,23 @@ const MapScreen = ({ onBack, product }) => {
           <Circle cx={start.x} cy={start.y} r="10" fill="white" stroke={GREEN} strokeWidth="2.5" />
           <Circle cx={start.x} cy={start.y} r="5" fill={GREEN} />
 
-          {/* Destination pin */}
-          {target && (
-            <>
-              <Circle cx={dest.x} cy={dest.y} r="14" fill={RED} opacity="0.18" />
-              <Circle cx={dest.x} cy={dest.y} r="9" fill={RED} />
-              <Circle cx={dest.x} cy={dest.y} r="3.5" fill="white" />
-            </>
-          )}
+          {/* Destination pins — one per stop, numbered for multi-stop routes */}
+          {stops.map((s, i) => (
+            <G key={`stop-${s.product.product_id}`}>
+              <Circle cx={s.x} cy={s.y} r="14" fill={RED} opacity="0.18" />
+              <Circle cx={s.x} cy={s.y} r="11" fill={RED} />
+              <SvgText
+                x={s.x}
+                y={s.y + 4}
+                textAnchor="middle"
+                fontSize="11"
+                fontWeight="800"
+                fill="white"
+              >
+                {isMulti ? i + 1 : "•"}
+              </SvgText>
+            </G>
+          ))}
         </Svg>
 
         <View style={{ position: "absolute", right: 16, top: 16 }}>
@@ -2465,14 +2773,59 @@ const MapScreen = ({ onBack, product }) => {
               CURRENT INSTRUCTION
             </Text>
             <Text style={{ fontSize: 18, fontWeight: "800", color: DARK, marginVertical: 2 }} numberOfLines={1}>
-              {target ? `Head to Aisle ${target.aisle}` : "Choose a product"}
+              {isMulti
+                ? `Stop 1 of ${stops.length}: Aisle ${stops[0].aisle}`
+                : target
+                ? `Head to Aisle ${target.aisle}`
+                : "Choose a product"}
             </Text>
             <Text style={{ fontSize: 13, color: GRAY }} numberOfLines={1}>
-              {target ? `${target.label} section · ${meters}m` : "Pick an item from search or chat"}
+              {isMulti
+                ? `${stops[0].dept.label} · ${stops[0].product.name}`
+                : target
+                ? `${target.label} section · ${meters}m`
+                : "Pick an item from search or chat"}
             </Text>
           </View>
         </View>
-        {target && (
+        {isMulti && (
+          <View
+            style={{
+              backgroundColor: LIGHT_GRAY,
+              borderRadius: 10,
+              padding: 10,
+              marginBottom: 12,
+            }}
+          >
+            <Text style={{ fontSize: 11, color: GRAY, fontWeight: "700", letterSpacing: 0.5, marginBottom: 6 }}>
+              ROUTE ({stops.length} STOPS · {meters}m · ~{mins} MIN)
+            </Text>
+            {stops.map((s, i) => (
+              <View
+                key={s.product.product_id}
+                style={{ flexDirection: "row", alignItems: "center", marginBottom: i === stops.length - 1 ? 0 : 6 }}
+              >
+                <View
+                  style={{
+                    width: 20,
+                    height: 20,
+                    borderRadius: 10,
+                    backgroundColor: GREEN,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: 8,
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 10, fontWeight: "800" }}>{i + 1}</Text>
+                </View>
+                <Text style={{ fontSize: 12, color: DARK, flex: 1 }} numberOfLines={1}>
+                  <Text style={{ fontWeight: "700" }}>Aisle {s.aisle}</Text> · {s.product.name}
+                </Text>
+              </View>
+            ))}
+          </View>
+        )}
+        {!isMulti && target && (
           <View
             style={{
               flexDirection: "row",
@@ -2488,7 +2841,7 @@ const MapScreen = ({ onBack, product }) => {
             <Text style={{ fontSize: 13, color: GRAY, marginLeft: 8, flex: 1 }}>
               Then look for{" "}
               <Text style={{ fontWeight: "700", color: DARK }}>
-                shelf {product?.shelf_letter || "B"}
+                shelf {firstItem?.shelf_letter || "B"}
               </Text>{" "}
               · {target.label}
             </Text>
@@ -2527,6 +2880,382 @@ const MapScreen = ({ onBack, product }) => {
   );
 };
 
+// ── Reusable: discounted price chip ─────────────────────────────────────────
+const PriceWithDiscount = ({ product, size = 14 }) => {
+  const d = getDiscount(product);
+  const final = effectivePrice(product);
+  if (d.pct <= 0) {
+    return <Price amount={product.price_azn.toFixed(2)} size={size} />;
+  }
+  return (
+    <View style={{ flexDirection: "row", alignItems: "baseline", flexWrap: "wrap" }}>
+      <Price amount={final.toFixed(2)} size={size} />
+      <Text
+        style={{
+          fontSize: size - 4,
+          color: GRAY,
+          textDecorationLine: "line-through",
+          marginLeft: 6,
+        }}
+      >
+        {product.price_azn.toFixed(2)} ₼
+      </Text>
+      <View
+        style={{
+          marginLeft: 6,
+          backgroundColor: "#FEE2E2",
+          paddingHorizontal: 5,
+          paddingVertical: 1,
+          borderRadius: 4,
+        }}
+      >
+        <Text style={{ color: RED, fontSize: 10, fontWeight: "800" }}>-{d.pct}%</Text>
+      </View>
+    </View>
+  );
+};
+
+// ── SCREEN 10: Rescue Today (marked-down items) ─────────────────────────────
+const RescueScreen = ({ onProduct, onBack, onAddToList }) => {
+  const items = useMemo(() => getRescueItems(60), []);
+  const totalSaving = items.reduce(
+    (s, p) => s + (p.price_azn - effectivePrice(p)),
+    0
+  );
+
+  return (
+    <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          paddingHorizontal: 16,
+          paddingTop: 14,
+          paddingBottom: 12,
+          borderBottomWidth: 1,
+          borderBottomColor: BORDER,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+          <TouchableOpacity onPress={onBack} style={{ padding: 4 }}>
+            <Icon name="back" size={22} color={DARK} />
+          </TouchableOpacity>
+          <View style={{ marginLeft: 8, flex: 1 }}>
+            <Text style={{ fontSize: 17, fontWeight: "800", color: DARK }}>
+              💚 Rescue Today
+            </Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>
+              Marked-down items — fresh stock that needs to move
+            </Text>
+          </View>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            backgroundColor: GREEN_LIGHT,
+            paddingHorizontal: 12,
+            paddingVertical: 10,
+            borderRadius: 10,
+            gap: 14,
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontSize: 10, fontWeight: "700", color: GREEN, letterSpacing: 0.5 }}>
+              ITEMS
+            </Text>
+            <Text style={{ fontSize: 16, fontWeight: "800", color: GREEN }}>
+              {items.length}
+            </Text>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontSize: 10, fontWeight: "700", color: GREEN, letterSpacing: 0.5 }}>
+              TOTAL SAVING
+            </Text>
+            <Text style={{ fontSize: 16, fontWeight: "800", color: GREEN }}>
+              {totalSaving.toFixed(2)} ₼
+            </Text>
+          </View>
+          <View style={{ flex: 1.5 }}>
+            <Text style={{ fontSize: 10, fontWeight: "700", color: GREEN, letterSpacing: 0.5 }}>
+              WHY IT MATTERS
+            </Text>
+            <Text style={{ fontSize: 11, color: GREEN }}>
+              Buying these reduces food waste
+            </Text>
+          </View>
+        </View>
+      </View>
+
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ padding: 12, paddingBottom: 24 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
+      >
+        {items.map((p) => (
+          <TouchableOpacity
+            key={p.product_id}
+            onPress={() => onProduct(p)}
+            activeOpacity={0.85}
+            style={{
+              backgroundColor: "white",
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 12,
+              marginBottom: 8,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                width: 48,
+                height: 48,
+                backgroundColor: LIGHT_GRAY,
+                borderRadius: 10,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ fontSize: 24 }}>{emojiFor(p.category)}</Text>
+            </View>
+            <View style={{ flex: 1, marginLeft: 10 }}>
+              <Text
+                style={{ fontSize: 13, fontWeight: "700", color: DARK }}
+                numberOfLines={1}
+              >
+                {p.name}
+              </Text>
+              <Text style={{ fontSize: 11, color: GRAY, marginTop: 1 }} numberOfLines={1}>
+                {p.location}
+              </Text>
+              <View style={{ marginTop: 4 }}>
+                <PriceWithDiscount product={p} size={14} />
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  backgroundColor: "#FEF3C7",
+                  paddingHorizontal: 6,
+                  paddingVertical: 2,
+                  borderRadius: 4,
+                  marginTop: 4,
+                  alignSelf: "flex-start",
+                }}
+              >
+                <Text style={{ fontSize: 10, fontWeight: "700", color: "#B45309" }}>
+                  {p.discount.reason}
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              onPress={(e) => {
+                e.stopPropagation && e.stopPropagation();
+                onAddToList && onAddToList(p);
+              }}
+              style={{
+                marginLeft: 8,
+                width: 36,
+                height: 36,
+                borderRadius: 18,
+                backgroundColor: GREEN,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="plus" size={18} color="white" />
+            </TouchableOpacity>
+          </TouchableOpacity>
+        ))}
+        {items.length === 0 && (
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: 12,
+              padding: 24,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: GRAY }}>Nothing marked down right now. 👍</Text>
+          </View>
+        )}
+      </ScrollView>
+    </View>
+  );
+};
+
+// ── SCREEN 11: Shopping List ─────────────────────────────────────────────────
+const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute }) => {
+  // Sort items by aisle so the UI matches the actual walking order.
+  const sorted = useMemo(
+    () => [...list].sort((a, b) => (a.aisle_num || 99) - (b.aisle_num || 99)),
+    [list]
+  );
+  const subtotal = list.reduce((s, p) => s + effectivePrice(p), 0);
+  const original = list.reduce((s, p) => s + p.price_azn, 0);
+  const saving = original - subtotal;
+
+  return (
+    <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          paddingHorizontal: 16,
+          paddingTop: 14,
+          paddingBottom: 12,
+          borderBottomWidth: 1,
+          borderBottomColor: BORDER,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <TouchableOpacity onPress={onBack} style={{ padding: 4 }}>
+            <Icon name="back" size={22} color={DARK} />
+          </TouchableOpacity>
+          <View style={{ marginLeft: 8, flex: 1 }}>
+            <Text style={{ fontSize: 17, fontWeight: "800", color: DARK }}>My List</Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>
+              {list.length} item{list.length === 1 ? "" : "s"} · {subtotal.toFixed(2)} ₼
+            </Text>
+          </View>
+          {list.length > 0 && (
+            <TouchableOpacity
+              onPress={onClear}
+              style={{
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 8,
+                paddingHorizontal: 10,
+                paddingVertical: 6,
+              }}
+            >
+              <Text style={{ fontSize: 11, fontWeight: "600", color: GRAY }}>Clear</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ padding: 12, paddingBottom: 24 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
+      >
+        {sorted.map((p) => (
+          <TouchableOpacity
+            key={p.product_id}
+            onPress={() => onProduct(p)}
+            activeOpacity={0.85}
+            style={{
+              backgroundColor: "white",
+              borderRadius: 10,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 10,
+              marginBottom: 6,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 14,
+                backgroundColor: GREEN_LIGHT,
+                alignItems: "center",
+                justifyContent: "center",
+                marginRight: 10,
+              }}
+            >
+              <Text style={{ color: GREEN, fontWeight: "800", fontSize: 11 }}>
+                {p.aisle_num}
+              </Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                {p.name}
+              </Text>
+              <Text style={{ fontSize: 11, color: GRAY }} numberOfLines={1}>
+                {p.location}
+              </Text>
+              <View style={{ marginTop: 2 }}>
+                <PriceWithDiscount product={p} size={13} />
+              </View>
+            </View>
+            <TouchableOpacity
+              onPress={() => onRemove(p.product_id)}
+              style={{ padding: 6 }}
+            >
+              <Icon name="close" size={16} color={GRAY} />
+            </TouchableOpacity>
+          </TouchableOpacity>
+        ))}
+        {list.length === 0 && (
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: 12,
+              padding: 32,
+              alignItems: "center",
+              marginTop: 24,
+            }}
+          >
+            <Text style={{ fontSize: 40, marginBottom: 8 }}>🛒</Text>
+            <Text style={{ color: DARK, fontWeight: "700", fontSize: 14, marginBottom: 4 }}>
+              Your list is empty
+            </Text>
+            <Text style={{ color: GRAY, fontSize: 12, textAlign: "center" }}>
+              Add items from search, the AI assistant, or Rescue Today and we'll
+              route you through the store.
+            </Text>
+          </View>
+        )}
+      </ScrollView>
+
+      {list.length > 0 && (
+        <View
+          style={{
+            backgroundColor: "white",
+            borderTopWidth: 1,
+            borderTopColor: BORDER,
+            padding: 12,
+          }}
+        >
+          <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 8 }}>
+            <Text style={{ fontSize: 12, color: GRAY }}>Subtotal</Text>
+            <Text style={{ fontSize: 14, fontWeight: "800", color: DARK }}>
+              {subtotal.toFixed(2)} ₼
+              {saving > 0.005 && (
+                <Text style={{ fontSize: 11, color: GREEN, fontWeight: "700" }}>
+                  {"  "}(saved {saving.toFixed(2)} ₼)
+                </Text>
+              )}
+            </Text>
+          </View>
+          <TouchableOpacity
+            onPress={onStartRoute}
+            activeOpacity={0.85}
+            style={{
+              backgroundColor: GREEN,
+              paddingVertical: 13,
+              borderRadius: 12,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Icon name="navigate" size={16} color="white" />
+            <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginLeft: 6 }}>
+              Start In-Store Route
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  );
+};
+
 // ── SCREEN 9: Admin Dashboard ───────────────────────────────────────────────
 const SEVERITY_COLOR = {
   expiring: "#DC2626",
@@ -2543,6 +3272,9 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
   const analytics = useMemo(() => getAnalytics(), []);
   const critical = useMemo(() => getCriticalActions(15), []);
   const health = useMemo(() => getStockHealth(), []);
+  const restockPlan = useMemo(() => getRestockPlan(8), []);
+  const traffic = useMemo(() => getTrafficByAisle(), []);
+  const placements = useMemo(() => getPlacementSuggestions(3), []);
   const topCategories = useMemo(
     () => analytics.categories.slice(0, 5),
     [analytics]
@@ -2772,6 +3504,191 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
             <CategoryBars categories={topCategories} />
           </View>
         </View>
+
+        {/* 3b. Restock Plan */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+            <Text style={{ fontSize: 14 }}>📦</Text>
+            <Text style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}>
+              Restock Plan
+            </Text>
+            <Text style={{ fontSize: 11, color: GRAY }}>{restockPlan.length} orders</Text>
+          </View>
+          {restockPlan.slice(0, 4).map((p) => (
+            <TouchableOpacity
+              key={p.product_id}
+              onPress={() => onSelect(p)}
+              activeOpacity={0.85}
+              style={{
+                backgroundColor: "white",
+                borderRadius: 10,
+                borderWidth: 1,
+                borderColor: BORDER,
+                marginBottom: 6,
+                overflow: "hidden",
+              }}
+            >
+              <View
+                style={{
+                  paddingHorizontal: 10,
+                  paddingVertical: 4,
+                  backgroundColor: p.urgency === "today" ? RED : p.urgency === "within 24h" ? ORANGE : "#1E40AF",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={{ color: "white", fontSize: 9, fontWeight: "800", letterSpacing: 1 }}>
+                  ORDER {p.urgency.toUpperCase()} · {p.reorderQty} UNITS
+                </Text>
+                <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>
+                  AISLE {p.aisle_num}
+                </Text>
+              </View>
+              <View style={{ padding: 10 }}>
+                <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
+                  {p.name}
+                </Text>
+                <Text style={{ fontSize: 11, color: DARK, lineHeight: 16, marginTop: 4 }} numberOfLines={3}>
+                  {p.narrative}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+          {restockPlan.length === 0 && (
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: 10,
+                padding: 14,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ color: GRAY, fontSize: 12 }}>No urgent restocks. 🎯</Text>
+            </View>
+          )}
+        </View>
+
+        {/* 3c. Aisle Traffic + Smart Placement */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 12,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+              <Text style={{ fontSize: 14 }}>👥</Text>
+              <Text style={{ fontWeight: "800", fontSize: 13, color: DARK, marginLeft: 6, flex: 1 }}>
+                Aisle Traffic (weekly)
+              </Text>
+            </View>
+            {traffic.slice(0, 6).map((a, i) => {
+              const max = traffic[0].visitors;
+              const w = `${Math.max(8, (a.visitors / max) * 100)}%`;
+              const isHigh = i < 2;
+              const isLow = i >= 4;
+              return (
+                <View key={a.aisle} style={{ marginBottom: 6 }}>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      marginBottom: 2,
+                    }}
+                  >
+                    <Text style={{ fontSize: 11, color: DARK, fontWeight: "700" }}>
+                      Aisle {a.aisle} · {a.name}
+                    </Text>
+                    <Text style={{ fontSize: 11, color: GRAY }}>
+                      {a.visitors.toLocaleString()} visits
+                      {isHigh ? " 🔥" : isLow ? " 🐢" : ""}
+                    </Text>
+                  </View>
+                  <View
+                    style={{ height: 6, backgroundColor: LIGHT_GRAY, borderRadius: 3, overflow: "hidden" }}
+                  >
+                    <View
+                      style={{
+                        height: 6,
+                        backgroundColor: isHigh ? GREEN : isLow ? "#D1D5DB" : GREEN_MID,
+                        width: w,
+                        borderRadius: 3,
+                      }}
+                    />
+                  </View>
+                </View>
+              );
+            })}
+            <Text
+              style={{
+                fontSize: 11,
+                color: GRAY,
+                fontStyle: "italic",
+                marginTop: 4,
+                lineHeight: 16,
+              }}
+            >
+              More shoppers spend time near {traffic[0].name} and {traffic[1].name}. {" "}
+              {placements[0]
+                ? "Consider moving slow-movers to a secondary display there."
+                : ""}
+            </Text>
+          </View>
+        </View>
+
+        {placements.length > 0 && (
+          <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+              <Text style={{ fontSize: 14 }}>🔄</Text>
+              <Text style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}>
+                Smart Placement
+              </Text>
+            </View>
+            {placements.map((s) => (
+              <TouchableOpacity
+                key={s.product.product_id}
+                onPress={() => onSelect(s.product)}
+                activeOpacity={0.85}
+                style={{
+                  backgroundColor: "white",
+                  borderRadius: 10,
+                  borderWidth: 1,
+                  borderColor: BORDER,
+                  marginBottom: 6,
+                  overflow: "hidden",
+                }}
+              >
+                <View
+                  style={{
+                    paddingHorizontal: 10,
+                    paddingVertical: 4,
+                    backgroundColor: "#8B5CF6",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 9, fontWeight: "800", letterSpacing: 1 }}>
+                    MOVE FROM A{s.currentAisle} → A{s.suggestedAisle}
+                  </Text>
+                  <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>
+                    {s.suggestedDept.toUpperCase()}
+                  </Text>
+                </View>
+                <View style={{ padding: 10 }}>
+                  <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
+                    {s.product.name}
+                  </Text>
+                  <Text style={{ fontSize: 11, color: DARK, lineHeight: 16, marginTop: 4 }} numberOfLines={4}>
+                    {s.narrative}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
 
         {/* 4. Full lists */}
         <View
@@ -3326,6 +4243,18 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [stack, setStack] = useState(["login"]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [shoppingList, setShoppingList] = useState([]);
+  const [routeProducts, setRouteProducts] = useState(null);
+
+  const addToList = (product) => {
+    if (!product) return;
+    setShoppingList((s) =>
+      s.some((p) => p.product_id === product.product_id) ? s : [...s, product]
+    );
+  };
+  const removeFromList = (productId) =>
+    setShoppingList((s) => s.filter((p) => p.product_id !== productId));
+  const clearList = () => setShoppingList([]);
 
   const screen = stack[stack.length - 1];
 
@@ -3359,18 +4288,43 @@ export default function App() {
 
   const canGoBack = stack.length > 1;
 
+  const handleNavigateList = () => {
+    if (shoppingList.length === 0) return;
+    setRouteProducts(shoppingList);
+    nav("map");
+  };
+
   const renderScreen = () => {
     switch (screen) {
       case "login":
         return <LoginScreen onLogin={handleLogin} />;
       case "admin":
-        return <AdminScreen user={user} onLogout={handleLogout} onSelect={handleProduct} />;
+        return (
+          <AdminScreen
+            user={user}
+            onLogout={handleLogout}
+            onSelect={handleProduct}
+          />
+        );
       case "home":
-        return <HomeScreen onNav={nav} />;
+        return (
+          <HomeScreen
+            onNav={nav}
+            shoppingListCount={shoppingList.length}
+          />
+        );
       case "onsite":
         return <OnSiteScreen onNav={nav} />;
       case "onsite-search":
-        return <SearchScreen onProduct={handleProduct} onNav={nav} onBack={goBack} />;
+        return (
+          <SearchScreen
+            onProduct={handleProduct}
+            onNav={nav}
+            onBack={goBack}
+            onAddToList={addToList}
+            inList={shoppingList}
+          />
+        );
       case "product":
         return (
           <ProductScreen
@@ -3378,6 +4332,8 @@ export default function App() {
             onBack={goBack}
             onNav={nav}
             user={user}
+            onAddToList={addToList}
+            inList={shoppingList}
           />
         );
       case "scanner":
@@ -3388,17 +4344,47 @@ export default function App() {
             onNav={nav}
             onProduct={handleProduct}
             onBack={canGoBack ? goBack : null}
+            onAddToList={addToList}
           />
         );
       case "map":
-        return <MapScreen onBack={goBack} product={selectedProduct} />;
+        return (
+          <MapScreen
+            onBack={() => {
+              setRouteProducts(null);
+              goBack();
+            }}
+            product={selectedProduct}
+            products={routeProducts}
+          />
+        );
+      case "rescue":
+        return (
+          <RescueScreen
+            onProduct={handleProduct}
+            onBack={goBack}
+            onAddToList={addToList}
+          />
+        );
+      case "list":
+        return (
+          <ListScreen
+            list={shoppingList}
+            onProduct={handleProduct}
+            onRemove={removeFromList}
+            onClear={clearList}
+            onBack={goBack}
+            onStartRoute={handleNavigateList}
+          />
+        );
       default:
-        return <HomeScreen onNav={nav} />;
+        return <HomeScreen onNav={nav} shoppingListCount={shoppingList.length} />;
     }
   };
 
   const noBottomNav =
-    ["login", "scanner", "admin"].includes(screen) || user?.role === "admin";
+    ["login", "scanner", "admin", "rescue", "list"].includes(screen) ||
+    user?.role === "admin";
   const activeTab =
     ["home", "onsite", "onsite-search", "assistant", "map"].find((t) =>
       screen.startsWith(t)
