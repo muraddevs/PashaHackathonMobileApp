@@ -1,4 +1,26 @@
 import { useState, useEffect, useRef } from "react";
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  SafeAreaView,
+  StatusBar,
+  Platform,
+  StyleSheet,
+} from "react-native";
+import Svg, {
+  Path,
+  Circle,
+  Rect,
+  Line,
+  Polyline,
+  Polygon,
+  G,
+  Text as SvgText,
+} from "react-native-svg";
+import { LinearGradient } from "expo-linear-gradient";
 
 const GREEN = "#1A7A4A";
 const GREEN_LIGHT = "#E8F5EE";
@@ -12,57 +34,201 @@ const ORANGE = "#F97316";
 
 const MANAT = "₼";
 
-// ── tiny icon helpers ────────────────────────────────────────────────────────
-const Icon = ({ name, size = 20, color = "currentColor", style = {} }) => {
+// ── icons ────────────────────────────────────────────────────────────────────
+const Icon = ({ name, size = 20, color = DARK }) => {
   const icons = {
-    home: <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
-    search: <><circle cx="11" cy="11" r="8" strokeWidth="2" /><path d="m21 21-4.35-4.35" strokeWidth="2" strokeLinecap="round" /></>,
-    robot: <><rect x="3" y="8" width="18" height="12" rx="2" strokeWidth="2" /><path d="M12 3v5M8 12h.01M16 12h.01M9 16h6" strokeWidth="2" strokeLinecap="round" /><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2" strokeWidth="2" /></>,
-    map: <><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></>,
-    scan: <><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><line x1="3" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" /></>,
-    back: <path d="M15 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
-    close: <path d="M18 6L6 18M6 6l12 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
-    navigate: <><path d="M22 2L11 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M22 2L15 22l-4-9-9-4 19-7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></>,
-    mic: <><path d="M12 2a3 3 0 013 3v7a3 3 0 01-6 0V5a3 3 0 013-3z" strokeWidth="2" /><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8" strokeWidth="2" strokeLinecap="round" /></>,
-    send: <><line x1="22" y1="2" x2="11" y2="13" strokeWidth="2" strokeLinecap="round" /><polygon points="22 2 15 22 11 13 2 9 22 2" strokeWidth="2" strokeLinejoin="round" /></>,
-    location: <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" strokeWidth="2" /><circle cx="12" cy="10" r="3" strokeWidth="2" /></>,
-    bell: <><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" strokeWidth="2" /><path d="M13.73 21a2 2 0 01-3.46 0" strokeWidth="2" strokeLinecap="round" /></>,
-    chevronDown: <path d="M6 9l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
-    filter: <><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></>,
-    heart: <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" strokeWidth="2" />,
-    plus: <><line x1="12" y1="5" x2="12" y2="19" strokeWidth="2" strokeLinecap="round" /><line x1="5" y1="12" x2="19" y2="12" strokeWidth="2" strokeLinecap="round" /></>,
-    star: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" strokeWidth="2" />,
-    shelf: <><line x1="8" y1="6" x2="21" y2="6" strokeWidth="2" strokeLinecap="round" /><line x1="8" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="8" y1="18" x2="21" y2="18" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="6" x2="3.01" y2="6" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="12" x2="3.01" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="18" x2="3.01" y2="18" strokeWidth="2" strokeLinecap="round" /></>,
-    arrowUp: <><line x1="12" y1="19" x2="12" y2="5" strokeWidth="2" strokeLinecap="round" /><polyline points="5 12 12 5 19 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></>,
-    list: <><line x1="8" y1="6" x2="21" y2="6" strokeWidth="2" strokeLinecap="round" /><line x1="8" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="8" y1="18" x2="21" y2="18" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="6" x2="3.01" y2="6" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="12" x2="3.01" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="3" y1="18" x2="3.01" y2="18" strokeWidth="2" strokeLinecap="round" /></>,
-    deals: <><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" strokeWidth="2" /><line x1="7" y1="7" x2="7.01" y2="7" strokeWidth="2" strokeLinecap="round" /></>,
-    orders: <><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" strokeWidth="2" /><rect x="9" y="3" width="6" height="4" rx="2" strokeWidth="2" /></>,
-    lightning: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
-    keyboard: <><rect x="2" y="6" width="20" height="12" rx="2" strokeWidth="2" /><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8" strokeWidth="2" strokeLinecap="round" /></>,
-    target: <><circle cx="12" cy="12" r="10" strokeWidth="2" /><circle cx="12" cy="12" r="6" strokeWidth="2" /><circle cx="12" cy="12" r="2" strokeWidth="2" /></>,
-    fingerprint: <><path d="M12 10a2 2 0 00-2 2c0 1.11.89 2 2 2a2 2 0 002-2c0-1.11-.89-2-2-2z" strokeWidth="2" /><path d="M10.5 2.5a9.5 9.5 0 100 19" strokeWidth="2" strokeLinecap="round" /><path d="M13.5 2.5a9.5 9.5 0 010 19" strokeWidth="2" strokeLinecap="round" /></>,
-    smile: <><circle cx="12" cy="12" r="10" strokeWidth="2" /><path d="M8 14s1.5 2 4 2 4-2 4-2" strokeWidth="2" strokeLinecap="round" /><line x1="9" y1="9" x2="9.01" y2="9" strokeWidth="2" strokeLinecap="round" /><line x1="15" y1="9" x2="15.01" y2="9" strokeWidth="2" strokeLinecap="round" /></>,
-    warning: <><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" strokeWidth="2" /><line x1="12" y1="9" x2="12" y2="13" strokeWidth="2" strokeLinecap="round" /><line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2" strokeLinecap="round" /></>,
-    question: <><circle cx="12" cy="12" r="10" strokeWidth="2" /><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" strokeWidth="2" strokeLinecap="round" /><line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2" strokeLinecap="round" /></>,
-    crosshair: <><circle cx="12" cy="12" r="10" strokeWidth="2" /><line x1="22" y1="12" x2="18" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="6" y1="12" x2="2" y2="12" strokeWidth="2" strokeLinecap="round" /><line x1="12" y1="6" x2="12" y2="2" strokeWidth="2" strokeLinecap="round" /><line x1="12" y1="22" x2="12" y2="18" strokeWidth="2" strokeLinecap="round" /></>,
-    check: <polyline points="20 6 9 17 4 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
+    home: (
+      <Path
+        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke={color}
+        fill="none"
+      />
+    ),
+    search: (
+      <>
+        <Circle cx="11" cy="11" r="8" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="m21 21-4.35-4.35" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+      </>
+    ),
+    robot: (
+      <>
+        <Rect x="3" y="8" width="18" height="12" rx="2" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M12 3v5M8 12h.01M16 12h.01M9 16h6" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+        <Path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2" strokeWidth="2" stroke={color} fill="none" />
+      </>
+    ),
+    map: (
+      <Path
+        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke={color}
+        fill="none"
+      />
+    ),
+    scan: (
+      <>
+        <Path
+          d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke={color}
+          fill="none"
+        />
+        <Line x1="3" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    back: <Path d="M15 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
+    close: <Path d="M18 6L6 18M6 6l12 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
+    navigate: (
+      <>
+        <Path d="M22 2L11 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />
+        <Path d="M22 2L15 22l-4-9-9-4 19-7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />
+      </>
+    ),
+    mic: (
+      <>
+        <Path d="M12 2a3 3 0 013 3v7a3 3 0 01-6 0V5a3 3 0 013-3z" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+      </>
+    ),
+    send: (
+      <>
+        <Line x1="22" y1="2" x2="11" y2="13" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Polygon points="22 2 15 22 11 13 2 9 22 2" strokeWidth="2" strokeLinejoin="round" stroke={color} fill="none" />
+      </>
+    ),
+    location: (
+      <>
+        <Path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" strokeWidth="2" stroke={color} fill="none" />
+        <Circle cx="12" cy="10" r="3" strokeWidth="2" stroke={color} fill="none" />
+      </>
+    ),
+    bell: (
+      <>
+        <Path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M13.73 21a2 2 0 01-3.46 0" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+      </>
+    ),
+    chevronDown: <Path d="M6 9l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
+    filter: <Polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
+    heart: <Path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" strokeWidth="2" stroke={color} fill="none" />,
+    plus: (
+      <>
+        <Line x1="12" y1="5" x2="12" y2="19" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="5" y1="12" x2="19" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    star: <Polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" strokeWidth="2" stroke={color} fill={color} />,
+    shelf: (
+      <>
+        <Line x1="8" y1="6" x2="21" y2="6" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="8" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="8" y1="18" x2="21" y2="18" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="6" x2="3.01" y2="6" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="12" x2="3.01" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="18" x2="3.01" y2="18" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    arrowUp: (
+      <>
+        <Line x1="12" y1="19" x2="12" y2="5" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Polyline points="5 12 12 5 19 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />
+      </>
+    ),
+    list: (
+      <>
+        <Line x1="8" y1="6" x2="21" y2="6" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="8" y1="12" x2="21" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="8" y1="18" x2="21" y2="18" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="6" x2="3.01" y2="6" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="12" x2="3.01" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="3" y1="18" x2="3.01" y2="18" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    deals: (
+      <>
+        <Path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" strokeWidth="2" stroke={color} fill="none" />
+        <Line x1="7" y1="7" x2="7.01" y2="7" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    orders: (
+      <>
+        <Path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" strokeWidth="2" stroke={color} fill="none" />
+        <Rect x="9" y="3" width="6" height="4" rx="2" strokeWidth="2" stroke={color} fill="none" />
+      </>
+    ),
+    lightning: <Polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
+    keyboard: (
+      <>
+        <Rect x="2" y="6" width="20" height="12" rx="2" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+      </>
+    ),
+    target: (
+      <>
+        <Circle cx="12" cy="12" r="10" strokeWidth="2" stroke={color} fill="none" />
+        <Circle cx="12" cy="12" r="6" strokeWidth="2" stroke={color} fill="none" />
+        <Circle cx="12" cy="12" r="2" strokeWidth="2" stroke={color} fill="none" />
+      </>
+    ),
+    fingerprint: (
+      <>
+        <Path d="M12 10a2 2 0 00-2 2c0 1.11.89 2 2 2a2 2 0 002-2c0-1.11-.89-2-2-2z" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M10.5 2.5a9.5 9.5 0 100 19" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+        <Path d="M13.5 2.5a9.5 9.5 0 010 19" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+      </>
+    ),
+    smile: (
+      <>
+        <Circle cx="12" cy="12" r="10" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M8 14s1.5 2 4 2 4-2 4-2" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+        <Line x1="9" y1="9" x2="9.01" y2="9" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="15" y1="9" x2="15.01" y2="9" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    warning: (
+      <>
+        <Path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" strokeWidth="2" stroke={color} fill="none" />
+        <Line x1="12" y1="9" x2="12" y2="13" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    question: (
+      <>
+        <Circle cx="12" cy="12" r="10" strokeWidth="2" stroke={color} fill="none" />
+        <Path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" strokeWidth="2" strokeLinecap="round" stroke={color} fill="none" />
+        <Line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    crosshair: (
+      <>
+        <Circle cx="12" cy="12" r="10" strokeWidth="2" stroke={color} fill="none" />
+        <Line x1="22" y1="12" x2="18" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="6" y1="12" x2="2" y2="12" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="12" y1="6" x2="12" y2="2" strokeWidth="2" strokeLinecap="round" stroke={color} />
+        <Line x1="12" y1="22" x2="12" y2="18" strokeWidth="2" strokeLinecap="round" stroke={color} />
+      </>
+    ),
+    check: <Polyline points="20 6 9 17 4 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" stroke={color} fill="none" />,
   };
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} style={style}>
+    <Svg width={size} height={size} viewBox="0 0 24 24">
       {icons[name]}
-    </svg>
+    </Svg>
   );
 };
 
 // ── shared components ────────────────────────────────────────────────────────
-const ScanFab = ({ onClick }) => (
-  <button onClick={onClick} style={{
-    width: 60, height: 60, borderRadius: "50%", background: DARK,
-    border: "4px solid white", display: "flex", alignItems: "center", justifyContent: "center",
-    cursor: "pointer", boxShadow: "0 2px 12px rgba(0,0,0,0.25)", flexShrink: 0,
-  }}>
+const ScanFab = ({ onPress }) => (
+  <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={styles.scanFab}>
     <Icon name="scan" size={26} color="white" />
-  </button>
+  </TouchableOpacity>
 );
 
 const BottomNav = ({ active, onNav, onScan }) => {
@@ -74,54 +240,69 @@ const BottomNav = ({ active, onNav, onScan }) => {
     { id: "map", label: "Map", icon: "map" },
   ];
   return (
-    <div style={{
-      display: "flex", alignItems: "center", justifyContent: "space-around",
-      background: "white", borderTop: `1px solid ${BORDER}`,
-      paddingBottom: 8, paddingTop: 8, position: "relative",
-    }}>
-      {tabs.map(t =>
+    <View style={styles.bottomNav}>
+      {tabs.map((t) =>
         t.id === "scan" ? (
-          <div key="scan" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: -20 }}>
-            <ScanFab onClick={onScan} />
-          </div>
+          <View key="scan" style={{ alignItems: "center", marginTop: -20 }}>
+            <ScanFab onPress={onScan} />
+          </View>
         ) : (
-          <button key={t.id} onClick={() => onNav(t.id)} style={{
-            display: "flex", flexDirection: "column", alignItems: "center",
-            gap: 2, background: "none", border: "none", cursor: "pointer",
-            color: active === t.id ? GREEN : GRAY, minWidth: 48, padding: "2px 0",
-          }}>
+          <TouchableOpacity
+            key={t.id}
+            onPress={() => onNav(t.id)}
+            activeOpacity={0.7}
+            style={styles.bottomNavTab}
+          >
             <Icon name={t.icon} size={22} color={active === t.id ? GREEN : GRAY} />
-            <span style={{ fontSize: 10, fontWeight: active === t.id ? 600 : 400 }}>{t.label}</span>
-          </button>
+            <Text
+              style={{
+                fontSize: 10,
+                fontWeight: active === t.id ? "600" : "400",
+                color: active === t.id ? GREEN : GRAY,
+                marginTop: 2,
+              }}
+            >
+              {t.label}
+            </Text>
+          </TouchableOpacity>
         )
       )}
-    </div>
+    </View>
   );
 };
 
 const Price = ({ amount, size = 18 }) => (
-  <span style={{ display: "inline-flex", alignItems: "baseline", gap: 2 }}>
-    <span style={{ fontSize: size, fontWeight: 700, color: DARK }}>{amount}</span>
-    <span style={{ fontSize: size - 2, color: GREEN, fontWeight: 600 }}>{MANAT}</span>
-  </span>
+  <View style={{ flexDirection: "row", alignItems: "baseline" }}>
+    <Text style={{ fontSize: size, fontWeight: "700", color: DARK }}>{amount}</Text>
+    <Text style={{ fontSize: size - 2, color: GREEN, fontWeight: "600", marginLeft: 2 }}>
+      {MANAT}
+    </Text>
+  </View>
 );
 
 const Badge = ({ text, color = GREEN, bg = GREEN_LIGHT }) => (
-  <span style={{
-    background: bg, color, fontSize: 11, fontWeight: 600,
-    padding: "2px 8px", borderRadius: 20, display: "inline-block",
-  }}>{text}</span>
+  <View style={{ backgroundColor: bg, paddingHorizontal: 8, paddingVertical: 2, borderRadius: 20, alignSelf: "flex-start" }}>
+    <Text style={{ color, fontSize: 11, fontWeight: "600" }}>{text}</Text>
+  </View>
 );
 
 const AllergenBadge = ({ label }) => (
-  <span style={{
-    display: "inline-flex", alignItems: "center", gap: 4,
-    background: "#FFF7ED", color: "#C2410C", fontSize: 11, fontWeight: 600,
-    padding: "3px 8px", borderRadius: 20, border: "1px solid #FED7AA",
-  }}>
+  <View
+    style={{
+      flexDirection: "row",
+      alignItems: "center",
+      backgroundColor: "#FFF7ED",
+      paddingHorizontal: 8,
+      paddingVertical: 3,
+      borderRadius: 20,
+      borderWidth: 1,
+      borderColor: "#FED7AA",
+      alignSelf: "flex-start",
+    }}
+  >
     <Icon name="warning" size={12} color="#C2410C" />
-    {label}
-  </span>
+    <Text style={{ color: "#C2410C", fontSize: 11, fontWeight: "600", marginLeft: 4 }}>{label}</Text>
+  </View>
 );
 
 // ── SCREEN 1: Login ──────────────────────────────────────────────────────────
@@ -130,87 +311,173 @@ const LoginScreen = ({ onLogin }) => {
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
 
   return (
-    <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 24px 32px", background: "white", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
-      <div style={{
-        width: 80, height: 80, borderRadius: "50%",
-        background: GREEN_LIGHT, border: `2px solid ${GREEN}`,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        marginBottom: 24,
-      }}>
-        <span style={{ fontSize: 32, fontWeight: 700, color: GREEN }}>B</span>
-      </div>
-      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, color: GREEN, margin: "0 0 8px" }}>BRAVO ON-SITE</p>
-      <h1 style={{ fontSize: 26, fontWeight: 800, color: DARK, margin: "0 0 8px", textAlign: "center" }}>Welcome to<br />your assistant.</h1>
-      <p style={{ fontSize: 14, color: GRAY, textAlign: "center", margin: "0 0 36px", lineHeight: 1.5 }}>
-        Sign in to access store maps, scan items,<br />and check real-time stock.
-      </p>
+    <ScrollView
+      style={{ flex: 1, backgroundColor: "white" }}
+      contentContainerStyle={{ alignItems: "center", paddingHorizontal: 24, paddingTop: 48, paddingBottom: 32 }}
+      keyboardShouldPersistTaps="handled"
+    >
+      <View
+        style={{
+          width: 80,
+          height: 80,
+          borderRadius: 40,
+          backgroundColor: GREEN_LIGHT,
+          borderWidth: 2,
+          borderColor: GREEN,
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: 24,
+        }}
+      >
+        <Text style={{ fontSize: 32, fontWeight: "700", color: GREEN }}>B</Text>
+      </View>
+      <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 2, color: GREEN, marginBottom: 8 }}>
+        BRAVO ON-SITE
+      </Text>
+      <Text style={{ fontSize: 26, fontWeight: "800", color: DARK, marginBottom: 8, textAlign: "center" }}>
+        Welcome to{"\n"}your assistant.
+      </Text>
+      <Text style={{ fontSize: 14, color: GRAY, textAlign: "center", marginBottom: 36, lineHeight: 21 }}>
+        Sign in to access store maps, scan items,{"\n"}and check real-time stock.
+      </Text>
 
-      <div style={{ width: "100%", background: "#F9F9F9", borderRadius: 12, padding: 4, display: "flex", marginBottom: 24 }}>
-        <button style={{ flex: 1, padding: "10px 0", borderRadius: 10, background: "white", border: "none", fontWeight: 600, fontSize: 14, color: DARK, cursor: "pointer", boxShadow: "0 1px 4px rgba(0,0,0,0.1)" }}>Phone Number</button>
-        <button style={{ flex: 1, padding: "10px 0", borderRadius: 10, background: "transparent", border: "none", fontWeight: 500, fontSize: 14, color: GRAY, cursor: "pointer" }}>Email Address</button>
-      </div>
+      <View
+        style={{
+          width: "100%",
+          backgroundColor: "#F9F9F9",
+          borderRadius: 12,
+          padding: 4,
+          flexDirection: "row",
+          marginBottom: 24,
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            paddingVertical: 10,
+            borderRadius: 10,
+            backgroundColor: "white",
+            alignItems: "center",
+            ...shadow(1, 0.1, 4),
+          }}
+        >
+          <Text style={{ fontWeight: "600", fontSize: 14, color: DARK }}>Phone Number</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ flex: 1, paddingVertical: 10, borderRadius: 10, alignItems: "center" }}>
+          <Text style={{ fontWeight: "500", fontSize: 14, color: GRAY }}>Email Address</Text>
+        </TouchableOpacity>
+      </View>
 
-      <div style={{ width: "100%", marginBottom: 20 }}>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1, color: GRAY, margin: "0 0 8px" }}>MOBILE NUMBER</p>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, border: `1px solid ${BORDER}`, borderRadius: 12, padding: "12px 16px" }}>
-          <span style={{ fontSize: 18 }}>🇦🇿</span>
-          <span style={{ fontWeight: 600, color: DARK }}>+994</span>
-          <span style={{ color: "#ccc" }}>|</span>
-          <span style={{ color: "#ccc", fontSize: 14 }}>00 000 00 00</span>
-        </div>
-      </div>
+      <View style={{ width: "100%", marginBottom: 20 }}>
+        <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 1, color: GRAY, marginBottom: 8 }}>
+          MOBILE NUMBER
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 12,
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+          }}
+        >
+          <Text style={{ fontSize: 18 }}>🇦🇿</Text>
+          <Text style={{ fontWeight: "600", color: DARK, marginLeft: 8 }}>+994</Text>
+          <Text style={{ color: "#ccc", marginHorizontal: 8 }}>|</Text>
+          <Text style={{ color: "#ccc", fontSize: 14 }}>00 000 00 00</Text>
+        </View>
+      </View>
 
-      <div style={{ width: "100%", marginBottom: 24 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1, color: GRAY, margin: 0 }}>VERIFICATION CODE</p>
-          <span style={{ fontSize: 13, color: GREEN, fontWeight: 600 }}>Resend</span>
-        </div>
-        <div style={{ display: "flex", gap: 12 }}>
+      <View style={{ width: "100%", marginBottom: 24 }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 8 }}>
+          <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 1, color: GRAY }}>
+            VERIFICATION CODE
+          </Text>
+          <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>Resend</Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 12 }}>
           {code.map((v, i) => (
-            <input key={i} ref={inputRefs[i]} maxLength={1} value={v}
-              onChange={e => {
-                const n = [...code]; n[i] = e.target.value;
+            <TextInput
+              key={i}
+              ref={inputRefs[i]}
+              maxLength={1}
+              value={v}
+              keyboardType="number-pad"
+              onChangeText={(text) => {
+                const n = [...code];
+                n[i] = text;
                 setCode(n);
-                if (e.target.value && i < 3) inputRefs[i + 1].current?.focus();
+                if (text && i < 3) inputRefs[i + 1].current?.focus();
               }}
               style={{
-                flex: 1, height: 56, textAlign: "center", fontSize: 22, fontWeight: 700,
-                border: `2px solid ${i === 1 ? GREEN : BORDER}`, borderRadius: 12,
-                background: i === 1 ? GREEN_LIGHT : "white", color: DARK,
-                outline: "none",
+                flex: 1,
+                height: 56,
+                textAlign: "center",
+                fontSize: 22,
+                fontWeight: "700",
+                borderWidth: 2,
+                borderColor: i === 1 ? GREEN : BORDER,
+                borderRadius: 12,
+                backgroundColor: i === 1 ? GREEN_LIGHT : "white",
+                color: DARK,
               }}
             />
           ))}
-        </div>
-      </div>
+        </View>
+      </View>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
-        <div style={{ flex: 1, height: 1, background: BORDER }} />
-        <span style={{ fontSize: 13, color: GRAY }}>Or use</span>
-        <div style={{ flex: 1, height: 1, background: BORDER }} />
-      </div>
-      <div style={{ display: "flex", gap: 16, marginBottom: 28 }}>
-        {["fingerprint", "smile"].map(name => (
-          <button key={name} style={{ width: 56, height: 56, borderRadius: 14, border: `1px solid ${BORDER}`, background: DARK, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 20, width: "100%" }}>
+        <View style={{ flex: 1, height: 1, backgroundColor: BORDER }} />
+        <Text style={{ fontSize: 13, color: GRAY, marginHorizontal: 16 }}>Or use</Text>
+        <View style={{ flex: 1, height: 1, backgroundColor: BORDER }} />
+      </View>
+      <View style={{ flexDirection: "row", gap: 16, marginBottom: 28 }}>
+        {["fingerprint", "smile"].map((name) => (
+          <TouchableOpacity
+            key={name}
+            style={{
+              width: 56,
+              height: 56,
+              borderRadius: 14,
+              backgroundColor: DARK,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Icon name={name} size={24} color="white" />
-          </button>
+          </TouchableOpacity>
         ))}
-      </div>
+      </View>
 
-      <button onClick={onLogin} style={{
-        width: "100%", padding: "16px 0", borderRadius: 14, background: GREEN,
-        color: "white", fontSize: 16, fontWeight: 700, border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 16,
-      }}>
-        Continue to On-Site →
-      </button>
-      <p style={{ fontSize: 12, color: GRAY, textAlign: "center" }}>By continuing, you agree to our</p>
-      <div style={{ display: "flex", gap: 8, marginTop: 4 }}>
-        <span style={{ fontSize: 12, color: DARK, fontWeight: 600, textDecoration: "underline" }}>Terms</span>
-        <span style={{ fontSize: 12, color: GRAY }}>&</span>
-        <span style={{ fontSize: 12, color: DARK, fontWeight: 600, textDecoration: "underline" }}>Privacy Policy</span>
-      </div>
-    </div>
+      <TouchableOpacity
+        onPress={onLogin}
+        activeOpacity={0.85}
+        style={{
+          width: "100%",
+          paddingVertical: 16,
+          borderRadius: 14,
+          backgroundColor: GREEN,
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>Continue to On-Site →</Text>
+      </TouchableOpacity>
+      <Text style={{ fontSize: 12, color: GRAY, textAlign: "center" }}>By continuing, you agree to our</Text>
+      <View style={{ flexDirection: "row", marginTop: 4 }}>
+        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>
+          Terms
+        </Text>
+        <Text style={{ fontSize: 12, color: GRAY, marginHorizontal: 8 }}>&</Text>
+        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>
+          Privacy Policy
+        </Text>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -227,106 +494,228 @@ const HomeScreen = ({ onNav }) => {
     { name: "Fresh Farm Honey 500g", aisle: "Aisle 2, Shelf A", price: "7.80", orig: "9.50", discount: "-15%" },
   ];
   return (
-    <div style={{ flex: 1, overflowY: "auto", background: LIGHT_GRAY }}>
-      <div style={{ background: "white", padding: "16px 20px 12px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: GREEN, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "white", fontWeight: 700, fontSize: 16 }}>B</span>
-            </div>
-            <div>
-              <p style={{ margin: 0, fontWeight: 700, fontSize: 15, color: DARK }}>Bravo On-Site</p>
-              <p style={{ margin: 0, fontSize: 11, color: GRAY }}>Gənclik Mall</p>
-            </div>
-          </div>
-          <button style={{ background: "none", border: "none", cursor: "pointer" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View style={{ backgroundColor: "white", paddingHorizontal: 20, paddingTop: 16, paddingBottom: 12 }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: 18,
+                backgroundColor: GREEN,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white", fontWeight: "700", fontSize: 16 }}>B</Text>
+            </View>
+            <View style={{ marginLeft: 10 }}>
+              <Text style={{ fontWeight: "700", fontSize: 15, color: DARK }}>Bravo On-Site</Text>
+              <Text style={{ fontSize: 11, color: GRAY }}>Gənclik Mall</Text>
+            </View>
+          </View>
+          <TouchableOpacity>
             <Icon name="bell" size={22} color={GRAY} />
-          </button>
-        </div>
-      </div>
+          </TouchableOpacity>
+        </View>
+      </View>
 
-      <div style={{ padding: "12px 20px" }}>
-        <div style={{ background: "white", borderRadius: 14, padding: "12px 16px", display: "flex", alignItems: "center", gap: 12, border: `1px solid ${BORDER}` }}>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 12 }}>
+        <View
+          style={{
+            backgroundColor: "white",
+            borderRadius: 14,
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            flexDirection: "row",
+            alignItems: "center",
+            borderWidth: 1,
+            borderColor: BORDER,
+          }}
+        >
           <Icon name="search" size={18} color={GRAY} />
-          <span style={{ fontSize: 14, color: "#aaa" }}>Məhsul, brend və ya kateqoriya axtarın</span>
-          <div style={{ marginLeft: "auto" }}>
-            <Icon name="scan" size={18} color={GREEN} />
-          </div>
-        </div>
-      </div>
+          <Text style={{ fontSize: 14, color: "#aaa", marginLeft: 12, flex: 1 }}>
+            Məhsul, brend və ya kateqoriya axtarın
+          </Text>
+          <Icon name="scan" size={18} color={GREEN} />
+        </View>
+      </View>
 
-      <div style={{ margin: "0 20px 16px", background: DARK, borderRadius: 16, overflow: "hidden", position: "relative" }}>
-        <div style={{ padding: "20px", background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)" }}>
-          <div style={{ display: "inline-block", background: GREEN, color: "white", fontSize: 10, fontWeight: 700, padding: "3px 8px", borderRadius: 6, marginBottom: 8, letterSpacing: 1 }}>PREMIUM FEATURE</div>
-          <h2 style={{ color: "white", margin: "0 0 6px", fontSize: 20, fontWeight: 800 }}>Find products<br />faster in-store</h2>
-          <p style={{ color: "#aaa", margin: "0 0 16px", fontSize: 13 }}>Navigate aisles & check stock.</p>
-          <button onClick={() => onNav("map")} style={{ background: "white", color: DARK, border: "none", borderRadius: 10, padding: "10px 20px", fontSize: 13, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
-            Start Navigation →
-          </button>
-        </div>
-      </div>
+      <LinearGradient
+        colors={["#1a1a1a", "#2d2d2d"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{ marginHorizontal: 20, marginBottom: 16, borderRadius: 16, overflow: "hidden", padding: 20 }}
+      >
+        <View
+          style={{
+            alignSelf: "flex-start",
+            backgroundColor: GREEN,
+            paddingHorizontal: 8,
+            paddingVertical: 3,
+            borderRadius: 6,
+            marginBottom: 8,
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 10, fontWeight: "700", letterSpacing: 1 }}>PREMIUM FEATURE</Text>
+        </View>
+        <Text style={{ color: "white", marginBottom: 6, fontSize: 20, fontWeight: "800" }}>
+          Find products{"\n"}faster in-store
+        </Text>
+        <Text style={{ color: "#aaa", marginBottom: 16, fontSize: 13 }}>Navigate aisles & check stock.</Text>
+        <TouchableOpacity
+          onPress={() => onNav("map")}
+          activeOpacity={0.85}
+          style={{
+            alignSelf: "flex-start",
+            backgroundColor: "white",
+            borderRadius: 10,
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+          }}
+        >
+          <Text style={{ color: DARK, fontSize: 13, fontWeight: "700" }}>Start Navigation →</Text>
+        </TouchableOpacity>
+      </LinearGradient>
 
-      <div style={{ padding: "0 20px 12px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-          <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: DARK }}>Quick Actions</h3>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
+        <Text style={{ fontSize: 16, fontWeight: "700", color: DARK, marginBottom: 14 }}>Quick Actions</Text>
+        <View style={{ flexDirection: "row", gap: 10 }}>
           {[
             { label: "Store Map", icon: "map" },
             { label: "Deals", icon: "deals" },
             { label: "My List", icon: "list" },
             { label: "Orders", icon: "orders" },
-          ].map(a => (
-            <button key={a.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, background: "white", border: `1px solid ${BORDER}`, borderRadius: 12, padding: "12px 8px", cursor: "pointer" }}>
+          ].map((a) => (
+            <TouchableOpacity
+              key={a.label}
+              activeOpacity={0.8}
+              style={{
+                flex: 1,
+                alignItems: "center",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 12,
+                paddingVertical: 12,
+                paddingHorizontal: 8,
+              }}
+            >
               <Icon name={a.icon} size={22} color={GREEN} />
-              <span style={{ fontSize: 11, fontWeight: 600, color: DARK, textAlign: "center" }}>{a.label}</span>
-            </button>
+              <Text
+                style={{ fontSize: 11, fontWeight: "600", color: DARK, textAlign: "center", marginTop: 6 }}
+              >
+                {a.label}
+              </Text>
+            </TouchableOpacity>
           ))}
-        </div>
-      </div>
+        </View>
+      </View>
 
-      <div style={{ padding: "0 20px 12px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-          <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Shop by Category</h3>
-          <span style={{ fontSize: 13, color: GREEN, fontWeight: 600 }}>See All</span>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
-          {categories.map(c => (
-            <button key={c.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, background: "white", border: `1px solid ${BORDER}`, borderRadius: 12, padding: "12px 4px", cursor: "pointer" }}>
-              <span style={{ fontSize: 26 }}>{c.emoji}</span>
-              <span style={{ fontSize: 10, fontWeight: 600, color: DARK, textAlign: "center" }}>{c.name}</span>
-            </button>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 12 }}>
+          <Text style={{ fontSize: 16, fontWeight: "700" }}>Shop by Category</Text>
+          <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>See All</Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 10 }}>
+          {categories.map((c) => (
+            <TouchableOpacity
+              key={c.name}
+              activeOpacity={0.8}
+              style={{
+                flex: 1,
+                alignItems: "center",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 12,
+                paddingVertical: 12,
+                paddingHorizontal: 4,
+              }}
+            >
+              <Text style={{ fontSize: 26 }}>{c.emoji}</Text>
+              <Text
+                style={{ fontSize: 10, fontWeight: "600", color: DARK, textAlign: "center", marginTop: 6 }}
+              >
+                {c.name}
+              </Text>
+            </TouchableOpacity>
           ))}
-        </div>
-      </div>
+        </View>
+      </View>
 
-      <div style={{ padding: "0 20px 16px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-          <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Featured Deals</h3>
-        </div>
-        <div style={{ display: "flex", gap: 12, overflowX: "auto", paddingBottom: 4 }}>
-          {deals.map(d => (
-            <div key={d.name} style={{ minWidth: 180, background: "white", borderRadius: 14, border: `1px solid ${BORDER}`, padding: 12, flexShrink: 0 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: "white", background: RED, padding: "2px 6px", borderRadius: 6 }}>{d.discount}</span>
-              </div>
-              <div style={{ width: "100%", height: 70, background: LIGHT_GRAY, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 8, fontSize: 30 }}>🫒</div>
-              <p style={{ margin: "0 0 2px", fontSize: 12, fontWeight: 600, color: DARK, lineHeight: 1.3 }}>{d.name}</p>
-              <p style={{ margin: "0 0 8px", fontSize: 11, color: GRAY }}>{d.aisle}</p>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div>
-                  <Price amount={d.price} size={15} />
-                  <span style={{ fontSize: 11, color: GRAY, textDecoration: "line-through", marginLeft: 4 }}>{d.orig}</span>
-                </div>
-                <button style={{ width: 28, height: 28, borderRadius: "50%", background: GREEN, border: "none", color: "white", fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Icon name="plus" size={16} color="white" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
+        <Text style={{ fontSize: 16, fontWeight: "700", marginBottom: 12 }}>Featured Deals</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={{ flexDirection: "row", gap: 12, paddingBottom: 4 }}>
+            {deals.map((d) => (
+              <View
+                key={d.name}
+                style={{
+                  width: 180,
+                  backgroundColor: "white",
+                  borderRadius: 14,
+                  borderWidth: 1,
+                  borderColor: BORDER,
+                  padding: 12,
+                }}
+              >
+                <View
+                  style={{
+                    alignSelf: "flex-start",
+                    backgroundColor: RED,
+                    paddingHorizontal: 6,
+                    paddingVertical: 2,
+                    borderRadius: 6,
+                    marginBottom: 8,
+                  }}
+                >
+                  <Text style={{ fontSize: 11, fontWeight: "700", color: "white" }}>{d.discount}</Text>
+                </View>
+                <View
+                  style={{
+                    width: "100%",
+                    height: 70,
+                    backgroundColor: LIGHT_GRAY,
+                    borderRadius: 8,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 8,
+                  }}
+                >
+                  <Text style={{ fontSize: 30 }}>🫒</Text>
+                </View>
+                <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, lineHeight: 16, marginBottom: 2 }}>
+                  {d.name}
+                </Text>
+                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 8 }}>{d.aisle}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                  <View style={{ flexDirection: "row", alignItems: "baseline" }}>
+                    <Price amount={d.price} size={15} />
+                    <Text style={{ fontSize: 11, color: GRAY, textDecorationLine: "line-through", marginLeft: 4 }}>
+                      {d.orig}
+                    </Text>
+                  </View>
+                  <TouchableOpacity
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: 14,
+                      backgroundColor: GREEN,
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Icon name="plus" size={16} color="white" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -342,107 +731,244 @@ const OnSiteScreen = ({ onNav }) => {
     { name: "Seasonal Fruit Basket", aisle: "Aisle 1 · Produce", price: "12.50", orig: "15.80", discount: "-20%", emoji: "🍎" },
     { name: "Premium Olive Oil 1L", aisle: "Aisle 4 · Pantry", price: "14.50", emoji: "🫒" },
   ];
+
+  const handleTool = (label) => {
+    if (label === "Find Product") onNav("onsite-search");
+    else if (label === "Ask AI") onNav("assistant");
+    else if (label === "Navigate") onNav("map");
+    else onNav("scanner");
+  };
+
   return (
-    <div style={{ flex: 1, overflowY: "auto", background: LIGHT_GRAY }}>
-      <div style={{ background: "white", padding: "16px 20px 12px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: GREEN, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span style={{ color: "white", fontWeight: 700, fontSize: 16 }}>B</span>
-            </div>
-            <div>
-              <p style={{ margin: 0, fontWeight: 700, fontSize: 15, color: DARK }}>Bravo On-Site</p>
-              <p style={{ margin: 0, fontSize: 11, color: GRAY }}>Store Hub</p>
-            </div>
-          </div>
-          <button style={{ background: "none", border: "none", cursor: "pointer" }}><Icon name="bell" size={22} color={GRAY} /></button>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, background: LIGHT_GRAY, borderRadius: 12, padding: "10px 14px" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View style={{ backgroundColor: "white", paddingHorizontal: 20, paddingTop: 16, paddingBottom: 12 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 12,
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: 18,
+                backgroundColor: GREEN,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white", fontWeight: "700", fontSize: 16 }}>B</Text>
+            </View>
+            <View style={{ marginLeft: 10 }}>
+              <Text style={{ fontWeight: "700", fontSize: 15, color: DARK }}>Bravo On-Site</Text>
+              <Text style={{ fontSize: 11, color: GRAY }}>Store Hub</Text>
+            </View>
+          </View>
+          <TouchableOpacity>
+            <Icon name="bell" size={22} color={GRAY} />
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: LIGHT_GRAY,
+            borderRadius: 12,
+            paddingHorizontal: 14,
+            paddingVertical: 10,
+          }}
+        >
           <Icon name="search" size={16} color={GRAY} />
-          <span style={{ fontSize: 13, color: "#aaa" }}>Məhsul, brend və ya kateqoriya axt</span>
-          <Icon name="scan" size={16} color={GREEN} style={{ marginLeft: "auto" }} />
-        </div>
-      </div>
+          <Text style={{ fontSize: 13, color: "#aaa", marginLeft: 12, flex: 1 }}>
+            Məhsul, brend və ya kateqoriya axt
+          </Text>
+          <Icon name="scan" size={16} color={GREEN} />
+        </View>
+      </View>
 
-      <div style={{ margin: "12px 20px", background: "white", borderRadius: 14, border: `1px solid ${BORDER}`, overflow: "hidden" }}>
-        <div style={{ padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${BORDER}` }}>
-          <div>
-            <p style={{ margin: "0 0 2px", fontSize: 11, color: GRAY, fontWeight: 600 }}>SELECT STORE</p>
-            <p style={{ margin: 0, fontWeight: 700, fontSize: 15, color: DARK }}>Bravo Gənclik Mall</p>
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end", marginBottom: 2 }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: GREEN }} />
-              <span style={{ fontSize: 12, color: GREEN, fontWeight: 600 }}>Open until 23:00</span>
-            </div>
+      <View
+        style={{
+          margin: 12,
+          marginHorizontal: 20,
+          backgroundColor: "white",
+          borderRadius: 14,
+          borderWidth: 1,
+          borderColor: BORDER,
+          overflow: "hidden",
+        }}
+      >
+        <View
+          style={{
+            paddingHorizontal: 16,
+            paddingVertical: 14,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderBottomWidth: 1,
+            borderBottomColor: BORDER,
+          }}
+        >
+          <View>
+            <Text style={{ fontSize: 11, color: GRAY, fontWeight: "600", marginBottom: 2 }}>SELECT STORE</Text>
+            <Text style={{ fontWeight: "700", fontSize: 15, color: DARK }}>Bravo Gənclik Mall</Text>
+          </View>
+          <View style={{ alignItems: "flex-end" }}>
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 2 }}>
+              <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: GREEN, marginRight: 4 }} />
+              <Text style={{ fontSize: 12, color: GREEN, fontWeight: "600" }}>Open until 23:00</Text>
+            </View>
             <Icon name="chevronDown" size={16} color={GRAY} />
-          </div>
-        </div>
+          </View>
+        </View>
 
-        <div style={{ padding: "12px 16px" }}>
-          <p style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: DARK }}>Nearby Branches</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-            {[{ name: "Bravo 28 Mall", dist: "1.2 km", addr: "Füzuli küçəsi, Bakı" }, { name: "Bravo Port Baku", dist: "2.5 km", addr: "Neftçilər prospekti" }].map(b => (
-              <div key={b.name} style={{ background: LIGHT_GRAY, borderRadius: 10, padding: "10px 12px" }}>
-                <p style={{ margin: "0 0 2px", fontWeight: 700, fontSize: 13, color: DARK }}>{b.name} <span style={{ fontWeight: 400, color: GRAY }}>{b.dist}</span></p>
-                <p style={{ margin: "0 0 6px", fontSize: 11, color: GRAY }}>{b.addr}</p>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: GREEN }} />
-                  <span style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>Open</span>
-                </div>
-              </div>
+        <View style={{ padding: 16 }}>
+          <Text style={{ fontSize: 13, fontWeight: "700", color: DARK, marginBottom: 8 }}>Nearby Branches</Text>
+          <View style={{ flexDirection: "row", gap: 10 }}>
+            {[
+              { name: "Bravo 28 Mall", dist: "1.2 km", addr: "Füzuli küçəsi, Bakı" },
+              { name: "Bravo Port Baku", dist: "2.5 km", addr: "Neftçilər prospekti" },
+            ].map((b) => (
+              <View
+                key={b.name}
+                style={{ flex: 1, backgroundColor: LIGHT_GRAY, borderRadius: 10, paddingHorizontal: 12, paddingVertical: 10 }}
+              >
+                <Text style={{ fontWeight: "700", fontSize: 13, color: DARK, marginBottom: 2 }}>
+                  {b.name} <Text style={{ fontWeight: "400", color: GRAY }}>{b.dist}</Text>
+                </Text>
+                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 6 }}>{b.addr}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: GREEN, marginRight: 4 }} />
+                  <Text style={{ fontSize: 11, color: GREEN, fontWeight: "600" }}>Open</Text>
+                </View>
+              </View>
             ))}
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
 
-      <div style={{ margin: "0 20px 12px", background: GREEN_LIGHT, borderRadius: 14, padding: "14px 16px", display: "flex", gap: 12 }}>
-        <div style={{ width: 32, height: 32, background: GREEN, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-          💡
-        </div>
-        <div>
-          <p style={{ margin: "0 0 4px", fontWeight: 700, fontSize: 13, color: DARK }}>In-Aisle Tip</p>
-          <p style={{ margin: 0, fontSize: 12, color: GRAY, lineHeight: 1.5 }}>Looking for fresh bakery items? The Gənclik Mall branch restocks artisanal breads every day at 14:00. Head to Aisle 7.</p>
-        </div>
-      </div>
+      <View
+        style={{
+          marginHorizontal: 20,
+          marginBottom: 12,
+          backgroundColor: GREEN_LIGHT,
+          borderRadius: 14,
+          padding: 14,
+          flexDirection: "row",
+        }}
+      >
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            backgroundColor: GREEN,
+            borderRadius: 8,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ fontSize: 16 }}>💡</Text>
+        </View>
+        <View style={{ flex: 1, marginLeft: 12 }}>
+          <Text style={{ fontWeight: "700", fontSize: 13, color: DARK, marginBottom: 4 }}>In-Aisle Tip</Text>
+          <Text style={{ fontSize: 12, color: GRAY, lineHeight: 18 }}>
+            Looking for fresh bakery items? The Gənclik Mall branch restocks artisanal breads every day at 14:00.
+            Head to Aisle 7.
+          </Text>
+        </View>
+      </View>
 
-      <div style={{ padding: "0 20px 12px" }}>
-        <p style={{ margin: "0 0 12px", fontWeight: 700, fontSize: 16, color: DARK }}>On-Site Tools</p>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-          {tools.map(t => (
-            <button key={t.label} onClick={() => t.label === "Find Product" ? onNav("onsite-search") : t.label === "Ask AI" ? onNav("assistant") : t.label === "Navigate" ? onNav("map") : onNav("scanner")} style={{ background: "white", border: `1px solid ${BORDER}`, borderRadius: 14, padding: "16px", textAlign: "left", cursor: "pointer" }}>
-              <div style={{ marginBottom: 8 }}><Icon name={t.icon} size={24} color={DARK} /></div>
-              <p style={{ margin: "0 0 2px", fontWeight: 700, fontSize: 13, color: DARK }}>{t.label}</p>
-              <p style={{ margin: 0, fontSize: 11, color: GRAY }}>{t.sub}</p>
-            </button>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
+        <Text style={{ fontWeight: "700", fontSize: 16, color: DARK, marginBottom: 12 }}>On-Site Tools</Text>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
+          {tools.map((t) => (
+            <TouchableOpacity
+              key={t.label}
+              onPress={() => handleTool(t.label)}
+              activeOpacity={0.8}
+              style={{
+                width: "47.5%",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 14,
+                padding: 16,
+              }}
+            >
+              <View style={{ marginBottom: 8 }}>
+                <Icon name={t.icon} size={24} color={DARK} />
+              </View>
+              <Text style={{ fontWeight: "700", fontSize: 13, color: DARK, marginBottom: 2 }}>{t.label}</Text>
+              <Text style={{ fontSize: 11, color: GRAY }}>{t.sub}</Text>
+            </TouchableOpacity>
           ))}
-        </div>
-      </div>
+        </View>
+      </View>
 
-      <div style={{ padding: "0 20px 24px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
-          <p style={{ margin: 0, fontWeight: 700, fontSize: 16 }}>In-Store Specials</p>
-          <span style={{ fontSize: 13, color: GREEN, fontWeight: 600 }}>View All</span>
-        </div>
-        {specials.map(s => (
-          <div key={s.name} style={{ background: "white", borderRadius: 14, border: `1px solid ${BORDER}`, padding: "12px 16px", marginBottom: 10, display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 48, height: 48, background: LIGHT_GRAY, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0, position: "relative" }}>
-              {s.emoji}
-              {s.discount && <span style={{ position: "absolute", top: -6, left: -6, background: RED, color: "white", fontSize: 9, fontWeight: 700, padding: "1px 4px", borderRadius: 4 }}>{s.discount}</span>}
-            </div>
-            <div style={{ flex: 1 }}>
-              <p style={{ margin: "0 0 2px", fontWeight: 600, fontSize: 13, color: DARK }}>{s.name}</p>
-              <p style={{ margin: 0, fontSize: 11, color: GRAY }}>{s.aisle}</p>
-            </div>
-            <div style={{ textAlign: "right" }}>
+      <View style={{ paddingHorizontal: 20, paddingBottom: 24 }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 12 }}>
+          <Text style={{ fontWeight: "700", fontSize: 16 }}>In-Store Specials</Text>
+          <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>View All</Text>
+        </View>
+        {specials.map((s) => (
+          <View
+            key={s.name}
+            style={{
+              backgroundColor: "white",
+              borderRadius: 14,
+              borderWidth: 1,
+              borderColor: BORDER,
+              paddingHorizontal: 16,
+              paddingVertical: 12,
+              marginBottom: 10,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                width: 48,
+                height: 48,
+                backgroundColor: LIGHT_GRAY,
+                borderRadius: 10,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ fontSize: 24 }}>{s.emoji}</Text>
+              {s.discount && (
+                <View
+                  style={{
+                    position: "absolute",
+                    top: -6,
+                    left: -6,
+                    backgroundColor: RED,
+                    paddingHorizontal: 4,
+                    paddingVertical: 1,
+                    borderRadius: 4,
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>{s.discount}</Text>
+                </View>
+              )}
+            </View>
+            <View style={{ flex: 1, marginLeft: 12 }}>
+              <Text style={{ fontWeight: "600", fontSize: 13, color: DARK, marginBottom: 2 }}>{s.name}</Text>
+              <Text style={{ fontSize: 11, color: GRAY }}>{s.aisle}</Text>
+            </View>
+            <View style={{ alignItems: "flex-end" }}>
               <Price amount={s.price} size={15} />
-              {s.orig && <p style={{ margin: 0, fontSize: 11, color: GRAY, textDecoration: "line-through" }}>{s.orig}</p>}
-            </div>
-            <Icon name="chevronDown" size={16} color={GRAY} style={{ transform: "rotate(-90deg)" }} />
-          </div>
+              {s.orig && (
+                <Text style={{ fontSize: 11, color: GRAY, textDecorationLine: "line-through" }}>{s.orig}</Text>
+              )}
+            </View>
+          </View>
         ))}
-      </div>
-    </div>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -458,148 +984,388 @@ const SearchScreen = ({ onProduct, onNav }) => {
     { name: "President Lactose Free Milk", vol: "1000 ml", price: "4.80", status: "Out of Stock", statusColor: RED, aisle: "Aisle 3 · Shelf C", emoji: "🥛" },
   ];
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: "white" }}>
-      <div style={{ padding: "16px 20px 0" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-          <button onClick={() => onNav("onsite")} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <View style={{ paddingHorizontal: 20, paddingTop: 16 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 4 }}>
+          <TouchableOpacity onPress={() => onNav("onsite")} style={{ padding: 4 }}>
             <Icon name="back" size={22} color={DARK} />
-          </button>
-          <div>
-            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: DARK }}>Search Results</h2>
-            <p style={{ margin: 0, fontSize: 12, color: GRAY }}>24 items found for "Milk"</p>
-          </div>
-        </div>
-      </div>
-      <div style={{ padding: "12px 20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, background: LIGHT_GRAY, borderRadius: 12, padding: "10px 14px", marginBottom: 12 }}>
+          </TouchableOpacity>
+          <View style={{ marginLeft: 12 }}>
+            <Text style={{ fontSize: 18, fontWeight: "700", color: DARK }}>Search Results</Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>24 items found for "Milk"</Text>
+          </View>
+        </View>
+      </View>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 12 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: LIGHT_GRAY,
+            borderRadius: 12,
+            paddingHorizontal: 14,
+            paddingVertical: 10,
+            marginBottom: 12,
+          }}
+        >
           <Icon name="search" size={16} color={GRAY} />
-          <input value={query} onChange={e => setQuery(e.target.value)} style={{ flex: 1, border: "none", background: "transparent", fontSize: 14, color: DARK, outline: "none" }} />
-          <button style={{ background: "none", border: "none", cursor: "pointer" }}><Icon name="close" size={14} color={GRAY} /></button>
-          <div style={{ width: 1, height: 16, background: BORDER }} />
+          <TextInput
+            value={query}
+            onChangeText={setQuery}
+            style={{ flex: 1, fontSize: 14, color: DARK, marginHorizontal: 10, paddingVertical: 0 }}
+          />
+          <TouchableOpacity>
+            <Icon name="close" size={14} color={GRAY} />
+          </TouchableOpacity>
+          <View style={{ width: 1, height: 16, backgroundColor: BORDER, marginHorizontal: 10 }} />
           <Icon name="filter" size={16} color={GRAY} />
-        </div>
-        <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4 }}>
-          {filters.map(f => (
-            <button key={f} onClick={() => setActiveFilter(f)} style={{ flexShrink: 0, padding: "6px 14px", borderRadius: 20, border: `1px solid ${activeFilter === f ? GREEN : BORDER}`, background: activeFilter === f ? GREEN : "white", color: activeFilter === f ? "white" : DARK, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>{f}</button>
-          ))}
-        </div>
-      </div>
-      <div style={{ flex: 1, overflowY: "auto", padding: "0 20px 16px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-          {products.map(p => (
-            <div key={p.name} onClick={() => onProduct(p)} style={{ background: "white", border: `1px solid ${BORDER}`, borderRadius: 14, overflow: "hidden", cursor: "pointer" }}>
-              <div style={{ height: 100, background: LIGHT_GRAY, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 40 }}>{p.emoji}</div>
-              <div style={{ padding: "10px 10px 12px" }}>
-                <p style={{ margin: "0 0 2px", fontSize: 12, fontWeight: 600, color: DARK, lineHeight: 1.3 }}>{p.name}</p>
-                <p style={{ margin: "0 0 6px", fontSize: 11, color: GRAY }}>{p.vol}</p>
+        </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={{ flexDirection: "row", gap: 8, paddingBottom: 4 }}>
+            {filters.map((f) => (
+              <TouchableOpacity
+                key={f}
+                onPress={() => setActiveFilter(f)}
+                activeOpacity={0.8}
+                style={{
+                  paddingHorizontal: 14,
+                  paddingVertical: 6,
+                  borderRadius: 20,
+                  borderWidth: 1,
+                  borderColor: activeFilter === f ? GREEN : BORDER,
+                  backgroundColor: activeFilter === f ? GREEN : "white",
+                }}
+              >
+                <Text
+                  style={{ color: activeFilter === f ? "white" : DARK, fontSize: 13, fontWeight: "600" }}
+                >
+                  {f}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </View>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 16 }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
+          {products.map((p) => (
+            <TouchableOpacity
+              key={p.name}
+              onPress={() => onProduct(p)}
+              activeOpacity={0.85}
+              style={{
+                width: "47.5%",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 14,
+                overflow: "hidden",
+              }}
+            >
+              <View
+                style={{
+                  height: 100,
+                  backgroundColor: LIGHT_GRAY,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Text style={{ fontSize: 40 }}>{p.emoji}</Text>
+              </View>
+              <View style={{ padding: 10 }}>
+                <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, lineHeight: 16, marginBottom: 2 }}>
+                  {p.name}
+                </Text>
+                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 6 }}>{p.vol}</Text>
                 <Price amount={p.price} size={15} />
-                <div style={{ display: "flex", alignItems: "center", gap: 4, margin: "6px 0" }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: p.statusColor }} />
-                  <span style={{ fontSize: 11, color: p.statusColor, fontWeight: 600 }}>{p.status}</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4, marginBottom: 8 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 6 }}>
+                  <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: p.statusColor, marginRight: 4 }} />
+                  <Text style={{ fontSize: 11, color: p.statusColor, fontWeight: "600" }}>{p.status}</Text>
+                </View>
+                <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
                   <Icon name="shelf" size={12} color={GRAY} />
-                  <span style={{ fontSize: 11, color: GRAY }}>{p.aisle}</span>
-                </div>
-                <button style={{ width: "100%", padding: "7px 0", borderRadius: 10, border: `1px solid ${BORDER}`, background: "white", fontSize: 12, fontWeight: 600, color: DARK, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}>
-                  <Icon name="navigate" size={12} color={GREEN} /> Navigate
-                </button>
-              </div>
-            </div>
+                  <Text style={{ fontSize: 11, color: GRAY, marginLeft: 4 }}>{p.aisle}</Text>
+                </View>
+                <TouchableOpacity
+                  style={{
+                    paddingVertical: 7,
+                    borderRadius: 10,
+                    borderWidth: 1,
+                    borderColor: BORDER,
+                    backgroundColor: "white",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Icon name="navigate" size={12} color={GREEN} />
+                  <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, marginLeft: 4 }}>Navigate</Text>
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           ))}
-        </div>
-      </div>
-    </div>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
 // ── SCREEN 5: Product Detail ─────────────────────────────────────────────────
 const ProductScreen = ({ product, onBack, onNav }) => {
   const [tab, setTab] = useState("Details");
-  const p = product || { name: "Milla Full Cream Milk 1L", price: "2.45", emoji: "🥛", aisle: "Aisle 3", shelf: "Shelf B", status: "In Stock", statusColor: GREEN };
+  const p =
+    product || {
+      name: "Milla Full Cream Milk 1L",
+      price: "2.45",
+      emoji: "🥛",
+      aisle: "Aisle 3",
+      shelf: "Shelf B",
+      status: "In Stock",
+      statusColor: GREEN,
+    };
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: "white", overflowY: "auto" }}>
-      <div style={{ position: "relative", background: LIGHT_GRAY, paddingTop: 20, paddingBottom: 20 }}>
-        <button onClick={onBack} style={{ position: "absolute", top: 16, left: 16, width: 36, height: 36, borderRadius: "50%", background: "white", border: `1px solid ${BORDER}`, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
-          <Icon name="back" size={18} color={DARK} />
-        </button>
-        <button onClick={() => onNav("assistant")} style={{ position: "absolute", top: 16, right: 16, display: "flex", alignItems: "center", gap: 6, background: GREEN_LIGHT, border: `1px solid ${GREEN}`, color: GREEN, fontSize: 12, fontWeight: 600, padding: "6px 12px", borderRadius: 20, cursor: "pointer" }}>
-          <Icon name="robot" size={14} color={GREEN} /> Ask AI
-        </button>
-        <div style={{ display: "flex", justifyContent: "center", fontSize: 100, marginTop: 16 }}>{p.emoji}</div>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: 12 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, background: "white", border: `1px solid ${BORDER}`, borderRadius: 20, padding: "4px 14px" }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: p.statusColor || GREEN }} />
-            <span style={{ fontSize: 12, fontWeight: 600, color: p.statusColor || GREEN }}>{p.status || "In Stock"} ({p.aisle} • {p.shelf})</span>
-          </div>
-        </div>
-      </div>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <ScrollView style={{ flex: 1 }}>
+        <View style={{ backgroundColor: LIGHT_GRAY, paddingVertical: 20, position: "relative" }}>
+          <TouchableOpacity
+            onPress={onBack}
+            style={{
+              position: "absolute",
+              top: 16,
+              left: 16,
+              width: 36,
+              height: 36,
+              borderRadius: 18,
+              backgroundColor: "white",
+              borderWidth: 1,
+              borderColor: BORDER,
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+            }}
+          >
+            <Icon name="back" size={18} color={DARK} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => onNav("assistant")}
+            style={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+              flexDirection: "row",
+              alignItems: "center",
+              backgroundColor: GREEN_LIGHT,
+              borderWidth: 1,
+              borderColor: GREEN,
+              paddingHorizontal: 12,
+              paddingVertical: 6,
+              borderRadius: 20,
+              zIndex: 10,
+            }}
+          >
+            <Icon name="robot" size={14} color={GREEN} />
+            <Text style={{ fontSize: 12, fontWeight: "600", color: GREEN, marginLeft: 6 }}>Ask AI</Text>
+          </TouchableOpacity>
+          <View style={{ alignItems: "center", marginTop: 16 }}>
+            <Text style={{ fontSize: 100 }}>{p.emoji}</Text>
+          </View>
+          <View style={{ alignItems: "center", marginTop: 12 }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderColor: BORDER,
+                borderRadius: 20,
+                paddingHorizontal: 14,
+                paddingVertical: 4,
+              }}
+            >
+              <View
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: 4,
+                  backgroundColor: p.statusColor || GREEN,
+                  marginRight: 6,
+                }}
+              />
+              <Text style={{ fontSize: 12, fontWeight: "600", color: p.statusColor || GREEN }}>
+                {p.status || "In Stock"} ({p.aisle} • {p.shelf})
+              </Text>
+            </View>
+          </View>
+        </View>
 
-      <div style={{ padding: "20px 20px 0" }}>
-        <p style={{ margin: "0 0 4px", fontSize: 11, fontWeight: 700, color: GRAY, letterSpacing: 1 }}>MILLA DAIRY</p>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
-          <h1 style={{ margin: 0, fontSize: 20, fontWeight: 800, color: DARK, flex: 1 }}>{p.name}</h1>
-          <button style={{ background: "none", border: "none", cursor: "pointer", marginTop: 2 }}>
-            <Icon name="heart" size={22} color={GRAY} />
-          </button>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-          <span style={{ fontSize: 14, color: "#F59E0B" }}>★</span>
-          <span style={{ fontWeight: 600, fontSize: 14 }}>4.8</span>
-          <span style={{ color: GRAY, fontSize: 13 }}>(120 Reviews)</span>
-          <Price amount={p.price} size={18} />
-        </div>
-        <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
-          <AllergenBadge label="Contains Dairy" />
-          <AllergenBadge label="Lactose" />
-        </div>
+        <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+          <Text style={{ fontSize: 11, fontWeight: "700", color: GRAY, letterSpacing: 1, marginBottom: 4 }}>
+            MILLA DAIRY
+          </Text>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+            <Text style={{ fontSize: 20, fontWeight: "800", color: DARK, flex: 1 }}>{p.name}</Text>
+            <TouchableOpacity style={{ marginTop: 2, marginLeft: 8 }}>
+              <Icon name="heart" size={22} color={GRAY} />
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12 }}>
+            <Text style={{ fontSize: 14, color: "#F59E0B" }}>★</Text>
+            <Text style={{ fontWeight: "600", fontSize: 14, marginLeft: 8 }}>4.8</Text>
+            <Text style={{ color: GRAY, fontSize: 13, marginLeft: 8 }}>(120 Reviews)</Text>
+            <View style={{ marginLeft: 8 }}>
+              <Price amount={p.price} size={18} />
+            </View>
+          </View>
+          <View style={{ flexDirection: "row", gap: 8, marginBottom: 20 }}>
+            <AllergenBadge label="Contains Dairy" />
+            <AllergenBadge label="Lactose" />
+          </View>
 
-        <div style={{ display: "flex", gap: 0, borderBottom: `2px solid ${BORDER}`, marginBottom: 16 }}>
-          {["Details", "Ingredients", "Nutrition"].map(t => (
-            <button key={t} onClick={() => setTab(t)} style={{ padding: "10px 16px", background: "none", border: "none", cursor: "pointer", fontWeight: tab === t ? 700 : 400, fontSize: 14, color: tab === t ? "white" : GRAY, background: tab === t ? GREEN : "transparent", borderRadius: tab === t ? "8px 8px 0 0" : 0 }}>{t}</button>
-          ))}
-        </div>
-
-        {tab === "Details" && <p style={{ fontSize: 14, lineHeight: 1.7, color: GRAY, margin: "0 0 20px" }}>Premium quality full cream milk sourced from local farms. Rich in calcium and essential vitamins, perfect for your daily nutrition needs. Pasteurized and homogenized for freshness.</p>}
-        {tab === "Ingredients" && <p style={{ fontSize: 14, lineHeight: 1.7, color: GRAY, margin: "0 0 20px" }}>Full cream milk (100%). Contains milk proteins, fat (min 3.5%), lactose, vitamins A, D, B12, and minerals including calcium and phosphorus.</p>}
-        {tab === "Nutrition" && (
-          <div style={{ marginBottom: 20 }}>
-            {[["Energy", "270 kJ / 64 kcal"], ["Fat", "3.5g"], ["Protein", "3.2g"], ["Carbohydrates", "4.7g"], ["Calcium", "120mg"]].map(([k, v]) => (
-              <div key={k} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: `1px solid ${BORDER}` }}>
-                <span style={{ fontSize: 13, color: GRAY }}>{k}</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: DARK }}>{v}</span>
-              </div>
+          <View style={{ flexDirection: "row", borderBottomWidth: 2, borderBottomColor: BORDER, marginBottom: 16 }}>
+            {["Details", "Ingredients", "Nutrition"].map((t) => (
+              <TouchableOpacity
+                key={t}
+                onPress={() => setTab(t)}
+                style={{
+                  paddingHorizontal: 16,
+                  paddingVertical: 10,
+                  backgroundColor: tab === t ? GREEN : "transparent",
+                  borderTopLeftRadius: tab === t ? 8 : 0,
+                  borderTopRightRadius: tab === t ? 8 : 0,
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: tab === t ? "700" : "400",
+                    fontSize: 14,
+                    color: tab === t ? "white" : GRAY,
+                  }}
+                >
+                  {t}
+                </Text>
+              </TouchableOpacity>
             ))}
-          </div>
-        )}
+          </View>
 
-        <h3 style={{ margin: "0 0 12px", fontSize: 15, fontWeight: 700 }}>Similar Products</h3>
-        <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
-          {[{ name: "Azersun Milk 2.5%", price: "2.30", emoji: "🥛" }, { name: "Palsud Fresh Milk", price: "2.60", emoji: "🥛" }].map(sp => (
-            <div key={sp.name} style={{ flex: 1, background: LIGHT_GRAY, borderRadius: 12, padding: "12px", position: "relative" }}>
-              <button style={{ position: "absolute", top: 8, right: 8, background: "none", border: "none", cursor: "pointer" }}><Icon name="heart" size={16} color={GRAY} /></button>
-              <div style={{ fontSize: 40, textAlign: "center", marginBottom: 6 }}>{sp.emoji}</div>
-              <p style={{ margin: "0 0 4px", fontSize: 11, fontWeight: 600, color: DARK }}>{sp.name}</p>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <Price amount={sp.price} size={13} />
-                <button style={{ width: 24, height: 24, borderRadius: "50%", background: GREEN, border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
-                  <Icon name="plus" size={14} color="white" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+          {tab === "Details" && (
+            <Text style={{ fontSize: 14, lineHeight: 24, color: GRAY, marginBottom: 20 }}>
+              Premium quality full cream milk sourced from local farms. Rich in calcium and essential vitamins,
+              perfect for your daily nutrition needs. Pasteurized and homogenized for freshness.
+            </Text>
+          )}
+          {tab === "Ingredients" && (
+            <Text style={{ fontSize: 14, lineHeight: 24, color: GRAY, marginBottom: 20 }}>
+              Full cream milk (100%). Contains milk proteins, fat (min 3.5%), lactose, vitamins A, D, B12, and
+              minerals including calcium and phosphorus.
+            </Text>
+          )}
+          {tab === "Nutrition" && (
+            <View style={{ marginBottom: 20 }}>
+              {[
+                ["Energy", "270 kJ / 64 kcal"],
+                ["Fat", "3.5g"],
+                ["Protein", "3.2g"],
+                ["Carbohydrates", "4.7g"],
+                ["Calcium", "120mg"],
+              ].map(([k, v]) => (
+                <View
+                  key={k}
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    paddingVertical: 8,
+                    borderBottomWidth: 1,
+                    borderBottomColor: BORDER,
+                  }}
+                >
+                  <Text style={{ fontSize: 13, color: GRAY }}>{k}</Text>
+                  <Text style={{ fontSize: 13, fontWeight: "600", color: DARK }}>{v}</Text>
+                </View>
+              ))}
+            </View>
+          )}
 
-      <div style={{ padding: "12px 20px 20px", borderTop: `1px solid ${BORDER}`, display: "flex", gap: 12, background: "white", position: "sticky", bottom: 0 }}>
-        <button style={{ flex: 1, padding: "14px 0", borderRadius: 12, border: `1px solid ${BORDER}`, background: "white", fontSize: 14, fontWeight: 600, color: DARK, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-          <Icon name="list" size={16} color={DARK} /> Add to List
-        </button>
-        <button onClick={() => onNav("map")} style={{ flex: 1.5, padding: "14px 0", borderRadius: 12, background: GREEN, border: "none", color: "white", fontSize: 14, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-          <Icon name="navigate" size={16} color="white" /> Navigate
-        </button>
-      </div>
-    </div>
+          <Text style={{ fontSize: 15, fontWeight: "700", marginBottom: 12 }}>Similar Products</Text>
+          <View style={{ flexDirection: "row", gap: 12, marginBottom: 24 }}>
+            {[
+              { name: "Azersun Milk 2.5%", price: "2.30", emoji: "🥛" },
+              { name: "Palsud Fresh Milk", price: "2.60", emoji: "🥛" },
+            ].map((sp) => (
+              <View
+                key={sp.name}
+                style={{ flex: 1, backgroundColor: LIGHT_GRAY, borderRadius: 12, padding: 12, position: "relative" }}
+              >
+                <TouchableOpacity style={{ position: "absolute", top: 8, right: 8, zIndex: 5 }}>
+                  <Icon name="heart" size={16} color={GRAY} />
+                </TouchableOpacity>
+                <Text style={{ fontSize: 40, textAlign: "center", marginBottom: 6 }}>{sp.emoji}</Text>
+                <Text style={{ fontSize: 11, fontWeight: "600", color: DARK, marginBottom: 4 }}>{sp.name}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                  <Price amount={sp.price} size={13} />
+                  <TouchableOpacity
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: 12,
+                      backgroundColor: GREEN,
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Icon name="plus" size={14} color="white" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+
+      <View
+        style={{
+          paddingHorizontal: 20,
+          paddingTop: 12,
+          paddingBottom: 20,
+          borderTopWidth: 1,
+          borderTopColor: BORDER,
+          flexDirection: "row",
+          gap: 12,
+          backgroundColor: "white",
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            paddingVertical: 14,
+            borderRadius: 12,
+            borderWidth: 1,
+            borderColor: BORDER,
+            backgroundColor: "white",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon name="list" size={16} color={DARK} />
+          <Text style={{ fontSize: 14, fontWeight: "600", color: DARK, marginLeft: 6 }}>Add to List</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onNav("map")}
+          style={{
+            flex: 1.5,
+            paddingVertical: 14,
+            borderRadius: 12,
+            backgroundColor: GREEN,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon name="navigate" size={16} color="white" />
+          <Text style={{ fontSize: 14, fontWeight: "700", color: "white", marginLeft: 6 }}>Navigate</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
@@ -610,65 +1376,186 @@ const ScannerScreen = ({ onBack, onProduct }) => {
     const t = setTimeout(() => setFound(true), 1500);
     return () => clearTimeout(t);
   }, []);
-  const scannedProduct = { name: "Milla Full Cream Milk 1L", price: "2.45", emoji: "🥛", aisle: "Aisle 3", shelf: "Shelf B", status: "In Stock", statusColor: GREEN };
+  const scannedProduct = {
+    name: "Milla Full Cream Milk 1L",
+    price: "2.45",
+    emoji: "🥛",
+    aisle: "Aisle 3",
+    shelf: "Shelf B",
+    status: "In Stock",
+    statusColor: GREEN,
+  };
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: DARK, position: "relative" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", zIndex: 10 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+    <View style={{ flex: 1, backgroundColor: DARK }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          paddingHorizontal: 20,
+          paddingVertical: 16,
+        }}
+      >
+        <TouchableOpacity
+          onPress={onBack}
+          style={{
+            backgroundColor: "rgba(255,255,255,0.15)",
+            borderRadius: 18,
+            width: 36,
+            height: 36,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Icon name="back" size={18} color="white" />
-        </button>
-        <h2 style={{ color: "white", margin: 0, fontSize: 17, fontWeight: 700 }}>AI Scanner</h2>
-        <div style={{ display: "flex", gap: 12 }}>
-          <button style={{ background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+        </TouchableOpacity>
+        <Text style={{ color: "white", fontSize: 17, fontWeight: "700" }}>AI Scanner</Text>
+        <View style={{ flexDirection: "row", gap: 12 }}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "rgba(255,255,255,0.15)",
+              borderRadius: 18,
+              width: 36,
+              height: 36,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Icon name="lightning" size={18} color="white" />
-          </button>
-          <button style={{ background: "rgba(255,255,255,0.15)", border: "none", borderRadius: "50%", width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "rgba(255,255,255,0.15)",
+              borderRadius: 18,
+              width: 36,
+              height: 36,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Icon name="keyboard" size={18} color="white" />
-          </button>
-        </div>
-      </div>
+          </TouchableOpacity>
+        </View>
+      </View>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 20px" }}>
-        <h2 style={{ color: "white", fontSize: 22, fontWeight: 700, marginBottom: 6 }}>Scan Product...</h2>
-        <p style={{ color: "#aaa", fontSize: 13, marginBottom: 32 }}>Point camera at barcode or label</p>
-        <div style={{ width: "100%", aspectRatio: "1", maxHeight: 260, border: `2px solid ${GREEN}`, borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", position: "relative", background: "rgba(255,255,255,0.05)" }}>
-          {/* corner accents */}
-          {[["0 0", "0 0"], ["auto 0", "0 0"], ["0 auto", "0 0"], ["auto auto", "0 0"]].map((_, i) => (
-            <div key={i} style={{ position: "absolute", width: 20, height: 20, borderColor: GREEN, borderStyle: "solid", borderWidth: 0, ...[{ borderTopWidth: 3, borderLeftWidth: 3, top: -2, left: -2 }, { borderTopWidth: 3, borderRightWidth: 3, top: -2, right: -2 }, { borderBottomWidth: 3, borderLeftWidth: 3, bottom: -2, left: -2 }, { borderBottomWidth: 3, borderRightWidth: 3, bottom: -2, right: -2 }][i], borderRadius: 2 }} />
-          ))}
-          <div style={{ position: "absolute", top: 8, right: 12, background: GREEN, color: "white", fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 20 }}>
-            ● AI Active
-          </div>
-          <div style={{ fontSize: 60, opacity: 0.3 }}>🥛</div>
-        </div>
-      </div>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: 20 }}>
+        <Text style={{ color: "white", fontSize: 22, fontWeight: "700", marginBottom: 6 }}>Scan Product...</Text>
+        <Text style={{ color: "#aaa", fontSize: 13, marginBottom: 32 }}>Point camera at barcode or label</Text>
+        <View
+          style={{
+            width: "100%",
+            aspectRatio: 1,
+            maxHeight: 260,
+            borderWidth: 2,
+            borderColor: GREEN,
+            borderRadius: 16,
+            backgroundColor: "rgba(255,255,255,0.05)",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <View style={{ position: "absolute", top: -2, left: -2, width: 20, height: 20, borderTopWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+          <View style={{ position: "absolute", top: -2, right: -2, width: 20, height: 20, borderTopWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+          <View style={{ position: "absolute", bottom: -2, left: -2, width: 20, height: 20, borderBottomWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+          <View style={{ position: "absolute", bottom: -2, right: -2, width: 20, height: 20, borderBottomWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+          <View
+            style={{
+              position: "absolute",
+              top: 8,
+              right: 12,
+              backgroundColor: GREEN,
+              paddingHorizontal: 10,
+              paddingVertical: 4,
+              borderRadius: 20,
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 11, fontWeight: "600" }}>● AI Active</Text>
+          </View>
+          <Text style={{ fontSize: 60, opacity: 0.3 }}>🥛</Text>
+        </View>
+      </View>
 
       {found && (
-        <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "20px" }}>
-          <div style={{ width: 40, height: 4, background: BORDER, borderRadius: 2, margin: "0 auto 16px" }} />
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 12 }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: GREEN }} />
-            <span style={{ fontSize: 11, fontWeight: 700, color: GREEN, letterSpacing: 1 }}>PRODUCT FOUND</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-            <div style={{ width: 52, height: 52, background: LIGHT_GRAY, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28 }}>{scannedProduct.emoji}</div>
-            <div style={{ flex: 1 }}>
-              <p style={{ margin: "0 0 4px", fontWeight: 700, fontSize: 15, color: DARK }}>{scannedProduct.name}</p>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <View
+          style={{
+            backgroundColor: "white",
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            padding: 20,
+          }}
+        >
+          <View
+            style={{
+              width: 40,
+              height: 4,
+              backgroundColor: BORDER,
+              borderRadius: 2,
+              alignSelf: "center",
+              marginBottom: 16,
+            }}
+          />
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12 }}>
+            <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: GREEN, marginRight: 6 }} />
+            <Text style={{ fontSize: 11, fontWeight: "700", color: GREEN, letterSpacing: 1 }}>PRODUCT FOUND</Text>
+          </View>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 20 }}>
+            <View
+              style={{
+                width: 52,
+                height: 52,
+                backgroundColor: LIGHT_GRAY,
+                borderRadius: 10,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ fontSize: 28 }}>{scannedProduct.emoji}</Text>
+            </View>
+            <View style={{ flex: 1, marginLeft: 12 }}>
+              <Text style={{ fontWeight: "700", fontSize: 15, color: DARK, marginBottom: 4 }}>
+                {scannedProduct.name}
+              </Text>
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                 <Price amount={scannedProduct.price} size={15} />
-                <span style={{ fontSize: 12, color: GRAY }}>{scannedProduct.aisle} · {scannedProduct.shelf}</span>
-              </div>
-            </div>
-          </div>
-          <div style={{ display: "flex", gap: 12 }}>
-            <button onClick={() => onProduct(scannedProduct)} style={{ flex: 1, padding: "13px 0", borderRadius: 12, border: `1px solid ${BORDER}`, background: "white", fontSize: 14, fontWeight: 600, color: DARK, cursor: "pointer" }}>View Details</button>
-            <button style={{ flex: 1, padding: "13px 0", borderRadius: 12, background: GREEN, border: "none", color: "white", fontSize: 14, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-              <Icon name="navigate" size={14} color="white" /> Navigate
-            </button>
-          </div>
-        </div>
+                <Text style={{ fontSize: 12, color: GRAY }}>
+                  {scannedProduct.aisle} · {scannedProduct.shelf}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={{ flexDirection: "row", gap: 12 }}>
+            <TouchableOpacity
+              onPress={() => onProduct(scannedProduct)}
+              style={{
+                flex: 1,
+                paddingVertical: 13,
+                borderRadius: 12,
+                borderWidth: 1,
+                borderColor: BORDER,
+                backgroundColor: "white",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ fontSize: 14, fontWeight: "600", color: DARK }}>View Details</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flex: 1,
+                paddingVertical: 13,
+                borderRadius: 12,
+                backgroundColor: GREEN,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="navigate" size={14} color="white" />
+              <Text style={{ fontSize: 14, fontWeight: "700", color: "white", marginLeft: 6 }}>Navigate</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       )}
-    </div>
+    </View>
   );
 };
 
@@ -677,100 +1564,248 @@ const AssistantScreen = ({ onNav }) => {
   const [messages, setMessages] = useState([
     { from: "bot", text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?" },
     { from: "user", text: "5 AZN altı qəlyanaltılar" },
-    { from: "bot", text: "Budur 5 AZN-dən ucuz bəzi populyar qəlyanaltı seçimləri:", products: [
-      { name: "Lays Classic Çipsi 150q", price: "2.80", aisle: "Sıra 4, Rəf B", emoji: "🥔" },
-      { name: "Qarışıq Çərəz 100q", price: "4.50", aisle: "Sıra 2, Rəf A", emoji: "🥜" },
-    ]},
+    {
+      from: "bot",
+      text: "Budur 5 AZN-dən ucuz bəzi populyar qəlyanaltı seçimləri:",
+      products: [
+        { name: "Lays Classic Çipsi 150q", price: "2.80", aisle: "Sıra 4, Rəf B", emoji: "🥔" },
+        { name: "Qarışıq Çərəz 100q", price: "4.50", aisle: "Sıra 2, Rəf A", emoji: "🥜" },
+      ],
+    },
   ]);
   const [input, setInput] = useState("");
   const chips = ["5 AZN altı qəlyanaltılar", "Halal protein", "Allergensiz"];
-  const endRef = useRef();
-  useEffect(() => { endRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
+  const scrollRef = useRef();
+  useEffect(() => {
+    scrollRef.current?.scrollToEnd({ animated: true });
+  }, [messages]);
 
   const send = (text) => {
     if (!text.trim()) return;
-    setMessages(m => [...m, { from: "user", text }, { from: "bot", text: "Axtarıram..." }]);
+    setMessages((m) => [...m, { from: "user", text }, { from: "bot", text: "Axtarıram..." }]);
     setInput("");
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: "white" }}>
-      <div style={{ padding: "16px 20px 12px", borderBottom: `1px solid ${BORDER}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 36, height: 36, borderRadius: "50%", background: GREEN, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ color: "white", fontWeight: 700 }}>B</span>
-          </div>
-          <div>
-            <p style={{ margin: 0, fontWeight: 700, fontSize: 15, color: DARK }}>Bravo On-Site</p>
-            <p style={{ margin: 0, fontSize: 11, color: GREEN }}>AI Assistant</p>
-          </div>
-        </div>
-        <button style={{ background: "none", border: `1px solid ${BORDER}`, borderRadius: 8, padding: "6px 12px", fontSize: 13, fontWeight: 600, cursor: "pointer", color: GRAY }}>Clear Chat</button>
-      </div>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <View
+        style={{
+          paddingHorizontal: 20,
+          paddingTop: 16,
+          paddingBottom: 12,
+          borderBottomWidth: 1,
+          borderBottomColor: BORDER,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 18,
+              backgroundColor: GREEN,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white", fontWeight: "700" }}>B</Text>
+          </View>
+          <View style={{ marginLeft: 10 }}>
+            <Text style={{ fontWeight: "700", fontSize: 15, color: DARK }}>Bravo On-Site</Text>
+            <Text style={{ fontSize: 11, color: GREEN }}>AI Assistant</Text>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={{
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 8,
+            paddingHorizontal: 12,
+            paddingVertical: 6,
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "600", color: GRAY }}>Clear Chat</Text>
+        </TouchableOpacity>
+      </View>
 
-      <div style={{ flex: 1, overflowY: "auto", padding: "16px 20px" }}>
-        <div style={{ textAlign: "center", fontSize: 12, color: GRAY, marginBottom: 16 }}>Bugün, 14:30</div>
+      <ScrollView
+        ref={scrollRef}
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingHorizontal: 20, paddingVertical: 16 }}
+      >
+        <Text style={{ textAlign: "center", fontSize: 12, color: GRAY, marginBottom: 16 }}>Bugün, 14:30</Text>
         {messages.map((m, i) => (
-          <div key={i} style={{ marginBottom: 16 }}>
+          <View key={i} style={{ marginBottom: 16 }}>
             {m.from === "bot" ? (
-              <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                <div style={{ width: 32, height: 32, borderRadius: "50%", background: LIGHT_GRAY, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <View style={{ flexDirection: "row", alignItems: "flex-start" }}>
+                <View
+                  style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: 16,
+                    backgroundColor: LIGHT_GRAY,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <Icon name="robot" size={16} color={GREEN} />
-                </div>
-                <div style={{ maxWidth: "80%" }}>
-                  <div style={{ background: LIGHT_GRAY, borderRadius: "4px 16px 16px 16px", padding: "10px 14px", marginBottom: m.products ? 8 : 0 }}>
-                    <p style={{ margin: 0, fontSize: 14, color: DARK, lineHeight: 1.5 }}>{m.text}</p>
-                  </div>
-                  {m.products?.map(p => (
-                    <div key={p.name} style={{ background: "white", border: `1px solid ${BORDER}`, borderRadius: 14, padding: "12px", marginTop: 8 }}>
-                      <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 10 }}>
-                        <div style={{ width: 44, height: 44, background: LIGHT_GRAY, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22 }}>{p.emoji}</div>
-                        <div>
-                          <p style={{ margin: "0 0 2px", fontWeight: 600, fontSize: 13, color: DARK }}>{p.name}</p>
+                </View>
+                <View style={{ maxWidth: "80%", marginLeft: 10 }}>
+                  <View
+                    style={{
+                      backgroundColor: LIGHT_GRAY,
+                      borderTopLeftRadius: 4,
+                      borderTopRightRadius: 16,
+                      borderBottomLeftRadius: 16,
+                      borderBottomRightRadius: 16,
+                      paddingHorizontal: 14,
+                      paddingVertical: 10,
+                      marginBottom: m.products ? 8 : 0,
+                    }}
+                  >
+                    <Text style={{ fontSize: 14, color: DARK, lineHeight: 21 }}>{m.text}</Text>
+                  </View>
+                  {m.products?.map((p) => (
+                    <View
+                      key={p.name}
+                      style={{
+                        backgroundColor: "white",
+                        borderWidth: 1,
+                        borderColor: BORDER,
+                        borderRadius: 14,
+                        padding: 12,
+                        marginTop: 8,
+                      }}
+                    >
+                      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+                        <View
+                          style={{
+                            width: 44,
+                            height: 44,
+                            backgroundColor: LIGHT_GRAY,
+                            borderRadius: 10,
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Text style={{ fontSize: 22 }}>{p.emoji}</Text>
+                        </View>
+                        <View style={{ marginLeft: 12, flex: 1 }}>
+                          <Text style={{ fontWeight: "600", fontSize: 13, color: DARK, marginBottom: 2 }}>
+                            {p.name}
+                          </Text>
                           <Price amount={p.price} size={14} />
-                          <p style={{ margin: "2px 0 0", fontSize: 11, color: GRAY }}>📍 {p.aisle}</p>
-                        </div>
-                      </div>
-                      <button onClick={() => onNav("map")} style={{ width: "100%", padding: "9px 0", borderRadius: 10, background: GREEN, border: "none", color: "white", fontSize: 13, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-                        <Icon name="navigate" size={14} color="white" /> Start Navigation
-                      </button>
-                    </div>
+                          <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }}>📍 {p.aisle}</Text>
+                        </View>
+                      </View>
+                      <TouchableOpacity
+                        onPress={() => onNav("map")}
+                        style={{
+                          paddingVertical: 9,
+                          borderRadius: 10,
+                          backgroundColor: GREEN,
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Icon name="navigate" size={14} color="white" />
+                        <Text style={{ fontSize: 13, fontWeight: "700", color: "white", marginLeft: 6 }}>
+                          Start Navigation
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
                   ))}
-                </div>
-              </div>
+                </View>
+              </View>
             ) : (
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <div style={{ background: GREEN, borderRadius: "16px 4px 16px 16px", padding: "10px 16px", maxWidth: "75%" }}>
-                  <p style={{ margin: 0, fontSize: 14, color: "white" }}>{m.text}</p>
-                </div>
-              </div>
+              <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+                <View
+                  style={{
+                    backgroundColor: GREEN,
+                    borderTopLeftRadius: 16,
+                    borderTopRightRadius: 4,
+                    borderBottomLeftRadius: 16,
+                    borderBottomRightRadius: 16,
+                    paddingHorizontal: 16,
+                    paddingVertical: 10,
+                    maxWidth: "75%",
+                  }}
+                >
+                  <Text style={{ fontSize: 14, color: "white" }}>{m.text}</Text>
+                </View>
+              </View>
             )}
-          </div>
+          </View>
         ))}
-        <div ref={endRef} />
-      </div>
+      </ScrollView>
 
-      <div style={{ borderTop: `1px solid ${BORDER}`, padding: "10px 20px 12px" }}>
-        <div style={{ display: "flex", gap: 8, marginBottom: 10, overflowX: "auto", paddingBottom: 2 }}>
-          {chips.map(c => (
-            <button key={c} onClick={() => send(c)} style={{ flexShrink: 0, padding: "6px 14px", borderRadius: 20, border: `1px solid ${BORDER}`, background: "white", fontSize: 12, fontWeight: 500, color: DARK, cursor: "pointer" }}>{c}</button>
-          ))}
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, background: LIGHT_GRAY, borderRadius: 24, padding: "8px 14px" }}>
-          <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && send(input)} placeholder="Məhsul axtarın və ya soruşun..." style={{ flex: 1, border: "none", background: "transparent", fontSize: 14, outline: "none", color: DARK }} />
-          <button style={{ background: "none", border: "none", cursor: "pointer" }}><Icon name="mic" size={20} color={GRAY} /></button>
-          <button onClick={() => send(input)} style={{ width: 36, height: 36, borderRadius: "50%", background: GREEN, border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+      <View style={{ borderTopWidth: 1, borderTopColor: BORDER, paddingHorizontal: 20, paddingTop: 10, paddingBottom: 12 }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={{ flexDirection: "row", gap: 8, marginBottom: 10, paddingBottom: 2 }}>
+            {chips.map((c) => (
+              <TouchableOpacity
+                key={c}
+                onPress={() => send(c)}
+                style={{
+                  paddingHorizontal: 14,
+                  paddingVertical: 6,
+                  borderRadius: 20,
+                  borderWidth: 1,
+                  borderColor: BORDER,
+                  backgroundColor: "white",
+                }}
+              >
+                <Text style={{ fontSize: 12, fontWeight: "500", color: DARK }}>{c}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: LIGHT_GRAY,
+            borderRadius: 24,
+            paddingHorizontal: 14,
+            paddingVertical: 8,
+          }}
+        >
+          <TextInput
+            value={input}
+            onChangeText={setInput}
+            onSubmitEditing={() => send(input)}
+            placeholder="Məhsul axtarın və ya soruşun..."
+            placeholderTextColor="#999"
+            style={{ flex: 1, fontSize: 14, color: DARK, paddingVertical: 0 }}
+          />
+          <TouchableOpacity style={{ marginHorizontal: 8 }}>
+            <Icon name="mic" size={20} color={GRAY} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => send(input)}
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 18,
+              backgroundColor: GREEN,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Icon name="send" size={16} color="white" />
-          </button>
-        </div>
-      </div>
-    </div>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 };
 
-// ── SCREEN 8: Map / Indoor Navigation ───────────────────────────────────────
+// ── SCREEN 8: Map / Indoor Navigation ────────────────────────────────────────
 const MapScreen = ({ onBack }) => {
-  const [routing, setRouting] = useState(true);
   const aisles = [
     { id: 1, x: 60, y: 60, w: 80, h: 100, label: "Aisle 1" },
     { id: 2, x: 160, y: 60, w: 80, h: 100, label: "Aisle 2" },
@@ -779,105 +1814,258 @@ const MapScreen = ({ onBack }) => {
     { id: 5, x: 160, y: 200, w: 90, h: 120, label: "Aisle 5", active: true },
   ];
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: "white" }}>
-      <div style={{ padding: "14px 20px 10px", borderBottom: `1px solid ${BORDER}` }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4 }}>
-          <button onClick={onBack} style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <View
+        style={{
+          paddingHorizontal: 20,
+          paddingTop: 14,
+          paddingBottom: 10,
+          borderBottomWidth: 1,
+          borderBottomColor: BORDER,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 4 }}>
+          <TouchableOpacity onPress={onBack} style={{ padding: 4 }}>
             <Icon name="back" size={22} color={DARK} />
-          </button>
-          <div>
-            <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700, color: DARK }}>Indoor Navigation</h2>
-            <p style={{ margin: 0, fontSize: 12, color: GREEN, fontWeight: 600 }}>Bravo On-Site</p>
-          </div>
-          <button onClick={onBack} style={{ marginLeft: "auto", background: "none", border: "none", cursor: "pointer" }}>
+          </TouchableOpacity>
+          <View style={{ marginLeft: 12, flex: 1 }}>
+            <Text style={{ fontSize: 17, fontWeight: "700", color: DARK }}>Indoor Navigation</Text>
+            <Text style={{ fontSize: 12, color: GREEN, fontWeight: "600" }}>Bravo On-Site</Text>
+          </View>
+          <TouchableOpacity onPress={onBack}>
             <Icon name="close" size={22} color={GRAY} />
-          </button>
-        </div>
+          </TouchableOpacity>
+        </View>
 
-        <div style={{ background: "white", border: `1px solid ${BORDER}`, borderRadius: 14, padding: "10px 14px", display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 44, height: 44, background: LIGHT_GRAY, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22 }}>🥔</div>
-          <div>
-            <p style={{ margin: 0, fontWeight: 700, fontSize: 14, color: DARK }}>Lays Classic Çipsi 150q</p>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 3 }}>
+        <View
+          style={{
+            backgroundColor: "white",
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 14,
+            paddingHorizontal: 14,
+            paddingVertical: 10,
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: 8,
+          }}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              backgroundColor: LIGHT_GRAY,
+              borderRadius: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ fontSize: 22 }}>🥔</Text>
+          </View>
+          <View style={{ marginLeft: 12, flex: 1 }}>
+            <Text style={{ fontWeight: "700", fontSize: 14, color: DARK }}>Lays Classic Çipsi 150q</Text>
+            <View style={{ flexDirection: "row", alignItems: "center", marginTop: 3 }}>
               <Badge text="2.80 ₼" />
-              <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", marginLeft: 8 }}>
                 <Icon name="shelf" size={12} color={GRAY} />
-                <span style={{ fontSize: 12, color: GRAY }}>Aisle 5, Shelf B</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                <Text style={{ fontSize: 12, color: GRAY, marginLeft: 4 }}>Aisle 5, Shelf B</Text>
+              </View>
+            </View>
+          </View>
+        </View>
 
-        <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
-          <div style={{ background: GREEN, color: "white", fontSize: 13, fontWeight: 700, padding: "6px 16px", borderRadius: 20, display: "flex", gap: 12 }}>
-            <span>2 min</span>
-            <span>•</span>
-            <span>45m</span>
-          </div>
-        </div>
-      </div>
+        <View style={{ alignItems: "center", marginTop: 10 }}>
+          <View
+            style={{
+              backgroundColor: GREEN,
+              paddingHorizontal: 16,
+              paddingVertical: 6,
+              borderRadius: 20,
+              flexDirection: "row",
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>2 min</Text>
+            <Text style={{ color: "white", fontSize: 13, fontWeight: "700", marginHorizontal: 12 }}>•</Text>
+            <Text style={{ color: "white", fontSize: 13, fontWeight: "700" }}>45m</Text>
+          </View>
+        </View>
+      </View>
 
-      <div style={{ flex: 1, background: "#F0F0EB", position: "relative", overflow: "hidden" }}>
-        <svg width="100%" height="100%" viewBox="0 0 380 320" style={{ position: "absolute", inset: 0 }}>
-          {/* grid lines */}
-          {[40, 80, 120, 160, 200, 240, 280, 320].map(y => <line key={y} x1="0" y1={y} x2="380" y2={y} stroke="#E0DDD5" strokeWidth="1" />)}
-          {[40, 80, 120, 160, 200, 240, 280, 320, 360].map(x => <line key={x} x1={x} y1="0" x2={x} y2="320" stroke="#E0DDD5" strokeWidth="1" />)}
-
-          {/* aisles */}
-          {aisles.map(a => (
-            <g key={a.id}>
-              <rect x={a.x} y={a.y} width={a.w} height={a.h} rx="6" fill={a.active ? GREEN_LIGHT : "white"} stroke={a.active ? GREEN : "#D0CCC0"} strokeWidth={a.active ? 2 : 1} />
-              <text x={a.x + a.w / 2} y={a.y + a.h / 2} textAnchor="middle" dominantBaseline="middle" fontSize="12" fontWeight="600" fill={a.active ? GREEN : GRAY}>{a.label}</text>
-            </g>
+      <View style={{ flex: 1, backgroundColor: "#F0F0EB" }}>
+        <Svg width="100%" height="100%" viewBox="0 0 380 320">
+          {[40, 80, 120, 160, 200, 240, 280, 320].map((y) => (
+            <Line key={`h-${y}`} x1="0" y1={y} x2="380" y2={y} stroke="#E0DDD5" strokeWidth="1" />
           ))}
+          {[40, 80, 120, 160, 200, 240, 280, 320, 360].map((x) => (
+            <Line key={`v-${x}`} x1={x} y1="0" x2={x} y2="320" stroke="#E0DDD5" strokeWidth="1" />
+          ))}
+          {aisles.map((a) => (
+            <G key={a.id}>
+              <Rect
+                x={a.x}
+                y={a.y}
+                width={a.w}
+                height={a.h}
+                rx="6"
+                fill={a.active ? GREEN_LIGHT : "white"}
+                stroke={a.active ? GREEN : "#D0CCC0"}
+                strokeWidth={a.active ? 2 : 1}
+              />
+              <SvgText
+                x={a.x + a.w / 2}
+                y={a.y + a.h / 2}
+                textAnchor="middle"
+                fontSize="12"
+                fontWeight="600"
+                fill={a.active ? GREEN : GRAY}
+              >
+                {a.label}
+              </SvgText>
+            </G>
+          ))}
+          <Polyline
+            points="205,290 205,200 140,200 140,160"
+            fill="none"
+            stroke={GREEN}
+            strokeWidth="3"
+            strokeDasharray="8,4"
+            strokeLinecap="round"
+          />
+          <Circle cx="205" cy="240" r="10" fill={RED} />
+          <Circle cx="205" cy="240" r="6" fill="white" />
+          <Circle cx="140" cy="165" r="10" fill="white" stroke={GREEN} strokeWidth="2" />
+          <Circle cx="140" cy="165" r="5" fill={GREEN} />
+        </Svg>
 
-          {/* route path */}
-          <polyline points="205,290 205,200 140,200 140,160" fill="none" stroke={GREEN} strokeWidth="3" strokeDasharray="8,4" strokeLinecap="round" />
-
-          {/* destination pin */}
-          <circle cx="205" cy="240" r="10" fill={RED} />
-          <circle cx="205" cy="240" r="6" fill="white" />
-
-          {/* user location */}
-          <circle cx="140" cy="165" r="10" fill="white" stroke={GREEN} strokeWidth="2" />
-          <circle cx="140" cy="165" r="5" fill={GREEN} />
-        </svg>
-
-        {/* zoom controls */}
-        <div style={{ position: "absolute", right: 16, top: 16, display: "flex", flexDirection: "column", gap: 2 }}>
-          <button style={{ width: 36, height: 36, background: "white", border: `1px solid ${BORDER}`, borderRadius: "8px 8px 0 0", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", fontSize: 20, fontWeight: 700, color: DARK }}>+</button>
-          <button style={{ width: 36, height: 36, background: "white", border: `1px solid ${BORDER}`, borderRadius: "0 0 8px 8px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", fontSize: 20, fontWeight: 700, color: DARK }}>−</button>
-        </div>
-        <button style={{ position: "absolute", right: 16, bottom: 8, width: 40, height: 40, background: "white", border: `1px solid ${BORDER}`, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+        <View style={{ position: "absolute", right: 16, top: 16 }}>
+          <TouchableOpacity
+            style={{
+              width: 36,
+              height: 36,
+              backgroundColor: "white",
+              borderWidth: 1,
+              borderColor: BORDER,
+              borderTopLeftRadius: 8,
+              borderTopRightRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "700", color: DARK }}>+</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: 36,
+              height: 36,
+              backgroundColor: "white",
+              borderLeftWidth: 1,
+              borderRightWidth: 1,
+              borderBottomWidth: 1,
+              borderColor: BORDER,
+              borderBottomLeftRadius: 8,
+              borderBottomRightRadius: 8,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "700", color: DARK }}>−</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            right: 16,
+            bottom: 8,
+            width: 40,
+            height: 40,
+            backgroundColor: "white",
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 20,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Icon name="crosshair" size={20} color={GREEN} />
-        </button>
-      </div>
+        </TouchableOpacity>
+      </View>
 
-      <div style={{ background: "white", borderTop: `1px solid ${BORDER}`, padding: "16px 20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12 }}>
-          <div style={{ width: 48, height: 48, borderRadius: 12, background: GREEN, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          borderTopWidth: 1,
+          borderTopColor: BORDER,
+          paddingHorizontal: 20,
+          paddingVertical: 16,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12 }}>
+          <View
+            style={{
+              width: 48,
+              height: 48,
+              borderRadius: 12,
+              backgroundColor: GREEN,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Icon name="arrowUp" size={24} color="white" />
-          </div>
-          <div>
-            <p style={{ margin: 0, fontSize: 10, fontWeight: 700, color: GRAY, letterSpacing: 1 }}>CURRENT INSTRUCTION</p>
-            <p style={{ margin: "2px 0 2px", fontSize: 20, fontWeight: 800, color: DARK }}>Go straight 20m</p>
-            <p style={{ margin: 0, fontSize: 13, color: GRAY }}>towards Bakery section</p>
-          </div>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 14px", background: LIGHT_GRAY, borderRadius: 10, marginBottom: 12 }}>
+          </View>
+          <View style={{ marginLeft: 14 }}>
+            <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
+              CURRENT INSTRUCTION
+            </Text>
+            <Text style={{ fontSize: 20, fontWeight: "800", color: DARK, marginVertical: 2 }}>Go straight 20m</Text>
+            <Text style={{ fontSize: 13, color: GRAY }}>towards Bakery section</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: 14,
+            paddingVertical: 10,
+            backgroundColor: LIGHT_GRAY,
+            borderRadius: 10,
+            marginBottom: 12,
+          }}
+        >
           <Icon name="question" size={16} color={GRAY} />
-          <span style={{ fontSize: 13, color: GRAY }}>Then <strong>turn left at Bakery</strong></span>
-        </div>
-        <div style={{ display: "flex", gap: 12 }}>
-          <button style={{ flex: 1, padding: "12px 0", borderRadius: 12, border: `1px solid ${BORDER}`, background: "white", fontSize: 14, fontWeight: 600, color: DARK, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-            🔊 Voice
-          </button>
-          <button onClick={() => setRouting(false)} style={{ flex: 1, padding: "12px 0", borderRadius: 12, background: "#FEE2E2", border: "none", fontSize: 14, fontWeight: 700, color: RED, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-            🟥 End Route
-          </button>
-        </div>
-      </div>
-    </div>
+          <Text style={{ fontSize: 13, color: GRAY, marginLeft: 8 }}>
+            Then <Text style={{ fontWeight: "700", color: DARK }}>turn left at Bakery</Text>
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 12 }}>
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              paddingVertical: 12,
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: BORDER,
+              backgroundColor: "white",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ fontSize: 14, fontWeight: "600", color: DARK }}>🔊 Voice</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              paddingVertical: 12,
+              borderRadius: 12,
+              backgroundColor: "#FEE2E2",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ fontSize: 14, fontWeight: "700", color: RED }}>🟥 End Route</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 };
 
@@ -903,54 +2091,87 @@ export default function App() {
 
   const renderScreen = () => {
     switch (screen) {
-      case "login": return <LoginScreen onLogin={() => nav("home")} />;
-      case "home": return <HomeScreen onNav={nav} />;
-      case "onsite": return <OnSiteScreen onNav={nav} />;
-      case "onsite-search": return <SearchScreen onProduct={handleProduct} onNav={nav} />;
-      case "product": return <ProductScreen product={selectedProduct} onBack={goBack} onNav={nav} />;
-      case "scanner": return <ScannerScreen onBack={goBack} onProduct={handleProduct} />;
-      case "assistant": return <AssistantScreen onNav={nav} />;
-      case "map": return <MapScreen onBack={goBack} />;
-      default: return <HomeScreen onNav={nav} />;
+      case "login":
+        return <LoginScreen onLogin={() => nav("home")} />;
+      case "home":
+        return <HomeScreen onNav={nav} />;
+      case "onsite":
+        return <OnSiteScreen onNav={nav} />;
+      case "onsite-search":
+        return <SearchScreen onProduct={handleProduct} onNav={nav} />;
+      case "product":
+        return <ProductScreen product={selectedProduct} onBack={goBack} onNav={nav} />;
+      case "scanner":
+        return <ScannerScreen onBack={goBack} onProduct={handleProduct} />;
+      case "assistant":
+        return <AssistantScreen onNav={nav} />;
+      case "map":
+        return <MapScreen onBack={goBack} />;
+      default:
+        return <HomeScreen onNav={nav} />;
     }
   };
 
   const noBottomNav = ["login", "scanner"].includes(screen);
-  const activeTab = ["home", "onsite", "onsite-search", "assistant", "map"].find(t => screen.startsWith(t)) || "home";
+  const activeTab =
+    ["home", "onsite", "onsite-search", "assistant", "map"].find((t) => screen.startsWith(t)) || "home";
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh", background: "#E5E7EB" }}>
-      <div style={{
-        width: "min(100%, 420px)",
-        height: "min(100dvh, 860px)",
-        background: "white",
-        borderRadius: "clamp(0px, calc((100dvh - 860px) * 999), 36px)",
-        boxShadow: "0 24px 60px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08)",
-        overflow: "hidden", display: "flex", flexDirection: "column",
-        fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      }}>
-        {/* status bar */}
-        <div style={{ background: screen === "scanner" ? DARK : "white", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 20px 6px", flexShrink: 0 }}>
-          <span style={{ fontSize: 13, fontWeight: 600, color: screen === "scanner" ? "white" : DARK }}>9:41</span>
-          <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-            <span style={{ fontSize: 11, color: screen === "scanner" ? "white" : DARK }}>●●●●</span>
-            <span style={{ fontSize: 11, color: screen === "scanner" ? "white" : DARK }}>WiFi</span>
-            <span style={{ fontSize: 11, color: screen === "scanner" ? "white" : DARK }}>🔋</span>
-          </div>
-        </div>
-
-        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-          {renderScreen()}
-        </div>
-
-        {!noBottomNav && (
-          <BottomNav
-            active={activeTab}
-            onNav={nav}
-            onScan={() => nav("scanner")}
-          />
-        )}
-      </div>
-    </div>
+    <SafeAreaView style={{ flex: 1, backgroundColor: screen === "scanner" ? DARK : "white" }}>
+      <StatusBar barStyle={screen === "scanner" ? "light-content" : "dark-content"} />
+      <View style={{ flex: 1, backgroundColor: "white" }}>{renderScreen()}</View>
+      {!noBottomNav && <BottomNav active={activeTab} onNav={nav} onScan={() => nav("scanner")} />}
+    </SafeAreaView>
   );
 }
+
+function shadow(offsetY, opacity, radius) {
+  return Platform.select({
+    ios: {
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: offsetY },
+      shadowOpacity: opacity,
+      shadowRadius: radius,
+    },
+    android: { elevation: Math.round(radius / 2) },
+    default: {},
+  });
+}
+
+const styles = StyleSheet.create({
+  scanFab: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: DARK,
+    borderWidth: 4,
+    borderColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 12,
+      },
+      android: { elevation: 8 },
+    }),
+  },
+  bottomNav: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    backgroundColor: "white",
+    borderTopWidth: 1,
+    borderTopColor: BORDER,
+    paddingTop: 8,
+    paddingBottom: 8,
+  },
+  bottomNavTab: {
+    alignItems: "center",
+    justifyContent: "center",
+    minWidth: 48,
+    paddingVertical: 2,
+  },
+});
