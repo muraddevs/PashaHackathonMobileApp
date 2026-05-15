@@ -14,7 +14,13 @@ import {
 } from "react-native";
 import { askAI, getInsights } from "./src/services/ai";
 import { login } from "./src/services/auth";
-import { getAnalytics, findRelevant } from "./src/data/productHelpers";
+import {
+  getAnalytics,
+  findRelevant,
+  getCriticalActions,
+  getStockHealth,
+  recommend,
+} from "./src/data/productHelpers";
 import Svg, {
   Path,
   Circle,
@@ -1699,10 +1705,17 @@ const AssistantScreen = ({ onNav }) => {
         message: trimmed,
         history,
       });
-      const products = relevant.slice(0, 2).map((p) => ({
+      // Only surface product cards for items the AI actually named in its
+      // reply — otherwise we risk showing irrelevant cards (e.g. shampoo
+      // suggested as a snack) when the AI correctly said "nothing matches".
+      const replyLower = reply.toLowerCase();
+      const mentioned = relevant.filter((p) =>
+        replyLower.includes(p.name.toLowerCase().split(" ").slice(0, 2).join(" "))
+      );
+      const products = mentioned.slice(0, 3).map((p) => ({
         name: p.name,
         price: parseFloat(p.price_azn).toFixed(2),
-        aisle: `${p.category} · ${p.subcategory}`,
+        aisle: p.location || `${p.category} · ${p.subcategory}`,
         emoji: emojiFor(p.category),
       }));
       setMessages((m) => [...m, { from: "bot", text: reply, products }]);
@@ -2240,8 +2253,26 @@ const MapScreen = ({ onBack }) => {
 };
 
 // ── SCREEN 9: Admin Dashboard ───────────────────────────────────────────────
+const SEVERITY_COLOR = {
+  expiring: "#DC2626",
+  low_stock: "#EF4444",
+  overstocked: "#F97316",
+};
+const SEVERITY_LABEL = {
+  expiring: "EXPIRING",
+  low_stock: "LOW STOCK",
+  overstocked: "OVERSTOCK",
+};
+
 const AdminScreen = ({ user, onLogout, onSelect }) => {
-  const analytics = getAnalytics();
+  const analytics = useMemo(() => getAnalytics(), []);
+  const critical = useMemo(() => getCriticalActions(15), []);
+  const health = useMemo(() => getStockHealth(), []);
+  const topCategories = useMemo(
+    () => analytics.categories.slice(0, 5),
+    [analytics]
+  );
+
   const [tab, setTab] = useState("restock");
   const [insights, setInsights] = useState(null);
   const [insightsLoading, setInsightsLoading] = useState(false);
@@ -2267,6 +2298,7 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      {/* Header */}
       <View
         style={{
           backgroundColor: "white",
@@ -2297,7 +2329,9 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           </View>
           <View style={{ marginLeft: 10 }}>
             <Text style={{ fontWeight: "800", fontSize: 16, color: DARK }}>Admin Panel</Text>
-            <Text style={{ fontSize: 12, color: GRAY }}>{user?.name || "Manager"} • Gənclik Mall</Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>
+              {user?.name || "Manager"} • Gənclik Mall
+            </Text>
           </View>
         </View>
         <TouchableOpacity
@@ -2315,31 +2349,49 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
       </View>
 
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }}>
-        {/* KPI cards */}
-        <View style={{ flexDirection: "row", flexWrap: "wrap", padding: 16, gap: 10 }}>
-          <KpiCard label="SKUs" value={analytics.totalProducts.toLocaleString()} accent={GREEN} />
-          <KpiCard label="Units sold / 30d" value={analytics.totalUnits.toLocaleString()} accent={GREEN_MID} />
-          <KpiCard label="Revenue 30d" value={`${(analytics.totalRevenue / 1000).toFixed(0)}K ₼`} accent="#0EA5E9" />
-          <KpiCard label="Stock value" value={`${(analytics.totalStockValue / 1000).toFixed(0)}K ₼`} accent="#8B5CF6" />
-          <KpiCard label="Low stock" value={analytics.lowStock.length} accent={RED} />
-          <KpiCard label="Overstock" value={analytics.overstocked.length} accent={ORANGE} />
-          <KpiCard label="Expiring <1d" value={analytics.expiring.length} accent="#DC2626" />
-          <KpiCard
-            label="Categories"
-            value={analytics.categories.length}
-            accent={GRAY}
-          />
+        {/* 1. CRITICAL ACTIONS (top) */}
+        <View style={{ paddingHorizontal: 16, paddingTop: 16 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 10,
+            }}
+          >
+            <View
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 14,
+                backgroundColor: "#FEE2E2",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ fontSize: 14 }}>⚡</Text>
+            </View>
+            <Text
+              style={{ fontWeight: "800", fontSize: 16, color: DARK, marginLeft: 8, flex: 1 }}
+            >
+              Critical Actions
+            </Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>
+              {critical.length} items
+            </Text>
+          </View>
+          {critical.slice(0, 5).map((p) => (
+            <CriticalCard key={p.product_id} product={p} onPress={() => onSelect(p)} />
+          ))}
         </View>
 
-        {/* AI Insights */}
+        {/* 2. AI summary card */}
         <View
           style={{
             marginHorizontal: 16,
+            marginTop: 8,
             marginBottom: 16,
-            backgroundColor: "white",
+            backgroundColor: DARK,
             borderRadius: 14,
-            borderWidth: 1,
-            borderColor: BORDER,
             padding: 16,
           }}
         >
@@ -2349,16 +2401,20 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
                 width: 32,
                 height: 32,
                 borderRadius: 16,
-                backgroundColor: GREEN_LIGHT,
+                backgroundColor: GREEN,
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <Icon name="robot" size={18} color={GREEN} />
+              <Icon name="robot" size={18} color="white" />
             </View>
             <View style={{ marginLeft: 10, flex: 1 }}>
-              <Text style={{ fontWeight: "800", fontSize: 15, color: DARK }}>AI Insights</Text>
-              <Text style={{ fontSize: 12, color: GRAY }}>Stock health & action items</Text>
+              <Text style={{ fontWeight: "800", fontSize: 15, color: "white" }}>
+                AI Store Manager
+              </Text>
+              <Text style={{ fontSize: 12, color: "#aaa" }}>
+                Cross-catalogue narrative
+              </Text>
             </View>
             <TouchableOpacity
               onPress={loadInsights}
@@ -2379,28 +2435,87 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           {insightsLoading && (
             <View style={{ flexDirection: "row", alignItems: "center", paddingVertical: 12 }}>
               <ActivityIndicator size="small" color={GREEN} />
-              <Text style={{ color: GRAY, marginLeft: 8, fontSize: 13 }}>
+              <Text style={{ color: "#aaa", marginLeft: 8, fontSize: 13 }}>
                 Analyzing {analytics.totalProducts.toLocaleString()} SKUs…
               </Text>
             </View>
           )}
           {insightsError && (
-            <Text style={{ color: RED, fontSize: 13, marginTop: 4 }}>⚠️ {insightsError}</Text>
+            <Text style={{ color: "#FCA5A5", fontSize: 13, marginTop: 4 }}>
+              ⚠️ {insightsError}
+            </Text>
           )}
           {insights && !insightsLoading && (
-            <Text style={{ fontSize: 13, color: DARK, lineHeight: 20, marginTop: 6 }}>
+            <Text style={{ fontSize: 13, color: "#E5E7EB", lineHeight: 20, marginTop: 4 }}>
               {insights}
             </Text>
           )}
           {!insights && !insightsLoading && !insightsError && (
-            <Text style={{ fontSize: 13, color: GRAY, fontStyle: "italic", marginTop: 4 }}>
-              Tap "Generate" to get AI recommendations on restock priorities, markdowns, and
-              expiring items based on the last 30 days of velocity.
+            <Text style={{ fontSize: 13, color: "#9CA3AF", fontStyle: "italic", marginTop: 4 }}>
+              Tap "Generate" for a manager-level summary of priorities — restocks, markdowns,
+              and expiring clearance — based on 30-day velocity.
             </Text>
           )}
         </View>
 
-        {/* Tabs */}
+        {/* 3. Charts row */}
+        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
+          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
+            Stock Health
+          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              backgroundColor: "white",
+              borderRadius: 14,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 14,
+            }}
+          >
+            <Donut health={health} />
+            <View style={{ flex: 1, marginLeft: 16, justifyContent: "center" }}>
+              <Legend color={GREEN} label="Healthy" value={health.ok} total={health.total} />
+              <Legend color="#EF4444" label="Low stock" value={health.low} total={health.total} />
+              <Legend color="#F97316" label="Overstocked" value={health.over} total={health.total} />
+              <Legend color="#DC2626" label="Expiring" value={health.exp} total={health.total} />
+            </View>
+          </View>
+        </View>
+
+        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
+          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
+            Top Categories (30d revenue)
+          </Text>
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: 14,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 14,
+            }}
+          >
+            <CategoryBars categories={topCategories} />
+          </View>
+        </View>
+
+        {/* 4. KPIs */}
+        <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
+          <Text style={{ fontWeight: "800", fontSize: 15, color: DARK, marginBottom: 10 }}>
+            Store KPIs
+          </Text>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10 }}>
+            <KpiCard label="SKUs" value={analytics.totalProducts.toLocaleString()} accent={GREEN} />
+            <KpiCard label="Units sold / 30d" value={analytics.totalUnits.toLocaleString()} accent={GREEN_MID} />
+            <KpiCard label="Revenue 30d" value={`${(analytics.totalRevenue / 1000).toFixed(0)}K ₼`} accent="#0EA5E9" />
+            <KpiCard label="Stock value" value={`${(analytics.totalStockValue / 1000).toFixed(0)}K ₼`} accent="#8B5CF6" />
+            <KpiCard label="Low stock" value={analytics.lowStock.length} accent={RED} />
+            <KpiCard label="Overstock" value={analytics.overstocked.length} accent={ORANGE} />
+          </View>
+        </View>
+
+        {/* 5. Full lists */}
         <View
           style={{
             flexDirection: "row",
@@ -2440,7 +2555,6 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           ))}
         </View>
 
-        {/* List */}
         <View style={{ paddingHorizontal: 16 }}>
           {list.slice(0, 40).map((p) => (
             <TouchableOpacity
@@ -2463,10 +2577,7 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
                   width: 8,
                   height: 48,
                   borderRadius: 4,
-                  backgroundColor:
-                    p.status === "expiring" ? "#DC2626" :
-                    p.status === "low_stock" ? RED :
-                    ORANGE,
+                  backgroundColor: SEVERITY_COLOR[p.status] || GRAY,
                   marginRight: 12,
                 }}
               />
@@ -2500,6 +2611,209 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           )}
         </View>
       </ScrollView>
+    </View>
+  );
+};
+
+const CriticalCard = ({ product, onPress }) => {
+  const rec = product.recommendation;
+  const color = SEVERITY_COLOR[product.status] || GRAY;
+  const tag = SEVERITY_LABEL[product.status] || "ACTION";
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      style={{
+        backgroundColor: "white",
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: BORDER,
+        marginBottom: 10,
+        overflow: "hidden",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: color,
+          paddingHorizontal: 12,
+          paddingVertical: 5,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 10, fontWeight: "800", letterSpacing: 1 }}>
+          {tag} • {rec.action.toUpperCase()}
+        </Text>
+        <Text style={{ color: "white", fontSize: 10, fontWeight: "700" }}>
+          {product.location}
+        </Text>
+      </View>
+      <View style={{ padding: 12 }}>
+        <Text style={{ fontSize: 14, fontWeight: "800", color: DARK }} numberOfLines={1}>
+          {product.name}
+        </Text>
+        <Text style={{ fontSize: 13, color: DARK, lineHeight: 19, marginTop: 6 }}>
+          {rec.narrative}
+        </Text>
+        <View style={{ flexDirection: "row", marginTop: 10, gap: 8, flexWrap: "wrap" }}>
+          {rec.markdownPct > 0 && (
+            <View
+              style={{
+                backgroundColor: "#FEF3C7",
+                paddingHorizontal: 8,
+                paddingVertical: 4,
+                borderRadius: 6,
+              }}
+            >
+              <Text style={{ fontSize: 11, fontWeight: "800", color: "#B45309" }}>
+                ↓ {rec.markdownPct}% markdown
+              </Text>
+            </View>
+          )}
+          {rec.reorderQty > 0 && (
+            <View
+              style={{
+                backgroundColor: "#DBEAFE",
+                paddingHorizontal: 8,
+                paddingVertical: 4,
+                borderRadius: 6,
+              }}
+            >
+              <Text style={{ fontSize: 11, fontWeight: "800", color: "#1E40AF" }}>
+                + Reorder {rec.reorderQty}
+              </Text>
+            </View>
+          )}
+          <View
+            style={{
+              backgroundColor: LIGHT_GRAY,
+              paddingHorizontal: 8,
+              paddingVertical: 4,
+              borderRadius: 6,
+            }}
+          >
+            <Text style={{ fontSize: 11, color: GRAY }}>
+              Stock <Text style={{ color: DARK, fontWeight: "700" }}>{product.stock_qty}</Text> · Sold/30d{" "}
+              <Text style={{ color: DARK, fontWeight: "700" }}>{product.units_sold}</Text>
+              {product.is_fresh && (
+                <>
+                  {" "}· Expires{" "}
+                  <Text style={{ color: DARK, fontWeight: "700" }}>{product.expires_in_days}d</Text>
+                </>
+              )}
+            </Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const Donut = ({ health }) => {
+  const SIZE = 110;
+  const R = 45;
+  const C = 2 * Math.PI * R;
+  const segs = [
+    { v: health.ok, color: GREEN },
+    { v: health.low, color: "#EF4444" },
+    { v: health.over, color: "#F97316" },
+    { v: health.exp, color: "#DC2626" },
+  ];
+  const total = health.total || 1;
+  let offset = 0;
+  return (
+    <Svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
+      <Circle cx={SIZE / 2} cy={SIZE / 2} r={R} stroke={LIGHT_GRAY} strokeWidth={14} fill="none" />
+      {segs.map((s, i) => {
+        const frac = s.v / total;
+        const dash = frac * C;
+        const el = (
+          <Circle
+            key={i}
+            cx={SIZE / 2}
+            cy={SIZE / 2}
+            r={R}
+            stroke={s.color}
+            strokeWidth={14}
+            fill="none"
+            strokeDasharray={`${dash} ${C - dash}`}
+            strokeDashoffset={-offset}
+            rotation={-90}
+            origin={`${SIZE / 2}, ${SIZE / 2}`}
+            strokeLinecap="butt"
+          />
+        );
+        offset += dash;
+        return el;
+      })}
+      <SvgText
+        x={SIZE / 2}
+        y={SIZE / 2 - 2}
+        textAnchor="middle"
+        fontSize="11"
+        fontWeight="700"
+        fill={GRAY}
+      >
+        TOTAL
+      </SvgText>
+      <SvgText
+        x={SIZE / 2}
+        y={SIZE / 2 + 14}
+        textAnchor="middle"
+        fontSize="17"
+        fontWeight="800"
+        fill={DARK}
+      >
+        {health.total.toLocaleString()}
+      </SvgText>
+    </Svg>
+  );
+};
+
+const Legend = ({ color, label, value, total }) => {
+  const pct = total > 0 ? Math.round((value / total) * 100) : 0;
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
+      <View
+        style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: color, marginRight: 8 }}
+      />
+      <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", flex: 1 }}>{label}</Text>
+      <Text style={{ fontSize: 12, color: GRAY, marginLeft: 4 }}>
+        {value.toLocaleString()} · {pct}%
+      </Text>
+    </View>
+  );
+};
+
+const CategoryBars = ({ categories }) => {
+  const max = Math.max(1, ...categories.map((c) => c.revenue));
+  const COLORS = ["#16A34A", "#0EA5E9", "#8B5CF6", "#F59E0B", "#EC4899"];
+  return (
+    <View>
+      {categories.map((c, i) => {
+        const w = `${Math.max(8, (c.revenue / max) * 100)}%`;
+        return (
+          <View key={c.category} style={{ marginBottom: 10 }}>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}
+            >
+              <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                {c.category}
+              </Text>
+              <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }}>
+                {Math.round(c.revenue / 1000).toLocaleString()}K ₼
+              </Text>
+            </View>
+            <View style={{ height: 8, backgroundColor: LIGHT_GRAY, borderRadius: 4, overflow: "hidden" }}>
+              <View style={{ height: 8, backgroundColor: COLORS[i % COLORS.length], width: w, borderRadius: 4 }} />
+            </View>
+            <Text style={{ fontSize: 10, color: GRAY, marginTop: 2 }}>
+              {c.count} SKUs · {c.units.toLocaleString()} units sold
+            </Text>
+          </View>
+        );
+      })}
     </View>
   );
 };
