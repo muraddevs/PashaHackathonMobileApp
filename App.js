@@ -9,7 +9,10 @@ import {
   StatusBar,
   Platform,
   StyleSheet,
+  ActivityIndicator,
+  Alert,
 } from "react-native";
+import { askGemini } from "./src/services/gemini";
 import Svg, {
   Path,
   Circle,
@@ -522,7 +525,9 @@ const HomeScreen = ({ onNav }) => {
       </View>
 
       <View style={{ paddingHorizontal: 20, paddingVertical: 12 }}>
-        <View
+        <TouchableOpacity
+          onPress={() => onNav("onsite-search")}
+          activeOpacity={0.8}
           style={{
             backgroundColor: "white",
             borderRadius: 14,
@@ -538,8 +543,10 @@ const HomeScreen = ({ onNav }) => {
           <Text style={{ fontSize: 14, color: "#aaa", marginLeft: 12, flex: 1 }}>
             Məhsul, brend və ya kateqoriya axtarın
           </Text>
-          <Icon name="scan" size={18} color={GREEN} />
-        </View>
+          <TouchableOpacity onPress={() => onNav("scanner")}>
+            <Icon name="scan" size={18} color={GREEN} />
+          </TouchableOpacity>
+        </TouchableOpacity>
       </View>
 
       <LinearGradient
@@ -583,13 +590,14 @@ const HomeScreen = ({ onNav }) => {
         <Text style={{ fontSize: 16, fontWeight: "700", color: DARK, marginBottom: 14 }}>Quick Actions</Text>
         <View style={{ flexDirection: "row", gap: 10 }}>
           {[
-            { label: "Store Map", icon: "map" },
-            { label: "Deals", icon: "deals" },
-            { label: "My List", icon: "list" },
-            { label: "Orders", icon: "orders" },
+            { label: "Store Map", icon: "map", target: "map" },
+            { label: "Deals", icon: "deals", target: "onsite" },
+            { label: "My List", icon: "list", target: "onsite-search" },
+            { label: "Orders", icon: "orders", target: "assistant" },
           ].map((a) => (
             <TouchableOpacity
               key={a.label}
+              onPress={() => onNav(a.target)}
               activeOpacity={0.8}
               style={{
                 flex: 1,
@@ -772,7 +780,9 @@ const OnSiteScreen = ({ onNav }) => {
             <Icon name="bell" size={22} color={GRAY} />
           </TouchableOpacity>
         </View>
-        <View
+        <TouchableOpacity
+          onPress={() => onNav("onsite-search")}
+          activeOpacity={0.8}
           style={{
             flexDirection: "row",
             alignItems: "center",
@@ -786,8 +796,10 @@ const OnSiteScreen = ({ onNav }) => {
           <Text style={{ fontSize: 13, color: "#aaa", marginLeft: 12, flex: 1 }}>
             Məhsul, brend və ya kateqoriya axt
           </Text>
-          <Icon name="scan" size={16} color={GREEN} />
-        </View>
+          <TouchableOpacity onPress={() => onNav("scanner")}>
+            <Icon name="scan" size={16} color={GREEN} />
+          </TouchableOpacity>
+        </TouchableOpacity>
       </View>
 
       <View
@@ -1560,30 +1572,55 @@ const ScannerScreen = ({ onBack, onProduct }) => {
 };
 
 // ── SCREEN 7: Assistant ──────────────────────────────────────────────────────
+const INITIAL_BOT_GREETING = {
+  from: "bot",
+  text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
+};
+
 const AssistantScreen = ({ onNav }) => {
-  const [messages, setMessages] = useState([
-    { from: "bot", text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?" },
-    { from: "user", text: "5 AZN altı qəlyanaltılar" },
-    {
-      from: "bot",
-      text: "Budur 5 AZN-dən ucuz bəzi populyar qəlyanaltı seçimləri:",
-      products: [
-        { name: "Lays Classic Çipsi 150q", price: "2.80", aisle: "Sıra 4, Rəf B", emoji: "🥔" },
-        { name: "Qarışıq Çərəz 100q", price: "4.50", aisle: "Sıra 2, Rəf A", emoji: "🥜" },
-      ],
-    },
-  ]);
+  const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const chips = ["5 AZN altı qəlyanaltılar", "Halal protein", "Allergensiz"];
   const scrollRef = useRef();
   useEffect(() => {
     scrollRef.current?.scrollToEnd({ animated: true });
-  }, [messages]);
+  }, [messages, loading]);
 
-  const send = (text) => {
-    if (!text.trim()) return;
-    setMessages((m) => [...m, { from: "user", text }, { from: "bot", text: "Axtarıram..." }]);
+  const send = async (text) => {
+    const trimmed = text.trim();
+    if (!trimmed || loading) return;
+
+    const userMsg = { from: "user", text: trimmed };
+    const history = messages;
+    setMessages((m) => [...m, userMsg]);
     setInput("");
+    setLoading(true);
+
+    try {
+      const { text: reply, relevant } = await askGemini({
+        message: trimmed,
+        history,
+      });
+      const products = relevant.slice(0, 2).map((p) => ({
+        name: p.name,
+        price: parseFloat(p.price_azn).toFixed(2),
+        aisle: `${p.category} · ${p.subcategory}`,
+        emoji: emojiFor(p.category),
+      }));
+      setMessages((m) => [...m, { from: "bot", text: reply, products }]);
+    } catch (err) {
+      setMessages((m) => [
+        ...m,
+        { from: "bot", text: `⚠️ ${err.message}` },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const clearChat = () => {
+    setMessages([INITIAL_BOT_GREETING]);
   };
 
   return (
@@ -1619,6 +1656,7 @@ const AssistantScreen = ({ onNav }) => {
           </View>
         </View>
         <TouchableOpacity
+          onPress={clearChat}
           style={{
             borderWidth: 1,
             borderColor: BORDER,
@@ -1741,6 +1779,39 @@ const AssistantScreen = ({ onNav }) => {
             )}
           </View>
         ))}
+        {loading && (
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 16 }}>
+            <View
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+                backgroundColor: LIGHT_GRAY,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="robot" size={16} color={GREEN} />
+            </View>
+            <View
+              style={{
+                marginLeft: 10,
+                backgroundColor: LIGHT_GRAY,
+                borderTopLeftRadius: 4,
+                borderTopRightRadius: 16,
+                borderBottomLeftRadius: 16,
+                borderBottomRightRadius: 16,
+                paddingHorizontal: 14,
+                paddingVertical: 10,
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <ActivityIndicator size="small" color={GREEN} />
+              <Text style={{ fontSize: 14, color: GRAY, marginLeft: 8 }}>Axtarıram...</Text>
+            </View>
+          </View>
+        )}
       </ScrollView>
 
       <View style={{ borderTopWidth: 1, borderTopColor: BORDER, paddingHorizontal: 20, paddingTop: 10, paddingBottom: 12 }}>
@@ -1787,11 +1858,13 @@ const AssistantScreen = ({ onNav }) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => send(input)}
+            disabled={loading || !input.trim()}
             style={{
               width: 36,
               height: 36,
               borderRadius: 18,
               backgroundColor: GREEN,
+              opacity: loading || !input.trim() ? 0.5 : 1,
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -2123,6 +2196,22 @@ export default function App() {
       {!noBottomNav && <BottomNav active={activeTab} onNav={nav} onScan={() => nav("scanner")} />}
     </SafeAreaView>
   );
+}
+
+function emojiFor(category = "") {
+  const c = category.toLowerCase();
+  if (c.includes("dairy")) return "🥛";
+  if (c.includes("bak")) return "🍞";
+  if (c.includes("meat")) return "🥩";
+  if (c.includes("fish") || c.includes("sea")) return "🐟";
+  if (c.includes("fruit")) return "🍎";
+  if (c.includes("veg")) return "🥦";
+  if (c.includes("snack") || c.includes("chip")) return "🥔";
+  if (c.includes("bev") || c.includes("drink")) return "🥤";
+  if (c.includes("clean") || c.includes("household")) return "🧴";
+  if (c.includes("baby")) return "🍼";
+  if (c.includes("pet")) return "🐶";
+  return "🛒";
 }
 
 function shadow(offsetY, opacity, radius) {
