@@ -1,4 +1,4 @@
-import { findRelevant, toCSV } from "../data/productHelpers";
+import { findRelevant, toCSV, buildInsightContext } from "../data/productHelpers";
 
 const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
@@ -62,4 +62,44 @@ ${catalogCsv}`;
   const text = data?.choices?.[0]?.message?.content?.trim() ||
     "Sorry, I couldn't generate a response.";
   return { text, relevant };
+}
+
+const ADMIN_SYSTEM = `You are a senior retail inventory analyst for Bravo, an Azerbaijani supermarket chain. You receive a structured snapshot of current stock levels, 30-day sales velocity, and expiry status across the catalog.
+
+Produce 4–6 short, concrete, prioritised action items as a bulleted list. Each bullet should reference a specific product or category by name, state the issue (overstock / restock / expiring), and recommend a concrete action with a number (e.g. "20% markdown", "reorder 200 units", "move to front display"). Lead with the most time-critical issues (expiring items first, then low stock, then overstock).
+
+Be terse. No preamble, no closing summary. Output Markdown bullets only.`;
+
+export async function getInsights() {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const context = buildInsightContext();
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: ADMIN_SYSTEM },
+        { role: "user", content: context },
+      ],
+      temperature: 0.3,
+      max_tokens: 700,
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    const msg = data?.error?.message || `AI error (${res.status})`;
+    throw new Error(msg);
+  }
+  return (
+    data?.choices?.[0]?.message?.content?.trim() ||
+    "Could not generate insights."
+  );
 }

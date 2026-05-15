@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import {
   View,
   Text,
@@ -12,7 +12,9 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { askAI } from "./src/services/ai";
+import { askAI, getInsights } from "./src/services/ai";
+import { login } from "./src/services/auth";
+import { getAnalytics, findRelevant } from "./src/data/productHelpers";
 import Svg, {
   Path,
   Circle,
@@ -310,8 +312,25 @@ const AllergenBadge = ({ label }) => (
 
 // ── SCREEN 1: Login ──────────────────────────────────────────────────────────
 const LoginScreen = ({ onLogin }) => {
-  const [code, setCode] = useState(["4", "8", "", ""]);
-  const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const submit = () => {
+    setError(null);
+    try {
+      const u = login(username, password);
+      onLogin(u);
+    } catch (e) {
+      setError(e.message);
+    }
+  };
+
+  const quickFill = (role) => {
+    setUsername(role);
+    setPassword(role);
+    setError(null);
+  };
 
   return (
     <ScrollView
@@ -338,124 +357,78 @@ const LoginScreen = ({ onLogin }) => {
         BRAVO ON-SITE
       </Text>
       <Text style={{ fontSize: 26, fontWeight: "800", color: DARK, marginBottom: 8, textAlign: "center" }}>
-        Welcome to{"\n"}your assistant.
+        Welcome back.
       </Text>
-      <Text style={{ fontSize: 14, color: GRAY, textAlign: "center", marginBottom: 36, lineHeight: 21 }}>
+      <Text style={{ fontSize: 14, color: GRAY, textAlign: "center", marginBottom: 32, lineHeight: 21 }}>
         Sign in to access store maps, scan items,{"\n"}and check real-time stock.
       </Text>
 
-      <View
-        style={{
-          width: "100%",
-          backgroundColor: "#F9F9F9",
-          borderRadius: 12,
-          padding: 4,
-          flexDirection: "row",
-          marginBottom: 24,
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            paddingVertical: 10,
-            borderRadius: 10,
-            backgroundColor: "white",
-            alignItems: "center",
-            ...shadow(1, 0.1, 4),
-          }}
-        >
-          <Text style={{ fontWeight: "600", fontSize: 14, color: DARK }}>Phone Number</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ flex: 1, paddingVertical: 10, borderRadius: 10, alignItems: "center" }}>
-          <Text style={{ fontWeight: "500", fontSize: 14, color: GRAY }}>Email Address</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={{ width: "100%", marginBottom: 20 }}>
+      <View style={{ width: "100%", marginBottom: 16 }}>
         <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 1, color: GRAY, marginBottom: 8 }}>
-          MOBILE NUMBER
+          USERNAME
         </Text>
-        <View
+        <TextInput
+          value={username}
+          onChangeText={setUsername}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="user or admin"
+          placeholderTextColor="#bbb"
           style={{
-            flexDirection: "row",
-            alignItems: "center",
             borderWidth: 1,
             borderColor: BORDER,
             borderRadius: 12,
             paddingHorizontal: 16,
-            paddingVertical: 12,
+            paddingVertical: 14,
+            fontSize: 15,
+            color: DARK,
+          }}
+        />
+      </View>
+
+      <View style={{ width: "100%", marginBottom: 12 }}>
+        <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 1, color: GRAY, marginBottom: 8 }}>
+          PASSWORD
+        </Text>
+        <TextInput
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          autoCapitalize="none"
+          placeholder="••••"
+          placeholderTextColor="#bbb"
+          onSubmitEditing={submit}
+          style={{
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 12,
+            paddingHorizontal: 16,
+            paddingVertical: 14,
+            fontSize: 15,
+            color: DARK,
+          }}
+        />
+      </View>
+
+      {error && (
+        <View
+          style={{
+            width: "100%",
+            backgroundColor: "#FEF2F2",
+            borderWidth: 1,
+            borderColor: "#FECACA",
+            borderRadius: 10,
+            paddingHorizontal: 12,
+            paddingVertical: 10,
+            marginBottom: 12,
           }}
         >
-          <Text style={{ fontSize: 18 }}>🇦🇿</Text>
-          <Text style={{ fontWeight: "600", color: DARK, marginLeft: 8 }}>+994</Text>
-          <Text style={{ color: "#ccc", marginHorizontal: 8 }}>|</Text>
-          <Text style={{ color: "#ccc", fontSize: 14 }}>00 000 00 00</Text>
+          <Text style={{ color: RED, fontSize: 13 }}>⚠️ {error}</Text>
         </View>
-      </View>
-
-      <View style={{ width: "100%", marginBottom: 24 }}>
-        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 8 }}>
-          <Text style={{ fontSize: 11, fontWeight: "700", letterSpacing: 1, color: GRAY }}>
-            VERIFICATION CODE
-          </Text>
-          <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>Resend</Text>
-        </View>
-        <View style={{ flexDirection: "row", gap: 12 }}>
-          {code.map((v, i) => (
-            <TextInput
-              key={i}
-              ref={inputRefs[i]}
-              maxLength={1}
-              value={v}
-              keyboardType="number-pad"
-              onChangeText={(text) => {
-                const n = [...code];
-                n[i] = text;
-                setCode(n);
-                if (text && i < 3) inputRefs[i + 1].current?.focus();
-              }}
-              style={{
-                flex: 1,
-                height: 56,
-                textAlign: "center",
-                fontSize: 22,
-                fontWeight: "700",
-                borderWidth: 2,
-                borderColor: i === 1 ? GREEN : BORDER,
-                borderRadius: 12,
-                backgroundColor: i === 1 ? GREEN_LIGHT : "white",
-                color: DARK,
-              }}
-            />
-          ))}
-        </View>
-      </View>
-
-      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 20, width: "100%" }}>
-        <View style={{ flex: 1, height: 1, backgroundColor: BORDER }} />
-        <Text style={{ fontSize: 13, color: GRAY, marginHorizontal: 16 }}>Or use</Text>
-        <View style={{ flex: 1, height: 1, backgroundColor: BORDER }} />
-      </View>
-      <View style={{ flexDirection: "row", gap: 16, marginBottom: 28 }}>
-        {["fingerprint", "smile"].map((name) => (
-          <TouchableOpacity
-            key={name}
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              backgroundColor: DARK,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Icon name={name} size={24} color="white" />
-          </TouchableOpacity>
-        ))}
-      </View>
+      )}
 
       <TouchableOpacity
-        onPress={onLogin}
+        onPress={submit}
         activeOpacity={0.85}
         style={{
           width: "100%",
@@ -464,21 +437,60 @@ const LoginScreen = ({ onLogin }) => {
           backgroundColor: GREEN,
           alignItems: "center",
           justifyContent: "center",
-          flexDirection: "row",
-          marginBottom: 16,
+          marginTop: 8,
+          marginBottom: 20,
         }}
       >
-        <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>Continue to On-Site →</Text>
+        <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>Sign in →</Text>
       </TouchableOpacity>
-      <Text style={{ fontSize: 12, color: GRAY, textAlign: "center" }}>By continuing, you agree to our</Text>
+
+      <View style={{ width: "100%", marginBottom: 16 }}>
+        <Text style={{ fontSize: 11, fontWeight: "700", color: GRAY, letterSpacing: 1, marginBottom: 8, textAlign: "center" }}>
+          QUICK SIGN-IN (DEMO)
+        </Text>
+        <View style={{ flexDirection: "row", gap: 10 }}>
+          <TouchableOpacity
+            onPress={() => quickFill("user")}
+            activeOpacity={0.8}
+            style={{
+              flex: 1,
+              paddingVertical: 12,
+              borderRadius: 10,
+              backgroundColor: GREEN_LIGHT,
+              borderWidth: 1,
+              borderColor: GREEN,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 13, fontWeight: "700", color: GREEN }}>Shopper</Text>
+            <Text style={{ fontSize: 11, color: GREEN, marginTop: 2 }}>user / user</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => quickFill("admin")}
+            activeOpacity={0.8}
+            style={{
+              flex: 1,
+              paddingVertical: 12,
+              borderRadius: 10,
+              backgroundColor: "#FEF3C7",
+              borderWidth: 1,
+              borderColor: "#F59E0B",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 13, fontWeight: "700", color: "#B45309" }}>Admin</Text>
+            <Text style={{ fontSize: 11, color: "#B45309", marginTop: 2 }}>admin / admin</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <Text style={{ fontSize: 12, color: GRAY, textAlign: "center", marginTop: 8 }}>
+        By continuing, you agree to our
+      </Text>
       <View style={{ flexDirection: "row", marginTop: 4 }}>
-        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>
-          Terms
-        </Text>
+        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>Terms</Text>
         <Text style={{ fontSize: 12, color: GRAY, marginHorizontal: 8 }}>&</Text>
-        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>
-          Privacy Policy
-        </Text>
+        <Text style={{ fontSize: 12, color: DARK, fontWeight: "600", textDecorationLine: "underline" }}>Privacy Policy</Text>
       </View>
     </ScrollView>
   );
@@ -988,13 +1000,28 @@ const OnSiteScreen = ({ onNav }) => {
 const SearchScreen = ({ onProduct, onNav }) => {
   const [query, setQuery] = useState("Milk");
   const [activeFilter, setActiveFilter] = useState("All");
-  const filters = ["All", "Dairy", "Lactose Free", "Halal"];
-  const products = [
-    { name: "Milla Full Cream Milk 1L", vol: "1000 ml", price: "2.45", status: "In Stock", statusColor: GREEN, aisle: "Aisle 3 · Shelf B", emoji: "🥛" },
-    { name: "Azərsüd Half Fat Milk 1L", vol: "1000 ml", price: "2.20", status: "Low Stock", statusColor: ORANGE, aisle: "Aisle 3 · Shelf A", emoji: "🥛" },
-    { name: "Alpro Almond Milk Unsweetened", vol: "1000 ml", price: "6.50", status: "In Stock", statusColor: GREEN, aisle: "Aisle 4 · Vegan", emoji: "🌾" },
-    { name: "President Lactose Free Milk", vol: "1000 ml", price: "4.80", status: "Out of Stock", statusColor: RED, aisle: "Aisle 3 · Shelf C", emoji: "🥛" },
-  ];
+  const filters = ["All", "Dairy", "Bakery", "Snacks", "Beverages"];
+
+  const products = useMemo(() => {
+    const q = activeFilter === "All" ? query : `${query} ${activeFilter}`;
+    return findRelevant(q, 24).map((p) => {
+      const statusLabel =
+        p.stock_qty === 0 ? "Out of Stock" :
+        p.status === "low_stock" || p.status === "expiring" ? "Low Stock" :
+        "In Stock";
+      const statusColor =
+        statusLabel === "Out of Stock" ? RED :
+        statusLabel === "Low Stock" ? ORANGE :
+        GREEN;
+      return {
+        ...p,
+        displayPrice: p.price_azn.toFixed(2),
+        statusLabel,
+        statusColor,
+        emoji: emojiFor(p.category),
+      };
+    });
+  }, [query, activeFilter]);
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View style={{ paddingHorizontal: 20, paddingTop: 16 }}>
@@ -1004,7 +1031,9 @@ const SearchScreen = ({ onProduct, onNav }) => {
           </TouchableOpacity>
           <View style={{ marginLeft: 12 }}>
             <Text style={{ fontSize: 18, fontWeight: "700", color: DARK }}>Search Results</Text>
-            <Text style={{ fontSize: 12, color: GRAY }}>24 items found for "Milk"</Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>
+              {products.length} items found{query ? ` for "${query}"` : ""}
+            </Text>
           </View>
         </View>
       </View>
@@ -1062,7 +1091,7 @@ const SearchScreen = ({ onProduct, onNav }) => {
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
           {products.map((p) => (
             <TouchableOpacity
-              key={p.name}
+              key={p.product_id}
               onPress={() => onProduct(p)}
               activeOpacity={0.85}
               style={{
@@ -1085,18 +1114,18 @@ const SearchScreen = ({ onProduct, onNav }) => {
                 <Text style={{ fontSize: 40 }}>{p.emoji}</Text>
               </View>
               <View style={{ padding: 10 }}>
-                <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, lineHeight: 16, marginBottom: 2 }}>
+                <Text style={{ fontSize: 12, fontWeight: "600", color: DARK, lineHeight: 16, marginBottom: 2 }} numberOfLines={2}>
                   {p.name}
                 </Text>
-                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 6 }}>{p.vol}</Text>
-                <Price amount={p.price} size={15} />
+                <Text style={{ fontSize: 11, color: GRAY, marginBottom: 6 }}>{p.size}</Text>
+                <Price amount={p.displayPrice} size={15} />
                 <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 6 }}>
                   <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: p.statusColor, marginRight: 4 }} />
-                  <Text style={{ fontSize: 11, color: p.statusColor, fontWeight: "600" }}>{p.status}</Text>
+                  <Text style={{ fontSize: 11, color: p.statusColor, fontWeight: "600" }}>{p.statusLabel}</Text>
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
                   <Icon name="shelf" size={12} color={GRAY} />
-                  <Text style={{ fontSize: 11, color: GRAY, marginLeft: 4 }}>{p.aisle}</Text>
+                  <Text style={{ fontSize: 11, color: GRAY, marginLeft: 4 }}>{p.location}</Text>
                 </View>
                 <TouchableOpacity
                   style={{
@@ -1125,16 +1154,46 @@ const SearchScreen = ({ onProduct, onNav }) => {
 // ── SCREEN 5: Product Detail ─────────────────────────────────────────────────
 const ProductScreen = ({ product, onBack, onNav }) => {
   const [tab, setTab] = useState("Details");
-  const p =
-    product || {
-      name: "Milla Full Cream Milk 1L",
-      price: "2.45",
-      emoji: "🥛",
-      aisle: "Aisle 3",
-      shelf: "Shelf B",
-      status: "In Stock",
-      statusColor: GREEN,
-    };
+  const [favorite, setFavorite] = useState(false);
+
+  // Normalise: enriched products come from the catalog; older mock callers
+  // (e.g. the scanner) still pass simpler shapes.
+  const raw = product || {};
+  const isEnriched = raw.product_id != null;
+  const p = isEnriched
+    ? {
+        ...raw,
+        emoji: raw.emoji || emojiFor(raw.category),
+        displayPrice: raw.price_azn.toFixed(2),
+        statusLabel:
+          raw.stock_qty === 0 ? "Out of Stock" :
+          raw.status === "low_stock" ? "Low Stock" :
+          raw.status === "expiring" ? "Expiring Soon" :
+          "In Stock",
+        statusColor:
+          raw.stock_qty === 0 ? RED :
+          raw.status === "low_stock" || raw.status === "expiring" ? ORANGE :
+          GREEN,
+      }
+    : {
+        name: raw.name || "Milla Full Cream Milk 1L",
+        emoji: raw.emoji || "🥛",
+        brand: raw.brand || "Milla Dairy",
+        displayPrice: raw.price || "2.45",
+        statusLabel: raw.status || "In Stock",
+        statusColor: raw.statusColor || GREEN,
+        location: raw.aisle ? `${raw.aisle} · ${raw.shelf || ""}`.trim() : "Aisle 3 · Shelf B",
+        category: "Dairy",
+        subcategory: "Milk",
+        rating: 4.8,
+        units_sold: 120,
+        is_fresh: true,
+        expires_in_days: 1.2,
+        fat_percentage: 3.5,
+        size: raw.vol || "1L",
+        origin_country: "Azerbaijan",
+        stock_qty: 100,
+      };
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <ScrollView style={{ flex: 1 }}>
@@ -1203,8 +1262,8 @@ const ProductScreen = ({ product, onBack, onNav }) => {
                   marginRight: 6,
                 }}
               />
-              <Text style={{ fontSize: 12, fontWeight: "600", color: p.statusColor || GREEN }}>
-                {p.status || "In Stock"} ({p.aisle} • {p.shelf})
+              <Text style={{ fontSize: 12, fontWeight: "600", color: p.statusColor }}>
+                {p.statusLabel} • {p.location}
               </Text>
             </View>
           </View>
@@ -1212,25 +1271,59 @@ const ProductScreen = ({ product, onBack, onNav }) => {
 
         <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
           <Text style={{ fontSize: 11, fontWeight: "700", color: GRAY, letterSpacing: 1, marginBottom: 4 }}>
-            MILLA DAIRY
+            {(p.brand || "").toUpperCase()}
           </Text>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
             <Text style={{ fontSize: 20, fontWeight: "800", color: DARK, flex: 1 }}>{p.name}</Text>
-            <TouchableOpacity style={{ marginTop: 2, marginLeft: 8 }}>
-              <Icon name="heart" size={22} color={GRAY} />
+            <TouchableOpacity onPress={() => setFavorite((v) => !v)} style={{ marginTop: 2, marginLeft: 8 }}>
+              <Icon name="heart" size={22} color={favorite ? RED : GRAY} />
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
             <Text style={{ fontSize: 14, color: "#F59E0B" }}>★</Text>
-            <Text style={{ fontWeight: "600", fontSize: 14, marginLeft: 8 }}>4.8</Text>
-            <Text style={{ color: GRAY, fontSize: 13, marginLeft: 8 }}>(120 Reviews)</Text>
-            <View style={{ marginLeft: 8 }}>
-              <Price amount={p.price} size={18} />
+            <Text style={{ fontWeight: "600", fontSize: 14, marginLeft: 6 }}>
+              {(p.rating || 0).toFixed(1)}
+            </Text>
+            <Text style={{ color: GRAY, fontSize: 13, marginLeft: 8 }}>
+              ({p.units_sold || 0} sold/30d)
+            </Text>
+            <View style={{ marginLeft: 12 }}>
+              <Price amount={p.displayPrice} size={18} />
             </View>
           </View>
-          <View style={{ flexDirection: "row", gap: 8, marginBottom: 20 }}>
-            <AllergenBadge label="Contains Dairy" />
-            <AllergenBadge label="Lactose" />
+          <View style={{ flexDirection: "row", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
+            {p.is_fresh && p.expires_in_days != null && (
+              <AllergenBadge
+                label={
+                  p.expires_in_days <= 1
+                    ? `Expires in ${p.expires_in_days}d`
+                    : `Fresh • ${p.expires_in_days}d shelf life`
+                }
+              />
+            )}
+            {p.fat_percentage != null && (
+              <AllergenBadge label={`Fat ${p.fat_percentage.toFixed(1)}%`} />
+            )}
+            {p.origin_country && (
+              <AllergenBadge label={`Origin: ${p.origin_country}`} />
+            )}
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              backgroundColor: LIGHT_GRAY,
+              borderRadius: 12,
+              padding: 12,
+              marginBottom: 20,
+              gap: 14,
+            }}
+          >
+            <InfoStat label="Size" value={p.size} />
+            <InfoStat label="Category" value={p.subcategory || p.category} />
+            <InfoStat label="In stock" value={p.stock_qty} />
+            <InfoStat label="Aisle" value={p.location} flex2 />
           </View>
 
           <View style={{ flexDirection: "row", borderBottomWidth: 2, borderBottomColor: BORDER, marginBottom: 16 }}>
@@ -1261,25 +1354,29 @@ const ProductScreen = ({ product, onBack, onNav }) => {
 
           {tab === "Details" && (
             <Text style={{ fontSize: 14, lineHeight: 24, color: GRAY, marginBottom: 20 }}>
-              Premium quality full cream milk sourced from local farms. Rich in calcium and essential vitamins,
-              perfect for your daily nutrition needs. Pasteurized and homogenized for freshness.
+              {p.name} by {p.brand}. {p.size} pack of {p.subcategory || p.category}, sourced from{" "}
+              {p.origin_country || "local suppliers"}. Currently stocked at {p.location}.
+              {p.is_fresh
+                ? ` Fresh item — best consumed within ${p.expires_in_days} day(s).`
+                : ` Long shelf-life — approx ${p.expires_in_days} days remaining.`}
             </Text>
           )}
           {tab === "Ingredients" && (
             <Text style={{ fontSize: 14, lineHeight: 24, color: GRAY, marginBottom: 20 }}>
-              Full cream milk (100%). Contains milk proteins, fat (min 3.5%), lactose, vitamins A, D, B12, and
-              minerals including calcium and phosphorus.
+              Ingredient information is not yet available in our catalog for this SKU. Tap "Ask AI"
+              above for product-specific dietary, allergen, or substitution advice based on the
+              brand and category.
             </Text>
           )}
           {tab === "Nutrition" && (
             <View style={{ marginBottom: 20 }}>
               {[
-                ["Energy", "270 kJ / 64 kcal"],
-                ["Fat", "3.5g"],
-                ["Protein", "3.2g"],
-                ["Carbohydrates", "4.7g"],
-                ["Calcium", "120mg"],
-              ].map(([k, v]) => (
+                p.fat_percentage != null ? ["Fat", `${p.fat_percentage.toFixed(1)}%`] : null,
+                ["Size", p.size || "—"],
+                ["Origin", p.origin_country || "—"],
+                p.is_fresh ? ["Days to expiry", `${p.expires_in_days}`] : null,
+                ["Rating", `${(p.rating || 0).toFixed(1)} / 5`],
+              ].filter(Boolean).map(([k, v]) => (
                 <View
                   key={k}
                   style={{
@@ -2142,8 +2239,314 @@ const MapScreen = ({ onBack }) => {
   );
 };
 
+// ── SCREEN 9: Admin Dashboard ───────────────────────────────────────────────
+const AdminScreen = ({ user, onLogout, onSelect }) => {
+  const analytics = getAnalytics();
+  const [tab, setTab] = useState("restock");
+  const [insights, setInsights] = useState(null);
+  const [insightsLoading, setInsightsLoading] = useState(false);
+  const [insightsError, setInsightsError] = useState(null);
+
+  const loadInsights = async () => {
+    setInsightsLoading(true);
+    setInsightsError(null);
+    try {
+      const text = await getInsights();
+      setInsights(text);
+    } catch (e) {
+      setInsightsError(e.message);
+    } finally {
+      setInsightsLoading(false);
+    }
+  };
+
+  const list =
+    tab === "restock" ? analytics.lowStock :
+    tab === "overstock" ? analytics.overstocked :
+    analytics.expiring;
+
+  return (
+    <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          paddingHorizontal: 20,
+          paddingTop: 16,
+          paddingBottom: 14,
+          borderBottomWidth: 1,
+          borderBottomColor: BORDER,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 20,
+              backgroundColor: "#FEF3C7",
+              borderWidth: 2,
+              borderColor: "#F59E0B",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "#B45309", fontWeight: "800", fontSize: 16 }}>A</Text>
+          </View>
+          <View style={{ marginLeft: 10 }}>
+            <Text style={{ fontWeight: "800", fontSize: 16, color: DARK }}>Admin Panel</Text>
+            <Text style={{ fontSize: 12, color: GRAY }}>{user?.name || "Manager"} • Gənclik Mall</Text>
+          </View>
+        </View>
+        <TouchableOpacity
+          onPress={onLogout}
+          style={{
+            borderWidth: 1,
+            borderColor: BORDER,
+            borderRadius: 10,
+            paddingHorizontal: 12,
+            paddingVertical: 8,
+          }}
+        >
+          <Text style={{ fontSize: 12, fontWeight: "600", color: GRAY }}>Logout</Text>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }}>
+        {/* KPI cards */}
+        <View style={{ flexDirection: "row", flexWrap: "wrap", padding: 16, gap: 10 }}>
+          <KpiCard label="SKUs" value={analytics.totalProducts.toLocaleString()} accent={GREEN} />
+          <KpiCard label="Units sold / 30d" value={analytics.totalUnits.toLocaleString()} accent={GREEN_MID} />
+          <KpiCard label="Revenue 30d" value={`${(analytics.totalRevenue / 1000).toFixed(0)}K ₼`} accent="#0EA5E9" />
+          <KpiCard label="Stock value" value={`${(analytics.totalStockValue / 1000).toFixed(0)}K ₼`} accent="#8B5CF6" />
+          <KpiCard label="Low stock" value={analytics.lowStock.length} accent={RED} />
+          <KpiCard label="Overstock" value={analytics.overstocked.length} accent={ORANGE} />
+          <KpiCard label="Expiring <1d" value={analytics.expiring.length} accent="#DC2626" />
+          <KpiCard
+            label="Categories"
+            value={analytics.categories.length}
+            accent={GRAY}
+          />
+        </View>
+
+        {/* AI Insights */}
+        <View
+          style={{
+            marginHorizontal: 16,
+            marginBottom: 16,
+            backgroundColor: "white",
+            borderRadius: 14,
+            borderWidth: 1,
+            borderColor: BORDER,
+            padding: 16,
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 10 }}>
+            <View
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+                backgroundColor: GREEN_LIGHT,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Icon name="robot" size={18} color={GREEN} />
+            </View>
+            <View style={{ marginLeft: 10, flex: 1 }}>
+              <Text style={{ fontWeight: "800", fontSize: 15, color: DARK }}>AI Insights</Text>
+              <Text style={{ fontSize: 12, color: GRAY }}>Stock health & action items</Text>
+            </View>
+            <TouchableOpacity
+              onPress={loadInsights}
+              disabled={insightsLoading}
+              style={{
+                backgroundColor: GREEN,
+                paddingHorizontal: 14,
+                paddingVertical: 8,
+                borderRadius: 10,
+                opacity: insightsLoading ? 0.6 : 1,
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 12, fontWeight: "700" }}>
+                {insights ? "Refresh" : "Generate"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          {insightsLoading && (
+            <View style={{ flexDirection: "row", alignItems: "center", paddingVertical: 12 }}>
+              <ActivityIndicator size="small" color={GREEN} />
+              <Text style={{ color: GRAY, marginLeft: 8, fontSize: 13 }}>
+                Analyzing {analytics.totalProducts.toLocaleString()} SKUs…
+              </Text>
+            </View>
+          )}
+          {insightsError && (
+            <Text style={{ color: RED, fontSize: 13, marginTop: 4 }}>⚠️ {insightsError}</Text>
+          )}
+          {insights && !insightsLoading && (
+            <Text style={{ fontSize: 13, color: DARK, lineHeight: 20, marginTop: 6 }}>
+              {insights}
+            </Text>
+          )}
+          {!insights && !insightsLoading && !insightsError && (
+            <Text style={{ fontSize: 13, color: GRAY, fontStyle: "italic", marginTop: 4 }}>
+              Tap "Generate" to get AI recommendations on restock priorities, markdowns, and
+              expiring items based on the last 30 days of velocity.
+            </Text>
+          )}
+        </View>
+
+        {/* Tabs */}
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: 16,
+            backgroundColor: "white",
+            borderRadius: 12,
+            padding: 4,
+            marginBottom: 12,
+          }}
+        >
+          {[
+            { id: "restock", label: `Restock (${analytics.lowStock.length})` },
+            { id: "overstock", label: `Overstock (${analytics.overstocked.length})` },
+            { id: "expiring", label: `Expiring (${analytics.expiring.length})` },
+          ].map((t) => (
+            <TouchableOpacity
+              key={t.id}
+              onPress={() => setTab(t.id)}
+              style={{
+                flex: 1,
+                paddingVertical: 9,
+                borderRadius: 8,
+                backgroundColor: tab === t.id ? GREEN : "transparent",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: "700",
+                  color: tab === t.id ? "white" : GRAY,
+                }}
+              >
+                {t.label}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {/* List */}
+        <View style={{ paddingHorizontal: 16 }}>
+          {list.slice(0, 40).map((p) => (
+            <TouchableOpacity
+              key={p.product_id}
+              onPress={() => onSelect(p)}
+              activeOpacity={0.85}
+              style={{
+                backgroundColor: "white",
+                borderRadius: 12,
+                borderWidth: 1,
+                borderColor: BORDER,
+                padding: 12,
+                marginBottom: 8,
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  width: 8,
+                  height: 48,
+                  borderRadius: 4,
+                  backgroundColor:
+                    p.status === "expiring" ? "#DC2626" :
+                    p.status === "low_stock" ? RED :
+                    ORANGE,
+                  marginRight: 12,
+                }}
+              />
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                  {p.name}
+                </Text>
+                <Text style={{ fontSize: 11, color: GRAY, marginTop: 2 }} numberOfLines={1}>
+                  {p.brand} • {p.location}
+                </Text>
+                <View style={{ flexDirection: "row", marginTop: 6, flexWrap: "wrap", gap: 6 }}>
+                  <StatChip label="Stock" value={p.stock_qty} />
+                  <StatChip label="Sold/30d" value={p.units_sold} />
+                  {p.is_fresh && <StatChip label="Expires" value={`${p.expires_in_days}d`} />}
+                  <StatChip label="Price" value={`${p.price_azn.toFixed(2)} ₼`} />
+                </View>
+              </View>
+            </TouchableOpacity>
+          ))}
+          {list.length === 0 && (
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: 12,
+                padding: 24,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ color: GRAY }}>Nothing flagged in this bucket. 🎉</Text>
+            </View>
+          )}
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+const KpiCard = ({ label, value, accent }) => (
+  <View
+    style={{
+      width: "47.5%",
+      backgroundColor: "white",
+      borderRadius: 12,
+      borderLeftWidth: 4,
+      borderLeftColor: accent,
+      borderTopWidth: 1,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderTopColor: BORDER,
+      borderRightColor: BORDER,
+      borderBottomColor: BORDER,
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+    }}
+  >
+    <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
+      {label.toUpperCase()}
+    </Text>
+    <Text style={{ fontSize: 18, fontWeight: "800", color: DARK, marginTop: 2 }}>{value}</Text>
+  </View>
+);
+
+const StatChip = ({ label, value }) => (
+  <View
+    style={{
+      backgroundColor: LIGHT_GRAY,
+      borderRadius: 6,
+      paddingHorizontal: 6,
+      paddingVertical: 2,
+    }}
+  >
+    <Text style={{ fontSize: 10, color: GRAY }}>
+      {label}: <Text style={{ color: DARK, fontWeight: "700" }}>{value}</Text>
+    </Text>
+  </View>
+);
+
 // ── ROOT APP ─────────────────────────────────────────────────────────────────
 export default function App() {
+  const [user, setUser] = useState(null);
   const [screen, setScreen] = useState("login");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [prevScreen, setPrevScreen] = useState(null);
@@ -2154,7 +2557,7 @@ export default function App() {
   };
 
   const goBack = () => {
-    setScreen(prevScreen || "home");
+    setScreen(prevScreen || (user?.role === "admin" ? "admin" : "home"));
   };
 
   const handleProduct = (p) => {
@@ -2162,10 +2565,24 @@ export default function App() {
     nav("product");
   };
 
+  const handleLogin = (u) => {
+    setUser(u);
+    setScreen(u.role === "admin" ? "admin" : "home");
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setScreen("login");
+    setPrevScreen(null);
+    setSelectedProduct(null);
+  };
+
   const renderScreen = () => {
     switch (screen) {
       case "login":
-        return <LoginScreen onLogin={() => nav("home")} />;
+        return <LoginScreen onLogin={handleLogin} />;
+      case "admin":
+        return <AdminScreen user={user} onLogout={handleLogout} onSelect={handleProduct} />;
       case "home":
         return <HomeScreen onNav={nav} />;
       case "onsite":
@@ -2185,7 +2602,7 @@ export default function App() {
     }
   };
 
-  const noBottomNav = ["login", "scanner"].includes(screen);
+  const noBottomNav = ["login", "scanner", "admin"].includes(screen) || user?.role === "admin";
   const activeTab =
     ["home", "onsite", "onsite-search", "assistant", "map"].find((t) => screen.startsWith(t)) || "home";
 
@@ -2197,6 +2614,17 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const InfoStat = ({ label, value, flex2 }) => (
+  <View style={{ minWidth: flex2 ? "55%" : "40%" }}>
+    <Text style={{ fontSize: 10, fontWeight: "700", color: GRAY, letterSpacing: 1 }}>
+      {label.toUpperCase()}
+    </Text>
+    <Text style={{ fontSize: 13, fontWeight: "700", color: DARK, marginTop: 2 }}>
+      {value ?? "—"}
+    </Text>
+  </View>
+);
 
 function emojiFor(category = "") {
   const c = category.toLowerCase();
