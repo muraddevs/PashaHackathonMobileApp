@@ -290,6 +290,69 @@ export function filterByDiet(products, tag) {
   });
 }
 
+// ── Premium perks ──────────────────────────────────────────────────────────
+// Stacks loyalty discount on top of any public markdown. Public buyers see
+// just `effectivePrice`; premium members see this lower number.
+export function loyaltyDiscount(user) {
+  return user && user.premium ? user.loyaltyPct || 0 : 0;
+}
+
+export function premiumPrice(p, user) {
+  const base = effectivePrice(p);
+  const loyalty = loyaltyDiscount(user);
+  if (loyalty <= 0) return base;
+  return Math.round(base * (1 - loyalty / 100) * 100) / 100;
+}
+
+export function totalDiscountPct(p, user) {
+  const basePct = getDiscount(p).pct;
+  const loyalty = loyaltyDiscount(user);
+  if (loyalty <= 0) return basePct;
+  // Compound: 1 − (1 − base)(1 − loyalty)
+  const combined = 1 - (1 - basePct / 100) * (1 - loyalty / 100);
+  return Math.round(combined * 100);
+}
+
+// Items that are NOT yet publicly discounted, but will be within 1–2 days —
+// premium members see them now. Predicts the discount that will apply once
+// the item crosses the public threshold.
+export function getUpcomingDeals(limit = 30) {
+  const products = getProducts();
+  const previews = [];
+  for (const p of products) {
+    if (getDiscount(p).pct > 0) continue; // already discounted publicly
+
+    if (p.is_fresh && p.expires_in_days > 1.5 && p.expires_in_days <= 3) {
+      // Will hit the fresh-markdown threshold within ~1–2 days.
+      previews.push({
+        ...p,
+        previewDiscount: p.expires_in_days <= 2 ? 15 : 10,
+        activeInDays: Math.max(1, Math.round((p.expires_in_days - 1.5) * 10) / 10),
+        reason: "Expires soon — early bird preview",
+      });
+      continue;
+    }
+    if (
+      !p.is_fresh &&
+      p.status !== "overstocked" &&
+      p.days_of_stock > 45 &&
+      p.days_of_stock <= 60 &&
+      p.units_sold < 120
+    ) {
+      // Will hit overstocked threshold soon.
+      previews.push({
+        ...p,
+        previewDiscount: 15,
+        activeInDays: Math.max(1, Math.round(60 - p.days_of_stock)),
+        reason: "Slow-mover — markdown coming soon",
+      });
+    }
+  }
+  return previews
+    .sort((a, b) => a.activeInDays - b.activeInDays)
+    .slice(0, limit);
+}
+
 // ── Rescue Today: items currently marked down by the engine ────────────────
 export function getRescueItems(limit = 60) {
   const products = getProducts();

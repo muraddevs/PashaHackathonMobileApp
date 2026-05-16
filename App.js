@@ -37,6 +37,10 @@ import {
   getProducts,
   getMorningMissions,
   aislePopularity,
+  getUpcomingDeals,
+  premiumPrice,
+  totalDiscountPct,
+  loyaltyDiscount,
 } from "./src/data/productHelpers";
 import Svg, {
   Path,
@@ -541,7 +545,7 @@ const LoginScreen = ({ onLogin }) => {
 };
 
 // ── SCREEN 2: Home ───────────────────────────────────────────────────────────
-const HomeScreen = ({ onNav, shoppingListCount = 0 }) => {
+const HomeScreen = ({ onNav, shoppingListCount = 0, user }) => {
   const categories = [
     { name: "Vegetables", emoji: "🥦" },
     { name: "Sea Fish", emoji: "🐟" },
@@ -605,42 +609,146 @@ const HomeScreen = ({ onNav, shoppingListCount = 0 }) => {
         </TouchableOpacity>
       </View>
 
-      <LinearGradient
-        colors={["#1a1a1a", "#2d2d2d"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={{ marginHorizontal: 20, marginBottom: 16, borderRadius: 16, overflow: "hidden", padding: 20 }}
-      >
-        <View
-          style={{
-            alignSelf: "flex-start",
-            backgroundColor: GREEN,
-            paddingHorizontal: 8,
-            paddingVertical: 3,
-            borderRadius: 6,
-            marginBottom: 8,
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 10, fontWeight: "700", letterSpacing: 1 }}>PREMIUM FEATURE</Text>
-        </View>
-        <Text style={{ color: "white", marginBottom: 6, fontSize: 20, fontWeight: "800" }}>
-          Find products{"\n"}faster in-store
-        </Text>
-        <Text style={{ color: "#aaa", marginBottom: 16, fontSize: 13 }}>Navigate aisles & check stock.</Text>
+      {user?.premium ? (
         <TouchableOpacity
-          onPress={() => onNav("map")}
-          activeOpacity={0.85}
-          style={{
-            alignSelf: "flex-start",
-            backgroundColor: "white",
-            borderRadius: 10,
-            paddingVertical: 10,
-            paddingHorizontal: 20,
-          }}
+          onPress={() => onNav("premium")}
+          activeOpacity={0.9}
+          style={{ marginHorizontal: 20, marginBottom: 16 }}
         >
-          <Text style={{ color: DARK, fontSize: 13, fontWeight: "700" }}>Start Navigation →</Text>
+          <LinearGradient
+            colors={["#0F172A", "#1E293B", "#334155"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={{ borderRadius: 18, overflow: "hidden", padding: 18 }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginBottom: 10,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  backgroundColor: "#F59E0B",
+                  paddingHorizontal: 8,
+                  paddingVertical: 3,
+                  borderRadius: 6,
+                }}
+              >
+                <Text style={{ color: "white", fontSize: 10, fontWeight: "800", letterSpacing: 0.8 }}>
+                  👑 {user.tier?.toUpperCase() || "PREMIUM"}
+                </Text>
+              </View>
+              <Text
+                style={{
+                  color: "#FCD34D",
+                  fontSize: 11,
+                  fontWeight: "700",
+                  marginLeft: 8,
+                }}
+              >
+                Active member
+              </Text>
+            </View>
+            <Text
+              style={{
+                color: "white",
+                marginBottom: 4,
+                fontSize: 19,
+                fontWeight: "800",
+              }}
+            >
+              Your perks, {user.name?.split(" ")[0] || "shopper"}
+            </Text>
+            <Text style={{ color: "#CBD5E1", marginBottom: 12, fontSize: 13, lineHeight: 19 }}>
+              +{user.loyaltyPct || 5}% loyalty on every basket · early access
+              to tomorrow's markdowns
+            </Text>
+            <View style={{ flexDirection: "row", gap: 8 }}>
+              <View
+                style={{
+                  backgroundColor: "rgba(245, 158, 11, 0.18)",
+                  borderWidth: 1,
+                  borderColor: "rgba(252, 211, 77, 0.5)",
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  borderRadius: 8,
+                  flex: 1,
+                }}
+              >
+                <Text style={{ color: "#FCD34D", fontSize: 10, fontWeight: "700", letterSpacing: 0.5 }}>
+                  LOYALTY
+                </Text>
+                <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginTop: 1 }}>
+                  −{user.loyaltyPct || 5}% everywhere
+                </Text>
+              </View>
+              <View
+                style={{
+                  backgroundColor: "rgba(34, 197, 94, 0.18)",
+                  borderWidth: 1,
+                  borderColor: "rgba(74, 222, 128, 0.5)",
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  borderRadius: 8,
+                  flex: 1,
+                }}
+              >
+                <Text style={{ color: "#86EFAC", fontSize: 10, fontWeight: "700", letterSpacing: 0.5 }}>
+                  EARLY ACCESS
+                </Text>
+                <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginTop: 1 }}>
+                  See tomorrow's deals
+                </Text>
+              </View>
+            </View>
+          </LinearGradient>
         </TouchableOpacity>
-      </LinearGradient>
+      ) : (
+        <LinearGradient
+          colors={["#1a1a1a", "#2d2d2d"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={{ marginHorizontal: 20, marginBottom: 16, borderRadius: 16, overflow: "hidden", padding: 20 }}
+        >
+          <View
+            style={{
+              alignSelf: "flex-start",
+              backgroundColor: GREEN,
+              paddingHorizontal: 8,
+              paddingVertical: 3,
+              borderRadius: 6,
+              marginBottom: 8,
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 10, fontWeight: "700", letterSpacing: 1 }}>
+              UNLOCK PREMIUM
+            </Text>
+          </View>
+          <Text style={{ color: "white", marginBottom: 6, fontSize: 20, fontWeight: "800" }}>
+            Save more,{"\n"}see deals early
+          </Text>
+          <Text style={{ color: "#aaa", marginBottom: 16, fontSize: 13 }}>
+            5% loyalty on every basket and 24h early access to markdowns.
+          </Text>
+          <TouchableOpacity
+            onPress={() => onNav("map")}
+            activeOpacity={0.85}
+            style={{
+              alignSelf: "flex-start",
+              backgroundColor: "white",
+              borderRadius: 10,
+              paddingVertical: 10,
+              paddingHorizontal: 20,
+            }}
+          >
+            <Text style={{ color: DARK, fontSize: 13, fontWeight: "700" }}>Learn more →</Text>
+          </TouchableOpacity>
+        </LinearGradient>
+      )}
 
       <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
         <Text style={{ fontSize: 17, fontWeight: "700", color: TEXT_TITLE, marginBottom: 12 }}>
@@ -1089,7 +1197,7 @@ const OnSiteScreen = ({ onNav }) => {
 };
 
 // ── SCREEN 4: Search Results ─────────────────────────────────────────────────
-const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [] }) => {
+const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [], user }) => {
   const [query, setQuery] = useState("Milk");
   const [activeFilter, setActiveFilter] = useState("All");
   const [diet, setDiet] = useState(null);
@@ -1251,7 +1359,7 @@ const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [] }) =>
                   {p.name}
                 </Text>
                 <Text style={{ fontSize: 11, color: GRAY, marginBottom: 4 }}>{p.size}</Text>
-                <PriceWithDiscount product={p} size={14} />
+                <PriceWithDiscount product={p} size={14} user={user} />
                 <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 6 }}>
                   <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: p.statusColor, marginRight: 4 }} />
                   <Text style={{ fontSize: 11, color: p.statusColor, fontWeight: "600" }}>{p.statusLabel}</Text>
@@ -1476,7 +1584,7 @@ const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [],
             </Text>
             <View style={{ marginLeft: 12 }}>
               {p.product_id != null ? (
-                <PriceWithDiscount product={p} size={18} />
+                <PriceWithDiscount product={p} size={18} user={user} />
               ) : (
                 <Price amount={p.displayPrice} size={18} />
               )}
@@ -3293,42 +3401,320 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
 };
 
 // ── Reusable: discounted price chip ─────────────────────────────────────────
-const PriceWithDiscount = ({ product, size = 14 }) => {
+const PriceWithDiscount = ({ product, size = 14, user }) => {
   const d = getDiscount(product);
-  const final = effectivePrice(product);
-  if (d.pct <= 0) {
+  const loyalty = loyaltyDiscount(user);
+  const finalForBuyer = premiumPrice(product, user);
+  const totalPct = totalDiscountPct(product, user);
+
+  // No discount of any kind — show the plain price.
+  if (d.pct <= 0 && loyalty <= 0) {
     return <Price amount={product.price_azn.toFixed(2)} size={size} />;
   }
+
+  const showStrike = d.pct > 0 || loyalty > 0;
   return (
     <View style={{ flexDirection: "row", alignItems: "baseline", flexWrap: "wrap" }}>
-      <Price amount={final.toFixed(2)} size={size} />
-      <Text
-        style={{
-          fontSize: size - 4,
-          color: GRAY,
-          textDecorationLine: "line-through",
-          marginLeft: 6,
-        }}
-      >
-        {product.price_azn.toFixed(2)} ₼
-      </Text>
-      <View
-        style={{
-          marginLeft: 6,
-          backgroundColor: "#FEE2E2",
-          paddingHorizontal: 5,
-          paddingVertical: 1,
-          borderRadius: 4,
-        }}
-      >
-        <Text style={{ color: RED, fontSize: 10, fontWeight: "800" }}>-{d.pct}%</Text>
-      </View>
+      <Price amount={finalForBuyer.toFixed(2)} size={size} />
+      {showStrike && (
+        <Text
+          style={{
+            fontSize: size - 4,
+            color: GRAY,
+            textDecorationLine: "line-through",
+            marginLeft: 6,
+          }}
+        >
+          {product.price_azn.toFixed(2)} ₼
+        </Text>
+      )}
+      {d.pct > 0 && (
+        <View
+          style={{
+            marginLeft: 6,
+            backgroundColor: "#FEE2E2",
+            paddingHorizontal: 5,
+            paddingVertical: 1,
+            borderRadius: 4,
+          }}
+        >
+          <Text style={{ color: RED, fontSize: 10, fontWeight: "800" }}>-{d.pct}%</Text>
+        </View>
+      )}
+      {loyalty > 0 && (
+        <View
+          style={{
+            marginLeft: 6,
+            backgroundColor: "#FEF3C7",
+            paddingHorizontal: 5,
+            paddingVertical: 1,
+            borderRadius: 4,
+          }}
+        >
+          <Text style={{ color: "#B45309", fontSize: 10, fontWeight: "800" }}>
+            👑 −{loyalty}%
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
 
+// ── SCREEN 12: Premium perks (early-access deals + loyalty) ────────────────
+const PremiumScreen = ({ user, onBack, onProduct, onAddToList }) => {
+  const upcoming = useMemo(() => getUpcomingDeals(40), []);
+  const totalPreviewSaving = upcoming.reduce(
+    (s, p) => s + p.price_azn * (p.previewDiscount / 100),
+    0
+  );
+
+  return (
+    <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          paddingHorizontal: 16,
+          paddingTop: 14,
+          paddingBottom: 12,
+          borderBottomWidth: 0.5,
+          borderBottomColor: SUBTLE_BORDER,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <TouchableOpacity onPress={onBack} style={{ padding: 4 }}>
+            <Icon name="back" size={22} color={DARK} />
+          </TouchableOpacity>
+          <View style={{ marginLeft: 8, flex: 1 }}>
+            <Text style={{ fontSize: 17, fontWeight: "800", color: TEXT_TITLE }}>
+              👑 Premium
+            </Text>
+            <Text style={{ fontSize: 12, color: TEXT_MUTED }}>
+              {user?.tier || "Member"} tier · {user?.name}
+            </Text>
+          </View>
+        </View>
+      </View>
+
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 24 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
+      >
+        {/* Perks overview */}
+        <View style={{ paddingHorizontal: 12, paddingTop: 14 }}>
+          <LinearGradient
+            colors={["#0F172A", "#1E293B"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={{ borderRadius: R.lg, padding: 16, marginBottom: 14 }}
+          >
+            <Text
+              style={{
+                color: "#FCD34D",
+                fontSize: 10,
+                fontWeight: "800",
+                letterSpacing: 1,
+                marginBottom: 6,
+              }}
+            >
+              YOUR PERKS
+            </Text>
+            <View style={{ flexDirection: "row", marginBottom: 10 }}>
+              <View style={{ flex: 1 }}>
+                <Text style={{ color: "white", fontSize: 26, fontWeight: "800" }}>
+                  −{user?.loyaltyPct || 5}%
+                </Text>
+                <Text style={{ color: "#CBD5E1", fontSize: 11, marginTop: 2 }}>
+                  Loyalty on every basket
+                </Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{ color: "white", fontSize: 26, fontWeight: "800" }}>
+                  24h
+                </Text>
+                <Text style={{ color: "#CBD5E1", fontSize: 11, marginTop: 2 }}>
+                  Early access to deals
+                </Text>
+              </View>
+            </View>
+            <View
+              style={{
+                backgroundColor: "rgba(252,211,77,0.15)",
+                borderLeftWidth: 3,
+                borderLeftColor: "#FCD34D",
+                paddingHorizontal: 10,
+                paddingVertical: 8,
+                borderRadius: 6,
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 12, lineHeight: 17 }}>
+                Estimated savings on the {upcoming.length} previews below:{" "}
+                <Text style={{ fontWeight: "800" }}>
+                  ~{totalPreviewSaving.toFixed(0)} ₼
+                </Text>
+              </Text>
+            </View>
+          </LinearGradient>
+        </View>
+
+        {/* Upcoming deals list */}
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: 16,
+            marginBottom: 8,
+          }}
+        >
+          <Text style={{ fontSize: 14 }}>⏰</Text>
+          <Text
+            style={{
+              fontWeight: "800",
+              fontSize: 15,
+              color: TEXT_TITLE,
+              marginLeft: 6,
+              flex: 1,
+            }}
+          >
+            Tomorrow's markdowns (preview)
+          </Text>
+          <Text style={{ fontSize: 11, color: TEXT_MUTED }}>{upcoming.length}</Text>
+        </View>
+
+        <View style={{ paddingHorizontal: 12 }}>
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: R.md,
+              overflow: "hidden",
+              ...Platform.select({
+                ios: {
+                  shadowColor: "#000",
+                  shadowOffset: { width: 0, height: 1 },
+                  shadowOpacity: 0.05,
+                  shadowRadius: 4,
+                },
+                android: { elevation: 1 },
+              }),
+            }}
+          >
+            {upcoming.map((p, i) => (
+              <UpcomingDealRow
+                key={p.product_id}
+                product={p}
+                onPress={() => onProduct(p)}
+                onAddToList={() => onAddToList && onAddToList(p)}
+                isLast={i === upcoming.length - 1}
+                user={user}
+              />
+            ))}
+            {upcoming.length === 0 && (
+              <View style={{ padding: 24, alignItems: "center" }}>
+                <Text style={{ color: TEXT_MUTED, fontSize: 13 }}>
+                  No upcoming markdowns right now. 🎯
+                </Text>
+              </View>
+            )}
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+const UpcomingDealRow = ({ product, onPress, onAddToList, isLast, user }) => {
+  const previewFinal = Math.round(
+    product.price_azn *
+      (1 - product.previewDiscount / 100) *
+      (1 - (user?.loyaltyPct || 0) / 100) *
+      100
+  ) / 100;
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.7}
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 14,
+        paddingVertical: 11,
+        borderBottomWidth: isLast ? 0 : 0.5,
+        borderBottomColor: SUBTLE_BORDER,
+      }}
+    >
+      <View
+        style={{
+          width: 36,
+          height: 36,
+          borderRadius: 18,
+          backgroundColor: "#FEF3C7",
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: 10,
+        }}
+      >
+        <Text style={{ fontSize: 18 }}>{emojiFor(product.category)}</Text>
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={{ fontSize: 13, fontWeight: "700", color: TEXT_TITLE }} numberOfLines={1}>
+          {product.name}
+        </Text>
+        <Text style={{ fontSize: 11, color: TEXT_MUTED, marginTop: 1 }} numberOfLines={1}>
+          Activates in {product.activeInDays}d · {product.location}
+        </Text>
+        <View style={{ flexDirection: "row", alignItems: "baseline", marginTop: 4 }}>
+          <Text style={{ fontSize: 14, fontWeight: "800", color: GREEN }}>
+            {previewFinal.toFixed(2)} ₼
+          </Text>
+          <Text
+            style={{
+              fontSize: 11,
+              color: TEXT_MUTED,
+              textDecorationLine: "line-through",
+              marginLeft: 6,
+            }}
+          >
+            {product.price_azn.toFixed(2)} ₼
+          </Text>
+          <View
+            style={{
+              backgroundColor: "#FEF3C7",
+              paddingHorizontal: 5,
+              paddingVertical: 1,
+              borderRadius: 4,
+              marginLeft: 6,
+            }}
+          >
+            <Text style={{ fontSize: 9, fontWeight: "800", color: "#B45309" }}>
+              👑 −{product.previewDiscount + (user?.loyaltyPct || 0)}%
+            </Text>
+          </View>
+        </View>
+      </View>
+      <TouchableOpacity
+        onPress={(e) => {
+          e.stopPropagation && e.stopPropagation();
+          onAddToList();
+        }}
+        style={{
+          marginLeft: 8,
+          width: 32,
+          height: 32,
+          borderRadius: 16,
+          backgroundColor: GREEN,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Icon name="plus" size={16} color="white" />
+      </TouchableOpacity>
+    </TouchableOpacity>
+  );
+};
+
 // ── SCREEN 10: Rescue Today (marked-down items) ─────────────────────────────
-const RescueScreen = ({ onProduct, onBack, onAddToList, onShowRoute }) => {
+const RescueScreen = ({ onProduct, onBack, onAddToList, onShowRoute, user }) => {
   const items = useMemo(() => getRescueItems(60), []);
   const totalSaving = items.reduce(
     (s, p) => s + (p.price_azn - effectivePrice(p)),
@@ -3442,7 +3828,7 @@ const RescueScreen = ({ onProduct, onBack, onAddToList, onShowRoute }) => {
                 {p.location}
               </Text>
               <View style={{ marginTop: 4 }}>
-                <PriceWithDiscount product={p} size={14} />
+                <PriceWithDiscount product={p} size={14} user={user} />
               </View>
               <View
                 style={{
@@ -3498,7 +3884,7 @@ const RescueScreen = ({ onProduct, onBack, onAddToList, onShowRoute }) => {
 };
 
 // ── SCREEN 11: Shopping List ─────────────────────────────────────────────────
-const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, onAddToList }) => {
+const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, onAddToList, user }) => {
   // Demo helper: pulls 4 distinct products from across different aisles so a
   // user can immediately see a multi-stop route on the map.
   const seedDemoItems = () => {
@@ -3515,7 +3901,7 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
     () => [...list].sort((a, b) => (a.aisle_num || 99) - (b.aisle_num || 99)),
     [list]
   );
-  const subtotal = list.reduce((s, p) => s + effectivePrice(p), 0);
+  const subtotal = list.reduce((s, p) => s + premiumPrice(p, user), 0);
   const original = list.reduce((s, p) => s + p.price_azn, 0);
   const saving = original - subtotal;
 
@@ -3603,7 +3989,7 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
                 {p.location}
               </Text>
               <View style={{ marginTop: 2 }}>
-                <PriceWithDiscount product={p} size={13} />
+                <PriceWithDiscount product={p} size={13} user={user} />
               </View>
             </View>
             <TouchableOpacity
@@ -5048,6 +5434,16 @@ export default function App() {
           <HomeScreen
             onNav={nav}
             shoppingListCount={shoppingList.length}
+            user={user}
+          />
+        );
+      case "premium":
+        return (
+          <PremiumScreen
+            user={user}
+            onBack={goBack}
+            onProduct={handleProduct}
+            onAddToList={addToList}
           />
         );
       case "onsite":
@@ -5061,6 +5457,7 @@ export default function App() {
             onAddToList={addToList}
             inList={shoppingList}
             onShowRoute={handleShowRoute}
+            user={user}
           />
         );
       case "product":
@@ -5112,6 +5509,7 @@ export default function App() {
             onBack={goBack}
             onAddToList={addToList}
             onShowRoute={handleShowRoute}
+            user={user}
           />
         );
       case "list":
@@ -5124,6 +5522,7 @@ export default function App() {
             onBack={goBack}
             onStartRoute={handleNavigateList}
             onAddToList={addToList}
+            user={user}
           />
         );
       default:
@@ -5132,7 +5531,7 @@ export default function App() {
   };
 
   const noBottomNav =
-    ["login", "scanner", "admin", "rescue", "list"].includes(screen) ||
+    ["login", "scanner", "admin", "rescue", "list", "premium"].includes(screen) ||
     user?.role === "admin";
   const activeTab =
     ["home", "onsite", "onsite-search", "assistant", "map"].find((t) =>

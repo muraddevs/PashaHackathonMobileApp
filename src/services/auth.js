@@ -1,5 +1,13 @@
 export const MOCK_ACCOUNTS = [
-  { username: "user", password: "user", role: "user", name: "Aysel Şopper" },
+  {
+    username: "user",
+    password: "user",
+    role: "user",
+    name: "Aysel Şopper",
+    premium: true,
+    loyaltyPct: 5, // extra discount on every item, stacks with markdown
+    tier: "Gold",
+  },
   { username: "admin", password: "admin", role: "admin", name: "Murad Manager" },
 ];
 
