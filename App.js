@@ -4486,6 +4486,153 @@ const MISSION_THEME = {
   move: { color: "#8B5CF6", emoji: "→", verb: "MOVE" },
 };
 
+// Coloured / bold call-to-action block shown when the manager taps "Why?".
+// Highlights the exact numbers and the source / destination aisles so it's
+// scannable in under a second.
+const MissionDetailHighlight = ({ mission, theme }) => {
+  if (mission.type === "move" && mission.suggestion?.topHotAisles) {
+    const from = mission.suggestion.currentAisle;
+    const dests = mission.suggestion.topHotAisles;
+    const moveUnits = mission.suggestion.moveUnits;
+    return (
+      <View
+        style={{
+          backgroundColor: `${theme.color}14`,
+          borderLeftWidth: 4,
+          borderLeftColor: theme.color,
+          paddingVertical: 12,
+          paddingHorizontal: 12,
+          borderRadius: R.sm,
+        }}
+      >
+        <Text style={{ fontSize: 11, fontWeight: "800", color: theme.color, letterSpacing: 0.5, marginBottom: 6 }}>
+          SUGGESTED MOVE
+        </Text>
+        <Text style={{ fontSize: 14, color: TEXT_TITLE, lineHeight: 22 }}>
+          Move{" "}
+          <Text style={{ fontWeight: "800", color: TEXT_TITLE, backgroundColor: "#FEF3C7" }}>
+            {" "}{moveUnits} units of {mission.product.name}{" "}
+          </Text>
+          {"\n"}from{" "}
+          <Text style={{ fontWeight: "800", color: "#DC2626" }}>
+            Aisle {from} ({mission.suggestion.currentDept})
+          </Text>
+          {"  →  to "}
+          <Text style={{ fontWeight: "800", color: GREEN }}>
+            Aisle{dests.length > 1 ? "s" : ""}{" "}
+            {dests.map((a, i) => (
+              <Text key={a.aisle}>
+                {a.aisle}
+                {i < dests.length - 1 ? (i === dests.length - 2 ? " or " : ", ") : ""}
+              </Text>
+            ))}
+          </Text>
+        </Text>
+        <View style={{ flexDirection: "row", marginTop: 10, gap: 6, flexWrap: "wrap" }}>
+          {dests.map((a) => (
+            <View
+              key={a.aisle}
+              style={{
+                backgroundColor: GREEN,
+                paddingHorizontal: 10,
+                paddingVertical: 5,
+                borderRadius: 999,
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
+                A{a.aisle} · {a.name} · {a.visitors.toLocaleString()}/wk 🔥
+              </Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    );
+  }
+
+  if (mission.type === "discount" && mission.recommendation) {
+    const pct = mission.recommendation.markdownPct;
+    return (
+      <View
+        style={{
+          backgroundColor: `${theme.color}14`,
+          borderLeftWidth: 4,
+          borderLeftColor: theme.color,
+          paddingVertical: 12,
+          paddingHorizontal: 12,
+          borderRadius: R.sm,
+        }}
+      >
+        <Text style={{ fontSize: 11, fontWeight: "800", color: theme.color, letterSpacing: 0.5, marginBottom: 6 }}>
+          SUGGESTED MARKDOWN
+        </Text>
+        <Text style={{ fontSize: 14, color: TEXT_TITLE, lineHeight: 22 }}>
+          Drop the price of{" "}
+          <Text style={{ fontWeight: "800", backgroundColor: "#FEF3C7" }}>
+            {" "}{mission.product.name}{" "}
+          </Text>
+          by{" "}
+          <Text style={{ fontWeight: "800", color: theme.color, fontSize: 18 }}>
+            −{pct}%
+          </Text>
+          {" "}for{" "}
+          <Text style={{ fontWeight: "800", color: TEXT_TITLE }}>5 days</Text>
+          {". New shelf price: "}
+          <Text style={{ fontWeight: "800", color: GREEN }}>
+            {(mission.product.price_azn * (1 - pct / 100)).toFixed(2)} ₼
+          </Text>
+          {" (was "}
+          <Text style={{ textDecorationLine: "line-through", color: TEXT_MUTED }}>
+            {mission.product.price_azn.toFixed(2)} ₼
+          </Text>
+          {")"}
+        </Text>
+      </View>
+    );
+  }
+
+  if (mission.type === "restock") {
+    const p = mission.product;
+    const daily = Math.round(p.units_sold / 30);
+    return (
+      <View
+        style={{
+          backgroundColor: `${theme.color}14`,
+          borderLeftWidth: 4,
+          borderLeftColor: theme.color,
+          paddingVertical: 12,
+          paddingHorizontal: 12,
+          borderRadius: R.sm,
+        }}
+      >
+        <Text style={{ fontSize: 11, fontWeight: "800", color: theme.color, letterSpacing: 0.5, marginBottom: 6 }}>
+          SUGGESTED REORDER
+        </Text>
+        <Text style={{ fontSize: 14, color: TEXT_TITLE, lineHeight: 22 }}>
+          Order{" "}
+          <Text style={{ fontWeight: "800", color: theme.color, fontSize: 18 }}>
+            {p.reorderQty} units
+          </Text>
+          {" of "}
+          <Text style={{ fontWeight: "800", backgroundColor: "#FEF3C7" }}>
+            {" "}{p.name}{" "}
+          </Text>
+          {" — "}
+          <Text style={{ fontWeight: "800", color: "#DC2626" }}>
+            {p.urgency.toUpperCase()}
+          </Text>
+          {`. Selling ~${daily} units/day, only `}
+          <Text style={{ fontWeight: "800", color: TEXT_TITLE }}>
+            {p.days_of_stock} day{p.days_of_stock === 1 ? "" : "s"} of stock
+          </Text>
+          {" left."}
+        </Text>
+      </View>
+    );
+  }
+
+  return null;
+};
+
 const MissionCard = ({ mission, expanded, onToggleExpand, onApprove, onSnooze, onTap }) => {
   const theme = MISSION_THEME[mission.type] || { color: GREEN, emoji: "•", verb: "ACTION" };
   return (
@@ -4567,9 +4714,12 @@ const MissionCard = ({ mission, expanded, onToggleExpand, onApprove, onSnooze, o
         </View>
 
         {expanded && (
-          <Text style={{ fontSize: 12, color: TEXT_MUTED, lineHeight: 18, marginTop: 10 }}>
-            {mission.narrative}
-          </Text>
+          <View style={{ marginTop: 12 }}>
+            <MissionDetailHighlight mission={mission} theme={theme} />
+            <Text style={{ fontSize: 12, color: TEXT_MUTED, lineHeight: 18, marginTop: 10 }}>
+              {mission.narrative}
+            </Text>
+          </View>
         )}
       </TouchableOpacity>
 
