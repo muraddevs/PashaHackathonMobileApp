@@ -611,6 +611,9 @@ export function getMorningMissions() {
   const placements = getPlacementSuggestions(3);
   if (placements.length > 0) {
     const ps = placements[0];
+    const traffic = getTrafficByAisle();
+    const topHotAisles = traffic.slice(0, 3); // 3 busiest aisles in the store
+    const moveUnits = Math.round(ps.product.stock_qty * 0.3);
     const extraSold = Math.round(ps.product.stock_qty * 0.35);
     const extraRevenue = Math.round(extraSold * ps.product.price_azn);
     missions.push({
@@ -620,11 +623,9 @@ export function getMorningMissions() {
       impact: extraRevenue,
       impactLabel: "Extra revenue (2 wk)",
       product: ps.product,
-      action: `Move ~${Math.round(ps.product.stock_qty * 0.3)} units to Aisle ${
-        ps.suggestedAisle
-      } end-cap`,
+      action: `Move ~${moveUnits} units to Aisle ${ps.suggestedAisle} end-cap`,
       narrative: ps.narrative,
-      suggestion: ps,
+      suggestion: { ...ps, topHotAisles, moveUnits },
     });
   }
 
