@@ -3383,6 +3383,8 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
             <Text style={{ fontSize: 14, fontWeight: "600", color: DARK }}>🔊 Voice</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={onBack}
+            activeOpacity={0.7}
             style={{
               flex: 1,
               paddingVertical: 12,
@@ -3392,7 +3394,7 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
               justifyContent: "center",
             }}
           >
-            <Text style={{ fontSize: 14, fontWeight: "700", color: RED }}>🟥 End Route</Text>
+            <Text style={{ fontSize: 14, fontWeight: "700", color: RED }}>End Route</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -5375,7 +5377,14 @@ export default function App() {
   const switchTab = (to) => setStack([to]);
 
   const goBack = () =>
-    setStack((s) => (s.length > 1 ? s.slice(0, -1) : s));
+    setStack((s) => {
+      if (s.length > 1) return s.slice(0, -1);
+      // Stack is at the root and the user hit back — fall back to home (or
+      // admin dashboard for admins). Avoids stuck back buttons on screens
+      // reached via the bottom nav (Map / Scanner).
+      const home = user?.role === "admin" ? "admin" : "home";
+      return s[0] === home ? s : [home];
+    });
 
   const handleProduct = (p) => {
     setSelectedProduct(p);
