@@ -665,28 +665,10 @@ const HomeScreen = ({ onNav, shoppingListCount = 0, user, onSearch }) => {
               Your perks, {user.name?.split(" ")[0] || "shopper"}
             </Text>
             <Text style={{ color: "#CBD5E1", marginBottom: 12, fontSize: 13, lineHeight: 19 }}>
-              +{user.loyaltyPct || 5}% loyalty on every basket · early access
-              to tomorrow's markdowns
+              First in line for tomorrow's markdowns · weekly meal plans
+              tuned to your goals
             </Text>
             <View style={{ flexDirection: "row", gap: 8 }}>
-              <View
-                style={{
-                  backgroundColor: "rgba(245, 158, 11, 0.18)",
-                  borderWidth: 1,
-                  borderColor: "rgba(252, 211, 77, 0.5)",
-                  paddingHorizontal: 10,
-                  paddingVertical: 6,
-                  borderRadius: 8,
-                  flex: 1,
-                }}
-              >
-                <Text style={{ color: "#FCD34D", fontSize: 10, fontWeight: "700", letterSpacing: 0.5 }}>
-                  LOYALTY
-                </Text>
-                <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginTop: 1 }}>
-                  −{user.loyaltyPct || 5}% everywhere
-                </Text>
-              </View>
               <View
                 style={{
                   backgroundColor: "rgba(34, 197, 94, 0.18)",
@@ -702,7 +684,25 @@ const HomeScreen = ({ onNav, shoppingListCount = 0, user, onSearch }) => {
                   EARLY ACCESS
                 </Text>
                 <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginTop: 1 }}>
-                  See tomorrow's deals
+                  Tomorrow's deals
+                </Text>
+              </View>
+              <View
+                style={{
+                  backgroundColor: "rgba(168, 85, 247, 0.22)",
+                  borderWidth: 1,
+                  borderColor: "rgba(192, 132, 252, 0.5)",
+                  paddingHorizontal: 10,
+                  paddingVertical: 6,
+                  borderRadius: 8,
+                  flex: 1,
+                }}
+              >
+                <Text style={{ color: "#D8B4FE", fontSize: 10, fontWeight: "700", letterSpacing: 0.5 }}>
+                  MEAL PLAN
+                </Text>
+                <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginTop: 1 }}>
+                  7 dinners weekly
                 </Text>
               </View>
             </View>
@@ -733,7 +733,7 @@ const HomeScreen = ({ onNav, shoppingListCount = 0, user, onSearch }) => {
             Save more,{"\n"}see deals early
           </Text>
           <Text style={{ color: "#aaa", marginBottom: 16, fontSize: 13 }}>
-            5% loyalty on every basket and 24h early access to markdowns.
+            24h early access to markdowns + a weekly meal plan tuned to your goals.
           </Text>
           <TouchableOpacity
             onPress={() => onNav("map")}
@@ -4113,18 +4113,18 @@ const PremiumScreen = ({ user, onBack, onProduct, onAddToList, onNav }) => {
             <View style={{ flexDirection: "row", marginBottom: 10 }}>
               <View style={{ flex: 1 }}>
                 <Text style={{ color: "white", fontSize: 26, fontWeight: "800" }}>
-                  −{user?.loyaltyPct || 5}%
-                </Text>
-                <Text style={{ color: "#CBD5E1", fontSize: 11, marginTop: 2 }}>
-                  Loyalty on every basket
-                </Text>
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={{ color: "white", fontSize: 26, fontWeight: "800" }}>
                   24h
                 </Text>
                 <Text style={{ color: "#CBD5E1", fontSize: 11, marginTop: 2 }}>
                   Early access to deals
+                </Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{ color: "white", fontSize: 26, fontWeight: "800" }}>
+                  7
+                </Text>
+                <Text style={{ color: "#CBD5E1", fontSize: 11, marginTop: 2 }}>
+                  Dinners planned weekly
                 </Text>
               </View>
             </View>
@@ -4273,13 +4273,10 @@ const PremiumScreen = ({ user, onBack, onProduct, onAddToList, onNav }) => {
   );
 };
 
-const UpcomingDealRow = ({ product, onPress, onAddToList, isLast, user }) => {
-  const previewFinal = Math.round(
-    product.price_azn *
-      (1 - product.previewDiscount / 100) *
-      (1 - (user?.loyaltyPct || 0) / 100) *
-      100
-  ) / 100;
+const UpcomingDealRow = ({ product, onPress, onAddToList, isLast }) => {
+  const previewFinal =
+    Math.round(product.price_azn * (1 - product.previewDiscount / 100) * 100) /
+    100;
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -4337,7 +4334,7 @@ const UpcomingDealRow = ({ product, onPress, onAddToList, isLast, user }) => {
             }}
           >
             <Text style={{ fontSize: 9, fontWeight: "800", color: "#B45309" }}>
-              👑 −{product.previewDiscount + (user?.loyaltyPct || 0)}%
+              👑 −{product.previewDiscount}%
             </Text>
           </View>
         </View>

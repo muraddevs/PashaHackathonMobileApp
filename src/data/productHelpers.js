@@ -291,10 +291,11 @@ export function filterByDiet(products, tag) {
 }
 
 // ── Premium perks ──────────────────────────────────────────────────────────
-// Stacks loyalty discount on top of any public markdown. Public buyers see
-// just `effectivePrice`; premium members see this lower number.
-export function loyaltyDiscount(user) {
-  return user && user.premium ? user.loyaltyPct || 0 : 0;
+// Premium perks are now non-monetary (early-access markdowns, meal plan).
+// The function stays for backwards compatibility with PriceWithDiscount call
+// sites, but always returns 0 so no extra loyalty chip renders.
+export function loyaltyDiscount(_user) {
+  return 0;
 }
 
 export function premiumPrice(p, user) {
