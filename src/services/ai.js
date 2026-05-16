@@ -1,157 +1,510 @@
-// ── Receipt Image Scanner → Shelf Navigation ──────────────────────────────
-const RECEIPT_SCAN_SYSTEM = `You are a receipt/shopping-list OCR and product matcher for Bravo supermarket.
+import {
+  findRelevant,
+  findCold,
+  toCSV,
+  buildInsightContext,
+} from "../data/productHelpers";
 
-The user sends an image of a receipt, handwritten list, or printed shopping list.
+const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
+const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
+const ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
-Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
-{
-  "language": "en|az|ru",
-  "items": ["pasta", "chicken breast", "milk", "tomatoes"]
+const SYSTEM_INSTRUCTION_BASE = `You are Bravo Assistant — a warm, helpful in-store concierge for Bravo, an Azerbaijani supermarket chain. Shoppers chat with you for product help, recipes, prices, dietary advice, and casual questions.
+
+LANGUAGE — this is the most important rule:
+- Reply in the SAME language as the user's MOST RECENT message, even if previous turns were in a different language. Switch immediately when they switch.
+- English → English. Azerbaijani → reply with proper ə, ş, ğ, ı, ü, ö, ç. Russian → reply in Russian.
+- "salam", "necə", "təşəkkür" → Azerbaijani. "hi/hello/thanks" → English. "привет/спасибо" → Russian.
+- Never mix two languages in the same reply.
+
+WHAT TO REPLY:
+1. GREETING / SMALL TALK (salam, hi, привет, "how are you", "thanks", "ok"):
+   Just reply warmly and conversationally — DO NOT mention products or say "nothing matches". One short sentence.
+   • AZ: "Salam! Sizə necə kömək edə bilərəm?"
+   • EN: "Hi! How can I help you in-store today?"
+   • RU: "Привет! Чем могу помочь?"
+2. GENERAL QUESTION not about products (store hours, location, "what is X"):
+   Answer briefly and helpfully. Don't force products into the response.
+3. PRODUCT QUESTION (looking for items, prices, recipes, dietary advice):
+   Use the provided catalog CSV. Filter for semantic relevance — e.g. snacks/qəlyanaltı/снеки means only Snacks / Biscuits / Chips / Nuts / Chocolate, never shampoo or oil.
+   If they named a price ceiling ("5 AZN altı", "under 5 AZN", "до 5 AZN"), every suggestion MUST be at or below that price.
+   Format each suggestion as: Product Name — price ₼ (Aisle X).
+   Maximum 3 suggestions.
+   If genuinely nothing matches, say so in the user's language ("Təəssüf, uyğun tapa bilmədim." / "Sorry, nothing matches." / "К сожалению, ничего не нашлось.") — only for product queries, never for greetings.
+
+TONE: 1–3 short sentences. Warm but efficient. Match the user's tone — informal if they're informal.
+
+Never invent products or prices not in the CSV.`;
+
+// Tri-lingual detection. Bravo is in Azerbaijan, so we lean toward AZ when
+// a message is ambiguous (e.g. single Latin word like "salam").
+const AZ_WORDS = new Set([
+  "salam", "salaməleyküm", "salameleyküm", "salameleykum",
+  "necə", "nece", "necesən", "necesen",
+  "sağ", "sag", "olun", "ol",
+  "təşəkkür", "teshekkur", "teshekkurler", "təşəkkürlər",
+  "altı", "alti", "üstü", "ustu",
+  "ucuz", "baha",
+  "manat", "azn",
+  "süd", "sud", "ət", "et", "toyuq", "çörək", "corek",
+  "qəlyanaltı", "qelyanaltı", "qelyanalti",
+  "məhsul", "mehsul", "qiymət", "qiymet",
+  "harada", "harda", "var", "yox", "var?",
+  "axtarıram", "axtariram", "tapmaq",
+  "olar", "olmaz", "bəli", "beli", "xeyr",
+  "yemək", "yemek", "hazırla", "hazirla", "bişir", "bisir",
+  "süpermarket", "supermarket", "bravo",
+  "hörmətli", "hormetli",
+  "günaydın", "gunaydin", "axşam", "axsham", "axsam",
+]);
+const EN_WORDS = new Set([
+  "hi", "hello", "hey", "thanks", "thank", "ok", "yes", "no", "please",
+  "good", "morning", "evening", "afternoon", "bye", "what", "where", "when",
+  "how", "do", "you", "have", "i", "want", "make", "cook", "need", "find",
+  "show", "tell", "the", "and", "for", "with", "on", "in", "at",
+]);
+
+function detectLanguage(text) {
+  if (!text) return "Azerbaijani";
+  const t = text.trim();
+  // Cyrillic → Russian (strong signal)
+  if (/[Ѐ-ӿ]/.test(t)) return "Russian";
+  // AZ-specific characters → Azerbaijani (strong signal)
+  if (/[əƏşŞğĞıİöÖüÜçÇ]/.test(t)) return "Azerbaijani";
+  // Otherwise score by known word lists; tie-break toward AZ since the
+  // user base is overwhelmingly AZ-speaking.
+  const tokens = t.toLowerCase().replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(Boolean);
+  let az = 0, en = 0;
+  for (const tok of tokens) {
+    if (AZ_WORDS.has(tok)) az++;
+    if (EN_WORDS.has(tok)) en++;
+  }
+  if (az > en) return "Azerbaijani";
+  if (en > az) return "English";
+  // Tie or no signal — default to Azerbaijani (Bravo is in Azerbaijan).
+  return "Azerbaijani";
 }
 
-Rules:
-- Extract EVERY distinct grocery/product item from the image.
-- Normalize to generic English nouns ("chicken breast" not "Toyuq döşü 1kg"). This is critical — they must match the English product catalogue.
-- Remove duplicates, quantities, prices, store names, dates, totals, tax lines.
-- If you cannot read the image or it contains no grocery items, return: {"language": "en", "items": []}
-- Output JSON only.`;
-
-/**
- * Scans a receipt or shopping list image and returns matched catalog products
- * with shelf/aisle navigation.
- *
- * @param {string} base64Image  - Base64-encoded image (no data URI prefix).
- * @param {string} mediaType    - MIME type: "image/jpeg" | "image/png" | "image/webp"
- * @param {string} [language]   - Detected UI language ("en" | "az" | "ru"), default "en"
- * @returns {Promise<ReceiptScanResult>}
- *
- * @typedef {Object} ReceiptScanResult
- * @property {string}   language    - User's language
- * @property {Array<{name: string, product: object|null, aisle: string|null}>} items
- * @property {Array<string>} aisleRoute  - Ordered list of unique aisles to visit
- * @property {number}  totalEstimate    - Sum of matched product prices in AZN
- */
-export async function scanReceipt(base64Image, mediaType = "image/jpeg", language = "en") {
+export async function askAI({ message, history = [] }) {
   if (!API_KEY) {
     throw new Error(
       "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
     );
   }
 
-  // Step 1 — OCR: send image to the vision model to extract item names.
-  const ocrRes = await fetch(ENDPOINT, {
+  const relevant = findRelevant(message, 30);
+  const catalogCsv = toCSV(relevant);
+  const lang = detectLanguage(message);
+
+  const systemContent = `${SYSTEM_INSTRUCTION_BASE}
+
+The user's CURRENT message is detected as ${lang}. Reply STRICTLY in ${lang}, even if previous messages were in another language. The conversation history might be in mixed languages — ignore that and follow the CURRENT message's language. Do not mix languages in your reply.`;
+
+  const userTurnText = `User question: ${message}
+
+Relevant catalog rows (CSV):
+${catalogCsv}`;
+
+  // Keep only the last 4 turns of history so the conversation context
+  // doesn't anchor the model into a prior language.
+  const trimmedHistory = history.slice(-4);
+  const messages = [
+    { role: "system", content: systemContent },
+    ...trimmedHistory.map((m) => ({
+      role: m.from === "user" ? "user" : "assistant",
+      content: m.text,
+    })),
+    { role: "user", content: userTurnText },
+  ];
+
+  const res = await fetch(ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${API_KEY}`,
     },
     body: JSON.stringify({
-      // Use the vision-capable model for image understanding.
-      // llama-3.2-11b-vision-preview supports image inputs on Groq.
-      model: "llama-3.2-11b-vision-preview",
-      messages: [
-        { role: "system", content: RECEIPT_SCAN_SYSTEM },
-        {
-          role: "user",
-          content: [
-            {
-              type: "image_url",
-              image_url: {
-                url: `data:${mediaType};base64,${base64Image}`,
-              },
-            },
-            {
-              type: "text",
-              text: "Extract all grocery items from this receipt or shopping list image.",
-            },
-          ],
-        },
-      ],
-      temperature: 0.1,
-      max_tokens: 500,
-      response_format: { type: "json_object" },
+      model: MODEL,
+      messages,
+      temperature: 0.4,
+      max_tokens: 512,
     }),
   });
 
-  const ocrData = await ocrRes.json();
-  if (!ocrRes.ok) {
-    throw new Error(ocrData?.error?.message || `Vision API error (${ocrRes.status})`);
+  const data = await res.json();
+  if (!res.ok) {
+    const msg = data?.error?.message || `AI error (${res.status})`;
+    throw new Error(msg);
   }
+  const text = data?.choices?.[0]?.message?.content?.trim() ||
+    "Sorry, I couldn't generate a response.";
 
+  // Parse "<name> — <price> ₼" (or "-", various dashes) lines out of the
+  // reply and resolve each to a catalog product. This is more reliable than
+  // string-matching catalog SKU names, because the AI often uses generic
+  // localised names (e.g. "Dəniz duzu") that don't match SKU titles
+  // ("Bravo Salt 1kg") but DO match via findRelevant.
+  const suggestions = extractSuggestions(text);
+  return { text, relevant, suggestions };
+}
+
+const SUGGESTION_RE =
+  /(?:^|\n)[\s•\-*]*([^\n—\-–·:]{2,60}?)\s*[—\-–]\s*(\d+[.,]?\d*)\s*(?:₼|AZN|manat|ман)/gi;
+
+function extractSuggestions(reply) {
+  const matches = [];
+  const seen = new Set();
+  let m;
+  // reset lastIndex defensively in case the regex was used recently
+  SUGGESTION_RE.lastIndex = 0;
+  while ((m = SUGGESTION_RE.exec(reply)) !== null) {
+    const rawName = m[1].trim().replace(/^[\d.)\s•\-*]+/, "");
+    if (!rawName || rawName.length < 2) continue;
+    const hits = findRelevant(rawName, 4);
+    const product = hits.find((h) => !seen.has(h.product_id)) || hits[0];
+    if (!product) continue;
+    seen.add(product.product_id);
+    matches.push(product);
+  }
+  return matches.slice(0, 4);
+}
+
+const ADMIN_SYSTEM = `You are a senior retail inventory analyst speaking directly to the store manager at a Bravo supermarket. You receive a structured snapshot of stock levels, 30-day sales velocity, and expiry status for the most flagged SKUs.
+
+Write a short, conversational store-manager briefing — 3 short paragraphs, no bullets, no markdown, no headers. Speak in the second person ("you should…"). Name specific products and brands. Quote concrete numbers (units, days, % discount, reorder qty) and reasoning. Lead with the most urgent items.
+
+Structure:
+1. Opening paragraph: what needs action TODAY (expiring items + their suggested markdowns).
+2. Middle paragraph: what to reorder this week (low stock + suggested quantities).
+3. Closing paragraph: slow-movers — name 2–3 overstocked items and suggest specific markdowns to clear them.
+
+Each paragraph must be 2–3 sentences max. Total reply ≤ 130 words. Never invent numbers — only use what's in the snapshot. Match the manager's professional tone, not casual.`;
+
+// ── Recipe → ingredients flow ─────────────────────────────────────────────
+const RECIPE_INTENT_RE =
+  /(i\s*want\s*to\s*(make|cook|prepare)|how\s*(do\s*i|to)\s*(make|cook|prepare)|recipe\s*(for|of)|give\s*me\s*(a\s*)?recipe|hazırla|hazırlaya|bişir|necə\s*hazırlanır|necə\s*bişiril|reseptini|resept|yemək|готовить|рецепт|приготовить|что\s*приготовить|сделать\s*на\s*ужин|сделать\s*на\s*обед)/i;
+
+export function isRecipeIntent(text) {
+  return RECIPE_INTENT_RE.test(text);
+}
+
+const RECIPE_SYSTEM = `You are a recipe assistant. The user wants to cook something.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "dish": "Spaghetti Bolognese",
+  "language": "en",
+  "ingredients": ["pasta", "ground beef", "tomato sauce", "onion", "garlic"],
+  "smart_additions": ["olive oil", "parmesan cheese", "fresh basil"]
+}
+
+Rules:
+- "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
+- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items, or pairings (bread, salad greens, wine). They should be items a customer probably has at home but might want to top up while they're in the store.
+- Generic English nouns for both lists, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
+- "language" is the user's language code ("en", "az", "ru").
+- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": []}.
+- Output JSON only.`;
+
+export async function getRecipe(query) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: RECIPE_SYSTEM },
+        { role: "user", content: query },
+      ],
+      temperature: 0.2,
+      max_tokens: 300,
+      response_format: { type: "json_object" },
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
   let parsed;
   try {
-    parsed = JSON.parse(ocrData.choices[0].message.content);
+    parsed = JSON.parse(data.choices[0].message.content);
   } catch (_) {
-    return _emptyReceiptResult(language);
+    return null;
   }
-
-  const rawItems = Array.isArray(parsed?.items) ? parsed.items : [];
-  if (rawItems.length === 0) {
-    return _emptyReceiptResult(parsed?.language || language);
+  if (!parsed?.dish || !Array.isArray(parsed.ingredients) || !parsed.ingredients.length) {
+    return null;
   }
-
-  // Step 2 — Catalog matching: resolve each item name to a catalog product.
-  const seen = new Set();
-  const items = rawItems.map((name) => {
+  // Match each ingredient to a single product from the catalog (top score).
+  const seenIds = new Set();
+  const matched = parsed.ingredients.map((name) => {
     const hits = findRelevant(name, 4);
-    const product = hits.find((h) => !seen.has(h.product_id)) || hits[0] || null;
-    if (product) seen.add(product.product_id);
-
-    // Extract aisle from location field, e.g. "Aisle 3 / Shelf B" → "Aisle 3"
-    const aisle = product?.location
-      ? _parseAisle(product.location)
-      : null;
-
-    return { name, product, aisle };
+    const product = hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+    if (product) seenIds.add(product.product_id);
+    return { name, product };
   });
 
-  // Step 3 — Build an optimised aisle route (unique aisles in encounter order,
-  // null aisles grouped at the end so the shopper isn't sent to unknown spots).
-  const aisleRoute = _buildAisleRoute(items);
-
-  // Step 4 — Estimate total cost of matched items.
-  const totalEstimate = items.reduce((sum, { product }) => {
-    return sum + (product?.price_azn ? parseFloat(product.price_azn) : 0);
-  }, 0);
+  // Smart additions: deliberately biased toward COLD aisles so shoppers'
+  // walking path drives traffic through the store's under-trafficked zones.
+  const additions = Array.isArray(parsed.smart_additions)
+    ? parsed.smart_additions.map((name) => {
+        const hits = findCold(name, 4);
+        const product =
+          hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+        if (product) seenIds.add(product.product_id);
+        return { name, product };
+      })
+    : [];
 
   return {
-    language: parsed?.language || language,
-    items,
-    aisleRoute,
-    totalEstimate: Math.round(totalEstimate * 100) / 100,
+    dish: parsed.dish,
+    language: parsed.language || "en",
+    ingredients: matched,
+    smart_additions: additions.filter((a) => a.product),
   };
 }
 
-/** Pull the aisle label out of a location string. */
-function _parseAisle(location) {
-  if (!location) return null;
-  // Matches patterns like "Aisle 3", "Koridor 2", "Ряд 5", "A3", "Section B"
-  const m = location.match(/(?:Aisle|Koridor|Ряд|Row|Section|Shelf|Rəf)\s*[\w\d]+/i);
-  return m ? m[0] : location.split(/[,/|]/)[0].trim();
+// ── Sunday Meal Plan ───────────────────────────────────────────────────────
+const MEAL_PLAN_SYSTEM = `You are a weekly meal planner + nutritionist for a Bravo Premium member. Return ONE week of dinners — 7 dishes total, one per day, Monday through Sunday — tuned to the user's body, goal, and dietary preferences.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "intro": "A short one-line summary of the week (e.g. 'High-protein Mediterranean dinners tuned for muscle gain at ~2800 kcal/day').",
+  "language": "en|az|ru",
+  "days": [
+    {
+      "day": "Monday",
+      "dish": "Grilled chicken with quinoa & roasted vegetables",
+      "tags": ["high-protein", "mediterranean"],
+      "calories": 650,
+      "protein_g": 45,
+      "ingredients": ["chicken breast", "quinoa", "broccoli", "olive oil", "lemon", "garlic"]
+    },
+    ... 7 entries total, in order Mon-Sun
+  ]
 }
 
-/** Return a deduped, ordered list of aisles to visit. Nulls go last. */
-function _buildAisleRoute(items) {
-  const seen = new Set();
-  const route = [];
-  const unknown = [];
+Rules:
+- 7 distinct dinners. Vary cuisines (Mediterranean, Azerbaijani, Asian, comfort, etc.) and protein sources. Don't repeat the same protein 3+ times.
+- 4–7 essential ingredients per dish. Generic English nouns ("pasta" not "Barilla 500g"). Skip salt/water/pepper unless they're definitional.
+- Calorie target per dinner = user's daily target ÷ 3 (rounded to nearest 25). Protein target follows the goal:
+  • Muscle gain → high protein (35–50g per dinner)
+  • Weight loss → moderate protein (25–35g), low calories, more vegetables
+  • Maintain / healthy → balanced (20–30g protein)
+- Honor every dietary preference (halal → no pork/alcohol; vegetarian → no meat; vegan → no animal products; gluten-free → no wheat/bread/pasta; lactose-free → no dairy; quick → ≤30-min prep; comfort → hearty familiar; mediterranean → olive oil/fish/vegetables).
+- If the user tags "azerbaijani" or speaks Azerbaijani → include 2–3 Caucasian classics (plov, dolma, küfte, dovğa, qutab, levengi).
+- "intro" is in the user's language and references the calorie target + goal.
+- Output JSON only.`;
 
-  for (const { aisle } of items) {
-    if (!aisle) {
-      unknown.push("Unknown");
-      continue;
-    }
-    if (!seen.has(aisle)) {
-      seen.add(aisle);
-      route.push(aisle);
-    }
+// Mifflin-St Jeor BMR × activity multiplier → daily calorie target.
+export function calorieTargetFor({ weight, height, age, gender, activity, goal }) {
+  const bmr =
+    gender === "female"
+      ? 10 * weight + 6.25 * height - 5 * age - 161
+      : 10 * weight + 6.25 * height - 5 * age + 5;
+  const mul =
+    { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725 }[activity] ||
+    1.55;
+  const tdee = Math.round(bmr * mul);
+  if (goal === "weightloss") return Math.max(1200, tdee - 500);
+  if (goal === "musclegain") return tdee + 300;
+  return tdee;
+}
+
+export async function getMealPlan({
+  preferences = [],
+  goal = "maintain",
+  bodyMeasures = null,
+  language = "en",
+} = {}) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const goalLabel =
+    { weightloss: "weight loss", musclegain: "muscle gain", maintain: "maintain weight", healthy: "healthy eating" }[
+      goal
+    ] || "maintain weight";
+  const calorieTarget = bodyMeasures
+    ? calorieTargetFor({ ...bodyMeasures, goal })
+    : null;
+
+  const profileLines = [];
+  if (bodyMeasures) {
+    profileLines.push(
+      `Body: ${bodyMeasures.weight} kg, ${bodyMeasures.height} cm, ${bodyMeasures.age} yo, ${bodyMeasures.gender}, ${bodyMeasures.activity} activity`
+    );
+  }
+  profileLines.push(`Goal: ${goalLabel}.`);
+  if (calorieTarget) {
+    profileLines.push(`Daily calorie target: ~${calorieTarget} kcal (≈${Math.round(calorieTarget / 3)} kcal per dinner).`);
+  }
+  const prefText = preferences.length
+    ? `Dietary / style preferences: ${preferences.join(", ")}.`
+    : "No specific dietary preferences — pick a balanced variety.";
+
+  const userPrompt = `${profileLines.join("\n")}\n${prefText}\nUser's language: ${language}.\nGenerate the 7-dinner meal plan now.`;
+
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: MEAL_PLAN_SYSTEM },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.7,
+      max_tokens: 1200,
+      response_format: { type: "json_object" },
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(data.choices[0].message.content);
+  } catch (_) {
+    return null;
+  }
+  if (!parsed?.days || !Array.isArray(parsed.days) || parsed.days.length === 0) {
+    return null;
   }
 
-  // Append unknown items once at the end if any
-  if (unknown.length > 0) route.push("Unknown location");
-  return route;
+  // Resolve every ingredient to a catalog product. Bias smart-additions
+  // toward cold aisles isn't applied here — meal planning prioritises
+  // semantic match.
+  const seen = new Set();
+  const days = parsed.days.slice(0, 7).map((d) => {
+    const ingredients = (d.ingredients || []).map((name) => {
+      const hits = findRelevant(name, 4);
+      const product =
+        hits.find((h) => !seen.has(h.product_id)) || hits[0] || null;
+      if (product) seen.add(product.product_id);
+      return { name, product };
+    });
+    return {
+      day: d.day || "",
+      dish: d.dish || "",
+      tags: d.tags || [],
+      calories: d.calories || null,
+      protein_g: d.protein_g || null,
+      ingredients,
+    };
+  });
+  return {
+    intro: parsed.intro || "",
+    language: parsed.language || language,
+    calorieTarget,
+    goal,
+    days,
+  };
 }
 
-function _emptyReceiptResult(language = "en") {
-  return { language, items: [], aisleRoute: [], totalEstimate: 0 };
+const PRODUCT_ANALYSIS_SYSTEM = `You are a senior retail inventory analyst at Bravo, speaking directly to the store manager about ONE specific product.
+
+Write a 3–4 sentence conversational analysis. Use the exact numbers provided. Cover:
+1) What's the current situation (stock, velocity, expiry if relevant).
+2) Why this matters (revenue at risk / opportunity cost / waste risk).
+3) Recommended concrete action with a number (e.g. "discount by 20% for the next 7 days", "reorder 250 units", "move to clearance shelf today").
+
+No bullets, no markdown, no preamble. Second person ("you"). Plain professional tone. ≤ 90 words.`;
+
+export async function analyzeProduct(product) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const lines = [
+    `Product: ${product.name} (${product.brand})`,
+    `SKU: ${product.sku}`,
+    `Category: ${product.category} / ${product.subcategory}`,
+    `Size: ${product.size}`,
+    `Price: ${product.price_azn} ₼`,
+    `Stock on hand: ${product.stock_qty} units`,
+    `Sold last 30 days: ${product.units_sold} units`,
+    `Days of stock at current pace: ${product.days_of_stock}`,
+    product.is_fresh
+      ? `Fresh item — days until expiry: ${product.expires_in_days}`
+      : `Shelf-stable — days until expiry: ${product.expires_in_days}`,
+    product.fat_percentage != null ? `Fat: ${product.fat_percentage}%` : null,
+    `Location: ${product.location}`,
+    `Status flag: ${product.status}`,
+    `Rating: ${product.rating}/5`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: PRODUCT_ANALYSIS_SYSTEM },
+        { role: "user", content: lines },
+      ],
+      temperature: 0.3,
+      max_tokens: 250,
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
+  return (
+    data?.choices?.[0]?.message?.content?.trim() ||
+    "Could not generate analysis."
+  );
+}
+
+export async function getInsights() {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const context = buildInsightContext();
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: ADMIN_SYSTEM },
+        { role: "user", content: context },
+      ],
+      temperature: 0.3,
+      max_tokens: 700,
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    const msg = data?.error?.message || `AI error (${res.status})`;
+    throw new Error(msg);
+  }
+  return (
+    data?.choices?.[0]?.message?.content?.trim() ||
+    "Could not generate insights."
+  );
 }
