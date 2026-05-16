@@ -1999,2006 +1999,2006 @@ export const PRODUCTS_CSV = `product_id,sku,name,brand,category,subcategory,size
 101276,BRV-101276,Nestle Tomato Paste 2L,Nestle,Food & Pantry,Spices & Seasonings,2L,Netherlands,24.29,219,4.8,236,78,false,,7,E,Aisle 7 · Shelf E
 100922,BRV-100922,Nestle Vinegar 5kg,Nestle,Food & Pantry,Spices & Seasonings,5kg,China,23.6,437,3.9,99,49,false,,7,D,Aisle 7 · Shelf D
 101524,BRV-101524,Nestle Wheat Flour Pack of 4,Nestle,Food & Pantry,Spices & Seasonings,Pack of 4,Ukraine,13.42,195,3.9,138,45,false,,7,A,Aisle 7 · Shelf A
-102153,BRV-102153,Atena Apple 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,59.87,353,519,1.2,true,3.6,2,F,Aisle 2 · Shelf F
-102123,BRV-102123,Atena Banana 750g,Atena,"Fresh Produce, Meat & Dairy",Cheese,750g,Ukraine,13.94,149,254,0.8,true,1.7,2,A,Aisle 2 · Shelf A
-102277,BRV-102277,Atena Beef Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Azerbaijan,16.79,460,438,1.2,true,1.2,2,C,Aisle 2 · Shelf C
-103647,BRV-103647,Atena Broccoli Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,China,60.13,433,200,1.6,true,3.7,2,A,Aisle 2 · Shelf A
-102037,BRV-102037,Atena Chicken Breast Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,China,31.26,61,544,1.1,true,3.8,2,C,Aisle 2 · Shelf C
-102650,BRV-102650,Atena Cucumber 5kg,Atena,"Fresh Produce, Meat & Dairy",Cheese,5kg,Azerbaijan,39.1,161,547,0.4,true,0.9,2,F,Aisle 2 · Shelf F
-103857,BRV-103857,Atena Eggplant Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,USA,4.02,403,701,0.3,true,2.8,2,B,Aisle 2 · Shelf B
-103805,BRV-103805,Atena Free-Range Eggs Family Pack,Atena,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Azerbaijan,17.54,8,616,0.4,true,1.7,2,E,Aisle 2 · Shelf E
-102828,BRV-102828,Atena Free-Range Eggs Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Azerbaijan,74.14,384,460,1,true,1.5,2,E,Aisle 2 · Shelf E
-103932,BRV-103932,Atena Grapes 200g,Atena,"Fresh Produce, Meat & Dairy",Cheese,200g,India,60.86,183,343,0.4,true,2.3,2,B,Aisle 2 · Shelf B
-102704,BRV-102704,Atena Grapes Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,India,29.53,417,653,1.7,true,2.5,2,F,Aisle 2 · Shelf F
-103180,BRV-103180,Atena Lactose-Free Milk 500ml,Atena,"Fresh Produce, Meat & Dairy",Cheese,500ml,USA,59.8,421,228,1.5,true,3.1,2,E,Aisle 2 · Shelf E
-102662,BRV-102662,Atena Lime 1kg,Atena,"Fresh Produce, Meat & Dairy",Cheese,1kg,China,39.5,247,292,1.6,true,3.1,2,E,Aisle 2 · Shelf E
-102084,BRV-102084,Atena Melon Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Spain,49.54,190,490,1.5,true,2.2,2,A,Aisle 2 · Shelf A
-103535,BRV-103535,Atena Mozzarella 250g,Atena,"Fresh Produce, Meat & Dairy",Cheese,250g,Spain,3.45,359,596,1.2,true,3.9,2,E,Aisle 2 · Shelf E
-103508,BRV-103508,Atena Mozzarella 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,38.96,52,160,1.6,true,2.4,2,E,Aisle 2 · Shelf E
-103854,BRV-103854,Atena Onion 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Spain,70.11,191,342,0.4,true,1.9,2,E,Aisle 2 · Shelf E
-102897,BRV-102897,Atena Parmesan Family Pack,Atena,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Georgia,45.97,251,598,1.3,true,2.9,2,A,Aisle 2 · Shelf A
-103322,BRV-103322,Atena Parsley Bulk,Atena,"Fresh Produce, Meat & Dairy",Cheese,Bulk,USA,79.2,211,694,0.8,true,3.7,2,A,Aisle 2 · Shelf A
-102625,BRV-102625,Atena Pomegranate Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Germany,51.6,83,407,1.5,true,2,2,B,Aisle 2 · Shelf B
-103002,BRV-103002,Atena Spinach Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Georgia,34.12,29,543,1.2,true,1.4,2,B,Aisle 2 · Shelf B
-102527,BRV-102527,Atena Tomato Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Poland,45.16,167,398,0.7,true,2.5,2,A,Aisle 2 · Shelf A
-102225,BRV-102225,Atena Whole Milk Single,Atena,"Fresh Produce, Meat & Dairy",Cheese,Single,Turkey,48.71,101,499,1.5,true,1.4,2,F,Aisle 2 · Shelf F
-103164,BRV-103164,Bravo Farm Apple 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Azerbaijan,47.23,456,134,1.2,true,1.6,2,A,Aisle 2 · Shelf A
-103511,BRV-103511,Bravo Farm Ayran 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,26.96,274,414,1.7,true,1.1,2,C,Aisle 2 · Shelf C
-102864,BRV-102864,Bravo Farm Broccoli 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Georgia,18.99,4,636,0.9,true,3.6,2,A,Aisle 2 · Shelf A
-102300,BRV-102300,Bravo Farm Cheddar Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Russia,28.88,91,365,1.2,true,2.1,2,D,Aisle 2 · Shelf D
-102959,BRV-102959,Bravo Farm Chicken Breast 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,India,9.4,212,577,0.3,true,1.1,2,D,Aisle 2 · Shelf D
-103159,BRV-103159,Bravo Farm Chicken Thighs Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,Netherlands,7.64,355,190,0.4,true,2,2,C,Aisle 2 · Shelf C
-102538,BRV-102538,Bravo Farm Cucumber 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Netherlands,36.19,171,134,1,true,1.7,2,E,Aisle 2 · Shelf E
-102274,BRV-102274,Bravo Farm Family Zucchini 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Russia,2.31,479,333,0.9,true,0.7,2,F,Aisle 2 · Shelf F
-103436,BRV-103436,Bravo Farm Free-Range Eggs 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250g,USA,25.81,227,674,1.2,true,3.7,2,C,Aisle 2 · Shelf C
-103206,BRV-103206,Bravo Farm Ground Beef 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,India,10.29,477,589,0.9,true,3,2,F,Aisle 2 · Shelf F
-102821,BRV-102821,Bravo Farm Kiwi Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,France,66.7,350,409,1.4,true,1.4,2,B,Aisle 2 · Shelf B
-103487,BRV-103487,Bravo Farm Lamb 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Netherlands,77.81,370,610,1.3,true,0.6,2,E,Aisle 2 · Shelf E
-103106,BRV-103106,Bravo Farm Lemon 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Ukraine,79.7,271,534,0.5,true,1.5,2,A,Aisle 2 · Shelf A
-103627,BRV-103627,Bravo Farm Mint Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Poland,28.03,304,370,0.8,true,3.2,2,E,Aisle 2 · Shelf E
-103592,BRV-103592,Bravo Farm Plum 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,200g,India,16.17,88,461,1.3,true,3.6,2,D,Aisle 2 · Shelf D
-102633,BRV-102633,Bravo Farm Plum 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2kg,Georgia,16.25,318,522,0.4,true,1.2,2,E,Aisle 2 · Shelf E
-103254,BRV-103254,Bravo Farm Potato 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,750g,Germany,16.53,208,396,0.8,true,2.1,2,A,Aisle 2 · Shelf A
-102423,BRV-102423,Bravo Farm Salmon 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Turkey,47.31,117,275,0.6,true,0.8,2,F,Aisle 2 · Shelf F
-102926,BRV-102926,Bravo Farm Strawberry 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250g,Italy,16.44,462,559,1.2,true,0.6,2,D,Aisle 2 · Shelf D
-103939,BRV-103939,Bravo Farm Sturgeon 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,200g,USA,68.99,135,516,0.3,true,1.4,2,C,Aisle 2 · Shelf C
-103711,BRV-103711,Bravo Farm Suluguni 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,China,64.63,309,604,0.3,true,1.5,2,C,Aisle 2 · Shelf C
-103345,BRV-103345,Bravo Farm Suluguni Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Azerbaijan,11.85,219,215,1.3,true,1.4,2,D,Aisle 2 · Shelf D
-103582,BRV-103582,Bravo Farm Tomato 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Brazil,63.22,185,598,1.4,true,3.4,2,C,Aisle 2 · Shelf C
-103178,BRV-103178,Bravo Farm Trout Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Brazil,76.18,186,357,1.2,true,1.1,2,D,Aisle 2 · Shelf D
-102185,BRV-102185,Bravo Farm Zucchini 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Netherlands,3.29,89,602,1.1,true,3.5,2,C,Aisle 2 · Shelf C
-103900,BRV-103900,Local Farm Apple 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Italy,9.87,170,508,0.3,true,2.6,2,C,Aisle 2 · Shelf C
-103918,BRV-103918,Local Farm Carrot 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Spain,9.75,0,351,0.6,true,3.4,2,F,Aisle 2 · Shelf F
-103969,BRV-103969,Local Farm Carrot 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Georgia,79.6,493,151,1,true,2.8,2,D,Aisle 2 · Shelf D
-102664,BRV-102664,Local Farm Carrot Single,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,China,28.52,430,718,0.4,true,3.1,2,C,Aisle 2 · Shelf C
-102889,BRV-102889,Local Farm Cheddar 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,49.55,106,531,0.4,true,3.2,2,B,Aisle 2 · Shelf B
-103515,BRV-103515,Local Farm Free-Range Eggs 1L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Turkey,5.79,169,546,0.2,true,0.9,2,E,Aisle 2 · Shelf E
-103527,BRV-103527,Local Farm Greek Yogurt Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Georgia,60.71,427,517,0.8,true,1.4,2,B,Aisle 2 · Shelf B
-102407,BRV-102407,Local Farm Ground Beef 500g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500g,China,30.89,284,357,0.2,true,3.2,2,B,Aisle 2 · Shelf B
-103282,BRV-103282,Local Farm Lettuce 1L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Spain,16.6,268,217,1.2,true,2.3,2,F,Aisle 2 · Shelf F
-102368,BRV-102368,Local Farm Lettuce 750g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,750g,Turkey,9.66,394,319,0.6,true,2.1,2,B,Aisle 2 · Shelf B
-102347,BRV-102347,Local Farm Melon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Russia,36.84,110,702,0.8,true,3.6,2,C,Aisle 2 · Shelf C
-103209,BRV-103209,Local Farm Mini Tomato 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Azerbaijan,55.09,25,578,0.3,true,1.3,2,E,Aisle 2 · Shelf E
-102303,BRV-102303,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Iran,68.63,294,598,0.9,true,3.1,2,C,Aisle 2 · Shelf C
-103522,BRV-103522,Local Farm Mozzarella Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,India,73.63,486,620,0.7,true,0.6,2,C,Aisle 2 · Shelf C
-102183,BRV-102183,Local Farm Pomegranate 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,Iran,3,371,256,0.6,true,2.2,2,E,Aisle 2 · Shelf E
-102473,BRV-102473,Local Farm Potato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Russia,36.33,461,620,1.4,true,2.9,2,E,Aisle 2 · Shelf E
-102284,BRV-102284,Local Farm Skim Milk Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Italy,73.26,38,388,1.3,true,2.6,2,C,Aisle 2 · Shelf C
-103626,BRV-103626,Local Farm Spinach 500g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500g,Azerbaijan,29.04,289,199,1,true,1.6,2,B,Aisle 2 · Shelf B
-102460,BRV-102460,Local Farm Spinach Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Poland,32.4,391,364,0.7,true,0.8,2,C,Aisle 2 · Shelf C
-102071,BRV-102071,Local Farm Tomato 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,India,57.17,190,486,0.6,true,1.8,2,A,Aisle 2 · Shelf A
-102549,BRV-102549,Local Farm Watermelon 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,37.36,281,582,1.2,true,0.7,2,A,Aisle 2 · Shelf A
-103972,BRV-103972,Local Farm Whole Milk 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,China,56.81,236,323,0.9,true,3.1,2,D,Aisle 2 · Shelf D
-103226,BRV-103226,Milla Apple Single,Milla,"Fresh Produce, Meat & Dairy",Cheese,Single,Netherlands,4.66,193,507,1.5,true,0.5,2,F,Aisle 2 · Shelf F
-102649,BRV-102649,Milla Ayran 250g,Milla,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,42.76,139,285,1.1,true,2,2,D,Aisle 2 · Shelf D
-103649,BRV-103649,Milla Beef 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Netherlands,29.39,106,378,0.9,true,3.1,2,C,Aisle 2 · Shelf C
-102360,BRV-102360,Milla Bell Pepper 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Netherlands,15.18,326,167,1.3,true,2.5,2,F,Aisle 2 · Shelf F
-103031,BRV-103031,Milla Cabbage 250g,Milla,"Fresh Produce, Meat & Dairy",Cheese,250g,Brazil,37.05,301,361,1.6,true,3.9,2,F,Aisle 2 · Shelf F
-102093,BRV-102093,Milla Cabbage 2L,Milla,"Fresh Produce, Meat & Dairy",Cheese,2L,China,68.03,146,538,1.4,true,3.7,2,E,Aisle 2 · Shelf E
-102962,BRV-102962,Milla Carrot 200g,Milla,"Fresh Produce, Meat & Dairy",Cheese,200g,India,70.33,286,391,1.1,true,1.1,2,F,Aisle 2 · Shelf F
-102467,BRV-102467,Milla Carrot Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Netherlands,55.87,373,699,0.9,true,3.1,2,D,Aisle 2 · Shelf D
-103484,BRV-103484,Milla Cherry 1L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,49.3,299,265,1.1,true,1.3,2,D,Aisle 2 · Shelf D
-102048,BRV-102048,Milla Chicken Breast 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Iran,56.42,307,522,0.3,true,1.9,2,C,Aisle 2 · Shelf C
-103578,BRV-103578,Milla Chicken Thighs 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,65.08,402,353,0.6,true,3.8,2,D,Aisle 2 · Shelf D
-102637,BRV-102637,Milla Kiwi Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Italy,0.61,186,198,1.2,true,2.3,2,C,Aisle 2 · Shelf C
-102854,BRV-102854,Milla Lettuce Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Iran,74.72,260,265,0.2,true,0.8,2,B,Aisle 2 · Shelf B
-103129,BRV-103129,Milla Mint Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,22.48,364,307,1.2,true,1.4,2,B,Aisle 2 · Shelf B
-102635,BRV-102635,Milla Mozzarella 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Iran,57.67,494,200,1.6,true,3,2,E,Aisle 2 · Shelf E
-102783,BRV-102783,Milla Onion Bulk,Milla,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Brazil,21.32,437,482,0.3,true,0.6,2,A,Aisle 2 · Shelf A
-102179,BRV-102179,Milla Parmesan Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Spain,8.46,257,491,1.4,true,3.2,2,F,Aisle 2 · Shelf F
-103574,BRV-103574,Milla Pomegranate 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,47.38,9,293,0.9,true,1.7,2,D,Aisle 2 · Shelf D
-103445,BRV-103445,Milla Pomegranate 2kg,Milla,"Fresh Produce, Meat & Dairy",Cheese,2kg,France,52.74,317,184,0.5,true,0.6,2,A,Aisle 2 · Shelf A
-103274,BRV-103274,Milla Potato 500g,Milla,"Fresh Produce, Meat & Dairy",Cheese,500g,India,15.8,1,694,0.8,true,1.9,2,C,Aisle 2 · Shelf C
-103312,BRV-103312,Milla Quail Eggs 500ml,Milla,"Fresh Produce, Meat & Dairy",Cheese,500ml,Poland,63.68,433,275,0.7,true,0.7,2,F,Aisle 2 · Shelf F
-102366,BRV-102366,Milla Strawberry Family Pack,Milla,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Brazil,7.89,495,253,0.9,true,1.6,2,F,Aisle 2 · Shelf F
-102394,BRV-102394,Milla Sturgeon 1L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1L,Russia,77.52,416,486,0.7,true,3.8,2,E,Aisle 2 · Shelf E
-102346,BRV-102346,Milla Zucchini 500g,Milla,"Fresh Produce, Meat & Dairy",Cheese,500g,USA,4.72,444,171,1.6,true,3.5,2,B,Aisle 2 · Shelf B
-102355,BRV-102355,Palsud Apple Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Italy,35.49,82,623,0.3,true,2.9,2,D,Aisle 2 · Shelf D
-102046,BRV-102046,Palsud Broccoli 2L,Palsud,"Fresh Produce, Meat & Dairy",Cheese,2L,USA,2.33,391,432,1.2,true,2.6,2,E,Aisle 2 · Shelf E
-103458,BRV-103458,Palsud Ground Beef 5kg,Palsud,"Fresh Produce, Meat & Dairy",Cheese,5kg,Azerbaijan,23.21,399,518,1.1,true,3.4,2,C,Aisle 2 · Shelf C
-102601,BRV-102601,Palsud Lemon 1kg,Palsud,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,11.21,451,217,0.3,true,0.7,2,F,Aisle 2 · Shelf F
-103979,BRV-103979,Palsud Lettuce 500ml,Palsud,"Fresh Produce, Meat & Dairy",Cheese,500ml,Italy,32.74,355,336,1.4,true,1,2,E,Aisle 2 · Shelf E
-103173,BRV-103173,Palsud Orange 200g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,200g,Georgia,48.16,314,214,1.6,true,2.4,2,C,Aisle 2 · Shelf C
-103925,BRV-103925,Palsud Peach 2L,Palsud,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,24.04,172,655,0.7,true,0.9,2,B,Aisle 2 · Shelf B
-102882,BRV-102882,Palsud Plum 250g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,16.73,416,664,1.5,true,1.6,2,C,Aisle 2 · Shelf C
-102005,BRV-102005,Palsud Potato 200g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,200g,Poland,48.29,218,471,1.3,true,1.3,2,F,Aisle 2 · Shelf F
-103132,BRV-103132,Palsud Quail Eggs 750g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,750g,Turkey,76.13,95,271,0.7,true,3.4,2,B,Aisle 2 · Shelf B
-103594,BRV-103594,Palsud Quail Eggs Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Spain,21.94,403,655,0.8,true,1.2,2,B,Aisle 2 · Shelf B
-103542,BRV-103542,Palsud Shrimp Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,China,29.51,398,402,0.2,true,1.3,2,A,Aisle 2 · Shelf A
-103891,BRV-103891,Palsud Zucchini Bulk,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Netherlands,0.71,215,539,0.9,true,2.5,2,D,Aisle 2 · Shelf D
-103984,BRV-103984,Pinar Ayran Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Azerbaijan,70.36,324,264,1.3,true,3.5,2,E,Aisle 2 · Shelf E
-102092,BRV-102092,Pinar Banana 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Georgia,24.99,249,295,0.7,true,3.6,2,B,Aisle 2 · Shelf B
-103853,BRV-103853,Pinar Cilantro 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Ukraine,8.76,175,561,0.8,true,1.2,2,F,Aisle 2 · Shelf F
-103669,BRV-103669,Pinar Eggplant Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Italy,59.72,385,180,0.9,true,1.3,2,A,Aisle 2 · Shelf A
-102807,BRV-102807,Pinar Kiwi 2kg,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2kg,Netherlands,61.9,152,329,0.5,true,1.9,2,F,Aisle 2 · Shelf F
-102984,BRV-102984,Pinar Melon 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Ukraine,60.5,246,327,1.4,true,3.2,2,B,Aisle 2 · Shelf B
-103432,BRV-103432,Pinar Mozzarella Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Poland,55.98,10,350,1.3,true,2,2,A,Aisle 2 · Shelf A
-102654,BRV-102654,Pinar Orange 1L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1L,Ukraine,45.71,409,207,1.1,true,1.7,2,B,Aisle 2 · Shelf B
-102002,BRV-102002,Pinar Orange 500ml,Pinar,"Fresh Produce, Meat & Dairy",Cheese,500ml,India,17.72,210,688,0.2,true,3.2,2,C,Aisle 2 · Shelf C
-102047,BRV-102047,Pinar Spinach 1L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,40.17,315,253,1.6,true,2.7,2,F,Aisle 2 · Shelf F
-103845,BRV-103845,Pinar Spinach 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Spain,46.8,18,604,1.5,true,3.7,2,C,Aisle 2 · Shelf C
-103841,BRV-103841,Pinar Suluguni 250g,Pinar,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,48.77,33,240,1.2,true,2.3,2,E,Aisle 2 · Shelf E
-102863,BRV-102863,Pinar Turkey Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,France,58.72,109,595,0.4,true,3.5,2,F,Aisle 2 · Shelf F
-103719,BRV-103719,Pinar Watermelon 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Brazil,66.43,214,396,1.6,true,3.6,2,C,Aisle 2 · Shelf C
-102670,BRV-102670,President Cabbage Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,India,47.65,472,629,1.3,true,1.4,2,F,Aisle 2 · Shelf F
-103877,BRV-103877,President Cheddar 250g,President,"Fresh Produce, Meat & Dairy",Cheese,250g,Iran,70.97,442,407,1,true,3.7,2,F,Aisle 2 · Shelf F
-102918,BRV-102918,President Chicken Breast 100g,President,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,76.9,200,432,0.7,true,0.8,2,E,Aisle 2 · Shelf E
-103598,BRV-103598,President Chicken Breast 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,60.17,317,251,1,true,3.6,2,D,Aisle 2 · Shelf D
-103245,BRV-103245,President Chicken Wings Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,USA,15.83,347,506,1.2,true,2.3,2,C,Aisle 2 · Shelf C
-102409,BRV-102409,President Dill 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,66.56,390,607,1.2,true,3.1,2,D,Aisle 2 · Shelf D
-103406,BRV-103406,President Ground Beef Pack of 24,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,34.36,309,135,1.4,true,2.3,2,B,Aisle 2 · Shelf B
-103507,BRV-103507,President Lamb 200g,President,"Fresh Produce, Meat & Dairy",Cheese,200g,Russia,76.98,311,231,1.5,true,2.4,2,B,Aisle 2 · Shelf B
-102770,BRV-102770,President Lime Bulk,President,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Italy,27.8,114,576,1.7,true,2.8,2,A,Aisle 2 · Shelf A
-102036,BRV-102036,President Parsley Pack of 24,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,China,16.34,26,501,0.7,true,3.1,2,D,Aisle 2 · Shelf D
-103150,BRV-103150,President Peach 100g,President,"Fresh Produce, Meat & Dairy",Cheese,100g,Poland,20.21,480,203,0.9,true,2.5,2,B,Aisle 2 · Shelf B
-103281,BRV-103281,President Pomegranate Pack of 6,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,India,46.68,360,442,1.4,true,3.6,2,E,Aisle 2 · Shelf E
-103721,BRV-103721,President Salmon 250ml,President,"Fresh Produce, Meat & Dairy",Cheese,250ml,Italy,16.75,355,217,1.6,true,3.9,2,D,Aisle 2 · Shelf D
-103865,BRV-103865,President Veal Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Turkey,39.37,221,594,1.2,true,1.6,2,A,Aisle 2 · Shelf A
-102722,BRV-102722,President Zucchini 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,44.83,93,681,0.4,true,2.8,2,D,Aisle 2 · Shelf D
-102691,BRV-102691,Sehiyye Apple 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,250g,Germany,75.58,133,594,1.5,true,2.4,2,C,Aisle 2 · Shelf C
-103492,BRV-103492,Sehiyye Apple 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,China,50.6,343,540,0.5,true,3.1,2,C,Aisle 2 · Shelf C
-103368,BRV-103368,Sehiyye Ayran 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,France,26.26,108,412,1.5,true,2.9,2,A,Aisle 2 · Shelf A
-103136,BRV-103136,Sehiyye Ayran Single,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Single,India,56.95,230,611,1.5,true,2.6,2,F,Aisle 2 · Shelf F
-103467,BRV-103467,Sehiyye Banana Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,China,16.76,125,320,1.2,true,1.7,2,E,Aisle 2 · Shelf E
-103789,BRV-103789,Sehiyye Bell Pepper 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,66.93,291,235,1.4,true,1.1,2,D,Aisle 2 · Shelf D
-103798,BRV-103798,Sehiyye Cheddar Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Spain,3.81,296,425,0.2,true,3.7,2,F,Aisle 2 · Shelf F
-102978,BRV-102978,Sehiyye Cilantro 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,500g,Spain,38.06,282,462,0.8,true,3.9,2,E,Aisle 2 · Shelf E
-102496,BRV-102496,Sehiyye Cucumber Single,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Single,Iran,16,158,191,1.2,true,0.9,2,B,Aisle 2 · Shelf B
-103069,BRV-103069,Sehiyye Dill Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,38.39,215,598,0.5,true,1.5,2,A,Aisle 2 · Shelf A
-102610,BRV-102610,Sehiyye Feta Cheese Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Ukraine,40.2,407,567,1,true,2.2,2,D,Aisle 2 · Shelf D
-102309,BRV-102309,Sehiyye Ground Beef 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,28.57,417,160,1.6,true,1.5,2,C,Aisle 2 · Shelf C
-103739,BRV-103739,Sehiyye Kefir 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,China,71.27,198,122,1.3,true,0.8,2,E,Aisle 2 · Shelf E
-103631,BRV-103631,Sehiyye Lactose-Free Milk 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,France,52.06,24,127,1.6,true,1.4,2,B,Aisle 2 · Shelf B
-102072,BRV-102072,Sehiyye Pear 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,France,75.84,459,373,0.8,true,3.6,2,D,Aisle 2 · Shelf D
-102290,BRV-102290,Sehiyye Pineapple Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Iran,68.88,7,539,0.3,true,2.3,2,F,Aisle 2 · Shelf F
-102391,BRV-102391,Sehiyye Plum Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Turkey,43.78,264,399,1.4,true,3.6,2,D,Aisle 2 · Shelf D
-103157,BRV-103157,Sehiyye Skim Milk 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,750g,France,25.56,33,572,0.7,true,0.7,2,A,Aisle 2 · Shelf A
-102498,BRV-102498,Sehiyye Suluguni 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,Azerbaijan,29.92,417,149,0.5,true,2.4,2,B,Aisle 2 · Shelf B
-102399,BRV-102399,Sehiyye Tomato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2L,China,65.94,40,295,0.2,true,1.3,2,F,Aisle 2 · Shelf F
-102543,BRV-102543,Sehiyye Trout 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,Italy,13.87,12,232,0.8,true,1.6,2,A,Aisle 2 · Shelf A
-102990,BRV-102990,Sehiyye Turkey 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,38.52,34,424,1.4,true,2.8,2,A,Aisle 2 · Shelf A
-103134,BRV-103134,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,Germany,71.46,193,325,0.6,true,2.5,2,B,Aisle 2 · Shelf B
-103123,BRV-103123,Atena Banana 750g,Atena,"Fresh Produce, Meat & Dairy",Eggs,750g,France,36.95,127,637,1,true,2.7,2,B,Aisle 2 · Shelf B
-103860,BRV-103860,Atena Broccoli 250ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,250ml,Brazil,53.72,250,555,1.4,true,0.8,2,F,Aisle 2 · Shelf F
-103420,BRV-103420,Atena Cheddar 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Netherlands,71.25,52,299,0.3,true,3.1,2,F,Aisle 2 · Shelf F
-103905,BRV-103905,Atena Chicken Thighs 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,China,29.29,122,565,1.4,true,2.9,2,D,Aisle 2 · Shelf D
-102116,BRV-102116,Atena Chicken Thighs Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,74.36,468,234,1,true,4,2,A,Aisle 2 · Shelf A
-102299,BRV-102299,Atena Cilantro 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,28.07,320,622,0.9,true,3.7,2,C,Aisle 2 · Shelf C
-102888,BRV-102888,Atena Cucumber 750g,Atena,"Fresh Produce, Meat & Dairy",Eggs,750g,Azerbaijan,46.88,156,206,0.3,true,1.8,2,E,Aisle 2 · Shelf E
-102906,BRV-102906,Atena Feta Cheese 500g,Atena,"Fresh Produce, Meat & Dairy",Eggs,500g,Ukraine,9.97,408,369,0.7,true,2.8,2,D,Aisle 2 · Shelf D
-102497,BRV-102497,Atena Garlic 200g,Atena,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,16.29,395,186,0.6,true,3.1,2,E,Aisle 2 · Shelf E
-102141,BRV-102141,Atena Greek Yogurt 1.5L,Atena,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Georgia,8.07,135,162,0.8,true,3.8,2,A,Aisle 2 · Shelf A
-102907,BRV-102907,Atena Greek Yogurt 2L,Atena,"Fresh Produce, Meat & Dairy",Eggs,2L,Iran,65.72,71,396,0.5,true,4,2,A,Aisle 2 · Shelf A
-102176,BRV-102176,Atena Lettuce 250ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,250ml,India,71.5,47,204,0.5,true,3.8,2,E,Aisle 2 · Shelf E
-103291,BRV-103291,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Eggs,200g,India,47.1,112,201,1.2,true,3,2,F,Aisle 2 · Shelf F
-103381,BRV-103381,Atena Parsley Bulk,Atena,"Fresh Produce, Meat & Dairy",Eggs,Bulk,China,36.39,344,487,1.2,true,3.7,2,B,Aisle 2 · Shelf B
-103910,BRV-103910,Atena Parsley Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Brazil,6.97,248,279,0.5,true,2.1,2,B,Aisle 2 · Shelf B
-102898,BRV-102898,Atena Pear Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Poland,3.97,206,441,1.5,true,1.2,2,D,Aisle 2 · Shelf D
-103696,BRV-103696,Atena Potato 500ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,500ml,Brazil,28.45,317,178,0.9,true,1.1,2,A,Aisle 2 · Shelf A
-102865,BRV-102865,Atena Quail Eggs 1.5L,Atena,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Germany,41.26,326,233,0.7,true,3.4,2,D,Aisle 2 · Shelf D
-103785,BRV-103785,Atena Quail Eggs 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,China,77.75,469,535,1.2,true,2.1,2,B,Aisle 2 · Shelf B
-102554,BRV-102554,Atena Quail Eggs 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Spain,70.5,315,292,1.3,true,1.7,2,E,Aisle 2 · Shelf E
-103389,BRV-103389,Atena Salmon 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,Turkey,67.95,335,255,0.4,true,3.9,2,F,Aisle 2 · Shelf F
-103462,BRV-103462,Atena Shrimp 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,India,77.94,219,321,0.8,true,0.6,2,B,Aisle 2 · Shelf B
-102632,BRV-102632,Atena Shrimp 2kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,2kg,USA,42.56,321,319,0.4,true,2.1,2,D,Aisle 2 · Shelf D
-103751,BRV-103751,Atena Skim Milk 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Turkey,58.98,417,504,0.8,true,1.1,2,C,Aisle 2 · Shelf C
-102132,BRV-102132,Atena Skim Milk 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Brazil,44.82,234,684,1.3,true,2.4,2,A,Aisle 2 · Shelf A
-102354,BRV-102354,Atena Sturgeon 1kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,1kg,India,48.49,434,370,1.4,true,1.4,2,C,Aisle 2 · Shelf C
-102059,BRV-102059,Atena Sturgeon 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Georgia,21.89,400,272,0.3,true,3.6,2,E,Aisle 2 · Shelf E
-102434,BRV-102434,Atena Suluguni 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,6.37,424,167,0.2,true,0.8,2,F,Aisle 2 · Shelf F
-103639,BRV-103639,Atena Trout Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,France,59.19,307,303,0.7,true,2.7,2,B,Aisle 2 · Shelf B
-102557,BRV-102557,Bravo Farm Apple 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,2L,China,75.46,465,495,0.4,true,3,2,D,Aisle 2 · Shelf D
-102546,BRV-102546,Bravo Farm Bell Pepper 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,Italy,68.86,388,281,1,true,2.4,2,B,Aisle 2 · Shelf B
-102952,BRV-102952,Bravo Farm Broccoli 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,Russia,64.7,16,674,0.8,true,3.3,2,C,Aisle 2 · Shelf C
-102709,BRV-102709,Bravo Farm Cheddar 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,India,57.56,490,220,1.1,true,1.3,2,A,Aisle 2 · Shelf A
-103771,BRV-103771,Bravo Farm Cheddar Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Poland,56.62,346,206,0.7,true,2.1,2,A,Aisle 2 · Shelf A
-103665,BRV-103665,Bravo Farm Chicken Breast 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,1L,Italy,74.42,69,504,0.5,true,3,2,C,Aisle 2 · Shelf C
-103080,BRV-103080,Bravo Farm Chicken Breast 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,France,38.42,39,585,0.5,true,1,2,D,Aisle 2 · Shelf D
-102180,BRV-102180,Bravo Farm Cucumber Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Netherlands,74.81,385,659,0.3,true,1.5,2,B,Aisle 2 · Shelf B
-102781,BRV-102781,Bravo Farm Free-Range Eggs 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,Italy,22.01,426,148,0.4,true,2.9,2,A,Aisle 2 · Shelf A
-102820,BRV-102820,Bravo Farm Ground Beef 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Georgia,4.33,304,684,1.3,true,1.9,2,E,Aisle 2 · Shelf E
-103894,BRV-103894,Bravo Farm Kiwi 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Italy,31.28,152,490,0.8,true,0.8,2,A,Aisle 2 · Shelf A
-103981,BRV-103981,Bravo Farm Kiwi Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Russia,57.57,137,545,0.7,true,1.3,2,D,Aisle 2 · Shelf D
-102220,BRV-102220,Bravo Farm Parmesan 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Georgia,29.79,284,266,0.5,true,3.3,2,A,Aisle 2 · Shelf A
-103498,BRV-103498,Bravo Farm Pear Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Single,Netherlands,73.42,143,530,0.5,true,1.6,2,E,Aisle 2 · Shelf E
-103684,BRV-103684,Bravo Farm Pineapple Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,USA,41.94,377,303,0.8,true,2.2,2,F,Aisle 2 · Shelf F
-102875,BRV-102875,Bravo Farm Pomegranate 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,30.91,220,466,0.5,true,1.9,2,A,Aisle 2 · Shelf A
-102800,BRV-102800,Bravo Farm Pomegranate 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,USA,10.65,94,590,0.9,true,2.1,2,A,Aisle 2 · Shelf A
-103104,BRV-103104,Bravo Farm Shrimp 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,500g,Poland,29.02,289,432,1.2,true,1.1,2,E,Aisle 2 · Shelf E
-102429,BRV-102429,Bravo Farm Spinach 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250ml,India,41.18,77,381,0.3,true,0.8,2,D,Aisle 2 · Shelf D
-103864,BRV-103864,Bravo Farm Trout 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Georgia,35.35,18,423,1.4,true,3.5,2,D,Aisle 2 · Shelf D
-103990,BRV-103990,Bravo Farm Veal Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,56.4,325,439,1.2,true,1.6,2,F,Aisle 2 · Shelf F
-102004,BRV-102004,Bravo Farm Zucchini 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250ml,Georgia,56.01,251,410,0.3,true,3.9,2,C,Aisle 2 · Shelf C
-102661,BRV-102661,Local Farm Cabbage Single,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Single,India,32.78,289,351,0.3,true,3.8,2,F,Aisle 2 · Shelf F
-103916,BRV-103916,Local Farm Cheddar 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Russia,51.3,241,509,1.1,true,3.4,2,B,Aisle 2 · Shelf B
-102503,BRV-102503,Local Farm Cucumber 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,29.7,287,636,1.2,true,3.6,2,A,Aisle 2 · Shelf A
-103930,BRV-103930,Local Farm Eggplant 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Germany,45.78,457,345,0.2,true,1,2,B,Aisle 2 · Shelf B
-102980,BRV-102980,Local Farm Eggplant Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Georgia,27.64,132,275,1.1,true,1.1,2,F,Aisle 2 · Shelf F
-103974,BRV-103974,Local Farm Free-Range Eggs Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Brazil,13.6,498,497,0.4,true,0.6,2,D,Aisle 2 · Shelf D
-102008,BRV-102008,Local Farm Greek Yogurt 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,India,64.77,485,438,0.7,true,2.8,2,E,Aisle 2 · Shelf E
-103261,BRV-103261,Local Farm Kefir 750g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,750g,Ukraine,27.26,78,216,0.8,true,3.7,2,E,Aisle 2 · Shelf E
-102445,BRV-102445,Local Farm Lamb 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500ml,USA,45.59,352,215,1.6,true,1.7,2,B,Aisle 2 · Shelf B
-102209,BRV-102209,Local Farm Lamb Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Netherlands,63.03,8,389,1.7,true,2.6,2,B,Aisle 2 · Shelf B
-103451,BRV-103451,Local Farm Lime 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,USA,18.09,64,451,1.3,true,1,2,F,Aisle 2 · Shelf F
-103119,BRV-103119,Local Farm Melon 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Italy,79.54,215,570,0.2,true,1.1,2,A,Aisle 2 · Shelf A
-102406,BRV-102406,Local Farm Onion 2L,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,2L,Brazil,51.29,331,328,1.2,true,2.7,2,A,Aisle 2 · Shelf A
-103897,BRV-103897,Local Farm Orange 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,France,24.22,172,561,1,true,0.9,2,D,Aisle 2 · Shelf D
-103850,BRV-103850,Local Farm Parsley 500g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500g,Turkey,53.29,56,666,0.3,true,3.7,2,A,Aisle 2 · Shelf A
-103338,BRV-103338,Local Farm Parsley Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Spain,17.49,68,163,0.3,true,2.6,2,B,Aisle 2 · Shelf B
-102937,BRV-102937,Local Farm Potato Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Russia,53.16,296,293,1.4,true,3.4,2,D,Aisle 2 · Shelf D
-102202,BRV-102202,Local Farm Salmon 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500ml,Brazil,42.02,393,550,0.7,true,4,2,E,Aisle 2 · Shelf E
-103557,BRV-103557,Local Farm Spinach 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,2kg,India,49.69,148,304,1,true,0.8,2,A,Aisle 2 · Shelf A
-103716,BRV-103716,Local Farm Tomato 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,China,56.21,234,451,1.5,true,0.9,2,F,Aisle 2 · Shelf F
-103968,BRV-103968,Local Farm Turkey 250g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,48.32,498,218,0.8,true,1.1,2,A,Aisle 2 · Shelf A
-102824,BRV-102824,Local Farm Whole Milk Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Netherlands,35.32,287,128,1.1,true,0.6,2,C,Aisle 2 · Shelf C
-102156,BRV-102156,Milla Apple 500g,Milla,"Fresh Produce, Meat & Dairy",Eggs,500g,Azerbaijan,33.36,174,686,0.4,true,1.1,2,C,Aisle 2 · Shelf C
-103005,BRV-103005,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Italy,15.38,460,120,0.4,true,3.1,2,E,Aisle 2 · Shelf E
-102188,BRV-102188,Milla Beef Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,China,14.18,428,147,0.4,true,1.5,2,D,Aisle 2 · Shelf D
-103359,BRV-103359,Milla Bell Pepper Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,India,51.11,242,468,1,true,3,2,C,Aisle 2 · Shelf C
-102648,BRV-102648,Milla Carrot 1.5L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Turkey,72.07,124,256,0.6,true,1.5,2,E,Aisle 2 · Shelf E
-103407,BRV-103407,Milla Chicken Breast 200g,Milla,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,29.85,302,202,1.2,true,3.7,2,A,Aisle 2 · Shelf A
-102544,BRV-102544,Milla Eggplant 1L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1L,Ukraine,56.04,42,615,0.4,true,2.8,2,B,Aisle 2 · Shelf B
-103632,BRV-103632,Milla Feta Cheese 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,China,54.95,235,372,0.3,true,3.1,2,A,Aisle 2 · Shelf A
-102856,BRV-102856,Milla Garlic 100g,Milla,"Fresh Produce, Meat & Dairy",Eggs,100g,China,46.22,22,567,1.7,true,2.2,2,F,Aisle 2 · Shelf F
-102042,BRV-102042,Milla Garlic 1kg,Milla,"Fresh Produce, Meat & Dairy",Eggs,1kg,USA,16.65,315,708,1.4,true,0.9,2,A,Aisle 2 · Shelf A
-102579,BRV-102579,Milla Greek Yogurt 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,USA,48.89,79,255,1.3,true,0.9,2,F,Aisle 2 · Shelf F
-102680,BRV-102680,Milla Ground Beef Bulk,Milla,"Fresh Produce, Meat & Dairy",Eggs,Bulk,France,66.79,483,164,0.4,true,1,2,C,Aisle 2 · Shelf C
-103904,BRV-103904,Milla Kiwi 1.5L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1.5L,France,60.6,423,336,0.8,true,2.7,2,E,Aisle 2 · Shelf E
-103593,BRV-103593,Milla Lactose-Free Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,55.91,228,128,1.5,true,2.9,2,E,Aisle 2 · Shelf E
-102535,BRV-102535,Milla Lamb 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,Poland,74.51,257,135,0.3,true,2.7,2,F,Aisle 2 · Shelf F
-102944,BRV-102944,Milla Mint Single,Milla,"Fresh Produce, Meat & Dairy",Eggs,Single,Russia,42.73,237,483,0.6,true,3.2,2,F,Aisle 2 · Shelf F
-102809,BRV-102809,Milla Parsley 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,Poland,67.87,308,451,1.6,true,1.5,2,D,Aisle 2 · Shelf D
-102992,BRV-102992,Milla Pear Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,China,57.9,427,374,0.5,true,1.8,2,E,Aisle 2 · Shelf E
-103549,BRV-103549,Milla Pomegranate 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,India,41.92,372,201,1.2,true,2.7,2,B,Aisle 2 · Shelf B
-103658,BRV-103658,Milla Quail Eggs 2L,Milla,"Fresh Produce, Meat & Dairy",Eggs,2L,France,55.36,40,708,0.6,true,2.2,2,C,Aisle 2 · Shelf C
-102349,BRV-102349,Milla Quail Eggs Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Italy,76.45,375,516,1.1,true,2.7,2,C,Aisle 2 · Shelf C
-103235,BRV-103235,Milla Shrimp 750g,Milla,"Fresh Produce, Meat & Dairy",Eggs,750g,China,62.12,223,559,1.4,true,1.2,2,D,Aisle 2 · Shelf D
-103802,BRV-103802,Milla Suluguni 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,Germany,31.45,490,191,1.5,true,0.9,2,D,Aisle 2 · Shelf D
-103318,BRV-103318,Milla Tomato Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,India,23.38,376,221,0.8,true,1.1,2,D,Aisle 2 · Shelf D
-103298,BRV-103298,Milla Trout Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Ukraine,57.02,143,372,0.4,true,3.5,2,A,Aisle 2 · Shelf A
-103394,BRV-103394,Milla Watermelon Single,Milla,"Fresh Produce, Meat & Dairy",Eggs,Single,USA,5.17,165,257,1.6,true,1.3,2,B,Aisle 2 · Shelf B
-103736,BRV-103736,Milla Zucchini 5kg,Milla,"Fresh Produce, Meat & Dairy",Eggs,5kg,Georgia,43.21,345,685,1.2,true,3.6,2,B,Aisle 2 · Shelf B
-103279,BRV-103279,Palsud Banana 1kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1kg,France,37.99,423,231,0.5,true,2.4,2,D,Aisle 2 · Shelf D
-102485,BRV-102485,Palsud Basil Bulk,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Turkey,24.83,161,403,1.5,true,2.7,2,B,Aisle 2 · Shelf B
-103319,BRV-103319,Palsud Cheddar Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,USA,23.44,326,464,0.3,true,0.6,2,E,Aisle 2 · Shelf E
-103659,BRV-103659,Palsud Cherry Bulk,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Georgia,53.07,85,633,0.9,true,3.1,2,F,Aisle 2 · Shelf F
-102323,BRV-102323,Palsud Cucumber 500g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500g,Poland,76.06,405,120,0.9,true,2.3,2,A,Aisle 2 · Shelf A
-102580,BRV-102580,Palsud Dill Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Ukraine,26.87,451,519,0.8,true,3.4,2,B,Aisle 2 · Shelf B
-103514,BRV-103514,Palsud Feta Cheese 500ml,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500ml,Italy,31.34,337,519,0.8,true,3.7,2,B,Aisle 2 · Shelf B
-102663,BRV-102663,Palsud Feta Cheese 750g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,750g,India,52.34,345,457,1.5,true,2.8,2,B,Aisle 2 · Shelf B
-103947,BRV-103947,Palsud Feta Cheese Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,Brazil,45.49,397,455,0.6,true,2.1,2,D,Aisle 2 · Shelf D
-103570,BRV-103570,Palsud Grapes Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Netherlands,69.46,179,385,1.1,true,2.3,2,D,Aisle 2 · Shelf D
-103700,BRV-103700,Palsud Ground Beef 200g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,200g,Italy,19.73,195,398,0.5,true,2.5,2,A,Aisle 2 · Shelf A
-103038,BRV-103038,Palsud Ground Beef Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,Ukraine,25.57,70,668,1.5,true,3.7,2,A,Aisle 2 · Shelf A
-103014,BRV-103014,Palsud Kiwi Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Italy,79.31,252,242,0.6,true,3.4,2,C,Aisle 2 · Shelf C
-102490,BRV-102490,Palsud Lime Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Turkey,57.08,285,205,1.5,true,3.3,2,D,Aisle 2 · Shelf D
-102191,BRV-102191,Palsud Melon 200g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,200g,France,59.09,273,709,0.5,true,2.2,2,D,Aisle 2 · Shelf D
-102517,BRV-102517,Palsud Peach 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Brazil,66.53,363,603,0.8,true,1.7,2,F,Aisle 2 · Shelf F
-102647,BRV-102647,Palsud Peach 1kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1kg,Netherlands,32.7,193,535,0.6,true,1.9,2,F,Aisle 2 · Shelf F
-103945,BRV-103945,Palsud Pear 500g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500g,France,71.07,469,561,1.2,true,3.8,2,F,Aisle 2 · Shelf F
-102330,BRV-102330,Palsud Potato Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Iran,24.71,314,296,0.8,true,1.1,2,C,Aisle 2 · Shelf C
-103135,BRV-103135,Palsud Quail Eggs Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,17.62,384,208,0.3,true,1.7,2,A,Aisle 2 · Shelf A
-103308,BRV-103308,Palsud Quail Eggs Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,France,8.8,201,666,1.5,true,3.1,2,A,Aisle 2 · Shelf A
-103679,BRV-103679,Palsud Shrimp 1L,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1L,Russia,50.53,431,507,0.4,true,3.4,2,F,Aisle 2 · Shelf F
-102564,BRV-102564,Palsud Shrimp 5kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,5kg,France,24.96,438,129,1.7,true,1.4,2,F,Aisle 2 · Shelf F
-102027,BRV-102027,Palsud Shrimp Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Spain,7.73,250,563,1.6,true,3.4,2,B,Aisle 2 · Shelf B
-102746,BRV-102746,Palsud Spinach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,52.85,57,375,1.4,true,3.6,2,B,Aisle 2 · Shelf B
-103573,BRV-103573,Palsud Sturgeon Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,India,45.11,455,554,1,true,2.1,2,A,Aisle 2 · Shelf A
-102168,BRV-102168,Palsud Veal Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Azerbaijan,12.35,10,649,1.3,true,3.1,2,D,Aisle 2 · Shelf D
-103745,BRV-103745,Pinar Broccoli 2kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,7.52,162,603,1.1,true,0.8,2,D,Aisle 2 · Shelf D
-103784,BRV-103784,Pinar Cucumber 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,Turkey,33.65,350,178,0.4,true,2.7,2,E,Aisle 2 · Shelf E
-102728,BRV-102728,Pinar Feta Cheese 2kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,2kg,India,40,319,415,0.9,true,0.8,2,B,Aisle 2 · Shelf B
-103922,BRV-103922,Pinar Free-Range Eggs Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Poland,64.32,211,200,1.6,true,1.1,2,A,Aisle 2 · Shelf A
-102269,BRV-102269,Pinar Grapes 200g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,200g,India,32.92,90,579,0.8,true,2.2,2,D,Aisle 2 · Shelf D
-102577,BRV-102577,Pinar Kefir Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,India,55.38,240,517,0.5,true,3.1,2,D,Aisle 2 · Shelf D
-102117,BRV-102117,Pinar Kiwi Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,36.22,153,495,1.3,true,3.9,2,F,Aisle 2 · Shelf F
-102376,BRV-102376,Pinar Lemon 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,USA,67.25,33,598,0.6,true,1.8,2,A,Aisle 2 · Shelf A
-103500,BRV-103500,Pinar Lime 200g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,6.66,460,448,0.4,true,1.3,2,E,Aisle 2 · Shelf E
-102314,BRV-102314,Pinar Mozzarella 500g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,500g,France,68.91,481,654,1.5,true,3.6,2,C,Aisle 2 · Shelf C
-102345,BRV-102345,Pinar Orange 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,Russia,41.12,397,184,0.6,true,1.3,2,E,Aisle 2 · Shelf E
-102616,BRV-102616,Pinar Peach 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,USA,32.07,432,141,1,true,1.3,2,F,Aisle 2 · Shelf F
-102273,BRV-102273,Pinar Pear 100g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,59.8,251,314,1.6,true,4,2,A,Aisle 2 · Shelf A
-103709,BRV-103709,Pinar Pear 1L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1L,Azerbaijan,36.26,104,211,0.7,true,0.6,2,F,Aisle 2 · Shelf F
-103726,BRV-103726,Pinar Plum Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Georgia,24.4,17,478,0.5,true,0.7,2,C,Aisle 2 · Shelf C
-103446,BRV-103446,Pinar Potato 1kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1kg,France,67.94,164,291,0.9,true,1.8,2,D,Aisle 2 · Shelf D
-102677,BRV-102677,Pinar Potato Bulk,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Bulk,USA,28.22,144,290,0.7,true,1.3,2,A,Aisle 2 · Shelf A
-103855,BRV-103855,Pinar Salmon 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,France,68.93,274,395,1,true,1.6,2,F,Aisle 2 · Shelf F
-103590,BRV-103590,Pinar Shrimp Single,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Single,Turkey,28.8,390,603,0.5,true,2.7,2,F,Aisle 2 · Shelf F
-102364,BRV-102364,Pinar Skim Milk 100g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,24.57,244,627,0.8,true,1.5,2,F,Aisle 2 · Shelf F
-102942,BRV-102942,Pinar Skim Milk 1kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1kg,Netherlands,20.91,402,481,0.3,true,3.2,2,B,Aisle 2 · Shelf B
-103342,BRV-103342,Pinar Strawberry 250g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,250g,Russia,20.39,221,504,0.3,true,2.3,2,A,Aisle 2 · Shelf A
-102171,BRV-102171,Pinar Veal 500g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,500g,USA,38.01,100,435,0.7,true,2.6,2,F,Aisle 2 · Shelf F
-103196,BRV-103196,Pinar Zucchini 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Germany,23.03,429,605,1.5,true,2.9,2,F,Aisle 2 · Shelf F
-103232,BRV-103232,President Broccoli 1L,President,"Fresh Produce, Meat & Dairy",Eggs,1L,Brazil,51.83,106,312,0.4,true,2.1,2,C,Aisle 2 · Shelf C
-103682,BRV-103682,President Chicken Breast 1.5L,President,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Ukraine,8.26,106,477,0.4,true,1.3,2,F,Aisle 2 · Shelf F
-103244,BRV-103244,President Chicken Breast 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,Azerbaijan,60.37,166,583,0.3,true,2,2,F,Aisle 2 · Shelf F
-103384,BRV-103384,President Chicken Breast Family Pack,President,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,61.03,41,254,1.2,true,3,2,E,Aisle 2 · Shelf E
-102041,BRV-102041,President Chicken Breast Single,President,"Fresh Produce, Meat & Dairy",Eggs,Single,Netherlands,67.34,77,711,0.8,true,1.7,2,D,Aisle 2 · Shelf D
-103379,BRV-103379,President Chicken Thighs 100g,President,"Fresh Produce, Meat & Dairy",Eggs,100g,Germany,31.94,293,674,1.1,true,3,2,A,Aisle 2 · Shelf A
-102612,BRV-102612,President Dill 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,USA,74.53,304,657,1.4,true,3.5,2,F,Aisle 2 · Shelf F
-103747,BRV-103747,President Greek Yogurt 200g,President,"Fresh Produce, Meat & Dairy",Eggs,200g,China,30.12,182,645,1.3,true,3.1,2,F,Aisle 2 · Shelf F
-103774,BRV-103774,President Kiwi Single,President,"Fresh Produce, Meat & Dairy",Eggs,Single,Russia,44.04,366,455,1.3,true,0.7,2,D,Aisle 2 · Shelf D
-102404,BRV-102404,President Lactose-Free Milk Family Pack,President,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Azerbaijan,25.55,341,246,0.7,true,1.6,2,A,Aisle 2 · Shelf A
-102121,BRV-102121,President Lime 500g,President,"Fresh Produce, Meat & Dairy",Eggs,500g,France,74.09,199,224,0.4,true,1.2,2,E,Aisle 2 · Shelf E
-102774,BRV-102774,President Parsley Pack of 12,President,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Ukraine,44.95,351,716,0.3,true,1.7,2,E,Aisle 2 · Shelf E
-103807,BRV-103807,President Potato 250g,President,"Fresh Produce, Meat & Dairy",Eggs,250g,Georgia,21.14,414,542,0.8,true,2.3,2,C,Aisle 2 · Shelf C
-102615,BRV-102615,President Quail Eggs Pack of 24,President,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Russia,65.27,94,254,0.8,true,3.4,2,C,Aisle 2 · Shelf C
-103540,BRV-103540,President Strawberry 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,France,77.64,363,252,0.8,true,3.3,2,A,Aisle 2 · Shelf A
-102611,BRV-102611,President Sturgeon 1L,President,"Fresh Produce, Meat & Dairy",Eggs,1L,Germany,29.16,122,506,1.5,true,2.8,2,A,Aisle 2 · Shelf A
-103217,BRV-103217,President Watermelon 100g,President,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,34.15,96,139,1.3,true,2.1,2,D,Aisle 2 · Shelf D
-103230,BRV-103230,Sehiyye Apple 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Azerbaijan,67.5,125,678,0.5,true,0.6,2,C,Aisle 2 · Shelf C
-103890,BRV-103890,Sehiyye Apple Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,9.12,278,198,0.2,true,3.6,2,A,Aisle 2 · Shelf A
-103213,BRV-103213,Sehiyye Ayran 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Ukraine,3.67,444,159,0.5,true,0.6,2,D,Aisle 2 · Shelf D
-103648,BRV-103648,Sehiyye Bell Pepper 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500g,Iran,59.5,391,439,0.4,true,3,2,B,Aisle 2 · Shelf B
-102427,BRV-102427,Sehiyye Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Poland,51.38,453,151,0.3,true,3.2,2,D,Aisle 2 · Shelf D
-103928,BRV-103928,Sehiyye Cherry 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250g,Germany,41.79,476,342,0.5,true,1.3,2,C,Aisle 2 · Shelf C
-103358,BRV-103358,Sehiyye Cilantro Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Germany,21.78,381,713,1,true,2.3,2,D,Aisle 2 · Shelf D
-103131,BRV-103131,Sehiyye Feta Cheese 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Russia,10.78,297,684,1.6,true,1.7,2,E,Aisle 2 · Shelf E
-103152,BRV-103152,Sehiyye Garlic 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500g,Azerbaijan,4.62,250,661,0.8,true,2.1,2,D,Aisle 2 · Shelf D
-103753,BRV-103753,Sehiyye Ground Beef 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1L,Russia,7.4,52,582,1.3,true,0.5,2,E,Aisle 2 · Shelf E
-103833,BRV-103833,Sehiyye Kefir Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Ukraine,74.55,422,183,1.3,true,1,2,B,Aisle 2 · Shelf B
-103285,BRV-103285,Sehiyye Lactose-Free Milk 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,USA,66.23,107,462,0.3,true,0.8,2,A,Aisle 2 · Shelf A
-102696,BRV-102696,Sehiyye Lettuce Single,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Single,Azerbaijan,3.1,405,229,1.6,true,0.9,2,D,Aisle 2 · Shelf D
-103685,BRV-103685,Sehiyye Orange 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Netherlands,70.61,296,242,0.5,true,1.7,2,C,Aisle 2 · Shelf C
-103016,BRV-103016,Sehiyye Parmesan 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,200g,Iran,66.52,367,180,1.4,true,3.4,2,E,Aisle 2 · Shelf E
-102779,BRV-102779,Sehiyye Plum 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,100g,Spain,77.21,60,445,1.4,true,1.9,2,F,Aisle 2 · Shelf F
-102313,BRV-102313,Sehiyye Plum Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,69.53,113,265,1.1,true,1.8,2,B,Aisle 2 · Shelf B
-102775,BRV-102775,Sehiyye Potato 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250ml,Russia,76.31,99,713,0.5,true,2.8,2,D,Aisle 2 · Shelf D
-103366,BRV-103366,Sehiyye Shrimp 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,750g,Spain,59.96,78,206,0.3,true,2.8,2,E,Aisle 2 · Shelf E
-102950,BRV-102950,Sehiyye Skim Milk 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,100g,France,39.99,51,524,1.4,true,1.7,2,A,Aisle 2 · Shelf A
-103448,BRV-103448,Sehiyye Spinach 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Russia,35.69,50,649,1.3,true,2.2,2,F,Aisle 2 · Shelf F
-102453,BRV-102453,Sehiyye Spinach Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,4.48,404,578,0.6,true,4,2,C,Aisle 2 · Shelf C
-102592,BRV-102592,Sehiyye Strawberry 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250g,Brazil,24.23,442,154,0.9,true,1.9,2,A,Aisle 2 · Shelf A
-103167,BRV-103167,Sehiyye Zucchini 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Turkey,19.46,190,501,0.8,true,0.5,2,D,Aisle 2 · Shelf D
-102336,BRV-102336,Sehiyye Zucchini Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Brazil,11.95,493,322,0.8,true,3.6,2,A,Aisle 2 · Shelf A
-102113,BRV-102113,Atena Apple Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Germany,17.28,170,531,0.9,true,1.7,2,B,Aisle 2 · Shelf B
-103220,BRV-103220,Atena Ayran 1L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Ukraine,55.36,64,345,1.3,true,0.6,2,B,Aisle 2 · Shelf B
-103562,BRV-103562,Atena Banana 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Italy,37.06,205,248,1.7,true,3.7,2,E,Aisle 2 · Shelf E
-102732,BRV-102732,Atena Beef 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,2.71,188,530,1.3,true,1.6,2,E,Aisle 2 · Shelf E
-102392,BRV-102392,Atena Broccoli 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Azerbaijan,69.54,55,476,0.9,true,1.5,2,A,Aisle 2 · Shelf A
-102146,BRV-102146,Atena Cabbage 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Italy,47.47,287,301,0.8,true,2.9,2,B,Aisle 2 · Shelf B
-102759,BRV-102759,Atena Chicken Thighs Single,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,USA,14.57,232,671,0.7,true,2.5,2,F,Aisle 2 · Shelf F
-102247,BRV-102247,Atena Chicken Wings 200g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Georgia,53.53,231,643,0.6,true,3.3,2,B,Aisle 2 · Shelf B
-102805,BRV-102805,Atena Chicken Wings Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Russia,4.85,469,223,0.8,true,3.4,2,D,Aisle 2 · Shelf D
-103975,BRV-103975,Atena Dill 1L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,USA,60.34,435,396,1.1,true,3,2,E,Aisle 2 · Shelf E
-102420,BRV-102420,Atena Dill 1kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Germany,30.73,43,440,0.7,true,0.6,2,A,Aisle 2 · Shelf A
-103842,BRV-103842,Atena Eggplant 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Ukraine,24.27,406,339,1.6,true,2.1,2,D,Aisle 2 · Shelf D
-102618,BRV-102618,Atena Feta Cheese 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Italy,31.09,477,391,0.5,true,0.8,2,B,Aisle 2 · Shelf B
-103906,BRV-103906,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Poland,27.38,129,406,0.4,true,4,2,C,Aisle 2 · Shelf C
-102142,BRV-102142,Atena Kefir 1kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Germany,46.79,40,161,1.3,true,1.3,2,B,Aisle 2 · Shelf B
-102437,BRV-102437,Atena Lamb 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Spain,62.49,358,164,0.8,true,3.5,2,C,Aisle 2 · Shelf C
-102321,BRV-102321,Atena Lemon 2kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Italy,29.61,453,670,1.5,true,4,2,E,Aisle 2 · Shelf E
-103599,BRV-103599,Atena Lemon 500g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Georgia,11.81,336,518,1.1,true,0.8,2,C,Aisle 2 · Shelf C
-103539,BRV-103539,Atena Mint Bulk,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Italy,9.07,292,680,1.2,true,0.8,2,C,Aisle 2 · Shelf C
-102090,BRV-102090,Atena Onion 5kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Italy,50.03,485,369,0.9,true,3.7,2,F,Aisle 2 · Shelf F
-102909,BRV-102909,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,China,38.66,132,486,1.5,true,1.2,2,A,Aisle 2 · Shelf A
-103817,BRV-103817,Atena Peach 5kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Netherlands,51.08,41,369,1.2,true,0.6,2,D,Aisle 2 · Shelf D
-103641,BRV-103641,Atena Pear 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Georgia,62.55,494,674,0.5,true,3.4,2,C,Aisle 2 · Shelf C
-102199,BRV-102199,Atena Plum 250g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Germany,38.72,412,621,1.1,true,0.9,2,B,Aisle 2 · Shelf B
-102350,BRV-102350,Atena Salmon 500ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,France,44.47,73,270,0.5,true,0.8,2,A,Aisle 2 · Shelf A
-103044,BRV-103044,Atena Shrimp Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Italy,59.01,496,345,1.6,true,1.2,2,F,Aisle 2 · Shelf F
-102482,BRV-102482,Atena Shrimp Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Germany,36.3,401,476,1.6,true,1.8,2,A,Aisle 2 · Shelf A
-103456,BRV-103456,Atena Spinach 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Iran,15.14,174,316,0.6,true,0.6,2,E,Aisle 2 · Shelf E
-103481,BRV-103481,Atena Suluguni 100g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,32.84,70,360,1.2,true,0.9,2,E,Aisle 2 · Shelf E
-103566,BRV-103566,Atena Veal 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Spain,27.64,244,292,1.4,true,2.1,2,A,Aisle 2 · Shelf A
-102556,BRV-102556,Atena Zucchini 200g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Turkey,32.9,249,490,1.3,true,1.7,2,C,Aisle 2 · Shelf C
-103064,BRV-103064,Bravo Farm Apple Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,18.65,88,175,1,true,2.3,2,D,Aisle 2 · Shelf D
-102455,BRV-102455,Bravo Farm Beef Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,India,62.71,157,328,1.2,true,1.2,2,E,Aisle 2 · Shelf E
-103025,BRV-103025,Bravo Farm Bell Pepper 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,France,79.15,145,294,1.3,true,0.9,2,E,Aisle 2 · Shelf E
-103856,BRV-103856,Bravo Farm Bell Pepper Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Netherlands,39.14,306,392,1.3,true,3.8,2,A,Aisle 2 · Shelf A
-103297,BRV-103297,Bravo Farm Broccoli 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Iran,51.67,268,659,1.4,true,2.9,2,B,Aisle 2 · Shelf B
-103326,BRV-103326,Bravo Farm Chicken Wings 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Brazil,69.21,314,194,1.1,true,0.8,2,C,Aisle 2 · Shelf C
-103465,BRV-103465,Bravo Farm Dill Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Russia,63.87,319,390,1.5,true,3.5,2,C,Aisle 2 · Shelf C
-102207,BRV-102207,Bravo Farm Eggplant 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Poland,65.82,401,431,1.7,true,1.1,2,F,Aisle 2 · Shelf F
-102964,BRV-102964,Bravo Farm Family Parsley 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,53.7,150,565,1.5,true,3.7,2,F,Aisle 2 · Shelf F
-103486,BRV-103486,Bravo Farm Free-Range Eggs 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Iran,63.1,149,671,0.8,true,3.5,2,B,Aisle 2 · Shelf B
-103096,BRV-103096,Bravo Farm Greek Yogurt 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Iran,11.55,60,324,1,true,3.9,2,C,Aisle 2 · Shelf C
-103265,BRV-103265,Bravo Farm Ground Beef 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,China,0.59,367,660,0.6,true,1.8,2,C,Aisle 2 · Shelf C
-102133,BRV-102133,Bravo Farm Lemon 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,India,15.45,292,681,1.4,true,3,2,D,Aisle 2 · Shelf D
-103423,BRV-103423,Bravo Farm Mint Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,India,42.17,14,432,1.4,true,2.5,2,E,Aisle 2 · Shelf E
-102672,BRV-102672,Bravo Farm Orange Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,France,28.56,357,283,1.7,true,1.8,2,B,Aisle 2 · Shelf B
-103057,BRV-103057,Bravo Farm Parmesan Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Netherlands,34.71,94,125,0.6,true,1.5,2,B,Aisle 2 · Shelf B
-102921,BRV-102921,Bravo Farm Parsley 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,7.43,317,528,1.2,true,3.9,2,A,Aisle 2 · Shelf A
-103988,BRV-103988,Bravo Farm Pineapple 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,34.79,467,596,1.1,true,1.4,2,C,Aisle 2 · Shelf C
-103619,BRV-103619,Bravo Farm Potato 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Ukraine,15.93,43,365,1,true,1.9,2,D,Aisle 2 · Shelf D
-102785,BRV-102785,Bravo Farm Quail Eggs 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Azerbaijan,17.42,347,160,1.1,true,3.4,2,C,Aisle 2 · Shelf C
-103698,BRV-103698,Bravo Farm Strawberry Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Italy,31.15,38,224,0.4,true,2.3,2,E,Aisle 2 · Shelf E
-102235,BRV-102235,Bravo Farm Suluguni Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Iran,60.64,208,236,0.7,true,1.2,2,A,Aisle 2 · Shelf A
-102833,BRV-102833,Bravo Farm Veal 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,66.75,227,196,0.3,true,2.2,2,A,Aisle 2 · Shelf A
-103258,BRV-103258,Bravo Farm Whole Milk Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,France,2.92,311,120,0.3,true,3.7,2,C,Aisle 2 · Shelf C
-103588,BRV-103588,Local Farm Basil 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,19.87,395,128,1.4,true,1.7,2,E,Aisle 2 · Shelf E
-102868,BRV-102868,Local Farm Broccoli 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Azerbaijan,21.85,143,704,0.6,true,0.8,2,E,Aisle 2 · Shelf E
-102324,BRV-102324,Local Farm Cherry 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Georgia,55.84,268,575,0.7,true,2.2,2,B,Aisle 2 · Shelf B
-102996,BRV-102996,Local Farm Chicken Breast Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Ukraine,62.23,160,626,0.8,true,1.7,2,C,Aisle 2 · Shelf C
-103782,BRV-103782,Local Farm Garlic Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,China,19.37,409,712,0.4,true,3.8,2,C,Aisle 2 · Shelf C
-102983,BRV-102983,Local Farm Grapes 500g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Azerbaijan,37.13,31,504,0.6,true,1.4,2,E,Aisle 2 · Shelf E
-102675,BRV-102675,Local Farm Ground Beef 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,29.76,56,556,0.8,true,3.6,2,A,Aisle 2 · Shelf A
-102288,BRV-102288,Local Farm Kiwi 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Brazil,62.96,301,656,1.2,true,3.9,2,E,Aisle 2 · Shelf E
-102810,BRV-102810,Local Farm Kiwi Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Azerbaijan,18.17,63,121,1.2,true,0.5,2,B,Aisle 2 · Shelf B
-103532,BRV-103532,Local Farm Lemon Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Germany,76.6,93,219,0.4,true,1.3,2,F,Aisle 2 · Shelf F
-102997,BRV-102997,Local Farm Lettuce 200g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Brazil,40.27,451,631,0.5,true,3.2,2,B,Aisle 2 · Shelf B
-103018,BRV-103018,Local Farm Lime 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Netherlands,2.36,370,190,1.1,true,1.9,2,A,Aisle 2 · Shelf A
-102511,BRV-102511,Local Farm Melon Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,India,23.62,46,625,0.9,true,3.6,2,B,Aisle 2 · Shelf B
-102639,BRV-102639,Local Farm Orange 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Russia,72.64,282,596,1.4,true,3.4,2,E,Aisle 2 · Shelf E
-102825,BRV-102825,Local Farm Parmesan 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Netherlands,60.46,64,157,1.6,true,1,2,B,Aisle 2 · Shelf B
-103143,BRV-103143,Local Farm Peach 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,47.52,276,123,1,true,2.4,2,D,Aisle 2 · Shelf D
-103408,BRV-103408,Local Farm Spinach 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,USA,17.05,186,381,0.6,true,1,2,F,Aisle 2 · Shelf F
-102987,BRV-102987,Local Farm Sturgeon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,USA,4.46,288,572,0.8,true,1.3,2,A,Aisle 2 · Shelf A
-103337,BRV-103337,Local Farm Trout 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Germany,12.33,47,460,1.2,true,2,2,C,Aisle 2 · Shelf C
-103111,BRV-103111,Milla Apple Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Turkey,9.6,27,506,0.3,true,3.3,2,C,Aisle 2 · Shelf C
-102418,BRV-102418,Milla Basil Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,India,77.82,191,461,1.1,true,3.4,2,F,Aisle 2 · Shelf F
-102122,BRV-102122,Milla Cherry 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,China,6.83,331,363,0.8,true,2.5,2,D,Aisle 2 · Shelf D
-103754,BRV-103754,Milla Cilantro Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Ukraine,32.44,39,305,1,true,2,2,D,Aisle 2 · Shelf D
-103546,BRV-103546,Milla Cucumber 750g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Brazil,70.25,205,678,1,true,2.4,2,E,Aisle 2 · Shelf E
-102870,BRV-102870,Milla Feta Cheese Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Russia,5.23,247,643,0.3,true,1.6,2,B,Aisle 2 · Shelf B
-103475,BRV-103475,Milla Free-Range Eggs Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Iran,3.78,50,533,1.5,true,2.7,2,B,Aisle 2 · Shelf B
-103837,BRV-103837,Milla Garlic Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,France,68.94,344,219,1.7,true,1.7,2,D,Aisle 2 · Shelf D
-103867,BRV-103867,Milla Ground Beef Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,China,35.89,346,524,0.6,true,3.9,2,A,Aisle 2 · Shelf A
-103364,BRV-103364,Milla Kiwi 2L,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Netherlands,13.16,449,160,1,true,3.6,2,C,Aisle 2 · Shelf C
-103537,BRV-103537,Milla Lamb 250ml,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,India,72.82,306,170,0.3,true,3.2,2,A,Aisle 2 · Shelf A
-103668,BRV-103668,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,China,16.41,48,241,1,true,2.7,2,F,Aisle 2 · Shelf F
-103075,BRV-103075,Milla Mozzarella Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,USA,46.02,229,233,1.7,true,1.3,2,F,Aisle 2 · Shelf F
-102666,BRV-102666,Milla Onion 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Spain,14.94,63,528,1.4,true,1.2,2,A,Aisle 2 · Shelf A
-102246,BRV-102246,Milla Onion Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Iran,32.89,108,198,0.7,true,1.4,2,E,Aisle 2 · Shelf E
-102631,BRV-102631,Milla Parsley 500g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,China,2.6,154,372,1,true,3.1,2,E,Aisle 2 · Shelf E
-102357,BRV-102357,Milla Pear 750g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,2.73,345,321,0.4,true,2,2,D,Aisle 2 · Shelf D
-103727,BRV-103727,Milla Pomegranate Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Spain,69.77,251,387,0.5,true,2.5,2,B,Aisle 2 · Shelf B
-102477,BRV-102477,Milla Sturgeon 200g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,USA,48.91,405,480,0.4,true,2.5,2,E,Aisle 2 · Shelf E
-102585,BRV-102585,Milla Veal 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Iran,58.99,376,414,0.3,true,3.4,2,E,Aisle 2 · Shelf E
-103635,BRV-103635,Milla Watermelon 5kg,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,30.34,51,675,0.5,true,2.9,2,D,Aisle 2 · Shelf D
-103181,BRV-103181,Milla Whole Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Ukraine,33.99,405,513,1.1,true,2.8,2,B,Aisle 2 · Shelf B
-103453,BRV-103453,Palsud Apple 750g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,33.73,343,493,0.9,true,3.3,2,B,Aisle 2 · Shelf B
-103551,BRV-103551,Palsud Beef Bulk,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Turkey,49.92,117,682,1.5,true,1.2,2,E,Aisle 2 · Shelf E
-102539,BRV-102539,Palsud Cabbage 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Italy,58.47,4,539,1,true,3.6,2,B,Aisle 2 · Shelf B
-102218,BRV-102218,Palsud Carrot 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Germany,76.76,466,123,1,true,3.3,2,B,Aisle 2 · Shelf B
-103938,BRV-103938,Palsud Feta Cheese Bulk,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Poland,7.68,258,681,0.8,true,1.1,2,F,Aisle 2 · Shelf F
-103434,BRV-103434,Palsud Free-Range Eggs Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,China,1.67,34,644,1.2,true,3.8,2,E,Aisle 2 · Shelf E
-103352,BRV-103352,Palsud Kiwi 1kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,4.25,193,231,0.5,true,2.5,2,F,Aisle 2 · Shelf F
-103792,BRV-103792,Palsud Mint 750g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,India,4.41,103,551,0.7,true,3.7,2,F,Aisle 2 · Shelf F
-102509,BRV-102509,Palsud Parsley 2L,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Azerbaijan,24.57,40,330,1.5,true,1.6,2,C,Aisle 2 · Shelf C
-103531,BRV-103531,Palsud Peach 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Iran,78.92,194,152,0.6,true,1.9,2,A,Aisle 2 · Shelf A
-103565,BRV-103565,Palsud Plum Single,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Azerbaijan,37.37,297,495,1.3,true,2.9,2,F,Aisle 2 · Shelf F
-102700,BRV-102700,Palsud Pomegranate 1kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Ukraine,34.06,173,601,1,true,3.4,2,F,Aisle 2 · Shelf F
-102102,BRV-102102,Palsud Salmon Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,India,29.02,260,637,0.4,true,1.7,2,D,Aisle 2 · Shelf D
-102472,BRV-102472,Palsud Skim Milk 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Russia,9.36,483,321,1.3,true,2.7,2,F,Aisle 2 · Shelf F
-102697,BRV-102697,Palsud Sturgeon Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Ukraine,30.82,298,528,1.4,true,4,2,E,Aisle 2 · Shelf E
-102573,BRV-102573,Palsud Suluguni 5kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Azerbaijan,14.88,220,377,0.5,true,1.1,2,D,Aisle 2 · Shelf D
-103116,BRV-103116,Palsud Veal Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Ukraine,7.56,214,301,1.5,true,2.3,2,D,Aisle 2 · Shelf D
-103250,BRV-103250,Palsud Watermelon 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Brazil,34.76,2,408,1.4,true,2.7,2,C,Aisle 2 · Shelf C
-102689,BRV-102689,Palsud Watermelon 500g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Germany,58.84,236,353,0.4,true,1.7,2,B,Aisle 2 · Shelf B
-102478,BRV-102478,Palsud Whole Milk 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,France,26.82,117,439,0.8,true,2.7,2,B,Aisle 2 · Shelf B
-102701,BRV-102701,Palsud Whole Milk 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Germany,11.11,78,500,1.7,true,2.3,2,C,Aisle 2 · Shelf C
-103720,BRV-103720,Pinar Apple 250g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,China,75.52,351,652,0.3,true,0.7,2,E,Aisle 2 · Shelf E
-103838,BRV-103838,Pinar Ayran Single,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Iran,7.6,81,476,1,true,0.8,2,E,Aisle 2 · Shelf E
-103967,BRV-103967,Pinar Beef 1L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Georgia,6.65,431,397,0.2,true,1.5,2,F,Aisle 2 · Shelf F
-102387,BRV-102387,Pinar Broccoli 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Poland,34.3,88,594,0.4,true,1,2,C,Aisle 2 · Shelf C
-102721,BRV-102721,Pinar Cherry 500g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Brazil,8.61,89,306,0.5,true,3.7,2,C,Aisle 2 · Shelf C
-102312,BRV-102312,Pinar Cherry Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Italy,73.16,175,668,0.3,true,3.9,2,E,Aisle 2 · Shelf E
-103227,BRV-103227,Pinar Chicken Wings 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Poland,11.25,147,366,0.4,true,2.6,2,A,Aisle 2 · Shelf A
-102233,BRV-102233,Pinar Chicken Wings 750g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,6.56,309,238,0.8,true,3,2,C,Aisle 2 · Shelf C
-102994,BRV-102994,Pinar Feta Cheese 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,0.98,403,564,1.6,true,1.7,2,E,Aisle 2 · Shelf E
-103818,BRV-103818,Pinar Free-Range Eggs 1L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Italy,73.94,358,350,0.5,true,1.5,2,A,Aisle 2 · Shelf A
-103311,BRV-103311,Pinar Grapes 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,France,46.85,408,176,0.2,true,3.9,2,A,Aisle 2 · Shelf A
-102217,BRV-102217,Pinar Lactose-Free Milk 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Turkey,15.33,403,156,1.5,true,2.7,2,E,Aisle 2 · Shelf E
-102803,BRV-102803,Pinar Lamb 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,46.96,156,253,1.6,true,3.6,2,F,Aisle 2 · Shelf F
-102379,BRV-102379,Pinar Lamb Single,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Netherlands,31.3,390,297,1,true,3.5,2,F,Aisle 2 · Shelf F
-102914,BRV-102914,Pinar Lime 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,33.32,15,708,1.2,true,2.2,2,C,Aisle 2 · Shelf C
-103822,BRV-103822,Pinar Mozzarella 250g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Netherlands,62.4,223,433,1.6,true,2.6,2,B,Aisle 2 · Shelf B
-102026,BRV-102026,Pinar Onion 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Brazil,41.16,197,238,1.5,true,2,2,E,Aisle 2 · Shelf E
-102172,BRV-102172,Pinar Orange 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Brazil,60.83,272,336,0.2,true,2.4,2,A,Aisle 2 · Shelf A
-103742,BRV-103742,Pinar Pear 2kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,India,60.12,403,572,1,true,3.9,2,C,Aisle 2 · Shelf C
-102804,BRV-102804,Pinar Pear 500g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,USA,9.69,257,162,1.3,true,3.4,2,E,Aisle 2 · Shelf E
-103404,BRV-103404,Pinar Plum 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Brazil,59.3,457,441,1.1,true,2.6,2,D,Aisle 2 · Shelf D
-102614,BRV-102614,Pinar Potato 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Azerbaijan,46.03,473,587,1.4,true,3.3,2,D,Aisle 2 · Shelf D
-102794,BRV-102794,Pinar Quail Eggs Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,China,69.84,70,418,0.7,true,3.5,2,E,Aisle 2 · Shelf E
-102912,BRV-102912,Pinar Strawberry 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Spain,40.35,388,294,1,true,2.5,2,A,Aisle 2 · Shelf A
-102835,BRV-102835,Pinar Strawberry Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Azerbaijan,60.49,237,502,0.4,true,3.4,2,E,Aisle 2 · Shelf E
-102550,BRV-102550,Pinar Sturgeon 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,France,53.48,424,248,0.8,true,3.9,2,C,Aisle 2 · Shelf C
-103645,BRV-103645,Pinar Tomato Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Brazil,11.77,202,702,0.7,true,2.8,2,C,Aisle 2 · Shelf C
-103882,BRV-103882,Pinar Trout 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Poland,74,56,519,0.8,true,3.4,2,F,Aisle 2 · Shelf F
-102097,BRV-102097,Pinar Trout Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Russia,3.71,457,542,1.7,true,3.6,2,A,Aisle 2 · Shelf A
-103348,BRV-103348,Pinar Turkey 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Spain,73.28,70,286,0.3,true,3.1,2,C,Aisle 2 · Shelf C
-102603,BRV-102603,Pinar Turkey 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Iran,8.56,263,143,0.3,true,3.5,2,F,Aisle 2 · Shelf F
-102134,BRV-102134,Pinar Turkey Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Azerbaijan,77.58,441,494,1.7,true,2,2,A,Aisle 2 · Shelf A
-103694,BRV-103694,President Apple Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,China,28.41,457,580,1.7,true,1.6,2,C,Aisle 2 · Shelf C
-102395,BRV-102395,President Basil Pack of 12,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Poland,16.36,205,435,0.4,true,0.9,2,F,Aisle 2 · Shelf F
-103603,BRV-103603,President Bell Pepper 1L,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Russia,21.13,387,120,0.8,true,0.6,2,E,Aisle 2 · Shelf E
-102998,BRV-102998,President Bell Pepper 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,China,68.12,300,504,0.5,true,3.2,2,E,Aisle 2 · Shelf E
-103881,BRV-103881,President Broccoli 250ml,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,USA,73.22,358,572,1.3,true,0.9,2,E,Aisle 2 · Shelf E
-102533,BRV-102533,President Broccoli Pack of 24,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,France,27.32,470,485,1.2,true,0.5,2,F,Aisle 2 · Shelf F
-103708,BRV-103708,President Cheddar 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Poland,20.3,287,694,1.3,true,3.6,2,E,Aisle 2 · Shelf E
-102548,BRV-102548,President Cheddar Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Spain,3.04,144,683,0.5,true,1.2,2,F,Aisle 2 · Shelf F
-103741,BRV-103741,President Chicken Wings 500ml,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,France,75.31,429,471,1,true,4,2,F,Aisle 2 · Shelf F
-103079,BRV-103079,President Dill 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Russia,31.57,142,509,1.2,true,1.6,2,D,Aisle 2 · Shelf D
-103846,BRV-103846,President Garlic Bulk,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Ukraine,52.07,362,663,0.8,true,1.4,2,D,Aisle 2 · Shelf D
-103350,BRV-103350,President Grapes 1L,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Iran,2.02,440,529,0.6,true,1.6,2,B,Aisle 2 · Shelf B
-103921,BRV-103921,President Greek Yogurt 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Brazil,4.59,304,307,0.5,true,2.3,2,D,Aisle 2 · Shelf D
-102723,BRV-102723,President Greek Yogurt 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,9.48,90,604,0.5,true,0.7,2,E,Aisle 2 · Shelf E
-102021,BRV-102021,President Kiwi Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Turkey,60.31,21,561,1.2,true,3.4,2,D,Aisle 2 · Shelf D
-102223,BRV-102223,President Lemon Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,70.74,62,417,0.3,true,2.8,2,F,Aisle 2 · Shelf F
-102222,BRV-102222,President Orange 200g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Poland,19.49,469,444,1.7,true,0.5,2,C,Aisle 2 · Shelf C
-103425,BRV-103425,President Pineapple 250g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Spain,69.79,64,306,1.1,true,1.8,2,A,Aisle 2 · Shelf A
-102793,BRV-102793,President Plum 200g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,USA,11.77,398,333,0.8,true,3.7,2,B,Aisle 2 · Shelf B
-102598,BRV-102598,President Pomegranate Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Poland,62.41,401,420,1.7,true,2.8,2,E,Aisle 2 · Shelf E
-103329,BRV-103329,President Spinach 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,USA,65.18,56,501,1.1,true,2.3,2,D,Aisle 2 · Shelf D
-102481,BRV-102481,President Tomato Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Turkey,66.16,107,663,0.7,true,3.5,2,D,Aisle 2 · Shelf D
-102724,BRV-102724,President Trout Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,USA,68.07,98,363,1.3,true,1.6,2,B,Aisle 2 · Shelf B
-103377,BRV-103377,President Turkey 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Italy,31.39,359,664,0.7,true,3.4,2,A,Aisle 2 · Shelf A
-103851,BRV-103851,President Turkey Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,India,68.78,392,143,0.3,true,3.7,2,B,Aisle 2 · Shelf B
-103277,BRV-103277,President Veal Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Azerbaijan,74.72,475,581,1,true,3.3,2,F,Aisle 2 · Shelf F
-102787,BRV-102787,President Zucchini 500g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Ukraine,61.5,98,230,1.1,true,2.7,2,E,Aisle 2 · Shelf E
-103622,BRV-103622,Sehiyye Banana 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Georgia,75.92,479,331,1,true,2,2,D,Aisle 2 · Shelf D
-102397,BRV-102397,Sehiyye Broccoli Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Ukraine,39.95,104,253,1.7,true,2.7,2,B,Aisle 2 · Shelf B
-103618,BRV-103618,Sehiyye Broccoli Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Italy,48.71,32,304,0.2,true,1.7,2,A,Aisle 2 · Shelf A
-103197,BRV-103197,Sehiyye Cabbage 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,47.97,351,312,1.3,true,3.3,2,E,Aisle 2 · Shelf E
-102656,BRV-102656,Sehiyye Carrot 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Azerbaijan,45.78,343,441,1.6,true,0.9,2,B,Aisle 2 · Shelf B
-102507,BRV-102507,Sehiyye Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Netherlands,36.56,39,360,0.3,true,3.5,2,C,Aisle 2 · Shelf C
-102128,BRV-102128,Sehiyye Cherry 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Ukraine,58.16,466,661,1.1,true,3.8,2,D,Aisle 2 · Shelf D
-103722,BRV-103722,Sehiyye Chicken Wings Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,1.98,499,650,1,true,1.9,2,A,Aisle 2 · Shelf A
-103987,BRV-103987,Sehiyye Chicken Wings Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Brazil,63.11,408,251,0.7,true,2.2,2,D,Aisle 2 · Shelf D
-102843,BRV-102843,Sehiyye Cilantro Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,France,17.11,123,145,1.6,true,1.3,2,D,Aisle 2 · Shelf D
-102012,BRV-102012,Sehiyye Dill Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,France,72.58,448,159,0.7,true,2.6,2,F,Aisle 2 · Shelf F
-103030,BRV-103030,Sehiyye Lactose-Free Milk 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Iran,76.13,60,284,0.3,true,2.2,2,A,Aisle 2 · Shelf A
-102320,BRV-102320,Sehiyye Lime 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Russia,26.36,232,227,1.4,true,3.6,2,D,Aisle 2 · Shelf D
-103249,BRV-103249,Sehiyye Mint 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Spain,60.25,183,174,1.1,true,1,2,E,Aisle 2 · Shelf E
-103752,BRV-103752,Sehiyye Parmesan 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Russia,48.2,391,307,1.4,true,2,2,B,Aisle 2 · Shelf B
-102448,BRV-102448,Sehiyye Pineapple 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Netherlands,9.51,242,406,0.9,true,0.7,2,C,Aisle 2 · Shelf C
-103137,BRV-103137,Sehiyye Quail Eggs 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,10.15,130,286,0.7,true,1.2,2,E,Aisle 2 · Shelf E
-103049,BRV-103049,Sehiyye Shrimp Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Iran,32.66,88,648,0.6,true,3.2,2,C,Aisle 2 · Shelf C
-103331,BRV-103331,Sehiyye Skim Milk Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Spain,28.8,388,526,0.4,true,3.1,2,C,Aisle 2 · Shelf C
-102499,BRV-102499,Sehiyye Skim Milk Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Russia,26.85,462,232,1.6,true,0.7,2,C,Aisle 2 · Shelf C
-103949,BRV-103949,Sehiyye Special Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Georgia,73.3,295,717,1.4,true,2.2,2,D,Aisle 2 · Shelf D
-103766,BRV-103766,Sehiyye Strawberry Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Poland,74.09,442,378,1.2,true,3.7,2,E,Aisle 2 · Shelf E
-102596,BRV-102596,Sehiyye Suluguni 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,India,76.35,449,430,1.1,true,3.7,2,A,Aisle 2 · Shelf A
-103144,BRV-103144,Sehiyye Suluguni 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Italy,59.51,341,196,0.3,true,1,2,C,Aisle 2 · Shelf C
-102715,BRV-102715,Sehiyye Zucchini Single,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Poland,57.15,468,255,1.6,true,2.2,2,F,Aisle 2 · Shelf F
-102790,BRV-102790,Atena Banana 2kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,30.1,352,542,1.1,true,0.7,2,A,Aisle 2 · Shelf A
-102622,BRV-102622,Atena Banana Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Netherlands,73.62,72,376,0.8,true,1.7,2,C,Aisle 2 · Shelf C
-102492,BRV-102492,Atena Banana Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,USA,37.17,194,243,1.3,true,1,2,D,Aisle 2 · Shelf D
-103252,BRV-103252,Atena Bell Pepper Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,USA,28.56,166,582,1.4,true,1.9,2,E,Aisle 2 · Shelf E
-103604,BRV-103604,Atena Cheddar Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,France,26.27,40,327,0.7,true,1,2,B,Aisle 2 · Shelf B
-102078,BRV-102078,Atena Cheddar Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,34.96,263,467,1.5,true,0.7,2,D,Aisle 2 · Shelf D
-102948,BRV-102948,Atena Cherry 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Netherlands,25.22,336,471,0.8,true,1.4,2,D,Aisle 2 · Shelf D
-103161,BRV-103161,Atena Chicken Breast Single,Atena,"Fresh Produce, Meat & Dairy",Fruits,Single,Netherlands,40.96,176,151,0.5,true,1.4,2,F,Aisle 2 · Shelf F
-102646,BRV-102646,Atena Chicken Thighs Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Poland,20.67,78,138,1.4,true,4,2,C,Aisle 2 · Shelf C
-103956,BRV-103956,Atena Feta Cheese 1.5L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,32.76,348,577,1.3,true,3.5,2,F,Aisle 2 · Shelf F
-102378,BRV-102378,Atena Feta Cheese 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,9.93,141,132,1,true,2.2,2,C,Aisle 2 · Shelf C
-103731,BRV-103731,Atena Feta Cheese 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,India,44.17,193,570,0.7,true,1.1,2,E,Aisle 2 · Shelf E
-102545,BRV-102545,Atena Free-Range Eggs 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,Italy,35.3,160,554,0.9,true,1.8,2,E,Aisle 2 · Shelf E
-103040,BRV-103040,Atena Garlic 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,Germany,57.72,71,589,1.2,true,3.9,2,F,Aisle 2 · Shelf F
-102230,BRV-102230,Atena Ground Beef 1L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1L,China,9.41,65,397,0.3,true,1.9,2,D,Aisle 2 · Shelf D
-102341,BRV-102341,Atena Kefir Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,France,33.52,250,140,1.5,true,3,2,C,Aisle 2 · Shelf C
-103268,BRV-103268,Atena Kiwi Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,India,53.37,241,461,0.2,true,2.8,2,B,Aisle 2 · Shelf B
-102960,BRV-102960,Atena Lamb Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Brazil,78.09,79,657,0.2,true,0.7,2,D,Aisle 2 · Shelf D
-103775,BRV-103775,Atena Lemon 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,15.53,65,202,0.9,true,2.7,2,E,Aisle 2 · Shelf E
-103452,BRV-103452,Atena Lime 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,Italy,40.26,154,360,0.4,true,2.8,2,A,Aisle 2 · Shelf A
-102067,BRV-102067,Atena Lime Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Netherlands,67.43,59,375,1.7,true,2.4,2,D,Aisle 2 · Shelf D
-102479,BRV-102479,Atena Orange Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Russia,57.35,202,434,1.7,true,0.9,2,A,Aisle 2 · Shelf A
-102977,BRV-102977,Atena Parmesan 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,Brazil,33.94,393,145,0.3,true,2.2,2,F,Aisle 2 · Shelf F
-102393,BRV-102393,Atena Parsley 2kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,2kg,Turkey,32.98,52,177,0.7,true,1.3,2,D,Aisle 2 · Shelf D
-103642,BRV-103642,Atena Parsley Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,France,21.89,186,313,1,true,1.4,2,F,Aisle 2 · Shelf F
-102145,BRV-102145,Atena Pear 500g,Atena,"Fresh Produce, Meat & Dairy",Fruits,500g,Azerbaijan,8.99,244,438,0.9,true,2.1,2,A,Aisle 2 · Shelf A
-103187,BRV-103187,Atena Pear Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Ukraine,67.07,319,347,1,true,0.5,2,F,Aisle 2 · Shelf F
-102902,BRV-102902,Atena Plum 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Germany,59.61,251,509,0.7,true,1.2,2,D,Aisle 2 · Shelf D
-103397,BRV-103397,Atena Plum 500ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,500ml,Russia,9.98,430,426,1.5,true,1.2,2,E,Aisle 2 · Shelf E
-102013,BRV-102013,Atena Plum Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Italy,53.34,228,186,1.5,true,3.3,2,C,Aisle 2 · Shelf C
-102268,BRV-102268,Atena Pomegranate 2L,Atena,"Fresh Produce, Meat & Dairy",Fruits,2L,Turkey,49.16,142,670,1.5,true,3.9,2,A,Aisle 2 · Shelf A
-103982,BRV-103982,Atena Quail Eggs 1L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1L,Iran,37.61,55,290,0.5,true,3,2,E,Aisle 2 · Shelf E
-103908,BRV-103908,Atena Quail Eggs 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,France,15.56,292,612,0.6,true,0.6,2,A,Aisle 2 · Shelf A
-102541,BRV-102541,Atena Salmon 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,Georgia,76.11,51,302,0.8,true,0.9,2,C,Aisle 2 · Shelf C
-102581,BRV-102581,Atena Salmon Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Iran,13.87,386,386,0.9,true,3.5,2,E,Aisle 2 · Shelf E
-103777,BRV-103777,Atena Suluguni 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Russia,41.44,79,452,0.4,true,2.9,2,A,Aisle 2 · Shelf A
-102867,BRV-102867,Atena Tomato 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,France,71.61,312,559,1.4,true,2.3,2,D,Aisle 2 · Shelf D
-103300,BRV-103300,Atena Turkey 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,France,78.23,406,602,0.8,true,1.8,2,C,Aisle 2 · Shelf C
-102789,BRV-102789,Atena Turkey Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Brazil,13.38,449,492,0.4,true,2.5,2,E,Aisle 2 · Shelf E
-102155,BRV-102155,Atena Whole Milk 2L,Atena,"Fresh Produce, Meat & Dairy",Fruits,2L,Iran,77.23,141,197,1.5,true,2.7,2,D,Aisle 2 · Shelf D
-103089,BRV-103089,Bravo Farm Carrot 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,France,35.81,468,292,0.9,true,3.2,2,C,Aisle 2 · Shelf C
-102361,BRV-102361,Bravo Farm Cheddar 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,Azerbaijan,22.61,154,162,1.6,true,1,2,E,Aisle 2 · Shelf E
-102248,BRV-102248,Bravo Farm Chicken Breast Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Netherlands,79.46,297,676,0.8,true,1.1,2,C,Aisle 2 · Shelf C
-103411,BRV-103411,Bravo Farm Dill 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,200g,Russia,23.88,334,687,0.9,true,2.1,2,F,Aisle 2 · Shelf F
-102198,BRV-102198,Bravo Farm Lactose-Free Milk 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,100g,Azerbaijan,69.1,370,664,1.4,true,1.5,2,A,Aisle 2 · Shelf A
-102208,BRV-102208,Bravo Farm Lamb Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Turkey,32.84,123,472,1.3,true,1,2,C,Aisle 2 · Shelf C
-102853,BRV-102853,Bravo Farm Lemon 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Brazil,78.42,4,318,1,true,3.6,2,E,Aisle 2 · Shelf E
-102993,BRV-102993,Bravo Farm Lettuce 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,47.51,119,491,1.4,true,2.2,2,D,Aisle 2 · Shelf D
-103675,BRV-103675,Bravo Farm Onion 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,Brazil,53.97,307,559,0.8,true,2.1,2,F,Aisle 2 · Shelf F
-103595,BRV-103595,Bravo Farm Pineapple 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,China,11.45,286,298,1.6,true,1.7,2,E,Aisle 2 · Shelf E
-103020,BRV-103020,Bravo Farm Plum Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Single,Azerbaijan,53.38,472,607,0.9,true,2.8,2,F,Aisle 2 · Shelf F
-102904,BRV-102904,Bravo Farm Pomegranate 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,100g,USA,20.27,149,295,1.4,true,2.1,2,B,Aisle 2 · Shelf B
-102910,BRV-102910,Bravo Farm Pomegranate Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Ukraine,54.9,127,120,1,true,2.8,2,E,Aisle 2 · Shelf E
-103339,BRV-103339,Bravo Farm Potato Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Spain,23.19,225,662,1.7,true,1.3,2,E,Aisle 2 · Shelf E
-103115,BRV-103115,Bravo Farm Salmon Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Iran,41.55,337,510,1.6,true,2.7,2,A,Aisle 2 · Shelf A
-103061,BRV-103061,Bravo Farm Shrimp Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Azerbaijan,74.58,73,366,0.9,true,2.6,2,A,Aisle 2 · Shelf A
-102565,BRV-102565,Bravo Farm Skim Milk Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,51.63,456,196,0.8,true,3,2,E,Aisle 2 · Shelf E
-102844,BRV-102844,Bravo Farm Sturgeon 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,Spain,78.05,500,454,1.2,true,3.4,2,E,Aisle 2 · Shelf E
-103353,BRV-103353,Bravo Farm Watermelon 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,Georgia,60.77,131,578,1.6,true,1,2,A,Aisle 2 · Shelf A
-102916,BRV-102916,Bravo Farm Watermelon Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Single,Iran,21.73,329,442,1.1,true,3.4,2,E,Aisle 2 · Shelf E
-102881,BRV-102881,Local Farm Banana 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,India,7.61,385,171,1.2,true,2.9,2,B,Aisle 2 · Shelf B
-102604,BRV-102604,Local Farm Beef Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Georgia,59.32,476,464,1,true,0.9,2,E,Aisle 2 · Shelf E
-103203,BRV-103203,Local Farm Bell Pepper Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,30.19,91,244,0.3,true,2.1,2,C,Aisle 2 · Shelf C
-103228,BRV-103228,Local Farm Chicken Thighs 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,500ml,Turkey,11.02,253,313,1.6,true,1.7,2,B,Aisle 2 · Shelf B
-102493,BRV-102493,Local Farm Cilantro 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,Georgia,1.39,42,310,0.2,true,3.7,2,A,Aisle 2 · Shelf A
-102684,BRV-102684,Local Farm Free-Range Eggs 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Turkey,55.46,58,520,0.8,true,0.7,2,E,Aisle 2 · Shelf E
-103246,BRV-103246,Local Farm Greek Yogurt 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Germany,31.9,61,657,1.1,true,2.2,2,F,Aisle 2 · Shelf F
-102119,BRV-102119,Local Farm Kiwi 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,USA,0.68,24,405,0.3,true,4,2,D,Aisle 2 · Shelf D
-102981,BRV-102981,Local Farm Lactose-Free Milk 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1kg,France,58.88,9,574,0.9,true,3.2,2,C,Aisle 2 · Shelf C
-103903,BRV-103903,Local Farm Lamb 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Ukraine,41.39,72,159,0.9,true,1,2,D,Aisle 2 · Shelf D
-102262,BRV-102262,Local Farm Lamb Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Georgia,53.92,351,664,1.2,true,2.2,2,C,Aisle 2 · Shelf C
-103171,BRV-103171,Local Farm Lemon 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,500ml,Ukraine,68.08,257,144,0.8,true,2.4,2,A,Aisle 2 · Shelf A
-103294,BRV-103294,Local Farm Lettuce 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,India,41.13,211,192,0.3,true,1.8,2,A,Aisle 2 · Shelf A
-102412,BRV-102412,Local Farm Lime 200g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,200g,India,65.68,276,619,1,true,2.5,2,D,Aisle 2 · Shelf D
-102174,BRV-102174,Local Farm Lime Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Russia,8.66,499,202,0.3,true,2,2,A,Aisle 2 · Shelf A
-102726,BRV-102726,Local Farm Onion Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Spain,1.43,237,221,1.4,true,0.9,2,F,Aisle 2 · Shelf F
-102526,BRV-102526,Local Farm Orange 250g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,China,47.7,348,435,1,true,3.3,2,D,Aisle 2 · Shelf D
-103793,BRV-103793,Local Farm Orange 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250ml,Spain,49.45,376,538,1.2,true,1.3,2,C,Aisle 2 · Shelf C
-102756,BRV-102756,Local Farm Pomegranate 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,China,13.54,234,464,0.5,true,1,2,E,Aisle 2 · Shelf E
-103221,BRV-103221,Local Farm Quail Eggs 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,China,45.69,311,284,0.6,true,2.3,2,C,Aisle 2 · Shelf C
-103158,BRV-103158,Local Farm Shrimp Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Spain,6.56,387,259,1.7,true,3.5,2,B,Aisle 2 · Shelf B
-102883,BRV-102883,Local Farm Skim Milk 250g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,39.9,95,477,0.5,true,0.6,2,D,Aisle 2 · Shelf D
-102272,BRV-102272,Local Farm Sturgeon 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,USA,61.16,210,319,0.7,true,1.8,2,D,Aisle 2 · Shelf D
-102869,BRV-102869,Local Farm Sturgeon Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Ukraine,8.43,110,365,0.5,true,2.3,2,B,Aisle 2 · Shelf B
-102359,BRV-102359,Local Farm Tomato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,India,41.73,259,483,0.7,true,0.8,2,F,Aisle 2 · Shelf F
-103287,BRV-103287,Local Farm Trout 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,Russia,12.5,303,200,1.7,true,2.3,2,A,Aisle 2 · Shelf A
-102880,BRV-102880,Local Farm Watermelon 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,Iran,27.02,408,614,0.6,true,3.2,2,C,Aisle 2 · Shelf C
-103094,BRV-103094,Local Farm Zucchini 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,16.75,348,658,0.9,true,1.6,2,E,Aisle 2 · Shelf E
-103862,BRV-103862,Milla Basil Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Poland,30.14,392,597,0.9,true,2.6,2,B,Aisle 2 · Shelf B
-102566,BRV-102566,Milla Bell Pepper 100g,Milla,"Fresh Produce, Meat & Dairy",Fruits,100g,China,41.08,124,551,0.7,true,0.9,2,F,Aisle 2 · Shelf F
-102590,BRV-102590,Milla Bell Pepper Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,India,37.04,203,124,1,true,2,2,C,Aisle 2 · Shelf C
-103738,BRV-103738,Milla Broccoli 500g,Milla,"Fresh Produce, Meat & Dairy",Fruits,500g,India,24.47,443,127,0.4,true,2.1,2,F,Aisle 2 · Shelf F
-102398,BRV-102398,Milla Carrot 2kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,2kg,USA,12.95,414,290,1.1,true,3,2,E,Aisle 2 · Shelf E
-102608,BRV-102608,Milla Cheddar 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,Russia,56.66,187,524,0.7,true,2.9,2,E,Aisle 2 · Shelf E
-102377,BRV-102377,Milla Cheddar Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Netherlands,10.69,355,699,0.5,true,2.8,2,D,Aisle 2 · Shelf D
-102297,BRV-102297,Milla Chicken Breast Single,Milla,"Fresh Produce, Meat & Dairy",Fruits,Single,China,78.01,306,612,1.2,true,2.2,2,C,Aisle 2 · Shelf C
-102586,BRV-102586,Milla Chicken Thighs 200g,Milla,"Fresh Produce, Meat & Dairy",Fruits,200g,Ukraine,75,356,269,0.2,true,1.2,2,D,Aisle 2 · Shelf D
-103099,BRV-103099,Milla Dill Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Italy,61.46,260,291,0.4,true,1,2,D,Aisle 2 · Shelf D
-103808,BRV-103808,Milla Eggplant 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,India,10.69,122,673,0.5,true,3.7,2,B,Aisle 2 · Shelf B
-102607,BRV-102607,Milla Eggplant 5kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,5kg,France,21.23,103,299,1.5,true,2.8,2,F,Aisle 2 · Shelf F
-103896,BRV-103896,Milla Garlic Bulk,Milla,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Azerbaijan,31.26,466,316,1,true,1.5,2,C,Aisle 2 · Shelf C
-103402,BRV-103402,Milla Grapes 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,Spain,17.81,26,275,0.2,true,3.8,2,B,Aisle 2 · Shelf B
-103023,BRV-103023,Milla Ground Beef 1kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,1kg,Italy,28.21,98,212,1.5,true,1.1,2,A,Aisle 2 · Shelf A
-103917,BRV-103917,Milla Kiwi 1kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,1kg,Ukraine,46.62,215,144,1.2,true,1.9,2,E,Aisle 2 · Shelf E
-103926,BRV-103926,Milla Lactose-Free Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Azerbaijan,48.9,132,548,0.6,true,1.4,2,C,Aisle 2 · Shelf C
-103743,BRV-103743,Milla Lactose-Free Milk Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,USA,37.53,285,297,1,true,3.4,2,D,Aisle 2 · Shelf D
-103103,BRV-103103,Milla Lime 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,France,76.63,154,143,0.8,true,3.7,2,F,Aisle 2 · Shelf F
-103672,BRV-103672,Milla Melon 100g,Milla,"Fresh Produce, Meat & Dairy",Fruits,100g,Brazil,6.61,252,496,0.7,true,3.1,2,E,Aisle 2 · Shelf E
-102245,BRV-102245,Milla Melon 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,Azerbaijan,63.61,229,237,1.4,true,2.4,2,F,Aisle 2 · Shelf F
-103499,BRV-103499,Milla Melon 750g,Milla,"Fresh Produce, Meat & Dairy",Fruits,750g,Ukraine,49.92,390,591,1.5,true,2.1,2,B,Aisle 2 · Shelf B
-103373,BRV-103373,Milla Mint Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Iran,30.67,241,684,1.1,true,1.5,2,E,Aisle 2 · Shelf E
-102240,BRV-102240,Milla Orange 200g,Milla,"Fresh Produce, Meat & Dairy",Fruits,200g,Germany,29.23,203,420,1.4,true,2.4,2,A,Aisle 2 · Shelf A
-102118,BRV-102118,Milla Parmesan Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Ukraine,31.89,2,144,0.4,true,2.4,2,A,Aisle 2 · Shelf A
-103263,BRV-103263,Milla Parsley 1.5L,Milla,"Fresh Produce, Meat & Dairy",Fruits,1.5L,USA,60.27,251,438,1.4,true,0.8,2,E,Aisle 2 · Shelf E
-102886,BRV-102886,Milla Peach 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,Poland,68.62,476,412,0.5,true,1.5,2,E,Aisle 2 · Shelf E
-102372,BRV-102372,Milla Potato Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,USA,27.32,274,522,0.7,true,2.6,2,E,Aisle 2 · Shelf E
-103008,BRV-103008,Milla Quail Eggs 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,73.95,228,313,1.5,true,0.5,2,F,Aisle 2 · Shelf F
-103305,BRV-103305,Milla Quail Eggs Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,China,76.33,416,435,1.5,true,3.3,2,F,Aisle 2 · Shelf F
-102725,BRV-102725,Milla Shrimp 2kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,2kg,Poland,23.91,226,326,1.6,true,1.3,2,C,Aisle 2 · Shelf C
-103070,BRV-103070,Milla Spinach 250ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,250ml,Poland,14.81,499,232,0.6,true,2.4,2,A,Aisle 2 · Shelf A
-103824,BRV-103824,Milla Veal 1.5L,Milla,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,5.35,56,371,1.6,true,3.8,2,F,Aisle 2 · Shelf F
-103564,BRV-103564,Milla Veal Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,USA,7.31,202,594,1.4,true,1.6,2,E,Aisle 2 · Shelf E
-102630,BRV-102630,Palsud Banana Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Italy,58.49,33,505,0.6,true,0.7,2,D,Aisle 2 · Shelf D
-102419,BRV-102419,Palsud Beef 200g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,200g,Azerbaijan,21.13,23,152,0.5,true,0.9,2,A,Aisle 2 · Shelf A
-102755,BRV-102755,Palsud Bell Pepper Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Italy,52.97,289,531,1,true,3.5,2,D,Aisle 2 · Shelf D
-103176,BRV-103176,Palsud Carrot 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,France,15.32,61,319,1.6,true,1.5,2,B,Aisle 2 · Shelf B
-102866,BRV-102866,Palsud Cherry 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Iran,28.22,403,194,1.2,true,2.3,2,E,Aisle 2 · Shelf E
-102325,BRV-102325,Palsud Chicken Breast Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Azerbaijan,22.1,66,394,0.6,true,2.2,2,E,Aisle 2 · Shelf E
-103876,BRV-103876,Palsud Cilantro 1L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,1L,Italy,75.91,342,154,1.3,true,2.2,2,A,Aisle 2 · Shelf A
-102640,BRV-102640,Palsud Cilantro 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Brazil,63.14,61,312,1,true,2.8,2,C,Aisle 2 · Shelf C
-103600,BRV-103600,Palsud Cucumber 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Netherlands,15.18,235,187,0.9,true,3.5,2,B,Aisle 2 · Shelf B
-102754,BRV-102754,Palsud Garlic 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fruits,250ml,France,70.96,460,190,1.1,true,1.6,2,E,Aisle 2 · Shelf E
-103375,BRV-103375,Palsud Lamb 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Ukraine,46.12,60,206,0.7,true,1.4,2,C,Aisle 2 · Shelf C
-103935,BRV-103935,Palsud Mozzarella 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2kg,France,20.55,194,336,0.8,true,3.2,2,C,Aisle 2 · Shelf C
-102332,BRV-102332,Palsud Orange 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,51.31,300,318,0.3,true,3.4,2,A,Aisle 2 · Shelf A
-103324,BRV-103324,Palsud Pear 750g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,750g,France,21.86,301,340,0.6,true,1.1,2,A,Aisle 2 · Shelf A
-103086,BRV-103086,Palsud Pomegranate Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,74,85,667,1.7,true,3.1,2,D,Aisle 2 · Shelf D
-102582,BRV-102582,Palsud Pomegranate Single,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Single,Germany,49.4,274,625,1.4,true,1.5,2,B,Aisle 2 · Shelf B
-102768,BRV-102768,Palsud Sturgeon 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,USA,29.81,488,179,1.1,true,2.1,2,D,Aisle 2 · Shelf D
-103744,BRV-103744,Palsud Tomato 100g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,100g,Brazil,33.99,181,534,0.3,true,1.4,2,C,Aisle 2 · Shelf C
-102291,BRV-102291,Palsud Zucchini 250g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,250g,Italy,14.85,322,422,1.7,true,1.8,2,A,Aisle 2 · Shelf A
-103661,BRV-103661,Palsud Zucchini Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Georgia,7.02,231,524,0.9,true,1,2,A,Aisle 2 · Shelf A
-103444,BRV-103444,Palsud Zucchini Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,USA,1.69,142,597,1,true,3,2,F,Aisle 2 · Shelf F
-103791,BRV-103791,Pinar Apple Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,France,11.56,409,364,1.3,true,1.6,2,A,Aisle 2 · Shelf A
-103602,BRV-103602,Pinar Basil Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,42.52,283,517,0.3,true,3.6,2,F,Aisle 2 · Shelf F
-102685,BRV-102685,Pinar Dill 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,15.82,322,437,1.2,true,2.3,2,D,Aisle 2 · Shelf D
-102834,BRV-102834,Pinar Eggplant 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,China,74.01,299,555,0.2,true,3.1,2,D,Aisle 2 · Shelf D
-102836,BRV-102836,Pinar Feta Cheese 2kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,2kg,Iran,54.03,10,261,0.3,true,0.8,2,F,Aisle 2 · Shelf F
-103009,BRV-103009,Pinar Kefir 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Turkey,23.65,101,396,0.9,true,1,2,A,Aisle 2 · Shelf A
-102510,BRV-102510,Pinar Lactose-Free Milk 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Russia,62.83,184,380,1.6,true,0.7,2,A,Aisle 2 · Shelf A
-103333,BRV-103333,Pinar Lime 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Italy,59.56,171,608,0.9,true,0.8,2,E,Aisle 2 · Shelf E
-102040,BRV-102040,Pinar Melon Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Ukraine,23.09,123,458,0.4,true,3.7,2,E,Aisle 2 · Shelf E
-103643,BRV-103643,Pinar Mozzarella 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,Italy,17.73,3,716,0.3,true,3.1,2,C,Aisle 2 · Shelf C
-102305,BRV-102305,Pinar Mozzarella Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Azerbaijan,32.19,95,692,1,true,1.3,2,E,Aisle 2 · Shelf E
-103612,BRV-103612,Pinar Onion 200g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,200g,Spain,57.83,420,158,0.7,true,0.8,2,C,Aisle 2 · Shelf C
-103714,BRV-103714,Pinar Orange 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,250ml,Iran,44.26,486,501,1.1,true,2.8,2,B,Aisle 2 · Shelf B
-102430,BRV-102430,Pinar Peach 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,USA,11.82,477,523,1,true,3,2,B,Aisle 2 · Shelf B
-102718,BRV-102718,Pinar Pineapple Single,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Single,China,64.68,380,718,1.6,true,3.4,2,A,Aisle 2 · Shelf A
-103076,BRV-103076,Pinar Plum 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,59.76,193,402,0.7,true,1.2,2,C,Aisle 2 · Shelf C
-103519,BRV-103519,Pinar Plum 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Netherlands,75.5,218,214,0.9,true,2.7,2,A,Aisle 2 · Shelf A
-103047,BRV-103047,Pinar Plum Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Poland,76.82,140,706,1,true,3.2,2,A,Aisle 2 · Shelf A
-103572,BRV-103572,Pinar Pomegranate 200g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,200g,Azerbaijan,57.61,94,615,0.5,true,2.6,2,D,Aisle 2 · Shelf D
-102140,BRV-102140,Pinar Potato 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,1kg,Russia,69.63,476,343,0.9,true,3.8,2,D,Aisle 2 · Shelf D
-102568,BRV-102568,Pinar Potato Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Spain,60.46,288,301,1.2,true,1.7,2,D,Aisle 2 · Shelf D
-102525,BRV-102525,Pinar Skim Milk 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,4.73,291,632,0.6,true,0.6,2,A,Aisle 2 · Shelf A
-102547,BRV-102547,Pinar Strawberry 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,Spain,17.56,368,220,1,true,0.6,2,E,Aisle 2 · Shelf E
-102238,BRV-102238,Pinar Suluguni 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Spain,19.39,479,341,0.2,true,3.9,2,F,Aisle 2 · Shelf F
-103884,BRV-103884,Pinar Trout 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Turkey,16.88,422,557,0.7,true,2.5,2,B,Aisle 2 · Shelf B
-102483,BRV-102483,Pinar Turkey 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,5kg,Georgia,12.19,233,401,1.1,true,2.7,2,D,Aisle 2 · Shelf D
-103710,BRV-103710,Pinar Veal 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,1kg,Netherlands,48.9,450,417,1.6,true,1.1,2,B,Aisle 2 · Shelf B
-102375,BRV-102375,Pinar Veal 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Iran,47.91,192,157,1.6,true,0.7,2,D,Aisle 2 · Shelf D
-103660,BRV-103660,Pinar Zucchini Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Bulk,France,22.77,22,209,0.4,true,0.7,2,F,Aisle 2 · Shelf F
-102451,BRV-102451,President Banana 750g,President,"Fresh Produce, Meat & Dairy",Fruits,750g,Poland,42.66,297,316,1.4,true,1.7,2,E,Aisle 2 · Shelf E
-103138,BRV-103138,President Basil Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,France,8.1,102,313,0.6,true,2.3,2,B,Aisle 2 · Shelf B
-102772,BRV-102772,President Broccoli Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Iran,61.3,210,526,0.8,true,1.8,2,E,Aisle 2 · Shelf E
-102551,BRV-102551,President Cabbage Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Germany,77.6,395,509,0.6,true,1.9,2,F,Aisle 2 · Shelf F
-103242,BRV-103242,President Carrot 250g,President,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,42.01,196,197,0.2,true,1.1,2,B,Aisle 2 · Shelf B
-102706,BRV-102706,President Cherry 1.5L,President,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Germany,4.96,482,427,0.7,true,2.4,2,B,Aisle 2 · Shelf B
-102963,BRV-102963,President Cherry Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Azerbaijan,54.06,366,330,1.6,true,0.6,2,A,Aisle 2 · Shelf A
-103609,BRV-103609,President Cilantro Pack of 24,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Georgia,41.14,401,374,1.5,true,1.5,2,E,Aisle 2 · Shelf E
-102806,BRV-102806,President Eggplant Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Russia,21.04,232,164,1.4,true,2.2,2,C,Aisle 2 · Shelf C
-103534,BRV-103534,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,34,390,241,0.5,true,3.3,2,F,Aisle 2 · Shelf F
-103760,BRV-103760,President Garlic Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,50.04,216,128,1.1,true,3.9,2,E,Aisle 2 · Shelf E
-103194,BRV-103194,President Garlic Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Poland,55.63,473,379,1.3,true,2.8,2,B,Aisle 2 · Shelf B
-102385,BRV-102385,President Kiwi 200g,President,"Fresh Produce, Meat & Dairy",Fruits,200g,France,5.16,8,172,1.6,true,1.7,2,E,Aisle 2 · Shelf E
-102295,BRV-102295,President Lamb 5kg,President,"Fresh Produce, Meat & Dairy",Fruits,5kg,China,50.06,277,674,0.4,true,1.8,2,E,Aisle 2 · Shelf E
-102081,BRV-102081,President Orange 100g,President,"Fresh Produce, Meat & Dairy",Fruits,100g,Iran,15.96,291,355,0.7,true,2.7,2,B,Aisle 2 · Shelf B
-102687,BRV-102687,President Orange 250ml,President,"Fresh Produce, Meat & Dairy",Fruits,250ml,China,67.94,195,123,1.4,true,4,2,B,Aisle 2 · Shelf B
-102971,BRV-102971,President Parmesan 1kg,President,"Fresh Produce, Meat & Dairy",Fruits,1kg,Poland,67.96,359,323,1.2,true,1.4,2,D,Aisle 2 · Shelf D
-102115,BRV-102115,President Parsley Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,India,4.04,170,273,1.2,true,2,2,F,Aisle 2 · Shelf F
-102999,BRV-102999,President Pineapple 750g,President,"Fresh Produce, Meat & Dairy",Fruits,750g,Italy,38.41,440,293,1.2,true,1.9,2,F,Aisle 2 · Shelf F
-102619,BRV-102619,President Salmon Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Germany,20.2,459,634,1.3,true,0.9,2,A,Aisle 2 · Shelf A
-103165,BRV-103165,President Sturgeon 1L,President,"Fresh Produce, Meat & Dairy",Fruits,1L,Poland,9.82,141,187,0.9,true,2.2,2,B,Aisle 2 · Shelf B
-103978,BRV-103978,President Veal 100g,President,"Fresh Produce, Meat & Dairy",Fruits,100g,Russia,33.81,181,125,0.7,true,2.7,2,B,Aisle 2 · Shelf B
-103491,BRV-103491,President Veal 1L,President,"Fresh Produce, Meat & Dairy",Fruits,1L,Russia,57.56,202,519,0.4,true,2.5,2,F,Aisle 2 · Shelf F
-103374,BRV-103374,President Watermelon Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,China,65.25,490,307,0.6,true,2.4,2,B,Aisle 2 · Shelf B
-103915,BRV-103915,Sehiyye Apple 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,France,25.16,482,470,0.3,true,2.4,2,E,Aisle 2 · Shelf E
-103717,BRV-103717,Sehiyye Ayran Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,7.26,133,718,0.9,true,1,2,E,Aisle 2 · Shelf E
-102442,BRV-102442,Sehiyye Ayran Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Iran,8.2,40,536,0.8,true,2.6,2,C,Aisle 2 · Shelf C
-102077,BRV-102077,Sehiyye Broccoli 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,India,28.08,167,372,1.5,true,2.3,2,E,Aisle 2 · Shelf E
-102599,BRV-102599,Sehiyye Broccoli 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2L,Germany,54.95,309,241,0.5,true,3.7,2,B,Aisle 2 · Shelf B
-102621,BRV-102621,Sehiyye Broccoli 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,18.47,492,443,0.5,true,1.2,2,B,Aisle 2 · Shelf B
-103149,BRV-103149,Sehiyye Broccoli Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Georgia,74.95,220,669,1,true,3.2,2,F,Aisle 2 · Shelf F
-103414,BRV-103414,Sehiyye Chicken Thighs Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Turkey,53.95,497,206,1.5,true,1.5,2,E,Aisle 2 · Shelf E
-103063,BRV-103063,Sehiyye Dill 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,USA,22.87,362,144,1.1,true,2.1,2,A,Aisle 2 · Shelf A
-103062,BRV-103062,Sehiyye Garlic 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,9.32,350,405,0.9,true,3.6,2,D,Aisle 2 · Shelf D
-102518,BRV-102518,Sehiyye Grapes 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,Spain,33.1,486,140,1,true,3,2,A,Aisle 2 · Shelf A
-102558,BRV-102558,Sehiyye Grapes Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,21.39,398,536,0.8,true,2.8,2,A,Aisle 2 · Shelf A
-103037,BRV-103037,Sehiyye Kefir 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,500g,India,64.79,117,539,1,true,3.1,2,D,Aisle 2 · Shelf D
-102449,BRV-102449,Sehiyye Kiwi 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,25.49,210,523,0.3,true,1.1,2,B,Aisle 2 · Shelf B
-103026,BRV-103026,Sehiyye Kiwi Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Poland,55.76,106,181,1.3,true,1.9,2,F,Aisle 2 · Shelf F
-103172,BRV-103172,Sehiyye Lactose-Free Milk Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Turkey,40.69,494,475,0.5,true,0.8,2,D,Aisle 2 · Shelf D
-102190,BRV-102190,Sehiyye Lemon 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,500ml,USA,61.92,238,352,1.5,true,1.7,2,E,Aisle 2 · Shelf E
-103301,BRV-103301,Sehiyye Lemon Single,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Single,India,9.55,321,183,0.9,true,1.9,2,D,Aisle 2 · Shelf D
-102069,BRV-102069,Sehiyye Lime 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,India,69.28,404,309,0.5,true,1.9,2,F,Aisle 2 · Shelf F
-103185,BRV-103185,Sehiyye Lime Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,USA,4.35,475,405,0.6,true,2,2,F,Aisle 2 · Shelf F
-103849,BRV-103849,Sehiyye Mint 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,Poland,69.28,177,528,0.5,true,2.5,2,C,Aisle 2 · Shelf C
-102052,BRV-102052,Sehiyye Mint Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,China,7.61,130,531,0.3,true,2.4,2,B,Aisle 2 · Shelf B
-102966,BRV-102966,Sehiyye Mozzarella Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Bulk,USA,44.34,433,219,1.1,true,1.1,2,B,Aisle 2 · Shelf B
-103476,BRV-103476,Sehiyye Parmesan 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,56.18,201,190,1.1,true,2.2,2,C,Aisle 2 · Shelf C
-103091,BRV-103091,Sehiyye Parmesan Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Georgia,44.07,69,651,0.4,true,2.1,2,D,Aisle 2 · Shelf D
-103256,BRV-103256,Sehiyye Pineapple 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2kg,Turkey,70.61,152,130,0.7,true,3.3,2,A,Aisle 2 · Shelf A
-103125,BRV-103125,Sehiyye Pineapple Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Azerbaijan,10.98,386,599,0.2,true,3.6,2,F,Aisle 2 · Shelf F
-102780,BRV-102780,Sehiyye Plum 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,India,3.61,204,209,0.5,true,0.7,2,D,Aisle 2 · Shelf D
-102452,BRV-102452,Sehiyye Potato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2L,Ukraine,62.95,379,639,0.8,true,3.8,2,B,Aisle 2 · Shelf B
-102626,BRV-102626,Sehiyye Shrimp 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Iran,18.19,227,220,0.6,true,3.8,2,C,Aisle 2 · Shelf C
-103994,BRV-103994,Sehiyye Skim Milk Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Netherlands,65.01,137,691,0.3,true,3,2,B,Aisle 2 · Shelf B
-103280,BRV-103280,Sehiyye Sturgeon 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Ukraine,69.9,365,343,0.5,true,1.4,2,B,Aisle 2 · Shelf B
-103097,BRV-103097,Sehiyye Tomato 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,54.78,226,489,0.2,true,2.2,2,F,Aisle 2 · Shelf F
-102471,BRV-102471,Sehiyye Trout 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,Poland,52.4,146,282,0.3,true,1.6,2,A,Aisle 2 · Shelf A
-103321,BRV-103321,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1kg,Georgia,44.85,96,485,0.7,true,3.4,2,D,Aisle 2 · Shelf D
-102458,BRV-102458,Sehiyye Watermelon 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Netherlands,18.7,27,537,0.5,true,2.2,2,F,Aisle 2 · Shelf F
-103110,BRV-103110,Sehiyye Watermelon 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,Iran,72.15,334,159,0.7,true,1.3,2,B,Aisle 2 · Shelf B
-102181,BRV-102181,Atena Banana Family Pack,Atena,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,53.55,98,622,0.7,true,0.7,2,E,Aisle 2 · Shelf E
-102850,BRV-102850,Atena Basil 2L,Atena,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,20.89,418,709,0.9,true,3.2,2,B,Aisle 2 · Shelf B
-102285,BRV-102285,Atena Chicken Thighs Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Italy,8.64,99,673,0.8,true,2.3,2,F,Aisle 2 · Shelf F
-103001,BRV-103001,Atena Dill 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,66.96,425,188,0.6,true,3,2,A,Aisle 2 · Shelf A
-103488,BRV-103488,Atena Eggplant Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Poland,56,26,301,0.7,true,0.6,2,B,Aisle 2 · Shelf B
-103450,BRV-103450,Atena Free-Range Eggs 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,47.43,460,382,1.4,true,1.7,2,A,Aisle 2 · Shelf A
-102739,BRV-102739,Atena Grapes 1kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,1kg,Iran,8,424,297,0.9,true,3.3,2,F,Aisle 2 · Shelf F
-103316,BRV-103316,Atena Grapes 2L,Atena,"Fresh Produce, Meat & Dairy",Herbs,2L,Russia,51.82,482,703,0.6,true,3.1,2,F,Aisle 2 · Shelf F
-102698,BRV-102698,Atena Kefir Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,71.2,32,599,1.3,true,0.6,2,B,Aisle 2 · Shelf B
-103597,BRV-103597,Atena Lamb 500ml,Atena,"Fresh Produce, Meat & Dairy",Herbs,500ml,Germany,27.8,452,300,0.2,true,2.9,2,A,Aisle 2 · Shelf A
-102464,BRV-102464,Atena Lemon 1kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,1kg,Netherlands,35.81,402,600,0.5,true,2.9,2,E,Aisle 2 · Shelf E
-102363,BRV-102363,Atena Lime 100g,Atena,"Fresh Produce, Meat & Dairy",Herbs,100g,Iran,51.61,85,700,0.9,true,1,2,C,Aisle 2 · Shelf C
-102667,BRV-102667,Atena Melon 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,62.08,248,381,1.1,true,0.5,2,B,Aisle 2 · Shelf B
-102039,BRV-102039,Atena Mozzarella Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Germany,3.68,338,706,1.5,true,3.7,2,A,Aisle 2 · Shelf A
-103442,BRV-103442,Atena Onion 1L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1L,Spain,20.1,447,639,0.3,true,3.9,2,B,Aisle 2 · Shelf B
-102660,BRV-102660,Atena Onion 2kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,2kg,France,60.28,220,290,1.5,true,0.8,2,A,Aisle 2 · Shelf A
-102104,BRV-102104,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,12.24,229,439,0.5,true,1.8,2,D,Aisle 2 · Shelf D
-103964,BRV-103964,Atena Orange Single,Atena,"Fresh Produce, Meat & Dairy",Herbs,Single,Iran,44.2,369,510,1,true,0.5,2,E,Aisle 2 · Shelf E
-102154,BRV-102154,Atena Parmesan 5kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,5kg,Iran,57.03,118,664,0.9,true,2.3,2,E,Aisle 2 · Shelf E
-102157,BRV-102157,Atena Peach 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Spain,78.19,193,155,0.4,true,0.9,2,B,Aisle 2 · Shelf B
-102491,BRV-102491,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,1.68,117,544,1.6,true,1.8,2,A,Aisle 2 · Shelf A
-103043,BRV-103043,Atena Peach Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,France,56.8,130,134,1.3,true,2.5,2,A,Aisle 2 · Shelf A
-103466,BRV-103466,Atena Pineapple 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,USA,38.54,280,549,0.3,true,2.4,2,D,Aisle 2 · Shelf D
-103237,BRV-103237,Atena Sturgeon 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,Spain,49.47,287,433,0.7,true,2.1,2,D,Aisle 2 · Shelf D
-102643,BRV-102643,Atena Sturgeon Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,China,73.88,390,515,1.5,true,3.4,2,B,Aisle 2 · Shelf B
-102917,BRV-102917,Atena Sturgeon Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Iran,73.69,334,503,0.6,true,0.9,2,B,Aisle 2 · Shelf B
-102006,BRV-102006,Atena Suluguni 2kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,2kg,Brazil,39.16,2,572,0.4,true,2.7,2,A,Aisle 2 · Shelf A
-102135,BRV-102135,Atena Suluguni Bulk,Atena,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Georgia,47.63,242,611,1.1,true,2.5,2,F,Aisle 2 · Shelf F
-102822,BRV-102822,Atena Watermelon Single,Atena,"Fresh Produce, Meat & Dairy",Herbs,Single,China,53.25,148,154,1.2,true,3.5,2,A,Aisle 2 · Shelf A
-102970,BRV-102970,Atena Zucchini 100g,Atena,"Fresh Produce, Meat & Dairy",Herbs,100g,Brazil,74.26,111,390,0.9,true,0.7,2,A,Aisle 2 · Shelf A
-103028,BRV-103028,Bravo Farm Apple 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,10.23,425,535,0.6,true,3.2,2,D,Aisle 2 · Shelf D
-102903,BRV-102903,Bravo Farm Ayran 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Spain,0.62,106,616,1.4,true,3,2,A,Aisle 2 · Shelf A
-103494,BRV-103494,Bravo Farm Banana Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Poland,40.52,137,662,1.6,true,3.5,2,A,Aisle 2 · Shelf A
-103942,BRV-103942,Bravo Farm Basil 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,France,77.97,210,350,1.6,true,2.1,2,A,Aisle 2 · Shelf A
-103575,BRV-103575,Bravo Farm Carrot 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,USA,66.93,18,232,0.2,true,1.5,2,C,Aisle 2 · Shelf C
-102571,BRV-102571,Bravo Farm Cheddar 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,750g,India,29.92,266,303,1.3,true,4,2,B,Aisle 2 · Shelf B
-103021,BRV-103021,Bravo Farm Chicken Breast 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,61.85,462,546,1.4,true,2.3,2,A,Aisle 2 · Shelf A
-102381,BRV-102381,Bravo Farm Dill Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Georgia,29.26,82,392,0.2,true,1.1,2,E,Aisle 2 · Shelf E
-102025,BRV-102025,Bravo Farm Feta Cheese 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Ukraine,31.76,237,277,0.7,true,3.3,2,D,Aisle 2 · Shelf D
-103795,BRV-103795,Bravo Farm Free-Range Eggs 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Azerbaijan,56.67,75,520,0.8,true,3.5,2,C,Aisle 2 · Shelf C
-103390,BRV-103390,Bravo Farm Free-Range Eggs 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,750g,China,68.33,474,165,1.4,true,0.8,2,B,Aisle 2 · Shelf B
-103440,BRV-103440,Bravo Farm Garlic Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Single,Poland,54.19,123,457,0.7,true,1.9,2,F,Aisle 2 · Shelf F
-103032,BRV-103032,Bravo Farm Grapes 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,47.83,443,482,0.3,true,1.7,2,E,Aisle 2 · Shelf E
-102003,BRV-102003,Bravo Farm Ground Beef Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,India,5.99,92,645,1,true,3.9,2,F,Aisle 2 · Shelf F
-103521,BRV-103521,Bravo Farm Kefir Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,France,44.67,366,343,0.8,true,2.3,2,F,Aisle 2 · Shelf F
-102182,BRV-102182,Bravo Farm Kiwi 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,Germany,66.27,101,517,0.4,true,3.8,2,B,Aisle 2 · Shelf B
-102112,BRV-102112,Bravo Farm Lettuce 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,100g,Netherlands,57.05,409,582,0.5,true,0.6,2,A,Aisle 2 · Shelf A
-103077,BRV-103077,Bravo Farm Lettuce 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,India,14.25,264,159,0.7,true,0.7,2,F,Aisle 2 · Shelf F
-103636,BRV-103636,Bravo Farm Peach 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,France,43.07,280,304,1.5,true,2.6,2,C,Aisle 2 · Shelf C
-102061,BRV-102061,Bravo Farm Pineapple 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Italy,61.42,262,485,1.6,true,1.5,2,D,Aisle 2 · Shelf D
-102096,BRV-102096,Bravo Farm Pomegranate Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Italy,3.1,149,139,0.3,true,1.6,2,D,Aisle 2 · Shelf D
-102160,BRV-102160,Bravo Farm Pomegranate Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Poland,16.71,56,657,1,true,2.2,2,B,Aisle 2 · Shelf B
-102710,BRV-102710,Bravo Farm Potato 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Turkey,35.43,449,398,0.5,true,3.2,2,A,Aisle 2 · Shelf A
-103145,BRV-103145,Bravo Farm Potato 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Iran,4.92,93,121,0.6,true,1.9,2,F,Aisle 2 · Shelf F
-102659,BRV-102659,Bravo Farm Salmon 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,8.14,373,630,1.4,true,0.9,2,A,Aisle 2 · Shelf A
-102258,BRV-102258,Bravo Farm Salmon 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,500ml,Azerbaijan,71.83,491,695,1.5,true,2.2,2,B,Aisle 2 · Shelf B
-102812,BRV-102812,Bravo Farm Spinach Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Brazil,40.73,455,343,1.3,true,2.5,2,B,Aisle 2 · Shelf B
-102055,BRV-102055,Bravo Farm Strawberry 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,Russia,42.26,130,604,1.6,true,1.5,2,C,Aisle 2 · Shelf C
-103413,BRV-103413,Bravo Farm Tomato Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,India,62.35,52,561,1.7,true,3,2,F,Aisle 2 · Shelf F
-103797,BRV-103797,Bravo Farm Tomato Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Netherlands,67.85,453,246,0.6,true,0.6,2,C,Aisle 2 · Shelf C
-103576,BRV-103576,Bravo Farm Veal 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Netherlands,12.36,92,547,0.5,true,2.6,2,F,Aisle 2 · Shelf F
-103953,BRV-103953,Bravo Farm Whole Milk 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,29.19,187,456,1,true,3.5,2,A,Aisle 2 · Shelf A
-102302,BRV-102302,Local Farm Banana 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,62.53,493,651,0.5,true,0.7,2,B,Aisle 2 · Shelf B
-103961,BRV-103961,Local Farm Cabbage 250g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Ukraine,59.45,272,223,0.6,true,2.4,2,F,Aisle 2 · Shelf F
-102683,BRV-102683,Local Farm Chicken Breast 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,2kg,Ukraine,8.43,80,687,0.9,true,3.2,2,F,Aisle 2 · Shelf F
-103153,BRV-103153,Local Farm Grapes 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Turkey,18.45,44,704,0.5,true,2.7,2,C,Aisle 2 · Shelf C
-102524,BRV-102524,Local Farm Greek Yogurt 500g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,25.54,218,293,0.4,true,2.1,2,D,Aisle 2 · Shelf D
-102838,BRV-102838,Local Farm Greek Yogurt 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,51.88,161,679,1.6,true,1.2,2,F,Aisle 2 · Shelf F
-102212,BRV-102212,Local Farm Lamb Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,France,41.5,193,229,1.4,true,3.5,2,F,Aisle 2 · Shelf F
-103332,BRV-103332,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,65.05,152,637,1.5,true,1.2,2,D,Aisle 2 · Shelf D
-103970,BRV-103970,Local Farm Onion 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,5kg,China,13.1,66,549,1.1,true,3.6,2,B,Aisle 2 · Shelf B
-102934,BRV-102934,Local Farm Parmesan 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,USA,36.52,1,406,0.4,true,2.1,2,A,Aisle 2 · Shelf A
-102108,BRV-102108,Local Farm Parmesan Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,USA,62.81,441,339,0.8,true,1.3,2,D,Aisle 2 · Shelf D
-102514,BRV-102514,Local Farm Peach 1L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Russia,36.22,415,536,1.1,true,2.2,2,A,Aisle 2 · Shelf A
-102587,BRV-102587,Local Farm Pear Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Netherlands,68.11,65,512,1.2,true,0.7,2,C,Aisle 2 · Shelf C
-102716,BRV-102716,Local Farm Pineapple 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,36.38,393,276,0.2,true,2.7,2,C,Aisle 2 · Shelf C
-102658,BRV-102658,Local Farm Pomegranate 100g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,100g,Iran,1.94,86,683,1.2,true,0.5,2,F,Aisle 2 · Shelf F
-102058,BRV-102058,Local Farm Potato Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Italy,19.28,413,301,0.8,true,1,2,F,Aisle 2 · Shelf F
-103733,BRV-103733,Local Farm Quail Eggs Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Netherlands,42.17,388,308,0.3,true,2.8,2,A,Aisle 2 · Shelf A
-102486,BRV-102486,Local Farm Suluguni 500g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,Ukraine,67.26,348,600,0.3,true,1.8,2,C,Aisle 2 · Shelf C
-103042,BRV-103042,Local Farm Tomato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Iran,30.26,379,699,0.3,true,1,2,B,Aisle 2 · Shelf B
-103790,BRV-103790,Milla Banana 250ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,250ml,Brazil,46.05,477,609,0.7,true,0.9,2,B,Aisle 2 · Shelf B
-102164,BRV-102164,Milla Banana Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,USA,17.9,485,133,0.5,true,3.7,2,F,Aisle 2 · Shelf F
-103335,BRV-103335,Milla Beef Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,24.4,386,530,1,true,3.2,2,C,Aisle 2 · Shelf C
-103843,BRV-103843,Milla Carrot 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,China,73.45,317,430,0.9,true,0.6,2,A,Aisle 2 · Shelf A
-102310,BRV-102310,Milla Chicken Thighs 750g,Milla,"Fresh Produce, Meat & Dairy",Herbs,750g,Ukraine,63.27,425,130,0.5,true,0.7,2,E,Aisle 2 · Shelf E
-102751,BRV-102751,Milla Cilantro 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,Azerbaijan,5.03,448,495,1.2,true,1.2,2,B,Aisle 2 · Shelf B
-103490,BRV-103490,Milla Feta Cheese 2kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,2kg,India,51.79,450,586,0.2,true,0.8,2,E,Aisle 2 · Shelf E
-103214,BRV-103214,Milla Garlic 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,USA,74.81,458,640,1.6,true,1.5,2,E,Aisle 2 · Shelf E
-102593,BRV-102593,Milla Ground Beef 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,Azerbaijan,21.46,431,231,1,true,2,2,B,Aisle 2 · Shelf B
-102175,BRV-102175,Milla Kiwi 2kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,2kg,Netherlands,8.2,131,263,1.3,true,1.5,2,F,Aisle 2 · Shelf F
-103614,BRV-103614,Milla Lactose-Free Milk 250ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,250ml,France,66.31,271,636,0.4,true,3.8,2,E,Aisle 2 · Shelf E
-103328,BRV-103328,Milla Lime 1.5L,Milla,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Russia,36.9,435,240,0.6,true,0.8,2,A,Aisle 2 · Shelf A
-102645,BRV-102645,Milla Lime 750g,Milla,"Fresh Produce, Meat & Dairy",Herbs,750g,Iran,76.21,470,121,1.6,true,3.6,2,F,Aisle 2 · Shelf F
-103000,BRV-103000,Milla Parsley 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,Turkey,56.64,89,121,1.5,true,1.5,2,B,Aisle 2 · Shelf B
-103236,BRV-103236,Milla Pear Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,71.51,51,356,0.9,true,3.4,2,E,Aisle 2 · Shelf E
-103934,BRV-103934,Milla Potato 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,France,15.81,482,693,1.4,true,3.7,2,B,Aisle 2 · Shelf B
-103190,BRV-103190,Milla Shrimp Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Netherlands,45.69,356,519,0.4,true,3.8,2,B,Aisle 2 · Shelf B
-103239,BRV-103239,Milla Special Pear Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Poland,24.36,423,699,1.6,true,1.3,2,D,Aisle 2 · Shelf D
-103681,BRV-103681,Milla Sturgeon 2L,Milla,"Fresh Produce, Meat & Dairy",Herbs,2L,Turkey,10.16,277,590,1.2,true,3.8,2,E,Aisle 2 · Shelf E
-103275,BRV-103275,Milla Suluguni 250g,Milla,"Fresh Produce, Meat & Dairy",Herbs,250g,Netherlands,7.84,415,427,0.7,true,1.3,2,F,Aisle 2 · Shelf F
-102641,BRV-102641,Milla Suluguni 2L,Milla,"Fresh Produce, Meat & Dairy",Herbs,2L,Turkey,8.34,251,573,1.4,true,1,2,B,Aisle 2 · Shelf B
-102254,BRV-102254,Milla Suluguni 500ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,62.21,220,499,0.5,true,2.7,2,D,Aisle 2 · Shelf D
-102848,BRV-102848,Milla Suluguni Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Brazil,14.95,14,186,0.5,true,1.6,2,C,Aisle 2 · Shelf C
-103430,BRV-103430,Milla Watermelon Bulk,Milla,"Fresh Produce, Meat & Dairy",Herbs,Bulk,India,20.42,469,400,0.7,true,3.9,2,C,Aisle 2 · Shelf C
-102798,BRV-102798,Milla Watermelon Single,Milla,"Fresh Produce, Meat & Dairy",Herbs,Single,France,25.35,250,614,1.1,true,3.8,2,E,Aisle 2 · Shelf E
-102688,BRV-102688,Milla Whole Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Turkey,65.93,72,276,0.6,true,3,2,C,Aisle 2 · Shelf C
-103931,BRV-103931,Milla Zucchini Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,47.35,450,252,1,true,2.7,2,E,Aisle 2 · Shelf E
-102110,BRV-102110,Palsud Apple 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,China,7.91,448,432,1.2,true,1.4,2,E,Aisle 2 · Shelf E
-103629,BRV-103629,Palsud Apple 2L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,2L,France,45.06,284,504,1.1,true,1.5,2,E,Aisle 2 · Shelf E
-103024,BRV-103024,Palsud Apple 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Netherlands,5.85,78,435,0.9,true,2.8,2,B,Aisle 2 · Shelf B
-102094,BRV-102094,Palsud Carrot Bulk,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Spain,47.68,436,701,1.2,true,2.5,2,B,Aisle 2 · Shelf B
-103052,BRV-103052,Palsud Cherry 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,60.52,273,140,1.2,true,3.4,2,A,Aisle 2 · Shelf A
-103449,BRV-103449,Palsud Chicken Breast 750g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,750g,Azerbaijan,24.51,208,124,0.2,true,1.3,2,C,Aisle 2 · Shelf C
-102717,BRV-102717,Palsud Classic Watermelon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Russia,9.98,234,561,1.2,true,2.4,2,B,Aisle 2 · Shelf B
-103826,BRV-103826,Palsud Cucumber 750g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,750g,Ukraine,60.87,405,429,0.4,true,2.2,2,F,Aisle 2 · Shelf F
-102338,BRV-102338,Palsud Eggplant 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Poland,17.13,490,456,1.2,true,2.4,2,A,Aisle 2 · Shelf A
-103812,BRV-103812,Palsud Eggplant 1kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,57.49,461,568,0.5,true,0.6,2,E,Aisle 2 · Shelf E
-102887,BRV-102887,Palsud Eggplant 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,USA,1.72,175,337,1,true,2.5,2,D,Aisle 2 · Shelf D
-102930,BRV-102930,Palsud Free-Range Eggs Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,China,79.01,436,658,0.4,true,1.4,2,C,Aisle 2 · Shelf C
-102294,BRV-102294,Palsud Grapes 1L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1L,USA,77.53,386,679,1.6,true,3.2,2,F,Aisle 2 · Shelf F
-103292,BRV-103292,Palsud Ground Beef 2L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,2L,France,18.3,463,666,0.6,true,1.5,2,A,Aisle 2 · Shelf A
-103803,BRV-103803,Palsud Kefir Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,70.84,50,642,1.1,true,2.9,2,E,Aisle 2 · Shelf E
-103617,BRV-103617,Palsud Lamb 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Georgia,20.08,67,615,0.3,true,3.3,2,B,Aisle 2 · Shelf B
-102340,BRV-102340,Palsud Lemon 100g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,100g,Poland,50.11,30,465,1.5,true,2.1,2,D,Aisle 2 · Shelf D
-103130,BRV-103130,Palsud Lemon 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,China,3.56,206,505,1.1,true,2.6,2,B,Aisle 2 · Shelf B
-102236,BRV-102236,Palsud Lime 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,France,36.38,171,591,1.2,true,3,2,B,Aisle 2 · Shelf B
-102519,BRV-102519,Palsud Lime 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,Brazil,79.35,257,441,0.5,true,2.4,2,D,Aisle 2 · Shelf D
-102941,BRV-102941,Palsud Melon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Spain,63.36,221,354,0.6,true,3.1,2,A,Aisle 2 · Shelf A
-103834,BRV-103834,Palsud Mint 200g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,200g,Spain,60.08,202,120,1.2,true,1.9,2,A,Aisle 2 · Shelf A
-103776,BRV-103776,Palsud Onion 500g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,500g,Netherlands,46.15,381,153,1.4,true,2.8,2,D,Aisle 2 · Shelf D
-103154,BRV-103154,Palsud Orange 1L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1L,Russia,47.47,264,631,1.6,true,1.8,2,B,Aisle 2 · Shelf B
-102111,BRV-102111,Palsud Orange 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Brazil,76.59,464,349,1.5,true,3,2,D,Aisle 2 · Shelf D
-102708,BRV-102708,Palsud Orange Single,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Single,Poland,36.95,484,193,1.3,true,3.6,2,D,Aisle 2 · Shelf D
-103278,BRV-103278,Palsud Parsley 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Brazil,9.96,319,474,1.3,true,2.9,2,A,Aisle 2 · Shelf A
-103422,BRV-103422,Palsud Plum 100g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,100g,China,23.5,327,189,0.4,true,3,2,F,Aisle 2 · Shelf F
-103616,BRV-103616,Palsud Pomegranate 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,32.36,187,682,1.6,true,1.6,2,A,Aisle 2 · Shelf A
-102877,BRV-102877,Palsud Pomegranate 200g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,200g,Turkey,47.77,399,420,0.8,true,0.7,2,E,Aisle 2 · Shelf E
-103224,BRV-103224,Palsud Quail Eggs Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,37.66,111,253,1.1,true,3.6,2,D,Aisle 2 · Shelf D
-103613,BRV-103613,Palsud Quail Eggs Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,India,18.59,411,259,1.4,true,1.3,2,F,Aisle 2 · Shelf F
-103690,BRV-103690,Palsud Turkey 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,Georgia,55.22,268,536,1.2,true,3.3,2,A,Aisle 2 · Shelf A
-102574,BRV-102574,Palsud Watermelon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Netherlands,72.6,268,198,0.6,true,1.4,2,E,Aisle 2 · Shelf E
-102727,BRV-102727,Pinar Apple Bulk,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Bulk,USA,61.39,350,560,1.5,true,2.4,2,C,Aisle 2 · Shelf C
-103160,BRV-103160,Pinar Ayran 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,Ukraine,28.46,98,386,0.3,true,1.5,2,A,Aisle 2 · Shelf A
-103866,BRV-103866,Pinar Basil 1L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1L,Georgia,32.13,360,249,1.4,true,2.9,2,B,Aisle 2 · Shelf B
-102753,BRV-102753,Pinar Beef 2kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,2kg,USA,15.49,49,553,1.2,true,1.9,2,D,Aisle 2 · Shelf D
-103513,BRV-103513,Pinar Beef 5kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,5kg,Netherlands,76.17,126,344,0.9,true,1,2,A,Aisle 2 · Shelf A
-103169,BRV-103169,Pinar Cabbage 1kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1kg,Spain,7.7,461,543,0.8,true,2.5,2,B,Aisle 2 · Shelf B
-102561,BRV-102561,Pinar Carrot 100g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,100g,Germany,13.27,178,128,0.6,true,2.6,2,C,Aisle 2 · Shelf C
-102873,BRV-102873,Pinar Cherry 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,67.44,406,400,0.4,true,3.1,2,C,Aisle 2 · Shelf C
-103405,BRV-103405,Pinar Chicken Thighs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Herbs,500ml,Brazil,57.79,33,156,1.5,true,2.9,2,E,Aisle 2 · Shelf E
-103003,BRV-103003,Pinar Chicken Wings 500g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,500g,Poland,21.82,282,186,0.5,true,1.4,2,A,Aisle 2 · Shelf A
-102892,BRV-102892,Pinar Cucumber 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Netherlands,9.4,18,207,0.3,true,2.9,2,D,Aisle 2 · Shelf D
-102276,BRV-102276,Pinar Garlic 1kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1kg,Germany,27.91,492,371,0.8,true,1.5,2,F,Aisle 2 · Shelf F
-102351,BRV-102351,Pinar Garlic 5kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,25.96,481,379,0.4,true,1.5,2,F,Aisle 2 · Shelf F
-103216,BRV-103216,Pinar Kiwi 750g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,750g,Turkey,11.36,351,638,1.2,true,0.8,2,C,Aisle 2 · Shelf C
-102923,BRV-102923,Pinar Mozzarella 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,23.31,443,150,1,true,0.9,2,A,Aisle 2 · Shelf A
-102109,BRV-102109,Pinar Parmesan Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Spain,76.67,384,198,0.5,true,2.9,2,A,Aisle 2 · Shelf A
-103678,BRV-103678,Pinar Peach 1L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1L,Georgia,35.32,139,574,1.6,true,2.6,2,A,Aisle 2 · Shelf A
-103980,BRV-103980,Pinar Pear 250ml,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250ml,Iran,73.87,113,220,1.5,true,1.8,2,C,Aisle 2 · Shelf C
-102063,BRV-102063,Pinar Pineapple Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,37.26,232,427,0.6,true,1.2,2,D,Aisle 2 · Shelf D
-102731,BRV-102731,Pinar Plum Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Iran,1.89,41,665,0.3,true,3.1,2,B,Aisle 2 · Shelf B
-102799,BRV-102799,Pinar Potato 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Germany,8.58,359,563,1.5,true,1.4,2,F,Aisle 2 · Shelf F
-103567,BRV-103567,Pinar Spinach Bulk,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Brazil,30.72,12,369,1.2,true,0.7,2,F,Aisle 2 · Shelf F
-102969,BRV-102969,Pinar Strawberry 200g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,67.18,458,340,1.6,true,2.6,2,E,Aisle 2 · Shelf E
-103271,BRV-103271,Pinar Suluguni Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,USA,55.86,412,407,1,true,0.7,2,D,Aisle 2 · Shelf D
-103623,BRV-103623,Pinar Zucchini 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,India,17.48,82,262,1.7,true,2.6,2,E,Aisle 2 · Shelf E
-102454,BRV-102454,President Apple 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,China,69.28,250,213,1.5,true,2.9,2,D,Aisle 2 · Shelf D
-103218,BRV-103218,President Basil 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,17.39,152,436,0.7,true,1.5,2,E,Aisle 2 · Shelf E
-103267,BRV-103267,President Carrot Bulk,President,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Azerbaijan,37.76,432,130,0.5,true,1.6,2,E,Aisle 2 · Shelf E
-103686,BRV-103686,President Chicken Thighs 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,Italy,56.36,235,569,0.6,true,1.8,2,F,Aisle 2 · Shelf F
-103327,BRV-103327,President Chicken Thighs 250ml,President,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,10.06,150,343,1.5,true,2.3,2,B,Aisle 2 · Shelf B
-102823,BRV-102823,President Deluxe Turkey 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,62.23,152,583,1.4,true,1.9,2,D,Aisle 2 · Shelf D
-102438,BRV-102438,President Eggplant 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Brazil,12,63,627,1.3,true,2.2,2,D,Aisle 2 · Shelf D
-103253,BRV-103253,President Free-Range Eggs 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Ukraine,5.96,262,123,1.7,true,3.8,2,B,Aisle 2 · Shelf B
-103879,BRV-103879,President Grapes 1kg,President,"Fresh Produce, Meat & Dairy",Herbs,1kg,Spain,69.41,412,565,0.6,true,3.7,2,B,Aisle 2 · Shelf B
-103761,BRV-103761,President Grapes 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,Netherlands,5.85,448,717,0.6,true,2.2,2,D,Aisle 2 · Shelf D
-103112,BRV-103112,President Lettuce 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,India,70.45,104,457,0.8,true,3.4,2,D,Aisle 2 · Shelf D
-102410,BRV-102410,President Lime Family Pack,President,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Georgia,79.66,228,333,1.6,true,2.4,2,F,Aisle 2 · Shelf F
-102165,BRV-102165,President Melon 1.5L,President,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Ukraine,55.35,139,320,1,true,2.1,2,A,Aisle 2 · Shelf A
-102512,BRV-102512,President Mint 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,62.83,49,554,0.7,true,3.5,2,C,Aisle 2 · Shelf C
-102203,BRV-102203,President Parmesan Pack of 24,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Turkey,25.47,240,587,1,true,1.3,2,D,Aisle 2 · Shelf D
-102373,BRV-102373,President Parsley Pack of 24,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Georgia,12.4,401,455,0.9,true,0.8,2,F,Aisle 2 · Shelf F
-102733,BRV-102733,President Peach 500g,President,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,26.15,442,663,1.2,true,1.5,2,B,Aisle 2 · Shelf B
-104000,BRV-104000,President Peach Pack of 12,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Ukraine,2.22,291,312,0.9,true,3.7,2,C,Aisle 2 · Shelf C
-103748,BRV-103748,President Pineapple 250ml,President,"Fresh Produce, Meat & Dairy",Herbs,250ml,Spain,19.91,490,498,1.6,true,2.1,2,C,Aisle 2 · Shelf C
-103060,BRV-103060,President Plum Pack of 6,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Russia,7.4,303,211,0.8,true,1.5,2,F,Aisle 2 · Shelf F
-102161,BRV-102161,President Potato 1kg,President,"Fresh Produce, Meat & Dairy",Herbs,1kg,China,61.64,242,460,1.2,true,2.4,2,A,Aisle 2 · Shelf A
-103693,BRV-103693,President Potato 750g,President,"Fresh Produce, Meat & Dairy",Herbs,750g,Azerbaijan,13.01,143,235,1.6,true,2.5,2,F,Aisle 2 · Shelf F
-102138,BRV-102138,President Shrimp 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Iran,22.81,435,226,0.3,true,3.7,2,E,Aisle 2 · Shelf E
-102082,BRV-102082,President Spinach 2kg,President,"Fresh Produce, Meat & Dairy",Herbs,2kg,Azerbaijan,79.29,83,288,0.7,true,3.2,2,E,Aisle 2 · Shelf E
-102043,BRV-102043,President Strawberry Pack of 12,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Georgia,8.11,432,409,0.9,true,0.8,2,D,Aisle 2 · Shelf D
-103121,BRV-103121,President Turkey 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,Brazil,72.05,41,579,1,true,1.6,2,F,Aisle 2 · Shelf F
-102070,BRV-102070,President Turkey 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,France,11.81,461,219,1.2,true,1.7,2,B,Aisle 2 · Shelf B
-102450,BRV-102450,President Watermelon 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,Netherlands,48.16,194,129,0.5,true,1.2,2,D,Aisle 2 · Shelf D
-102634,BRV-102634,Sehiyye Basil 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,Azerbaijan,48.27,95,357,0.4,true,1.2,2,F,Aisle 2 · Shelf F
-103447,BRV-103447,Sehiyye Basil 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,Turkey,22.72,466,134,1.1,true,2.2,2,E,Aisle 2 · Shelf E
-102729,BRV-102729,Sehiyye Cabbage 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,Italy,75.84,306,650,0.6,true,0.9,2,C,Aisle 2 · Shelf C
-103240,BRV-103240,Sehiyye Carrot Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Brazil,5.61,262,139,0.8,true,0.8,2,B,Aisle 2 · Shelf B
-103563,BRV-103563,Sehiyye Cherry Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,China,35.79,425,509,1.5,true,1.8,2,B,Aisle 2 · Shelf B
-103034,BRV-103034,Sehiyye Cherry Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Russia,56.39,51,240,0.6,true,3.9,2,A,Aisle 2 · Shelf A
-102422,BRV-102422,Sehiyye Chicken Breast Single,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Single,Iran,37.34,385,542,1.5,true,1,2,C,Aisle 2 · Shelf C
-102023,BRV-102023,Sehiyye Dill 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,France,48.12,147,223,1.4,true,0.7,2,D,Aisle 2 · Shelf D
-103518,BRV-103518,Sehiyye Dill Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,France,20.78,35,331,1,true,3.1,2,F,Aisle 2 · Shelf F
-102007,BRV-102007,Sehiyye Feta Cheese 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,200g,Poland,15.02,174,137,1.1,true,1,2,D,Aisle 2 · Shelf D
-102818,BRV-102818,Sehiyye Ground Beef Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Russia,78.96,114,713,1.5,true,1.4,2,D,Aisle 2 · Shelf D
-103728,BRV-103728,Sehiyye Lactose-Free Milk 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,500ml,Russia,50.52,389,388,0.3,true,1.9,2,C,Aisle 2 · Shelf C
-103601,BRV-103601,Sehiyye Lamb 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,64.59,176,670,0.7,true,3.1,2,C,Aisle 2 · Shelf C
-103092,BRV-103092,Sehiyye Lettuce Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Ukraine,62.2,314,336,0.8,true,1,2,E,Aisle 2 · Shelf E
-102965,BRV-102965,Sehiyye Lime 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,77.64,62,608,0.8,true,3.4,2,C,Aisle 2 · Shelf C
-103673,BRV-103673,Sehiyye Melon 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,34.02,61,413,1.1,true,1.2,2,D,Aisle 2 · Shelf D
-103652,BRV-103652,Sehiyye Mint 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,Germany,0.57,487,442,1.3,true,1.4,2,E,Aisle 2 · Shelf E
-102195,BRV-102195,Sehiyye Orange Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Germany,11.61,404,361,0.9,true,2.5,2,D,Aisle 2 · Shelf D
-102750,BRV-102750,Sehiyye Parmesan Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,46.24,269,482,1.7,true,2.3,2,E,Aisle 2 · Shelf E
-102676,BRV-102676,Sehiyye Parsley 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,China,24.33,40,351,1.7,true,2.3,2,F,Aisle 2 · Shelf F
-103036,BRV-103036,Sehiyye Salmon 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,8.68,463,606,0.7,true,2.4,2,A,Aisle 2 · Shelf A
-102292,BRV-102292,Sehiyye Strawberry 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,62.29,276,165,1.2,true,2.3,2,D,Aisle 2 · Shelf D
-103084,BRV-103084,Sehiyye Trout 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,USA,44.5,414,125,0.5,true,2.9,2,D,Aisle 2 · Shelf D
-102627,BRV-102627,Sehiyye Veal 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2L,Spain,32.84,99,361,0.7,true,3.1,2,D,Aisle 2 · Shelf D
-103307,BRV-103307,Atena Ayran 1.5L,Atena,"Fresh Produce, Meat & Dairy",Meat,1.5L,Brazil,29.6,361,141,1.6,true,1,2,D,Aisle 2 · Shelf D
-102213,BRV-102213,Atena Basil 2L,Atena,"Fresh Produce, Meat & Dairy",Meat,2L,Ukraine,19.76,344,168,0.6,true,3.3,2,C,Aisle 2 · Shelf C
-102311,BRV-102311,Atena Beef 1L,Atena,"Fresh Produce, Meat & Dairy",Meat,1L,USA,13.57,40,263,1.3,true,3.6,2,B,Aisle 2 · Shelf B
-102107,BRV-102107,Atena Bell Pepper 200g,Atena,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,67.37,411,460,1.3,true,2.8,2,A,Aisle 2 · Shelf A
-103687,BRV-103687,Atena Carrot Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,USA,40.9,34,508,1.4,true,4,2,A,Aisle 2 · Shelf A
-102177,BRV-102177,Atena Chicken Wings 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,63.39,274,265,0.3,true,3.5,2,B,Aisle 2 · Shelf B
-103055,BRV-103055,Atena Cucumber 500ml,Atena,"Fresh Produce, Meat & Dairy",Meat,500ml,Italy,47.72,403,667,0.7,true,0.9,2,B,Aisle 2 · Shelf B
-103191,BRV-103191,Atena Greek Yogurt Family Pack,Atena,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Italy,77.55,21,514,0.7,true,2.3,2,A,Aisle 2 · Shelf A
-103354,BRV-103354,Atena Kiwi 2kg,Atena,"Fresh Produce, Meat & Dairy",Meat,2kg,France,51.52,186,373,0.5,true,3.6,2,B,Aisle 2 · Shelf B
-103139,BRV-103139,Atena Lactose-Free Milk 750g,Atena,"Fresh Produce, Meat & Dairy",Meat,750g,Iran,32.49,15,388,1.6,true,1.3,2,C,Aisle 2 · Shelf C
-103437,BRV-103437,Atena Lettuce 500ml,Atena,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,11.63,112,151,1.2,true,3.7,2,D,Aisle 2 · Shelf D
-103346,BRV-103346,Atena Pineapple 1.5L,Atena,"Fresh Produce, Meat & Dairy",Meat,1.5L,Ukraine,14.75,380,492,0.5,true,3.2,2,A,Aisle 2 · Shelf A
-103039,BRV-103039,Atena Plum 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Netherlands,55.44,440,369,1.4,true,3.5,2,D,Aisle 2 · Shelf D
-103778,BRV-103778,Atena Potato 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,58.04,45,315,1.7,true,2.1,2,F,Aisle 2 · Shelf F
-103861,BRV-103861,Atena Potato Single,Atena,"Fresh Produce, Meat & Dairy",Meat,Single,Netherlands,57.23,292,486,1.4,true,1,2,A,Aisle 2 · Shelf A
-102552,BRV-102552,Atena Shrimp 100g,Atena,"Fresh Produce, Meat & Dairy",Meat,100g,Ukraine,28.18,480,614,0.9,true,2.3,2,C,Aisle 2 · Shelf C
-103920,BRV-103920,Atena Suluguni Single,Atena,"Fresh Produce, Meat & Dairy",Meat,Single,Russia,79.27,198,254,0.7,true,2.7,2,E,Aisle 2 · Shelf E
-103677,BRV-103677,Atena Trout 750g,Atena,"Fresh Produce, Meat & Dairy",Meat,750g,Brazil,68.12,375,337,0.8,true,3.7,2,F,Aisle 2 · Shelf F
-102051,BRV-102051,Atena Turkey Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Azerbaijan,31.42,176,432,1.4,true,1.8,2,C,Aisle 2 · Shelf C
-102001,BRV-102001,Atena Whole Milk Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,USA,60.05,123,299,0.5,true,0.9,2,B,Aisle 2 · Shelf B
-102396,BRV-102396,Bravo Farm Banana Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,China,14.95,272,336,1.3,true,1.1,2,C,Aisle 2 · Shelf C
-103421,BRV-103421,Bravo Farm Bell Pepper 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,1L,Germany,25.84,399,334,0.5,true,1.2,2,A,Aisle 2 · Shelf A
-103461,BRV-103461,Bravo Farm Broccoli 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Poland,75.63,180,386,1.3,true,0.5,2,E,Aisle 2 · Shelf E
-103691,BRV-103691,Bravo Farm Cheddar Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,France,15.19,120,197,1,true,1.3,2,D,Aisle 2 · Shelf D
-103637,BRV-103637,Bravo Farm Cherry Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Single,Germany,54.97,39,533,0.7,true,3.4,2,B,Aisle 2 · Shelf B
-102831,BRV-102831,Bravo Farm Chicken Thighs 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Spain,60.28,434,226,0.3,true,1.7,2,E,Aisle 2 · Shelf E
-103189,BRV-103189,Bravo Farm Chicken Thighs 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,Netherlands,11.25,311,545,1.6,true,1.3,2,B,Aisle 2 · Shelf B
-103871,BRV-103871,Bravo Farm Chicken Wings 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,15.57,309,549,0.2,true,1.2,2,B,Aisle 2 · Shelf B
-102985,BRV-102985,Bravo Farm Dill 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,39.19,157,570,0.7,true,3.2,2,A,Aisle 2 · Shelf A
-102938,BRV-102938,Bravo Farm Eggplant 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,200g,China,78.01,55,186,0.9,true,3,2,C,Aisle 2 · Shelf C
-102306,BRV-102306,Bravo Farm Eggplant 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Azerbaijan,53.25,444,615,1.6,true,3,2,B,Aisle 2 · Shelf B
-103320,BRV-103320,Bravo Farm Feta Cheese 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,China,76.96,324,664,0.4,true,3.2,2,E,Aisle 2 · Shelf E
-102380,BRV-102380,Bravo Farm Greek Yogurt 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Russia,71.1,398,285,0.9,true,2.9,2,B,Aisle 2 · Shelf B
-102456,BRV-102456,Bravo Farm Lemon Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,19.78,400,659,0.4,true,1,2,B,Aisle 2 · Shelf B
-102703,BRV-102703,Bravo Farm Lime 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,5kg,Azerbaijan,17.95,129,562,0.8,true,1.9,2,E,Aisle 2 · Shelf E
-102940,BRV-102940,Bravo Farm Onion 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,500ml,China,70.36,385,143,0.5,true,0.9,2,B,Aisle 2 · Shelf B
-103155,BRV-103155,Bravo Farm Parsley 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Poland,58.68,414,570,0.6,true,2.4,2,C,Aisle 2 · Shelf C
-102502,BRV-102502,Bravo Farm Potato Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Spain,8.5,314,169,0.8,true,1.2,2,F,Aisle 2 · Shelf F
-102173,BRV-102173,Bravo Farm Spinach 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Georgia,45.43,70,293,1.4,true,1.7,2,B,Aisle 2 · Shelf B
-102553,BRV-102553,Bravo Farm Spinach Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Poland,5.62,277,547,0.5,true,2.6,2,B,Aisle 2 · Shelf B
-103309,BRV-103309,Bravo Farm Sturgeon 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,Russia,26.85,188,455,1.4,true,0.9,2,D,Aisle 2 · Shelf D
-103825,BRV-103825,Bravo Farm Suluguni 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Spain,46.26,333,270,0.9,true,3.3,2,A,Aisle 2 · Shelf A
-103238,BRV-103238,Bravo Farm Tomato 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,100g,Russia,15,230,150,0.4,true,3.7,2,C,Aisle 2 · Shelf C
-102738,BRV-102738,Bravo Farm Turkey 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,200g,Ukraine,46.12,436,236,1,true,3.6,2,C,Aisle 2 · Shelf C
-103547,BRV-103547,Bravo Farm Whole Milk 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,France,25.96,215,179,0.3,true,0.7,2,F,Aisle 2 · Shelf F
-103497,BRV-103497,Bravo Farm Zucchini 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,1L,Ukraine,48.72,146,221,1.1,true,2.5,2,D,Aisle 2 · Shelf D
-103889,BRV-103889,Local Farm Apple 2L,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2L,Poland,37.76,247,196,1,true,1.2,2,A,Aisle 2 · Shelf A
-103520,BRV-103520,Local Farm Apple 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Azerbaijan,43.05,288,282,1.3,true,2.9,2,C,Aisle 2 · Shelf C
-103146,BRV-103146,Local Farm Banana Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,China,48.89,409,594,0.9,true,1.9,2,C,Aisle 2 · Shelf C
-103650,BRV-103650,Local Farm Beef 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,13.69,71,516,1.4,true,1.9,2,A,Aisle 2 · Shelf A
-103688,BRV-103688,Local Farm Chicken Wings 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,China,36.5,244,371,1.6,true,1.1,2,D,Aisle 2 · Shelf D
-103873,BRV-103873,Local Farm Garlic Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,China,35.61,419,163,0.3,true,2.4,2,B,Aisle 2 · Shelf B
-103674,BRV-103674,Local Farm Grapes Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Bulk,Spain,21.79,18,298,0.6,true,2.2,2,A,Aisle 2 · Shelf A
-103233,BRV-103233,Local Farm Ground Beef Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Ukraine,67.45,306,573,1.7,true,3.6,2,F,Aisle 2 · Shelf F
-103966,BRV-103966,Local Farm Lactose-Free Milk Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Spain,40.69,303,440,1,true,1.2,2,C,Aisle 2 · Shelf C
-103794,BRV-103794,Local Farm Lamb 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Iran,49,45,285,1.3,true,1.6,2,F,Aisle 2 · Shelf F
-102018,BRV-102018,Local Farm Lemon Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Brazil,17.52,88,641,1.2,true,3,2,D,Aisle 2 · Shelf D
-102159,BRV-102159,Local Farm Mint 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,China,4.39,1,529,1.1,true,1.3,2,F,Aisle 2 · Shelf F
-102953,BRV-102953,Local Farm Onion 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,France,9,353,471,1.6,true,0.7,2,F,Aisle 2 · Shelf F
-102178,BRV-102178,Local Farm Orange 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Italy,52.76,356,422,1.6,true,1.7,2,E,Aisle 2 · Shelf E
-102908,BRV-102908,Local Farm Parsley Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Bulk,Turkey,31.36,277,603,1.6,true,1.6,2,F,Aisle 2 · Shelf F
-102356,BRV-102356,Local Farm Salmon Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Brazil,57.64,109,516,0.9,true,2.1,2,A,Aisle 2 · Shelf A
-103210,BRV-103210,Local Farm Skim Milk Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Russia,43.59,125,212,0.3,true,1.2,2,E,Aisle 2 · Shelf E
-102337,BRV-102337,Local Farm Spinach Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Poland,51.63,76,151,1,true,2.5,2,D,Aisle 2 · Shelf D
-102841,BRV-102841,Local Farm Sturgeon 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,USA,6.04,175,711,1.1,true,1.3,2,B,Aisle 2 · Shelf B
-103468,BRV-103468,Local Farm Trout 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Netherlands,47.07,36,319,1,true,1.8,2,D,Aisle 2 · Shelf D
-102287,BRV-102287,Milla Ayran 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Italy,43.71,163,367,1.2,true,2,2,F,Aisle 2 · Shelf F
-102257,BRV-102257,Milla Basil 1L,Milla,"Fresh Produce, Meat & Dairy",Meat,1L,Netherlands,52.19,460,400,0.8,true,2.1,2,E,Aisle 2 · Shelf E
-102991,BRV-102991,Milla Carrot Single,Milla,"Fresh Produce, Meat & Dairy",Meat,Single,USA,38.33,354,717,1.6,true,2.3,2,B,Aisle 2 · Shelf B
-103999,BRV-103999,Milla Chicken Thighs 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Italy,78.87,216,426,1,true,2.8,2,A,Aisle 2 · Shelf A
-103995,BRV-103995,Milla Chicken Wings 500ml,Milla,"Fresh Produce, Meat & Dairy",Meat,500ml,France,54.87,204,638,1.2,true,3.3,2,C,Aisle 2 · Shelf C
-103101,BRV-103101,Milla Feta Cheese Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Russia,36.87,468,337,0.5,true,1.1,2,B,Aisle 2 · Shelf B
-102333,BRV-102333,Milla Grapes 750g,Milla,"Fresh Produce, Meat & Dairy",Meat,750g,Georgia,64.05,444,387,0.3,true,2.8,2,F,Aisle 2 · Shelf F
-102757,BRV-102757,Milla Greek Yogurt 1kg,Milla,"Fresh Produce, Meat & Dairy",Meat,1kg,Germany,70.62,256,125,0.3,true,2.6,2,B,Aisle 2 · Shelf B
-103222,BRV-103222,Milla Lamb 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,0.8,426,679,1.5,true,1,2,B,Aisle 2 · Shelf B
-103577,BRV-103577,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,31.06,453,406,0.2,true,0.8,2,C,Aisle 2 · Shelf C
-103046,BRV-103046,Milla Lime 1kg,Milla,"Fresh Produce, Meat & Dairy",Meat,1kg,China,28.67,183,239,0.2,true,2.5,2,D,Aisle 2 · Shelf D
-102150,BRV-102150,Milla Mint 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,China,17.28,341,620,1.2,true,4,2,A,Aisle 2 · Shelf A
-102862,BRV-102862,Milla Onion Family Pack,Milla,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Russia,40.83,105,542,0.7,true,2.4,2,E,Aisle 2 · Shelf E
-103780,BRV-103780,Milla Orange 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Poland,24.1,230,182,0.7,true,2.1,2,A,Aisle 2 · Shelf A
-103459,BRV-103459,Milla Pear 250g,Milla,"Fresh Produce, Meat & Dairy",Meat,250g,USA,52.25,239,619,1.2,true,1.2,2,D,Aisle 2 · Shelf D
-102636,BRV-102636,Milla Quail Eggs 750g,Milla,"Fresh Produce, Meat & Dairy",Meat,750g,Italy,12.49,354,299,0.5,true,0.5,2,D,Aisle 2 · Shelf D
-102488,BRV-102488,Milla Suluguni Family Pack,Milla,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,13.44,120,210,1.6,true,1,2,C,Aisle 2 · Shelf C
-103746,BRV-103746,Milla Turkey 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,63.21,329,616,0.8,true,2.6,2,E,Aisle 2 · Shelf E
-103548,BRV-103548,Milla Zucchini 100g,Milla,"Fresh Produce, Meat & Dairy",Meat,100g,Russia,72.61,29,476,1.2,true,3.6,2,A,Aisle 2 · Shelf A
-103768,BRV-103768,Palsud Apple 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Meat,1.5L,Netherlands,16.05,461,440,1.5,true,3,2,C,Aisle 2 · Shelf C
-102702,BRV-102702,Palsud Apple 100g,Palsud,"Fresh Produce, Meat & Dairy",Meat,100g,Iran,26.75,293,567,0.5,true,3.4,2,F,Aisle 2 · Shelf F
-103759,BRV-103759,Palsud Apple Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Italy,39.96,465,440,0.9,true,3.8,2,E,Aisle 2 · Shelf E
-103517,BRV-103517,Palsud Apple Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Spain,16.76,461,620,1.4,true,2,2,A,Aisle 2 · Shelf A
-102435,BRV-102435,Palsud Bell Pepper 2kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,2kg,China,9.08,109,514,0.5,true,2.8,2,A,Aisle 2 · Shelf A
-102224,BRV-102224,Palsud Cheddar 500g,Palsud,"Fresh Produce, Meat & Dairy",Meat,500g,Russia,8.02,307,134,1.1,true,3.5,2,A,Aisle 2 · Shelf A
-102193,BRV-102193,Palsud Cheddar 5kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,5kg,Turkey,40.92,310,219,1.1,true,2.8,2,F,Aisle 2 · Shelf F
-102528,BRV-102528,Palsud Cheddar Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,33.35,284,161,1.4,true,3.6,2,D,Aisle 2 · Shelf D
-102339,BRV-102339,Palsud Cheddar Single,Palsud,"Fresh Produce, Meat & Dairy",Meat,Single,Georgia,59.1,97,613,0.7,true,0.6,2,F,Aisle 2 · Shelf F
-102720,BRV-102720,Palsud Chicken Breast 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Meat,1.5L,Georgia,47.23,317,207,1.1,true,2,2,D,Aisle 2 · Shelf D
-103166,BRV-103166,Palsud Chicken Breast 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,Russia,64.44,12,688,0.4,true,2.4,2,E,Aisle 2 · Shelf E
-102031,BRV-102031,Palsud Feta Cheese 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,Germany,55.12,185,410,1.2,true,3.4,2,A,Aisle 2 · Shelf A
-102606,BRV-102606,Palsud Kefir 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,India,77.94,95,534,0.3,true,0.9,2,A,Aisle 2 · Shelf A
-103489,BRV-103489,Palsud Kiwi 250g,Palsud,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,36.5,348,672,1.6,true,3.4,2,C,Aisle 2 · Shelf C
-103965,BRV-103965,Palsud Kiwi Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,67.42,425,651,0.6,true,1.9,2,B,Aisle 2 · Shelf B
-103027,BRV-103027,Palsud Lemon 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,France,31.83,83,224,0.6,true,1.6,2,C,Aisle 2 · Shelf C
-103212,BRV-103212,Palsud Lemon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Meat,Bulk,Brazil,17.41,349,362,1.2,true,2.7,2,E,Aisle 2 · Shelf E
-103351,BRV-103351,Palsud Lime 750g,Palsud,"Fresh Produce, Meat & Dairy",Meat,750g,Iran,68.3,142,228,1.1,true,1.7,2,C,Aisle 2 · Shelf C
-103330,BRV-103330,Palsud Mint 2L,Palsud,"Fresh Produce, Meat & Dairy",Meat,2L,Germany,5.79,299,595,1.2,true,2.5,2,B,Aisle 2 · Shelf B
-102044,BRV-102044,Palsud Parsley 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,France,22.72,1,462,1.6,true,3.5,2,A,Aisle 2 · Shelf A
-102089,BRV-102089,Palsud Parsley 500g,Palsud,"Fresh Produce, Meat & Dairy",Meat,500g,Netherlands,33.31,204,699,0.9,true,2.1,2,F,Aisle 2 · Shelf F
-103417,BRV-103417,Palsud Peach 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,Italy,44.71,145,701,1.2,true,0.6,2,B,Aisle 2 · Shelf B
-102583,BRV-102583,Palsud Pear 200g,Palsud,"Fresh Produce, Meat & Dairy",Meat,200g,Ukraine,7.55,142,428,1.4,true,3.2,2,E,Aisle 2 · Shelf E
-102187,BRV-102187,Palsud Shrimp 250ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,250ml,Spain,70.97,80,300,1.1,true,3.6,2,E,Aisle 2 · Shelf E
-102348,BRV-102348,Palsud Veal 100g,Palsud,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,14.95,79,649,0.8,true,3.8,2,F,Aisle 2 · Shelf F
-102242,BRV-102242,Palsud Watermelon 2kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,2kg,Ukraine,71.85,182,490,1.3,true,2.2,2,E,Aisle 2 · Shelf E
-102334,BRV-102334,Pinar Apple 1L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1L,Brazil,3.19,104,252,1,true,2.4,2,E,Aisle 2 · Shelf E
-102353,BRV-102353,Pinar Banana 250ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,250ml,Ukraine,46.42,487,165,0.4,true,3.9,2,F,Aisle 2 · Shelf F
-102693,BRV-102693,Pinar Beef 200g,Pinar,"Fresh Produce, Meat & Dairy",Meat,200g,Germany,24.08,93,548,0.3,true,1.6,2,A,Aisle 2 · Shelf A
-103231,BRV-103231,Pinar Cheddar 2L,Pinar,"Fresh Produce, Meat & Dairy",Meat,2L,Ukraine,75.7,373,611,1.6,true,0.9,2,B,Aisle 2 · Shelf B
-102263,BRV-102263,Pinar Cheddar Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Spain,78.45,384,421,0.2,true,2.6,2,B,Aisle 2 · Shelf B
-103875,BRV-103875,Pinar Cheddar Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Netherlands,45.08,78,705,0.2,true,2.8,2,B,Aisle 2 · Shelf B
-102470,BRV-102470,Pinar Cilantro 250ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,250ml,Netherlands,63.85,486,543,0.5,true,1.6,2,F,Aisle 2 · Shelf F
-103360,BRV-103360,Pinar Cucumber 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,66.52,182,300,1.2,true,0.9,2,A,Aisle 2 · Shelf A
-102130,BRV-102130,Pinar Dill 100g,Pinar,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,68.35,405,146,0.4,true,2,2,E,Aisle 2 · Shelf E
-103907,BRV-103907,Pinar Feta Cheese 500g,Pinar,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,70.15,376,707,1.2,true,2.4,2,F,Aisle 2 · Shelf F
-102976,BRV-102976,Pinar Kiwi 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Poland,44.22,47,668,0.5,true,0.5,2,A,Aisle 2 · Shelf A
-103737,BRV-103737,Pinar Kiwi Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,China,7.56,365,168,0.8,true,2,2,C,Aisle 2 · Shelf C
-103295,BRV-103295,Pinar Lemon 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1.5L,India,1.55,249,549,0.8,true,2.2,2,F,Aisle 2 · Shelf F
-102033,BRV-102033,Pinar Lime 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,30.31,200,412,1.3,true,1.7,2,E,Aisle 2 · Shelf E
-103724,BRV-103724,Pinar Mint 500ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,11.29,364,288,1.6,true,2.3,2,C,Aisle 2 · Shelf C
-102920,BRV-102920,Pinar Mozzarella 2kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,2kg,China,25.27,486,189,1.1,true,1.9,2,D,Aisle 2 · Shelf D
-102638,BRV-102638,Pinar Mozzarella 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Iran,18.52,218,425,1.4,true,2.5,2,F,Aisle 2 · Shelf F
-103911,BRV-103911,Pinar Orange Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,India,72.65,457,162,0.9,true,3.2,2,E,Aisle 2 · Shelf E
-102030,BRV-102030,Pinar Parmesan Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,China,22.64,306,367,1.5,true,2.9,2,F,Aisle 2 · Shelf F
-103471,BRV-103471,Pinar Parsley 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Iran,69.96,359,377,0.8,true,3.6,2,B,Aisle 2 · Shelf B
-103568,BRV-103568,Pinar Quail Eggs Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,Azerbaijan,25.71,473,686,0.2,true,1.9,2,E,Aisle 2 · Shelf E
-102147,BRV-102147,Pinar Strawberry 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Italy,52.05,291,488,0.3,true,3.9,2,C,Aisle 2 · Shelf C
-103992,BRV-103992,Pinar Suluguni 1L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1L,Ukraine,52.86,26,257,1.6,true,2.6,2,D,Aisle 2 · Shelf D
-103504,BRV-103504,Pinar Suluguni 2kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,22.32,330,436,0.6,true,3.8,2,C,Aisle 2 · Shelf C
-102859,BRV-102859,Pinar Suluguni Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,India,11.29,251,360,0.8,true,0.6,2,E,Aisle 2 · Shelf E
-103392,BRV-103392,Pinar Tomato 500ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,71.11,30,419,1,true,1.7,2,D,Aisle 2 · Shelf D
-103512,BRV-103512,Pinar Tomato Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,Russia,47.25,216,133,1.6,true,2.8,2,D,Aisle 2 · Shelf D
-103734,BRV-103734,Pinar Zucchini Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,4.6,99,267,0.5,true,2.2,2,F,Aisle 2 · Shelf F
-102852,BRV-102852,President Carrot Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Ukraine,3.91,191,323,0.3,true,0.8,2,B,Aisle 2 · Shelf B
-102665,BRV-102665,President Chicken Thighs 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,48.41,322,627,0.3,true,1.4,2,F,Aisle 2 · Shelf F
-102796,BRV-102796,President Chicken Thighs Pack of 6,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Azerbaijan,21.06,157,220,0.7,true,4,2,A,Aisle 2 · Shelf A
-103385,BRV-103385,President Cucumber 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Brazil,73.45,214,163,0.5,true,0.9,2,D,Aisle 2 · Shelf D
-102791,BRV-102791,President Cucumber 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,10.96,304,475,1.4,true,1.4,2,D,Aisle 2 · Shelf D
-102900,BRV-102900,President Cucumber Pack of 24,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,China,22,483,451,0.4,true,1.4,2,D,Aisle 2 · Shelf D
-103580,BRV-103580,President Dill 100g,President,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,39.84,400,648,0.8,true,0.8,2,A,Aisle 2 · Shelf A
-102559,BRV-102559,President Dill 750g,President,"Fresh Produce, Meat & Dairy",Meat,750g,Germany,53.15,291,453,0.4,true,1,2,F,Aisle 2 · Shelf F
-102184,BRV-102184,President Eggplant Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,55.19,426,503,0.2,true,1.3,2,F,Aisle 2 · Shelf F
-102264,BRV-102264,President Feta Cheese 2L,President,"Fresh Produce, Meat & Dairy",Meat,2L,Iran,19.63,407,538,0.9,true,1.5,2,C,Aisle 2 · Shelf C
-102167,BRV-102167,President Free-Range Eggs 250ml,President,"Fresh Produce, Meat & Dairy",Meat,250ml,France,60.74,342,366,1,true,1.2,2,E,Aisle 2 · Shelf E
-103336,BRV-103336,President Grapes 1.5L,President,"Fresh Produce, Meat & Dairy",Meat,1.5L,Ukraine,30.55,378,289,1.2,true,1.5,2,D,Aisle 2 · Shelf D
-102126,BRV-102126,President Grapes 1kg,President,"Fresh Produce, Meat & Dairy",Meat,1kg,Georgia,61.31,172,503,1.5,true,3.8,2,B,Aisle 2 · Shelf B
-103585,BRV-103585,President Mozzarella Single,President,"Fresh Produce, Meat & Dairy",Meat,Single,France,53.08,474,289,1.1,true,0.8,2,B,Aisle 2 · Shelf B
-102679,BRV-102679,President Onion 250g,President,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,49.15,202,280,0.3,true,2.2,2,C,Aisle 2 · Shelf C
-102699,BRV-102699,President Orange 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Spain,5.15,116,538,0.2,true,3.1,2,C,Aisle 2 · Shelf C
-102929,BRV-102929,President Parmesan 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,USA,58.17,496,352,0.3,true,2.8,2,E,Aisle 2 · Shelf E
-103472,BRV-103472,President Peach Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Netherlands,48.16,320,442,0.6,true,2.1,2,A,Aisle 2 · Shelf A
-102474,BRV-102474,President Pineapple 1kg,President,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,13.99,98,579,1,true,2.3,2,B,Aisle 2 · Shelf B
-103243,BRV-103243,President Shrimp Family Pack,President,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Netherlands,32.36,239,304,1,true,2.9,2,E,Aisle 2 · Shelf E
-103630,BRV-103630,President Skim Milk 1.5L,President,"Fresh Produce, Meat & Dairy",Meat,1.5L,Turkey,14.02,161,370,0.9,true,1.5,2,E,Aisle 2 · Shelf E
-102707,BRV-102707,President Skim Milk Pack of 12,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Italy,19.18,110,310,0.6,true,2,2,A,Aisle 2 · Shelf A
-103334,BRV-103334,President Suluguni 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,70.06,204,359,1.2,true,2.1,2,F,Aisle 2 · Shelf F
-103735,BRV-103735,President Tomato 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Germany,50.5,132,318,1.7,true,1.1,2,E,Aisle 2 · Shelf E
-102283,BRV-102283,President Trout 500g,President,"Fresh Produce, Meat & Dairy",Meat,500g,USA,37.9,55,507,0.8,true,3.5,2,D,Aisle 2 · Shelf D
-103386,BRV-103386,President Trout Single,President,"Fresh Produce, Meat & Dairy",Meat,Single,Georgia,22.88,422,664,1.6,true,1.1,2,E,Aisle 2 · Shelf E
-103620,BRV-103620,President Turkey 5kg,President,"Fresh Produce, Meat & Dairy",Meat,5kg,China,70.69,190,373,1.2,true,0.7,2,F,Aisle 2 · Shelf F
-102605,BRV-102605,President Whole Milk 250g,President,"Fresh Produce, Meat & Dairy",Meat,250g,USA,21.46,102,357,0.2,true,2.6,2,F,Aisle 2 · Shelf F
-102932,BRV-102932,President Whole Milk Pack of 12,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Iran,21.13,179,292,1.3,true,2.6,2,C,Aisle 2 · Shelf C
-103128,BRV-103128,Sehiyye Ayran 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Iran,9.95,447,238,1.2,true,2.1,2,C,Aisle 2 · Shelf C
-103702,BRV-103702,Sehiyye Beef 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,7.88,33,224,1.2,true,2,2,A,Aisle 2 · Shelf A
-102432,BRV-102432,Sehiyye Cucumber Single,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Single,France,49.32,450,309,1,true,1.8,2,B,Aisle 2 · Shelf B
-102494,BRV-102494,Sehiyye Eggplant 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,5.41,370,665,0.5,true,1.7,2,F,Aisle 2 · Shelf F
-102652,BRV-102652,Sehiyye Feta Cheese 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,1kg,USA,53.06,260,261,1,true,0.8,2,B,Aisle 2 · Shelf B
-103393,BRV-103393,Sehiyye Grapes 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Brazil,45.46,343,278,0.7,true,3.3,2,A,Aisle 2 · Shelf A
-103804,BRV-103804,Sehiyye Lamb 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,100g,Ukraine,38.82,301,333,0.7,true,1.9,2,F,Aisle 2 · Shelf F
-102595,BRV-102595,Sehiyye Melon Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Azerbaijan,40.34,187,189,1,true,1.1,2,B,Aisle 2 · Shelf B
-103066,BRV-103066,Sehiyye Mozzarella 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,51.61,405,129,0.9,true,3.4,2,F,Aisle 2 · Shelf F
-103868,BRV-103868,Sehiyye Mozzarella Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,France,29.76,344,227,0.5,true,1,2,F,Aisle 2 · Shelf F
-102227,BRV-102227,Sehiyye Orange 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Russia,76.52,470,557,1,true,1.7,2,F,Aisle 2 · Shelf F
-102673,BRV-102673,Sehiyye Orange 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,China,49.51,492,142,0.6,true,3.9,2,E,Aisle 2 · Shelf E
-102431,BRV-102431,Sehiyye Parmesan 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Iran,0.53,495,414,1.1,true,2.2,2,E,Aisle 2 · Shelf E
-103810,BRV-103810,Sehiyye Pear Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Azerbaijan,64.72,130,670,1.3,true,1,2,A,Aisle 2 · Shelf A
-102961,BRV-102961,Sehiyye Trout 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Brazil,39.49,61,596,1.7,true,2.9,2,A,Aisle 2 · Shelf A
-102600,BRV-102600,Sehiyye Veal 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,1.5L,Azerbaijan,24.53,309,244,0.9,true,1.9,2,E,Aisle 2 · Shelf E
-102839,BRV-102839,Sehiyye Whole Milk 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,55.36,167,290,1.7,true,2.9,2,E,Aisle 2 · Shelf E
-103035,BRV-103035,Sehiyye Whole Milk 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,750g,China,68.47,140,501,0.4,true,2,2,B,Aisle 2 · Shelf B
-103554,BRV-103554,Atena Basil 1.5L,Atena,"Fresh Produce, Meat & Dairy",Milk,1.5L,Poland,62.49,457,211,1.5,true,1.7,2,F,Aisle 2 · Shelf F
-102443,BRV-102443,Atena Basil 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,49.99,470,429,0.8,true,0.8,2,D,Aisle 2 · Shelf D
-103638,BRV-103638,Atena Basil Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,France,33.52,4,242,1.2,true,3.3,2,E,Aisle 2 · Shelf E
-102289,BRV-102289,Atena Cabbage Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Brazil,56.16,206,613,0.4,true,0.7,2,B,Aisle 2 · Shelf B
-102613,BRV-102613,Atena Cheddar Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Germany,72.52,64,140,1.6,true,3.9,2,A,Aisle 2 · Shelf A
-103260,BRV-103260,Atena Chicken Thighs Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Brazil,47.91,444,477,0.6,true,1.8,2,B,Aisle 2 · Shelf B
-102322,BRV-102322,Atena Dill 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,China,36.06,162,533,1.4,true,1.3,2,F,Aisle 2 · Shelf F
-102440,BRV-102440,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Brazil,71.78,476,710,1.6,true,2.6,2,E,Aisle 2 · Shelf E
-103117,BRV-103117,Atena Ground Beef Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,68.76,87,480,1.2,true,1.7,2,E,Aisle 2 · Shelf E
-102506,BRV-102506,Atena Lamb Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Brazil,62.64,37,621,0.7,true,1.7,2,D,Aisle 2 · Shelf D
-103127,BRV-103127,Atena Mini Tomato Single,Atena,"Fresh Produce, Meat & Dairy",Milk,Single,India,62.42,142,185,1.2,true,1.8,2,F,Aisle 2 · Shelf F
-102620,BRV-102620,Atena Parmesan 500ml,Atena,"Fresh Produce, Meat & Dairy",Milk,500ml,Spain,70.95,109,598,1.4,true,2.3,2,E,Aisle 2 · Shelf E
-103646,BRV-103646,Atena Parmesan Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Italy,36.55,255,557,0.6,true,0.6,2,B,Aisle 2 · Shelf B
-103624,BRV-103624,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Milk,200g,Brazil,18.67,316,625,0.9,true,1.1,2,F,Aisle 2 · Shelf F
-103343,BRV-103343,Atena Plum 100g,Atena,"Fresh Produce, Meat & Dairy",Milk,100g,Brazil,63.98,39,493,1.3,true,0.5,2,F,Aisle 2 · Shelf F
-103960,BRV-103960,Atena Pomegranate 250ml,Atena,"Fresh Produce, Meat & Dairy",Milk,250ml,Spain,35.91,304,162,1.1,true,1.4,2,A,Aisle 2 · Shelf A
-103878,BRV-103878,Atena Spinach 250g,Atena,"Fresh Produce, Meat & Dairy",Milk,250g,Iran,53.94,489,200,0.8,true,2.2,2,E,Aisle 2 · Shelf E
-103340,BRV-103340,Atena Spinach Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Germany,4.62,270,606,1.1,true,2.7,2,C,Aisle 2 · Shelf C
-102421,BRV-102421,Atena Strawberry 1kg,Atena,"Fresh Produce, Meat & Dairy",Milk,1kg,Brazil,54.11,302,325,0.2,true,2.7,2,F,Aisle 2 · Shelf F
-102811,BRV-102811,Atena Strawberry 2kg,Atena,"Fresh Produce, Meat & Dairy",Milk,2kg,France,66.13,266,420,0.7,true,0.7,2,E,Aisle 2 · Shelf E
-102530,BRV-102530,Atena Suluguni Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Iran,78.2,103,526,1.3,true,2.7,2,A,Aisle 2 · Shelf A
-102211,BRV-102211,Atena Tomato Single,Atena,"Fresh Produce, Meat & Dairy",Milk,Single,Azerbaijan,21.3,375,342,0.6,true,2.5,2,E,Aisle 2 · Shelf E
-102362,BRV-102362,Atena Turkey Family Pack,Atena,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Spain,9.2,34,201,1.1,true,2.1,2,F,Aisle 2 · Shelf F
-102186,BRV-102186,Atena Watermelon 1kg,Atena,"Fresh Produce, Meat & Dairy",Milk,1kg,Germany,6.32,212,377,0.9,true,2.2,2,D,Aisle 2 · Shelf D
-103175,BRV-103175,Atena Zucchini 500g,Atena,"Fresh Produce, Meat & Dairy",Milk,500g,Spain,43.2,283,420,0.7,true,2.9,2,A,Aisle 2 · Shelf A
-102206,BRV-102206,Atena Zucchini 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,China,12.37,137,530,0.3,true,3.3,2,E,Aisle 2 · Shelf E
-103105,BRV-103105,Bravo Farm Broccoli 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Italy,5.55,174,421,0.7,true,2.8,2,D,Aisle 2 · Shelf D
-103463,BRV-103463,Bravo Farm Carrot 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,Italy,52.88,331,388,1.4,true,2.1,2,A,Aisle 2 · Shelf A
-103713,BRV-103713,Bravo Farm Carrot 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,250ml,India,10.41,281,266,1.7,true,3.9,2,A,Aisle 2 · Shelf A
-103431,BRV-103431,Bravo Farm Chicken Breast 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,Spain,44.43,490,709,1.2,true,2.8,2,D,Aisle 2 · Shelf D
-102771,BRV-102771,Bravo Farm Chicken Thighs Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Poland,70.98,296,269,0.3,true,2.3,2,B,Aisle 2 · Shelf B
-102436,BRV-102436,Bravo Farm Free-Range Eggs 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,Italy,78.49,22,465,1,true,3.4,2,B,Aisle 2 · Shelf B
-102439,BRV-102439,Bravo Farm Garlic 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2kg,Poland,22.25,403,286,0.7,true,3.3,2,E,Aisle 2 · Shelf E
-102851,BRV-102851,Bravo Farm Grapes 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,India,76.73,165,288,0.6,true,3,2,C,Aisle 2 · Shelf C
-103832,BRV-103832,Bravo Farm Kefir 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,France,47.07,456,522,1,true,1,2,C,Aisle 2 · Shelf C
-102487,BRV-102487,Bravo Farm Kiwi 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,250g,USA,56.98,89,221,0.6,true,3.1,2,B,Aisle 2 · Shelf B
-102144,BRV-102144,Bravo Farm Lactose-Free Milk 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500ml,China,7.89,170,595,1.5,true,1.7,2,F,Aisle 2 · Shelf F
-102327,BRV-102327,Bravo Farm Lettuce 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,China,63.49,230,468,0.6,true,2.7,2,A,Aisle 2 · Shelf A
-102925,BRV-102925,Bravo Farm Lettuce 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,200g,Russia,10.66,124,372,0.2,true,2.4,2,E,Aisle 2 · Shelf E
-102734,BRV-102734,Bravo Farm Lime 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Spain,25.61,340,656,1.6,true,2.4,2,C,Aisle 2 · Shelf C
-102876,BRV-102876,Bravo Farm Lime Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Azerbaijan,12.37,204,209,0.3,true,3.9,2,D,Aisle 2 · Shelf D
-102015,BRV-102015,Bravo Farm Melon 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,5kg,Germany,12.22,68,584,0.7,true,3.4,2,A,Aisle 2 · Shelf A
-103902,BRV-103902,Bravo Farm Mozzarella 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Italy,9.49,292,402,1.7,true,1,2,A,Aisle 2 · Shelf A
-102239,BRV-102239,Bravo Farm Mozzarella Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Georgia,9.76,65,456,0.7,true,2.1,2,A,Aisle 2 · Shelf A
-103347,BRV-103347,Bravo Farm Orange 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Germany,4.81,490,409,0.2,true,2.8,2,F,Aisle 2 · Shelf F
-103936,BRV-103936,Bravo Farm Parmesan 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Ukraine,56.76,348,203,0.5,true,0.8,2,D,Aisle 2 · Shelf D
-102931,BRV-102931,Bravo Farm Parmesan 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Russia,26.97,3,719,0.6,true,0.8,2,B,Aisle 2 · Shelf B
-102204,BRV-102204,Bravo Farm Parsley 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,200g,Turkey,0.72,133,228,1.1,true,3.8,2,A,Aisle 2 · Shelf A
-103186,BRV-103186,Bravo Farm Pineapple 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,USA,19.48,424,246,1.1,true,3.1,2,C,Aisle 2 · Shelf C
-103611,BRV-103611,Bravo Farm Pineapple 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,76.01,223,317,1,true,3.2,2,F,Aisle 2 · Shelf F
-103610,BRV-103610,Bravo Farm Plum Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Turkey,34.2,119,616,1.5,true,2.8,2,A,Aisle 2 · Shelf A
-103553,BRV-103553,Bravo Farm Plum Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Russia,11.66,70,284,0.8,true,3.8,2,E,Aisle 2 · Shelf E
-103750,BRV-103750,Bravo Farm Spinach 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,21.19,14,621,1.2,true,2.3,2,D,Aisle 2 · Shelf D
-102857,BRV-102857,Bravo Farm Tomato Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Italy,14.26,274,314,1.3,true,0.7,2,A,Aisle 2 · Shelf A
-103006,BRV-103006,Bravo Farm Veal 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Ukraine,15.16,203,491,0.9,true,2.8,2,F,Aisle 2 · Shelf F
-102764,BRV-102764,Bravo Farm Watermelon Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Netherlands,66.13,85,479,1.7,true,3.1,2,D,Aisle 2 · Shelf D
-103762,BRV-103762,Bravo Farm Zucchini 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500ml,Brazil,24.95,444,230,1.1,true,0.8,2,A,Aisle 2 · Shelf A
-103251,BRV-103251,Local Farm Basil 1L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1L,China,64.76,438,469,0.6,true,2.9,2,F,Aisle 2 · Shelf F
-103529,BRV-103529,Local Farm Cabbage Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Poland,3.74,312,167,0.3,true,0.5,2,F,Aisle 2 · Shelf F
-103815,BRV-103815,Local Farm Chicken Thighs Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Azerbaijan,49.06,204,279,1.5,true,3.2,2,B,Aisle 2 · Shelf B
-102653,BRV-102653,Local Farm Kiwi 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,5.53,374,640,0.7,true,3.5,2,A,Aisle 2 · Shelf A
-102669,BRV-102669,Local Farm Lamb 2L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Poland,25.08,340,719,1.1,true,0.5,2,D,Aisle 2 · Shelf D
-103944,BRV-103944,Local Farm Lamb Single,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Single,USA,2.68,92,364,1.2,true,2.5,2,C,Aisle 2 · Shelf C
-103501,BRV-103501,Local Farm Melon 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,Turkey,43.5,24,405,1.1,true,1.5,2,B,Aisle 2 · Shelf B
-103528,BRV-103528,Local Farm Melon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,500g,USA,29.5,312,410,1.1,true,1.1,2,C,Aisle 2 · Shelf C
-102766,BRV-102766,Local Farm Melon Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Georgia,28.51,303,657,0.4,true,3.2,2,B,Aisle 2 · Shelf B
-102352,BRV-102352,Local Farm Melon Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Brazil,17.9,413,344,1.6,true,3.8,2,E,Aisle 2 · Shelf E
-102386,BRV-102386,Local Farm Mint 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,China,71.5,157,671,1,true,3.8,2,F,Aisle 2 · Shelf F
-103963,BRV-103963,Local Farm Mint 750g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,49.59,179,489,1.2,true,2,2,D,Aisle 2 · Shelf D
-103065,BRV-103065,Local Farm Organic Strawberry Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Iran,54.03,105,658,0.7,true,3.4,2,A,Aisle 2 · Shelf A
-102099,BRV-102099,Local Farm Parmesan 500g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Ukraine,47.67,315,644,0.3,true,3.2,2,E,Aisle 2 · Shelf E
-102705,BRV-102705,Local Farm Peach Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,60.2,161,360,0.7,true,3,2,E,Aisle 2 · Shelf E
-103606,BRV-103606,Local Farm Pear 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Georgia,33.55,102,361,1.2,true,1,2,B,Aisle 2 · Shelf B
-102967,BRV-102967,Local Farm Salmon 100g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,100g,USA,64.17,349,678,1.5,true,2.7,2,E,Aisle 2 · Shelf E
-102933,BRV-102933,Local Farm Strawberry Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Italy,13.47,162,209,0.3,true,1.7,2,B,Aisle 2 · Shelf B
-103010,BRV-103010,Local Farm Suluguni 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Ukraine,73.39,192,590,0.3,true,3.5,2,E,Aisle 2 · Shelf E
-102022,BRV-102022,Milla Banana 1.5L,Milla,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,36.26,428,434,1.5,true,2.9,2,A,Aisle 2 · Shelf A
-103255,BRV-103255,Milla Banana 1L,Milla,"Fresh Produce, Meat & Dairy",Milk,1L,Brazil,69.45,373,561,0.8,true,3.4,2,D,Aisle 2 · Shelf D
-102508,BRV-102508,Milla Banana 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,75.49,67,159,1.7,true,3.5,2,F,Aisle 2 · Shelf F
-103530,BRV-103530,Milla Basil 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,Poland,62.43,8,517,0.5,true,3.5,2,D,Aisle 2 · Shelf D
-103477,BRV-103477,Milla Broccoli 1.5L,Milla,"Fresh Produce, Meat & Dairy",Milk,1.5L,Russia,64.54,249,307,0.5,true,2.6,2,D,Aisle 2 · Shelf D
-102252,BRV-102252,Milla Chicken Thighs 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Spain,45.44,150,705,0.7,true,2.9,2,B,Aisle 2 · Shelf B
-102267,BRV-102267,Milla Cilantro 250g,Milla,"Fresh Produce, Meat & Dairy",Milk,250g,Russia,53.63,416,177,1.4,true,3,2,B,Aisle 2 · Shelf B
-103749,BRV-103749,Milla Eggplant 1L,Milla,"Fresh Produce, Meat & Dairy",Milk,1L,Italy,73.15,442,295,0.8,true,3,2,B,Aisle 2 · Shelf B
-103589,BRV-103589,Milla Feta Cheese 250ml,Milla,"Fresh Produce, Meat & Dairy",Milk,250ml,Poland,19.89,499,621,0.6,true,3.4,2,F,Aisle 2 · Shelf F
-102657,BRV-102657,Milla Ground Beef Family Pack,Milla,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Spain,36.34,254,620,0.5,true,3.4,2,E,Aisle 2 · Shelf E
-102390,BRV-102390,Milla Lamb 500g,Milla,"Fresh Produce, Meat & Dairy",Milk,500g,India,32.19,390,138,1.2,true,3.7,2,E,Aisle 2 · Shelf E
-102103,BRV-102103,Milla Lettuce 500ml,Milla,"Fresh Produce, Meat & Dairy",Milk,500ml,Spain,17.24,236,440,0.9,true,1.2,2,C,Aisle 2 · Shelf C
-103378,BRV-103378,Milla Lime Bulk,Milla,"Fresh Produce, Meat & Dairy",Milk,Bulk,Georgia,37.07,383,135,0.6,true,3.5,2,D,Aisle 2 · Shelf D
-103355,BRV-103355,Milla Melon 1kg,Milla,"Fresh Produce, Meat & Dairy",Milk,1kg,France,58.77,130,552,0.2,true,3.4,2,A,Aisle 2 · Shelf A
-102280,BRV-102280,Milla Melon 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,India,6.41,341,264,0.9,true,1.5,2,E,Aisle 2 · Shelf E
-102504,BRV-102504,Milla Original Lettuce 500ml,Milla,"Fresh Produce, Meat & Dairy",Milk,500ml,Iran,42.98,290,563,0.7,true,1,2,B,Aisle 2 · Shelf B
-102905,BRV-102905,Milla Parsley Family Pack,Milla,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Georgia,49.17,1,218,0.8,true,2.9,2,E,Aisle 2 · Shelf E
-103170,BRV-103170,Milla Sturgeon 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,France,27.73,213,533,1.5,true,0.6,2,D,Aisle 2 · Shelf D
-103839,BRV-103839,Milla Tomato Bulk,Milla,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,32.11,328,553,0.8,true,2.9,2,D,Aisle 2 · Shelf D
-102758,BRV-102758,Milla Trout 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,Brazil,32.9,382,418,0.3,true,0.6,2,A,Aisle 2 · Shelf A
-103473,BRV-103473,Milla Zucchini 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Brazil,60.52,274,447,1.1,true,3.6,2,B,Aisle 2 · Shelf B
-102752,BRV-102752,Palsud Banana 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,0.93,479,308,0.3,true,2.6,2,C,Aisle 2 · Shelf C
-103496,BRV-103496,Palsud Banana Single,Palsud,"Fresh Produce, Meat & Dairy",Milk,Single,USA,40.15,378,520,1.7,true,2,2,E,Aisle 2 · Shelf E
-102529,BRV-102529,Palsud Bell Pepper Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Ukraine,22.68,241,564,0.8,true,3.8,2,C,Aisle 2 · Shelf C
-103836,BRV-103836,Palsud Broccoli Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,59.16,87,270,0.5,true,1.1,2,C,Aisle 2 · Shelf C
-103410,BRV-103410,Palsud Cabbage 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,29.67,132,682,0.3,true,3.9,2,E,Aisle 2 · Shelf E
-103118,BRV-103118,Palsud Cabbage 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,42.67,430,583,1.3,true,3.5,2,D,Aisle 2 · Shelf D
-103056,BRV-103056,Palsud Cabbage Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Turkey,11.18,204,568,0.3,true,3.3,2,C,Aisle 2 · Shelf C
-102747,BRV-102747,Palsud Cheddar 1kg,Palsud,"Fresh Produce, Meat & Dairy",Milk,1kg,Russia,15.87,8,194,1.4,true,3.6,2,A,Aisle 2 · Shelf A
-103848,BRV-103848,Palsud Cheddar 750g,Palsud,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,66.49,136,285,1,true,2.9,2,D,Aisle 2 · Shelf D
-103133,BRV-103133,Palsud Cherry Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Iran,1.38,213,482,0.7,true,2.1,2,A,Aisle 2 · Shelf A
-103215,BRV-103215,Palsud Chicken Wings 250ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,250ml,Italy,35.42,470,197,0.4,true,3.2,2,F,Aisle 2 · Shelf F
-102243,BRV-102243,Palsud Cilantro Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Georgia,39.09,433,607,0.8,true,1.1,2,F,Aisle 2 · Shelf F
-102795,BRV-102795,Palsud Feta Cheese 1kg,Palsud,"Fresh Produce, Meat & Dairy",Milk,1kg,Italy,10.43,4,423,1.3,true,1.3,2,F,Aisle 2 · Shelf F
-103126,BRV-103126,Palsud Garlic 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Turkey,28.48,113,652,1.5,true,0.7,2,A,Aisle 2 · Shelf A
-103464,BRV-103464,Palsud Grapes 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Italy,44.53,420,691,1.6,true,1.9,2,F,Aisle 2 · Shelf F
-103482,BRV-103482,Palsud Ground Beef Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Milk,Family Pack,China,26.5,273,195,1.1,true,1.1,2,B,Aisle 2 · Shelf B
-102955,BRV-102955,Palsud Kefir 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,Turkey,57.88,132,509,0.8,true,3.3,2,B,Aisle 2 · Shelf B
-102215,BRV-102215,Palsud Lactose-Free Milk 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,China,17.5,158,490,1.4,true,3.9,2,A,Aisle 2 · Shelf A
-102335,BRV-102335,Palsud Lamb 500g,Palsud,"Fresh Produce, Meat & Dairy",Milk,500g,Poland,24.61,435,681,1,true,1.9,2,B,Aisle 2 · Shelf B
-103114,BRV-103114,Palsud Lamb 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Poland,67.47,167,515,0.8,true,3,2,D,Aisle 2 · Shelf D
-103757,BRV-103757,Palsud Lamb Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Azerbaijan,59.36,364,178,1.3,true,1.5,2,A,Aisle 2 · Shelf A
-103182,BRV-103182,Palsud Lettuce Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Italy,20.23,359,274,1.2,true,3.9,2,A,Aisle 2 · Shelf A
-103098,BRV-103098,Palsud Lime 200g,Palsud,"Fresh Produce, Meat & Dairy",Milk,200g,Russia,32.48,83,190,1.2,true,0.5,2,A,Aisle 2 · Shelf A
-103306,BRV-103306,Palsud Lime Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Spain,38.64,388,328,1.1,true,2,2,C,Aisle 2 · Shelf C
-103367,BRV-103367,Palsud Mint 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Georgia,27.43,41,259,0.7,true,3.9,2,F,Aisle 2 · Shelf F
-102830,BRV-102830,Palsud Mint Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,USA,78.57,53,303,0.3,true,1.7,2,B,Aisle 2 · Shelf B
-102570,BRV-102570,Palsud Onion 2L,Palsud,"Fresh Produce, Meat & Dairy",Milk,2L,Turkey,18.86,431,330,0.6,true,1.2,2,A,Aisle 2 · Shelf A
-102694,BRV-102694,Palsud Plum 200g,Palsud,"Fresh Produce, Meat & Dairy",Milk,200g,France,15.99,234,171,1.3,true,2.5,2,D,Aisle 2 · Shelf D
-102459,BRV-102459,Palsud Plum 500g,Palsud,"Fresh Produce, Meat & Dairy",Milk,500g,Italy,12.6,92,708,1.2,true,3.7,2,E,Aisle 2 · Shelf E
-102367,BRV-102367,Palsud Pomegranate 750g,Palsud,"Fresh Produce, Meat & Dairy",Milk,750g,Georgia,16.98,60,560,1.4,true,2.1,2,C,Aisle 2 · Shelf C
-103403,BRV-103403,Palsud Salmon 2L,Palsud,"Fresh Produce, Meat & Dairy",Milk,2L,Russia,32.82,129,174,0.3,true,3.3,2,C,Aisle 2 · Shelf C
-103383,BRV-103383,Palsud Watermelon 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,Azerbaijan,9.53,397,593,1.6,true,2.2,2,F,Aisle 2 · Shelf F
-103608,BRV-103608,Palsud Whole Milk Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Ukraine,70.7,88,635,1.1,true,3.4,2,F,Aisle 2 · Shelf F
-102016,BRV-102016,Pinar Apple 200g,Pinar,"Fresh Produce, Meat & Dairy",Milk,200g,Azerbaijan,9.46,340,315,1.1,true,1.9,2,B,Aisle 2 · Shelf B
-103183,BRV-103183,Pinar Apple 5kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,5kg,Azerbaijan,11.46,196,207,0.7,true,2.1,2,B,Aisle 2 · Shelf B
-102690,BRV-102690,Pinar Ayran Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,USA,15.63,298,527,1.7,true,1,2,F,Aisle 2 · Shelf F
-102010,BRV-102010,Pinar Banana Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Georgia,33.78,17,233,1.4,true,3.2,2,B,Aisle 2 · Shelf B
-103927,BRV-103927,Pinar Basil Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Azerbaijan,67.51,194,473,0.3,true,2.4,2,F,Aisle 2 · Shelf F
-102205,BRV-102205,Pinar Bell Pepper 250g,Pinar,"Fresh Produce, Meat & Dairy",Milk,250g,Netherlands,58.05,140,305,1.6,true,2.5,2,F,Aisle 2 · Shelf F
-103740,BRV-103740,Pinar Broccoli 200g,Pinar,"Fresh Produce, Meat & Dairy",Milk,200g,Brazil,65.19,135,642,0.8,true,2.1,2,E,Aisle 2 · Shelf E
-103510,BRV-103510,Pinar Broccoli Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Germany,53.29,81,675,1.3,true,3,2,D,Aisle 2 · Shelf D
-103758,BRV-103758,Pinar Carrot 100g,Pinar,"Fresh Produce, Meat & Dairy",Milk,100g,Russia,22.46,84,149,1.4,true,2.8,2,D,Aisle 2 · Shelf D
-103937,BRV-103937,Pinar Chicken Wings 750g,Pinar,"Fresh Produce, Meat & Dairy",Milk,750g,Germany,27.61,275,134,1.4,true,2.3,2,E,Aisle 2 · Shelf E
-103399,BRV-103399,Pinar Dill Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,USA,23.92,219,416,1.2,true,2.1,2,E,Aisle 2 · Shelf E
-103229,BRV-103229,Pinar Dill Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Italy,34.53,215,628,0.5,true,2,2,C,Aisle 2 · Shelf C
-103273,BRV-103273,Pinar Eco Banana Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,USA,60.66,84,497,0.7,true,1.6,2,F,Aisle 2 · Shelf F
-102686,BRV-102686,Pinar Eggplant Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Iran,68.8,64,670,1.7,true,3.3,2,A,Aisle 2 · Shelf A
-103769,BRV-103769,Pinar Feta Cheese Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Russia,28.27,486,669,0.7,true,3.7,2,B,Aisle 2 · Shelf B
-103248,BRV-103248,Pinar Garlic 1L,Pinar,"Fresh Produce, Meat & Dairy",Milk,1L,India,54.91,208,291,0.5,true,1.5,2,D,Aisle 2 · Shelf D
-102927,BRV-102927,Pinar Grapes 250g,Pinar,"Fresh Produce, Meat & Dairy",Milk,250g,Iran,2.83,463,442,0.9,true,1.7,2,A,Aisle 2 · Shelf A
-102260,BRV-102260,Pinar Ground Beef Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Iran,35.01,136,566,0.3,true,1.3,2,C,Aisle 2 · Shelf C
-103730,BRV-103730,Pinar Lemon Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,18.05,368,231,0.9,true,1,2,D,Aisle 2 · Shelf D
-103269,BRV-103269,Pinar Parsley Bulk,Pinar,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,76.48,58,640,1.4,true,2.2,2,A,Aisle 2 · Shelf A
-102286,BRV-102286,Pinar Plum Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,India,19.09,218,434,1,true,3.8,2,E,Aisle 2 · Shelf E
-103712,BRV-103712,Pinar Potato 2kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,2kg,Spain,48.27,429,327,1.2,true,3.3,2,F,Aisle 2 · Shelf F
-102501,BRV-102501,Pinar Quail Eggs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Milk,500ml,Russia,56.86,360,186,0.7,true,1.6,2,C,Aisle 2 · Shelf C
-103163,BRV-103163,Pinar Salmon 5kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,5kg,Georgia,73.79,24,425,1.3,true,2.5,2,F,Aisle 2 · Shelf F
-102845,BRV-102845,Pinar Strawberry 500ml,Pinar,"Fresh Produce, Meat & Dairy",Milk,500ml,India,53.42,44,571,1.3,true,3.8,2,D,Aisle 2 · Shelf D
-103205,BRV-103205,Pinar Tomato 2kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,2kg,Georgia,54.56,163,446,0.9,true,1.6,2,A,Aisle 2 · Shelf A
-102890,BRV-102890,Pinar Turkey 1L,Pinar,"Fresh Produce, Meat & Dairy",Milk,1L,Georgia,18.36,66,209,0.9,true,1.1,2,D,Aisle 2 · Shelf D
-103017,BRV-103017,Pinar Turkey 1kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,1kg,India,69.11,283,177,1.6,true,1,2,D,Aisle 2 · Shelf D
-102642,BRV-102642,Pinar Watermelon Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,France,71.49,285,414,1.4,true,2.1,2,E,Aisle 2 · Shelf E
-103559,BRV-103559,Pinar Whole Milk 100g,Pinar,"Fresh Produce, Meat & Dairy",Milk,100g,Georgia,32.74,248,618,1.6,true,3,2,A,Aisle 2 · Shelf A
-102307,BRV-102307,Pinar Zucchini Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Turkey,2.94,63,250,0.7,true,3.1,2,C,Aisle 2 · Shelf C
-103068,BRV-103068,President Bell Pepper 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Georgia,73.27,100,707,0.5,true,2.3,2,D,Aisle 2 · Shelf D
-102947,BRV-102947,President Cabbage 100g,President,"Fresh Produce, Meat & Dairy",Milk,100g,Netherlands,67.82,418,680,1.6,true,2.7,2,A,Aisle 2 · Shelf A
-102736,BRV-102736,President Cherry 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,Turkey,34.8,38,454,0.7,true,1.5,2,E,Aisle 2 · Shelf E
-103670,BRV-103670,President Chicken Breast Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,China,17.82,467,646,1.6,true,2.3,2,A,Aisle 2 · Shelf A
-102214,BRV-102214,President Chicken Wings 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,Poland,32.91,81,551,0.9,true,0.9,2,D,Aisle 2 · Shelf D
-103304,BRV-103304,President Cilantro 250ml,President,"Fresh Produce, Meat & Dairy",Milk,250ml,China,78.12,294,278,0.2,true,3.6,2,A,Aisle 2 · Shelf A
-102792,BRV-102792,President Dill 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,China,44.91,475,176,1,true,2.2,2,A,Aisle 2 · Shelf A
-102802,BRV-102802,President Feta Cheese Single,President,"Fresh Produce, Meat & Dairy",Milk,Single,France,49.59,284,400,0.4,true,0.7,2,E,Aisle 2 · Shelf E
-102074,BRV-102074,President Grapes 1.5L,President,"Fresh Produce, Meat & Dairy",Milk,1.5L,Brazil,3.72,444,199,0.9,true,1,2,B,Aisle 2 · Shelf B
-102730,BRV-102730,President Kiwi 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,India,73.74,242,468,0.3,true,1.3,2,E,Aisle 2 · Shelf E
-102945,BRV-102945,President Kiwi 5kg,President,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,54.33,403,158,0.6,true,2.2,2,E,Aisle 2 · Shelf E
-102894,BRV-102894,President Lactose-Free Milk Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,China,20.8,284,557,0.5,true,0.7,2,F,Aisle 2 · Shelf F
-102760,BRV-102760,President Lamb 500g,President,"Fresh Produce, Meat & Dairy",Milk,500g,Azerbaijan,77.87,97,427,1.3,true,1.1,2,F,Aisle 2 · Shelf F
-103401,BRV-103401,President Melon 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,France,51.49,60,136,0.3,true,1.8,2,A,Aisle 2 · Shelf A
-102797,BRV-102797,President Onion 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Netherlands,47.98,307,297,0.5,true,2.2,2,F,Aisle 2 · Shelf F
-103177,BRV-103177,President Orange Pack of 6,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Italy,12.17,160,346,0.9,true,2.3,2,E,Aisle 2 · Shelf E
-103469,BRV-103469,President Parmesan Pack of 24,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,33.42,466,258,0.8,true,2.4,2,E,Aisle 2 · Shelf E
-102819,BRV-102819,President Pear 2L,President,"Fresh Produce, Meat & Dairy",Milk,2L,China,21.33,463,636,0.9,true,2.8,2,E,Aisle 2 · Shelf E
-102678,BRV-102678,President Pineapple 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Ukraine,70.04,482,581,1.3,true,2.6,2,B,Aisle 2 · Shelf B
-103053,BRV-103053,President Plum Pack of 6,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Italy,44.42,96,273,0.8,true,0.6,2,F,Aisle 2 · Shelf F
-103081,BRV-103081,President Pomegranate Pack of 12,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,China,59.09,150,612,0.3,true,2.2,2,A,Aisle 2 · Shelf A
-103439,BRV-103439,President Potato 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,India,62.02,255,581,1,true,1.9,2,B,Aisle 2 · Shelf B
-102943,BRV-102943,President Salmon 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Russia,61.43,51,556,1.4,true,2.3,2,E,Aisle 2 · Shelf E
-103293,BRV-103293,President Salmon Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,India,73.74,124,199,1.3,true,0.9,2,F,Aisle 2 · Shelf F
-102428,BRV-102428,President Shrimp Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,31.01,127,152,1.1,true,3.6,2,E,Aisle 2 · Shelf E
-102170,BRV-102170,President Tomato Family Pack,President,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Germany,50.49,342,630,1.4,true,0.8,2,C,Aisle 2 · Shelf C
-103356,BRV-103356,President Trout 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Iran,17.72,95,587,0.6,true,1.2,2,B,Aisle 2 · Shelf B
-103109,BRV-103109,President Turkey 5kg,President,"Fresh Produce, Meat & Dairy",Milk,5kg,Georgia,27.83,330,145,0.5,true,2,2,F,Aisle 2 · Shelf F
-102915,BRV-102915,President Veal 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Ukraine,69.13,221,273,0.4,true,0.5,2,F,Aisle 2 · Shelf F
-103656,BRV-103656,Sehiyye Beef Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Brazil,74.19,110,718,1.5,true,3.1,2,C,Aisle 2 · Shelf C
-102741,BRV-102741,Sehiyye Beef Single,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Single,Brazil,79.32,152,520,0.9,true,3.7,2,A,Aisle 2 · Shelf A
-103208,BRV-103208,Sehiyye Carrot 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,France,15.99,165,159,0.4,true,1.3,2,B,Aisle 2 · Shelf B
-103435,BRV-103435,Sehiyye Carrot Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,France,19.07,387,569,0.2,true,1.3,2,B,Aisle 2 · Shelf B
-102745,BRV-102745,Sehiyye Chicken Thighs 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,USA,60.04,396,268,1.4,true,3.6,2,C,Aisle 2 · Shelf C
-103584,BRV-103584,Sehiyye Free-Range Eggs 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,1.5L,Germany,53.47,446,188,1,true,3.2,2,E,Aisle 2 · Shelf E
-102878,BRV-102878,Sehiyye Free-Range Eggs 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Russia,45.91,100,403,0.3,true,2.7,2,B,Aisle 2 · Shelf B
-103479,BRV-103479,Sehiyye Garlic Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Brazil,78.21,133,569,1.1,true,3.8,2,F,Aisle 2 · Shelf F
-103701,BRV-103701,Sehiyye Ground Beef Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Italy,62.14,291,659,1.6,true,3.9,2,B,Aisle 2 · Shelf B
-102457,BRV-102457,Sehiyye Kefir 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Italy,61.75,172,326,0.5,true,1.6,2,A,Aisle 2 · Shelf A
-102735,BRV-102735,Sehiyye Kiwi 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,5kg,India,53.64,415,413,0.6,true,2.8,2,B,Aisle 2 · Shelf B
-102597,BRV-102597,Sehiyye Kiwi 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Russia,45.84,411,483,1.7,true,3.4,2,F,Aisle 2 · Shelf F
-102786,BRV-102786,Sehiyye Lactose-Free Milk 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,Netherlands,51.78,8,371,1.4,true,1.1,2,B,Aisle 2 · Shelf B
-102250,BRV-102250,Sehiyye Lactose-Free Milk Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,69.63,336,519,1.2,true,1.2,2,D,Aisle 2 · Shelf D
-102401,BRV-102401,Sehiyye Lettuce 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,Poland,77.22,320,183,0.7,true,0.6,2,D,Aisle 2 · Shelf D
-103541,BRV-103541,Sehiyye Light Chicken Thighs 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,France,2.32,106,385,0.4,true,0.9,2,F,Aisle 2 · Shelf F
-103655,BRV-103655,Sehiyye Lime 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,250ml,Brazil,2.66,128,477,1.4,true,4,2,F,Aisle 2 · Shelf F
-102124,BRV-102124,Sehiyye Mini Plum 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,2kg,Italy,8.26,477,201,0.8,true,2.9,2,D,Aisle 2 · Shelf D
-102846,BRV-102846,Sehiyye Parmesan 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,5kg,Brazil,45.66,182,504,1.3,true,0.9,2,A,Aisle 2 · Shelf A
-102049,BRV-102049,Sehiyye Plum 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,2kg,Germany,25.48,207,639,1.4,true,0.8,2,F,Aisle 2 · Shelf F
-102505,BRV-102505,Sehiyye Plum Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,India,62.9,270,462,1.4,true,2.7,2,A,Aisle 2 · Shelf A
-102500,BRV-102500,Sehiyye Spinach Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Ukraine,7.82,6,583,0.7,true,2.6,2,B,Aisle 2 · Shelf B
-102935,BRV-102935,Sehiyye Sturgeon 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,76.24,438,139,0.3,true,1.9,2,B,Aisle 2 · Shelf B
-102444,BRV-102444,Sehiyye Tomato Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,France,56.06,297,138,1,true,2.4,2,E,Aisle 2 · Shelf E
-103895,BRV-103895,Sehiyye Tomato Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Poland,9.18,313,607,0.4,true,3.3,2,B,Aisle 2 · Shelf B
-103579,BRV-103579,Sehiyye Turkey 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Ukraine,56.29,293,564,1,true,0.6,2,E,Aisle 2 · Shelf E
-103786,BRV-103786,Sehiyye Turkey Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Russia,1.87,458,284,0.6,true,3.8,2,A,Aisle 2 · Shelf A
-103199,BRV-103199,Sehiyye Watermelon 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Poland,43.57,15,594,0.5,true,3.6,2,A,Aisle 2 · Shelf A
-102068,BRV-102068,Sehiyye Zucchini 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,Netherlands,2.4,249,616,0.3,true,2.4,2,E,Aisle 2 · Shelf E
-102384,BRV-102384,Atena Basil 1L,Atena,"Fresh Produce, Meat & Dairy",Poultry,1L,Spain,21.25,442,145,0.3,true,4,2,B,Aisle 2 · Shelf B
-103633,BRV-103633,Atena Chicken Thighs Single,Atena,"Fresh Produce, Meat & Dairy",Poultry,Single,Iran,19.59,217,201,1.1,true,1.5,2,B,Aisle 2 · Shelf B
-103835,BRV-103835,Atena Chicken Wings 500g,Atena,"Fresh Produce, Meat & Dairy",Poultry,500g,Iran,56.99,420,637,1.5,true,3.6,2,F,Aisle 2 · Shelf F
-102388,BRV-102388,Atena Dill 750g,Atena,"Fresh Produce, Meat & Dairy",Poultry,750g,Ukraine,37.21,1,605,0.6,true,3.3,2,D,Aisle 2 · Shelf D
-102424,BRV-102424,Atena Free-Range Eggs Family Pack,Atena,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,China,9.44,218,428,0.9,true,1.5,2,A,Aisle 2 · Shelf A
-102712,BRV-102712,Atena Lettuce Bulk,Atena,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Italy,74.09,25,256,1.3,true,1.7,2,E,Aisle 2 · Shelf E
-102143,BRV-102143,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Poultry,Single,Poland,72.55,336,236,0.8,true,3.8,2,C,Aisle 2 · Shelf C
-102232,BRV-102232,Atena Parmesan Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Azerbaijan,70.64,348,435,0.9,true,1.4,2,F,Aisle 2 · Shelf F
-103503,BRV-103503,Atena Pineapple 1.5L,Atena,"Fresh Produce, Meat & Dairy",Poultry,1.5L,USA,31.1,260,659,1.5,true,2,2,D,Aisle 2 · Shelf D
-103852,BRV-103852,Atena Pineapple 250ml,Atena,"Fresh Produce, Meat & Dairy",Poultry,250ml,Brazil,11.11,180,140,0.3,true,3.7,2,C,Aisle 2 · Shelf C
-103388,BRV-103388,Atena Quail Eggs 500g,Atena,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,1.33,144,226,0.5,true,0.6,2,C,Aisle 2 · Shelf C
-103259,BRV-103259,Atena Skim Milk 2kg,Atena,"Fresh Produce, Meat & Dairy",Poultry,2kg,Ukraine,53.6,6,421,1.3,true,0.7,2,B,Aisle 2 · Shelf B
-103067,BRV-103067,Atena Sturgeon Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Poland,11.41,102,588,1.6,true,0.6,2,E,Aisle 2 · Shelf E
-103314,BRV-103314,Atena Turkey Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Ukraine,59.39,472,705,0.3,true,2,2,B,Aisle 2 · Shelf B
-102414,BRV-102414,Atena Watermelon 5kg,Atena,"Fresh Produce, Meat & Dairy",Poultry,5kg,Netherlands,54.91,384,513,0.6,true,2.1,2,F,Aisle 2 · Shelf F
-103607,BRV-103607,Atena Zucchini 750g,Atena,"Fresh Produce, Meat & Dairy",Poultry,750g,Russia,53.59,425,260,0.3,true,3.4,2,C,Aisle 2 · Shelf C
-103544,BRV-103544,Bravo Farm Apple 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,Iran,2.15,200,680,1.4,true,3.1,2,A,Aisle 2 · Shelf A
-103874,BRV-103874,Bravo Farm Basil 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Azerbaijan,53.3,468,404,0.8,true,2.9,2,E,Aisle 2 · Shelf E
-103859,BRV-103859,Bravo Farm Broccoli 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,37.47,128,519,1.6,true,2.7,2,B,Aisle 2 · Shelf B
-103433,BRV-103433,Bravo Farm Cherry Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,China,45.53,25,403,0.4,true,1.2,2,B,Aisle 2 · Shelf B
-102737,BRV-102737,Bravo Farm Chicken Wings Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Spain,8.22,104,419,0.5,true,3,2,D,Aisle 2 · Shelf D
-103419,BRV-103419,Bravo Farm Classic Orange 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Russia,58.24,283,191,0.7,true,1,2,D,Aisle 2 · Shelf D
-102271,BRV-102271,Bravo Farm Cucumber Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,India,35.69,144,716,1.6,true,0.5,2,C,Aisle 2 · Shelf C
-103179,BRV-103179,Bravo Farm Dill Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Iran,73.52,458,664,0.2,true,1.5,2,C,Aisle 2 · Shelf C
-103692,BRV-103692,Bravo Farm Free-Range Eggs 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,Georgia,52.08,158,302,1.3,true,1.8,2,A,Aisle 2 · Shelf A
-103919,BRV-103919,Bravo Farm Free-Range Eggs Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,Poland,56.22,224,698,1.7,true,1.9,2,A,Aisle 2 · Shelf A
-103591,BRV-103591,Bravo Farm Garlic 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Turkey,47.87,272,302,0.3,true,1.2,2,C,Aisle 2 · Shelf C
-103723,BRV-103723,Bravo Farm Garlic 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1L,China,32.98,362,711,0.5,true,1.9,2,F,Aisle 2 · Shelf F
-103078,BRV-103078,Bravo Farm Grapes 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Spain,18.56,447,624,1.7,true,3.4,2,E,Aisle 2 · Shelf E
-103550,BRV-103550,Bravo Farm Greek Yogurt 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,France,27.21,487,471,1.4,true,2.5,2,B,Aisle 2 · Shelf B
-102317,BRV-102317,Bravo Farm Kiwi 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Poland,50.44,61,613,0.7,true,1.4,2,B,Aisle 2 · Shelf B
-102403,BRV-102403,Bravo Farm Orange 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,France,43.74,482,609,0.6,true,3.5,2,F,Aisle 2 · Shelf F
-102913,BRV-102913,Bravo Farm Peach 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Ukraine,64.49,340,435,0.6,true,3.9,2,D,Aisle 2 · Shelf D
-103266,BRV-103266,Bravo Farm Peach 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,5kg,Russia,28.63,271,247,1.5,true,4,2,B,Aisle 2 · Shelf B
-103387,BRV-103387,Bravo Farm Strawberry 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,China,39.74,110,517,1.2,true,3.9,2,F,Aisle 2 · Shelf F
-102281,BRV-102281,Bravo Farm Tomato 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,Spain,4.3,442,565,1.1,true,1.9,2,D,Aisle 2 · Shelf D
-103058,BRV-103058,Bravo Farm Turkey 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,France,49.35,25,434,1.4,true,1.5,2,C,Aisle 2 · Shelf C
-103765,BRV-103765,Bravo Farm Watermelon 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,France,62.76,246,633,1,true,4,2,D,Aisle 2 · Shelf D
-103886,BRV-103886,Local Farm Ayran 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,Ukraine,30.87,68,499,0.8,true,1.8,2,F,Aisle 2 · Shelf F
-103819,BRV-103819,Local Farm Beef 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Russia,77.37,32,651,0.6,true,3.4,2,D,Aisle 2 · Shelf D
-102433,BRV-102433,Local Farm Cabbage 750g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,750g,India,48.35,34,488,0.7,true,1.7,2,A,Aisle 2 · Shelf A
-102858,BRV-102858,Local Farm Chicken Wings 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Spain,60.47,179,125,0.6,true,2.2,2,B,Aisle 2 · Shelf B
-102939,BRV-102939,Local Farm Cilantro 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,10.48,160,543,0.9,true,2.5,2,F,Aisle 2 · Shelf F
-103156,BRV-103156,Local Farm Cucumber 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,62.49,252,633,0.5,true,3.9,2,F,Aisle 2 · Shelf F
-103755,BRV-103755,Local Farm Dill Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Russia,41.1,391,380,0.7,true,1,2,A,Aisle 2 · Shelf A
-102516,BRV-102516,Local Farm Eggplant 200g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,Spain,35.09,258,262,0.9,true,2.8,2,C,Aisle 2 · Shelf C
-103991,BRV-103991,Local Farm Family Suluguni Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Russia,24.44,231,362,1.1,true,1.6,2,C,Aisle 2 · Shelf C
-103555,BRV-103555,Local Farm Feta Cheese 100g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Netherlands,72.95,112,486,1.5,true,3.8,2,C,Aisle 2 · Shelf C
-102773,BRV-102773,Local Farm Grapes Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,USA,39.01,287,643,1.7,true,2.2,2,D,Aisle 2 · Shelf D
-102956,BRV-102956,Local Farm Greek Yogurt Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,Spain,69.45,471,350,1.6,true,0.9,2,E,Aisle 2 · Shelf E
-102681,BRV-102681,Local Farm Ground Beef 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,France,46.21,138,361,1.7,true,0.8,2,F,Aisle 2 · Shelf F
-103914,BRV-103914,Local Farm Melon 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,India,37.45,341,211,1,true,1.3,2,D,Aisle 2 · Shelf D
-103569,BRV-103569,Local Farm Melon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,26.71,282,139,0.6,true,3,2,F,Aisle 2 · Shelf F
-102572,BRV-102572,Local Farm Parsley 100g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Iran,0.59,227,404,0.4,true,2.4,2,A,Aisle 2 · Shelf A
-102065,BRV-102065,Local Farm Parsley 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,USA,71.16,238,449,0.9,true,2.6,2,D,Aisle 2 · Shelf D
-103872,BRV-103872,Local Farm Plum 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,France,34.86,435,158,0.3,true,1.6,2,E,Aisle 2 · Shelf E
-102668,BRV-102668,Local Farm Potato 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Brazil,1.05,25,586,0.4,true,1.1,2,A,Aisle 2 · Shelf A
-102711,BRV-102711,Local Farm Salmon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,Brazil,51.55,353,499,1.2,true,3.7,2,D,Aisle 2 · Shelf D
-103457,BRV-103457,Local Farm Shrimp 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,Netherlands,28.63,307,145,1.3,true,3.6,2,B,Aisle 2 · Shelf B
-102216,BRV-102216,Local Farm Strawberry 200g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,USA,23.68,323,321,1.6,true,0.5,2,D,Aisle 2 · Shelf D
-102163,BRV-102163,Local Farm Suluguni 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,Ukraine,13.26,112,618,1.6,true,1.2,2,E,Aisle 2 · Shelf E
-103680,BRV-103680,Local Farm Suluguni Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Italy,72.42,54,131,1.5,true,2.2,2,B,Aisle 2 · Shelf B
-102034,BRV-102034,Local Farm Veal Single,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Spain,12.13,310,643,1.5,true,0.5,2,B,Aisle 2 · Shelf B
-102563,BRV-102563,Local Farm Watermelon Single,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Ukraine,15.11,31,198,0.2,true,0.9,2,A,Aisle 2 · Shelf A
-102083,BRV-102083,Local Farm Whole Milk 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,France,37.73,84,581,0.8,true,2.8,2,F,Aisle 2 · Shelf F
-102749,BRV-102749,Local Farm Whole Milk Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,Georgia,7.66,441,584,1.6,true,0.9,2,E,Aisle 2 · Shelf E
-103174,BRV-103174,Milla Ayran 250g,Milla,"Fresh Produce, Meat & Dairy",Poultry,250g,Russia,16.38,438,393,0.8,true,1.7,2,B,Aisle 2 · Shelf B
-102158,BRV-102158,Milla Broccoli 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Germany,31.44,96,396,0.8,true,3.7,2,A,Aisle 2 · Shelf A
-103993,BRV-103993,Milla Cherry 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,49.73,306,436,1.1,true,1.6,2,E,Aisle 2 · Shelf E
-103441,BRV-103441,Milla Cherry 500ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,61.46,140,532,0.2,true,0.9,2,A,Aisle 2 · Shelf A
-102152,BRV-102152,Milla Cucumber Bulk,Milla,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Georgia,56.7,130,690,0.2,true,1.7,2,C,Aisle 2 · Shelf C
-103583,BRV-103583,Milla Eggplant 250ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,250ml,Spain,58.1,143,715,0.8,true,3.8,2,D,Aisle 2 · Shelf D
-103299,BRV-103299,Milla Eggplant 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,Russia,25.25,157,433,0.2,true,3.2,2,D,Aisle 2 · Shelf D
-103495,BRV-103495,Milla Feta Cheese 2kg,Milla,"Fresh Produce, Meat & Dairy",Poultry,2kg,Germany,34.12,231,163,1.5,true,1,2,D,Aisle 2 · Shelf D
-102050,BRV-102050,Milla Free-Range Eggs 2L,Milla,"Fresh Produce, Meat & Dairy",Poultry,2L,Brazil,76.87,351,589,0.2,true,3.6,2,D,Aisle 2 · Shelf D
-103996,BRV-103996,Milla Garlic Family Pack,Milla,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,Italy,63.4,352,397,1.1,true,0.7,2,D,Aisle 2 · Shelf D
-102860,BRV-102860,Milla Kefir 100g,Milla,"Fresh Produce, Meat & Dairy",Poultry,100g,China,64.58,491,496,0.6,true,3.2,2,C,Aisle 2 · Shelf C
-103022,BRV-103022,Milla Kefir Bulk,Milla,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Turkey,22.72,277,273,1.5,true,2.4,2,D,Aisle 2 · Shelf D
-102695,BRV-102695,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,Azerbaijan,24.45,339,670,0.6,true,2,2,E,Aisle 2 · Shelf E
-103973,BRV-103973,Milla Onion 500ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,500ml,Germany,50.56,175,206,1.5,true,2.7,2,E,Aisle 2 · Shelf E
-103989,BRV-103989,Milla Parsley 2L,Milla,"Fresh Produce, Meat & Dairy",Poultry,2L,Spain,1.34,368,129,1.4,true,2.5,2,B,Aisle 2 · Shelf B
-103257,BRV-103257,Milla Peach Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,China,5.33,23,191,1.7,true,3.8,2,F,Aisle 2 · Shelf F
-103985,BRV-103985,Milla Pear 2kg,Milla,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,49.06,377,293,0.3,true,4,2,F,Aisle 2 · Shelf F
-103223,BRV-103223,Milla Pineapple 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Italy,61.99,221,618,0.5,true,3.5,2,E,Aisle 2 · Shelf E
-103552,BRV-103552,Milla Sturgeon Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Poultry,Pack of 6,China,34.26,124,705,1.2,true,1.2,2,B,Aisle 2 · Shelf B
-102584,BRV-102584,Milla Turkey 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Georgia,5.75,498,379,1.6,true,1.3,2,F,Aisle 2 · Shelf F
-103767,BRV-103767,Milla Watermelon 250g,Milla,"Fresh Produce, Meat & Dairy",Poultry,250g,Germany,73.53,39,439,1.4,true,3.1,2,B,Aisle 2 · Shelf B
-102682,BRV-102682,Palsud Banana 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,France,4.3,168,322,0.7,true,3.3,2,A,Aisle 2 · Shelf A
-102465,BRV-102465,Palsud Broccoli Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Ukraine,68.29,326,453,1.7,true,2.2,2,F,Aisle 2 · Shelf F
-102537,BRV-102537,Palsud Cabbage Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,Turkey,26.8,27,137,1.6,true,1.3,2,F,Aisle 2 · Shelf F
-103122,BRV-103122,Palsud Cheddar 500ml,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500ml,Italy,52.78,191,480,0.6,true,1,2,C,Aisle 2 · Shelf C
-102469,BRV-102469,Palsud Cilantro 500ml,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,10.31,285,297,1.5,true,3.9,2,B,Aisle 2 · Shelf B
-103200,BRV-103200,Palsud Classic Broccoli Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,USA,10.92,180,431,0.9,true,3.9,2,F,Aisle 2 · Shelf F
-103957,BRV-103957,Palsud Cucumber 200g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,200g,France,69.48,203,500,1.5,true,1.4,2,A,Aisle 2 · Shelf A
-103827,BRV-103827,Palsud Feta Cheese Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,USA,33.11,24,128,0.2,true,1.8,2,E,Aisle 2 · Shelf E
-103725,BRV-103725,Palsud Free-Range Eggs Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,China,6.23,425,141,1.2,true,2.1,2,D,Aisle 2 · Shelf D
-103398,BRV-103398,Palsud Garlic Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Russia,61.92,311,717,0.7,true,2.5,2,F,Aisle 2 · Shelf F
-103054,BRV-103054,Palsud Kefir 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,Russia,68.16,86,566,1.4,true,2.6,2,E,Aisle 2 · Shelf E
-103409,BRV-103409,Palsud Kefir 1kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1kg,India,51.23,44,424,1.4,true,3.8,2,C,Aisle 2 · Shelf C
-103151,BRV-103151,Palsud Melon 1L,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1L,France,77.17,336,398,1.6,true,1.1,2,E,Aisle 2 · Shelf E
-103783,BRV-103783,Palsud Melon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Georgia,11.74,480,341,1,true,1.1,2,B,Aisle 2 · Shelf B
-102743,BRV-102743,Palsud Onion 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,Turkey,63.67,90,470,1.5,true,1.8,2,E,Aisle 2 · Shelf E
-102328,BRV-102328,Palsud Onion 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,Brazil,56.64,261,587,0.6,true,4,2,D,Aisle 2 · Shelf D
-102080,BRV-102080,Palsud Peach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,2kg,Russia,49.54,141,238,1.3,true,2.3,2,C,Aisle 2 · Shelf C
-103986,BRV-103986,Palsud Plum Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,France,66.81,492,182,0.8,true,2.4,2,E,Aisle 2 · Shelf E
-103013,BRV-103013,Palsud Pomegranate 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Spain,9.14,309,333,1.4,true,0.5,2,B,Aisle 2 · Shelf B
-102249,BRV-102249,Palsud Potato 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,India,79.36,298,377,0.3,true,1,2,F,Aisle 2 · Shelf F
-103073,BRV-103073,Palsud Shrimp 200g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,200g,Italy,23.32,112,707,1.1,true,2.6,2,B,Aisle 2 · Shelf B
-102624,BRV-102624,Palsud Skim Milk Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,India,21.15,432,290,0.5,true,3.1,2,E,Aisle 2 · Shelf E
-103310,BRV-103310,Palsud Turkey 5kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,5kg,France,14.42,46,133,1.4,true,3.3,2,B,Aisle 2 · Shelf B
-102871,BRV-102871,Palsud Watermelon 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,Ukraine,43.75,238,542,1.1,true,1.1,2,C,Aisle 2 · Shelf C
-102088,BRV-102088,Palsud Watermelon Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,France,67.64,112,438,0.5,true,0.6,2,E,Aisle 2 · Shelf E
-103427,BRV-103427,Palsud Whole Milk Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,Turkey,14.44,328,348,1.6,true,1.5,2,A,Aisle 2 · Shelf A
-103313,BRV-103313,Palsud Zucchini 500g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500g,Netherlands,59.57,293,470,0.7,true,2.3,2,C,Aisle 2 · Shelf C
-102329,BRV-102329,Pinar Beef Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,China,77.18,407,262,1.3,true,2.5,2,C,Aisle 2 · Shelf C
-103605,BRV-103605,Pinar Bell Pepper 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,France,55.25,357,322,1,true,3,2,A,Aisle 2 · Shelf A
-103543,BRV-103543,Pinar Cabbage 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Italy,79.09,255,199,0.3,true,2.3,2,F,Aisle 2 · Shelf F
-102536,BRV-102536,Pinar Cherry 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,USA,73.73,408,644,0.9,true,3,2,C,Aisle 2 · Shelf C
-103418,BRV-103418,Pinar Dill 750g,Pinar,"Fresh Produce, Meat & Dairy",Poultry,750g,Germany,28.95,310,530,0.4,true,1.1,2,E,Aisle 2 · Shelf E
-103676,BRV-103676,Pinar Eggplant Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,France,27.67,215,636,0.3,true,3.9,2,C,Aisle 2 · Shelf C
-103478,BRV-103478,Pinar Garlic 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,France,39.38,427,596,0.9,true,1.5,2,C,Aisle 2 · Shelf C
-102560,BRV-102560,Pinar Ground Beef 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,Azerbaijan,0.72,251,357,1.3,true,3.3,2,B,Aisle 2 · Shelf B
-102815,BRV-102815,Pinar Lettuce 2kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,58.45,247,280,1.2,true,3.4,2,E,Aisle 2 · Shelf E
-103369,BRV-103369,Pinar Lettuce Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,China,20.08,295,489,1.3,true,1.1,2,F,Aisle 2 · Shelf F
-103051,BRV-103051,Pinar Lime 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Russia,62.97,200,687,1.4,true,2.4,2,F,Aisle 2 · Shelf F
-103505,BRV-103505,Pinar Parsley 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Turkey,16.17,319,497,0.6,true,2.1,2,F,Aisle 2 · Shelf F
-103943,BRV-103943,Pinar Pear 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,Azerbaijan,38.63,440,315,1.4,true,0.6,2,B,Aisle 2 · Shelf B
-103193,BRV-103193,Pinar Salmon 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Ukraine,78.53,302,452,1.5,true,2.2,2,E,Aisle 2 · Shelf E
-102344,BRV-102344,Pinar Skim Milk Single,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Single,Ukraine,38.96,194,213,1.1,true,1.8,2,D,Aisle 2 · Shelf D
-102982,BRV-102982,Pinar Spinach 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,China,61.97,239,133,0.4,true,2.1,2,D,Aisle 2 · Shelf D
-103924,BRV-103924,Pinar Trout Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Spain,37.18,262,578,0.6,true,0.9,2,A,Aisle 2 · Shelf A
-102085,BRV-102085,Pinar Veal 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,Iran,53.59,427,495,1.2,true,3.7,2,B,Aisle 2 · Shelf B
-102515,BRV-102515,Pinar Whole Milk 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Iran,8.87,283,197,0.9,true,3.8,2,D,Aisle 2 · Shelf D
-102316,BRV-102316,Pinar Zucchini 100g,Pinar,"Fresh Produce, Meat & Dairy",Poultry,100g,Spain,60.6,395,256,1.7,true,1,2,C,Aisle 2 · Shelf C
-102874,BRV-102874,President Apple 2kg,President,"Fresh Produce, Meat & Dairy",Poultry,2kg,Italy,33.83,55,399,0.7,true,3.6,2,D,Aisle 2 · Shelf D
-102087,BRV-102087,President Carrot Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,USA,4.58,302,529,1,true,3.2,2,B,Aisle 2 · Shelf B
-102855,BRV-102855,President Chicken Thighs 250ml,President,"Fresh Produce, Meat & Dairy",Poultry,250ml,India,9.73,386,564,0.8,true,0.9,2,C,Aisle 2 · Shelf C
-102298,BRV-102298,President Cilantro 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Poland,70.66,172,283,0.5,true,2.1,2,D,Aisle 2 · Shelf D
-103120,BRV-103120,President Cucumber 2kg,President,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,64.34,195,478,0.9,true,3.8,2,E,Aisle 2 · Shelf E
-102053,BRV-102053,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Italy,13.9,437,430,1,true,1.1,2,A,Aisle 2 · Shelf A
-103074,BRV-103074,President Feta Cheese 250g,President,"Fresh Produce, Meat & Dairy",Poultry,250g,Brazil,13.87,137,404,0.8,true,2.8,2,E,Aisle 2 · Shelf E
-103357,BRV-103357,President Feta Cheese Bulk,President,"Fresh Produce, Meat & Dairy",Poultry,Bulk,India,34.54,2,582,0.6,true,3.9,2,E,Aisle 2 · Shelf E
-102189,BRV-102189,President Garlic Bulk,President,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Germany,74.13,408,694,0.7,true,3.9,2,E,Aisle 2 · Shelf E
-102884,BRV-102884,President Garlic Pack of 4,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Georgia,79.9,56,338,0.5,true,1.5,2,C,Aisle 2 · Shelf C
-103107,BRV-103107,President Kiwi 5kg,President,"Fresh Produce, Meat & Dairy",Poultry,5kg,Turkey,55.94,400,267,0.4,true,0.8,2,B,Aisle 2 · Shelf B
-103029,BRV-103029,President Lactose-Free Milk 250g,President,"Fresh Produce, Meat & Dairy",Poultry,250g,Italy,70.44,29,602,1.2,true,1.5,2,A,Aisle 2 · Shelf A
-103764,BRV-103764,President Parsley 500ml,President,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,0.71,167,716,0.5,true,1.3,2,E,Aisle 2 · Shelf E
-103704,BRV-103704,President Pear 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Poland,0.67,217,426,1.3,true,1.8,2,C,Aisle 2 · Shelf C
-103977,BRV-103977,President Pear Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,China,76.9,320,458,0.2,true,2.6,2,C,Aisle 2 · Shelf C
-102829,BRV-102829,President Quail Eggs 1L,President,"Fresh Produce, Meat & Dairy",Poultry,1L,Georgia,63.3,406,593,0.6,true,2.6,2,D,Aisle 2 · Shelf D
-103485,BRV-103485,President Trout 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Russia,10.91,56,348,1.4,true,1.8,2,E,Aisle 2 · Shelf E
-103526,BRV-103526,President Trout Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Germany,71.13,493,632,1.3,true,3.2,2,C,Aisle 2 · Shelf C
-102817,BRV-102817,Sehiyye Ayran Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Russia,58.95,226,430,0.5,true,2.6,2,C,Aisle 2 · Shelf C
-103820,BRV-103820,Sehiyye Basil 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,1kg,China,35.78,389,127,0.5,true,2.3,2,F,Aisle 2 · Shelf F
-102120,BRV-102120,Sehiyye Beef 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,Poland,61.63,339,645,0.7,true,1.4,2,D,Aisle 2 · Shelf D
-102137,BRV-102137,Sehiyye Beef 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,500ml,Turkey,68.76,28,237,0.6,true,2.5,2,D,Aisle 2 · Shelf D
-103234,BRV-103234,Sehiyye Chicken Breast 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,200g,Spain,65.2,7,554,0.8,true,3.4,2,C,Aisle 2 · Shelf C
-102644,BRV-102644,Sehiyye Feta Cheese Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Germany,26.28,385,588,0.4,true,2.5,2,A,Aisle 2 · Shelf A
-102988,BRV-102988,Sehiyye Feta Cheese Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,USA,78.51,457,627,0.8,true,2.1,2,D,Aisle 2 · Shelf D
-103071,BRV-103071,Sehiyye Kefir 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250g,Brazil,26.56,174,565,1.2,true,3.1,2,B,Aisle 2 · Shelf B
-103847,BRV-103847,Sehiyye Kiwi Single,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Single,Brazil,52.75,52,602,1.3,true,1.9,2,E,Aisle 2 · Shelf E
-103365,BRV-103365,Sehiyye Lactose-Free Milk Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Spain,53.52,173,573,1.3,true,1.7,2,B,Aisle 2 · Shelf B
-103147,BRV-103147,Sehiyye Lamb 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,750g,Turkey,52.1,438,383,0.8,true,3.2,2,F,Aisle 2 · Shelf F
-103950,BRV-103950,Sehiyye Melon 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,France,15.98,93,259,0.7,true,2.7,2,D,Aisle 2 · Shelf D
-103581,BRV-103581,Sehiyye Onion Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Netherlands,72.15,347,445,1,true,3.9,2,B,Aisle 2 · Shelf B
-102056,BRV-102056,Sehiyye Peach 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250ml,Italy,18.71,159,551,0.3,true,1,2,B,Aisle 2 · Shelf B
-103715,BRV-103715,Sehiyye Potato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,2L,China,34.66,301,616,1.6,true,0.6,2,C,Aisle 2 · Shelf C
-103651,BRV-103651,Sehiyye Salmon 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250g,Poland,24.12,200,337,1.1,true,2.9,2,D,Aisle 2 · Shelf D
-103840,BRV-103840,Sehiyye Skim Milk 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,India,45.11,397,693,0.9,true,1.6,2,F,Aisle 2 · Shelf F
-102045,BRV-102045,Sehiyye Spinach Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 6,Germany,18.96,433,571,1.6,true,3.8,2,F,Aisle 2 · Shelf F
-103516,BRV-103516,Sehiyye Spinach Single,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Single,Brazil,48.58,106,593,1.6,true,0.8,2,B,Aisle 2 · Shelf B
-103288,BRV-103288,Atena Cherry Bulk,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Azerbaijan,50.75,170,551,1,true,3.8,2,F,Aisle 2 · Shelf F
-102020,BRV-102020,Atena Dill Family Pack,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Italy,20.14,385,636,0.9,true,2.5,2,A,Aisle 2 · Shelf A
-102655,BRV-102655,Atena Eggplant Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Ukraine,6.23,289,418,1.2,true,3.9,2,A,Aisle 2 · Shelf A
-102840,BRV-102840,Atena Greek Yogurt 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Poland,26.56,450,706,1.4,true,3.3,2,C,Aisle 2 · Shelf C
-103395,BRV-103395,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Georgia,16.66,69,692,0.9,true,3.5,2,C,Aisle 2 · Shelf C
-103533,BRV-103533,Atena Ground Beef 250ml,Atena,"Fresh Produce, Meat & Dairy",Vegetables,250ml,France,78.73,360,478,0.4,true,2.5,2,A,Aisle 2 · Shelf A
-102057,BRV-102057,Atena Kiwi Bulk,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Turkey,46.02,400,154,1.1,true,3.1,2,C,Aisle 2 · Shelf C
-103644,BRV-103644,Atena Lactose-Free Milk Family Pack,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Russia,49.97,408,667,1.2,true,1.2,2,B,Aisle 2 · Shelf B
-102742,BRV-102742,Atena Lactose-Free Milk Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,21.34,275,627,0.6,true,1.5,2,D,Aisle 2 · Shelf D
-103667,BRV-103667,Atena Lamb 100g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,100g,China,6.62,108,646,0.5,true,1,2,E,Aisle 2 · Shelf E
-103558,BRV-103558,Atena Lamb 500ml,Atena,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Iran,53.55,310,695,1.7,true,3,2,D,Aisle 2 · Shelf D
-102369,BRV-102369,Atena Melon 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,8.81,467,242,1.4,true,2.3,2,E,Aisle 2 · Shelf E
-102402,BRV-102402,Atena Mozzarella 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,47.29,341,284,1.4,true,1,2,E,Aisle 2 · Shelf E
-102861,BRV-102861,Atena Mozzarella 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,Ukraine,62.16,392,309,1.7,true,1.4,2,B,Aisle 2 · Shelf B
-102098,BRV-102098,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Azerbaijan,65.8,98,561,0.9,true,2.8,2,D,Aisle 2 · Shelf D
-103634,BRV-103634,Atena Orange 5kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Iran,35.99,36,374,1.2,true,0.9,2,A,Aisle 2 · Shelf A
-103108,BRV-103108,Atena Parsley Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Brazil,40.41,474,316,1.2,true,3.6,2,E,Aisle 2 · Shelf E
-102466,BRV-102466,Atena Peach 1kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Turkey,16.71,128,190,1.6,true,1.2,2,A,Aisle 2 · Shelf A
-103525,BRV-103525,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Iran,57.45,142,467,1.2,true,3.4,2,B,Aisle 2 · Shelf B
-102489,BRV-102489,Atena Peach Single,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Single,Brazil,2.89,471,391,1.6,true,1,2,D,Aisle 2 · Shelf D
-102979,BRV-102979,Atena Pear Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Brazil,26.7,50,411,1.2,true,1.4,2,F,Aisle 2 · Shelf F
-102194,BRV-102194,Atena Pineapple 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,Russia,21.14,170,268,0.9,true,1.2,2,A,Aisle 2 · Shelf A
-103400,BRV-103400,Atena Pineapple 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Brazil,24.48,496,333,1.3,true,2.3,2,B,Aisle 2 · Shelf B
-103015,BRV-103015,Atena Plum 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,France,28.17,24,247,0.3,true,1.4,2,B,Aisle 2 · Shelf B
-103380,BRV-103380,Atena Salmon 1kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1kg,China,56.35,196,426,1.6,true,0.7,2,E,Aisle 2 · Shelf E
-103781,BRV-103781,Atena Salmon 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,29.16,281,483,0.8,true,0.6,2,D,Aisle 2 · Shelf D
-102968,BRV-102968,Atena Spinach 5kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Netherlands,55.91,481,625,1.2,true,2.3,2,D,Aisle 2 · Shelf D
-103315,BRV-103315,Atena Spinach Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Azerbaijan,27.27,485,644,0.5,true,2.3,2,E,Aisle 2 · Shelf E
-102893,BRV-102893,Atena Veal 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,Russia,14.07,220,674,0.4,true,3.5,2,A,Aisle 2 · Shelf A
-103162,BRV-103162,Atena Whole Milk 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,India,21.22,367,228,1.4,true,2.7,2,C,Aisle 2 · Shelf C
-103596,BRV-103596,Bravo Farm Bell Pepper 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,24.34,175,129,1.1,true,1.3,2,B,Aisle 2 · Shelf B
-103455,BRV-103455,Bravo Farm Chicken Breast 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Turkey,51.87,94,215,0.6,true,0.7,2,D,Aisle 2 · Shelf D
-102148,BRV-102148,Bravo Farm Chicken Thighs Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,58.44,64,615,0.6,true,2.9,2,B,Aisle 2 · Shelf B
-102370,BRV-102370,Bravo Farm Chicken Wings Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Iran,57.98,338,476,1,true,1.8,2,C,Aisle 2 · Shelf C
-102628,BRV-102628,Bravo Farm Cucumber 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Netherlands,65.32,416,230,0.3,true,1.2,2,C,Aisle 2 · Shelf C
-102038,BRV-102038,Bravo Farm Eggplant 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Russia,22.55,280,239,1.5,true,3.1,2,D,Aisle 2 · Shelf D
-103941,BRV-103941,Bravo Farm Ground Beef 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Italy,29.29,493,309,0.8,true,3.5,2,F,Aisle 2 · Shelf F
-103621,BRV-103621,Bravo Farm Kefir 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Brazil,38.95,347,344,0.7,true,3.8,2,A,Aisle 2 · Shelf A
-102924,BRV-102924,Bravo Farm Kefir 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,48.33,112,513,1.1,true,1.7,2,F,Aisle 2 · Shelf F
-102973,BRV-102973,Bravo Farm Kiwi 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Poland,73.07,378,285,0.6,true,3.8,2,B,Aisle 2 · Shelf B
-103225,BRV-103225,Bravo Farm Lettuce 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,74.32,373,296,0.4,true,3.3,2,A,Aisle 2 · Shelf A
-102974,BRV-102974,Bravo Farm Parmesan 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1L,France,4.22,51,266,0.5,true,3.5,2,E,Aisle 2 · Shelf E
-102241,BRV-102241,Bravo Farm Parmesan 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,54.95,37,561,0.7,true,1.7,2,D,Aisle 2 · Shelf D
-103863,BRV-103863,Bravo Farm Parsley 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2kg,USA,8.51,39,568,0.4,true,2.1,2,C,Aisle 2 · Shelf C
-102719,BRV-102719,Bravo Farm Parsley Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Poland,55.64,408,259,1.2,true,1.3,2,D,Aisle 2 · Shelf D
-103483,BRV-103483,Bravo Farm Peach Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Iran,60.18,448,462,0.5,true,1.3,2,A,Aisle 2 · Shelf A
-102024,BRV-102024,Bravo Farm Spinach Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Russia,45.15,360,160,0.3,true,2.5,2,C,Aisle 2 · Shelf C
-103718,BRV-103718,Bravo Farm Strawberry 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Ukraine,63.79,486,225,1.6,true,2,2,D,Aisle 2 · Shelf D
-102095,BRV-102095,Bravo Farm Strawberry 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,750g,China,39.67,47,368,1.4,true,1.8,2,C,Aisle 2 · Shelf C
-102826,BRV-102826,Bravo Farm Suluguni 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Iran,6.18,381,646,0.6,true,2.9,2,A,Aisle 2 · Shelf A
-103923,BRV-103923,Bravo Farm Watermelon Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Brazil,31.68,451,613,0.6,true,3.5,2,B,Aisle 2 · Shelf B
-102578,BRV-102578,Bravo Farm Zucchini 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Spain,73.41,245,250,1.6,true,2.9,2,A,Aisle 2 · Shelf A
-102461,BRV-102461,Bravo Farm Zucchini 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,500g,Russia,14.56,363,529,0.5,true,0.5,2,F,Aisle 2 · Shelf F
-103011,BRV-103011,Local Farm Ayran 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Ukraine,62.71,221,707,1.3,true,3.9,2,D,Aisle 2 · Shelf D
-102958,BRV-102958,Local Farm Banana 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,India,42.05,1,148,0.3,true,2.1,2,A,Aisle 2 · Shelf A
-102763,BRV-102763,Local Farm Basil 1L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,32.78,458,656,0.9,true,1.3,2,E,Aisle 2 · Shelf E
-103083,BRV-103083,Local Farm Beef 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,China,20.88,212,434,0.6,true,1.1,2,E,Aisle 2 · Shelf E
-103653,BRV-103653,Local Farm Cheddar Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Georgia,54.89,89,519,1.4,true,1.4,2,F,Aisle 2 · Shelf F
-103962,BRV-103962,Local Farm Chicken Wings 100g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Georgia,29.52,369,428,1.2,true,3.7,2,A,Aisle 2 · Shelf A
-102936,BRV-102936,Local Farm Chicken Wings Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,India,41.1,432,408,0.4,true,1.7,2,E,Aisle 2 · Shelf E
-103560,BRV-103560,Local Farm Cilantro Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,USA,69.64,64,614,0.3,true,2.2,2,E,Aisle 2 · Shelf E
-103362,BRV-103362,Local Farm Cucumber 2L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Italy,29.89,126,562,0.9,true,2.7,2,E,Aisle 2 · Shelf E
-102623,BRV-102623,Local Farm Eggplant 250g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,250g,Ukraine,25.81,107,637,0.6,true,3.3,2,B,Aisle 2 · Shelf B
-102060,BRV-102060,Local Farm Feta Cheese Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,Netherlands,58,78,696,0.9,true,2.8,2,C,Aisle 2 · Shelf C
-103284,BRV-103284,Local Farm Garlic Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Turkey,44.85,154,499,0.6,true,1.5,2,D,Aisle 2 · Shelf D
-102954,BRV-102954,Local Farm Ground Beef Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,China,4.12,383,352,0.5,true,1.6,2,C,Aisle 2 · Shelf C
-103983,BRV-103983,Local Farm Lactose-Free Milk 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Italy,31.98,466,719,1.5,true,1.4,2,F,Aisle 2 · Shelf F
-102192,BRV-102192,Local Farm Lamb 2L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,4.7,92,150,1.3,true,0.9,2,E,Aisle 2 · Shelf E
-103880,BRV-103880,Local Farm Mini Ground Beef Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,Iran,64.9,442,705,0.9,true,2,2,D,Aisle 2 · Shelf D
-103198,BRV-103198,Local Farm Mint 200g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Spain,56.1,194,567,1.2,true,3.3,2,D,Aisle 2 · Shelf D
-103821,BRV-103821,Local Farm Mozzarella Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Ukraine,27.1,137,194,0.3,true,3.6,2,E,Aisle 2 · Shelf E
-103773,BRV-103773,Local Farm Organic Zucchini 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,Italy,43.27,482,176,0.2,true,1.6,2,E,Aisle 2 · Shelf E
-102343,BRV-102343,Local Farm Salmon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Italy,72.04,245,210,1.4,true,0.8,2,C,Aisle 2 · Shelf C
-103898,BRV-103898,Local Farm Sturgeon 200g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Georgia,44.41,377,430,0.6,true,2.5,2,E,Aisle 2 · Shelf E
-102801,BRV-102801,Local Farm Sturgeon 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Iran,50.85,237,499,0.8,true,0.5,2,D,Aisle 2 · Shelf D
-102891,BRV-102891,Local Farm Turkey Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Poland,57.76,12,716,0.9,true,3.2,2,A,Aisle 2 · Shelf A
-102975,BRV-102975,Local Farm Zucchini 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,USA,56.01,206,271,1.1,true,1.3,2,F,Aisle 2 · Shelf F
-103188,BRV-103188,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Turkey,47.59,84,484,1.6,true,3.4,2,E,Aisle 2 · Shelf E
-103699,BRV-103699,Milla Banana 1L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,1L,USA,25.9,136,141,0.7,true,3.9,2,D,Aisle 2 · Shelf D
-103971,BRV-103971,Milla Basil 250g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,250g,Italy,24.38,294,256,1.6,true,3.6,2,A,Aisle 2 · Shelf A
-102400,BRV-102400,Milla Basil 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,Brazil,2.01,29,354,0.5,true,2.2,2,A,Aisle 2 · Shelf A
-103202,BRV-103202,Milla Broccoli 250g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,250g,China,40.02,48,169,1.4,true,3.1,2,F,Aisle 2 · Shelf F
-103732,BRV-103732,Milla Cheddar 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,Poland,51.59,257,609,0.9,true,2.6,2,D,Aisle 2 · Shelf D
-103901,BRV-103901,Milla Chicken Breast 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,62.59,174,337,0.4,true,1.1,2,D,Aisle 2 · Shelf D
-102226,BRV-102226,Milla Chicken Thighs Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,11.21,329,664,0.3,true,3.5,2,E,Aisle 2 · Shelf E
-102591,BRV-102591,Milla Chicken Wings 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,Russia,54.86,333,649,1.5,true,3,2,B,Aisle 2 · Shelf B
-102972,BRV-102972,Milla Chicken Wings Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Iran,23.44,437,624,0.8,true,2.2,2,E,Aisle 2 · Shelf E
-103689,BRV-103689,Milla Dill 500ml,Milla,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Azerbaijan,56.65,92,374,1.6,true,3.6,2,E,Aisle 2 · Shelf E
-103628,BRV-103628,Milla Eggplant 200g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,200g,Ukraine,22.3,26,661,1.5,true,3.3,2,F,Aisle 2 · Shelf F
-103325,BRV-103325,Milla Free-Range Eggs Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,China,44.52,456,641,1.6,true,1,2,D,Aisle 2 · Shelf D
-102957,BRV-102957,Milla Grapes Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Spain,18.26,271,451,0.9,true,2.7,2,B,Aisle 2 · Shelf B
-102617,BRV-102617,Milla Greek Yogurt 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,India,69.67,141,256,1.4,true,3,2,A,Aisle 2 · Shelf A
-103625,BRV-103625,Milla Ground Beef 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Russia,63.05,226,300,0.9,true,1.5,2,E,Aisle 2 · Shelf E
-102671,BRV-102671,Milla Lettuce 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Netherlands,34.42,17,568,0.6,true,1.1,2,C,Aisle 2 · Shelf C
-103204,BRV-103204,Milla Lime Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Spain,24.95,290,171,0.2,true,3.1,2,D,Aisle 2 · Shelf D
-102837,BRV-102837,Milla Melon Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Russia,1.33,490,552,1.3,true,1.8,2,A,Aisle 2 · Shelf A
-103813,BRV-103813,Milla Mini Basil 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,France,17.17,223,453,0.8,true,2.3,2,D,Aisle 2 · Shelf D
-103697,BRV-103697,Milla Mini Free-Range Eggs Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Turkey,25.23,325,183,0.8,true,2.4,2,B,Aisle 2 · Shelf B
-103454,BRV-103454,Milla Mini Veal 5kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Germany,49.71,250,386,0.4,true,1.8,2,A,Aisle 2 · Shelf A
-102562,BRV-102562,Milla Mint 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Spain,20.78,460,499,1.1,true,2.8,2,D,Aisle 2 · Shelf D
-103474,BRV-103474,Milla Mint Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,China,27.73,36,240,0.5,true,3.1,2,A,Aisle 2 · Shelf A
-103041,BRV-103041,Milla Onion 200g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,39.07,302,232,0.7,true,3.4,2,E,Aisle 2 · Shelf E
-103671,BRV-103671,Milla Strawberry Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Turkey,31.66,500,595,0.5,true,3.4,2,B,Aisle 2 · Shelf B
-102064,BRV-102064,Milla Sturgeon 1kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Turkey,5.83,193,476,0.8,true,3.8,2,C,Aisle 2 · Shelf C
-103412,BRV-103412,Milla Suluguni 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,40.98,489,484,0.4,true,0.9,2,A,Aisle 2 · Shelf A
-103887,BRV-103887,Milla Tomato 2kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2kg,France,26.23,499,398,1.5,true,3.5,2,C,Aisle 2 · Shelf C
-103059,BRV-103059,Milla Veal 5kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Netherlands,61.16,275,263,1.6,true,3.4,2,F,Aisle 2 · Shelf F
-102832,BRV-102832,Milla Veal Bulk,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Brazil,66.83,40,121,1.5,true,3.2,2,F,Aisle 2 · Shelf F
-103033,BRV-103033,Milla Veal Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Spain,49.96,407,487,0.9,true,3,2,F,Aisle 2 · Shelf F
-102911,BRV-102911,Milla Whole Milk Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Russia,74.4,267,181,0.2,true,3.5,2,B,Aisle 2 · Shelf B
-103323,BRV-103323,Palsud Apple 1L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1L,USA,73.26,142,203,1.6,true,0.5,2,D,Aisle 2 · Shelf D
-102196,BRV-102196,Palsud Basil Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,India,6.18,369,226,0.4,true,1.5,2,E,Aisle 2 · Shelf E
-103370,BRV-103370,Palsud Cabbage 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Brazil,47.42,121,663,0.3,true,4,2,B,Aisle 2 · Shelf B
-103536,BRV-103536,Palsud Cabbage Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Azerbaijan,2.94,16,183,1.4,true,2.1,2,D,Aisle 2 · Shelf D
-103361,BRV-103361,Palsud Carrot 2L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,29.99,170,497,1,true,0.7,2,D,Aisle 2 · Shelf D
-102949,BRV-102949,Palsud Cheddar 5kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Azerbaijan,9.92,205,290,0.7,true,1.4,2,A,Aisle 2 · Shelf A
-102714,BRV-102714,Palsud Cherry 1L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1L,Turkey,64.31,299,322,1.4,true,3.5,2,E,Aisle 2 · Shelf E
-103219,BRV-103219,Palsud Chicken Breast Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Azerbaijan,64.08,247,265,1.4,true,1,2,F,Aisle 2 · Shelf F
-103654,BRV-103654,Palsud Eggplant 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,France,9.46,203,168,0.9,true,1.5,2,E,Aisle 2 · Shelf E
-103296,BRV-103296,Palsud Feta Cheese 2kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Georgia,26.17,174,590,0.9,true,0.9,2,A,Aisle 2 · Shelf A
-102405,BRV-102405,Palsud Garlic 200g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,200g,Ukraine,49.04,256,315,0.7,true,1.4,2,F,Aisle 2 · Shelf F
-102129,BRV-102129,Palsud Grapes 750g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,750g,Spain,13.25,417,400,1.3,true,2.3,2,A,Aisle 2 · Shelf A
-102447,BRV-102447,Palsud Melon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Italy,5.16,351,289,0.8,true,1.9,2,D,Aisle 2 · Shelf D
-103888,BRV-103888,Palsud Melon Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Italy,43.57,466,521,0.2,true,3.8,2,B,Aisle 2 · Shelf B
-103415,BRV-103415,Palsud Mint Single,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Single,Iran,1.11,208,139,1.1,true,1.8,2,D,Aisle 2 · Shelf D
-103276,BRV-103276,Palsud Parsley 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Iran,70.97,421,696,1.4,true,1.5,2,A,Aisle 2 · Shelf A
-102009,BRV-102009,Palsud Plum 750g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,35.33,187,539,1.4,true,3.3,2,B,Aisle 2 · Shelf B
-102602,BRV-102602,Palsud Potato 250ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Germany,62.97,340,666,0.4,true,0.7,2,C,Aisle 2 · Shelf C
-103470,BRV-103470,Palsud Potato Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Poland,15.81,20,380,1.5,true,2.5,2,E,Aisle 2 · Shelf E
-103772,BRV-103772,Palsud Quail Eggs Single,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,26.76,413,597,0.6,true,1.7,2,F,Aisle 2 · Shelf F
-102278,BRV-102278,Palsud Strawberry 100g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,9.45,384,201,1.2,true,1.8,2,F,Aisle 2 · Shelf F
-103100,BRV-103100,Palsud Trout Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Georgia,45.17,214,420,1.4,true,1.5,2,C,Aisle 2 · Shelf C
-103211,BRV-103211,Palsud Veal 1kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Azerbaijan,48.48,221,449,1.4,true,2.3,2,D,Aisle 2 · Shelf D
-102139,BRV-102139,Pinar Basil 250g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,250g,Brazil,25.02,153,199,0.9,true,3,2,F,Aisle 2 · Shelf F
-102075,BRV-102075,Pinar Bell Pepper 2kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Poland,73.8,84,138,0.7,true,1.2,2,E,Aisle 2 · Shelf E
-103506,BRV-103506,Pinar Cabbage 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Poland,36.07,249,170,0.5,true,1.5,2,C,Aisle 2 · Shelf C
-103779,BRV-103779,Pinar Carrot 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,Germany,67.99,487,574,0.3,true,3.2,2,C,Aisle 2 · Shelf C
-103799,BRV-103799,Pinar Chicken Thighs Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,USA,77.05,132,124,0.8,true,3.8,2,A,Aisle 2 · Shelf A
-103946,BRV-103946,Pinar Chicken Wings Single,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,77.17,472,426,0.7,true,2.8,2,A,Aisle 2 · Shelf A
-103201,BRV-103201,Pinar Eggplant 100g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,100g,Russia,30.27,101,642,1,true,2.6,2,C,Aisle 2 · Shelf C
-102091,BRV-102091,Pinar Feta Cheese 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,32.77,221,540,1.6,true,1.8,2,A,Aisle 2 · Shelf A
-103443,BRV-103443,Pinar Garlic 1L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1L,India,22.9,489,458,1.7,true,3.9,2,E,Aisle 2 · Shelf E
-102446,BRV-102446,Pinar Garlic Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Ukraine,78.32,411,316,0.7,true,3.1,2,A,Aisle 2 · Shelf A
-102784,BRV-102784,Pinar Lamb Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,France,1.66,473,717,0.3,true,3.7,2,F,Aisle 2 · Shelf F
-102589,BRV-102589,Pinar Lettuce 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,20.65,100,690,0.5,true,3.7,2,E,Aisle 2 · Shelf E
-103262,BRV-103262,Pinar Lime 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Ukraine,42.37,152,283,1.3,true,2.7,2,D,Aisle 2 · Shelf D
-102674,BRV-102674,Pinar Melon 750g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,750g,USA,18.21,105,121,0.8,true,1.9,2,D,Aisle 2 · Shelf D
-103556,BRV-103556,Pinar Orange Single,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Single,Germany,54.11,379,525,1.4,true,1.6,2,B,Aisle 2 · Shelf B
-102358,BRV-102358,Pinar Pear 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Turkey,44.06,88,142,1.6,true,1.9,2,C,Aisle 2 · Shelf C
-102588,BRV-102588,Pinar Pineapple 2kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Turkey,71.93,388,151,1.5,true,3.2,2,D,Aisle 2 · Shelf D
-102105,BRV-102105,Pinar Potato 1L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1L,France,57.63,222,506,0.3,true,3.6,2,C,Aisle 2 · Shelf C
-102073,BRV-102073,Pinar Potato 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,Netherlands,37.47,197,488,1.3,true,1.4,2,E,Aisle 2 · Shelf E
-102197,BRV-102197,Pinar Skim Milk Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Italy,54.67,433,359,0.3,true,0.9,2,D,Aisle 2 · Shelf D
-103830,BRV-103830,Pinar Suluguni 5kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,5kg,India,59.95,191,260,0.7,true,2.3,2,E,Aisle 2 · Shelf E
-102522,BRV-102522,Pinar Zucchini 100g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,100g,Brazil,5.74,402,279,1.7,true,3.2,2,B,Aisle 2 · Shelf B
-103087,BRV-103087,President Apple 1L,President,"Fresh Produce, Meat & Dairy",Vegetables,1L,Turkey,55.95,332,302,0.6,true,1.2,2,C,Aisle 2 · Shelf C
-102234,BRV-102234,President Ayran 500g,President,"Fresh Produce, Meat & Dairy",Vegetables,500g,Poland,18.45,203,665,1.5,true,3.1,2,B,Aisle 2 · Shelf B
-103954,BRV-103954,President Cabbage Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Brazil,49.75,337,703,0.5,true,2.6,2,F,Aisle 2 · Shelf F
-103085,BRV-103085,President Eggplant 250g,President,"Fresh Produce, Meat & Dairy",Vegetables,250g,Netherlands,65.41,382,232,1.3,true,1.2,2,A,Aisle 2 · Shelf A
-102740,BRV-102740,President Eggplant Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Georgia,57.04,275,333,1.4,true,2.7,2,B,Aisle 2 · Shelf B
-102462,BRV-102462,President Eggplant Single,President,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,79.47,3,362,0.6,true,2.5,2,E,Aisle 2 · Shelf E
-103396,BRV-103396,President Ground Beef 100g,President,"Fresh Produce, Meat & Dairy",Vegetables,100g,Iran,24.62,237,487,0.3,true,1.7,2,B,Aisle 2 · Shelf B
-103523,BRV-103523,President Kefir 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Spain,10.7,375,537,1.2,true,3.7,2,B,Aisle 2 · Shelf B
-103317,BRV-103317,President Kiwi 250ml,President,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Brazil,31.24,455,642,1.1,true,3.6,2,A,Aisle 2 · Shelf A
-103806,BRV-103806,President Lactose-Free Milk Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,58.52,286,651,1.6,true,2.6,2,F,Aisle 2 · Shelf F
-103142,BRV-103142,President Lime 500g,President,"Fresh Produce, Meat & Dairy",Vegetables,500g,Azerbaijan,16.73,415,398,0.9,true,1,2,A,Aisle 2 · Shelf A
-103666,BRV-103666,President Melon Single,President,"Fresh Produce, Meat & Dairy",Vegetables,Single,China,63.35,213,147,0.4,true,1.9,2,D,Aisle 2 · Shelf D
-102201,BRV-102201,President Mozzarella 500ml,President,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Ukraine,13.16,279,445,0.4,true,3.6,2,B,Aisle 2 · Shelf B
-103141,BRV-103141,President Mozzarella 5kg,President,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Turkey,69.72,374,541,1.6,true,2.3,2,D,Aisle 2 · Shelf D
-102748,BRV-102748,President Orange 1kg,President,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Ukraine,42.79,407,205,0.4,true,1.7,2,F,Aisle 2 · Shelf F
-102076,BRV-102076,President Peach 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,Azerbaijan,41.01,322,289,0.5,true,1.9,2,D,Aisle 2 · Shelf D
-103912,BRV-103912,President Pear 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,Azerbaijan,26.73,493,233,1.1,true,3.2,2,D,Aisle 2 · Shelf D
-103955,BRV-103955,President Pomegranate 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,China,10.96,238,698,1.4,true,1.3,2,E,Aisle 2 · Shelf E
-103140,BRV-103140,President Potato 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,74.43,75,320,1.2,true,1.5,2,E,Aisle 2 · Shelf E
-102374,BRV-102374,President Strawberry 100g,President,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,50.22,71,456,0.6,true,3.8,2,E,Aisle 2 · Shelf E
-102237,BRV-102237,President Strawberry 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,Poland,10.84,274,234,0.5,true,3.5,2,E,Aisle 2 · Shelf E
-102411,BRV-102411,President Sturgeon 1kg,President,"Fresh Produce, Meat & Dairy",Vegetables,1kg,China,67.93,489,712,1.3,true,1.6,2,E,Aisle 2 · Shelf E
-102100,BRV-102100,President Suluguni 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Russia,37.26,436,579,0.8,true,3.7,2,D,Aisle 2 · Shelf D
-102293,BRV-102293,President Trout 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,58.73,267,472,0.3,true,2.8,2,C,Aisle 2 · Shelf C
-103349,BRV-103349,President Watermelon 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,32.6,245,587,1.2,true,1.6,2,F,Aisle 2 · Shelf F
-102778,BRV-102778,President Zucchini Family Pack,President,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Azerbaijan,21.59,161,656,0.7,true,3.2,2,E,Aisle 2 · Shelf E
-103663,BRV-103663,Sehiyye Broccoli 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,200g,Brazil,27.11,229,570,1.4,true,1.8,2,C,Aisle 2 · Shelf C
-102331,BRV-102331,Sehiyye Cheddar 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,11.32,435,325,1.3,true,1.6,2,B,Aisle 2 · Shelf B
-102131,BRV-102131,Sehiyye Cheddar 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Italy,15.62,326,151,1.6,true,3.4,2,D,Aisle 2 · Shelf D
-103892,BRV-103892,Sehiyye Chicken Thighs 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Georgia,40.17,21,472,1.1,true,3,2,E,Aisle 2 · Shelf E
-103823,BRV-103823,Sehiyye Chicken Wings Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,China,19.39,369,148,0.6,true,2.9,2,C,Aisle 2 · Shelf C
-103270,BRV-103270,Sehiyye Cilantro 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Italy,16.52,256,346,0.8,true,0.8,2,A,Aisle 2 · Shelf A
-102576,BRV-102576,Sehiyye Cilantro 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Netherlands,26.92,281,128,1.3,true,1.4,2,C,Aisle 2 · Shelf C
-102219,BRV-102219,Sehiyye Dill 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500ml,China,63.47,441,622,1.1,true,2.3,2,C,Aisle 2 · Shelf C
-103509,BRV-103509,Sehiyye Eggplant Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,China,9.47,291,357,0.3,true,2.8,2,D,Aisle 2 · Shelf D
-103800,BRV-103800,Sehiyye Free-Range Eggs 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Netherlands,34.8,68,489,1.6,true,3,2,F,Aisle 2 · Shelf F
-102408,BRV-102408,Sehiyye Lettuce 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500g,Iran,17.69,146,210,0.5,true,2.2,2,E,Aisle 2 · Shelf E
-103545,BRV-103545,Sehiyye Onion 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,Spain,7.34,12,237,0.2,true,1.4,2,B,Aisle 2 · Shelf B
-103344,BRV-103344,Sehiyye Orange Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,34.15,65,154,0.3,true,2,2,A,Aisle 2 · Shelf A
-102256,BRV-102256,Sehiyye Parsley 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,India,14.33,110,557,1.2,true,3.8,2,F,Aisle 2 · Shelf F
-102259,BRV-102259,Sehiyye Peach 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,44.17,434,266,1.3,true,3.3,2,E,Aisle 2 · Shelf E
-103007,BRV-103007,Sehiyye Pomegranate Single,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Single,Azerbaijan,69.53,230,190,0.7,true,1.4,2,C,Aisle 2 · Shelf C
-103376,BRV-103376,Sehiyye Potato 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Poland,62.75,226,365,0.2,true,3.9,2,F,Aisle 2 · Shelf F
-103695,BRV-103695,Sehiyye Salmon 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,250g,Spain,33.61,140,657,0.7,true,3.7,2,B,Aisle 2 · Shelf B
-103809,BRV-103809,Sehiyye Skim Milk Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,51.35,419,532,1.1,true,0.9,2,A,Aisle 2 · Shelf A
-102383,BRV-102383,Sehiyye Spinach Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Azerbaijan,33.28,66,462,1,true,1.2,2,A,Aisle 2 · Shelf A
-102413,BRV-102413,Sehiyye Strawberry 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,200g,Italy,53.03,337,294,0.9,true,1.1,2,A,Aisle 2 · Shelf A
-102567,BRV-102567,Sehiyye Strawberry 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2L,India,17.99,69,194,1.5,true,1.4,2,E,Aisle 2 · Shelf E
-103272,BRV-103272,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1kg,France,51.91,112,684,1.7,true,2,2,A,Aisle 2 · Shelf A
-102847,BRV-102847,Sehiyye Watermelon 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500ml,France,31.73,347,301,0.8,true,3.9,2,B,Aisle 2 · Shelf B
-102035,BRV-102035,Sehiyye Zucchini 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,Russia,15.52,478,238,1.5,true,2.1,2,C,Aisle 2 · Shelf C
-102463,BRV-102463,Atena Apple Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,USA,38.76,253,423,1.6,true,2,2,D,Aisle 2 · Shelf D
-103424,BRV-103424,Atena Banana 100g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,100g,Poland,8.63,147,439,1,true,1.6,2,D,Aisle 2 · Shelf D
-102028,BRV-102028,Atena Basil 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Ukraine,74.77,447,444,1.6,true,2.2,2,E,Aisle 2 · Shelf E
-102919,BRV-102919,Atena Bell Pepper Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Ukraine,55.26,463,133,0.9,true,1.3,2,D,Aisle 2 · Shelf D
-102885,BRV-102885,Atena Cheddar Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Azerbaijan,36.66,156,519,0.5,true,1.5,2,D,Aisle 2 · Shelf D
-103302,BRV-103302,Atena Chicken Breast 200g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,200g,India,70.33,230,676,1.6,true,2.3,2,E,Aisle 2 · Shelf E
-102827,BRV-102827,Atena Chicken Breast 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,Poland,42.54,96,715,1.4,true,2.3,2,F,Aisle 2 · Shelf F
-103460,BRV-103460,Atena Feta Cheese 500ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Spain,30.46,225,143,1.3,true,3.5,2,B,Aisle 2 · Shelf B
-102019,BRV-102019,Atena Greek Yogurt 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,Iran,68.7,74,644,0.3,true,1.9,2,A,Aisle 2 · Shelf A
-103763,BRV-103763,Atena Ground Beef 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,58.79,256,563,1,true,3.7,2,B,Aisle 2 · Shelf B
-103289,BRV-103289,Atena Kefir 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,67.86,401,290,0.8,true,3.9,2,E,Aisle 2 · Shelf E
-103426,BRV-103426,Atena Lactose-Free Milk 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Poland,37.83,209,545,1.6,true,3.3,2,D,Aisle 2 · Shelf D
-102816,BRV-102816,Atena Mini Pomegranate Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Georgia,34.28,244,379,0.9,true,3.7,2,B,Aisle 2 · Shelf B
-103371,BRV-103371,Atena Mozzarella Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Georgia,28.68,114,234,0.8,true,2.3,2,A,Aisle 2 · Shelf A
-102651,BRV-102651,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Single,Spain,12.31,454,222,1.1,true,2.9,2,E,Aisle 2 · Shelf E
-103391,BRV-103391,Atena Orange Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Turkey,20.09,73,704,0.7,true,0.6,2,A,Aisle 2 · Shelf A
-102282,BRV-102282,Atena Orange Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Ukraine,23.14,27,406,1.6,true,3,2,A,Aisle 2 · Shelf A
-103113,BRV-103113,Atena Orange Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Italy,32.47,270,156,1.3,true,3.5,2,E,Aisle 2 · Shelf E
-102318,BRV-102318,Atena Parmesan 500g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500g,Brazil,48.12,84,434,1.7,true,3.9,2,E,Aisle 2 · Shelf E
-102127,BRV-102127,Atena Parsley Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Ukraine,62.95,182,354,1.1,true,2.3,2,C,Aisle 2 · Shelf C
-102901,BRV-102901,Atena Plum 5kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,5kg,China,25.83,221,686,0.7,true,3,2,C,Aisle 2 · Shelf C
-102476,BRV-102476,Atena Pomegranate Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,USA,77,423,397,0.8,true,0.7,2,D,Aisle 2 · Shelf D
-102389,BRV-102389,Atena Pomegranate Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Georgia,3.58,13,312,1.2,true,3.8,2,A,Aisle 2 · Shelf A
-102480,BRV-102480,Atena Potato Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Netherlands,79.12,142,274,0.8,true,2.2,2,A,Aisle 2 · Shelf A
-102765,BRV-102765,Atena Premium Basil 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,France,49.88,239,122,0.9,true,3.7,2,A,Aisle 2 · Shelf A
-102125,BRV-102125,Atena Shrimp 250g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250g,Iran,69.92,436,500,0.6,true,3,2,E,Aisle 2 · Shelf E
-103372,BRV-103372,Atena Strawberry 2L,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2L,Germany,55.72,45,473,0.7,true,1.2,2,D,Aisle 2 · Shelf D
-103195,BRV-103195,Atena Strawberry Single,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Single,Azerbaijan,50.63,61,262,0.4,true,2.4,2,C,Aisle 2 · Shelf C
-102275,BRV-102275,Atena Tomato 2kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Germany,16.61,118,672,1.1,true,2.7,2,C,Aisle 2 · Shelf C
-103899,BRV-103899,Atena Veal 2kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2kg,USA,79.48,72,435,0.6,true,3.2,2,B,Aisle 2 · Shelf B
-103416,BRV-103416,Atena Whole Milk 500g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500g,Netherlands,69.68,337,440,1.4,true,2.5,2,E,Aisle 2 · Shelf E
-102079,BRV-102079,Atena Whole Milk 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,26.75,365,270,1.3,true,2.7,2,A,Aisle 2 · Shelf A
-102542,BRV-102542,Atena Zucchini Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,11.81,412,189,1.5,true,1.9,2,D,Aisle 2 · Shelf D
-102296,BRV-102296,Bravo Farm Ayran 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Iran,71.43,19,609,0.6,true,3.3,2,F,Aisle 2 · Shelf F
-103283,BRV-103283,Bravo Farm Beef Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Germany,37.29,33,140,1.4,true,0.6,2,A,Aisle 2 · Shelf A
-103072,BRV-103072,Bravo Farm Broccoli 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Brazil,49.77,289,406,0.2,true,0.7,2,E,Aisle 2 · Shelf E
-103796,BRV-103796,Bravo Farm Cabbage 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Turkey,23.4,14,587,0.5,true,2.9,2,B,Aisle 2 · Shelf B
-102062,BRV-102062,Bravo Farm Cilantro 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Iran,13.78,240,166,1.7,true,3.3,2,E,Aisle 2 · Shelf E
-102265,BRV-102265,Bravo Farm Cucumber 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,38.53,114,671,0.8,true,1.3,2,B,Aisle 2 · Shelf B
-103929,BRV-103929,Bravo Farm Dill Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,India,70.71,455,667,0.5,true,2.7,2,D,Aisle 2 · Shelf D
-102629,BRV-102629,Bravo Farm Grapes 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Spain,52.1,337,339,0.3,true,1.9,2,B,Aisle 2 · Shelf B
-102879,BRV-102879,Bravo Farm Ground Beef 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Spain,37.46,309,262,0.7,true,1.3,2,E,Aisle 2 · Shelf E
-103004,BRV-103004,Bravo Farm Kiwi 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Italy,75.23,427,349,0.3,true,3.8,2,D,Aisle 2 · Shelf D
-102365,BRV-102365,Bravo Farm Lemon Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Germany,72.98,295,510,1.4,true,1.1,2,A,Aisle 2 · Shelf A
-103756,BRV-103756,Bravo Farm Mint 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,58.78,210,567,1.2,true,2.8,2,D,Aisle 2 · Shelf D
-103184,BRV-103184,Bravo Farm Onion 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Netherlands,39.15,284,208,1.2,true,1.6,2,A,Aisle 2 · Shelf A
-103976,BRV-103976,Bravo Farm Organic Ayran 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Turkey,21.98,273,463,1.5,true,0.6,2,D,Aisle 2 · Shelf D
-103148,BRV-103148,Bravo Farm Pear 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Brazil,52.88,125,256,0.5,true,0.8,2,E,Aisle 2 · Shelf E
-103341,BRV-103341,Bravo Farm Pomegranate 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500g,Brazil,77.22,43,339,0.2,true,2.5,2,F,Aisle 2 · Shelf F
-103192,BRV-103192,Bravo Farm Spinach 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,India,28.23,417,449,1.6,true,3.3,2,B,Aisle 2 · Shelf B
-102523,BRV-102523,Bravo Farm Turkey 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Georgia,46.16,499,378,0.3,true,1.9,2,E,Aisle 2 · Shelf E
-103429,BRV-103429,Bravo Farm Turkey 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,5kg,India,44.89,395,438,0.3,true,0.7,2,C,Aisle 2 · Shelf C
-102229,BRV-102229,Bravo Farm Whole Milk 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,17.09,13,191,0.3,true,3,2,B,Aisle 2 · Shelf B
-103502,BRV-103502,Bravo Farm Whole Milk 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Ukraine,51.23,31,518,0.4,true,0.6,2,A,Aisle 2 · Shelf A
-102951,BRV-102951,Bravo Farm Zucchini 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,200g,Germany,13.47,357,657,1,true,2.8,2,F,Aisle 2 · Shelf F
-103088,BRV-103088,Bravo Farm Zucchini 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500ml,France,29.39,385,393,0.2,true,0.8,2,F,Aisle 2 · Shelf F
-103951,BRV-103951,Local Farm Apple 100g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Azerbaijan,26.27,359,222,1.1,true,2,2,A,Aisle 2 · Shelf A
-103571,BRV-103571,Local Farm Beef 250g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Georgia,67.4,157,220,1.1,true,0.9,2,E,Aisle 2 · Shelf E
-102301,BRV-102301,Local Farm Cabbage 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Brazil,16.08,393,448,0.8,true,4,2,E,Aisle 2 · Shelf E
-102415,BRV-102415,Local Farm Chicken Breast 750g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Georgia,7.14,227,692,0.3,true,1.6,2,C,Aisle 2 · Shelf C
-103909,BRV-103909,Local Farm Chicken Thighs Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Azerbaijan,74.57,173,529,0.3,true,3.6,2,F,Aisle 2 · Shelf F
-103286,BRV-103286,Local Farm Cilantro Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Germany,42.25,440,357,1.5,true,3.8,2,D,Aisle 2 · Shelf D
-103045,BRV-103045,Local Farm Dill 200g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,200g,China,39.67,195,148,0.8,true,2.9,2,A,Aisle 2 · Shelf A
-102162,BRV-102162,Local Farm Grapes 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Poland,51.72,230,383,0.3,true,1.1,2,D,Aisle 2 · Shelf D
-103816,BRV-103816,Local Farm Kiwi 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Ukraine,46.18,425,556,0.7,true,1.1,2,E,Aisle 2 · Shelf E
-102713,BRV-102713,Local Farm Kiwi 750g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Brazil,50.5,173,557,1.5,true,2.1,2,D,Aisle 2 · Shelf D
-102371,BRV-102371,Local Farm Lactose-Free Milk 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Germany,74.08,382,161,0.5,true,1.5,2,F,Aisle 2 · Shelf F
-102270,BRV-102270,Local Farm Lemon Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Iran,4.5,188,193,1.4,true,2.7,2,B,Aisle 2 · Shelf B
-103801,BRV-103801,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Netherlands,34.33,466,188,0.6,true,3.1,2,A,Aisle 2 · Shelf A
-102468,BRV-102468,Local Farm Pomegranate Single,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Single,Netherlands,77.91,325,700,1.5,true,2.1,2,E,Aisle 2 · Shelf E
-102744,BRV-102744,Local Farm Quail Eggs Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Brazil,19.94,160,193,0.4,true,1.1,2,F,Aisle 2 · Shelf F
-103095,BRV-103095,Local Farm Shrimp 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Azerbaijan,59.48,161,719,0.4,true,2.6,2,B,Aisle 2 · Shelf B
-102251,BRV-102251,Local Farm Turkey 250g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Poland,12.04,401,122,0.5,true,3.3,2,E,Aisle 2 · Shelf E
-102575,BRV-102575,Local Farm Veal 100g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Netherlands,45.46,222,459,0.2,true,3.3,2,D,Aisle 2 · Shelf D
-102101,BRV-102101,Local Farm Watermelon Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,France,55.28,16,478,0.9,true,2.7,2,E,Aisle 2 · Shelf E
-102231,BRV-102231,Milla Apple 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,Spain,38.05,359,664,0.4,true,1.2,2,E,Aisle 2 · Shelf E
-103012,BRV-103012,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Turkey,59.44,387,640,1.2,true,1,2,A,Aisle 2 · Shelf A
-103706,BRV-103706,Milla Beef 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Ukraine,17.09,189,604,1.1,true,3,2,E,Aisle 2 · Shelf E
-103561,BRV-103561,Milla Cheddar Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,France,34.88,269,651,0.6,true,3,2,D,Aisle 2 · Shelf D
-103913,BRV-103913,Milla Cheddar Single,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Single,Spain,17.1,229,588,1,true,3.9,2,C,Aisle 2 · Shelf C
-102054,BRV-102054,Milla Chicken Breast 200g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,200g,USA,29.48,389,137,0.4,true,2.6,2,B,Aisle 2 · Shelf B
-103428,BRV-103428,Milla Chicken Wings 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,USA,18.15,176,347,1.1,true,2.1,2,F,Aisle 2 · Shelf F
-103438,BRV-103438,Milla Cucumber Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,USA,49.47,82,360,1.4,true,1.1,2,C,Aisle 2 · Shelf C
-103997,BRV-103997,Milla Dill 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,India,16.25,423,688,0.6,true,1.7,2,E,Aisle 2 · Shelf E
-103657,BRV-103657,Milla Feta Cheese 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Azerbaijan,22.63,112,171,1.3,true,2.8,2,D,Aisle 2 · Shelf D
-103587,BRV-103587,Milla Garlic 750g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,750g,Azerbaijan,68.92,415,255,1.4,true,1.3,2,B,Aisle 2 · Shelf B
-102032,BRV-102032,Milla Garlic Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Italy,9.82,370,473,1.1,true,1.9,2,D,Aisle 2 · Shelf D
-102762,BRV-102762,Milla Greek Yogurt 1.5L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Italy,37.16,307,285,0.7,true,2.1,2,D,Aisle 2 · Shelf D
-103382,BRV-103382,Milla Kiwi 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,France,48.21,16,428,0.3,true,2.5,2,A,Aisle 2 · Shelf A
-103844,BRV-103844,Milla Lactose-Free Milk Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Spain,53.21,243,169,1.3,true,3.4,2,F,Aisle 2 · Shelf F
-102426,BRV-102426,Milla Lamb 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,USA,28.65,398,690,0.8,true,3.8,2,A,Aisle 2 · Shelf A
-103948,BRV-103948,Milla Mint 250g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250g,Ukraine,64.21,412,264,0.2,true,2.8,2,C,Aisle 2 · Shelf C
-102842,BRV-102842,Milla Mint 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,USA,11.62,225,644,0.7,true,3.7,2,E,Aisle 2 · Shelf E
-103703,BRV-103703,Milla Mozzarella Bulk,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,66.94,406,717,0.4,true,3.7,2,B,Aisle 2 · Shelf B
-102692,BRV-102692,Milla Onion 250ml,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Spain,32.03,113,233,1.3,true,1.3,2,F,Aisle 2 · Shelf F
-102899,BRV-102899,Milla Parmesan 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,Iran,66.77,402,380,1.6,true,1.5,2,E,Aisle 2 · Shelf E
-103090,BRV-103090,Milla Pineapple 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,USA,38.9,225,510,0.8,true,0.7,2,A,Aisle 2 · Shelf A
-103538,BRV-103538,Milla Quail Eggs 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Spain,23.48,256,501,1.5,true,1,2,D,Aisle 2 · Shelf D
-103705,BRV-103705,Milla Skim Milk 250ml,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,15.71,412,503,0.5,true,1.1,2,F,Aisle 2 · Shelf F
-103493,BRV-103493,Milla Spinach 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Georgia,5.86,70,225,1.6,true,3.3,2,F,Aisle 2 · Shelf F
-102531,BRV-102531,Milla Strawberry 250g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250g,Turkey,21,23,595,0.3,true,1.1,2,B,Aisle 2 · Shelf B
-102425,BRV-102425,Milla Turkey 1kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Brazil,23.09,457,345,0.7,true,1,2,F,Aisle 2 · Shelf F
-102767,BRV-102767,Milla Turkey Single,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Single,Poland,28.32,254,124,1.1,true,1.3,2,C,Aisle 2 · Shelf C
-102782,BRV-102782,Milla Watermelon 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Germany,70.06,411,543,1.4,true,1.1,2,F,Aisle 2 · Shelf F
-103998,BRV-103998,Milla Watermelon 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Azerbaijan,74.77,119,215,0.9,true,0.6,2,D,Aisle 2 · Shelf D
-103885,BRV-103885,Milla Watermelon Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,China,41.28,399,400,0.4,true,0.8,2,A,Aisle 2 · Shelf A
-102986,BRV-102986,Palsud Banana Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Poland,65.8,430,505,1.7,true,3.3,2,B,Aisle 2 · Shelf B
-102946,BRV-102946,Palsud Cheddar 250g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250g,Ukraine,47.14,214,301,0.5,true,3.5,2,B,Aisle 2 · Shelf B
-102210,BRV-102210,Palsud Cherry 250g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250g,Turkey,21.79,24,483,0.9,true,0.9,2,B,Aisle 2 · Shelf B
-102521,BRV-102521,Palsud Cherry 250ml,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,19.61,69,676,0.3,true,2.4,2,C,Aisle 2 · Shelf C
-103787,BRV-103787,Palsud Chicken Thighs 1kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Ukraine,11.15,378,713,1.4,true,2.2,2,B,Aisle 2 · Shelf B
-102872,BRV-102872,Palsud Dill 2L,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2L,Ukraine,69.31,294,701,1.4,true,3.5,2,B,Aisle 2 · Shelf B
-103290,BRV-103290,Palsud Feta Cheese 100g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,1.06,205,708,0.4,true,1.2,2,C,Aisle 2 · Shelf C
-103959,BRV-103959,Palsud Mint 5kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Germany,32.13,362,294,1,true,1.7,2,E,Aisle 2 · Shelf E
-102304,BRV-102304,Palsud Mint 750g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,750g,Spain,41.53,100,289,0.9,true,1.1,2,F,Aisle 2 · Shelf F
-102761,BRV-102761,Palsud Mozzarella 2kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2kg,France,57.49,78,126,1.2,true,3.1,2,C,Aisle 2 · Shelf C
-103241,BRV-103241,Palsud Peach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2kg,India,42.31,279,478,0.3,true,2.9,2,A,Aisle 2 · Shelf A
-103303,BRV-103303,Palsud Pomegranate 5kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Poland,64.44,321,601,1.3,true,3.3,2,B,Aisle 2 · Shelf B
-103247,BRV-103247,Palsud Pomegranate Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Russia,31.04,67,684,0.9,true,3.4,2,E,Aisle 2 · Shelf E
-102814,BRV-102814,Palsud Spinach 1L,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,1L,Russia,25.42,62,197,1.5,true,1.6,2,D,Aisle 2 · Shelf D
-103586,BRV-103586,Palsud Spinach Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Brazil,17.66,200,250,1.7,true,3.3,2,A,Aisle 2 · Shelf A
-102995,BRV-102995,Palsud Suluguni Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Germany,46.43,380,561,0.2,true,2.8,2,D,Aisle 2 · Shelf D
-102244,BRV-102244,Palsud Turkey Bulk,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Germany,78.72,425,576,1.6,true,0.8,2,C,Aisle 2 · Shelf C
-102769,BRV-102769,Palsud Zucchini Bulk,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Netherlands,46.19,48,446,0.5,true,2.7,2,C,Aisle 2 · Shelf C
-103264,BRV-103264,Pinar Apple Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,France,46.06,346,201,1.5,true,1.1,2,D,Aisle 2 · Shelf D
-102326,BRV-102326,Pinar Basil 2L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2L,Italy,71.27,478,393,1.2,true,3.7,2,F,Aisle 2 · Shelf F
-102555,BRV-102555,Pinar Bell Pepper 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Netherlands,55.04,174,369,1.1,true,3.8,2,D,Aisle 2 · Shelf D
-102569,BRV-102569,Pinar Broccoli Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Italy,7.47,303,416,1.7,true,3.5,2,E,Aisle 2 · Shelf E
-102540,BRV-102540,Pinar Carrot 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Turkey,39.72,358,443,0.4,true,2.3,2,F,Aisle 2 · Shelf F
-103048,BRV-103048,Pinar Carrot Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Germany,66.45,277,501,0.2,true,2.6,2,B,Aisle 2 · Shelf B
-102308,BRV-102308,Pinar Cherry 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Ukraine,20.47,478,421,1.4,true,3,2,F,Aisle 2 · Shelf F
-102777,BRV-102777,Pinar Chicken Thighs 2kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2kg,USA,58.78,274,183,0.7,true,3.2,2,D,Aisle 2 · Shelf D
-102520,BRV-102520,Pinar Chicken Wings 250ml,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Azerbaijan,5.14,248,153,1.6,true,1,2,B,Aisle 2 · Shelf B
-103770,BRV-103770,Pinar Feta Cheese 1kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Georgia,39.37,308,211,1.4,true,2.8,2,F,Aisle 2 · Shelf F
-102813,BRV-102813,Pinar Grapes 1kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Brazil,43.69,100,682,1,true,2.5,2,C,Aisle 2 · Shelf C
-102029,BRV-102029,Pinar Kiwi 1L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1L,France,45.5,178,369,0.6,true,2.7,2,D,Aisle 2 · Shelf D
-102169,BRV-102169,Pinar Lettuce 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,15.88,55,572,1.5,true,0.9,2,A,Aisle 2 · Shelf A
-102228,BRV-102228,Pinar Mint 2L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2L,Georgia,37.21,256,186,0.6,true,1.6,2,A,Aisle 2 · Shelf A
-102342,BRV-102342,Pinar Parsley 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,61.47,206,639,1.6,true,2.7,2,F,Aisle 2 · Shelf F
-102922,BRV-102922,Pinar Pear 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Georgia,55.09,480,595,1,true,3.3,2,F,Aisle 2 · Shelf F
-102495,BRV-102495,Pinar Potato 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Russia,47.38,386,588,0.6,true,3.1,2,A,Aisle 2 · Shelf A
-102151,BRV-102151,Pinar Potato 750g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,77.91,210,449,0.4,true,3.5,2,D,Aisle 2 · Shelf D
-103958,BRV-103958,Pinar Quail Eggs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Germany,16.53,293,243,0.7,true,2.7,2,F,Aisle 2 · Shelf F
-103883,BRV-103883,Pinar Salmon 250g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,250g,Germany,30.87,230,122,0.8,true,2.4,2,A,Aisle 2 · Shelf A
-102279,BRV-102279,Pinar Salmon 750g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,750g,India,39.91,293,500,1.4,true,2,2,E,Aisle 2 · Shelf E
-102928,BRV-102928,Pinar Sturgeon 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,58.97,222,173,0.6,true,2.9,2,D,Aisle 2 · Shelf D
-102319,BRV-102319,Pinar Suluguni Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,France,21.9,19,495,0.5,true,3.4,2,D,Aisle 2 · Shelf D
-103683,BRV-103683,Pinar Tomato 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Georgia,25.46,111,520,1.2,true,1,2,E,Aisle 2 · Shelf E
-102200,BRV-102200,Pinar Turkey 200g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,200g,Azerbaijan,57.68,180,184,0.6,true,2,2,E,Aisle 2 · Shelf E
-102136,BRV-102136,Pinar Whole Milk 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Turkey,63,326,544,1.1,true,3,2,C,Aisle 2 · Shelf C
-102017,BRV-102017,President Apple 750g,President,"Fresh Produce, Meat & Dairy",Yogurt,750g,Spain,73.7,440,654,1.5,true,3.5,2,A,Aisle 2 · Shelf A
-102989,BRV-102989,President Basil 200g,President,"Fresh Produce, Meat & Dairy",Yogurt,200g,India,33.62,128,294,0.2,true,2.3,2,C,Aisle 2 · Shelf C
-102896,BRV-102896,President Basil 500ml,President,"Fresh Produce, Meat & Dairy",Yogurt,500ml,India,21.08,261,667,1.1,true,0.9,2,B,Aisle 2 · Shelf B
-102417,BRV-102417,President Cabbage 500ml,President,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Iran,13.28,61,490,0.9,true,2,2,C,Aisle 2 · Shelf C
-103940,BRV-103940,President Carrot Single,President,"Fresh Produce, Meat & Dairy",Yogurt,Single,Brazil,62.5,174,552,0.3,true,3,2,E,Aisle 2 · Shelf E
-102166,BRV-102166,President Cheddar 2L,President,"Fresh Produce, Meat & Dairy",Yogurt,2L,Azerbaijan,5.51,490,419,0.7,true,2.3,2,D,Aisle 2 · Shelf D
-102221,BRV-102221,President Cherry 1L,President,"Fresh Produce, Meat & Dairy",Yogurt,1L,Iran,37.52,425,343,1.1,true,2.6,2,D,Aisle 2 · Shelf D
-102416,BRV-102416,President Cilantro Pack of 24,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Azerbaijan,65.32,435,279,0.9,true,3.3,2,F,Aisle 2 · Shelf F
-102014,BRV-102014,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Russia,77.68,336,373,1.4,true,1.7,2,B,Aisle 2 · Shelf B
-103858,BRV-103858,President Feta Cheese 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,Germany,33.14,122,130,1.7,true,1.4,2,E,Aisle 2 · Shelf E
-103828,BRV-103828,President Feta Cheese Pack of 4,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Turkey,76.42,411,199,1.6,true,1.9,2,B,Aisle 2 · Shelf B
-102776,BRV-102776,President Greek Yogurt 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,China,37.23,147,178,1,true,1.7,2,C,Aisle 2 · Shelf C
-103640,BRV-103640,President Ground Beef Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,China,38.83,23,207,1.2,true,2.8,2,F,Aisle 2 · Shelf F
-102253,BRV-102253,President Kefir Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Germany,76.29,455,572,1,true,1.8,2,C,Aisle 2 · Shelf C
-103870,BRV-103870,President Lime 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,Germany,18.82,176,128,1.4,true,1.1,2,C,Aisle 2 · Shelf C
-103952,BRV-103952,President Mint 1L,President,"Fresh Produce, Meat & Dairy",Yogurt,1L,Russia,12.43,10,717,0.8,true,1.6,2,D,Aisle 2 · Shelf D
-102382,BRV-102382,President Mint 200g,President,"Fresh Produce, Meat & Dairy",Yogurt,200g,Italy,48.13,31,227,1.4,true,2.6,2,B,Aisle 2 · Shelf B
-103829,BRV-103829,President Orange 100g,President,"Fresh Produce, Meat & Dairy",Yogurt,100g,Germany,16.12,153,138,0.6,true,0.9,2,E,Aisle 2 · Shelf E
-103615,BRV-103615,President Orange Pack of 24,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Netherlands,68.09,46,425,1.4,true,3.5,2,B,Aisle 2 · Shelf B
-103729,BRV-103729,President Original Turkey Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,France,68.83,444,585,1.1,true,3.7,2,F,Aisle 2 · Shelf F
-102594,BRV-102594,President Parmesan 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,USA,31.65,77,480,0.5,true,2.1,2,A,Aisle 2 · Shelf A
-102513,BRV-102513,President Peach 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,USA,75.23,223,567,0.3,true,2.5,2,D,Aisle 2 · Shelf D
-102441,BRV-102441,President Pear Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Turkey,43.96,489,371,0.5,true,1,2,D,Aisle 2 · Shelf D
-103662,BRV-103662,President Plum Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Georgia,41.73,10,503,1.6,true,3.5,2,D,Aisle 2 · Shelf D
-103082,BRV-103082,President Quail Eggs 250ml,President,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Germany,36.83,202,511,1.3,true,3.8,2,B,Aisle 2 · Shelf B
-103124,BRV-103124,President Quail Eggs Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,India,32.7,417,202,1,true,2.2,2,C,Aisle 2 · Shelf C
-102788,BRV-102788,President Salmon Pack of 4,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,India,45.77,257,177,1.4,true,2.2,2,D,Aisle 2 · Shelf D
-102484,BRV-102484,President Salmon Single,President,"Fresh Produce, Meat & Dairy",Yogurt,Single,USA,64.41,290,678,0.7,true,1.3,2,E,Aisle 2 · Shelf E
-103019,BRV-103019,President Spinach 100g,President,"Fresh Produce, Meat & Dairy",Yogurt,100g,China,59.98,186,451,1.5,true,3.3,2,F,Aisle 2 · Shelf F
-103102,BRV-103102,President Spinach Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Ukraine,14.14,300,682,0.6,true,3.8,2,C,Aisle 2 · Shelf C
-102086,BRV-102086,President Trout Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,France,18.48,11,428,0.8,true,2.1,2,C,Aisle 2 · Shelf C
-103664,BRV-103664,President Turkey Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Brazil,71.6,297,205,1.5,true,3.4,2,D,Aisle 2 · Shelf D
-102106,BRV-102106,President Whole Milk 2kg,President,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Brazil,52.67,186,145,0.8,true,2.5,2,F,Aisle 2 · Shelf F
-102808,BRV-102808,President Whole Milk 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,India,9.97,297,486,1.1,true,3.1,2,C,Aisle 2 · Shelf C
-102475,BRV-102475,Sehiyye Beef 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Russia,71.87,181,630,1.3,true,1.7,2,C,Aisle 2 · Shelf C
-102066,BRV-102066,Sehiyye Bell Pepper 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,13.77,439,298,1,true,2.6,2,A,Aisle 2 · Shelf A
-103093,BRV-103093,Sehiyye Broccoli 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1L,Germany,40.44,168,397,1.5,true,1.7,2,B,Aisle 2 · Shelf B
-103811,BRV-103811,Sehiyye Cabbage 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1L,USA,55.26,76,403,1.2,true,3.9,2,D,Aisle 2 · Shelf D
-103831,BRV-103831,Sehiyye Cabbage Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Georgia,74.32,167,561,0.5,true,2.1,2,B,Aisle 2 · Shelf B
-103814,BRV-103814,Sehiyye Carrot Single,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Single,Poland,54.68,425,218,1.3,true,3.4,2,E,Aisle 2 · Shelf E
-103933,BRV-103933,Sehiyye Chicken Breast 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Italy,53.02,16,210,1.2,true,3,2,E,Aisle 2 · Shelf E
-103869,BRV-103869,Sehiyye Chicken Breast 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,200g,Brazil,5.09,65,126,1.2,true,2.7,2,C,Aisle 2 · Shelf C
-102849,BRV-102849,Sehiyye Chicken Breast 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2L,China,0.87,468,263,0.4,true,0.9,2,F,Aisle 2 · Shelf F
-103207,BRV-103207,Sehiyye Chicken Thighs Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Poland,67.89,207,368,0.5,true,2.2,2,E,Aisle 2 · Shelf E
-103050,BRV-103050,Sehiyye Cucumber Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Iran,52.85,398,290,0.7,true,1.5,2,C,Aisle 2 · Shelf C
-102114,BRV-102114,Sehiyye Cucumber Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Germany,35.08,486,572,0.7,true,2.2,2,C,Aisle 2 · Shelf C
-103893,BRV-103893,Sehiyye Greek Yogurt Single,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Single,Turkey,52.71,52,237,1,true,1.1,2,B,Aisle 2 · Shelf B
-103168,BRV-103168,Sehiyye Lamb 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Azerbaijan,52.98,273,642,1.7,true,0.8,2,A,Aisle 2 · Shelf A
-102609,BRV-102609,Sehiyye Mint 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,100g,Netherlands,78.42,136,625,0.8,true,4,2,D,Aisle 2 · Shelf D
-103788,BRV-103788,Sehiyye Peach Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Iran,12.58,42,502,1.5,true,1.7,2,A,Aisle 2 · Shelf A
-102149,BRV-102149,Sehiyye Pineapple 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,100g,Ukraine,46.35,373,226,0.7,true,1.6,2,A,Aisle 2 · Shelf A
-102534,BRV-102534,Sehiyye Pomegranate 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,3.59,219,602,1.1,true,3.3,2,C,Aisle 2 · Shelf C
-102255,BRV-102255,Sehiyye Pomegranate Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,79.21,242,398,0.4,true,1.4,2,A,Aisle 2 · Shelf A
-103363,BRV-103363,Sehiyye Pomegranate Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Poland,8.87,242,223,0.3,true,2.6,2,D,Aisle 2 · Shelf D
-103480,BRV-103480,Sehiyye Potato 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Italy,22.66,410,245,0.7,true,2.6,2,D,Aisle 2 · Shelf D
-103524,BRV-103524,Sehiyye Quail Eggs 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Azerbaijan,62.53,31,134,0.6,true,3.6,2,E,Aisle 2 · Shelf E
-102532,BRV-102532,Sehiyye Salmon 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Italy,5.96,456,128,0.7,true,3.6,2,A,Aisle 2 · Shelf A
-102011,BRV-102011,Sehiyye Shrimp 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250g,Russia,7.44,449,260,1.3,true,0.9,2,E,Aisle 2 · Shelf E
-102266,BRV-102266,Sehiyye Spinach 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2L,Russia,79.88,59,580,1.4,true,1.2,2,E,Aisle 2 · Shelf E
-102315,BRV-102315,Sehiyye Sturgeon 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Netherlands,2.54,330,619,1.3,true,2.1,2,D,Aisle 2 · Shelf D
-102895,BRV-102895,Sehiyye Trout 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,750g,Germany,37.36,30,200,1.5,true,3.8,2,E,Aisle 2 · Shelf E
-102261,BRV-102261,Sehiyye Zucchini 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,China,50.61,472,531,1.6,true,2.8,2,D,Aisle 2 · Shelf D
-103707,BRV-103707,Sehiyye Zucchini Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Ukraine,58.67,259,577,1.2,true,1.8,2,B,Aisle 2 · Shelf B
+102153,BRV-102153,Atena Apple 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,59.87,353,3.3,519,1.2,true,3.6,2,F,Aisle 2 · Shelf F
+102123,BRV-102123,Atena Banana 750g,Atena,"Fresh Produce, Meat & Dairy",Cheese,750g,Ukraine,13.94,149,4.3,254,0.8,true,1.7,2,A,Aisle 2 · Shelf A
+102277,BRV-102277,Atena Beef Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Azerbaijan,16.79,460,4.8,438,1.2,true,1.2,2,C,Aisle 2 · Shelf C
+103647,BRV-103647,Atena Broccoli Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,China,60.13,433,3.9,200,1.6,true,3.7,2,A,Aisle 2 · Shelf A
+102037,BRV-102037,Atena Chicken Breast Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,China,31.26,61,3.3,544,1.1,true,3.8,2,C,Aisle 2 · Shelf C
+102650,BRV-102650,Atena Cucumber 5kg,Atena,"Fresh Produce, Meat & Dairy",Cheese,5kg,Azerbaijan,39.1,161,3.5,547,0.4,true,0.9,2,F,Aisle 2 · Shelf F
+103857,BRV-103857,Atena Eggplant Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,USA,4.02,403,4.8,701,0.3,true,2.8,2,B,Aisle 2 · Shelf B
+103805,BRV-103805,Atena Free-Range Eggs Family Pack,Atena,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Azerbaijan,17.54,8,3.4,616,0.4,true,1.7,2,E,Aisle 2 · Shelf E
+102828,BRV-102828,Atena Free-Range Eggs Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Azerbaijan,74.14,384,4.2,460,1,true,1.5,2,E,Aisle 2 · Shelf E
+103932,BRV-103932,Atena Grapes 200g,Atena,"Fresh Produce, Meat & Dairy",Cheese,200g,India,60.86,183,3.2,343,0.4,true,2.3,2,B,Aisle 2 · Shelf B
+102704,BRV-102704,Atena Grapes Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,India,29.53,417,3,653,1.7,true,2.5,2,F,Aisle 2 · Shelf F
+103180,BRV-103180,Atena Lactose-Free Milk 500ml,Atena,"Fresh Produce, Meat & Dairy",Cheese,500ml,USA,59.8,421,4.2,228,1.5,true,3.1,2,E,Aisle 2 · Shelf E
+102662,BRV-102662,Atena Lime 1kg,Atena,"Fresh Produce, Meat & Dairy",Cheese,1kg,China,39.5,247,3.5,292,1.6,true,3.1,2,E,Aisle 2 · Shelf E
+102084,BRV-102084,Atena Melon Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Spain,49.54,190,4.7,490,1.5,true,2.2,2,A,Aisle 2 · Shelf A
+103535,BRV-103535,Atena Mozzarella 250g,Atena,"Fresh Produce, Meat & Dairy",Cheese,250g,Spain,3.45,359,3.2,596,1.2,true,3.9,2,E,Aisle 2 · Shelf E
+103508,BRV-103508,Atena Mozzarella 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,38.96,52,3.9,160,1.6,true,2.4,2,E,Aisle 2 · Shelf E
+103854,BRV-103854,Atena Onion 2L,Atena,"Fresh Produce, Meat & Dairy",Cheese,2L,Spain,70.11,191,3.9,342,0.4,true,1.9,2,E,Aisle 2 · Shelf E
+102897,BRV-102897,Atena Parmesan Family Pack,Atena,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Georgia,45.97,251,3.6,598,1.3,true,2.9,2,A,Aisle 2 · Shelf A
+103322,BRV-103322,Atena Parsley Bulk,Atena,"Fresh Produce, Meat & Dairy",Cheese,Bulk,USA,79.2,211,3.9,694,0.8,true,3.7,2,A,Aisle 2 · Shelf A
+102625,BRV-102625,Atena Pomegranate Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Germany,51.6,83,4.7,407,1.5,true,2,2,B,Aisle 2 · Shelf B
+103002,BRV-103002,Atena Spinach Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Georgia,34.12,29,4.6,543,1.2,true,1.4,2,B,Aisle 2 · Shelf B
+102527,BRV-102527,Atena Tomato Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Poland,45.16,167,4.4,398,0.7,true,2.5,2,A,Aisle 2 · Shelf A
+102225,BRV-102225,Atena Whole Milk Single,Atena,"Fresh Produce, Meat & Dairy",Cheese,Single,Turkey,48.71,101,3.5,499,1.5,true,1.4,2,F,Aisle 2 · Shelf F
+103164,BRV-103164,Bravo Farm Apple 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Azerbaijan,47.23,456,4.7,134,1.2,true,1.6,2,A,Aisle 2 · Shelf A
+103511,BRV-103511,Bravo Farm Ayran 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,26.96,274,3.4,414,1.7,true,1.1,2,C,Aisle 2 · Shelf C
+102864,BRV-102864,Bravo Farm Broccoli 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Georgia,18.99,4,4.2,636,0.9,true,3.6,2,A,Aisle 2 · Shelf A
+102300,BRV-102300,Bravo Farm Cheddar Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Russia,28.88,91,3.5,365,1.2,true,2.1,2,D,Aisle 2 · Shelf D
+102959,BRV-102959,Bravo Farm Chicken Breast 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,India,9.4,212,3.2,577,0.3,true,1.1,2,D,Aisle 2 · Shelf D
+103159,BRV-103159,Bravo Farm Chicken Thighs Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,Netherlands,7.64,355,3.5,190,0.4,true,2,2,C,Aisle 2 · Shelf C
+102538,BRV-102538,Bravo Farm Cucumber 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Netherlands,36.19,171,3.7,134,1,true,1.7,2,E,Aisle 2 · Shelf E
+102274,BRV-102274,Bravo Farm Family Zucchini 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Russia,2.31,479,4,333,0.9,true,0.7,2,F,Aisle 2 · Shelf F
+103436,BRV-103436,Bravo Farm Free-Range Eggs 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250g,USA,25.81,227,3.8,674,1.2,true,3.7,2,C,Aisle 2 · Shelf C
+103206,BRV-103206,Bravo Farm Ground Beef 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,India,10.29,477,4.5,589,0.9,true,3,2,F,Aisle 2 · Shelf F
+102821,BRV-102821,Bravo Farm Kiwi Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,France,66.7,350,4.4,409,1.4,true,1.4,2,B,Aisle 2 · Shelf B
+103487,BRV-103487,Bravo Farm Lamb 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Netherlands,77.81,370,4.1,610,1.3,true,0.6,2,E,Aisle 2 · Shelf E
+103106,BRV-103106,Bravo Farm Lemon 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Ukraine,79.7,271,3.3,534,0.5,true,1.5,2,A,Aisle 2 · Shelf A
+103627,BRV-103627,Bravo Farm Mint Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Poland,28.03,304,4.5,370,0.8,true,3.2,2,E,Aisle 2 · Shelf E
+103592,BRV-103592,Bravo Farm Plum 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,200g,India,16.17,88,4.8,461,1.3,true,3.6,2,D,Aisle 2 · Shelf D
+102633,BRV-102633,Bravo Farm Plum 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2kg,Georgia,16.25,318,3.7,522,0.4,true,1.2,2,E,Aisle 2 · Shelf E
+103254,BRV-103254,Bravo Farm Potato 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,750g,Germany,16.53,208,4.8,396,0.8,true,2.1,2,A,Aisle 2 · Shelf A
+102423,BRV-102423,Bravo Farm Salmon 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Turkey,47.31,117,4.4,275,0.6,true,0.8,2,F,Aisle 2 · Shelf F
+102926,BRV-102926,Bravo Farm Strawberry 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,250g,Italy,16.44,462,3.3,559,1.2,true,0.6,2,D,Aisle 2 · Shelf D
+103939,BRV-103939,Bravo Farm Sturgeon 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,200g,USA,68.99,135,3.5,516,0.3,true,1.4,2,C,Aisle 2 · Shelf C
+103711,BRV-103711,Bravo Farm Suluguni 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,China,64.63,309,4.7,604,0.3,true,1.5,2,C,Aisle 2 · Shelf C
+103345,BRV-103345,Bravo Farm Suluguni Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Azerbaijan,11.85,219,4.6,215,1.3,true,1.4,2,D,Aisle 2 · Shelf D
+103582,BRV-103582,Bravo Farm Tomato 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Brazil,63.22,185,4.3,598,1.4,true,3.4,2,C,Aisle 2 · Shelf C
+103178,BRV-103178,Bravo Farm Trout Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Brazil,76.18,186,4.4,357,1.2,true,1.1,2,D,Aisle 2 · Shelf D
+102185,BRV-102185,Bravo Farm Zucchini 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Netherlands,3.29,89,4.4,602,1.1,true,3.5,2,C,Aisle 2 · Shelf C
+103900,BRV-103900,Local Farm Apple 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Italy,9.87,170,4.8,508,0.3,true,2.6,2,C,Aisle 2 · Shelf C
+103918,BRV-103918,Local Farm Carrot 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,250ml,Spain,9.75,0,3.6,351,0.6,true,3.4,2,F,Aisle 2 · Shelf F
+103969,BRV-103969,Local Farm Carrot 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500ml,Georgia,79.6,493,3.6,151,1,true,2.8,2,D,Aisle 2 · Shelf D
+102664,BRV-102664,Local Farm Carrot Single,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Single,China,28.52,430,4.3,718,0.4,true,3.1,2,C,Aisle 2 · Shelf C
+102889,BRV-102889,Local Farm Cheddar 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,49.55,106,4.3,531,0.4,true,3.2,2,B,Aisle 2 · Shelf B
+103515,BRV-103515,Local Farm Free-Range Eggs 1L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Turkey,5.79,169,4.1,546,0.2,true,0.9,2,E,Aisle 2 · Shelf E
+103527,BRV-103527,Local Farm Greek Yogurt Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Georgia,60.71,427,4.9,517,0.8,true,1.4,2,B,Aisle 2 · Shelf B
+102407,BRV-102407,Local Farm Ground Beef 500g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500g,China,30.89,284,4.5,357,0.2,true,3.2,2,B,Aisle 2 · Shelf B
+103282,BRV-103282,Local Farm Lettuce 1L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1L,Spain,16.6,268,3.2,217,1.2,true,2.3,2,F,Aisle 2 · Shelf F
+102368,BRV-102368,Local Farm Lettuce 750g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,750g,Turkey,9.66,394,4.5,319,0.6,true,2.1,2,B,Aisle 2 · Shelf B
+102347,BRV-102347,Local Farm Melon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,1kg,Russia,36.84,110,3.4,702,0.8,true,3.6,2,C,Aisle 2 · Shelf C
+103209,BRV-103209,Local Farm Mini Tomato 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Azerbaijan,55.09,25,4.5,578,0.3,true,1.3,2,E,Aisle 2 · Shelf E
+102303,BRV-102303,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,Iran,68.63,294,4.8,598,0.9,true,3.1,2,C,Aisle 2 · Shelf C
+103522,BRV-103522,Local Farm Mozzarella Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,India,73.63,486,4.5,620,0.7,true,0.6,2,C,Aisle 2 · Shelf C
+102183,BRV-102183,Local Farm Pomegranate 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,Iran,3,371,4.8,256,0.6,true,2.2,2,E,Aisle 2 · Shelf E
+102473,BRV-102473,Local Farm Potato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Russia,36.33,461,4.5,620,1.4,true,2.9,2,E,Aisle 2 · Shelf E
+102284,BRV-102284,Local Farm Skim Milk Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Italy,73.26,38,3,388,1.3,true,2.6,2,C,Aisle 2 · Shelf C
+103626,BRV-103626,Local Farm Spinach 500g,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,500g,Azerbaijan,29.04,289,4,199,1,true,1.6,2,B,Aisle 2 · Shelf B
+102460,BRV-102460,Local Farm Spinach Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,Poland,32.4,391,3.6,364,0.7,true,0.8,2,C,Aisle 2 · Shelf C
+102071,BRV-102071,Local Farm Tomato 2L,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2L,India,57.17,190,4.8,486,0.6,true,1.8,2,A,Aisle 2 · Shelf A
+102549,BRV-102549,Local Farm Watermelon 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,37.36,281,3.1,582,1.2,true,0.7,2,A,Aisle 2 · Shelf A
+103972,BRV-103972,Local Farm Whole Milk 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Cheese,5kg,China,56.81,236,4,323,0.9,true,3.1,2,D,Aisle 2 · Shelf D
+103226,BRV-103226,Milla Apple Single,Milla,"Fresh Produce, Meat & Dairy",Cheese,Single,Netherlands,4.66,193,4.6,507,1.5,true,0.5,2,F,Aisle 2 · Shelf F
+102649,BRV-102649,Milla Ayran 250g,Milla,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,42.76,139,3.8,285,1.1,true,2,2,D,Aisle 2 · Shelf D
+103649,BRV-103649,Milla Beef 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Netherlands,29.39,106,3.9,378,0.9,true,3.1,2,C,Aisle 2 · Shelf C
+102360,BRV-102360,Milla Bell Pepper 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Netherlands,15.18,326,4.1,167,1.3,true,2.5,2,F,Aisle 2 · Shelf F
+103031,BRV-103031,Milla Cabbage 250g,Milla,"Fresh Produce, Meat & Dairy",Cheese,250g,Brazil,37.05,301,3.7,361,1.6,true,3.9,2,F,Aisle 2 · Shelf F
+102093,BRV-102093,Milla Cabbage 2L,Milla,"Fresh Produce, Meat & Dairy",Cheese,2L,China,68.03,146,3.5,538,1.4,true,3.7,2,E,Aisle 2 · Shelf E
+102962,BRV-102962,Milla Carrot 200g,Milla,"Fresh Produce, Meat & Dairy",Cheese,200g,India,70.33,286,4.7,391,1.1,true,1.1,2,F,Aisle 2 · Shelf F
+102467,BRV-102467,Milla Carrot Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Netherlands,55.87,373,3.8,699,0.9,true,3.1,2,D,Aisle 2 · Shelf D
+103484,BRV-103484,Milla Cherry 1L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,49.3,299,4.6,265,1.1,true,1.3,2,D,Aisle 2 · Shelf D
+102048,BRV-102048,Milla Chicken Breast 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Iran,56.42,307,4.7,522,0.3,true,1.9,2,C,Aisle 2 · Shelf C
+103578,BRV-103578,Milla Chicken Thighs 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,65.08,402,3.3,353,0.6,true,3.8,2,D,Aisle 2 · Shelf D
+102637,BRV-102637,Milla Kiwi Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Italy,0.61,186,4.7,198,1.2,true,2.3,2,C,Aisle 2 · Shelf C
+102854,BRV-102854,Milla Lettuce Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Iran,74.72,260,4.7,265,0.2,true,0.8,2,B,Aisle 2 · Shelf B
+103129,BRV-103129,Milla Mint Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,22.48,364,3.8,307,1.2,true,1.4,2,B,Aisle 2 · Shelf B
+102635,BRV-102635,Milla Mozzarella 1.5L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Iran,57.67,494,4.2,200,1.6,true,3,2,E,Aisle 2 · Shelf E
+102783,BRV-102783,Milla Onion Bulk,Milla,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Brazil,21.32,437,4.5,482,0.3,true,0.6,2,A,Aisle 2 · Shelf A
+102179,BRV-102179,Milla Parmesan Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Spain,8.46,257,4.2,491,1.4,true,3.2,2,F,Aisle 2 · Shelf F
+103574,BRV-103574,Milla Pomegranate 100g,Milla,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,47.38,9,3.2,293,0.9,true,1.7,2,D,Aisle 2 · Shelf D
+103445,BRV-103445,Milla Pomegranate 2kg,Milla,"Fresh Produce, Meat & Dairy",Cheese,2kg,France,52.74,317,4.6,184,0.5,true,0.6,2,A,Aisle 2 · Shelf A
+103274,BRV-103274,Milla Potato 500g,Milla,"Fresh Produce, Meat & Dairy",Cheese,500g,India,15.8,1,3.8,694,0.8,true,1.9,2,C,Aisle 2 · Shelf C
+103312,BRV-103312,Milla Quail Eggs 500ml,Milla,"Fresh Produce, Meat & Dairy",Cheese,500ml,Poland,63.68,433,3.9,275,0.7,true,0.7,2,F,Aisle 2 · Shelf F
+102366,BRV-102366,Milla Strawberry Family Pack,Milla,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Brazil,7.89,495,3.2,253,0.9,true,1.6,2,F,Aisle 2 · Shelf F
+102394,BRV-102394,Milla Sturgeon 1L,Milla,"Fresh Produce, Meat & Dairy",Cheese,1L,Russia,77.52,416,4.7,486,0.7,true,3.8,2,E,Aisle 2 · Shelf E
+102346,BRV-102346,Milla Zucchini 500g,Milla,"Fresh Produce, Meat & Dairy",Cheese,500g,USA,4.72,444,3.4,171,1.6,true,3.5,2,B,Aisle 2 · Shelf B
+102355,BRV-102355,Palsud Apple Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Italy,35.49,82,3.1,623,0.3,true,2.9,2,D,Aisle 2 · Shelf D
+102046,BRV-102046,Palsud Broccoli 2L,Palsud,"Fresh Produce, Meat & Dairy",Cheese,2L,USA,2.33,391,3.5,432,1.2,true,2.6,2,E,Aisle 2 · Shelf E
+103458,BRV-103458,Palsud Ground Beef 5kg,Palsud,"Fresh Produce, Meat & Dairy",Cheese,5kg,Azerbaijan,23.21,399,3.7,518,1.1,true,3.4,2,C,Aisle 2 · Shelf C
+102601,BRV-102601,Palsud Lemon 1kg,Palsud,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,11.21,451,4.7,217,0.3,true,0.7,2,F,Aisle 2 · Shelf F
+103979,BRV-103979,Palsud Lettuce 500ml,Palsud,"Fresh Produce, Meat & Dairy",Cheese,500ml,Italy,32.74,355,4.6,336,1.4,true,1,2,E,Aisle 2 · Shelf E
+103173,BRV-103173,Palsud Orange 200g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,200g,Georgia,48.16,314,3.2,214,1.6,true,2.4,2,C,Aisle 2 · Shelf C
+103925,BRV-103925,Palsud Peach 2L,Palsud,"Fresh Produce, Meat & Dairy",Cheese,2L,Germany,24.04,172,3.5,655,0.7,true,0.9,2,B,Aisle 2 · Shelf B
+102882,BRV-102882,Palsud Plum 250g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,16.73,416,3.8,664,1.5,true,1.6,2,C,Aisle 2 · Shelf C
+102005,BRV-102005,Palsud Potato 200g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,200g,Poland,48.29,218,3.2,471,1.3,true,1.3,2,F,Aisle 2 · Shelf F
+103132,BRV-103132,Palsud Quail Eggs 750g,Palsud,"Fresh Produce, Meat & Dairy",Cheese,750g,Turkey,76.13,95,4.2,271,0.7,true,3.4,2,B,Aisle 2 · Shelf B
+103594,BRV-103594,Palsud Quail Eggs Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Spain,21.94,403,4.8,655,0.8,true,1.2,2,B,Aisle 2 · Shelf B
+103542,BRV-103542,Palsud Shrimp Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,China,29.51,398,4,402,0.2,true,1.3,2,A,Aisle 2 · Shelf A
+103891,BRV-103891,Palsud Zucchini Bulk,Palsud,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Netherlands,0.71,215,4.3,539,0.9,true,2.5,2,D,Aisle 2 · Shelf D
+103984,BRV-103984,Pinar Ayran Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 4,Azerbaijan,70.36,324,3.1,264,1.3,true,3.5,2,E,Aisle 2 · Shelf E
+102092,BRV-102092,Pinar Banana 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1.5L,Georgia,24.99,249,4.8,295,0.7,true,3.6,2,B,Aisle 2 · Shelf B
+103853,BRV-103853,Pinar Cilantro 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Ukraine,8.76,175,3.5,561,0.8,true,1.2,2,F,Aisle 2 · Shelf F
+103669,BRV-103669,Pinar Eggplant Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,Italy,59.72,385,3.8,180,0.9,true,1.3,2,A,Aisle 2 · Shelf A
+102807,BRV-102807,Pinar Kiwi 2kg,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2kg,Netherlands,61.9,152,3.9,329,0.5,true,1.9,2,F,Aisle 2 · Shelf F
+102984,BRV-102984,Pinar Melon 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Ukraine,60.5,246,4.1,327,1.4,true,3.2,2,B,Aisle 2 · Shelf B
+103432,BRV-103432,Pinar Mozzarella Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Poland,55.98,10,4.1,350,1.3,true,2,2,A,Aisle 2 · Shelf A
+102654,BRV-102654,Pinar Orange 1L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1L,Ukraine,45.71,409,3.3,207,1.1,true,1.7,2,B,Aisle 2 · Shelf B
+102002,BRV-102002,Pinar Orange 500ml,Pinar,"Fresh Produce, Meat & Dairy",Cheese,500ml,India,17.72,210,3.2,688,0.2,true,3.2,2,C,Aisle 2 · Shelf C
+102047,BRV-102047,Pinar Spinach 1L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,1L,Azerbaijan,40.17,315,3.8,253,1.6,true,2.7,2,F,Aisle 2 · Shelf F
+103845,BRV-103845,Pinar Spinach 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Spain,46.8,18,4,604,1.5,true,3.7,2,C,Aisle 2 · Shelf C
+103841,BRV-103841,Pinar Suluguni 250g,Pinar,"Fresh Produce, Meat & Dairy",Cheese,250g,Georgia,48.77,33,3.9,240,1.2,true,2.3,2,E,Aisle 2 · Shelf E
+102863,BRV-102863,Pinar Turkey Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,France,58.72,109,3.8,595,0.4,true,3.5,2,F,Aisle 2 · Shelf F
+103719,BRV-103719,Pinar Watermelon 2L,Pinar,"Fresh Produce, Meat & Dairy",Cheese,2L,Brazil,66.43,214,3.9,396,1.6,true,3.6,2,C,Aisle 2 · Shelf C
+102670,BRV-102670,President Cabbage Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,India,47.65,472,3.6,629,1.3,true,1.4,2,F,Aisle 2 · Shelf F
+103877,BRV-103877,President Cheddar 250g,President,"Fresh Produce, Meat & Dairy",Cheese,250g,Iran,70.97,442,4.5,407,1,true,3.7,2,F,Aisle 2 · Shelf F
+102918,BRV-102918,President Chicken Breast 100g,President,"Fresh Produce, Meat & Dairy",Cheese,100g,Iran,76.9,200,3.3,432,0.7,true,0.8,2,E,Aisle 2 · Shelf E
+103598,BRV-103598,President Chicken Breast 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,60.17,317,4.7,251,1,true,3.6,2,D,Aisle 2 · Shelf D
+103245,BRV-103245,President Chicken Wings Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,USA,15.83,347,4.1,506,1.2,true,2.3,2,C,Aisle 2 · Shelf C
+102409,BRV-102409,President Dill 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,66.56,390,3.6,607,1.2,true,3.1,2,D,Aisle 2 · Shelf D
+103406,BRV-103406,President Ground Beef Pack of 24,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,34.36,309,3.6,135,1.4,true,2.3,2,B,Aisle 2 · Shelf B
+103507,BRV-103507,President Lamb 200g,President,"Fresh Produce, Meat & Dairy",Cheese,200g,Russia,76.98,311,3.1,231,1.5,true,2.4,2,B,Aisle 2 · Shelf B
+102770,BRV-102770,President Lime Bulk,President,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Italy,27.8,114,4.2,576,1.7,true,2.8,2,A,Aisle 2 · Shelf A
+102036,BRV-102036,President Parsley Pack of 24,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,China,16.34,26,5,501,0.7,true,3.1,2,D,Aisle 2 · Shelf D
+103150,BRV-103150,President Peach 100g,President,"Fresh Produce, Meat & Dairy",Cheese,100g,Poland,20.21,480,3.6,203,0.9,true,2.5,2,B,Aisle 2 · Shelf B
+103281,BRV-103281,President Pomegranate Pack of 6,President,"Fresh Produce, Meat & Dairy",Cheese,Pack of 6,India,46.68,360,3.5,442,1.4,true,3.6,2,E,Aisle 2 · Shelf E
+103721,BRV-103721,President Salmon 250ml,President,"Fresh Produce, Meat & Dairy",Cheese,250ml,Italy,16.75,355,3.4,217,1.6,true,3.9,2,D,Aisle 2 · Shelf D
+103865,BRV-103865,President Veal Family Pack,President,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Turkey,39.37,221,4.4,594,1.2,true,1.6,2,A,Aisle 2 · Shelf A
+102722,BRV-102722,President Zucchini 5kg,President,"Fresh Produce, Meat & Dairy",Cheese,5kg,France,44.83,93,3.3,681,0.4,true,2.8,2,D,Aisle 2 · Shelf D
+102691,BRV-102691,Sehiyye Apple 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,250g,Germany,75.58,133,4.4,594,1.5,true,2.4,2,C,Aisle 2 · Shelf C
+103492,BRV-103492,Sehiyye Apple 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,China,50.6,343,3.3,540,0.5,true,3.1,2,C,Aisle 2 · Shelf C
+103368,BRV-103368,Sehiyye Ayran 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,France,26.26,108,4.9,412,1.5,true,2.9,2,A,Aisle 2 · Shelf A
+103136,BRV-103136,Sehiyye Ayran Single,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Single,India,56.95,230,4.2,611,1.5,true,2.6,2,F,Aisle 2 · Shelf F
+103467,BRV-103467,Sehiyye Banana Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 12,China,16.76,125,3.3,320,1.2,true,1.7,2,E,Aisle 2 · Shelf E
+103789,BRV-103789,Sehiyye Bell Pepper 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,USA,66.93,291,4.6,235,1.4,true,1.1,2,D,Aisle 2 · Shelf D
+103798,BRV-103798,Sehiyye Cheddar Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Bulk,Spain,3.81,296,3,425,0.2,true,3.7,2,F,Aisle 2 · Shelf F
+102978,BRV-102978,Sehiyye Cilantro 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,500g,Spain,38.06,282,3.7,462,0.8,true,3.9,2,E,Aisle 2 · Shelf E
+102496,BRV-102496,Sehiyye Cucumber Single,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Single,Iran,16,158,3.8,191,1.2,true,0.9,2,B,Aisle 2 · Shelf B
+103069,BRV-103069,Sehiyye Dill Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Netherlands,38.39,215,4.8,598,0.5,true,1.5,2,A,Aisle 2 · Shelf A
+102610,BRV-102610,Sehiyye Feta Cheese Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Family Pack,Ukraine,40.2,407,3.9,567,1,true,2.2,2,D,Aisle 2 · Shelf D
+102309,BRV-102309,Sehiyye Ground Beef 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,28.57,417,4.2,160,1.6,true,1.5,2,C,Aisle 2 · Shelf C
+103739,BRV-103739,Sehiyye Kefir 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,China,71.27,198,3.5,122,1.3,true,0.8,2,E,Aisle 2 · Shelf E
+103631,BRV-103631,Sehiyye Lactose-Free Milk 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,France,52.06,24,3.5,127,1.6,true,1.4,2,B,Aisle 2 · Shelf B
+102072,BRV-102072,Sehiyye Pear 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,France,75.84,459,4.3,373,0.8,true,3.6,2,D,Aisle 2 · Shelf D
+102290,BRV-102290,Sehiyye Pineapple Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Iran,68.88,7,3.7,539,0.3,true,2.3,2,F,Aisle 2 · Shelf F
+102391,BRV-102391,Sehiyye Plum Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,Pack of 24,Turkey,43.78,264,3.2,399,1.4,true,3.6,2,D,Aisle 2 · Shelf D
+103157,BRV-103157,Sehiyye Skim Milk 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,750g,France,25.56,33,4.8,572,0.7,true,0.7,2,A,Aisle 2 · Shelf A
+102498,BRV-102498,Sehiyye Suluguni 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,Azerbaijan,29.92,417,3.6,149,0.5,true,2.4,2,B,Aisle 2 · Shelf B
+102399,BRV-102399,Sehiyye Tomato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2L,China,65.94,40,3.7,295,0.2,true,1.3,2,F,Aisle 2 · Shelf F
+102543,BRV-102543,Sehiyye Trout 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,200g,Italy,13.87,12,3.8,232,0.8,true,1.6,2,A,Aisle 2 · Shelf A
+102990,BRV-102990,Sehiyye Turkey 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,2kg,Iran,38.52,34,4.7,424,1.4,true,2.8,2,A,Aisle 2 · Shelf A
+103134,BRV-103134,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Cheese,1kg,Germany,71.46,193,4.2,325,0.6,true,2.5,2,B,Aisle 2 · Shelf B
+103123,BRV-103123,Atena Banana 750g,Atena,"Fresh Produce, Meat & Dairy",Eggs,750g,France,36.95,127,3,637,1,true,2.7,2,B,Aisle 2 · Shelf B
+103860,BRV-103860,Atena Broccoli 250ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,250ml,Brazil,53.72,250,4.4,555,1.4,true,0.8,2,F,Aisle 2 · Shelf F
+103420,BRV-103420,Atena Cheddar 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Netherlands,71.25,52,4.4,299,0.3,true,3.1,2,F,Aisle 2 · Shelf F
+103905,BRV-103905,Atena Chicken Thighs 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,China,29.29,122,4.8,565,1.4,true,2.9,2,D,Aisle 2 · Shelf D
+102116,BRV-102116,Atena Chicken Thighs Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,74.36,468,4.8,234,1,true,4,2,A,Aisle 2 · Shelf A
+102299,BRV-102299,Atena Cilantro 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,28.07,320,4.1,622,0.9,true,3.7,2,C,Aisle 2 · Shelf C
+102888,BRV-102888,Atena Cucumber 750g,Atena,"Fresh Produce, Meat & Dairy",Eggs,750g,Azerbaijan,46.88,156,4.5,206,0.3,true,1.8,2,E,Aisle 2 · Shelf E
+102906,BRV-102906,Atena Feta Cheese 500g,Atena,"Fresh Produce, Meat & Dairy",Eggs,500g,Ukraine,9.97,408,3,369,0.7,true,2.8,2,D,Aisle 2 · Shelf D
+102497,BRV-102497,Atena Garlic 200g,Atena,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,16.29,395,5,186,0.6,true,3.1,2,E,Aisle 2 · Shelf E
+102141,BRV-102141,Atena Greek Yogurt 1.5L,Atena,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Georgia,8.07,135,4.5,162,0.8,true,3.8,2,A,Aisle 2 · Shelf A
+102907,BRV-102907,Atena Greek Yogurt 2L,Atena,"Fresh Produce, Meat & Dairy",Eggs,2L,Iran,65.72,71,4.4,396,0.5,true,4,2,A,Aisle 2 · Shelf A
+102176,BRV-102176,Atena Lettuce 250ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,250ml,India,71.5,47,3.7,204,0.5,true,3.8,2,E,Aisle 2 · Shelf E
+103291,BRV-103291,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Eggs,200g,India,47.1,112,4,201,1.2,true,3,2,F,Aisle 2 · Shelf F
+103381,BRV-103381,Atena Parsley Bulk,Atena,"Fresh Produce, Meat & Dairy",Eggs,Bulk,China,36.39,344,3.1,487,1.2,true,3.7,2,B,Aisle 2 · Shelf B
+103910,BRV-103910,Atena Parsley Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Brazil,6.97,248,4.4,279,0.5,true,2.1,2,B,Aisle 2 · Shelf B
+102898,BRV-102898,Atena Pear Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Poland,3.97,206,4.1,441,1.5,true,1.2,2,D,Aisle 2 · Shelf D
+103696,BRV-103696,Atena Potato 500ml,Atena,"Fresh Produce, Meat & Dairy",Eggs,500ml,Brazil,28.45,317,4.1,178,0.9,true,1.1,2,A,Aisle 2 · Shelf A
+102865,BRV-102865,Atena Quail Eggs 1.5L,Atena,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Germany,41.26,326,4.7,233,0.7,true,3.4,2,D,Aisle 2 · Shelf D
+103785,BRV-103785,Atena Quail Eggs 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,China,77.75,469,4.4,535,1.2,true,2.1,2,B,Aisle 2 · Shelf B
+102554,BRV-102554,Atena Quail Eggs 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Spain,70.5,315,4.8,292,1.3,true,1.7,2,E,Aisle 2 · Shelf E
+103389,BRV-103389,Atena Salmon 100g,Atena,"Fresh Produce, Meat & Dairy",Eggs,100g,Turkey,67.95,335,4.8,255,0.4,true,3.9,2,F,Aisle 2 · Shelf F
+103462,BRV-103462,Atena Shrimp 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,India,77.94,219,4.9,321,0.8,true,0.6,2,B,Aisle 2 · Shelf B
+102632,BRV-102632,Atena Shrimp 2kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,2kg,USA,42.56,321,4.4,319,0.4,true,2.1,2,D,Aisle 2 · Shelf D
+103751,BRV-103751,Atena Skim Milk 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Turkey,58.98,417,3.6,504,0.8,true,1.1,2,C,Aisle 2 · Shelf C
+102132,BRV-102132,Atena Skim Milk 5kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,5kg,Brazil,44.82,234,3.8,684,1.3,true,2.4,2,A,Aisle 2 · Shelf A
+102354,BRV-102354,Atena Sturgeon 1kg,Atena,"Fresh Produce, Meat & Dairy",Eggs,1kg,India,48.49,434,4.7,370,1.4,true,1.4,2,C,Aisle 2 · Shelf C
+102059,BRV-102059,Atena Sturgeon 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Georgia,21.89,400,3.4,272,0.3,true,3.6,2,E,Aisle 2 · Shelf E
+102434,BRV-102434,Atena Suluguni 250g,Atena,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,6.37,424,3.2,167,0.2,true,0.8,2,F,Aisle 2 · Shelf F
+103639,BRV-103639,Atena Trout Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,France,59.19,307,3,303,0.7,true,2.7,2,B,Aisle 2 · Shelf B
+102557,BRV-102557,Bravo Farm Apple 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,2L,China,75.46,465,4.6,495,0.4,true,3,2,D,Aisle 2 · Shelf D
+102546,BRV-102546,Bravo Farm Bell Pepper 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,Italy,68.86,388,4.6,281,1,true,2.4,2,B,Aisle 2 · Shelf B
+102952,BRV-102952,Bravo Farm Broccoli 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,Russia,64.7,16,4.9,674,0.8,true,3.3,2,C,Aisle 2 · Shelf C
+102709,BRV-102709,Bravo Farm Cheddar 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,India,57.56,490,3.3,220,1.1,true,1.3,2,A,Aisle 2 · Shelf A
+103771,BRV-103771,Bravo Farm Cheddar Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Poland,56.62,346,4.6,206,0.7,true,2.1,2,A,Aisle 2 · Shelf A
+103665,BRV-103665,Bravo Farm Chicken Breast 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,1L,Italy,74.42,69,3.2,504,0.5,true,3,2,C,Aisle 2 · Shelf C
+103080,BRV-103080,Bravo Farm Chicken Breast 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,France,38.42,39,3.5,585,0.5,true,1,2,D,Aisle 2 · Shelf D
+102180,BRV-102180,Bravo Farm Cucumber Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Netherlands,74.81,385,3.9,659,0.3,true,1.5,2,B,Aisle 2 · Shelf B
+102781,BRV-102781,Bravo Farm Free-Range Eggs 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,Italy,22.01,426,3.5,148,0.4,true,2.9,2,A,Aisle 2 · Shelf A
+102820,BRV-102820,Bravo Farm Ground Beef 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Georgia,4.33,304,4.1,684,1.3,true,1.9,2,E,Aisle 2 · Shelf E
+103894,BRV-103894,Bravo Farm Kiwi 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Italy,31.28,152,4.3,490,0.8,true,0.8,2,A,Aisle 2 · Shelf A
+103981,BRV-103981,Bravo Farm Kiwi Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Russia,57.57,137,4.8,545,0.7,true,1.3,2,D,Aisle 2 · Shelf D
+102220,BRV-102220,Bravo Farm Parmesan 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Georgia,29.79,284,4.4,266,0.5,true,3.3,2,A,Aisle 2 · Shelf A
+103498,BRV-103498,Bravo Farm Pear Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Single,Netherlands,73.42,143,4.1,530,0.5,true,1.6,2,E,Aisle 2 · Shelf E
+103684,BRV-103684,Bravo Farm Pineapple Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,USA,41.94,377,3.7,303,0.8,true,2.2,2,F,Aisle 2 · Shelf F
+102875,BRV-102875,Bravo Farm Pomegranate 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,30.91,220,3.2,466,0.5,true,1.9,2,A,Aisle 2 · Shelf A
+102800,BRV-102800,Bravo Farm Pomegranate 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,USA,10.65,94,4.9,590,0.9,true,2.1,2,A,Aisle 2 · Shelf A
+103104,BRV-103104,Bravo Farm Shrimp 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,500g,Poland,29.02,289,4.2,432,1.2,true,1.1,2,E,Aisle 2 · Shelf E
+102429,BRV-102429,Bravo Farm Spinach 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250ml,India,41.18,77,3.1,381,0.3,true,0.8,2,D,Aisle 2 · Shelf D
+103864,BRV-103864,Bravo Farm Trout 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Georgia,35.35,18,4.9,423,1.4,true,3.5,2,D,Aisle 2 · Shelf D
+103990,BRV-103990,Bravo Farm Veal Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,56.4,325,3.1,439,1.2,true,1.6,2,F,Aisle 2 · Shelf F
+102004,BRV-102004,Bravo Farm Zucchini 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Eggs,250ml,Georgia,56.01,251,3.3,410,0.3,true,3.9,2,C,Aisle 2 · Shelf C
+102661,BRV-102661,Local Farm Cabbage Single,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Single,India,32.78,289,4.9,351,0.3,true,3.8,2,F,Aisle 2 · Shelf F
+103916,BRV-103916,Local Farm Cheddar 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,Russia,51.3,241,4.5,509,1.1,true,3.4,2,B,Aisle 2 · Shelf B
+102503,BRV-102503,Local Farm Cucumber 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,29.7,287,4.5,636,1.2,true,3.6,2,A,Aisle 2 · Shelf A
+103930,BRV-103930,Local Farm Eggplant 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Germany,45.78,457,4.7,345,0.2,true,1,2,B,Aisle 2 · Shelf B
+102980,BRV-102980,Local Farm Eggplant Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Georgia,27.64,132,3.3,275,1.1,true,1.1,2,F,Aisle 2 · Shelf F
+103974,BRV-103974,Local Farm Free-Range Eggs Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Brazil,13.6,498,4.7,497,0.4,true,0.6,2,D,Aisle 2 · Shelf D
+102008,BRV-102008,Local Farm Greek Yogurt 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,5kg,India,64.77,485,4.8,438,0.7,true,2.8,2,E,Aisle 2 · Shelf E
+103261,BRV-103261,Local Farm Kefir 750g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,750g,Ukraine,27.26,78,4.1,216,0.8,true,3.7,2,E,Aisle 2 · Shelf E
+102445,BRV-102445,Local Farm Lamb 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500ml,USA,45.59,352,4.8,215,1.6,true,1.7,2,B,Aisle 2 · Shelf B
+102209,BRV-102209,Local Farm Lamb Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Netherlands,63.03,8,4.5,389,1.7,true,2.6,2,B,Aisle 2 · Shelf B
+103451,BRV-103451,Local Farm Lime 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,USA,18.09,64,4.6,451,1.3,true,1,2,F,Aisle 2 · Shelf F
+103119,BRV-103119,Local Farm Melon 200g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,200g,Italy,79.54,215,3.4,570,0.2,true,1.1,2,A,Aisle 2 · Shelf A
+102406,BRV-102406,Local Farm Onion 2L,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,2L,Brazil,51.29,331,3.1,328,1.2,true,2.7,2,A,Aisle 2 · Shelf A
+103897,BRV-103897,Local Farm Orange 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,France,24.22,172,4.6,561,1,true,0.9,2,D,Aisle 2 · Shelf D
+103850,BRV-103850,Local Farm Parsley 500g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500g,Turkey,53.29,56,3.2,666,0.3,true,3.7,2,A,Aisle 2 · Shelf A
+103338,BRV-103338,Local Farm Parsley Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Spain,17.49,68,4.7,163,0.3,true,2.6,2,B,Aisle 2 · Shelf B
+102937,BRV-102937,Local Farm Potato Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Russia,53.16,296,3.1,293,1.4,true,3.4,2,D,Aisle 2 · Shelf D
+102202,BRV-102202,Local Farm Salmon 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,500ml,Brazil,42.02,393,3.2,550,0.7,true,4,2,E,Aisle 2 · Shelf E
+103557,BRV-103557,Local Farm Spinach 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,2kg,India,49.69,148,5,304,1,true,0.8,2,A,Aisle 2 · Shelf A
+103716,BRV-103716,Local Farm Tomato 100g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,100g,China,56.21,234,4.4,451,1.5,true,0.9,2,F,Aisle 2 · Shelf F
+103968,BRV-103968,Local Farm Turkey 250g,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,250g,Poland,48.32,498,3,218,0.8,true,1.1,2,A,Aisle 2 · Shelf A
+102824,BRV-102824,Local Farm Whole Milk Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Netherlands,35.32,287,4.8,128,1.1,true,0.6,2,C,Aisle 2 · Shelf C
+102156,BRV-102156,Milla Apple 500g,Milla,"Fresh Produce, Meat & Dairy",Eggs,500g,Azerbaijan,33.36,174,3.4,686,0.4,true,1.1,2,C,Aisle 2 · Shelf C
+103005,BRV-103005,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Italy,15.38,460,3.4,120,0.4,true,3.1,2,E,Aisle 2 · Shelf E
+102188,BRV-102188,Milla Beef Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,China,14.18,428,4.6,147,0.4,true,1.5,2,D,Aisle 2 · Shelf D
+103359,BRV-103359,Milla Bell Pepper Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,India,51.11,242,4.3,468,1,true,3,2,C,Aisle 2 · Shelf C
+102648,BRV-102648,Milla Carrot 1.5L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Turkey,72.07,124,4.7,256,0.6,true,1.5,2,E,Aisle 2 · Shelf E
+103407,BRV-103407,Milla Chicken Breast 200g,Milla,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,29.85,302,5,202,1.2,true,3.7,2,A,Aisle 2 · Shelf A
+102544,BRV-102544,Milla Eggplant 1L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1L,Ukraine,56.04,42,4.4,615,0.4,true,2.8,2,B,Aisle 2 · Shelf B
+103632,BRV-103632,Milla Feta Cheese 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,China,54.95,235,4.4,372,0.3,true,3.1,2,A,Aisle 2 · Shelf A
+102856,BRV-102856,Milla Garlic 100g,Milla,"Fresh Produce, Meat & Dairy",Eggs,100g,China,46.22,22,3.8,567,1.7,true,2.2,2,F,Aisle 2 · Shelf F
+102042,BRV-102042,Milla Garlic 1kg,Milla,"Fresh Produce, Meat & Dairy",Eggs,1kg,USA,16.65,315,3,708,1.4,true,0.9,2,A,Aisle 2 · Shelf A
+102579,BRV-102579,Milla Greek Yogurt 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,USA,48.89,79,4,255,1.3,true,0.9,2,F,Aisle 2 · Shelf F
+102680,BRV-102680,Milla Ground Beef Bulk,Milla,"Fresh Produce, Meat & Dairy",Eggs,Bulk,France,66.79,483,4.7,164,0.4,true,1,2,C,Aisle 2 · Shelf C
+103904,BRV-103904,Milla Kiwi 1.5L,Milla,"Fresh Produce, Meat & Dairy",Eggs,1.5L,France,60.6,423,3.6,336,0.8,true,2.7,2,E,Aisle 2 · Shelf E
+103593,BRV-103593,Milla Lactose-Free Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,55.91,228,3.5,128,1.5,true,2.9,2,E,Aisle 2 · Shelf E
+102535,BRV-102535,Milla Lamb 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,Poland,74.51,257,3.4,135,0.3,true,2.7,2,F,Aisle 2 · Shelf F
+102944,BRV-102944,Milla Mint Single,Milla,"Fresh Produce, Meat & Dairy",Eggs,Single,Russia,42.73,237,3.5,483,0.6,true,3.2,2,F,Aisle 2 · Shelf F
+102809,BRV-102809,Milla Parsley 250ml,Milla,"Fresh Produce, Meat & Dairy",Eggs,250ml,Poland,67.87,308,3.4,451,1.6,true,1.5,2,D,Aisle 2 · Shelf D
+102992,BRV-102992,Milla Pear Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,China,57.9,427,4,374,0.5,true,1.8,2,E,Aisle 2 · Shelf E
+103549,BRV-103549,Milla Pomegranate 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,India,41.92,372,3,201,1.2,true,2.7,2,B,Aisle 2 · Shelf B
+103658,BRV-103658,Milla Quail Eggs 2L,Milla,"Fresh Produce, Meat & Dairy",Eggs,2L,France,55.36,40,4.5,708,0.6,true,2.2,2,C,Aisle 2 · Shelf C
+102349,BRV-102349,Milla Quail Eggs Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Italy,76.45,375,3.9,516,1.1,true,2.7,2,C,Aisle 2 · Shelf C
+103235,BRV-103235,Milla Shrimp 750g,Milla,"Fresh Produce, Meat & Dairy",Eggs,750g,China,62.12,223,3.6,559,1.4,true,1.2,2,D,Aisle 2 · Shelf D
+103802,BRV-103802,Milla Suluguni 250g,Milla,"Fresh Produce, Meat & Dairy",Eggs,250g,Germany,31.45,490,3.1,191,1.5,true,0.9,2,D,Aisle 2 · Shelf D
+103318,BRV-103318,Milla Tomato Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,India,23.38,376,5,221,0.8,true,1.1,2,D,Aisle 2 · Shelf D
+103298,BRV-103298,Milla Trout Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Ukraine,57.02,143,3.5,372,0.4,true,3.5,2,A,Aisle 2 · Shelf A
+103394,BRV-103394,Milla Watermelon Single,Milla,"Fresh Produce, Meat & Dairy",Eggs,Single,USA,5.17,165,4.6,257,1.6,true,1.3,2,B,Aisle 2 · Shelf B
+103736,BRV-103736,Milla Zucchini 5kg,Milla,"Fresh Produce, Meat & Dairy",Eggs,5kg,Georgia,43.21,345,4.9,685,1.2,true,3.6,2,B,Aisle 2 · Shelf B
+103279,BRV-103279,Palsud Banana 1kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1kg,France,37.99,423,4.1,231,0.5,true,2.4,2,D,Aisle 2 · Shelf D
+102485,BRV-102485,Palsud Basil Bulk,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Turkey,24.83,161,4,403,1.5,true,2.7,2,B,Aisle 2 · Shelf B
+103319,BRV-103319,Palsud Cheddar Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,USA,23.44,326,5,464,0.3,true,0.6,2,E,Aisle 2 · Shelf E
+103659,BRV-103659,Palsud Cherry Bulk,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Bulk,Georgia,53.07,85,4,633,0.9,true,3.1,2,F,Aisle 2 · Shelf F
+102323,BRV-102323,Palsud Cucumber 500g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500g,Poland,76.06,405,3.2,120,0.9,true,2.3,2,A,Aisle 2 · Shelf A
+102580,BRV-102580,Palsud Dill Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Ukraine,26.87,451,3.6,519,0.8,true,3.4,2,B,Aisle 2 · Shelf B
+103514,BRV-103514,Palsud Feta Cheese 500ml,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500ml,Italy,31.34,337,3.3,519,0.8,true,3.7,2,B,Aisle 2 · Shelf B
+102663,BRV-102663,Palsud Feta Cheese 750g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,750g,India,52.34,345,4.5,457,1.5,true,2.8,2,B,Aisle 2 · Shelf B
+103947,BRV-103947,Palsud Feta Cheese Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,Brazil,45.49,397,4,455,0.6,true,2.1,2,D,Aisle 2 · Shelf D
+103570,BRV-103570,Palsud Grapes Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Netherlands,69.46,179,4.6,385,1.1,true,2.3,2,D,Aisle 2 · Shelf D
+103700,BRV-103700,Palsud Ground Beef 200g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,200g,Italy,19.73,195,4.4,398,0.5,true,2.5,2,A,Aisle 2 · Shelf A
+103038,BRV-103038,Palsud Ground Beef Single,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Single,Ukraine,25.57,70,3.5,668,1.5,true,3.7,2,A,Aisle 2 · Shelf A
+103014,BRV-103014,Palsud Kiwi Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Italy,79.31,252,3.4,242,0.6,true,3.4,2,C,Aisle 2 · Shelf C
+102490,BRV-102490,Palsud Lime Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Turkey,57.08,285,4.8,205,1.5,true,3.3,2,D,Aisle 2 · Shelf D
+102191,BRV-102191,Palsud Melon 200g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,200g,France,59.09,273,4.9,709,0.5,true,2.2,2,D,Aisle 2 · Shelf D
+102517,BRV-102517,Palsud Peach 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Brazil,66.53,363,4.1,603,0.8,true,1.7,2,F,Aisle 2 · Shelf F
+102647,BRV-102647,Palsud Peach 1kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1kg,Netherlands,32.7,193,3.4,535,0.6,true,1.9,2,F,Aisle 2 · Shelf F
+103945,BRV-103945,Palsud Pear 500g,Palsud,"Fresh Produce, Meat & Dairy",Eggs,500g,France,71.07,469,4,561,1.2,true,3.8,2,F,Aisle 2 · Shelf F
+102330,BRV-102330,Palsud Potato Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Iran,24.71,314,4.8,296,0.8,true,1.1,2,C,Aisle 2 · Shelf C
+103135,BRV-103135,Palsud Quail Eggs Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,17.62,384,4.1,208,0.3,true,1.7,2,A,Aisle 2 · Shelf A
+103308,BRV-103308,Palsud Quail Eggs Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,France,8.8,201,4.9,666,1.5,true,3.1,2,A,Aisle 2 · Shelf A
+103679,BRV-103679,Palsud Shrimp 1L,Palsud,"Fresh Produce, Meat & Dairy",Eggs,1L,Russia,50.53,431,5,507,0.4,true,3.4,2,F,Aisle 2 · Shelf F
+102564,BRV-102564,Palsud Shrimp 5kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,5kg,France,24.96,438,3.2,129,1.7,true,1.4,2,F,Aisle 2 · Shelf F
+102027,BRV-102027,Palsud Shrimp Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Spain,7.73,250,5,563,1.6,true,3.4,2,B,Aisle 2 · Shelf B
+102746,BRV-102746,Palsud Spinach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,52.85,57,4.2,375,1.4,true,3.6,2,B,Aisle 2 · Shelf B
+103573,BRV-103573,Palsud Sturgeon Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,India,45.11,455,4,554,1,true,2.1,2,A,Aisle 2 · Shelf A
+102168,BRV-102168,Palsud Veal Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Azerbaijan,12.35,10,3.7,649,1.3,true,3.1,2,D,Aisle 2 · Shelf D
+103745,BRV-103745,Pinar Broccoli 2kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,2kg,Poland,7.52,162,4.5,603,1.1,true,0.8,2,D,Aisle 2 · Shelf D
+103784,BRV-103784,Pinar Cucumber 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,Turkey,33.65,350,3.2,178,0.4,true,2.7,2,E,Aisle 2 · Shelf E
+102728,BRV-102728,Pinar Feta Cheese 2kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,2kg,India,40,319,4.4,415,0.9,true,0.8,2,B,Aisle 2 · Shelf B
+103922,BRV-103922,Pinar Free-Range Eggs Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Poland,64.32,211,4.7,200,1.6,true,1.1,2,A,Aisle 2 · Shelf A
+102269,BRV-102269,Pinar Grapes 200g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,200g,India,32.92,90,4.7,579,0.8,true,2.2,2,D,Aisle 2 · Shelf D
+102577,BRV-102577,Pinar Kefir Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,India,55.38,240,3.3,517,0.5,true,3.1,2,D,Aisle 2 · Shelf D
+102117,BRV-102117,Pinar Kiwi Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,36.22,153,4.8,495,1.3,true,3.9,2,F,Aisle 2 · Shelf F
+102376,BRV-102376,Pinar Lemon 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,USA,67.25,33,4.6,598,0.6,true,1.8,2,A,Aisle 2 · Shelf A
+103500,BRV-103500,Pinar Lime 200g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,200g,Azerbaijan,6.66,460,3.7,448,0.4,true,1.3,2,E,Aisle 2 · Shelf E
+102314,BRV-102314,Pinar Mozzarella 500g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,500g,France,68.91,481,4,654,1.5,true,3.6,2,C,Aisle 2 · Shelf C
+102345,BRV-102345,Pinar Orange 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,Russia,41.12,397,4.7,184,0.6,true,1.3,2,E,Aisle 2 · Shelf E
+102616,BRV-102616,Pinar Peach 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,USA,32.07,432,3.9,141,1,true,1.3,2,F,Aisle 2 · Shelf F
+102273,BRV-102273,Pinar Pear 100g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,59.8,251,4.4,314,1.6,true,4,2,A,Aisle 2 · Shelf A
+103709,BRV-103709,Pinar Pear 1L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1L,Azerbaijan,36.26,104,3.7,211,0.7,true,0.6,2,F,Aisle 2 · Shelf F
+103726,BRV-103726,Pinar Plum Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Pack of 6,Georgia,24.4,17,4.7,478,0.5,true,0.7,2,C,Aisle 2 · Shelf C
+103446,BRV-103446,Pinar Potato 1kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1kg,France,67.94,164,4.3,291,0.9,true,1.8,2,D,Aisle 2 · Shelf D
+102677,BRV-102677,Pinar Potato Bulk,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Bulk,USA,28.22,144,3.8,290,0.7,true,1.3,2,A,Aisle 2 · Shelf A
+103855,BRV-103855,Pinar Salmon 750g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,750g,France,68.93,274,3.7,395,1,true,1.6,2,F,Aisle 2 · Shelf F
+103590,BRV-103590,Pinar Shrimp Single,Pinar,"Fresh Produce, Meat & Dairy",Eggs,Single,Turkey,28.8,390,4.4,603,0.5,true,2.7,2,F,Aisle 2 · Shelf F
+102364,BRV-102364,Pinar Skim Milk 100g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,24.57,244,3.6,627,0.8,true,1.5,2,F,Aisle 2 · Shelf F
+102942,BRV-102942,Pinar Skim Milk 1kg,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1kg,Netherlands,20.91,402,3.3,481,0.3,true,3.2,2,B,Aisle 2 · Shelf B
+103342,BRV-103342,Pinar Strawberry 250g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,250g,Russia,20.39,221,4,504,0.3,true,2.3,2,A,Aisle 2 · Shelf A
+102171,BRV-102171,Pinar Veal 500g,Pinar,"Fresh Produce, Meat & Dairy",Eggs,500g,USA,38.01,100,4.8,435,0.7,true,2.6,2,F,Aisle 2 · Shelf F
+103196,BRV-103196,Pinar Zucchini 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Germany,23.03,429,4.7,605,1.5,true,2.9,2,F,Aisle 2 · Shelf F
+103232,BRV-103232,President Broccoli 1L,President,"Fresh Produce, Meat & Dairy",Eggs,1L,Brazil,51.83,106,3.2,312,0.4,true,2.1,2,C,Aisle 2 · Shelf C
+103682,BRV-103682,President Chicken Breast 1.5L,President,"Fresh Produce, Meat & Dairy",Eggs,1.5L,Ukraine,8.26,106,4.4,477,0.4,true,1.3,2,F,Aisle 2 · Shelf F
+103244,BRV-103244,President Chicken Breast 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,Azerbaijan,60.37,166,4,583,0.3,true,2,2,F,Aisle 2 · Shelf F
+103384,BRV-103384,President Chicken Breast Family Pack,President,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Turkey,61.03,41,3.4,254,1.2,true,3,2,E,Aisle 2 · Shelf E
+102041,BRV-102041,President Chicken Breast Single,President,"Fresh Produce, Meat & Dairy",Eggs,Single,Netherlands,67.34,77,3,711,0.8,true,1.7,2,D,Aisle 2 · Shelf D
+103379,BRV-103379,President Chicken Thighs 100g,President,"Fresh Produce, Meat & Dairy",Eggs,100g,Germany,31.94,293,3.5,674,1.1,true,3,2,A,Aisle 2 · Shelf A
+102612,BRV-102612,President Dill 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,USA,74.53,304,4.6,657,1.4,true,3.5,2,F,Aisle 2 · Shelf F
+103747,BRV-103747,President Greek Yogurt 200g,President,"Fresh Produce, Meat & Dairy",Eggs,200g,China,30.12,182,4.5,645,1.3,true,3.1,2,F,Aisle 2 · Shelf F
+103774,BRV-103774,President Kiwi Single,President,"Fresh Produce, Meat & Dairy",Eggs,Single,Russia,44.04,366,4.5,455,1.3,true,0.7,2,D,Aisle 2 · Shelf D
+102404,BRV-102404,President Lactose-Free Milk Family Pack,President,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Azerbaijan,25.55,341,5,246,0.7,true,1.6,2,A,Aisle 2 · Shelf A
+102121,BRV-102121,President Lime 500g,President,"Fresh Produce, Meat & Dairy",Eggs,500g,France,74.09,199,4.1,224,0.4,true,1.2,2,E,Aisle 2 · Shelf E
+102774,BRV-102774,President Parsley Pack of 12,President,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Ukraine,44.95,351,4.2,716,0.3,true,1.7,2,E,Aisle 2 · Shelf E
+103807,BRV-103807,President Potato 250g,President,"Fresh Produce, Meat & Dairy",Eggs,250g,Georgia,21.14,414,4.1,542,0.8,true,2.3,2,C,Aisle 2 · Shelf C
+102615,BRV-102615,President Quail Eggs Pack of 24,President,"Fresh Produce, Meat & Dairy",Eggs,Pack of 24,Russia,65.27,94,4.5,254,0.8,true,3.4,2,C,Aisle 2 · Shelf C
+103540,BRV-103540,President Strawberry 2L,President,"Fresh Produce, Meat & Dairy",Eggs,2L,France,77.64,363,4,252,0.8,true,3.3,2,A,Aisle 2 · Shelf A
+102611,BRV-102611,President Sturgeon 1L,President,"Fresh Produce, Meat & Dairy",Eggs,1L,Germany,29.16,122,3.9,506,1.5,true,2.8,2,A,Aisle 2 · Shelf A
+103217,BRV-103217,President Watermelon 100g,President,"Fresh Produce, Meat & Dairy",Eggs,100g,Russia,34.15,96,3.5,139,1.3,true,2.1,2,D,Aisle 2 · Shelf D
+103230,BRV-103230,Sehiyye Apple 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Azerbaijan,67.5,125,4.4,678,0.5,true,0.6,2,C,Aisle 2 · Shelf C
+103890,BRV-103890,Sehiyye Apple Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,9.12,278,3.5,198,0.2,true,3.6,2,A,Aisle 2 · Shelf A
+103213,BRV-103213,Sehiyye Ayran 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Ukraine,3.67,444,4.1,159,0.5,true,0.6,2,D,Aisle 2 · Shelf D
+103648,BRV-103648,Sehiyye Bell Pepper 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500g,Iran,59.5,391,4.7,439,0.4,true,3,2,B,Aisle 2 · Shelf B
+102427,BRV-102427,Sehiyye Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Poland,51.38,453,4.2,151,0.3,true,3.2,2,D,Aisle 2 · Shelf D
+103928,BRV-103928,Sehiyye Cherry 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250g,Germany,41.79,476,3.8,342,0.5,true,1.3,2,C,Aisle 2 · Shelf C
+103358,BRV-103358,Sehiyye Cilantro Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 4,Germany,21.78,381,3.1,713,1,true,2.3,2,D,Aisle 2 · Shelf D
+103131,BRV-103131,Sehiyye Feta Cheese 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Russia,10.78,297,3.6,684,1.6,true,1.7,2,E,Aisle 2 · Shelf E
+103152,BRV-103152,Sehiyye Garlic 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500g,Azerbaijan,4.62,250,4,661,0.8,true,2.1,2,D,Aisle 2 · Shelf D
+103753,BRV-103753,Sehiyye Ground Beef 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1L,Russia,7.4,52,4.4,582,1.3,true,0.5,2,E,Aisle 2 · Shelf E
+103833,BRV-103833,Sehiyye Kefir Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,Ukraine,74.55,422,5,183,1.3,true,1,2,B,Aisle 2 · Shelf B
+103285,BRV-103285,Sehiyye Lactose-Free Milk 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,USA,66.23,107,4,462,0.3,true,0.8,2,A,Aisle 2 · Shelf A
+102696,BRV-102696,Sehiyye Lettuce Single,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Single,Azerbaijan,3.1,405,4.8,229,1.6,true,0.9,2,D,Aisle 2 · Shelf D
+103685,BRV-103685,Sehiyye Orange 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,500ml,Netherlands,70.61,296,4.1,242,0.5,true,1.7,2,C,Aisle 2 · Shelf C
+103016,BRV-103016,Sehiyye Parmesan 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,200g,Iran,66.52,367,3.8,180,1.4,true,3.4,2,E,Aisle 2 · Shelf E
+102779,BRV-102779,Sehiyye Plum 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,100g,Spain,77.21,60,4.7,445,1.4,true,1.9,2,F,Aisle 2 · Shelf F
+102313,BRV-102313,Sehiyye Plum Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,France,69.53,113,3.7,265,1.1,true,1.8,2,B,Aisle 2 · Shelf B
+102775,BRV-102775,Sehiyye Potato 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250ml,Russia,76.31,99,4.6,713,0.5,true,2.8,2,D,Aisle 2 · Shelf D
+103366,BRV-103366,Sehiyye Shrimp 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,750g,Spain,59.96,78,3.6,206,0.3,true,2.8,2,E,Aisle 2 · Shelf E
+102950,BRV-102950,Sehiyye Skim Milk 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,100g,France,39.99,51,4.4,524,1.4,true,1.7,2,A,Aisle 2 · Shelf A
+103448,BRV-103448,Sehiyye Spinach 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Russia,35.69,50,4,649,1.3,true,2.2,2,F,Aisle 2 · Shelf F
+102453,BRV-102453,Sehiyye Spinach Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Pack of 12,China,4.48,404,3.9,578,0.6,true,4,2,C,Aisle 2 · Shelf C
+102592,BRV-102592,Sehiyye Strawberry 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,250g,Brazil,24.23,442,4.2,154,0.9,true,1.9,2,A,Aisle 2 · Shelf A
+103167,BRV-103167,Sehiyye Zucchini 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,1kg,Turkey,19.46,190,4.8,501,0.8,true,0.5,2,D,Aisle 2 · Shelf D
+102336,BRV-102336,Sehiyye Zucchini Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Eggs,Family Pack,Brazil,11.95,493,4.7,322,0.8,true,3.6,2,A,Aisle 2 · Shelf A
+102113,BRV-102113,Atena Apple Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Germany,17.28,170,4.4,531,0.9,true,1.7,2,B,Aisle 2 · Shelf B
+103220,BRV-103220,Atena Ayran 1L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Ukraine,55.36,64,4.8,345,1.3,true,0.6,2,B,Aisle 2 · Shelf B
+103562,BRV-103562,Atena Banana 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Italy,37.06,205,3.3,248,1.7,true,3.7,2,E,Aisle 2 · Shelf E
+102732,BRV-102732,Atena Beef 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,2.71,188,4.1,530,1.3,true,1.6,2,E,Aisle 2 · Shelf E
+102392,BRV-102392,Atena Broccoli 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Azerbaijan,69.54,55,4.9,476,0.9,true,1.5,2,A,Aisle 2 · Shelf A
+102146,BRV-102146,Atena Cabbage 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Italy,47.47,287,4.8,301,0.8,true,2.9,2,B,Aisle 2 · Shelf B
+102759,BRV-102759,Atena Chicken Thighs Single,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,USA,14.57,232,3.2,671,0.7,true,2.5,2,F,Aisle 2 · Shelf F
+102247,BRV-102247,Atena Chicken Wings 200g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Georgia,53.53,231,4.4,643,0.6,true,3.3,2,B,Aisle 2 · Shelf B
+102805,BRV-102805,Atena Chicken Wings Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Russia,4.85,469,3.1,223,0.8,true,3.4,2,D,Aisle 2 · Shelf D
+103975,BRV-103975,Atena Dill 1L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,USA,60.34,435,3.6,396,1.1,true,3,2,E,Aisle 2 · Shelf E
+102420,BRV-102420,Atena Dill 1kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Germany,30.73,43,3.6,440,0.7,true,0.6,2,A,Aisle 2 · Shelf A
+103842,BRV-103842,Atena Eggplant 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Ukraine,24.27,406,3.6,339,1.6,true,2.1,2,D,Aisle 2 · Shelf D
+102618,BRV-102618,Atena Feta Cheese 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Italy,31.09,477,4.6,391,0.5,true,0.8,2,B,Aisle 2 · Shelf B
+103906,BRV-103906,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Poland,27.38,129,3.8,406,0.4,true,4,2,C,Aisle 2 · Shelf C
+102142,BRV-102142,Atena Kefir 1kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Germany,46.79,40,3.5,161,1.3,true,1.3,2,B,Aisle 2 · Shelf B
+102437,BRV-102437,Atena Lamb 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Spain,62.49,358,3,164,0.8,true,3.5,2,C,Aisle 2 · Shelf C
+102321,BRV-102321,Atena Lemon 2kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Italy,29.61,453,3.4,670,1.5,true,4,2,E,Aisle 2 · Shelf E
+103599,BRV-103599,Atena Lemon 500g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Georgia,11.81,336,3.7,518,1.1,true,0.8,2,C,Aisle 2 · Shelf C
+103539,BRV-103539,Atena Mint Bulk,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Italy,9.07,292,3.8,680,1.2,true,0.8,2,C,Aisle 2 · Shelf C
+102090,BRV-102090,Atena Onion 5kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Italy,50.03,485,4.9,369,0.9,true,3.7,2,F,Aisle 2 · Shelf F
+102909,BRV-102909,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,China,38.66,132,3.8,486,1.5,true,1.2,2,A,Aisle 2 · Shelf A
+103817,BRV-103817,Atena Peach 5kg,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Netherlands,51.08,41,4.9,369,1.2,true,0.6,2,D,Aisle 2 · Shelf D
+103641,BRV-103641,Atena Pear 250ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Georgia,62.55,494,3.9,674,0.5,true,3.4,2,C,Aisle 2 · Shelf C
+102199,BRV-102199,Atena Plum 250g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Germany,38.72,412,3.2,621,1.1,true,0.9,2,B,Aisle 2 · Shelf B
+102350,BRV-102350,Atena Salmon 500ml,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,France,44.47,73,3.5,270,0.5,true,0.8,2,A,Aisle 2 · Shelf A
+103044,BRV-103044,Atena Shrimp Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Italy,59.01,496,3,345,1.6,true,1.2,2,F,Aisle 2 · Shelf F
+102482,BRV-102482,Atena Shrimp Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Germany,36.3,401,4.1,476,1.6,true,1.8,2,A,Aisle 2 · Shelf A
+103456,BRV-103456,Atena Spinach 2L,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Iran,15.14,174,3.8,316,0.6,true,0.6,2,E,Aisle 2 · Shelf E
+103481,BRV-103481,Atena Suluguni 100g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,32.84,70,3.6,360,1.2,true,0.9,2,E,Aisle 2 · Shelf E
+103566,BRV-103566,Atena Veal 750g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Spain,27.64,244,4,292,1.4,true,2.1,2,A,Aisle 2 · Shelf A
+102556,BRV-102556,Atena Zucchini 200g,Atena,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Turkey,32.9,249,4.1,490,1.3,true,1.7,2,C,Aisle 2 · Shelf C
+103064,BRV-103064,Bravo Farm Apple Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,18.65,88,3.4,175,1,true,2.3,2,D,Aisle 2 · Shelf D
+102455,BRV-102455,Bravo Farm Beef Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,India,62.71,157,4.5,328,1.2,true,1.2,2,E,Aisle 2 · Shelf E
+103025,BRV-103025,Bravo Farm Bell Pepper 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,France,79.15,145,3.7,294,1.3,true,0.9,2,E,Aisle 2 · Shelf E
+103856,BRV-103856,Bravo Farm Bell Pepper Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Netherlands,39.14,306,3.6,392,1.3,true,3.8,2,A,Aisle 2 · Shelf A
+103297,BRV-103297,Bravo Farm Broccoli 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Iran,51.67,268,4,659,1.4,true,2.9,2,B,Aisle 2 · Shelf B
+103326,BRV-103326,Bravo Farm Chicken Wings 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Brazil,69.21,314,3.1,194,1.1,true,0.8,2,C,Aisle 2 · Shelf C
+103465,BRV-103465,Bravo Farm Dill Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Russia,63.87,319,3.1,390,1.5,true,3.5,2,C,Aisle 2 · Shelf C
+102207,BRV-102207,Bravo Farm Eggplant 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Poland,65.82,401,4.2,431,1.7,true,1.1,2,F,Aisle 2 · Shelf F
+102964,BRV-102964,Bravo Farm Family Parsley 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,53.7,150,3.4,565,1.5,true,3.7,2,F,Aisle 2 · Shelf F
+103486,BRV-103486,Bravo Farm Free-Range Eggs 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Iran,63.1,149,4.8,671,0.8,true,3.5,2,B,Aisle 2 · Shelf B
+103096,BRV-103096,Bravo Farm Greek Yogurt 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Iran,11.55,60,4.4,324,1,true,3.9,2,C,Aisle 2 · Shelf C
+103265,BRV-103265,Bravo Farm Ground Beef 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,China,0.59,367,4.2,660,0.6,true,1.8,2,C,Aisle 2 · Shelf C
+102133,BRV-102133,Bravo Farm Lemon 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,India,15.45,292,3.7,681,1.4,true,3,2,D,Aisle 2 · Shelf D
+103423,BRV-103423,Bravo Farm Mint Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,India,42.17,14,3.3,432,1.4,true,2.5,2,E,Aisle 2 · Shelf E
+102672,BRV-102672,Bravo Farm Orange Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,France,28.56,357,3.4,283,1.7,true,1.8,2,B,Aisle 2 · Shelf B
+103057,BRV-103057,Bravo Farm Parmesan Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Netherlands,34.71,94,3.1,125,0.6,true,1.5,2,B,Aisle 2 · Shelf B
+102921,BRV-102921,Bravo Farm Parsley 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,7.43,317,3.2,528,1.2,true,3.9,2,A,Aisle 2 · Shelf A
+103988,BRV-103988,Bravo Farm Pineapple 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,34.79,467,3.3,596,1.1,true,1.4,2,C,Aisle 2 · Shelf C
+103619,BRV-103619,Bravo Farm Potato 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Ukraine,15.93,43,4,365,1,true,1.9,2,D,Aisle 2 · Shelf D
+102785,BRV-102785,Bravo Farm Quail Eggs 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Azerbaijan,17.42,347,3.7,160,1.1,true,3.4,2,C,Aisle 2 · Shelf C
+103698,BRV-103698,Bravo Farm Strawberry Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Italy,31.15,38,4.3,224,0.4,true,2.3,2,E,Aisle 2 · Shelf E
+102235,BRV-102235,Bravo Farm Suluguni Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Iran,60.64,208,3.4,236,0.7,true,1.2,2,A,Aisle 2 · Shelf A
+102833,BRV-102833,Bravo Farm Veal 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,66.75,227,3.9,196,0.3,true,2.2,2,A,Aisle 2 · Shelf A
+103258,BRV-103258,Bravo Farm Whole Milk Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,France,2.92,311,4.6,120,0.3,true,3.7,2,C,Aisle 2 · Shelf C
+103588,BRV-103588,Local Farm Basil 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,19.87,395,4.8,128,1.4,true,1.7,2,E,Aisle 2 · Shelf E
+102868,BRV-102868,Local Farm Broccoli 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Azerbaijan,21.85,143,3.1,704,0.6,true,0.8,2,E,Aisle 2 · Shelf E
+102324,BRV-102324,Local Farm Cherry 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Georgia,55.84,268,3.9,575,0.7,true,2.2,2,B,Aisle 2 · Shelf B
+102996,BRV-102996,Local Farm Chicken Breast Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Ukraine,62.23,160,3.4,626,0.8,true,1.7,2,C,Aisle 2 · Shelf C
+103782,BRV-103782,Local Farm Garlic Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,China,19.37,409,3.6,712,0.4,true,3.8,2,C,Aisle 2 · Shelf C
+102983,BRV-102983,Local Farm Grapes 500g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Azerbaijan,37.13,31,4.7,504,0.6,true,1.4,2,E,Aisle 2 · Shelf E
+102675,BRV-102675,Local Farm Ground Beef 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Italy,29.76,56,3.3,556,0.8,true,3.6,2,A,Aisle 2 · Shelf A
+102288,BRV-102288,Local Farm Kiwi 100g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Brazil,62.96,301,4.1,656,1.2,true,3.9,2,E,Aisle 2 · Shelf E
+102810,BRV-102810,Local Farm Kiwi Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Azerbaijan,18.17,63,4.1,121,1.2,true,0.5,2,B,Aisle 2 · Shelf B
+103532,BRV-103532,Local Farm Lemon Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Germany,76.6,93,3.3,219,0.4,true,1.3,2,F,Aisle 2 · Shelf F
+102997,BRV-102997,Local Farm Lettuce 200g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Brazil,40.27,451,3.9,631,0.5,true,3.2,2,B,Aisle 2 · Shelf B
+103018,BRV-103018,Local Farm Lime 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Netherlands,2.36,370,3,190,1.1,true,1.9,2,A,Aisle 2 · Shelf A
+102511,BRV-102511,Local Farm Melon Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,India,23.62,46,4.3,625,0.9,true,3.6,2,B,Aisle 2 · Shelf B
+102639,BRV-102639,Local Farm Orange 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Russia,72.64,282,5,596,1.4,true,3.4,2,E,Aisle 2 · Shelf E
+102825,BRV-102825,Local Farm Parmesan 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Netherlands,60.46,64,4.9,157,1.6,true,1,2,B,Aisle 2 · Shelf B
+103143,BRV-103143,Local Farm Peach 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,47.52,276,3.9,123,1,true,2.4,2,D,Aisle 2 · Shelf D
+103408,BRV-103408,Local Farm Spinach 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,USA,17.05,186,4.6,381,0.6,true,1,2,F,Aisle 2 · Shelf F
+102987,BRV-102987,Local Farm Sturgeon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,USA,4.46,288,3.3,572,0.8,true,1.3,2,A,Aisle 2 · Shelf A
+103337,BRV-103337,Local Farm Trout 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Germany,12.33,47,3.2,460,1.2,true,2,2,C,Aisle 2 · Shelf C
+103111,BRV-103111,Milla Apple Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Turkey,9.6,27,4.9,506,0.3,true,3.3,2,C,Aisle 2 · Shelf C
+102418,BRV-102418,Milla Basil Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,India,77.82,191,3.9,461,1.1,true,3.4,2,F,Aisle 2 · Shelf F
+102122,BRV-102122,Milla Cherry 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,China,6.83,331,3.5,363,0.8,true,2.5,2,D,Aisle 2 · Shelf D
+103754,BRV-103754,Milla Cilantro Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Ukraine,32.44,39,3.6,305,1,true,2,2,D,Aisle 2 · Shelf D
+103546,BRV-103546,Milla Cucumber 750g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Brazil,70.25,205,4.9,678,1,true,2.4,2,E,Aisle 2 · Shelf E
+102870,BRV-102870,Milla Feta Cheese Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Russia,5.23,247,4.4,643,0.3,true,1.6,2,B,Aisle 2 · Shelf B
+103475,BRV-103475,Milla Free-Range Eggs Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Iran,3.78,50,4.6,533,1.5,true,2.7,2,B,Aisle 2 · Shelf B
+103837,BRV-103837,Milla Garlic Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,France,68.94,344,4,219,1.7,true,1.7,2,D,Aisle 2 · Shelf D
+103867,BRV-103867,Milla Ground Beef Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,China,35.89,346,3.5,524,0.6,true,3.9,2,A,Aisle 2 · Shelf A
+103364,BRV-103364,Milla Kiwi 2L,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Netherlands,13.16,449,3.9,160,1,true,3.6,2,C,Aisle 2 · Shelf C
+103537,BRV-103537,Milla Lamb 250ml,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,India,72.82,306,3.9,170,0.3,true,3.2,2,A,Aisle 2 · Shelf A
+103668,BRV-103668,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,China,16.41,48,3.3,241,1,true,2.7,2,F,Aisle 2 · Shelf F
+103075,BRV-103075,Milla Mozzarella Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,USA,46.02,229,4.1,233,1.7,true,1.3,2,F,Aisle 2 · Shelf F
+102666,BRV-102666,Milla Onion 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Spain,14.94,63,3.3,528,1.4,true,1.2,2,A,Aisle 2 · Shelf A
+102246,BRV-102246,Milla Onion Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Iran,32.89,108,3.5,198,0.7,true,1.4,2,E,Aisle 2 · Shelf E
+102631,BRV-102631,Milla Parsley 500g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,China,2.6,154,3.5,372,1,true,3.1,2,E,Aisle 2 · Shelf E
+102357,BRV-102357,Milla Pear 750g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,2.73,345,4.5,321,0.4,true,2,2,D,Aisle 2 · Shelf D
+103727,BRV-103727,Milla Pomegranate Single,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Spain,69.77,251,3.9,387,0.5,true,2.5,2,B,Aisle 2 · Shelf B
+102477,BRV-102477,Milla Sturgeon 200g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,USA,48.91,405,5,480,0.4,true,2.5,2,E,Aisle 2 · Shelf E
+102585,BRV-102585,Milla Veal 100g,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Iran,58.99,376,3,414,0.3,true,3.4,2,E,Aisle 2 · Shelf E
+103635,BRV-103635,Milla Watermelon 5kg,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,30.34,51,4.1,675,0.5,true,2.9,2,D,Aisle 2 · Shelf D
+103181,BRV-103181,Milla Whole Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Ukraine,33.99,405,4,513,1.1,true,2.8,2,B,Aisle 2 · Shelf B
+103453,BRV-103453,Palsud Apple 750g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,33.73,343,4.2,493,0.9,true,3.3,2,B,Aisle 2 · Shelf B
+103551,BRV-103551,Palsud Beef Bulk,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Turkey,49.92,117,3.1,682,1.5,true,1.2,2,E,Aisle 2 · Shelf E
+102539,BRV-102539,Palsud Cabbage 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Italy,58.47,4,4.2,539,1,true,3.6,2,B,Aisle 2 · Shelf B
+102218,BRV-102218,Palsud Carrot 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Germany,76.76,466,4.5,123,1,true,3.3,2,B,Aisle 2 · Shelf B
+103938,BRV-103938,Palsud Feta Cheese Bulk,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Poland,7.68,258,3.7,681,0.8,true,1.1,2,F,Aisle 2 · Shelf F
+103434,BRV-103434,Palsud Free-Range Eggs Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,China,1.67,34,4.5,644,1.2,true,3.8,2,E,Aisle 2 · Shelf E
+103352,BRV-103352,Palsud Kiwi 1kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,4.25,193,3.3,231,0.5,true,2.5,2,F,Aisle 2 · Shelf F
+103792,BRV-103792,Palsud Mint 750g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,India,4.41,103,3.3,551,0.7,true,3.7,2,F,Aisle 2 · Shelf F
+102509,BRV-102509,Palsud Parsley 2L,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,Azerbaijan,24.57,40,4.1,330,1.5,true,1.6,2,C,Aisle 2 · Shelf C
+103531,BRV-103531,Palsud Peach 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Iran,78.92,194,4.4,152,0.6,true,1.9,2,A,Aisle 2 · Shelf A
+103565,BRV-103565,Palsud Plum Single,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Azerbaijan,37.37,297,4.2,495,1.3,true,2.9,2,F,Aisle 2 · Shelf F
+102700,BRV-102700,Palsud Pomegranate 1kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Ukraine,34.06,173,3.4,601,1,true,3.4,2,F,Aisle 2 · Shelf F
+102102,BRV-102102,Palsud Salmon Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,India,29.02,260,3.6,637,0.4,true,1.7,2,D,Aisle 2 · Shelf D
+102472,BRV-102472,Palsud Skim Milk 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Russia,9.36,483,3.4,321,1.3,true,2.7,2,F,Aisle 2 · Shelf F
+102697,BRV-102697,Palsud Sturgeon Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Ukraine,30.82,298,4.9,528,1.4,true,4,2,E,Aisle 2 · Shelf E
+102573,BRV-102573,Palsud Suluguni 5kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Azerbaijan,14.88,220,4.4,377,0.5,true,1.1,2,D,Aisle 2 · Shelf D
+103116,BRV-103116,Palsud Veal Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Ukraine,7.56,214,4.1,301,1.5,true,2.3,2,D,Aisle 2 · Shelf D
+103250,BRV-103250,Palsud Watermelon 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Brazil,34.76,2,3,408,1.4,true,2.7,2,C,Aisle 2 · Shelf C
+102689,BRV-102689,Palsud Watermelon 500g,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Germany,58.84,236,3.7,353,0.4,true,1.7,2,B,Aisle 2 · Shelf B
+102478,BRV-102478,Palsud Whole Milk 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,France,26.82,117,4.8,439,0.8,true,2.7,2,B,Aisle 2 · Shelf B
+102701,BRV-102701,Palsud Whole Milk 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Germany,11.11,78,4.2,500,1.7,true,2.3,2,C,Aisle 2 · Shelf C
+103720,BRV-103720,Pinar Apple 250g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,China,75.52,351,3.2,652,0.3,true,0.7,2,E,Aisle 2 · Shelf E
+103838,BRV-103838,Pinar Ayran Single,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Iran,7.6,81,3.8,476,1,true,0.8,2,E,Aisle 2 · Shelf E
+103967,BRV-103967,Pinar Beef 1L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Georgia,6.65,431,3.4,397,0.2,true,1.5,2,F,Aisle 2 · Shelf F
+102387,BRV-102387,Pinar Broccoli 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Poland,34.3,88,4.9,594,0.4,true,1,2,C,Aisle 2 · Shelf C
+102721,BRV-102721,Pinar Cherry 500g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Brazil,8.61,89,3.3,306,0.5,true,3.7,2,C,Aisle 2 · Shelf C
+102312,BRV-102312,Pinar Cherry Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Italy,73.16,175,3.8,668,0.3,true,3.9,2,E,Aisle 2 · Shelf E
+103227,BRV-103227,Pinar Chicken Wings 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Poland,11.25,147,3.2,366,0.4,true,2.6,2,A,Aisle 2 · Shelf A
+102233,BRV-102233,Pinar Chicken Wings 750g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Turkey,6.56,309,3.1,238,0.8,true,3,2,C,Aisle 2 · Shelf C
+102994,BRV-102994,Pinar Feta Cheese 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,0.98,403,3.1,564,1.6,true,1.7,2,E,Aisle 2 · Shelf E
+103818,BRV-103818,Pinar Free-Range Eggs 1L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Italy,73.94,358,4.2,350,0.5,true,1.5,2,A,Aisle 2 · Shelf A
+103311,BRV-103311,Pinar Grapes 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,France,46.85,408,3.8,176,0.2,true,3.9,2,A,Aisle 2 · Shelf A
+102217,BRV-102217,Pinar Lactose-Free Milk 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Turkey,15.33,403,3.5,156,1.5,true,2.7,2,E,Aisle 2 · Shelf E
+102803,BRV-102803,Pinar Lamb 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,46.96,156,3.3,253,1.6,true,3.6,2,F,Aisle 2 · Shelf F
+102379,BRV-102379,Pinar Lamb Single,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Netherlands,31.3,390,4.8,297,1,true,3.5,2,F,Aisle 2 · Shelf F
+102914,BRV-102914,Pinar Lime 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,5kg,Ukraine,33.32,15,3.9,708,1.2,true,2.2,2,C,Aisle 2 · Shelf C
+103822,BRV-103822,Pinar Mozzarella 250g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Netherlands,62.4,223,3.6,433,1.6,true,2.6,2,B,Aisle 2 · Shelf B
+102026,BRV-102026,Pinar Onion 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Brazil,41.16,197,4.5,238,1.5,true,2,2,E,Aisle 2 · Shelf E
+102172,BRV-102172,Pinar Orange 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1.5L,Brazil,60.83,272,3.7,336,0.2,true,2.4,2,A,Aisle 2 · Shelf A
+103742,BRV-103742,Pinar Pear 2kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,India,60.12,403,3.5,572,1,true,3.9,2,C,Aisle 2 · Shelf C
+102804,BRV-102804,Pinar Pear 500g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,USA,9.69,257,3.7,162,1.3,true,3.4,2,E,Aisle 2 · Shelf E
+103404,BRV-103404,Pinar Plum 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Brazil,59.3,457,3.2,441,1.1,true,2.6,2,D,Aisle 2 · Shelf D
+102614,BRV-102614,Pinar Potato 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Azerbaijan,46.03,473,4.7,587,1.4,true,3.3,2,D,Aisle 2 · Shelf D
+102794,BRV-102794,Pinar Quail Eggs Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,China,69.84,70,3.6,418,0.7,true,3.5,2,E,Aisle 2 · Shelf E
+102912,BRV-102912,Pinar Strawberry 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Spain,40.35,388,4.1,294,1,true,2.5,2,A,Aisle 2 · Shelf A
+102835,BRV-102835,Pinar Strawberry Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,Azerbaijan,60.49,237,4.9,502,0.4,true,3.4,2,E,Aisle 2 · Shelf E
+102550,BRV-102550,Pinar Sturgeon 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,France,53.48,424,3.1,248,0.8,true,3.9,2,C,Aisle 2 · Shelf C
+103645,BRV-103645,Pinar Tomato Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Brazil,11.77,202,3.7,702,0.7,true,2.8,2,C,Aisle 2 · Shelf C
+103882,BRV-103882,Pinar Trout 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Poland,74,56,4,519,0.8,true,3.4,2,F,Aisle 2 · Shelf F
+102097,BRV-102097,Pinar Trout Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Russia,3.71,457,3.6,542,1.7,true,3.6,2,A,Aisle 2 · Shelf A
+103348,BRV-103348,Pinar Turkey 100g,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Spain,73.28,70,3.3,286,0.3,true,3.1,2,C,Aisle 2 · Shelf C
+102603,BRV-102603,Pinar Turkey 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Iran,8.56,263,4.7,143,0.3,true,3.5,2,F,Aisle 2 · Shelf F
+102134,BRV-102134,Pinar Turkey Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Azerbaijan,77.58,441,3.9,494,1.7,true,2,2,A,Aisle 2 · Shelf A
+103694,BRV-103694,President Apple Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,China,28.41,457,4.9,580,1.7,true,1.6,2,C,Aisle 2 · Shelf C
+102395,BRV-102395,President Basil Pack of 12,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Poland,16.36,205,3.3,435,0.4,true,0.9,2,F,Aisle 2 · Shelf F
+103603,BRV-103603,President Bell Pepper 1L,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Russia,21.13,387,3.9,120,0.8,true,0.6,2,E,Aisle 2 · Shelf E
+102998,BRV-102998,President Bell Pepper 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,China,68.12,300,4.4,504,0.5,true,3.2,2,E,Aisle 2 · Shelf E
+103881,BRV-103881,President Broccoli 250ml,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,USA,73.22,358,3.4,572,1.3,true,0.9,2,E,Aisle 2 · Shelf E
+102533,BRV-102533,President Broccoli Pack of 24,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,France,27.32,470,3.3,485,1.2,true,0.5,2,F,Aisle 2 · Shelf F
+103708,BRV-103708,President Cheddar 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Poland,20.3,287,3.4,694,1.3,true,3.6,2,E,Aisle 2 · Shelf E
+102548,BRV-102548,President Cheddar Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Spain,3.04,144,3.1,683,0.5,true,1.2,2,F,Aisle 2 · Shelf F
+103741,BRV-103741,President Chicken Wings 500ml,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,France,75.31,429,4,471,1,true,4,2,F,Aisle 2 · Shelf F
+103079,BRV-103079,President Dill 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Russia,31.57,142,3.5,509,1.2,true,1.6,2,D,Aisle 2 · Shelf D
+103846,BRV-103846,President Garlic Bulk,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Ukraine,52.07,362,3.4,663,0.8,true,1.4,2,D,Aisle 2 · Shelf D
+103350,BRV-103350,President Grapes 1L,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Iran,2.02,440,3.8,529,0.6,true,1.6,2,B,Aisle 2 · Shelf B
+103921,BRV-103921,President Greek Yogurt 1kg,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Brazil,4.59,304,4.6,307,0.5,true,2.3,2,D,Aisle 2 · Shelf D
+102723,BRV-102723,President Greek Yogurt 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Iran,9.48,90,3.8,604,0.5,true,0.7,2,E,Aisle 2 · Shelf E
+102021,BRV-102021,President Kiwi Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Turkey,60.31,21,4.7,561,1.2,true,3.4,2,D,Aisle 2 · Shelf D
+102223,BRV-102223,President Lemon Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,70.74,62,3.8,417,0.3,true,2.8,2,F,Aisle 2 · Shelf F
+102222,BRV-102222,President Orange 200g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Poland,19.49,469,3.4,444,1.7,true,0.5,2,C,Aisle 2 · Shelf C
+103425,BRV-103425,President Pineapple 250g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Spain,69.79,64,4.6,306,1.1,true,1.8,2,A,Aisle 2 · Shelf A
+102793,BRV-102793,President Plum 200g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,USA,11.77,398,3.3,333,0.8,true,3.7,2,B,Aisle 2 · Shelf B
+102598,BRV-102598,President Pomegranate Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Poland,62.41,401,3.5,420,1.7,true,2.8,2,E,Aisle 2 · Shelf E
+103329,BRV-103329,President Spinach 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,USA,65.18,56,4.1,501,1.1,true,2.3,2,D,Aisle 2 · Shelf D
+102481,BRV-102481,President Tomato Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Turkey,66.16,107,4.6,663,0.7,true,3.5,2,D,Aisle 2 · Shelf D
+102724,BRV-102724,President Trout Family Pack,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,USA,68.07,98,4.8,363,1.3,true,1.6,2,B,Aisle 2 · Shelf B
+103377,BRV-103377,President Turkey 750g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Italy,31.39,359,3.6,664,0.7,true,3.4,2,A,Aisle 2 · Shelf A
+103851,BRV-103851,President Turkey Pack of 6,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,India,68.78,392,3.6,143,0.3,true,3.7,2,B,Aisle 2 · Shelf B
+103277,BRV-103277,President Veal Pack of 4,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Azerbaijan,74.72,475,3.3,581,1,true,3.3,2,F,Aisle 2 · Shelf F
+102787,BRV-102787,President Zucchini 500g,President,"Fresh Produce, Meat & Dairy",Fish & Seafood,500g,Ukraine,61.5,98,4.7,230,1.1,true,2.7,2,E,Aisle 2 · Shelf E
+103622,BRV-103622,Sehiyye Banana 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,750g,Georgia,75.92,479,3.9,331,1,true,2,2,D,Aisle 2 · Shelf D
+102397,BRV-102397,Sehiyye Broccoli Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Ukraine,39.95,104,3.2,253,1.7,true,2.7,2,B,Aisle 2 · Shelf B
+103618,BRV-103618,Sehiyye Broccoli Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Italy,48.71,32,3.2,304,0.2,true,1.7,2,A,Aisle 2 · Shelf A
+103197,BRV-103197,Sehiyye Cabbage 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Italy,47.97,351,3.7,312,1.3,true,3.3,2,E,Aisle 2 · Shelf E
+102656,BRV-102656,Sehiyye Carrot 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,250ml,Azerbaijan,45.78,343,3.2,441,1.6,true,0.9,2,B,Aisle 2 · Shelf B
+102507,BRV-102507,Sehiyye Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Netherlands,36.56,39,4.1,360,0.3,true,3.5,2,C,Aisle 2 · Shelf C
+102128,BRV-102128,Sehiyye Cherry 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,2kg,Ukraine,58.16,466,4.8,661,1.1,true,3.8,2,D,Aisle 2 · Shelf D
+103722,BRV-103722,Sehiyye Chicken Wings Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,Spain,1.98,499,5,650,1,true,1.9,2,A,Aisle 2 · Shelf A
+103987,BRV-103987,Sehiyye Chicken Wings Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Brazil,63.11,408,4.9,251,0.7,true,2.2,2,D,Aisle 2 · Shelf D
+102843,BRV-102843,Sehiyye Cilantro Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Family Pack,France,17.11,123,4.6,145,1.6,true,1.3,2,D,Aisle 2 · Shelf D
+102012,BRV-102012,Sehiyye Dill Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 24,France,72.58,448,3.3,159,0.7,true,2.6,2,F,Aisle 2 · Shelf F
+103030,BRV-103030,Sehiyye Lactose-Free Milk 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Iran,76.13,60,3.3,284,0.3,true,2.2,2,A,Aisle 2 · Shelf A
+102320,BRV-102320,Sehiyye Lime 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Russia,26.36,232,3.2,227,1.4,true,3.6,2,D,Aisle 2 · Shelf D
+103249,BRV-103249,Sehiyye Mint 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1L,Spain,60.25,183,4.8,174,1.1,true,1,2,E,Aisle 2 · Shelf E
+103752,BRV-103752,Sehiyye Parmesan 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,250g,Russia,48.2,391,4.2,307,1.4,true,2,2,B,Aisle 2 · Shelf B
+102448,BRV-102448,Sehiyye Pineapple 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,200g,Netherlands,9.51,242,3.2,406,0.9,true,0.7,2,C,Aisle 2 · Shelf C
+103137,BRV-103137,Sehiyye Quail Eggs 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,100g,Poland,10.15,130,4.1,286,0.7,true,1.2,2,E,Aisle 2 · Shelf E
+103049,BRV-103049,Sehiyye Shrimp Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 12,Iran,32.66,88,3,648,0.6,true,3.2,2,C,Aisle 2 · Shelf C
+103331,BRV-103331,Sehiyye Skim Milk Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Bulk,Spain,28.8,388,3.3,526,0.4,true,3.1,2,C,Aisle 2 · Shelf C
+102499,BRV-102499,Sehiyye Skim Milk Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 6,Russia,26.85,462,4.4,232,1.6,true,0.7,2,C,Aisle 2 · Shelf C
+103949,BRV-103949,Sehiyye Special Cheddar 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,1kg,Georgia,73.3,295,3.8,717,1.4,true,2.2,2,D,Aisle 2 · Shelf D
+103766,BRV-103766,Sehiyye Strawberry Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Pack of 4,Poland,74.09,442,4,378,1.2,true,3.7,2,E,Aisle 2 · Shelf E
+102596,BRV-102596,Sehiyye Suluguni 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,2L,India,76.35,449,4.8,430,1.1,true,3.7,2,A,Aisle 2 · Shelf A
+103144,BRV-103144,Sehiyye Suluguni 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,500ml,Italy,59.51,341,4.9,196,0.3,true,1,2,C,Aisle 2 · Shelf C
+102715,BRV-102715,Sehiyye Zucchini Single,Sehiyye,"Fresh Produce, Meat & Dairy",Fish & Seafood,Single,Poland,57.15,468,4,255,1.6,true,2.2,2,F,Aisle 2 · Shelf F
+102790,BRV-102790,Atena Banana 2kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,30.1,352,3.2,542,1.1,true,0.7,2,A,Aisle 2 · Shelf A
+102622,BRV-102622,Atena Banana Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Netherlands,73.62,72,4.9,376,0.8,true,1.7,2,C,Aisle 2 · Shelf C
+102492,BRV-102492,Atena Banana Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,USA,37.17,194,3.2,243,1.3,true,1,2,D,Aisle 2 · Shelf D
+103252,BRV-103252,Atena Bell Pepper Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,USA,28.56,166,3.2,582,1.4,true,1.9,2,E,Aisle 2 · Shelf E
+103604,BRV-103604,Atena Cheddar Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,France,26.27,40,4,327,0.7,true,1,2,B,Aisle 2 · Shelf B
+102078,BRV-102078,Atena Cheddar Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,34.96,263,3.1,467,1.5,true,0.7,2,D,Aisle 2 · Shelf D
+102948,BRV-102948,Atena Cherry 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Netherlands,25.22,336,4.5,471,0.8,true,1.4,2,D,Aisle 2 · Shelf D
+103161,BRV-103161,Atena Chicken Breast Single,Atena,"Fresh Produce, Meat & Dairy",Fruits,Single,Netherlands,40.96,176,3.7,151,0.5,true,1.4,2,F,Aisle 2 · Shelf F
+102646,BRV-102646,Atena Chicken Thighs Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Poland,20.67,78,3.7,138,1.4,true,4,2,C,Aisle 2 · Shelf C
+103956,BRV-103956,Atena Feta Cheese 1.5L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,32.76,348,4.1,577,1.3,true,3.5,2,F,Aisle 2 · Shelf F
+102378,BRV-102378,Atena Feta Cheese 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,9.93,141,3.4,132,1,true,2.2,2,C,Aisle 2 · Shelf C
+103731,BRV-103731,Atena Feta Cheese 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,India,44.17,193,4.2,570,0.7,true,1.1,2,E,Aisle 2 · Shelf E
+102545,BRV-102545,Atena Free-Range Eggs 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,Italy,35.3,160,4.6,554,0.9,true,1.8,2,E,Aisle 2 · Shelf E
+103040,BRV-103040,Atena Garlic 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,Germany,57.72,71,3.2,589,1.2,true,3.9,2,F,Aisle 2 · Shelf F
+102230,BRV-102230,Atena Ground Beef 1L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1L,China,9.41,65,4.7,397,0.3,true,1.9,2,D,Aisle 2 · Shelf D
+102341,BRV-102341,Atena Kefir Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,France,33.52,250,3.3,140,1.5,true,3,2,C,Aisle 2 · Shelf C
+103268,BRV-103268,Atena Kiwi Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,India,53.37,241,3.6,461,0.2,true,2.8,2,B,Aisle 2 · Shelf B
+102960,BRV-102960,Atena Lamb Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Brazil,78.09,79,3.3,657,0.2,true,0.7,2,D,Aisle 2 · Shelf D
+103775,BRV-103775,Atena Lemon 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,15.53,65,4.4,202,0.9,true,2.7,2,E,Aisle 2 · Shelf E
+103452,BRV-103452,Atena Lime 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,Italy,40.26,154,4.1,360,0.4,true,2.8,2,A,Aisle 2 · Shelf A
+102067,BRV-102067,Atena Lime Bulk,Atena,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Netherlands,67.43,59,4.2,375,1.7,true,2.4,2,D,Aisle 2 · Shelf D
+102479,BRV-102479,Atena Orange Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Russia,57.35,202,3.9,434,1.7,true,0.9,2,A,Aisle 2 · Shelf A
+102977,BRV-102977,Atena Parmesan 250ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,250ml,Brazil,33.94,393,5,145,0.3,true,2.2,2,F,Aisle 2 · Shelf F
+102393,BRV-102393,Atena Parsley 2kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,2kg,Turkey,32.98,52,3.5,177,0.7,true,1.3,2,D,Aisle 2 · Shelf D
+103642,BRV-103642,Atena Parsley Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,France,21.89,186,4.7,313,1,true,1.4,2,F,Aisle 2 · Shelf F
+102145,BRV-102145,Atena Pear 500g,Atena,"Fresh Produce, Meat & Dairy",Fruits,500g,Azerbaijan,8.99,244,3.1,438,0.9,true,2.1,2,A,Aisle 2 · Shelf A
+103187,BRV-103187,Atena Pear Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Ukraine,67.07,319,4.1,347,1,true,0.5,2,F,Aisle 2 · Shelf F
+102902,BRV-102902,Atena Plum 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Germany,59.61,251,4.4,509,0.7,true,1.2,2,D,Aisle 2 · Shelf D
+103397,BRV-103397,Atena Plum 500ml,Atena,"Fresh Produce, Meat & Dairy",Fruits,500ml,Russia,9.98,430,4.1,426,1.5,true,1.2,2,E,Aisle 2 · Shelf E
+102013,BRV-102013,Atena Plum Family Pack,Atena,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Italy,53.34,228,4.3,186,1.5,true,3.3,2,C,Aisle 2 · Shelf C
+102268,BRV-102268,Atena Pomegranate 2L,Atena,"Fresh Produce, Meat & Dairy",Fruits,2L,Turkey,49.16,142,3.2,670,1.5,true,3.9,2,A,Aisle 2 · Shelf A
+103982,BRV-103982,Atena Quail Eggs 1L,Atena,"Fresh Produce, Meat & Dairy",Fruits,1L,Iran,37.61,55,4.9,290,0.5,true,3,2,E,Aisle 2 · Shelf E
+103908,BRV-103908,Atena Quail Eggs 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,France,15.56,292,3.7,612,0.6,true,0.6,2,A,Aisle 2 · Shelf A
+102541,BRV-102541,Atena Salmon 5kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,5kg,Georgia,76.11,51,3.9,302,0.8,true,0.9,2,C,Aisle 2 · Shelf C
+102581,BRV-102581,Atena Salmon Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Iran,13.87,386,4,386,0.9,true,3.5,2,E,Aisle 2 · Shelf E
+103777,BRV-103777,Atena Suluguni 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,Russia,41.44,79,3.9,452,0.4,true,2.9,2,A,Aisle 2 · Shelf A
+102867,BRV-102867,Atena Tomato 1kg,Atena,"Fresh Produce, Meat & Dairy",Fruits,1kg,France,71.61,312,3.1,559,1.4,true,2.3,2,D,Aisle 2 · Shelf D
+103300,BRV-103300,Atena Turkey 750g,Atena,"Fresh Produce, Meat & Dairy",Fruits,750g,France,78.23,406,3.6,602,0.8,true,1.8,2,C,Aisle 2 · Shelf C
+102789,BRV-102789,Atena Turkey Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Brazil,13.38,449,4.3,492,0.4,true,2.5,2,E,Aisle 2 · Shelf E
+102155,BRV-102155,Atena Whole Milk 2L,Atena,"Fresh Produce, Meat & Dairy",Fruits,2L,Iran,77.23,141,4.9,197,1.5,true,2.7,2,D,Aisle 2 · Shelf D
+103089,BRV-103089,Bravo Farm Carrot 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,France,35.81,468,3.8,292,0.9,true,3.2,2,C,Aisle 2 · Shelf C
+102361,BRV-102361,Bravo Farm Cheddar 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,Azerbaijan,22.61,154,3.5,162,1.6,true,1,2,E,Aisle 2 · Shelf E
+102248,BRV-102248,Bravo Farm Chicken Breast Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Netherlands,79.46,297,4.4,676,0.8,true,1.1,2,C,Aisle 2 · Shelf C
+103411,BRV-103411,Bravo Farm Dill 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,200g,Russia,23.88,334,4.8,687,0.9,true,2.1,2,F,Aisle 2 · Shelf F
+102198,BRV-102198,Bravo Farm Lactose-Free Milk 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,100g,Azerbaijan,69.1,370,3.1,664,1.4,true,1.5,2,A,Aisle 2 · Shelf A
+102208,BRV-102208,Bravo Farm Lamb Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Turkey,32.84,123,3.8,472,1.3,true,1,2,C,Aisle 2 · Shelf C
+102853,BRV-102853,Bravo Farm Lemon 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Brazil,78.42,4,3.5,318,1,true,3.6,2,E,Aisle 2 · Shelf E
+102993,BRV-102993,Bravo Farm Lettuce 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,47.51,119,3.4,491,1.4,true,2.2,2,D,Aisle 2 · Shelf D
+103675,BRV-103675,Bravo Farm Onion 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,Brazil,53.97,307,3.7,559,0.8,true,2.1,2,F,Aisle 2 · Shelf F
+103595,BRV-103595,Bravo Farm Pineapple 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,China,11.45,286,5,298,1.6,true,1.7,2,E,Aisle 2 · Shelf E
+103020,BRV-103020,Bravo Farm Plum Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Single,Azerbaijan,53.38,472,3.2,607,0.9,true,2.8,2,F,Aisle 2 · Shelf F
+102904,BRV-102904,Bravo Farm Pomegranate 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,100g,USA,20.27,149,4.5,295,1.4,true,2.1,2,B,Aisle 2 · Shelf B
+102910,BRV-102910,Bravo Farm Pomegranate Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Ukraine,54.9,127,3.9,120,1,true,2.8,2,E,Aisle 2 · Shelf E
+103339,BRV-103339,Bravo Farm Potato Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Spain,23.19,225,4,662,1.7,true,1.3,2,E,Aisle 2 · Shelf E
+103115,BRV-103115,Bravo Farm Salmon Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Iran,41.55,337,4.2,510,1.6,true,2.7,2,A,Aisle 2 · Shelf A
+103061,BRV-103061,Bravo Farm Shrimp Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Azerbaijan,74.58,73,3.9,366,0.9,true,2.6,2,A,Aisle 2 · Shelf A
+102565,BRV-102565,Bravo Farm Skim Milk Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,51.63,456,3.8,196,0.8,true,3,2,E,Aisle 2 · Shelf E
+102844,BRV-102844,Bravo Farm Sturgeon 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,Spain,78.05,500,4.5,454,1.2,true,3.4,2,E,Aisle 2 · Shelf E
+103353,BRV-103353,Bravo Farm Watermelon 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,Georgia,60.77,131,4.1,578,1.6,true,1,2,A,Aisle 2 · Shelf A
+102916,BRV-102916,Bravo Farm Watermelon Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Fruits,Single,Iran,21.73,329,4.4,442,1.1,true,3.4,2,E,Aisle 2 · Shelf E
+102881,BRV-102881,Local Farm Banana 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,India,7.61,385,4.6,171,1.2,true,2.9,2,B,Aisle 2 · Shelf B
+102604,BRV-102604,Local Farm Beef Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Georgia,59.32,476,3.8,464,1,true,0.9,2,E,Aisle 2 · Shelf E
+103203,BRV-103203,Local Farm Bell Pepper Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,30.19,91,3.5,244,0.3,true,2.1,2,C,Aisle 2 · Shelf C
+103228,BRV-103228,Local Farm Chicken Thighs 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,500ml,Turkey,11.02,253,3.5,313,1.6,true,1.7,2,B,Aisle 2 · Shelf B
+102493,BRV-102493,Local Farm Cilantro 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,Georgia,1.39,42,4.6,310,0.2,true,3.7,2,A,Aisle 2 · Shelf A
+102684,BRV-102684,Local Farm Free-Range Eggs 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Turkey,55.46,58,4.7,520,0.8,true,0.7,2,E,Aisle 2 · Shelf E
+103246,BRV-103246,Local Farm Greek Yogurt 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,Germany,31.9,61,3.1,657,1.1,true,2.2,2,F,Aisle 2 · Shelf F
+102119,BRV-102119,Local Farm Kiwi 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,USA,0.68,24,4.9,405,0.3,true,4,2,D,Aisle 2 · Shelf D
+102981,BRV-102981,Local Farm Lactose-Free Milk 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1kg,France,58.88,9,3.3,574,0.9,true,3.2,2,C,Aisle 2 · Shelf C
+103903,BRV-103903,Local Farm Lamb 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Ukraine,41.39,72,4.7,159,0.9,true,1,2,D,Aisle 2 · Shelf D
+102262,BRV-102262,Local Farm Lamb Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Georgia,53.92,351,4.8,664,1.2,true,2.2,2,C,Aisle 2 · Shelf C
+103171,BRV-103171,Local Farm Lemon 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,500ml,Ukraine,68.08,257,4.8,144,0.8,true,2.4,2,A,Aisle 2 · Shelf A
+103294,BRV-103294,Local Farm Lettuce 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,India,41.13,211,4.7,192,0.3,true,1.8,2,A,Aisle 2 · Shelf A
+102412,BRV-102412,Local Farm Lime 200g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,200g,India,65.68,276,4.7,619,1,true,2.5,2,D,Aisle 2 · Shelf D
+102174,BRV-102174,Local Farm Lime Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Russia,8.66,499,4.1,202,0.3,true,2,2,A,Aisle 2 · Shelf A
+102726,BRV-102726,Local Farm Onion Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Spain,1.43,237,3,221,1.4,true,0.9,2,F,Aisle 2 · Shelf F
+102526,BRV-102526,Local Farm Orange 250g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,China,47.7,348,3,435,1,true,3.3,2,D,Aisle 2 · Shelf D
+103793,BRV-103793,Local Farm Orange 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250ml,Spain,49.45,376,3.3,538,1.2,true,1.3,2,C,Aisle 2 · Shelf C
+102756,BRV-102756,Local Farm Pomegranate 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,China,13.54,234,4.5,464,0.5,true,1,2,E,Aisle 2 · Shelf E
+103221,BRV-103221,Local Farm Quail Eggs 1L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,1L,China,45.69,311,4.2,284,0.6,true,2.3,2,C,Aisle 2 · Shelf C
+103158,BRV-103158,Local Farm Shrimp Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Spain,6.56,387,4.2,259,1.7,true,3.5,2,B,Aisle 2 · Shelf B
+102883,BRV-102883,Local Farm Skim Milk 250g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,39.9,95,3.2,477,0.5,true,0.6,2,D,Aisle 2 · Shelf D
+102272,BRV-102272,Local Farm Sturgeon 750g,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,750g,USA,61.16,210,4.3,319,0.7,true,1.8,2,D,Aisle 2 · Shelf D
+102869,BRV-102869,Local Farm Sturgeon Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Ukraine,8.43,110,3.3,365,0.5,true,2.3,2,B,Aisle 2 · Shelf B
+102359,BRV-102359,Local Farm Tomato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,Bulk,India,41.73,259,4.7,483,0.7,true,0.8,2,F,Aisle 2 · Shelf F
+103287,BRV-103287,Local Farm Trout 2L,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2L,Russia,12.5,303,3.8,200,1.7,true,2.3,2,A,Aisle 2 · Shelf A
+102880,BRV-102880,Local Farm Watermelon 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,5kg,Iran,27.02,408,4.1,614,0.6,true,3.2,2,C,Aisle 2 · Shelf C
+103094,BRV-103094,Local Farm Zucchini 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,16.75,348,4.6,658,0.9,true,1.6,2,E,Aisle 2 · Shelf E
+103862,BRV-103862,Milla Basil Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Poland,30.14,392,3.8,597,0.9,true,2.6,2,B,Aisle 2 · Shelf B
+102566,BRV-102566,Milla Bell Pepper 100g,Milla,"Fresh Produce, Meat & Dairy",Fruits,100g,China,41.08,124,3,551,0.7,true,0.9,2,F,Aisle 2 · Shelf F
+102590,BRV-102590,Milla Bell Pepper Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,India,37.04,203,4.8,124,1,true,2,2,C,Aisle 2 · Shelf C
+103738,BRV-103738,Milla Broccoli 500g,Milla,"Fresh Produce, Meat & Dairy",Fruits,500g,India,24.47,443,3.7,127,0.4,true,2.1,2,F,Aisle 2 · Shelf F
+102398,BRV-102398,Milla Carrot 2kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,2kg,USA,12.95,414,4.8,290,1.1,true,3,2,E,Aisle 2 · Shelf E
+102608,BRV-102608,Milla Cheddar 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,Russia,56.66,187,4.7,524,0.7,true,2.9,2,E,Aisle 2 · Shelf E
+102377,BRV-102377,Milla Cheddar Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Netherlands,10.69,355,4.2,699,0.5,true,2.8,2,D,Aisle 2 · Shelf D
+102297,BRV-102297,Milla Chicken Breast Single,Milla,"Fresh Produce, Meat & Dairy",Fruits,Single,China,78.01,306,4.4,612,1.2,true,2.2,2,C,Aisle 2 · Shelf C
+102586,BRV-102586,Milla Chicken Thighs 200g,Milla,"Fresh Produce, Meat & Dairy",Fruits,200g,Ukraine,75,356,3.3,269,0.2,true,1.2,2,D,Aisle 2 · Shelf D
+103099,BRV-103099,Milla Dill Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Italy,61.46,260,4.7,291,0.4,true,1,2,D,Aisle 2 · Shelf D
+103808,BRV-103808,Milla Eggplant 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,India,10.69,122,4.2,673,0.5,true,3.7,2,B,Aisle 2 · Shelf B
+102607,BRV-102607,Milla Eggplant 5kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,5kg,France,21.23,103,4.9,299,1.5,true,2.8,2,F,Aisle 2 · Shelf F
+103896,BRV-103896,Milla Garlic Bulk,Milla,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Azerbaijan,31.26,466,3.5,316,1,true,1.5,2,C,Aisle 2 · Shelf C
+103402,BRV-103402,Milla Grapes 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,Spain,17.81,26,3.8,275,0.2,true,3.8,2,B,Aisle 2 · Shelf B
+103023,BRV-103023,Milla Ground Beef 1kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,1kg,Italy,28.21,98,3.5,212,1.5,true,1.1,2,A,Aisle 2 · Shelf A
+103917,BRV-103917,Milla Kiwi 1kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,1kg,Ukraine,46.62,215,4.5,144,1.2,true,1.9,2,E,Aisle 2 · Shelf E
+103926,BRV-103926,Milla Lactose-Free Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Azerbaijan,48.9,132,4.9,548,0.6,true,1.4,2,C,Aisle 2 · Shelf C
+103743,BRV-103743,Milla Lactose-Free Milk Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,USA,37.53,285,4,297,1,true,3.4,2,D,Aisle 2 · Shelf D
+103103,BRV-103103,Milla Lime 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,France,76.63,154,4.4,143,0.8,true,3.7,2,F,Aisle 2 · Shelf F
+103672,BRV-103672,Milla Melon 100g,Milla,"Fresh Produce, Meat & Dairy",Fruits,100g,Brazil,6.61,252,3.7,496,0.7,true,3.1,2,E,Aisle 2 · Shelf E
+102245,BRV-102245,Milla Melon 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,Azerbaijan,63.61,229,4.6,237,1.4,true,2.4,2,F,Aisle 2 · Shelf F
+103499,BRV-103499,Milla Melon 750g,Milla,"Fresh Produce, Meat & Dairy",Fruits,750g,Ukraine,49.92,390,4.7,591,1.5,true,2.1,2,B,Aisle 2 · Shelf B
+103373,BRV-103373,Milla Mint Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Iran,30.67,241,4.4,684,1.1,true,1.5,2,E,Aisle 2 · Shelf E
+102240,BRV-102240,Milla Orange 200g,Milla,"Fresh Produce, Meat & Dairy",Fruits,200g,Germany,29.23,203,4.8,420,1.4,true,2.4,2,A,Aisle 2 · Shelf A
+102118,BRV-102118,Milla Parmesan Family Pack,Milla,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Ukraine,31.89,2,4.1,144,0.4,true,2.4,2,A,Aisle 2 · Shelf A
+103263,BRV-103263,Milla Parsley 1.5L,Milla,"Fresh Produce, Meat & Dairy",Fruits,1.5L,USA,60.27,251,3.6,438,1.4,true,0.8,2,E,Aisle 2 · Shelf E
+102886,BRV-102886,Milla Peach 500ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,500ml,Poland,68.62,476,4.8,412,0.5,true,1.5,2,E,Aisle 2 · Shelf E
+102372,BRV-102372,Milla Potato Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,USA,27.32,274,3,522,0.7,true,2.6,2,E,Aisle 2 · Shelf E
+103008,BRV-103008,Milla Quail Eggs 250g,Milla,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,73.95,228,4.8,313,1.5,true,0.5,2,F,Aisle 2 · Shelf F
+103305,BRV-103305,Milla Quail Eggs Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,China,76.33,416,3,435,1.5,true,3.3,2,F,Aisle 2 · Shelf F
+102725,BRV-102725,Milla Shrimp 2kg,Milla,"Fresh Produce, Meat & Dairy",Fruits,2kg,Poland,23.91,226,4.8,326,1.6,true,1.3,2,C,Aisle 2 · Shelf C
+103070,BRV-103070,Milla Spinach 250ml,Milla,"Fresh Produce, Meat & Dairy",Fruits,250ml,Poland,14.81,499,3.1,232,0.6,true,2.4,2,A,Aisle 2 · Shelf A
+103824,BRV-103824,Milla Veal 1.5L,Milla,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,5.35,56,3.8,371,1.6,true,3.8,2,F,Aisle 2 · Shelf F
+103564,BRV-103564,Milla Veal Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,USA,7.31,202,5,594,1.4,true,1.6,2,E,Aisle 2 · Shelf E
+102630,BRV-102630,Palsud Banana Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Italy,58.49,33,3.6,505,0.6,true,0.7,2,D,Aisle 2 · Shelf D
+102419,BRV-102419,Palsud Beef 200g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,200g,Azerbaijan,21.13,23,3.8,152,0.5,true,0.9,2,A,Aisle 2 · Shelf A
+102755,BRV-102755,Palsud Bell Pepper Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Italy,52.97,289,4.5,531,1,true,3.5,2,D,Aisle 2 · Shelf D
+103176,BRV-103176,Palsud Carrot 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,France,15.32,61,3.2,319,1.6,true,1.5,2,B,Aisle 2 · Shelf B
+102866,BRV-102866,Palsud Cherry 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Iran,28.22,403,3.3,194,1.2,true,2.3,2,E,Aisle 2 · Shelf E
+102325,BRV-102325,Palsud Chicken Breast Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Azerbaijan,22.1,66,3.5,394,0.6,true,2.2,2,E,Aisle 2 · Shelf E
+103876,BRV-103876,Palsud Cilantro 1L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,1L,Italy,75.91,342,3.8,154,1.3,true,2.2,2,A,Aisle 2 · Shelf A
+102640,BRV-102640,Palsud Cilantro 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Brazil,63.14,61,4.5,312,1,true,2.8,2,C,Aisle 2 · Shelf C
+103600,BRV-103600,Palsud Cucumber 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Netherlands,15.18,235,4.6,187,0.9,true,3.5,2,B,Aisle 2 · Shelf B
+102754,BRV-102754,Palsud Garlic 250ml,Palsud,"Fresh Produce, Meat & Dairy",Fruits,250ml,France,70.96,460,3.5,190,1.1,true,1.6,2,E,Aisle 2 · Shelf E
+103375,BRV-103375,Palsud Lamb 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,Ukraine,46.12,60,3.3,206,0.7,true,1.4,2,C,Aisle 2 · Shelf C
+103935,BRV-103935,Palsud Mozzarella 2kg,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2kg,France,20.55,194,3,336,0.8,true,3.2,2,C,Aisle 2 · Shelf C
+102332,BRV-102332,Palsud Orange 500ml,Palsud,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,51.31,300,4.3,318,0.3,true,3.4,2,A,Aisle 2 · Shelf A
+103324,BRV-103324,Palsud Pear 750g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,750g,France,21.86,301,4.1,340,0.6,true,1.1,2,A,Aisle 2 · Shelf A
+103086,BRV-103086,Palsud Pomegranate Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,74,85,4.2,667,1.7,true,3.1,2,D,Aisle 2 · Shelf D
+102582,BRV-102582,Palsud Pomegranate Single,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Single,Germany,49.4,274,3.3,625,1.4,true,1.5,2,B,Aisle 2 · Shelf B
+102768,BRV-102768,Palsud Sturgeon 2L,Palsud,"Fresh Produce, Meat & Dairy",Fruits,2L,USA,29.81,488,4.6,179,1.1,true,2.1,2,D,Aisle 2 · Shelf D
+103744,BRV-103744,Palsud Tomato 100g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,100g,Brazil,33.99,181,3.2,534,0.3,true,1.4,2,C,Aisle 2 · Shelf C
+102291,BRV-102291,Palsud Zucchini 250g,Palsud,"Fresh Produce, Meat & Dairy",Fruits,250g,Italy,14.85,322,3.7,422,1.7,true,1.8,2,A,Aisle 2 · Shelf A
+103661,BRV-103661,Palsud Zucchini Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Georgia,7.02,231,3.3,524,0.9,true,1,2,A,Aisle 2 · Shelf A
+103444,BRV-103444,Palsud Zucchini Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,USA,1.69,142,3.3,597,1,true,3,2,F,Aisle 2 · Shelf F
+103791,BRV-103791,Pinar Apple Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,France,11.56,409,4.3,364,1.3,true,1.6,2,A,Aisle 2 · Shelf A
+103602,BRV-103602,Pinar Basil Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,42.52,283,4.4,517,0.3,true,3.6,2,F,Aisle 2 · Shelf F
+102685,BRV-102685,Pinar Dill 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,15.82,322,4.4,437,1.2,true,2.3,2,D,Aisle 2 · Shelf D
+102834,BRV-102834,Pinar Eggplant 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,China,74.01,299,3.4,555,0.2,true,3.1,2,D,Aisle 2 · Shelf D
+102836,BRV-102836,Pinar Feta Cheese 2kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,2kg,Iran,54.03,10,4.5,261,0.3,true,0.8,2,F,Aisle 2 · Shelf F
+103009,BRV-103009,Pinar Kefir 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Turkey,23.65,101,3.4,396,0.9,true,1,2,A,Aisle 2 · Shelf A
+102510,BRV-102510,Pinar Lactose-Free Milk 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Russia,62.83,184,3.7,380,1.6,true,0.7,2,A,Aisle 2 · Shelf A
+103333,BRV-103333,Pinar Lime 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Italy,59.56,171,3.7,608,0.9,true,0.8,2,E,Aisle 2 · Shelf E
+102040,BRV-102040,Pinar Melon Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Ukraine,23.09,123,3.5,458,0.4,true,3.7,2,E,Aisle 2 · Shelf E
+103643,BRV-103643,Pinar Mozzarella 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,Italy,17.73,3,4.1,716,0.3,true,3.1,2,C,Aisle 2 · Shelf C
+102305,BRV-102305,Pinar Mozzarella Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Azerbaijan,32.19,95,4.4,692,1,true,1.3,2,E,Aisle 2 · Shelf E
+103612,BRV-103612,Pinar Onion 200g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,200g,Spain,57.83,420,4.2,158,0.7,true,0.8,2,C,Aisle 2 · Shelf C
+103714,BRV-103714,Pinar Orange 250ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,250ml,Iran,44.26,486,3.9,501,1.1,true,2.8,2,B,Aisle 2 · Shelf B
+102430,BRV-102430,Pinar Peach 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,USA,11.82,477,3.7,523,1,true,3,2,B,Aisle 2 · Shelf B
+102718,BRV-102718,Pinar Pineapple Single,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Single,China,64.68,380,4.2,718,1.6,true,3.4,2,A,Aisle 2 · Shelf A
+103076,BRV-103076,Pinar Plum 500ml,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500ml,Netherlands,59.76,193,4.7,402,0.7,true,1.2,2,C,Aisle 2 · Shelf C
+103519,BRV-103519,Pinar Plum 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Netherlands,75.5,218,3.2,214,0.9,true,2.7,2,A,Aisle 2 · Shelf A
+103047,BRV-103047,Pinar Plum Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Poland,76.82,140,3.1,706,1,true,3.2,2,A,Aisle 2 · Shelf A
+103572,BRV-103572,Pinar Pomegranate 200g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,200g,Azerbaijan,57.61,94,3.5,615,0.5,true,2.6,2,D,Aisle 2 · Shelf D
+102140,BRV-102140,Pinar Potato 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,1kg,Russia,69.63,476,4,343,0.9,true,3.8,2,D,Aisle 2 · Shelf D
+102568,BRV-102568,Pinar Potato Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Spain,60.46,288,4.1,301,1.2,true,1.7,2,D,Aisle 2 · Shelf D
+102525,BRV-102525,Pinar Skim Milk 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,4.73,291,3.3,632,0.6,true,0.6,2,A,Aisle 2 · Shelf A
+102547,BRV-102547,Pinar Strawberry 500g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,500g,Spain,17.56,368,4.9,220,1,true,0.6,2,E,Aisle 2 · Shelf E
+102238,BRV-102238,Pinar Suluguni 100g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,100g,Spain,19.39,479,3.8,341,0.2,true,3.9,2,F,Aisle 2 · Shelf F
+103884,BRV-103884,Pinar Trout 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Turkey,16.88,422,4.3,557,0.7,true,2.5,2,B,Aisle 2 · Shelf B
+102483,BRV-102483,Pinar Turkey 5kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,5kg,Georgia,12.19,233,4.9,401,1.1,true,2.7,2,D,Aisle 2 · Shelf D
+103710,BRV-103710,Pinar Veal 1kg,Pinar,"Fresh Produce, Meat & Dairy",Fruits,1kg,Netherlands,48.9,450,5,417,1.6,true,1.1,2,B,Aisle 2 · Shelf B
+102375,BRV-102375,Pinar Veal 750g,Pinar,"Fresh Produce, Meat & Dairy",Fruits,750g,Iran,47.91,192,3.3,157,1.6,true,0.7,2,D,Aisle 2 · Shelf D
+103660,BRV-103660,Pinar Zucchini Bulk,Pinar,"Fresh Produce, Meat & Dairy",Fruits,Bulk,France,22.77,22,4.8,209,0.4,true,0.7,2,F,Aisle 2 · Shelf F
+102451,BRV-102451,President Banana 750g,President,"Fresh Produce, Meat & Dairy",Fruits,750g,Poland,42.66,297,3.5,316,1.4,true,1.7,2,E,Aisle 2 · Shelf E
+103138,BRV-103138,President Basil Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,France,8.1,102,4.2,313,0.6,true,2.3,2,B,Aisle 2 · Shelf B
+102772,BRV-102772,President Broccoli Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Iran,61.3,210,3.8,526,0.8,true,1.8,2,E,Aisle 2 · Shelf E
+102551,BRV-102551,President Cabbage Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Germany,77.6,395,4.4,509,0.6,true,1.9,2,F,Aisle 2 · Shelf F
+103242,BRV-103242,President Carrot 250g,President,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,42.01,196,4.4,197,0.2,true,1.1,2,B,Aisle 2 · Shelf B
+102706,BRV-102706,President Cherry 1.5L,President,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Germany,4.96,482,4.8,427,0.7,true,2.4,2,B,Aisle 2 · Shelf B
+102963,BRV-102963,President Cherry Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Azerbaijan,54.06,366,4.1,330,1.6,true,0.6,2,A,Aisle 2 · Shelf A
+103609,BRV-103609,President Cilantro Pack of 24,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,Georgia,41.14,401,4.3,374,1.5,true,1.5,2,E,Aisle 2 · Shelf E
+102806,BRV-102806,President Eggplant Bulk,President,"Fresh Produce, Meat & Dairy",Fruits,Bulk,Russia,21.04,232,3.6,164,1.4,true,2.2,2,C,Aisle 2 · Shelf C
+103534,BRV-103534,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,34,390,3.2,241,0.5,true,3.3,2,F,Aisle 2 · Shelf F
+103760,BRV-103760,President Garlic Pack of 12,President,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,France,50.04,216,3.3,128,1.1,true,3.9,2,E,Aisle 2 · Shelf E
+103194,BRV-103194,President Garlic Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Poland,55.63,473,3.7,379,1.3,true,2.8,2,B,Aisle 2 · Shelf B
+102385,BRV-102385,President Kiwi 200g,President,"Fresh Produce, Meat & Dairy",Fruits,200g,France,5.16,8,4.2,172,1.6,true,1.7,2,E,Aisle 2 · Shelf E
+102295,BRV-102295,President Lamb 5kg,President,"Fresh Produce, Meat & Dairy",Fruits,5kg,China,50.06,277,3.6,674,0.4,true,1.8,2,E,Aisle 2 · Shelf E
+102081,BRV-102081,President Orange 100g,President,"Fresh Produce, Meat & Dairy",Fruits,100g,Iran,15.96,291,3.4,355,0.7,true,2.7,2,B,Aisle 2 · Shelf B
+102687,BRV-102687,President Orange 250ml,President,"Fresh Produce, Meat & Dairy",Fruits,250ml,China,67.94,195,4.9,123,1.4,true,4,2,B,Aisle 2 · Shelf B
+102971,BRV-102971,President Parmesan 1kg,President,"Fresh Produce, Meat & Dairy",Fruits,1kg,Poland,67.96,359,4.5,323,1.2,true,1.4,2,D,Aisle 2 · Shelf D
+102115,BRV-102115,President Parsley Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,India,4.04,170,3,273,1.2,true,2,2,F,Aisle 2 · Shelf F
+102999,BRV-102999,President Pineapple 750g,President,"Fresh Produce, Meat & Dairy",Fruits,750g,Italy,38.41,440,3.8,293,1.2,true,1.9,2,F,Aisle 2 · Shelf F
+102619,BRV-102619,President Salmon Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,Germany,20.2,459,3.3,634,1.3,true,0.9,2,A,Aisle 2 · Shelf A
+103165,BRV-103165,President Sturgeon 1L,President,"Fresh Produce, Meat & Dairy",Fruits,1L,Poland,9.82,141,5,187,0.9,true,2.2,2,B,Aisle 2 · Shelf B
+103978,BRV-103978,President Veal 100g,President,"Fresh Produce, Meat & Dairy",Fruits,100g,Russia,33.81,181,4,125,0.7,true,2.7,2,B,Aisle 2 · Shelf B
+103491,BRV-103491,President Veal 1L,President,"Fresh Produce, Meat & Dairy",Fruits,1L,Russia,57.56,202,4,519,0.4,true,2.5,2,F,Aisle 2 · Shelf F
+103374,BRV-103374,President Watermelon Single,President,"Fresh Produce, Meat & Dairy",Fruits,Single,China,65.25,490,4.1,307,0.6,true,2.4,2,B,Aisle 2 · Shelf B
+103915,BRV-103915,Sehiyye Apple 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,France,25.16,482,4.9,470,0.3,true,2.4,2,E,Aisle 2 · Shelf E
+103717,BRV-103717,Sehiyye Ayran Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Turkey,7.26,133,4.2,718,0.9,true,1,2,E,Aisle 2 · Shelf E
+102442,BRV-102442,Sehiyye Ayran Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Iran,8.2,40,3.9,536,0.8,true,2.6,2,C,Aisle 2 · Shelf C
+102077,BRV-102077,Sehiyye Broccoli 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,India,28.08,167,3.6,372,1.5,true,2.3,2,E,Aisle 2 · Shelf E
+102599,BRV-102599,Sehiyye Broccoli 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2L,Germany,54.95,309,4.5,241,0.5,true,3.7,2,B,Aisle 2 · Shelf B
+102621,BRV-102621,Sehiyye Broccoli 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,India,18.47,492,4.8,443,0.5,true,1.2,2,B,Aisle 2 · Shelf B
+103149,BRV-103149,Sehiyye Broccoli Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Georgia,74.95,220,4.1,669,1,true,3.2,2,F,Aisle 2 · Shelf F
+103414,BRV-103414,Sehiyye Chicken Thighs Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 4,Turkey,53.95,497,4.6,206,1.5,true,1.5,2,E,Aisle 2 · Shelf E
+103063,BRV-103063,Sehiyye Dill 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,USA,22.87,362,4.1,144,1.1,true,2.1,2,A,Aisle 2 · Shelf A
+103062,BRV-103062,Sehiyye Garlic 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,USA,9.32,350,4.5,405,0.9,true,3.6,2,D,Aisle 2 · Shelf D
+102518,BRV-102518,Sehiyye Grapes 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,Spain,33.1,486,3.1,140,1,true,3,2,A,Aisle 2 · Shelf A
+102558,BRV-102558,Sehiyye Grapes Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Brazil,21.39,398,4.4,536,0.8,true,2.8,2,A,Aisle 2 · Shelf A
+103037,BRV-103037,Sehiyye Kefir 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,500g,India,64.79,117,3.1,539,1,true,3.1,2,D,Aisle 2 · Shelf D
+102449,BRV-102449,Sehiyye Kiwi 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2kg,China,25.49,210,5,523,0.3,true,1.1,2,B,Aisle 2 · Shelf B
+103026,BRV-103026,Sehiyye Kiwi Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Family Pack,Poland,55.76,106,4.2,181,1.3,true,1.9,2,F,Aisle 2 · Shelf F
+103172,BRV-103172,Sehiyye Lactose-Free Milk Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Turkey,40.69,494,4.2,475,0.5,true,0.8,2,D,Aisle 2 · Shelf D
+102190,BRV-102190,Sehiyye Lemon 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,500ml,USA,61.92,238,4.9,352,1.5,true,1.7,2,E,Aisle 2 · Shelf E
+103301,BRV-103301,Sehiyye Lemon Single,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Single,India,9.55,321,4.5,183,0.9,true,1.9,2,D,Aisle 2 · Shelf D
+102069,BRV-102069,Sehiyye Lime 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,India,69.28,404,4.5,309,0.5,true,1.9,2,F,Aisle 2 · Shelf F
+103185,BRV-103185,Sehiyye Lime Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 24,USA,4.35,475,4.6,405,0.6,true,2,2,F,Aisle 2 · Shelf F
+103849,BRV-103849,Sehiyye Mint 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,5kg,Poland,69.28,177,3.4,528,0.5,true,2.5,2,C,Aisle 2 · Shelf C
+102052,BRV-102052,Sehiyye Mint Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,China,7.61,130,3.7,531,0.3,true,2.4,2,B,Aisle 2 · Shelf B
+102966,BRV-102966,Sehiyye Mozzarella Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Bulk,USA,44.34,433,3.9,219,1.1,true,1.1,2,B,Aisle 2 · Shelf B
+103476,BRV-103476,Sehiyye Parmesan 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1.5L,Italy,56.18,201,3.6,190,1.1,true,2.2,2,C,Aisle 2 · Shelf C
+103091,BRV-103091,Sehiyye Parmesan Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 12,Georgia,44.07,69,3.4,651,0.4,true,2.1,2,D,Aisle 2 · Shelf D
+103256,BRV-103256,Sehiyye Pineapple 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2kg,Turkey,70.61,152,4.6,130,0.7,true,3.3,2,A,Aisle 2 · Shelf A
+103125,BRV-103125,Sehiyye Pineapple Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Azerbaijan,10.98,386,3.6,599,0.2,true,3.6,2,F,Aisle 2 · Shelf F
+102780,BRV-102780,Sehiyye Plum 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,750g,India,3.61,204,3.6,209,0.5,true,0.7,2,D,Aisle 2 · Shelf D
+102452,BRV-102452,Sehiyye Potato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,2L,Ukraine,62.95,379,4.7,639,0.8,true,3.8,2,B,Aisle 2 · Shelf B
+102626,BRV-102626,Sehiyye Shrimp 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Iran,18.19,227,3.9,220,0.6,true,3.8,2,C,Aisle 2 · Shelf C
+103994,BRV-103994,Sehiyye Skim Milk Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,Pack of 6,Netherlands,65.01,137,4.9,691,0.3,true,3,2,B,Aisle 2 · Shelf B
+103280,BRV-103280,Sehiyye Sturgeon 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Ukraine,69.9,365,4.1,343,0.5,true,1.4,2,B,Aisle 2 · Shelf B
+103097,BRV-103097,Sehiyye Tomato 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250g,USA,54.78,226,3.1,489,0.2,true,2.2,2,F,Aisle 2 · Shelf F
+102471,BRV-102471,Sehiyye Trout 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,Poland,52.4,146,4.3,282,0.3,true,1.6,2,A,Aisle 2 · Shelf A
+103321,BRV-103321,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1kg,Georgia,44.85,96,3.8,485,0.7,true,3.4,2,D,Aisle 2 · Shelf D
+102458,BRV-102458,Sehiyye Watermelon 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,1L,Netherlands,18.7,27,3,537,0.5,true,2.2,2,F,Aisle 2 · Shelf F
+103110,BRV-103110,Sehiyye Watermelon 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Fruits,250ml,Iran,72.15,334,4,159,0.7,true,1.3,2,B,Aisle 2 · Shelf B
+102181,BRV-102181,Atena Banana Family Pack,Atena,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,53.55,98,3.3,622,0.7,true,0.7,2,E,Aisle 2 · Shelf E
+102850,BRV-102850,Atena Basil 2L,Atena,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,20.89,418,4.4,709,0.9,true,3.2,2,B,Aisle 2 · Shelf B
+102285,BRV-102285,Atena Chicken Thighs Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Italy,8.64,99,3.5,673,0.8,true,2.3,2,F,Aisle 2 · Shelf F
+103001,BRV-103001,Atena Dill 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,66.96,425,3.7,188,0.6,true,3,2,A,Aisle 2 · Shelf A
+103488,BRV-103488,Atena Eggplant Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Poland,56,26,3.9,301,0.7,true,0.6,2,B,Aisle 2 · Shelf B
+103450,BRV-103450,Atena Free-Range Eggs 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,47.43,460,3.8,382,1.4,true,1.7,2,A,Aisle 2 · Shelf A
+102739,BRV-102739,Atena Grapes 1kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,1kg,Iran,8,424,3.3,297,0.9,true,3.3,2,F,Aisle 2 · Shelf F
+103316,BRV-103316,Atena Grapes 2L,Atena,"Fresh Produce, Meat & Dairy",Herbs,2L,Russia,51.82,482,3.6,703,0.6,true,3.1,2,F,Aisle 2 · Shelf F
+102698,BRV-102698,Atena Kefir Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,71.2,32,3.9,599,1.3,true,0.6,2,B,Aisle 2 · Shelf B
+103597,BRV-103597,Atena Lamb 500ml,Atena,"Fresh Produce, Meat & Dairy",Herbs,500ml,Germany,27.8,452,3.1,300,0.2,true,2.9,2,A,Aisle 2 · Shelf A
+102464,BRV-102464,Atena Lemon 1kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,1kg,Netherlands,35.81,402,4.8,600,0.5,true,2.9,2,E,Aisle 2 · Shelf E
+102363,BRV-102363,Atena Lime 100g,Atena,"Fresh Produce, Meat & Dairy",Herbs,100g,Iran,51.61,85,4.6,700,0.9,true,1,2,C,Aisle 2 · Shelf C
+102667,BRV-102667,Atena Melon 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,62.08,248,4.6,381,1.1,true,0.5,2,B,Aisle 2 · Shelf B
+102039,BRV-102039,Atena Mozzarella Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Germany,3.68,338,4.1,706,1.5,true,3.7,2,A,Aisle 2 · Shelf A
+103442,BRV-103442,Atena Onion 1L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1L,Spain,20.1,447,3.8,639,0.3,true,3.9,2,B,Aisle 2 · Shelf B
+102660,BRV-102660,Atena Onion 2kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,2kg,France,60.28,220,4.8,290,1.5,true,0.8,2,A,Aisle 2 · Shelf A
+102104,BRV-102104,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,12.24,229,3.3,439,0.5,true,1.8,2,D,Aisle 2 · Shelf D
+103964,BRV-103964,Atena Orange Single,Atena,"Fresh Produce, Meat & Dairy",Herbs,Single,Iran,44.2,369,3.7,510,1,true,0.5,2,E,Aisle 2 · Shelf E
+102154,BRV-102154,Atena Parmesan 5kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,5kg,Iran,57.03,118,5,664,0.9,true,2.3,2,E,Aisle 2 · Shelf E
+102157,BRV-102157,Atena Peach 1.5L,Atena,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Spain,78.19,193,4.3,155,0.4,true,0.9,2,B,Aisle 2 · Shelf B
+102491,BRV-102491,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,1.68,117,3.4,544,1.6,true,1.8,2,A,Aisle 2 · Shelf A
+103043,BRV-103043,Atena Peach Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,France,56.8,130,4.3,134,1.3,true,2.5,2,A,Aisle 2 · Shelf A
+103466,BRV-103466,Atena Pineapple 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,USA,38.54,280,4.4,549,0.3,true,2.4,2,D,Aisle 2 · Shelf D
+103237,BRV-103237,Atena Sturgeon 500g,Atena,"Fresh Produce, Meat & Dairy",Herbs,500g,Spain,49.47,287,4.9,433,0.7,true,2.1,2,D,Aisle 2 · Shelf D
+102643,BRV-102643,Atena Sturgeon Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,China,73.88,390,3.5,515,1.5,true,3.4,2,B,Aisle 2 · Shelf B
+102917,BRV-102917,Atena Sturgeon Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Iran,73.69,334,3.4,503,0.6,true,0.9,2,B,Aisle 2 · Shelf B
+102006,BRV-102006,Atena Suluguni 2kg,Atena,"Fresh Produce, Meat & Dairy",Herbs,2kg,Brazil,39.16,2,3.8,572,0.4,true,2.7,2,A,Aisle 2 · Shelf A
+102135,BRV-102135,Atena Suluguni Bulk,Atena,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Georgia,47.63,242,4,611,1.1,true,2.5,2,F,Aisle 2 · Shelf F
+102822,BRV-102822,Atena Watermelon Single,Atena,"Fresh Produce, Meat & Dairy",Herbs,Single,China,53.25,148,4.8,154,1.2,true,3.5,2,A,Aisle 2 · Shelf A
+102970,BRV-102970,Atena Zucchini 100g,Atena,"Fresh Produce, Meat & Dairy",Herbs,100g,Brazil,74.26,111,3.4,390,0.9,true,0.7,2,A,Aisle 2 · Shelf A
+103028,BRV-103028,Bravo Farm Apple 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,10.23,425,4.9,535,0.6,true,3.2,2,D,Aisle 2 · Shelf D
+102903,BRV-102903,Bravo Farm Ayran 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Spain,0.62,106,4.5,616,1.4,true,3,2,A,Aisle 2 · Shelf A
+103494,BRV-103494,Bravo Farm Banana Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Poland,40.52,137,3.3,662,1.6,true,3.5,2,A,Aisle 2 · Shelf A
+103942,BRV-103942,Bravo Farm Basil 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,France,77.97,210,4.5,350,1.6,true,2.1,2,A,Aisle 2 · Shelf A
+103575,BRV-103575,Bravo Farm Carrot 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,USA,66.93,18,4,232,0.2,true,1.5,2,C,Aisle 2 · Shelf C
+102571,BRV-102571,Bravo Farm Cheddar 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,750g,India,29.92,266,3.4,303,1.3,true,4,2,B,Aisle 2 · Shelf B
+103021,BRV-103021,Bravo Farm Chicken Breast 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,61.85,462,3.7,546,1.4,true,2.3,2,A,Aisle 2 · Shelf A
+102381,BRV-102381,Bravo Farm Dill Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Georgia,29.26,82,4,392,0.2,true,1.1,2,E,Aisle 2 · Shelf E
+102025,BRV-102025,Bravo Farm Feta Cheese 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Ukraine,31.76,237,4.3,277,0.7,true,3.3,2,D,Aisle 2 · Shelf D
+103795,BRV-103795,Bravo Farm Free-Range Eggs 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Azerbaijan,56.67,75,4.8,520,0.8,true,3.5,2,C,Aisle 2 · Shelf C
+103390,BRV-103390,Bravo Farm Free-Range Eggs 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,750g,China,68.33,474,3.2,165,1.4,true,0.8,2,B,Aisle 2 · Shelf B
+103440,BRV-103440,Bravo Farm Garlic Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Single,Poland,54.19,123,4.5,457,0.7,true,1.9,2,F,Aisle 2 · Shelf F
+103032,BRV-103032,Bravo Farm Grapes 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,47.83,443,3.5,482,0.3,true,1.7,2,E,Aisle 2 · Shelf E
+102003,BRV-102003,Bravo Farm Ground Beef Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,India,5.99,92,3.9,645,1,true,3.9,2,F,Aisle 2 · Shelf F
+103521,BRV-103521,Bravo Farm Kefir Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,France,44.67,366,4.7,343,0.8,true,2.3,2,F,Aisle 2 · Shelf F
+102182,BRV-102182,Bravo Farm Kiwi 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,Germany,66.27,101,3.3,517,0.4,true,3.8,2,B,Aisle 2 · Shelf B
+102112,BRV-102112,Bravo Farm Lettuce 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,100g,Netherlands,57.05,409,4.2,582,0.5,true,0.6,2,A,Aisle 2 · Shelf A
+103077,BRV-103077,Bravo Farm Lettuce 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,India,14.25,264,3.9,159,0.7,true,0.7,2,F,Aisle 2 · Shelf F
+103636,BRV-103636,Bravo Farm Peach 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,France,43.07,280,3.3,304,1.5,true,2.6,2,C,Aisle 2 · Shelf C
+102061,BRV-102061,Bravo Farm Pineapple 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Italy,61.42,262,4.6,485,1.6,true,1.5,2,D,Aisle 2 · Shelf D
+102096,BRV-102096,Bravo Farm Pomegranate Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Italy,3.1,149,5,139,0.3,true,1.6,2,D,Aisle 2 · Shelf D
+102160,BRV-102160,Bravo Farm Pomegranate Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Poland,16.71,56,4.8,657,1,true,2.2,2,B,Aisle 2 · Shelf B
+102710,BRV-102710,Bravo Farm Potato 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Turkey,35.43,449,4.4,398,0.5,true,3.2,2,A,Aisle 2 · Shelf A
+103145,BRV-103145,Bravo Farm Potato 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Iran,4.92,93,3.5,121,0.6,true,1.9,2,F,Aisle 2 · Shelf F
+102659,BRV-102659,Bravo Farm Salmon 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,8.14,373,4.3,630,1.4,true,0.9,2,A,Aisle 2 · Shelf A
+102258,BRV-102258,Bravo Farm Salmon 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,500ml,Azerbaijan,71.83,491,3.8,695,1.5,true,2.2,2,B,Aisle 2 · Shelf B
+102812,BRV-102812,Bravo Farm Spinach Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Brazil,40.73,455,3.4,343,1.3,true,2.5,2,B,Aisle 2 · Shelf B
+102055,BRV-102055,Bravo Farm Strawberry 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,Russia,42.26,130,3.9,604,1.6,true,1.5,2,C,Aisle 2 · Shelf C
+103413,BRV-103413,Bravo Farm Tomato Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,India,62.35,52,4.8,561,1.7,true,3,2,F,Aisle 2 · Shelf F
+103797,BRV-103797,Bravo Farm Tomato Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Netherlands,67.85,453,4,246,0.6,true,0.6,2,C,Aisle 2 · Shelf C
+103576,BRV-103576,Bravo Farm Veal 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Netherlands,12.36,92,3.3,547,0.5,true,2.6,2,F,Aisle 2 · Shelf F
+103953,BRV-103953,Bravo Farm Whole Milk 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,29.19,187,4.9,456,1,true,3.5,2,A,Aisle 2 · Shelf A
+102302,BRV-102302,Local Farm Banana 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,62.53,493,4.2,651,0.5,true,0.7,2,B,Aisle 2 · Shelf B
+103961,BRV-103961,Local Farm Cabbage 250g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,250g,Ukraine,59.45,272,3.7,223,0.6,true,2.4,2,F,Aisle 2 · Shelf F
+102683,BRV-102683,Local Farm Chicken Breast 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,2kg,Ukraine,8.43,80,3.2,687,0.9,true,3.2,2,F,Aisle 2 · Shelf F
+103153,BRV-103153,Local Farm Grapes 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Turkey,18.45,44,4.5,704,0.5,true,2.7,2,C,Aisle 2 · Shelf C
+102524,BRV-102524,Local Farm Greek Yogurt 500g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,25.54,218,3.2,293,0.4,true,2.1,2,D,Aisle 2 · Shelf D
+102838,BRV-102838,Local Farm Greek Yogurt 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,51.88,161,3.7,679,1.6,true,1.2,2,F,Aisle 2 · Shelf F
+102212,BRV-102212,Local Farm Lamb Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,France,41.5,193,4.4,229,1.4,true,3.5,2,F,Aisle 2 · Shelf F
+103332,BRV-103332,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,65.05,152,4.2,637,1.5,true,1.2,2,D,Aisle 2 · Shelf D
+103970,BRV-103970,Local Farm Onion 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,5kg,China,13.1,66,3.7,549,1.1,true,3.6,2,B,Aisle 2 · Shelf B
+102934,BRV-102934,Local Farm Parmesan 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1kg,USA,36.52,1,4,406,0.4,true,2.1,2,A,Aisle 2 · Shelf A
+102108,BRV-102108,Local Farm Parmesan Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,USA,62.81,441,3.6,339,0.8,true,1.3,2,D,Aisle 2 · Shelf D
+102514,BRV-102514,Local Farm Peach 1L,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,1L,Russia,36.22,415,4.4,536,1.1,true,2.2,2,A,Aisle 2 · Shelf A
+102587,BRV-102587,Local Farm Pear Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Netherlands,68.11,65,4.4,512,1.2,true,0.7,2,C,Aisle 2 · Shelf C
+102716,BRV-102716,Local Farm Pineapple 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,36.38,393,4.9,276,0.2,true,2.7,2,C,Aisle 2 · Shelf C
+102658,BRV-102658,Local Farm Pomegranate 100g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,100g,Iran,1.94,86,3.9,683,1.2,true,0.5,2,F,Aisle 2 · Shelf F
+102058,BRV-102058,Local Farm Potato Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Italy,19.28,413,4.9,301,0.8,true,1,2,F,Aisle 2 · Shelf F
+103733,BRV-103733,Local Farm Quail Eggs Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Netherlands,42.17,388,3.9,308,0.3,true,2.8,2,A,Aisle 2 · Shelf A
+102486,BRV-102486,Local Farm Suluguni 500g,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,500g,Ukraine,67.26,348,3.3,600,0.3,true,1.8,2,C,Aisle 2 · Shelf C
+103042,BRV-103042,Local Farm Tomato Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Iran,30.26,379,3.5,699,0.3,true,1,2,B,Aisle 2 · Shelf B
+103790,BRV-103790,Milla Banana 250ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,250ml,Brazil,46.05,477,4.4,609,0.7,true,0.9,2,B,Aisle 2 · Shelf B
+102164,BRV-102164,Milla Banana Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,USA,17.9,485,4.1,133,0.5,true,3.7,2,F,Aisle 2 · Shelf F
+103335,BRV-103335,Milla Beef Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,24.4,386,3.5,530,1,true,3.2,2,C,Aisle 2 · Shelf C
+103843,BRV-103843,Milla Carrot 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,China,73.45,317,4.1,430,0.9,true,0.6,2,A,Aisle 2 · Shelf A
+102310,BRV-102310,Milla Chicken Thighs 750g,Milla,"Fresh Produce, Meat & Dairy",Herbs,750g,Ukraine,63.27,425,4.7,130,0.5,true,0.7,2,E,Aisle 2 · Shelf E
+102751,BRV-102751,Milla Cilantro 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,Azerbaijan,5.03,448,3.9,495,1.2,true,1.2,2,B,Aisle 2 · Shelf B
+103490,BRV-103490,Milla Feta Cheese 2kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,2kg,India,51.79,450,3.3,586,0.2,true,0.8,2,E,Aisle 2 · Shelf E
+103214,BRV-103214,Milla Garlic 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,USA,74.81,458,4.9,640,1.6,true,1.5,2,E,Aisle 2 · Shelf E
+102593,BRV-102593,Milla Ground Beef 500g,Milla,"Fresh Produce, Meat & Dairy",Herbs,500g,Azerbaijan,21.46,431,4.9,231,1,true,2,2,B,Aisle 2 · Shelf B
+102175,BRV-102175,Milla Kiwi 2kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,2kg,Netherlands,8.2,131,3,263,1.3,true,1.5,2,F,Aisle 2 · Shelf F
+103614,BRV-103614,Milla Lactose-Free Milk 250ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,250ml,France,66.31,271,4.8,636,0.4,true,3.8,2,E,Aisle 2 · Shelf E
+103328,BRV-103328,Milla Lime 1.5L,Milla,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Russia,36.9,435,3.8,240,0.6,true,0.8,2,A,Aisle 2 · Shelf A
+102645,BRV-102645,Milla Lime 750g,Milla,"Fresh Produce, Meat & Dairy",Herbs,750g,Iran,76.21,470,4.4,121,1.6,true,3.6,2,F,Aisle 2 · Shelf F
+103000,BRV-103000,Milla Parsley 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,Turkey,56.64,89,4.9,121,1.5,true,1.5,2,B,Aisle 2 · Shelf B
+103236,BRV-103236,Milla Pear Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,71.51,51,3.3,356,0.9,true,3.4,2,E,Aisle 2 · Shelf E
+103934,BRV-103934,Milla Potato 1kg,Milla,"Fresh Produce, Meat & Dairy",Herbs,1kg,France,15.81,482,4.6,693,1.4,true,3.7,2,B,Aisle 2 · Shelf B
+103190,BRV-103190,Milla Shrimp Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Netherlands,45.69,356,4.2,519,0.4,true,3.8,2,B,Aisle 2 · Shelf B
+103239,BRV-103239,Milla Special Pear Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Poland,24.36,423,4.8,699,1.6,true,1.3,2,D,Aisle 2 · Shelf D
+103681,BRV-103681,Milla Sturgeon 2L,Milla,"Fresh Produce, Meat & Dairy",Herbs,2L,Turkey,10.16,277,3.8,590,1.2,true,3.8,2,E,Aisle 2 · Shelf E
+103275,BRV-103275,Milla Suluguni 250g,Milla,"Fresh Produce, Meat & Dairy",Herbs,250g,Netherlands,7.84,415,4.1,427,0.7,true,1.3,2,F,Aisle 2 · Shelf F
+102641,BRV-102641,Milla Suluguni 2L,Milla,"Fresh Produce, Meat & Dairy",Herbs,2L,Turkey,8.34,251,3.2,573,1.4,true,1,2,B,Aisle 2 · Shelf B
+102254,BRV-102254,Milla Suluguni 500ml,Milla,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,62.21,220,3.8,499,0.5,true,2.7,2,D,Aisle 2 · Shelf D
+102848,BRV-102848,Milla Suluguni Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Brazil,14.95,14,4.7,186,0.5,true,1.6,2,C,Aisle 2 · Shelf C
+103430,BRV-103430,Milla Watermelon Bulk,Milla,"Fresh Produce, Meat & Dairy",Herbs,Bulk,India,20.42,469,4.8,400,0.7,true,3.9,2,C,Aisle 2 · Shelf C
+102798,BRV-102798,Milla Watermelon Single,Milla,"Fresh Produce, Meat & Dairy",Herbs,Single,France,25.35,250,4.7,614,1.1,true,3.8,2,E,Aisle 2 · Shelf E
+102688,BRV-102688,Milla Whole Milk Family Pack,Milla,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Turkey,65.93,72,4.8,276,0.6,true,3,2,C,Aisle 2 · Shelf C
+103931,BRV-103931,Milla Zucchini Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,47.35,450,4.5,252,1,true,2.7,2,E,Aisle 2 · Shelf E
+102110,BRV-102110,Palsud Apple 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,China,7.91,448,5,432,1.2,true,1.4,2,E,Aisle 2 · Shelf E
+103629,BRV-103629,Palsud Apple 2L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,2L,France,45.06,284,4.2,504,1.1,true,1.5,2,E,Aisle 2 · Shelf E
+103024,BRV-103024,Palsud Apple 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Netherlands,5.85,78,4.6,435,0.9,true,2.8,2,B,Aisle 2 · Shelf B
+102094,BRV-102094,Palsud Carrot Bulk,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Spain,47.68,436,3.2,701,1.2,true,2.5,2,B,Aisle 2 · Shelf B
+103052,BRV-103052,Palsud Cherry 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,60.52,273,3.4,140,1.2,true,3.4,2,A,Aisle 2 · Shelf A
+103449,BRV-103449,Palsud Chicken Breast 750g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,750g,Azerbaijan,24.51,208,3.9,124,0.2,true,1.3,2,C,Aisle 2 · Shelf C
+102717,BRV-102717,Palsud Classic Watermelon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Russia,9.98,234,4.9,561,1.2,true,2.4,2,B,Aisle 2 · Shelf B
+103826,BRV-103826,Palsud Cucumber 750g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,750g,Ukraine,60.87,405,4.5,429,0.4,true,2.2,2,F,Aisle 2 · Shelf F
+102338,BRV-102338,Palsud Eggplant 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Poland,17.13,490,3.1,456,1.2,true,2.4,2,A,Aisle 2 · Shelf A
+103812,BRV-103812,Palsud Eggplant 1kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,57.49,461,3,568,0.5,true,0.6,2,E,Aisle 2 · Shelf E
+102887,BRV-102887,Palsud Eggplant 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,USA,1.72,175,3.4,337,1,true,2.5,2,D,Aisle 2 · Shelf D
+102930,BRV-102930,Palsud Free-Range Eggs Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,China,79.01,436,4.3,658,0.4,true,1.4,2,C,Aisle 2 · Shelf C
+102294,BRV-102294,Palsud Grapes 1L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1L,USA,77.53,386,4.2,679,1.6,true,3.2,2,F,Aisle 2 · Shelf F
+103292,BRV-103292,Palsud Ground Beef 2L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,2L,France,18.3,463,4.4,666,0.6,true,1.5,2,A,Aisle 2 · Shelf A
+103803,BRV-103803,Palsud Kefir Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Azerbaijan,70.84,50,4.6,642,1.1,true,2.9,2,E,Aisle 2 · Shelf E
+103617,BRV-103617,Palsud Lamb 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Georgia,20.08,67,3.9,615,0.3,true,3.3,2,B,Aisle 2 · Shelf B
+102340,BRV-102340,Palsud Lemon 100g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,100g,Poland,50.11,30,3.8,465,1.5,true,2.1,2,D,Aisle 2 · Shelf D
+103130,BRV-103130,Palsud Lemon 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,China,3.56,206,4.6,505,1.1,true,2.6,2,B,Aisle 2 · Shelf B
+102236,BRV-102236,Palsud Lime 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,France,36.38,171,3.7,591,1.2,true,3,2,B,Aisle 2 · Shelf B
+102519,BRV-102519,Palsud Lime 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,Brazil,79.35,257,3.3,441,0.5,true,2.4,2,D,Aisle 2 · Shelf D
+102941,BRV-102941,Palsud Melon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Spain,63.36,221,4.7,354,0.6,true,3.1,2,A,Aisle 2 · Shelf A
+103834,BRV-103834,Palsud Mint 200g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,200g,Spain,60.08,202,4.9,120,1.2,true,1.9,2,A,Aisle 2 · Shelf A
+103776,BRV-103776,Palsud Onion 500g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,500g,Netherlands,46.15,381,4.7,153,1.4,true,2.8,2,D,Aisle 2 · Shelf D
+103154,BRV-103154,Palsud Orange 1L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1L,Russia,47.47,264,4,631,1.6,true,1.8,2,B,Aisle 2 · Shelf B
+102111,BRV-102111,Palsud Orange 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Brazil,76.59,464,3.4,349,1.5,true,3,2,D,Aisle 2 · Shelf D
+102708,BRV-102708,Palsud Orange Single,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Single,Poland,36.95,484,4.9,193,1.3,true,3.6,2,D,Aisle 2 · Shelf D
+103278,BRV-103278,Palsud Parsley 5kg,Palsud,"Fresh Produce, Meat & Dairy",Herbs,5kg,Brazil,9.96,319,4,474,1.3,true,2.9,2,A,Aisle 2 · Shelf A
+103422,BRV-103422,Palsud Plum 100g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,100g,China,23.5,327,4.4,189,0.4,true,3,2,F,Aisle 2 · Shelf F
+103616,BRV-103616,Palsud Pomegranate 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Herbs,1.5L,France,32.36,187,3.1,682,1.6,true,1.6,2,A,Aisle 2 · Shelf A
+102877,BRV-102877,Palsud Pomegranate 200g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,200g,Turkey,47.77,399,4.6,420,0.8,true,0.7,2,E,Aisle 2 · Shelf E
+103224,BRV-103224,Palsud Quail Eggs Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,India,37.66,111,3.4,253,1.1,true,3.6,2,D,Aisle 2 · Shelf D
+103613,BRV-103613,Palsud Quail Eggs Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,India,18.59,411,3.2,259,1.4,true,1.3,2,F,Aisle 2 · Shelf F
+103690,BRV-103690,Palsud Turkey 250ml,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250ml,Georgia,55.22,268,4.8,536,1.2,true,3.3,2,A,Aisle 2 · Shelf A
+102574,BRV-102574,Palsud Watermelon 250g,Palsud,"Fresh Produce, Meat & Dairy",Herbs,250g,Netherlands,72.6,268,4.6,198,0.6,true,1.4,2,E,Aisle 2 · Shelf E
+102727,BRV-102727,Pinar Apple Bulk,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Bulk,USA,61.39,350,3.7,560,1.5,true,2.4,2,C,Aisle 2 · Shelf C
+103160,BRV-103160,Pinar Ayran 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,Ukraine,28.46,98,4.9,386,0.3,true,1.5,2,A,Aisle 2 · Shelf A
+103866,BRV-103866,Pinar Basil 1L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1L,Georgia,32.13,360,3.3,249,1.4,true,2.9,2,B,Aisle 2 · Shelf B
+102753,BRV-102753,Pinar Beef 2kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,2kg,USA,15.49,49,3,553,1.2,true,1.9,2,D,Aisle 2 · Shelf D
+103513,BRV-103513,Pinar Beef 5kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,5kg,Netherlands,76.17,126,4.2,344,0.9,true,1,2,A,Aisle 2 · Shelf A
+103169,BRV-103169,Pinar Cabbage 1kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1kg,Spain,7.7,461,3.8,543,0.8,true,2.5,2,B,Aisle 2 · Shelf B
+102561,BRV-102561,Pinar Carrot 100g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,100g,Germany,13.27,178,4.7,128,0.6,true,2.6,2,C,Aisle 2 · Shelf C
+102873,BRV-102873,Pinar Cherry 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,Brazil,67.44,406,3.3,400,0.4,true,3.1,2,C,Aisle 2 · Shelf C
+103405,BRV-103405,Pinar Chicken Thighs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Herbs,500ml,Brazil,57.79,33,4.9,156,1.5,true,2.9,2,E,Aisle 2 · Shelf E
+103003,BRV-103003,Pinar Chicken Wings 500g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,500g,Poland,21.82,282,3.8,186,0.5,true,1.4,2,A,Aisle 2 · Shelf A
+102892,BRV-102892,Pinar Cucumber 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Netherlands,9.4,18,3.3,207,0.3,true,2.9,2,D,Aisle 2 · Shelf D
+102276,BRV-102276,Pinar Garlic 1kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1kg,Germany,27.91,492,3.8,371,0.8,true,1.5,2,F,Aisle 2 · Shelf F
+102351,BRV-102351,Pinar Garlic 5kg,Pinar,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,25.96,481,3.6,379,0.4,true,1.5,2,F,Aisle 2 · Shelf F
+103216,BRV-103216,Pinar Kiwi 750g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,750g,Turkey,11.36,351,3.4,638,1.2,true,0.8,2,C,Aisle 2 · Shelf C
+102923,BRV-102923,Pinar Mozzarella 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,23.31,443,4.8,150,1,true,0.9,2,A,Aisle 2 · Shelf A
+102109,BRV-102109,Pinar Parmesan Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,Spain,76.67,384,4.1,198,0.5,true,2.9,2,A,Aisle 2 · Shelf A
+103678,BRV-103678,Pinar Peach 1L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1L,Georgia,35.32,139,3.1,574,1.6,true,2.6,2,A,Aisle 2 · Shelf A
+103980,BRV-103980,Pinar Pear 250ml,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250ml,Iran,73.87,113,3.8,220,1.5,true,1.8,2,C,Aisle 2 · Shelf C
+102063,BRV-102063,Pinar Pineapple Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,37.26,232,3.4,427,0.6,true,1.2,2,D,Aisle 2 · Shelf D
+102731,BRV-102731,Pinar Plum Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Iran,1.89,41,4.8,665,0.3,true,3.1,2,B,Aisle 2 · Shelf B
+102799,BRV-102799,Pinar Potato 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Germany,8.58,359,4.7,563,1.5,true,1.4,2,F,Aisle 2 · Shelf F
+103567,BRV-103567,Pinar Spinach Bulk,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Brazil,30.72,12,4.1,369,1.2,true,0.7,2,F,Aisle 2 · Shelf F
+102969,BRV-102969,Pinar Strawberry 200g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,200g,Georgia,67.18,458,3.6,340,1.6,true,2.6,2,E,Aisle 2 · Shelf E
+103271,BRV-103271,Pinar Suluguni Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,USA,55.86,412,4.9,407,1,true,0.7,2,D,Aisle 2 · Shelf D
+103623,BRV-103623,Pinar Zucchini 250g,Pinar,"Fresh Produce, Meat & Dairy",Herbs,250g,India,17.48,82,4,262,1.7,true,2.6,2,E,Aisle 2 · Shelf E
+102454,BRV-102454,President Apple 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,China,69.28,250,4.5,213,1.5,true,2.9,2,D,Aisle 2 · Shelf D
+103218,BRV-103218,President Basil 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Iran,17.39,152,4,436,0.7,true,1.5,2,E,Aisle 2 · Shelf E
+103267,BRV-103267,President Carrot Bulk,President,"Fresh Produce, Meat & Dairy",Herbs,Bulk,Azerbaijan,37.76,432,3.6,130,0.5,true,1.6,2,E,Aisle 2 · Shelf E
+103686,BRV-103686,President Chicken Thighs 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,Italy,56.36,235,4,569,0.6,true,1.8,2,F,Aisle 2 · Shelf F
+103327,BRV-103327,President Chicken Thighs 250ml,President,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,10.06,150,3.1,343,1.5,true,2.3,2,B,Aisle 2 · Shelf B
+102823,BRV-102823,President Deluxe Turkey 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Ukraine,62.23,152,4.2,583,1.4,true,1.9,2,D,Aisle 2 · Shelf D
+102438,BRV-102438,President Eggplant 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Brazil,12,63,4.2,627,1.3,true,2.2,2,D,Aisle 2 · Shelf D
+103253,BRV-103253,President Free-Range Eggs 500ml,President,"Fresh Produce, Meat & Dairy",Herbs,500ml,Ukraine,5.96,262,4.2,123,1.7,true,3.8,2,B,Aisle 2 · Shelf B
+103879,BRV-103879,President Grapes 1kg,President,"Fresh Produce, Meat & Dairy",Herbs,1kg,Spain,69.41,412,3.8,565,0.6,true,3.7,2,B,Aisle 2 · Shelf B
+103761,BRV-103761,President Grapes 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,Netherlands,5.85,448,3.2,717,0.6,true,2.2,2,D,Aisle 2 · Shelf D
+103112,BRV-103112,President Lettuce 200g,President,"Fresh Produce, Meat & Dairy",Herbs,200g,India,70.45,104,3.1,457,0.8,true,3.4,2,D,Aisle 2 · Shelf D
+102410,BRV-102410,President Lime Family Pack,President,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Georgia,79.66,228,4.6,333,1.6,true,2.4,2,F,Aisle 2 · Shelf F
+102165,BRV-102165,President Melon 1.5L,President,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Ukraine,55.35,139,4.7,320,1,true,2.1,2,A,Aisle 2 · Shelf A
+102512,BRV-102512,President Mint 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,62.83,49,4.1,554,0.7,true,3.5,2,C,Aisle 2 · Shelf C
+102203,BRV-102203,President Parmesan Pack of 24,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Turkey,25.47,240,3.1,587,1,true,1.3,2,D,Aisle 2 · Shelf D
+102373,BRV-102373,President Parsley Pack of 24,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 24,Georgia,12.4,401,3.6,455,0.9,true,0.8,2,F,Aisle 2 · Shelf F
+102733,BRV-102733,President Peach 500g,President,"Fresh Produce, Meat & Dairy",Herbs,500g,Russia,26.15,442,4.9,663,1.2,true,1.5,2,B,Aisle 2 · Shelf B
+104000,BRV-104000,President Peach Pack of 12,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Ukraine,2.22,291,4.1,312,0.9,true,3.7,2,C,Aisle 2 · Shelf C
+103748,BRV-103748,President Pineapple 250ml,President,"Fresh Produce, Meat & Dairy",Herbs,250ml,Spain,19.91,490,4.6,498,1.6,true,2.1,2,C,Aisle 2 · Shelf C
+103060,BRV-103060,President Plum Pack of 6,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Russia,7.4,303,3.4,211,0.8,true,1.5,2,F,Aisle 2 · Shelf F
+102161,BRV-102161,President Potato 1kg,President,"Fresh Produce, Meat & Dairy",Herbs,1kg,China,61.64,242,4.6,460,1.2,true,2.4,2,A,Aisle 2 · Shelf A
+103693,BRV-103693,President Potato 750g,President,"Fresh Produce, Meat & Dairy",Herbs,750g,Azerbaijan,13.01,143,3.5,235,1.6,true,2.5,2,F,Aisle 2 · Shelf F
+102138,BRV-102138,President Shrimp 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,Iran,22.81,435,3.8,226,0.3,true,3.7,2,E,Aisle 2 · Shelf E
+102082,BRV-102082,President Spinach 2kg,President,"Fresh Produce, Meat & Dairy",Herbs,2kg,Azerbaijan,79.29,83,4.7,288,0.7,true,3.2,2,E,Aisle 2 · Shelf E
+102043,BRV-102043,President Strawberry Pack of 12,President,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Georgia,8.11,432,3.8,409,0.9,true,0.8,2,D,Aisle 2 · Shelf D
+103121,BRV-103121,President Turkey 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,Brazil,72.05,41,3.4,579,1,true,1.6,2,F,Aisle 2 · Shelf F
+102070,BRV-102070,President Turkey 2L,President,"Fresh Produce, Meat & Dairy",Herbs,2L,France,11.81,461,3.5,219,1.2,true,1.7,2,B,Aisle 2 · Shelf B
+102450,BRV-102450,President Watermelon 1L,President,"Fresh Produce, Meat & Dairy",Herbs,1L,Netherlands,48.16,194,4,129,0.5,true,1.2,2,D,Aisle 2 · Shelf D
+102634,BRV-102634,Sehiyye Basil 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,Azerbaijan,48.27,95,4.2,357,0.4,true,1.2,2,F,Aisle 2 · Shelf F
+103447,BRV-103447,Sehiyye Basil 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,Turkey,22.72,466,4.7,134,1.1,true,2.2,2,E,Aisle 2 · Shelf E
+102729,BRV-102729,Sehiyye Cabbage 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,Italy,75.84,306,4.5,650,0.6,true,0.9,2,C,Aisle 2 · Shelf C
+103240,BRV-103240,Sehiyye Carrot Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Brazil,5.61,262,4.5,139,0.8,true,0.8,2,B,Aisle 2 · Shelf B
+103563,BRV-103563,Sehiyye Cherry Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,China,35.79,425,4.4,509,1.5,true,1.8,2,B,Aisle 2 · Shelf B
+103034,BRV-103034,Sehiyye Cherry Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 6,Russia,56.39,51,4,240,0.6,true,3.9,2,A,Aisle 2 · Shelf A
+102422,BRV-102422,Sehiyye Chicken Breast Single,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Single,Iran,37.34,385,3.8,542,1.5,true,1,2,C,Aisle 2 · Shelf C
+102023,BRV-102023,Sehiyye Dill 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,France,48.12,147,4,223,1.4,true,0.7,2,D,Aisle 2 · Shelf D
+103518,BRV-103518,Sehiyye Dill Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 4,France,20.78,35,4.3,331,1,true,3.1,2,F,Aisle 2 · Shelf F
+102007,BRV-102007,Sehiyye Feta Cheese 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,200g,Poland,15.02,174,4.7,137,1.1,true,1,2,D,Aisle 2 · Shelf D
+102818,BRV-102818,Sehiyye Ground Beef Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Russia,78.96,114,3.4,713,1.5,true,1.4,2,D,Aisle 2 · Shelf D
+103728,BRV-103728,Sehiyye Lactose-Free Milk 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,500ml,Russia,50.52,389,4.5,388,0.3,true,1.9,2,C,Aisle 2 · Shelf C
+103601,BRV-103601,Sehiyye Lamb 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2L,Italy,64.59,176,3.2,670,0.7,true,3.1,2,C,Aisle 2 · Shelf C
+103092,BRV-103092,Sehiyye Lettuce Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Ukraine,62.2,314,3,336,0.8,true,1,2,E,Aisle 2 · Shelf E
+102965,BRV-102965,Sehiyye Lime 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1kg,Italy,77.64,62,3.8,608,0.8,true,3.4,2,C,Aisle 2 · Shelf C
+103673,BRV-103673,Sehiyye Melon 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,Germany,34.02,61,4.6,413,1.1,true,1.2,2,D,Aisle 2 · Shelf D
+103652,BRV-103652,Sehiyye Mint 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,Germany,0.57,487,4.4,442,1.3,true,1.4,2,E,Aisle 2 · Shelf E
+102195,BRV-102195,Sehiyye Orange Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Pack of 12,Germany,11.61,404,3.4,361,0.9,true,2.5,2,D,Aisle 2 · Shelf D
+102750,BRV-102750,Sehiyye Parmesan Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,Family Pack,Ukraine,46.24,269,3.2,482,1.7,true,2.3,2,E,Aisle 2 · Shelf E
+102676,BRV-102676,Sehiyye Parsley 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2kg,China,24.33,40,4.7,351,1.7,true,2.3,2,F,Aisle 2 · Shelf F
+103036,BRV-103036,Sehiyye Salmon 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,250ml,USA,8.68,463,3.3,606,0.7,true,2.4,2,A,Aisle 2 · Shelf A
+102292,BRV-102292,Sehiyye Strawberry 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,1.5L,Azerbaijan,62.29,276,5,165,1.2,true,2.3,2,D,Aisle 2 · Shelf D
+103084,BRV-103084,Sehiyye Trout 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,5kg,USA,44.5,414,4.8,125,0.5,true,2.9,2,D,Aisle 2 · Shelf D
+102627,BRV-102627,Sehiyye Veal 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Herbs,2L,Spain,32.84,99,3.9,361,0.7,true,3.1,2,D,Aisle 2 · Shelf D
+103307,BRV-103307,Atena Ayran 1.5L,Atena,"Fresh Produce, Meat & Dairy",Meat,1.5L,Brazil,29.6,361,4.8,141,1.6,true,1,2,D,Aisle 2 · Shelf D
+102213,BRV-102213,Atena Basil 2L,Atena,"Fresh Produce, Meat & Dairy",Meat,2L,Ukraine,19.76,344,3.1,168,0.6,true,3.3,2,C,Aisle 2 · Shelf C
+102311,BRV-102311,Atena Beef 1L,Atena,"Fresh Produce, Meat & Dairy",Meat,1L,USA,13.57,40,4.4,263,1.3,true,3.6,2,B,Aisle 2 · Shelf B
+102107,BRV-102107,Atena Bell Pepper 200g,Atena,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,67.37,411,3.5,460,1.3,true,2.8,2,A,Aisle 2 · Shelf A
+103687,BRV-103687,Atena Carrot Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,USA,40.9,34,4.8,508,1.4,true,4,2,A,Aisle 2 · Shelf A
+102177,BRV-102177,Atena Chicken Wings 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,63.39,274,4.5,265,0.3,true,3.5,2,B,Aisle 2 · Shelf B
+103055,BRV-103055,Atena Cucumber 500ml,Atena,"Fresh Produce, Meat & Dairy",Meat,500ml,Italy,47.72,403,3,667,0.7,true,0.9,2,B,Aisle 2 · Shelf B
+103191,BRV-103191,Atena Greek Yogurt Family Pack,Atena,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Italy,77.55,21,3.1,514,0.7,true,2.3,2,A,Aisle 2 · Shelf A
+103354,BRV-103354,Atena Kiwi 2kg,Atena,"Fresh Produce, Meat & Dairy",Meat,2kg,France,51.52,186,3.4,373,0.5,true,3.6,2,B,Aisle 2 · Shelf B
+103139,BRV-103139,Atena Lactose-Free Milk 750g,Atena,"Fresh Produce, Meat & Dairy",Meat,750g,Iran,32.49,15,3,388,1.6,true,1.3,2,C,Aisle 2 · Shelf C
+103437,BRV-103437,Atena Lettuce 500ml,Atena,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,11.63,112,4.3,151,1.2,true,3.7,2,D,Aisle 2 · Shelf D
+103346,BRV-103346,Atena Pineapple 1.5L,Atena,"Fresh Produce, Meat & Dairy",Meat,1.5L,Ukraine,14.75,380,3.4,492,0.5,true,3.2,2,A,Aisle 2 · Shelf A
+103039,BRV-103039,Atena Plum 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Netherlands,55.44,440,3.7,369,1.4,true,3.5,2,D,Aisle 2 · Shelf D
+103778,BRV-103778,Atena Potato 250g,Atena,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,58.04,45,3.4,315,1.7,true,2.1,2,F,Aisle 2 · Shelf F
+103861,BRV-103861,Atena Potato Single,Atena,"Fresh Produce, Meat & Dairy",Meat,Single,Netherlands,57.23,292,3.7,486,1.4,true,1,2,A,Aisle 2 · Shelf A
+102552,BRV-102552,Atena Shrimp 100g,Atena,"Fresh Produce, Meat & Dairy",Meat,100g,Ukraine,28.18,480,3.1,614,0.9,true,2.3,2,C,Aisle 2 · Shelf C
+103920,BRV-103920,Atena Suluguni Single,Atena,"Fresh Produce, Meat & Dairy",Meat,Single,Russia,79.27,198,3,254,0.7,true,2.7,2,E,Aisle 2 · Shelf E
+103677,BRV-103677,Atena Trout 750g,Atena,"Fresh Produce, Meat & Dairy",Meat,750g,Brazil,68.12,375,3.4,337,0.8,true,3.7,2,F,Aisle 2 · Shelf F
+102051,BRV-102051,Atena Turkey Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Azerbaijan,31.42,176,3.7,432,1.4,true,1.8,2,C,Aisle 2 · Shelf C
+102001,BRV-102001,Atena Whole Milk Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,USA,60.05,123,4.2,299,0.5,true,0.9,2,B,Aisle 2 · Shelf B
+102396,BRV-102396,Bravo Farm Banana Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,China,14.95,272,4.7,336,1.3,true,1.1,2,C,Aisle 2 · Shelf C
+103421,BRV-103421,Bravo Farm Bell Pepper 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,1L,Germany,25.84,399,4.9,334,0.5,true,1.2,2,A,Aisle 2 · Shelf A
+103461,BRV-103461,Bravo Farm Broccoli 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Poland,75.63,180,3.4,386,1.3,true,0.5,2,E,Aisle 2 · Shelf E
+103691,BRV-103691,Bravo Farm Cheddar Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,France,15.19,120,3.9,197,1,true,1.3,2,D,Aisle 2 · Shelf D
+103637,BRV-103637,Bravo Farm Cherry Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Single,Germany,54.97,39,4.8,533,0.7,true,3.4,2,B,Aisle 2 · Shelf B
+102831,BRV-102831,Bravo Farm Chicken Thighs 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Spain,60.28,434,4.1,226,0.3,true,1.7,2,E,Aisle 2 · Shelf E
+103189,BRV-103189,Bravo Farm Chicken Thighs 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,Netherlands,11.25,311,3.5,545,1.6,true,1.3,2,B,Aisle 2 · Shelf B
+103871,BRV-103871,Bravo Farm Chicken Wings 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,15.57,309,3.9,549,0.2,true,1.2,2,B,Aisle 2 · Shelf B
+102985,BRV-102985,Bravo Farm Dill 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,39.19,157,5,570,0.7,true,3.2,2,A,Aisle 2 · Shelf A
+102938,BRV-102938,Bravo Farm Eggplant 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,200g,China,78.01,55,4.6,186,0.9,true,3,2,C,Aisle 2 · Shelf C
+102306,BRV-102306,Bravo Farm Eggplant 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Azerbaijan,53.25,444,3.7,615,1.6,true,3,2,B,Aisle 2 · Shelf B
+103320,BRV-103320,Bravo Farm Feta Cheese 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,China,76.96,324,3.7,664,0.4,true,3.2,2,E,Aisle 2 · Shelf E
+102380,BRV-102380,Bravo Farm Greek Yogurt 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Russia,71.1,398,3.3,285,0.9,true,2.9,2,B,Aisle 2 · Shelf B
+102456,BRV-102456,Bravo Farm Lemon Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,19.78,400,3.7,659,0.4,true,1,2,B,Aisle 2 · Shelf B
+102703,BRV-102703,Bravo Farm Lime 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,5kg,Azerbaijan,17.95,129,3.8,562,0.8,true,1.9,2,E,Aisle 2 · Shelf E
+102940,BRV-102940,Bravo Farm Onion 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,500ml,China,70.36,385,3.8,143,0.5,true,0.9,2,B,Aisle 2 · Shelf B
+103155,BRV-103155,Bravo Farm Parsley 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Poland,58.68,414,3.6,570,0.6,true,2.4,2,C,Aisle 2 · Shelf C
+102502,BRV-102502,Bravo Farm Potato Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Spain,8.5,314,4.6,169,0.8,true,1.2,2,F,Aisle 2 · Shelf F
+102173,BRV-102173,Bravo Farm Spinach 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Georgia,45.43,70,3.5,293,1.4,true,1.7,2,B,Aisle 2 · Shelf B
+102553,BRV-102553,Bravo Farm Spinach Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Poland,5.62,277,3.6,547,0.5,true,2.6,2,B,Aisle 2 · Shelf B
+103309,BRV-103309,Bravo Farm Sturgeon 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,750g,Russia,26.85,188,4.8,455,1.4,true,0.9,2,D,Aisle 2 · Shelf D
+103825,BRV-103825,Bravo Farm Suluguni 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,250g,Spain,46.26,333,4.3,270,0.9,true,3.3,2,A,Aisle 2 · Shelf A
+103238,BRV-103238,Bravo Farm Tomato 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,100g,Russia,15,230,3.9,150,0.4,true,3.7,2,C,Aisle 2 · Shelf C
+102738,BRV-102738,Bravo Farm Turkey 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,200g,Ukraine,46.12,436,4.7,236,1,true,3.6,2,C,Aisle 2 · Shelf C
+103547,BRV-103547,Bravo Farm Whole Milk 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,France,25.96,215,4.7,179,0.3,true,0.7,2,F,Aisle 2 · Shelf F
+103497,BRV-103497,Bravo Farm Zucchini 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Meat,1L,Ukraine,48.72,146,4.8,221,1.1,true,2.5,2,D,Aisle 2 · Shelf D
+103889,BRV-103889,Local Farm Apple 2L,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2L,Poland,37.76,247,3.1,196,1,true,1.2,2,A,Aisle 2 · Shelf A
+103520,BRV-103520,Local Farm Apple 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,Azerbaijan,43.05,288,4.8,282,1.3,true,2.9,2,C,Aisle 2 · Shelf C
+103146,BRV-103146,Local Farm Banana Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,China,48.89,409,3.2,594,0.9,true,1.9,2,C,Aisle 2 · Shelf C
+103650,BRV-103650,Local Farm Beef 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,13.69,71,3.4,516,1.4,true,1.9,2,A,Aisle 2 · Shelf A
+103688,BRV-103688,Local Farm Chicken Wings 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,China,36.5,244,4.4,371,1.6,true,1.1,2,D,Aisle 2 · Shelf D
+103873,BRV-103873,Local Farm Garlic Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,China,35.61,419,4.8,163,0.3,true,2.4,2,B,Aisle 2 · Shelf B
+103674,BRV-103674,Local Farm Grapes Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Bulk,Spain,21.79,18,4.5,298,0.6,true,2.2,2,A,Aisle 2 · Shelf A
+103233,BRV-103233,Local Farm Ground Beef Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Ukraine,67.45,306,4.6,573,1.7,true,3.6,2,F,Aisle 2 · Shelf F
+103966,BRV-103966,Local Farm Lactose-Free Milk Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Spain,40.69,303,4.8,440,1,true,1.2,2,C,Aisle 2 · Shelf C
+103794,BRV-103794,Local Farm Lamb 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Iran,49,45,3.6,285,1.3,true,1.6,2,F,Aisle 2 · Shelf F
+102018,BRV-102018,Local Farm Lemon Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Brazil,17.52,88,3.8,641,1.2,true,3,2,D,Aisle 2 · Shelf D
+102159,BRV-102159,Local Farm Mint 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,China,4.39,1,3.9,529,1.1,true,1.3,2,F,Aisle 2 · Shelf F
+102953,BRV-102953,Local Farm Onion 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,France,9,353,4,471,1.6,true,0.7,2,F,Aisle 2 · Shelf F
+102178,BRV-102178,Local Farm Orange 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Meat,250ml,Italy,52.76,356,4.5,422,1.6,true,1.7,2,E,Aisle 2 · Shelf E
+102908,BRV-102908,Local Farm Parsley Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Bulk,Turkey,31.36,277,4.6,603,1.6,true,1.6,2,F,Aisle 2 · Shelf F
+102356,BRV-102356,Local Farm Salmon Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Brazil,57.64,109,4,516,0.9,true,2.1,2,A,Aisle 2 · Shelf A
+103210,BRV-103210,Local Farm Skim Milk Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Russia,43.59,125,4.7,212,0.3,true,1.2,2,E,Aisle 2 · Shelf E
+102337,BRV-102337,Local Farm Spinach Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Poland,51.63,76,4.5,151,1,true,2.5,2,D,Aisle 2 · Shelf D
+102841,BRV-102841,Local Farm Sturgeon 2kg,Local Farm,"Fresh Produce, Meat & Dairy",Meat,2kg,USA,6.04,175,4.9,711,1.1,true,1.3,2,B,Aisle 2 · Shelf B
+103468,BRV-103468,Local Farm Trout 500g,Local Farm,"Fresh Produce, Meat & Dairy",Meat,500g,Netherlands,47.07,36,4.7,319,1,true,1.8,2,D,Aisle 2 · Shelf D
+102287,BRV-102287,Milla Ayran 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Italy,43.71,163,3.8,367,1.2,true,2,2,F,Aisle 2 · Shelf F
+102257,BRV-102257,Milla Basil 1L,Milla,"Fresh Produce, Meat & Dairy",Meat,1L,Netherlands,52.19,460,4.9,400,0.8,true,2.1,2,E,Aisle 2 · Shelf E
+102991,BRV-102991,Milla Carrot Single,Milla,"Fresh Produce, Meat & Dairy",Meat,Single,USA,38.33,354,3.3,717,1.6,true,2.3,2,B,Aisle 2 · Shelf B
+103999,BRV-103999,Milla Chicken Thighs 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Italy,78.87,216,3.6,426,1,true,2.8,2,A,Aisle 2 · Shelf A
+103995,BRV-103995,Milla Chicken Wings 500ml,Milla,"Fresh Produce, Meat & Dairy",Meat,500ml,France,54.87,204,4.2,638,1.2,true,3.3,2,C,Aisle 2 · Shelf C
+103101,BRV-103101,Milla Feta Cheese Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Russia,36.87,468,4.8,337,0.5,true,1.1,2,B,Aisle 2 · Shelf B
+102333,BRV-102333,Milla Grapes 750g,Milla,"Fresh Produce, Meat & Dairy",Meat,750g,Georgia,64.05,444,3.6,387,0.3,true,2.8,2,F,Aisle 2 · Shelf F
+102757,BRV-102757,Milla Greek Yogurt 1kg,Milla,"Fresh Produce, Meat & Dairy",Meat,1kg,Germany,70.62,256,4.2,125,0.3,true,2.6,2,B,Aisle 2 · Shelf B
+103222,BRV-103222,Milla Lamb 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,0.8,426,3.8,679,1.5,true,1,2,B,Aisle 2 · Shelf B
+103577,BRV-103577,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,31.06,453,3.1,406,0.2,true,0.8,2,C,Aisle 2 · Shelf C
+103046,BRV-103046,Milla Lime 1kg,Milla,"Fresh Produce, Meat & Dairy",Meat,1kg,China,28.67,183,4.7,239,0.2,true,2.5,2,D,Aisle 2 · Shelf D
+102150,BRV-102150,Milla Mint 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,China,17.28,341,3.8,620,1.2,true,4,2,A,Aisle 2 · Shelf A
+102862,BRV-102862,Milla Onion Family Pack,Milla,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Russia,40.83,105,4.1,542,0.7,true,2.4,2,E,Aisle 2 · Shelf E
+103780,BRV-103780,Milla Orange 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Poland,24.1,230,3.9,182,0.7,true,2.1,2,A,Aisle 2 · Shelf A
+103459,BRV-103459,Milla Pear 250g,Milla,"Fresh Produce, Meat & Dairy",Meat,250g,USA,52.25,239,3.9,619,1.2,true,1.2,2,D,Aisle 2 · Shelf D
+102636,BRV-102636,Milla Quail Eggs 750g,Milla,"Fresh Produce, Meat & Dairy",Meat,750g,Italy,12.49,354,4.5,299,0.5,true,0.5,2,D,Aisle 2 · Shelf D
+102488,BRV-102488,Milla Suluguni Family Pack,Milla,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,13.44,120,3.5,210,1.6,true,1,2,C,Aisle 2 · Shelf C
+103746,BRV-103746,Milla Turkey 200g,Milla,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,63.21,329,4.4,616,0.8,true,2.6,2,E,Aisle 2 · Shelf E
+103548,BRV-103548,Milla Zucchini 100g,Milla,"Fresh Produce, Meat & Dairy",Meat,100g,Russia,72.61,29,4.4,476,1.2,true,3.6,2,A,Aisle 2 · Shelf A
+103768,BRV-103768,Palsud Apple 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Meat,1.5L,Netherlands,16.05,461,4.9,440,1.5,true,3,2,C,Aisle 2 · Shelf C
+102702,BRV-102702,Palsud Apple 100g,Palsud,"Fresh Produce, Meat & Dairy",Meat,100g,Iran,26.75,293,5,567,0.5,true,3.4,2,F,Aisle 2 · Shelf F
+103759,BRV-103759,Palsud Apple Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Italy,39.96,465,3.6,440,0.9,true,3.8,2,E,Aisle 2 · Shelf E
+103517,BRV-103517,Palsud Apple Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,Spain,16.76,461,4.7,620,1.4,true,2,2,A,Aisle 2 · Shelf A
+102435,BRV-102435,Palsud Bell Pepper 2kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,2kg,China,9.08,109,4,514,0.5,true,2.8,2,A,Aisle 2 · Shelf A
+102224,BRV-102224,Palsud Cheddar 500g,Palsud,"Fresh Produce, Meat & Dairy",Meat,500g,Russia,8.02,307,3.9,134,1.1,true,3.5,2,A,Aisle 2 · Shelf A
+102193,BRV-102193,Palsud Cheddar 5kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,5kg,Turkey,40.92,310,4.1,219,1.1,true,2.8,2,F,Aisle 2 · Shelf F
+102528,BRV-102528,Palsud Cheddar Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,33.35,284,4.1,161,1.4,true,3.6,2,D,Aisle 2 · Shelf D
+102339,BRV-102339,Palsud Cheddar Single,Palsud,"Fresh Produce, Meat & Dairy",Meat,Single,Georgia,59.1,97,4.7,613,0.7,true,0.6,2,F,Aisle 2 · Shelf F
+102720,BRV-102720,Palsud Chicken Breast 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Meat,1.5L,Georgia,47.23,317,4.2,207,1.1,true,2,2,D,Aisle 2 · Shelf D
+103166,BRV-103166,Palsud Chicken Breast 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,Russia,64.44,12,4.4,688,0.4,true,2.4,2,E,Aisle 2 · Shelf E
+102031,BRV-102031,Palsud Feta Cheese 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,Germany,55.12,185,4.4,410,1.2,true,3.4,2,A,Aisle 2 · Shelf A
+102606,BRV-102606,Palsud Kefir 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,India,77.94,95,4.8,534,0.3,true,0.9,2,A,Aisle 2 · Shelf A
+103489,BRV-103489,Palsud Kiwi 250g,Palsud,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,36.5,348,4.7,672,1.6,true,3.4,2,C,Aisle 2 · Shelf C
+103965,BRV-103965,Palsud Kiwi Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Meat,Family Pack,India,67.42,425,3.5,651,0.6,true,1.9,2,B,Aisle 2 · Shelf B
+103027,BRV-103027,Palsud Lemon 500ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,500ml,France,31.83,83,4.2,224,0.6,true,1.6,2,C,Aisle 2 · Shelf C
+103212,BRV-103212,Palsud Lemon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Meat,Bulk,Brazil,17.41,349,3.3,362,1.2,true,2.7,2,E,Aisle 2 · Shelf E
+103351,BRV-103351,Palsud Lime 750g,Palsud,"Fresh Produce, Meat & Dairy",Meat,750g,Iran,68.3,142,3.1,228,1.1,true,1.7,2,C,Aisle 2 · Shelf C
+103330,BRV-103330,Palsud Mint 2L,Palsud,"Fresh Produce, Meat & Dairy",Meat,2L,Germany,5.79,299,4.6,595,1.2,true,2.5,2,B,Aisle 2 · Shelf B
+102044,BRV-102044,Palsud Parsley 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,France,22.72,1,3.5,462,1.6,true,3.5,2,A,Aisle 2 · Shelf A
+102089,BRV-102089,Palsud Parsley 500g,Palsud,"Fresh Produce, Meat & Dairy",Meat,500g,Netherlands,33.31,204,3.8,699,0.9,true,2.1,2,F,Aisle 2 · Shelf F
+103417,BRV-103417,Palsud Peach 1kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,1kg,Italy,44.71,145,3,701,1.2,true,0.6,2,B,Aisle 2 · Shelf B
+102583,BRV-102583,Palsud Pear 200g,Palsud,"Fresh Produce, Meat & Dairy",Meat,200g,Ukraine,7.55,142,4,428,1.4,true,3.2,2,E,Aisle 2 · Shelf E
+102187,BRV-102187,Palsud Shrimp 250ml,Palsud,"Fresh Produce, Meat & Dairy",Meat,250ml,Spain,70.97,80,4.7,300,1.1,true,3.6,2,E,Aisle 2 · Shelf E
+102348,BRV-102348,Palsud Veal 100g,Palsud,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,14.95,79,4.2,649,0.8,true,3.8,2,F,Aisle 2 · Shelf F
+102242,BRV-102242,Palsud Watermelon 2kg,Palsud,"Fresh Produce, Meat & Dairy",Meat,2kg,Ukraine,71.85,182,3.1,490,1.3,true,2.2,2,E,Aisle 2 · Shelf E
+102334,BRV-102334,Pinar Apple 1L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1L,Brazil,3.19,104,4.3,252,1,true,2.4,2,E,Aisle 2 · Shelf E
+102353,BRV-102353,Pinar Banana 250ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,250ml,Ukraine,46.42,487,4.5,165,0.4,true,3.9,2,F,Aisle 2 · Shelf F
+102693,BRV-102693,Pinar Beef 200g,Pinar,"Fresh Produce, Meat & Dairy",Meat,200g,Germany,24.08,93,3.4,548,0.3,true,1.6,2,A,Aisle 2 · Shelf A
+103231,BRV-103231,Pinar Cheddar 2L,Pinar,"Fresh Produce, Meat & Dairy",Meat,2L,Ukraine,75.7,373,3.1,611,1.6,true,0.9,2,B,Aisle 2 · Shelf B
+102263,BRV-102263,Pinar Cheddar Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Spain,78.45,384,3.2,421,0.2,true,2.6,2,B,Aisle 2 · Shelf B
+103875,BRV-103875,Pinar Cheddar Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Netherlands,45.08,78,3.8,705,0.2,true,2.8,2,B,Aisle 2 · Shelf B
+102470,BRV-102470,Pinar Cilantro 250ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,250ml,Netherlands,63.85,486,3.5,543,0.5,true,1.6,2,F,Aisle 2 · Shelf F
+103360,BRV-103360,Pinar Cucumber 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,66.52,182,3.8,300,1.2,true,0.9,2,A,Aisle 2 · Shelf A
+102130,BRV-102130,Pinar Dill 100g,Pinar,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,68.35,405,4.5,146,0.4,true,2,2,E,Aisle 2 · Shelf E
+103907,BRV-103907,Pinar Feta Cheese 500g,Pinar,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,70.15,376,3.2,707,1.2,true,2.4,2,F,Aisle 2 · Shelf F
+102976,BRV-102976,Pinar Kiwi 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Poland,44.22,47,3,668,0.5,true,0.5,2,A,Aisle 2 · Shelf A
+103737,BRV-103737,Pinar Kiwi Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,China,7.56,365,4.7,168,0.8,true,2,2,C,Aisle 2 · Shelf C
+103295,BRV-103295,Pinar Lemon 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1.5L,India,1.55,249,3.9,549,0.8,true,2.2,2,F,Aisle 2 · Shelf F
+102033,BRV-102033,Pinar Lime 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,30.31,200,4,412,1.3,true,1.7,2,E,Aisle 2 · Shelf E
+103724,BRV-103724,Pinar Mint 500ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,500ml,Turkey,11.29,364,4.5,288,1.6,true,2.3,2,C,Aisle 2 · Shelf C
+102920,BRV-102920,Pinar Mozzarella 2kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,2kg,China,25.27,486,4.9,189,1.1,true,1.9,2,D,Aisle 2 · Shelf D
+102638,BRV-102638,Pinar Mozzarella 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Iran,18.52,218,3.2,425,1.4,true,2.5,2,F,Aisle 2 · Shelf F
+103911,BRV-103911,Pinar Orange Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,India,72.65,457,4.1,162,0.9,true,3.2,2,E,Aisle 2 · Shelf E
+102030,BRV-102030,Pinar Parmesan Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,China,22.64,306,3.8,367,1.5,true,2.9,2,F,Aisle 2 · Shelf F
+103471,BRV-103471,Pinar Parsley 5kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,5kg,Iran,69.96,359,4.4,377,0.8,true,3.6,2,B,Aisle 2 · Shelf B
+103568,BRV-103568,Pinar Quail Eggs Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,Azerbaijan,25.71,473,3.1,686,0.2,true,1.9,2,E,Aisle 2 · Shelf E
+102147,BRV-102147,Pinar Strawberry 1kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,1kg,Italy,52.05,291,4.4,488,0.3,true,3.9,2,C,Aisle 2 · Shelf C
+103992,BRV-103992,Pinar Suluguni 1L,Pinar,"Fresh Produce, Meat & Dairy",Meat,1L,Ukraine,52.86,26,4.4,257,1.6,true,2.6,2,D,Aisle 2 · Shelf D
+103504,BRV-103504,Pinar Suluguni 2kg,Pinar,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,22.32,330,3.4,436,0.6,true,3.8,2,C,Aisle 2 · Shelf C
+102859,BRV-102859,Pinar Suluguni Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,India,11.29,251,3.2,360,0.8,true,0.6,2,E,Aisle 2 · Shelf E
+103392,BRV-103392,Pinar Tomato 500ml,Pinar,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,71.11,30,3.4,419,1,true,1.7,2,D,Aisle 2 · Shelf D
+103512,BRV-103512,Pinar Tomato Single,Pinar,"Fresh Produce, Meat & Dairy",Meat,Single,Russia,47.25,216,3.7,133,1.6,true,2.8,2,D,Aisle 2 · Shelf D
+103734,BRV-103734,Pinar Zucchini Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,4.6,99,4.5,267,0.5,true,2.2,2,F,Aisle 2 · Shelf F
+102852,BRV-102852,President Carrot Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Ukraine,3.91,191,4.9,323,0.3,true,0.8,2,B,Aisle 2 · Shelf B
+102665,BRV-102665,President Chicken Thighs 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Georgia,48.41,322,4.5,627,0.3,true,1.4,2,F,Aisle 2 · Shelf F
+102796,BRV-102796,President Chicken Thighs Pack of 6,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 6,Azerbaijan,21.06,157,4,220,0.7,true,4,2,A,Aisle 2 · Shelf A
+103385,BRV-103385,President Cucumber 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Brazil,73.45,214,4.7,163,0.5,true,0.9,2,D,Aisle 2 · Shelf D
+102791,BRV-102791,President Cucumber 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,10.96,304,4.9,475,1.4,true,1.4,2,D,Aisle 2 · Shelf D
+102900,BRV-102900,President Cucumber Pack of 24,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 24,China,22,483,4.9,451,0.4,true,1.4,2,D,Aisle 2 · Shelf D
+103580,BRV-103580,President Dill 100g,President,"Fresh Produce, Meat & Dairy",Meat,100g,Spain,39.84,400,4.4,648,0.8,true,0.8,2,A,Aisle 2 · Shelf A
+102559,BRV-102559,President Dill 750g,President,"Fresh Produce, Meat & Dairy",Meat,750g,Germany,53.15,291,4.7,453,0.4,true,1,2,F,Aisle 2 · Shelf F
+102184,BRV-102184,President Eggplant Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Iran,55.19,426,4.8,503,0.2,true,1.3,2,F,Aisle 2 · Shelf F
+102264,BRV-102264,President Feta Cheese 2L,President,"Fresh Produce, Meat & Dairy",Meat,2L,Iran,19.63,407,4.5,538,0.9,true,1.5,2,C,Aisle 2 · Shelf C
+102167,BRV-102167,President Free-Range Eggs 250ml,President,"Fresh Produce, Meat & Dairy",Meat,250ml,France,60.74,342,4.9,366,1,true,1.2,2,E,Aisle 2 · Shelf E
+103336,BRV-103336,President Grapes 1.5L,President,"Fresh Produce, Meat & Dairy",Meat,1.5L,Ukraine,30.55,378,4.4,289,1.2,true,1.5,2,D,Aisle 2 · Shelf D
+102126,BRV-102126,President Grapes 1kg,President,"Fresh Produce, Meat & Dairy",Meat,1kg,Georgia,61.31,172,3.2,503,1.5,true,3.8,2,B,Aisle 2 · Shelf B
+103585,BRV-103585,President Mozzarella Single,President,"Fresh Produce, Meat & Dairy",Meat,Single,France,53.08,474,3.7,289,1.1,true,0.8,2,B,Aisle 2 · Shelf B
+102679,BRV-102679,President Onion 250g,President,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,49.15,202,4.1,280,0.3,true,2.2,2,C,Aisle 2 · Shelf C
+102699,BRV-102699,President Orange 2kg,President,"Fresh Produce, Meat & Dairy",Meat,2kg,Spain,5.15,116,4.1,538,0.2,true,3.1,2,C,Aisle 2 · Shelf C
+102929,BRV-102929,President Parmesan 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,USA,58.17,496,4.8,352,0.3,true,2.8,2,E,Aisle 2 · Shelf E
+103472,BRV-103472,President Peach Pack of 4,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 4,Netherlands,48.16,320,4,442,0.6,true,2.1,2,A,Aisle 2 · Shelf A
+102474,BRV-102474,President Pineapple 1kg,President,"Fresh Produce, Meat & Dairy",Meat,1kg,Brazil,13.99,98,4.7,579,1,true,2.3,2,B,Aisle 2 · Shelf B
+103243,BRV-103243,President Shrimp Family Pack,President,"Fresh Produce, Meat & Dairy",Meat,Family Pack,Netherlands,32.36,239,4.5,304,1,true,2.9,2,E,Aisle 2 · Shelf E
+103630,BRV-103630,President Skim Milk 1.5L,President,"Fresh Produce, Meat & Dairy",Meat,1.5L,Turkey,14.02,161,4,370,0.9,true,1.5,2,E,Aisle 2 · Shelf E
+102707,BRV-102707,President Skim Milk Pack of 12,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Italy,19.18,110,3.5,310,0.6,true,2,2,A,Aisle 2 · Shelf A
+103334,BRV-103334,President Suluguni 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Ukraine,70.06,204,4,359,1.2,true,2.1,2,F,Aisle 2 · Shelf F
+103735,BRV-103735,President Tomato 500ml,President,"Fresh Produce, Meat & Dairy",Meat,500ml,Germany,50.5,132,3.8,318,1.7,true,1.1,2,E,Aisle 2 · Shelf E
+102283,BRV-102283,President Trout 500g,President,"Fresh Produce, Meat & Dairy",Meat,500g,USA,37.9,55,4.9,507,0.8,true,3.5,2,D,Aisle 2 · Shelf D
+103386,BRV-103386,President Trout Single,President,"Fresh Produce, Meat & Dairy",Meat,Single,Georgia,22.88,422,4.1,664,1.6,true,1.1,2,E,Aisle 2 · Shelf E
+103620,BRV-103620,President Turkey 5kg,President,"Fresh Produce, Meat & Dairy",Meat,5kg,China,70.69,190,3.5,373,1.2,true,0.7,2,F,Aisle 2 · Shelf F
+102605,BRV-102605,President Whole Milk 250g,President,"Fresh Produce, Meat & Dairy",Meat,250g,USA,21.46,102,4.1,357,0.2,true,2.6,2,F,Aisle 2 · Shelf F
+102932,BRV-102932,President Whole Milk Pack of 12,President,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Iran,21.13,179,4.1,292,1.3,true,2.6,2,C,Aisle 2 · Shelf C
+103128,BRV-103128,Sehiyye Ayran 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Iran,9.95,447,4.4,238,1.2,true,2.1,2,C,Aisle 2 · Shelf C
+103702,BRV-103702,Sehiyye Beef 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250g,Ukraine,7.88,33,4.3,224,1.2,true,2,2,A,Aisle 2 · Shelf A
+102432,BRV-102432,Sehiyye Cucumber Single,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Single,France,49.32,450,3.9,309,1,true,1.8,2,B,Aisle 2 · Shelf B
+102494,BRV-102494,Sehiyye Eggplant 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250g,Poland,5.41,370,3.5,665,0.5,true,1.7,2,F,Aisle 2 · Shelf F
+102652,BRV-102652,Sehiyye Feta Cheese 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,1kg,USA,53.06,260,4.6,261,1,true,0.8,2,B,Aisle 2 · Shelf B
+103393,BRV-103393,Sehiyye Grapes 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Brazil,45.46,343,3.2,278,0.7,true,3.3,2,A,Aisle 2 · Shelf A
+103804,BRV-103804,Sehiyye Lamb 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,100g,Ukraine,38.82,301,3.6,333,0.7,true,1.9,2,F,Aisle 2 · Shelf F
+102595,BRV-102595,Sehiyye Melon Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Azerbaijan,40.34,187,3.8,189,1,true,1.1,2,B,Aisle 2 · Shelf B
+103066,BRV-103066,Sehiyye Mozzarella 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,500g,Azerbaijan,51.61,405,4.2,129,0.9,true,3.4,2,F,Aisle 2 · Shelf F
+103868,BRV-103868,Sehiyye Mozzarella Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,France,29.76,344,4.6,227,0.5,true,1,2,F,Aisle 2 · Shelf F
+102227,BRV-102227,Sehiyye Orange 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Russia,76.52,470,4.5,557,1,true,1.7,2,F,Aisle 2 · Shelf F
+102673,BRV-102673,Sehiyye Orange 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,China,49.51,492,3.9,142,0.6,true,3.9,2,E,Aisle 2 · Shelf E
+102431,BRV-102431,Sehiyye Parmesan 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Iran,0.53,495,4.1,414,1.1,true,2.2,2,E,Aisle 2 · Shelf E
+103810,BRV-103810,Sehiyye Pear Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,Pack of 12,Azerbaijan,64.72,130,4.7,670,1.3,true,1,2,A,Aisle 2 · Shelf A
+102961,BRV-102961,Sehiyye Trout 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,250ml,Brazil,39.49,61,4.1,596,1.7,true,2.9,2,A,Aisle 2 · Shelf A
+102600,BRV-102600,Sehiyye Veal 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,1.5L,Azerbaijan,24.53,309,3.8,244,0.9,true,1.9,2,E,Aisle 2 · Shelf E
+102839,BRV-102839,Sehiyye Whole Milk 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,200g,Turkey,55.36,167,4.7,290,1.7,true,2.9,2,E,Aisle 2 · Shelf E
+103035,BRV-103035,Sehiyye Whole Milk 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Meat,750g,China,68.47,140,3.9,501,0.4,true,2,2,B,Aisle 2 · Shelf B
+103554,BRV-103554,Atena Basil 1.5L,Atena,"Fresh Produce, Meat & Dairy",Milk,1.5L,Poland,62.49,457,4.4,211,1.5,true,1.7,2,F,Aisle 2 · Shelf F
+102443,BRV-102443,Atena Basil 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,49.99,470,3.8,429,0.8,true,0.8,2,D,Aisle 2 · Shelf D
+103638,BRV-103638,Atena Basil Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,France,33.52,4,3.5,242,1.2,true,3.3,2,E,Aisle 2 · Shelf E
+102289,BRV-102289,Atena Cabbage Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Brazil,56.16,206,4.7,613,0.4,true,0.7,2,B,Aisle 2 · Shelf B
+102613,BRV-102613,Atena Cheddar Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Germany,72.52,64,3.2,140,1.6,true,3.9,2,A,Aisle 2 · Shelf A
+103260,BRV-103260,Atena Chicken Thighs Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Brazil,47.91,444,4.7,477,0.6,true,1.8,2,B,Aisle 2 · Shelf B
+102322,BRV-102322,Atena Dill 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,China,36.06,162,3.1,533,1.4,true,1.3,2,F,Aisle 2 · Shelf F
+102440,BRV-102440,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Brazil,71.78,476,4.5,710,1.6,true,2.6,2,E,Aisle 2 · Shelf E
+103117,BRV-103117,Atena Ground Beef Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,68.76,87,4.6,480,1.2,true,1.7,2,E,Aisle 2 · Shelf E
+102506,BRV-102506,Atena Lamb Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Brazil,62.64,37,3.7,621,0.7,true,1.7,2,D,Aisle 2 · Shelf D
+103127,BRV-103127,Atena Mini Tomato Single,Atena,"Fresh Produce, Meat & Dairy",Milk,Single,India,62.42,142,4.4,185,1.2,true,1.8,2,F,Aisle 2 · Shelf F
+102620,BRV-102620,Atena Parmesan 500ml,Atena,"Fresh Produce, Meat & Dairy",Milk,500ml,Spain,70.95,109,4.4,598,1.4,true,2.3,2,E,Aisle 2 · Shelf E
+103646,BRV-103646,Atena Parmesan Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Italy,36.55,255,3.2,557,0.6,true,0.6,2,B,Aisle 2 · Shelf B
+103624,BRV-103624,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Milk,200g,Brazil,18.67,316,3.3,625,0.9,true,1.1,2,F,Aisle 2 · Shelf F
+103343,BRV-103343,Atena Plum 100g,Atena,"Fresh Produce, Meat & Dairy",Milk,100g,Brazil,63.98,39,4.1,493,1.3,true,0.5,2,F,Aisle 2 · Shelf F
+103960,BRV-103960,Atena Pomegranate 250ml,Atena,"Fresh Produce, Meat & Dairy",Milk,250ml,Spain,35.91,304,3.3,162,1.1,true,1.4,2,A,Aisle 2 · Shelf A
+103878,BRV-103878,Atena Spinach 250g,Atena,"Fresh Produce, Meat & Dairy",Milk,250g,Iran,53.94,489,3.4,200,0.8,true,2.2,2,E,Aisle 2 · Shelf E
+103340,BRV-103340,Atena Spinach Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Germany,4.62,270,4.6,606,1.1,true,2.7,2,C,Aisle 2 · Shelf C
+102421,BRV-102421,Atena Strawberry 1kg,Atena,"Fresh Produce, Meat & Dairy",Milk,1kg,Brazil,54.11,302,3.5,325,0.2,true,2.7,2,F,Aisle 2 · Shelf F
+102811,BRV-102811,Atena Strawberry 2kg,Atena,"Fresh Produce, Meat & Dairy",Milk,2kg,France,66.13,266,4.8,420,0.7,true,0.7,2,E,Aisle 2 · Shelf E
+102530,BRV-102530,Atena Suluguni Bulk,Atena,"Fresh Produce, Meat & Dairy",Milk,Bulk,Iran,78.2,103,4.6,526,1.3,true,2.7,2,A,Aisle 2 · Shelf A
+102211,BRV-102211,Atena Tomato Single,Atena,"Fresh Produce, Meat & Dairy",Milk,Single,Azerbaijan,21.3,375,3.5,342,0.6,true,2.5,2,E,Aisle 2 · Shelf E
+102362,BRV-102362,Atena Turkey Family Pack,Atena,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Spain,9.2,34,3.7,201,1.1,true,2.1,2,F,Aisle 2 · Shelf F
+102186,BRV-102186,Atena Watermelon 1kg,Atena,"Fresh Produce, Meat & Dairy",Milk,1kg,Germany,6.32,212,3.2,377,0.9,true,2.2,2,D,Aisle 2 · Shelf D
+103175,BRV-103175,Atena Zucchini 500g,Atena,"Fresh Produce, Meat & Dairy",Milk,500g,Spain,43.2,283,3.7,420,0.7,true,2.9,2,A,Aisle 2 · Shelf A
+102206,BRV-102206,Atena Zucchini 5kg,Atena,"Fresh Produce, Meat & Dairy",Milk,5kg,China,12.37,137,4,530,0.3,true,3.3,2,E,Aisle 2 · Shelf E
+103105,BRV-103105,Bravo Farm Broccoli 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Italy,5.55,174,4.6,421,0.7,true,2.8,2,D,Aisle 2 · Shelf D
+103463,BRV-103463,Bravo Farm Carrot 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,Italy,52.88,331,4.8,388,1.4,true,2.1,2,A,Aisle 2 · Shelf A
+103713,BRV-103713,Bravo Farm Carrot 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,250ml,India,10.41,281,4,266,1.7,true,3.9,2,A,Aisle 2 · Shelf A
+103431,BRV-103431,Bravo Farm Chicken Breast 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,Spain,44.43,490,3.7,709,1.2,true,2.8,2,D,Aisle 2 · Shelf D
+102771,BRV-102771,Bravo Farm Chicken Thighs Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Poland,70.98,296,4.7,269,0.3,true,2.3,2,B,Aisle 2 · Shelf B
+102436,BRV-102436,Bravo Farm Free-Range Eggs 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,Italy,78.49,22,4.8,465,1,true,3.4,2,B,Aisle 2 · Shelf B
+102439,BRV-102439,Bravo Farm Garlic 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2kg,Poland,22.25,403,4.1,286,0.7,true,3.3,2,E,Aisle 2 · Shelf E
+102851,BRV-102851,Bravo Farm Grapes 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,India,76.73,165,4.3,288,0.6,true,3,2,C,Aisle 2 · Shelf C
+103832,BRV-103832,Bravo Farm Kefir 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,France,47.07,456,3.8,522,1,true,1,2,C,Aisle 2 · Shelf C
+102487,BRV-102487,Bravo Farm Kiwi 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,250g,USA,56.98,89,3.5,221,0.6,true,3.1,2,B,Aisle 2 · Shelf B
+102144,BRV-102144,Bravo Farm Lactose-Free Milk 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500ml,China,7.89,170,3.5,595,1.5,true,1.7,2,F,Aisle 2 · Shelf F
+102327,BRV-102327,Bravo Farm Lettuce 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1L,China,63.49,230,4.1,468,0.6,true,2.7,2,A,Aisle 2 · Shelf A
+102925,BRV-102925,Bravo Farm Lettuce 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,200g,Russia,10.66,124,4,372,0.2,true,2.4,2,E,Aisle 2 · Shelf E
+102734,BRV-102734,Bravo Farm Lime 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Spain,25.61,340,4.4,656,1.6,true,2.4,2,C,Aisle 2 · Shelf C
+102876,BRV-102876,Bravo Farm Lime Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Azerbaijan,12.37,204,3.9,209,0.3,true,3.9,2,D,Aisle 2 · Shelf D
+102015,BRV-102015,Bravo Farm Melon 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,5kg,Germany,12.22,68,4.5,584,0.7,true,3.4,2,A,Aisle 2 · Shelf A
+103902,BRV-103902,Bravo Farm Mozzarella 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Italy,9.49,292,4.5,402,1.7,true,1,2,A,Aisle 2 · Shelf A
+102239,BRV-102239,Bravo Farm Mozzarella Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Georgia,9.76,65,3.9,456,0.7,true,2.1,2,A,Aisle 2 · Shelf A
+103347,BRV-103347,Bravo Farm Orange 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Germany,4.81,490,4,409,0.2,true,2.8,2,F,Aisle 2 · Shelf F
+103936,BRV-103936,Bravo Farm Parmesan 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Ukraine,56.76,348,4.8,203,0.5,true,0.8,2,D,Aisle 2 · Shelf D
+102931,BRV-102931,Bravo Farm Parmesan 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Russia,26.97,3,3.7,719,0.6,true,0.8,2,B,Aisle 2 · Shelf B
+102204,BRV-102204,Bravo Farm Parsley 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,200g,Turkey,0.72,133,4.8,228,1.1,true,3.8,2,A,Aisle 2 · Shelf A
+103186,BRV-103186,Bravo Farm Pineapple 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,2L,USA,19.48,424,3,246,1.1,true,3.1,2,C,Aisle 2 · Shelf C
+103611,BRV-103611,Bravo Farm Pineapple 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,76.01,223,4.5,317,1,true,3.2,2,F,Aisle 2 · Shelf F
+103610,BRV-103610,Bravo Farm Plum Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Turkey,34.2,119,3.2,616,1.5,true,2.8,2,A,Aisle 2 · Shelf A
+103553,BRV-103553,Bravo Farm Plum Pack of 24,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Russia,11.66,70,4.3,284,0.8,true,3.8,2,E,Aisle 2 · Shelf E
+103750,BRV-103750,Bravo Farm Spinach 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,21.19,14,4.7,621,1.2,true,2.3,2,D,Aisle 2 · Shelf D
+102857,BRV-102857,Bravo Farm Tomato Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Italy,14.26,274,4.5,314,1.3,true,0.7,2,A,Aisle 2 · Shelf A
+103006,BRV-103006,Bravo Farm Veal 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Ukraine,15.16,203,3.5,491,0.9,true,2.8,2,F,Aisle 2 · Shelf F
+102764,BRV-102764,Bravo Farm Watermelon Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Netherlands,66.13,85,3,479,1.7,true,3.1,2,D,Aisle 2 · Shelf D
+103762,BRV-103762,Bravo Farm Zucchini 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Milk,500ml,Brazil,24.95,444,3.5,230,1.1,true,0.8,2,A,Aisle 2 · Shelf A
+103251,BRV-103251,Local Farm Basil 1L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1L,China,64.76,438,3.3,469,0.6,true,2.9,2,F,Aisle 2 · Shelf F
+103529,BRV-103529,Local Farm Cabbage Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Poland,3.74,312,4.4,167,0.3,true,0.5,2,F,Aisle 2 · Shelf F
+103815,BRV-103815,Local Farm Chicken Thighs Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Azerbaijan,49.06,204,3.6,279,1.5,true,3.2,2,B,Aisle 2 · Shelf B
+102653,BRV-102653,Local Farm Kiwi 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,5.53,374,3.6,640,0.7,true,3.5,2,A,Aisle 2 · Shelf A
+102669,BRV-102669,Local Farm Lamb 2L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,2L,Poland,25.08,340,4.5,719,1.1,true,0.5,2,D,Aisle 2 · Shelf D
+103944,BRV-103944,Local Farm Lamb Single,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Single,USA,2.68,92,3.1,364,1.2,true,2.5,2,C,Aisle 2 · Shelf C
+103501,BRV-103501,Local Farm Melon 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,Turkey,43.5,24,3.4,405,1.1,true,1.5,2,B,Aisle 2 · Shelf B
+103528,BRV-103528,Local Farm Melon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,500g,USA,29.5,312,3.9,410,1.1,true,1.1,2,C,Aisle 2 · Shelf C
+102766,BRV-102766,Local Farm Melon Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Georgia,28.51,303,3.8,657,0.4,true,3.2,2,B,Aisle 2 · Shelf B
+102352,BRV-102352,Local Farm Melon Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Brazil,17.9,413,3.8,344,1.6,true,3.8,2,E,Aisle 2 · Shelf E
+102386,BRV-102386,Local Farm Mint 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1.5L,China,71.5,157,4.2,671,1,true,3.8,2,F,Aisle 2 · Shelf F
+103963,BRV-103963,Local Farm Mint 750g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,49.59,179,3.1,489,1.2,true,2,2,D,Aisle 2 · Shelf D
+103065,BRV-103065,Local Farm Organic Strawberry Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Iran,54.03,105,5,658,0.7,true,3.4,2,A,Aisle 2 · Shelf A
+102099,BRV-102099,Local Farm Parmesan 500g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,500g,Ukraine,47.67,315,4.7,644,0.3,true,3.2,2,E,Aisle 2 · Shelf E
+102705,BRV-102705,Local Farm Peach Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,60.2,161,3.5,360,0.7,true,3,2,E,Aisle 2 · Shelf E
+103606,BRV-103606,Local Farm Pear 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Georgia,33.55,102,3.5,361,1.2,true,1,2,B,Aisle 2 · Shelf B
+102967,BRV-102967,Local Farm Salmon 100g,Local Farm,"Fresh Produce, Meat & Dairy",Milk,100g,USA,64.17,349,4.4,678,1.5,true,2.7,2,E,Aisle 2 · Shelf E
+102933,BRV-102933,Local Farm Strawberry Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Italy,13.47,162,4.5,209,0.3,true,1.7,2,B,Aisle 2 · Shelf B
+103010,BRV-103010,Local Farm Suluguni 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Milk,1kg,Ukraine,73.39,192,4.2,590,0.3,true,3.5,2,E,Aisle 2 · Shelf E
+102022,BRV-102022,Milla Banana 1.5L,Milla,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,36.26,428,4.7,434,1.5,true,2.9,2,A,Aisle 2 · Shelf A
+103255,BRV-103255,Milla Banana 1L,Milla,"Fresh Produce, Meat & Dairy",Milk,1L,Brazil,69.45,373,3.1,561,0.8,true,3.4,2,D,Aisle 2 · Shelf D
+102508,BRV-102508,Milla Banana 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,75.49,67,3.9,159,1.7,true,3.5,2,F,Aisle 2 · Shelf F
+103530,BRV-103530,Milla Basil 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,Poland,62.43,8,3,517,0.5,true,3.5,2,D,Aisle 2 · Shelf D
+103477,BRV-103477,Milla Broccoli 1.5L,Milla,"Fresh Produce, Meat & Dairy",Milk,1.5L,Russia,64.54,249,3.4,307,0.5,true,2.6,2,D,Aisle 2 · Shelf D
+102252,BRV-102252,Milla Chicken Thighs 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Spain,45.44,150,3,705,0.7,true,2.9,2,B,Aisle 2 · Shelf B
+102267,BRV-102267,Milla Cilantro 250g,Milla,"Fresh Produce, Meat & Dairy",Milk,250g,Russia,53.63,416,4.2,177,1.4,true,3,2,B,Aisle 2 · Shelf B
+103749,BRV-103749,Milla Eggplant 1L,Milla,"Fresh Produce, Meat & Dairy",Milk,1L,Italy,73.15,442,4.4,295,0.8,true,3,2,B,Aisle 2 · Shelf B
+103589,BRV-103589,Milla Feta Cheese 250ml,Milla,"Fresh Produce, Meat & Dairy",Milk,250ml,Poland,19.89,499,4.5,621,0.6,true,3.4,2,F,Aisle 2 · Shelf F
+102657,BRV-102657,Milla Ground Beef Family Pack,Milla,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Spain,36.34,254,3.7,620,0.5,true,3.4,2,E,Aisle 2 · Shelf E
+102390,BRV-102390,Milla Lamb 500g,Milla,"Fresh Produce, Meat & Dairy",Milk,500g,India,32.19,390,4.9,138,1.2,true,3.7,2,E,Aisle 2 · Shelf E
+102103,BRV-102103,Milla Lettuce 500ml,Milla,"Fresh Produce, Meat & Dairy",Milk,500ml,Spain,17.24,236,3.3,440,0.9,true,1.2,2,C,Aisle 2 · Shelf C
+103378,BRV-103378,Milla Lime Bulk,Milla,"Fresh Produce, Meat & Dairy",Milk,Bulk,Georgia,37.07,383,4.9,135,0.6,true,3.5,2,D,Aisle 2 · Shelf D
+103355,BRV-103355,Milla Melon 1kg,Milla,"Fresh Produce, Meat & Dairy",Milk,1kg,France,58.77,130,3.7,552,0.2,true,3.4,2,A,Aisle 2 · Shelf A
+102280,BRV-102280,Milla Melon 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,India,6.41,341,4.1,264,0.9,true,1.5,2,E,Aisle 2 · Shelf E
+102504,BRV-102504,Milla Original Lettuce 500ml,Milla,"Fresh Produce, Meat & Dairy",Milk,500ml,Iran,42.98,290,4.1,563,0.7,true,1,2,B,Aisle 2 · Shelf B
+102905,BRV-102905,Milla Parsley Family Pack,Milla,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Georgia,49.17,1,4,218,0.8,true,2.9,2,E,Aisle 2 · Shelf E
+103170,BRV-103170,Milla Sturgeon 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,France,27.73,213,3.3,533,1.5,true,0.6,2,D,Aisle 2 · Shelf D
+103839,BRV-103839,Milla Tomato Bulk,Milla,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,32.11,328,4,553,0.8,true,2.9,2,D,Aisle 2 · Shelf D
+102758,BRV-102758,Milla Trout 2kg,Milla,"Fresh Produce, Meat & Dairy",Milk,2kg,Brazil,32.9,382,3.2,418,0.3,true,0.6,2,A,Aisle 2 · Shelf A
+103473,BRV-103473,Milla Zucchini 750g,Milla,"Fresh Produce, Meat & Dairy",Milk,750g,Brazil,60.52,274,4.4,447,1.1,true,3.6,2,B,Aisle 2 · Shelf B
+102752,BRV-102752,Palsud Banana 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,0.93,479,3.4,308,0.3,true,2.6,2,C,Aisle 2 · Shelf C
+103496,BRV-103496,Palsud Banana Single,Palsud,"Fresh Produce, Meat & Dairy",Milk,Single,USA,40.15,378,4.3,520,1.7,true,2,2,E,Aisle 2 · Shelf E
+102529,BRV-102529,Palsud Bell Pepper Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Ukraine,22.68,241,4.5,564,0.8,true,3.8,2,C,Aisle 2 · Shelf C
+103836,BRV-103836,Palsud Broccoli Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,59.16,87,5,270,0.5,true,1.1,2,C,Aisle 2 · Shelf C
+103410,BRV-103410,Palsud Cabbage 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,29.67,132,3.8,682,0.3,true,3.9,2,E,Aisle 2 · Shelf E
+103118,BRV-103118,Palsud Cabbage 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Turkey,42.67,430,3,583,1.3,true,3.5,2,D,Aisle 2 · Shelf D
+103056,BRV-103056,Palsud Cabbage Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Turkey,11.18,204,3,568,0.3,true,3.3,2,C,Aisle 2 · Shelf C
+102747,BRV-102747,Palsud Cheddar 1kg,Palsud,"Fresh Produce, Meat & Dairy",Milk,1kg,Russia,15.87,8,3.6,194,1.4,true,3.6,2,A,Aisle 2 · Shelf A
+103848,BRV-103848,Palsud Cheddar 750g,Palsud,"Fresh Produce, Meat & Dairy",Milk,750g,Azerbaijan,66.49,136,4.5,285,1,true,2.9,2,D,Aisle 2 · Shelf D
+103133,BRV-103133,Palsud Cherry Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Iran,1.38,213,3.8,482,0.7,true,2.1,2,A,Aisle 2 · Shelf A
+103215,BRV-103215,Palsud Chicken Wings 250ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,250ml,Italy,35.42,470,3.5,197,0.4,true,3.2,2,F,Aisle 2 · Shelf F
+102243,BRV-102243,Palsud Cilantro Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Georgia,39.09,433,4,607,0.8,true,1.1,2,F,Aisle 2 · Shelf F
+102795,BRV-102795,Palsud Feta Cheese 1kg,Palsud,"Fresh Produce, Meat & Dairy",Milk,1kg,Italy,10.43,4,3.7,423,1.3,true,1.3,2,F,Aisle 2 · Shelf F
+103126,BRV-103126,Palsud Garlic 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Turkey,28.48,113,4.4,652,1.5,true,0.7,2,A,Aisle 2 · Shelf A
+103464,BRV-103464,Palsud Grapes 100g,Palsud,"Fresh Produce, Meat & Dairy",Milk,100g,Italy,44.53,420,4.4,691,1.6,true,1.9,2,F,Aisle 2 · Shelf F
+103482,BRV-103482,Palsud Ground Beef Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Milk,Family Pack,China,26.5,273,4.9,195,1.1,true,1.1,2,B,Aisle 2 · Shelf B
+102955,BRV-102955,Palsud Kefir 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,Turkey,57.88,132,3.2,509,0.8,true,3.3,2,B,Aisle 2 · Shelf B
+102215,BRV-102215,Palsud Lactose-Free Milk 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,China,17.5,158,4.9,490,1.4,true,3.9,2,A,Aisle 2 · Shelf A
+102335,BRV-102335,Palsud Lamb 500g,Palsud,"Fresh Produce, Meat & Dairy",Milk,500g,Poland,24.61,435,4,681,1,true,1.9,2,B,Aisle 2 · Shelf B
+103114,BRV-103114,Palsud Lamb 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Poland,67.47,167,4.5,515,0.8,true,3,2,D,Aisle 2 · Shelf D
+103757,BRV-103757,Palsud Lamb Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Azerbaijan,59.36,364,3.3,178,1.3,true,1.5,2,A,Aisle 2 · Shelf A
+103182,BRV-103182,Palsud Lettuce Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Italy,20.23,359,4.5,274,1.2,true,3.9,2,A,Aisle 2 · Shelf A
+103098,BRV-103098,Palsud Lime 200g,Palsud,"Fresh Produce, Meat & Dairy",Milk,200g,Russia,32.48,83,4.2,190,1.2,true,0.5,2,A,Aisle 2 · Shelf A
+103306,BRV-103306,Palsud Lime Bulk,Palsud,"Fresh Produce, Meat & Dairy",Milk,Bulk,Spain,38.64,388,4,328,1.1,true,2,2,C,Aisle 2 · Shelf C
+103367,BRV-103367,Palsud Mint 500ml,Palsud,"Fresh Produce, Meat & Dairy",Milk,500ml,Georgia,27.43,41,3.3,259,0.7,true,3.9,2,F,Aisle 2 · Shelf F
+102830,BRV-102830,Palsud Mint Pack of 24,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,USA,78.57,53,3.2,303,0.3,true,1.7,2,B,Aisle 2 · Shelf B
+102570,BRV-102570,Palsud Onion 2L,Palsud,"Fresh Produce, Meat & Dairy",Milk,2L,Turkey,18.86,431,3.5,330,0.6,true,1.2,2,A,Aisle 2 · Shelf A
+102694,BRV-102694,Palsud Plum 200g,Palsud,"Fresh Produce, Meat & Dairy",Milk,200g,France,15.99,234,3.6,171,1.3,true,2.5,2,D,Aisle 2 · Shelf D
+102459,BRV-102459,Palsud Plum 500g,Palsud,"Fresh Produce, Meat & Dairy",Milk,500g,Italy,12.6,92,4.9,708,1.2,true,3.7,2,E,Aisle 2 · Shelf E
+102367,BRV-102367,Palsud Pomegranate 750g,Palsud,"Fresh Produce, Meat & Dairy",Milk,750g,Georgia,16.98,60,4.7,560,1.4,true,2.1,2,C,Aisle 2 · Shelf C
+103403,BRV-103403,Palsud Salmon 2L,Palsud,"Fresh Produce, Meat & Dairy",Milk,2L,Russia,32.82,129,4.6,174,0.3,true,3.3,2,C,Aisle 2 · Shelf C
+103383,BRV-103383,Palsud Watermelon 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Milk,1.5L,Azerbaijan,9.53,397,4.4,593,1.6,true,2.2,2,F,Aisle 2 · Shelf F
+103608,BRV-103608,Palsud Whole Milk Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Ukraine,70.7,88,4.5,635,1.1,true,3.4,2,F,Aisle 2 · Shelf F
+102016,BRV-102016,Pinar Apple 200g,Pinar,"Fresh Produce, Meat & Dairy",Milk,200g,Azerbaijan,9.46,340,3.5,315,1.1,true,1.9,2,B,Aisle 2 · Shelf B
+103183,BRV-103183,Pinar Apple 5kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,5kg,Azerbaijan,11.46,196,3.1,207,0.7,true,2.1,2,B,Aisle 2 · Shelf B
+102690,BRV-102690,Pinar Ayran Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,USA,15.63,298,3.7,527,1.7,true,1,2,F,Aisle 2 · Shelf F
+102010,BRV-102010,Pinar Banana Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Georgia,33.78,17,3.6,233,1.4,true,3.2,2,B,Aisle 2 · Shelf B
+103927,BRV-103927,Pinar Basil Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Azerbaijan,67.51,194,4.4,473,0.3,true,2.4,2,F,Aisle 2 · Shelf F
+102205,BRV-102205,Pinar Bell Pepper 250g,Pinar,"Fresh Produce, Meat & Dairy",Milk,250g,Netherlands,58.05,140,4.1,305,1.6,true,2.5,2,F,Aisle 2 · Shelf F
+103740,BRV-103740,Pinar Broccoli 200g,Pinar,"Fresh Produce, Meat & Dairy",Milk,200g,Brazil,65.19,135,4.6,642,0.8,true,2.1,2,E,Aisle 2 · Shelf E
+103510,BRV-103510,Pinar Broccoli Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Germany,53.29,81,3.8,675,1.3,true,3,2,D,Aisle 2 · Shelf D
+103758,BRV-103758,Pinar Carrot 100g,Pinar,"Fresh Produce, Meat & Dairy",Milk,100g,Russia,22.46,84,4.4,149,1.4,true,2.8,2,D,Aisle 2 · Shelf D
+103937,BRV-103937,Pinar Chicken Wings 750g,Pinar,"Fresh Produce, Meat & Dairy",Milk,750g,Germany,27.61,275,4.8,134,1.4,true,2.3,2,E,Aisle 2 · Shelf E
+103399,BRV-103399,Pinar Dill Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,USA,23.92,219,3.4,416,1.2,true,2.1,2,E,Aisle 2 · Shelf E
+103229,BRV-103229,Pinar Dill Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Italy,34.53,215,3.3,628,0.5,true,2,2,C,Aisle 2 · Shelf C
+103273,BRV-103273,Pinar Eco Banana Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,USA,60.66,84,3.9,497,0.7,true,1.6,2,F,Aisle 2 · Shelf F
+102686,BRV-102686,Pinar Eggplant Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,Iran,68.8,64,3.1,670,1.7,true,3.3,2,A,Aisle 2 · Shelf A
+103769,BRV-103769,Pinar Feta Cheese Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Russia,28.27,486,4.2,669,0.7,true,3.7,2,B,Aisle 2 · Shelf B
+103248,BRV-103248,Pinar Garlic 1L,Pinar,"Fresh Produce, Meat & Dairy",Milk,1L,India,54.91,208,4.9,291,0.5,true,1.5,2,D,Aisle 2 · Shelf D
+102927,BRV-102927,Pinar Grapes 250g,Pinar,"Fresh Produce, Meat & Dairy",Milk,250g,Iran,2.83,463,3.5,442,0.9,true,1.7,2,A,Aisle 2 · Shelf A
+102260,BRV-102260,Pinar Ground Beef Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,Iran,35.01,136,3.2,566,0.3,true,1.3,2,C,Aisle 2 · Shelf C
+103730,BRV-103730,Pinar Lemon Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,18.05,368,4.7,231,0.9,true,1,2,D,Aisle 2 · Shelf D
+103269,BRV-103269,Pinar Parsley Bulk,Pinar,"Fresh Produce, Meat & Dairy",Milk,Bulk,Netherlands,76.48,58,4.3,640,1.4,true,2.2,2,A,Aisle 2 · Shelf A
+102286,BRV-102286,Pinar Plum Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,India,19.09,218,4.7,434,1,true,3.8,2,E,Aisle 2 · Shelf E
+103712,BRV-103712,Pinar Potato 2kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,2kg,Spain,48.27,429,4.7,327,1.2,true,3.3,2,F,Aisle 2 · Shelf F
+102501,BRV-102501,Pinar Quail Eggs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Milk,500ml,Russia,56.86,360,4.7,186,0.7,true,1.6,2,C,Aisle 2 · Shelf C
+103163,BRV-103163,Pinar Salmon 5kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,5kg,Georgia,73.79,24,4.3,425,1.3,true,2.5,2,F,Aisle 2 · Shelf F
+102845,BRV-102845,Pinar Strawberry 500ml,Pinar,"Fresh Produce, Meat & Dairy",Milk,500ml,India,53.42,44,4.3,571,1.3,true,3.8,2,D,Aisle 2 · Shelf D
+103205,BRV-103205,Pinar Tomato 2kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,2kg,Georgia,54.56,163,4.4,446,0.9,true,1.6,2,A,Aisle 2 · Shelf A
+102890,BRV-102890,Pinar Turkey 1L,Pinar,"Fresh Produce, Meat & Dairy",Milk,1L,Georgia,18.36,66,3.9,209,0.9,true,1.1,2,D,Aisle 2 · Shelf D
+103017,BRV-103017,Pinar Turkey 1kg,Pinar,"Fresh Produce, Meat & Dairy",Milk,1kg,India,69.11,283,4.3,177,1.6,true,1,2,D,Aisle 2 · Shelf D
+102642,BRV-102642,Pinar Watermelon Single,Pinar,"Fresh Produce, Meat & Dairy",Milk,Single,France,71.49,285,4.4,414,1.4,true,2.1,2,E,Aisle 2 · Shelf E
+103559,BRV-103559,Pinar Whole Milk 100g,Pinar,"Fresh Produce, Meat & Dairy",Milk,100g,Georgia,32.74,248,3.9,618,1.6,true,3,2,A,Aisle 2 · Shelf A
+102307,BRV-102307,Pinar Zucchini Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Turkey,2.94,63,3.3,250,0.7,true,3.1,2,C,Aisle 2 · Shelf C
+103068,BRV-103068,President Bell Pepper 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Georgia,73.27,100,3.9,707,0.5,true,2.3,2,D,Aisle 2 · Shelf D
+102947,BRV-102947,President Cabbage 100g,President,"Fresh Produce, Meat & Dairy",Milk,100g,Netherlands,67.82,418,3.2,680,1.6,true,2.7,2,A,Aisle 2 · Shelf A
+102736,BRV-102736,President Cherry 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,Turkey,34.8,38,3.7,454,0.7,true,1.5,2,E,Aisle 2 · Shelf E
+103670,BRV-103670,President Chicken Breast Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,China,17.82,467,4.1,646,1.6,true,2.3,2,A,Aisle 2 · Shelf A
+102214,BRV-102214,President Chicken Wings 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,Poland,32.91,81,3,551,0.9,true,0.9,2,D,Aisle 2 · Shelf D
+103304,BRV-103304,President Cilantro 250ml,President,"Fresh Produce, Meat & Dairy",Milk,250ml,China,78.12,294,4.6,278,0.2,true,3.6,2,A,Aisle 2 · Shelf A
+102792,BRV-102792,President Dill 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,China,44.91,475,3.8,176,1,true,2.2,2,A,Aisle 2 · Shelf A
+102802,BRV-102802,President Feta Cheese Single,President,"Fresh Produce, Meat & Dairy",Milk,Single,France,49.59,284,3.6,400,0.4,true,0.7,2,E,Aisle 2 · Shelf E
+102074,BRV-102074,President Grapes 1.5L,President,"Fresh Produce, Meat & Dairy",Milk,1.5L,Brazil,3.72,444,4.7,199,0.9,true,1,2,B,Aisle 2 · Shelf B
+102730,BRV-102730,President Kiwi 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,India,73.74,242,3.6,468,0.3,true,1.3,2,E,Aisle 2 · Shelf E
+102945,BRV-102945,President Kiwi 5kg,President,"Fresh Produce, Meat & Dairy",Milk,5kg,Spain,54.33,403,3.6,158,0.6,true,2.2,2,E,Aisle 2 · Shelf E
+102894,BRV-102894,President Lactose-Free Milk Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,China,20.8,284,3.9,557,0.5,true,0.7,2,F,Aisle 2 · Shelf F
+102760,BRV-102760,President Lamb 500g,President,"Fresh Produce, Meat & Dairy",Milk,500g,Azerbaijan,77.87,97,3.3,427,1.3,true,1.1,2,F,Aisle 2 · Shelf F
+103401,BRV-103401,President Melon 1kg,President,"Fresh Produce, Meat & Dairy",Milk,1kg,France,51.49,60,3.7,136,0.3,true,1.8,2,A,Aisle 2 · Shelf A
+102797,BRV-102797,President Onion 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Netherlands,47.98,307,3.9,297,0.5,true,2.2,2,F,Aisle 2 · Shelf F
+103177,BRV-103177,President Orange Pack of 6,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Italy,12.17,160,3.5,346,0.9,true,2.3,2,E,Aisle 2 · Shelf E
+103469,BRV-103469,President Parmesan Pack of 24,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 24,Netherlands,33.42,466,4,258,0.8,true,2.4,2,E,Aisle 2 · Shelf E
+102819,BRV-102819,President Pear 2L,President,"Fresh Produce, Meat & Dairy",Milk,2L,China,21.33,463,3.7,636,0.9,true,2.8,2,E,Aisle 2 · Shelf E
+102678,BRV-102678,President Pineapple 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Ukraine,70.04,482,4.8,581,1.3,true,2.6,2,B,Aisle 2 · Shelf B
+103053,BRV-103053,President Plum Pack of 6,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Italy,44.42,96,4.2,273,0.8,true,0.6,2,F,Aisle 2 · Shelf F
+103081,BRV-103081,President Pomegranate Pack of 12,President,"Fresh Produce, Meat & Dairy",Milk,Pack of 12,China,59.09,150,3.4,612,0.3,true,2.2,2,A,Aisle 2 · Shelf A
+103439,BRV-103439,President Potato 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,India,62.02,255,4.7,581,1,true,1.9,2,B,Aisle 2 · Shelf B
+102943,BRV-102943,President Salmon 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Russia,61.43,51,4.3,556,1.4,true,2.3,2,E,Aisle 2 · Shelf E
+103293,BRV-103293,President Salmon Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,India,73.74,124,4.4,199,1.3,true,0.9,2,F,Aisle 2 · Shelf F
+102428,BRV-102428,President Shrimp Bulk,President,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,31.01,127,4.4,152,1.1,true,3.6,2,E,Aisle 2 · Shelf E
+102170,BRV-102170,President Tomato Family Pack,President,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Germany,50.49,342,4.7,630,1.4,true,0.8,2,C,Aisle 2 · Shelf C
+103356,BRV-103356,President Trout 1L,President,"Fresh Produce, Meat & Dairy",Milk,1L,Iran,17.72,95,4,587,0.6,true,1.2,2,B,Aisle 2 · Shelf B
+103109,BRV-103109,President Turkey 5kg,President,"Fresh Produce, Meat & Dairy",Milk,5kg,Georgia,27.83,330,4.1,145,0.5,true,2,2,F,Aisle 2 · Shelf F
+102915,BRV-102915,President Veal 500ml,President,"Fresh Produce, Meat & Dairy",Milk,500ml,Ukraine,69.13,221,3.9,273,0.4,true,0.5,2,F,Aisle 2 · Shelf F
+103656,BRV-103656,Sehiyye Beef Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Family Pack,Brazil,74.19,110,3.8,718,1.5,true,3.1,2,C,Aisle 2 · Shelf C
+102741,BRV-102741,Sehiyye Beef Single,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Single,Brazil,79.32,152,4.8,520,0.9,true,3.7,2,A,Aisle 2 · Shelf A
+103208,BRV-103208,Sehiyye Carrot 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,France,15.99,165,4.4,159,0.4,true,1.3,2,B,Aisle 2 · Shelf B
+103435,BRV-103435,Sehiyye Carrot Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,France,19.07,387,3.5,569,0.2,true,1.3,2,B,Aisle 2 · Shelf B
+102745,BRV-102745,Sehiyye Chicken Thighs 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,USA,60.04,396,4.5,268,1.4,true,3.6,2,C,Aisle 2 · Shelf C
+103584,BRV-103584,Sehiyye Free-Range Eggs 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,1.5L,Germany,53.47,446,3.5,188,1,true,3.2,2,E,Aisle 2 · Shelf E
+102878,BRV-102878,Sehiyye Free-Range Eggs 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Russia,45.91,100,3.8,403,0.3,true,2.7,2,B,Aisle 2 · Shelf B
+103479,BRV-103479,Sehiyye Garlic Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Brazil,78.21,133,4.1,569,1.1,true,3.8,2,F,Aisle 2 · Shelf F
+103701,BRV-103701,Sehiyye Ground Beef Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Italy,62.14,291,3.7,659,1.6,true,3.9,2,B,Aisle 2 · Shelf B
+102457,BRV-102457,Sehiyye Kefir 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Italy,61.75,172,4.4,326,0.5,true,1.6,2,A,Aisle 2 · Shelf A
+102735,BRV-102735,Sehiyye Kiwi 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,5kg,India,53.64,415,3.3,413,0.6,true,2.8,2,B,Aisle 2 · Shelf B
+102597,BRV-102597,Sehiyye Kiwi 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Russia,45.84,411,3.8,483,1.7,true,3.4,2,F,Aisle 2 · Shelf F
+102786,BRV-102786,Sehiyye Lactose-Free Milk 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,Netherlands,51.78,8,4.8,371,1.4,true,1.1,2,B,Aisle 2 · Shelf B
+102250,BRV-102250,Sehiyye Lactose-Free Milk Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,USA,69.63,336,3.6,519,1.2,true,1.2,2,D,Aisle 2 · Shelf D
+102401,BRV-102401,Sehiyye Lettuce 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500g,Poland,77.22,320,4.2,183,0.7,true,0.6,2,D,Aisle 2 · Shelf D
+103541,BRV-103541,Sehiyye Light Chicken Thighs 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,France,2.32,106,3.2,385,0.4,true,0.9,2,F,Aisle 2 · Shelf F
+103655,BRV-103655,Sehiyye Lime 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,250ml,Brazil,2.66,128,3.8,477,1.4,true,4,2,F,Aisle 2 · Shelf F
+102124,BRV-102124,Sehiyye Mini Plum 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,2kg,Italy,8.26,477,3.6,201,0.8,true,2.9,2,D,Aisle 2 · Shelf D
+102846,BRV-102846,Sehiyye Parmesan 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,5kg,Brazil,45.66,182,3.7,504,1.3,true,0.9,2,A,Aisle 2 · Shelf A
+102049,BRV-102049,Sehiyye Plum 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,2kg,Germany,25.48,207,3.5,639,1.4,true,0.8,2,F,Aisle 2 · Shelf F
+102505,BRV-102505,Sehiyye Plum Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,India,62.9,270,3.5,462,1.4,true,2.7,2,A,Aisle 2 · Shelf A
+102500,BRV-102500,Sehiyye Spinach Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 4,Ukraine,7.82,6,4.8,583,0.7,true,2.6,2,B,Aisle 2 · Shelf B
+102935,BRV-102935,Sehiyye Sturgeon 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,1.5L,USA,76.24,438,3.3,139,0.3,true,1.9,2,B,Aisle 2 · Shelf B
+102444,BRV-102444,Sehiyye Tomato Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,France,56.06,297,3.8,138,1,true,2.4,2,E,Aisle 2 · Shelf E
+103895,BRV-103895,Sehiyye Tomato Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Pack of 6,Poland,9.18,313,3.2,607,0.4,true,3.3,2,B,Aisle 2 · Shelf B
+103579,BRV-103579,Sehiyye Turkey 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Ukraine,56.29,293,3.9,564,1,true,0.6,2,E,Aisle 2 · Shelf E
+103786,BRV-103786,Sehiyye Turkey Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,Bulk,Russia,1.87,458,4.5,284,0.6,true,3.8,2,A,Aisle 2 · Shelf A
+103199,BRV-103199,Sehiyye Watermelon 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,750g,Poland,43.57,15,3.9,594,0.5,true,3.6,2,A,Aisle 2 · Shelf A
+102068,BRV-102068,Sehiyye Zucchini 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Milk,500ml,Netherlands,2.4,249,3.4,616,0.3,true,2.4,2,E,Aisle 2 · Shelf E
+102384,BRV-102384,Atena Basil 1L,Atena,"Fresh Produce, Meat & Dairy",Poultry,1L,Spain,21.25,442,3.3,145,0.3,true,4,2,B,Aisle 2 · Shelf B
+103633,BRV-103633,Atena Chicken Thighs Single,Atena,"Fresh Produce, Meat & Dairy",Poultry,Single,Iran,19.59,217,4.1,201,1.1,true,1.5,2,B,Aisle 2 · Shelf B
+103835,BRV-103835,Atena Chicken Wings 500g,Atena,"Fresh Produce, Meat & Dairy",Poultry,500g,Iran,56.99,420,5,637,1.5,true,3.6,2,F,Aisle 2 · Shelf F
+102388,BRV-102388,Atena Dill 750g,Atena,"Fresh Produce, Meat & Dairy",Poultry,750g,Ukraine,37.21,1,3.2,605,0.6,true,3.3,2,D,Aisle 2 · Shelf D
+102424,BRV-102424,Atena Free-Range Eggs Family Pack,Atena,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,China,9.44,218,3.1,428,0.9,true,1.5,2,A,Aisle 2 · Shelf A
+102712,BRV-102712,Atena Lettuce Bulk,Atena,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Italy,74.09,25,3.8,256,1.3,true,1.7,2,E,Aisle 2 · Shelf E
+102143,BRV-102143,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Poultry,Single,Poland,72.55,336,3.6,236,0.8,true,3.8,2,C,Aisle 2 · Shelf C
+102232,BRV-102232,Atena Parmesan Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Azerbaijan,70.64,348,3.4,435,0.9,true,1.4,2,F,Aisle 2 · Shelf F
+103503,BRV-103503,Atena Pineapple 1.5L,Atena,"Fresh Produce, Meat & Dairy",Poultry,1.5L,USA,31.1,260,3.7,659,1.5,true,2,2,D,Aisle 2 · Shelf D
+103852,BRV-103852,Atena Pineapple 250ml,Atena,"Fresh Produce, Meat & Dairy",Poultry,250ml,Brazil,11.11,180,4.9,140,0.3,true,3.7,2,C,Aisle 2 · Shelf C
+103388,BRV-103388,Atena Quail Eggs 500g,Atena,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,1.33,144,4.2,226,0.5,true,0.6,2,C,Aisle 2 · Shelf C
+103259,BRV-103259,Atena Skim Milk 2kg,Atena,"Fresh Produce, Meat & Dairy",Poultry,2kg,Ukraine,53.6,6,4.2,421,1.3,true,0.7,2,B,Aisle 2 · Shelf B
+103067,BRV-103067,Atena Sturgeon Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Poland,11.41,102,4.4,588,1.6,true,0.6,2,E,Aisle 2 · Shelf E
+103314,BRV-103314,Atena Turkey Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Ukraine,59.39,472,4.9,705,0.3,true,2,2,B,Aisle 2 · Shelf B
+102414,BRV-102414,Atena Watermelon 5kg,Atena,"Fresh Produce, Meat & Dairy",Poultry,5kg,Netherlands,54.91,384,4.2,513,0.6,true,2.1,2,F,Aisle 2 · Shelf F
+103607,BRV-103607,Atena Zucchini 750g,Atena,"Fresh Produce, Meat & Dairy",Poultry,750g,Russia,53.59,425,4,260,0.3,true,3.4,2,C,Aisle 2 · Shelf C
+103544,BRV-103544,Bravo Farm Apple 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,Iran,2.15,200,4.3,680,1.4,true,3.1,2,A,Aisle 2 · Shelf A
+103874,BRV-103874,Bravo Farm Basil 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Azerbaijan,53.3,468,3.9,404,0.8,true,2.9,2,E,Aisle 2 · Shelf E
+103859,BRV-103859,Bravo Farm Broccoli 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,37.47,128,3.8,519,1.6,true,2.7,2,B,Aisle 2 · Shelf B
+103433,BRV-103433,Bravo Farm Cherry Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,China,45.53,25,4.4,403,0.4,true,1.2,2,B,Aisle 2 · Shelf B
+102737,BRV-102737,Bravo Farm Chicken Wings Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Spain,8.22,104,4.4,419,0.5,true,3,2,D,Aisle 2 · Shelf D
+103419,BRV-103419,Bravo Farm Classic Orange 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Russia,58.24,283,3.5,191,0.7,true,1,2,D,Aisle 2 · Shelf D
+102271,BRV-102271,Bravo Farm Cucumber Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,India,35.69,144,3.8,716,1.6,true,0.5,2,C,Aisle 2 · Shelf C
+103179,BRV-103179,Bravo Farm Dill Single,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Iran,73.52,458,3.4,664,0.2,true,1.5,2,C,Aisle 2 · Shelf C
+103692,BRV-103692,Bravo Farm Free-Range Eggs 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,Georgia,52.08,158,3.6,302,1.3,true,1.8,2,A,Aisle 2 · Shelf A
+103919,BRV-103919,Bravo Farm Free-Range Eggs Family Pack,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,Poland,56.22,224,4.5,698,1.7,true,1.9,2,A,Aisle 2 · Shelf A
+103591,BRV-103591,Bravo Farm Garlic 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Turkey,47.87,272,3.5,302,0.3,true,1.2,2,C,Aisle 2 · Shelf C
+103723,BRV-103723,Bravo Farm Garlic 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1L,China,32.98,362,4.2,711,0.5,true,1.9,2,F,Aisle 2 · Shelf F
+103078,BRV-103078,Bravo Farm Grapes 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Spain,18.56,447,3.7,624,1.7,true,3.4,2,E,Aisle 2 · Shelf E
+103550,BRV-103550,Bravo Farm Greek Yogurt 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,France,27.21,487,3.6,471,1.4,true,2.5,2,B,Aisle 2 · Shelf B
+102317,BRV-102317,Bravo Farm Kiwi 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Poland,50.44,61,4.8,613,0.7,true,1.4,2,B,Aisle 2 · Shelf B
+102403,BRV-102403,Bravo Farm Orange 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,France,43.74,482,4.1,609,0.6,true,3.5,2,F,Aisle 2 · Shelf F
+102913,BRV-102913,Bravo Farm Peach 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,2kg,Ukraine,64.49,340,3,435,0.6,true,3.9,2,D,Aisle 2 · Shelf D
+103266,BRV-103266,Bravo Farm Peach 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,5kg,Russia,28.63,271,4.2,247,1.5,true,4,2,B,Aisle 2 · Shelf B
+103387,BRV-103387,Bravo Farm Strawberry 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,China,39.74,110,3.1,517,1.2,true,3.9,2,F,Aisle 2 · Shelf F
+102281,BRV-102281,Bravo Farm Tomato 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,Spain,4.3,442,3.8,565,1.1,true,1.9,2,D,Aisle 2 · Shelf D
+103058,BRV-103058,Bravo Farm Turkey 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,France,49.35,25,4.5,434,1.4,true,1.5,2,C,Aisle 2 · Shelf C
+103765,BRV-103765,Bravo Farm Watermelon 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Poultry,1kg,France,62.76,246,4.3,633,1,true,4,2,D,Aisle 2 · Shelf D
+103886,BRV-103886,Local Farm Ayran 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,Ukraine,30.87,68,3.3,499,0.8,true,1.8,2,F,Aisle 2 · Shelf F
+103819,BRV-103819,Local Farm Beef 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Russia,77.37,32,4.4,651,0.6,true,3.4,2,D,Aisle 2 · Shelf D
+102433,BRV-102433,Local Farm Cabbage 750g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,750g,India,48.35,34,3.8,488,0.7,true,1.7,2,A,Aisle 2 · Shelf A
+102858,BRV-102858,Local Farm Chicken Wings 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250ml,Spain,60.47,179,3.2,125,0.6,true,2.2,2,B,Aisle 2 · Shelf B
+102939,BRV-102939,Local Farm Cilantro 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,10.48,160,4.7,543,0.9,true,2.5,2,F,Aisle 2 · Shelf F
+103156,BRV-103156,Local Farm Cucumber 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,62.49,252,3.9,633,0.5,true,3.9,2,F,Aisle 2 · Shelf F
+103755,BRV-103755,Local Farm Dill Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Russia,41.1,391,4.3,380,0.7,true,1,2,A,Aisle 2 · Shelf A
+102516,BRV-102516,Local Farm Eggplant 200g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,Spain,35.09,258,3.3,262,0.9,true,2.8,2,C,Aisle 2 · Shelf C
+103991,BRV-103991,Local Farm Family Suluguni Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Russia,24.44,231,4,362,1.1,true,1.6,2,C,Aisle 2 · Shelf C
+103555,BRV-103555,Local Farm Feta Cheese 100g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Netherlands,72.95,112,3.1,486,1.5,true,3.8,2,C,Aisle 2 · Shelf C
+102773,BRV-102773,Local Farm Grapes Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,USA,39.01,287,3,643,1.7,true,2.2,2,D,Aisle 2 · Shelf D
+102956,BRV-102956,Local Farm Greek Yogurt Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,Spain,69.45,471,3,350,1.6,true,0.9,2,E,Aisle 2 · Shelf E
+102681,BRV-102681,Local Farm Ground Beef 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,France,46.21,138,4.8,361,1.7,true,0.8,2,F,Aisle 2 · Shelf F
+103914,BRV-103914,Local Farm Melon 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,India,37.45,341,3.9,211,1,true,1.3,2,D,Aisle 2 · Shelf D
+103569,BRV-103569,Local Farm Melon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,26.71,282,4.2,139,0.6,true,3,2,F,Aisle 2 · Shelf F
+102572,BRV-102572,Local Farm Parsley 100g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,100g,Iran,0.59,227,3.2,404,0.4,true,2.4,2,A,Aisle 2 · Shelf A
+102065,BRV-102065,Local Farm Parsley 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,USA,71.16,238,4.9,449,0.9,true,2.6,2,D,Aisle 2 · Shelf D
+103872,BRV-103872,Local Farm Plum 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,France,34.86,435,4.3,158,0.3,true,1.6,2,E,Aisle 2 · Shelf E
+102668,BRV-102668,Local Farm Potato 500ml,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500ml,Brazil,1.05,25,3,586,0.4,true,1.1,2,A,Aisle 2 · Shelf A
+102711,BRV-102711,Local Farm Salmon 500g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,500g,Brazil,51.55,353,4,499,1.2,true,3.7,2,D,Aisle 2 · Shelf D
+103457,BRV-103457,Local Farm Shrimp 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,Netherlands,28.63,307,3.6,145,1.3,true,3.6,2,B,Aisle 2 · Shelf B
+102216,BRV-102216,Local Farm Strawberry 200g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,200g,USA,23.68,323,3.8,321,1.6,true,0.5,2,D,Aisle 2 · Shelf D
+102163,BRV-102163,Local Farm Suluguni 2L,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,2L,Ukraine,13.26,112,3.9,618,1.6,true,1.2,2,E,Aisle 2 · Shelf E
+103680,BRV-103680,Local Farm Suluguni Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Italy,72.42,54,4.6,131,1.5,true,2.2,2,B,Aisle 2 · Shelf B
+102034,BRV-102034,Local Farm Veal Single,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Spain,12.13,310,3.1,643,1.5,true,0.5,2,B,Aisle 2 · Shelf B
+102563,BRV-102563,Local Farm Watermelon Single,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Single,Ukraine,15.11,31,4.3,198,0.2,true,0.9,2,A,Aisle 2 · Shelf A
+102083,BRV-102083,Local Farm Whole Milk 250g,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,250g,France,37.73,84,4.8,581,0.8,true,2.8,2,F,Aisle 2 · Shelf F
+102749,BRV-102749,Local Farm Whole Milk Pack of 24,Local Farm,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,Georgia,7.66,441,4.2,584,1.6,true,0.9,2,E,Aisle 2 · Shelf E
+103174,BRV-103174,Milla Ayran 250g,Milla,"Fresh Produce, Meat & Dairy",Poultry,250g,Russia,16.38,438,4.8,393,0.8,true,1.7,2,B,Aisle 2 · Shelf B
+102158,BRV-102158,Milla Broccoli 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Germany,31.44,96,4.7,396,0.8,true,3.7,2,A,Aisle 2 · Shelf A
+103993,BRV-103993,Milla Cherry 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,USA,49.73,306,3.3,436,1.1,true,1.6,2,E,Aisle 2 · Shelf E
+103441,BRV-103441,Milla Cherry 500ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,500ml,Azerbaijan,61.46,140,3.2,532,0.2,true,0.9,2,A,Aisle 2 · Shelf A
+102152,BRV-102152,Milla Cucumber Bulk,Milla,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Georgia,56.7,130,4.3,690,0.2,true,1.7,2,C,Aisle 2 · Shelf C
+103583,BRV-103583,Milla Eggplant 250ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,250ml,Spain,58.1,143,3.8,715,0.8,true,3.8,2,D,Aisle 2 · Shelf D
+103299,BRV-103299,Milla Eggplant 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,Russia,25.25,157,4.8,433,0.2,true,3.2,2,D,Aisle 2 · Shelf D
+103495,BRV-103495,Milla Feta Cheese 2kg,Milla,"Fresh Produce, Meat & Dairy",Poultry,2kg,Germany,34.12,231,4.4,163,1.5,true,1,2,D,Aisle 2 · Shelf D
+102050,BRV-102050,Milla Free-Range Eggs 2L,Milla,"Fresh Produce, Meat & Dairy",Poultry,2L,Brazil,76.87,351,4.9,589,0.2,true,3.6,2,D,Aisle 2 · Shelf D
+103996,BRV-103996,Milla Garlic Family Pack,Milla,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,Italy,63.4,352,3.7,397,1.1,true,0.7,2,D,Aisle 2 · Shelf D
+102860,BRV-102860,Milla Kefir 100g,Milla,"Fresh Produce, Meat & Dairy",Poultry,100g,China,64.58,491,4.1,496,0.6,true,3.2,2,C,Aisle 2 · Shelf C
+103022,BRV-103022,Milla Kefir Bulk,Milla,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Turkey,22.72,277,4.1,273,1.5,true,2.4,2,D,Aisle 2 · Shelf D
+102695,BRV-102695,Milla Lettuce 500g,Milla,"Fresh Produce, Meat & Dairy",Poultry,500g,Azerbaijan,24.45,339,3.9,670,0.6,true,2,2,E,Aisle 2 · Shelf E
+103973,BRV-103973,Milla Onion 500ml,Milla,"Fresh Produce, Meat & Dairy",Poultry,500ml,Germany,50.56,175,4.7,206,1.5,true,2.7,2,E,Aisle 2 · Shelf E
+103989,BRV-103989,Milla Parsley 2L,Milla,"Fresh Produce, Meat & Dairy",Poultry,2L,Spain,1.34,368,3.4,129,1.4,true,2.5,2,B,Aisle 2 · Shelf B
+103257,BRV-103257,Milla Peach Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,China,5.33,23,4.6,191,1.7,true,3.8,2,F,Aisle 2 · Shelf F
+103985,BRV-103985,Milla Pear 2kg,Milla,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,49.06,377,3.5,293,0.3,true,4,2,F,Aisle 2 · Shelf F
+103223,BRV-103223,Milla Pineapple 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Italy,61.99,221,5,618,0.5,true,3.5,2,E,Aisle 2 · Shelf E
+103552,BRV-103552,Milla Sturgeon Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Poultry,Pack of 6,China,34.26,124,4.5,705,1.2,true,1.2,2,B,Aisle 2 · Shelf B
+102584,BRV-102584,Milla Turkey 750g,Milla,"Fresh Produce, Meat & Dairy",Poultry,750g,Georgia,5.75,498,4.9,379,1.6,true,1.3,2,F,Aisle 2 · Shelf F
+103767,BRV-103767,Milla Watermelon 250g,Milla,"Fresh Produce, Meat & Dairy",Poultry,250g,Germany,73.53,39,4,439,1.4,true,3.1,2,B,Aisle 2 · Shelf B
+102682,BRV-102682,Palsud Banana 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,France,4.3,168,4,322,0.7,true,3.3,2,A,Aisle 2 · Shelf A
+102465,BRV-102465,Palsud Broccoli Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Ukraine,68.29,326,4.6,453,1.7,true,2.2,2,F,Aisle 2 · Shelf F
+102537,BRV-102537,Palsud Cabbage Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,Turkey,26.8,27,3.9,137,1.6,true,1.3,2,F,Aisle 2 · Shelf F
+103122,BRV-103122,Palsud Cheddar 500ml,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500ml,Italy,52.78,191,3.4,480,0.6,true,1,2,C,Aisle 2 · Shelf C
+102469,BRV-102469,Palsud Cilantro 500ml,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,10.31,285,4.4,297,1.5,true,3.9,2,B,Aisle 2 · Shelf B
+103200,BRV-103200,Palsud Classic Broccoli Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,USA,10.92,180,4.6,431,0.9,true,3.9,2,F,Aisle 2 · Shelf F
+103957,BRV-103957,Palsud Cucumber 200g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,200g,France,69.48,203,3.1,500,1.5,true,1.4,2,A,Aisle 2 · Shelf A
+103827,BRV-103827,Palsud Feta Cheese Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,USA,33.11,24,4.1,128,0.2,true,1.8,2,E,Aisle 2 · Shelf E
+103725,BRV-103725,Palsud Free-Range Eggs Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,China,6.23,425,4.4,141,1.2,true,2.1,2,D,Aisle 2 · Shelf D
+103398,BRV-103398,Palsud Garlic Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Russia,61.92,311,3.4,717,0.7,true,2.5,2,F,Aisle 2 · Shelf F
+103054,BRV-103054,Palsud Kefir 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,Russia,68.16,86,4.6,566,1.4,true,2.6,2,E,Aisle 2 · Shelf E
+103409,BRV-103409,Palsud Kefir 1kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1kg,India,51.23,44,3.9,424,1.4,true,3.8,2,C,Aisle 2 · Shelf C
+103151,BRV-103151,Palsud Melon 1L,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1L,France,77.17,336,3.4,398,1.6,true,1.1,2,E,Aisle 2 · Shelf E
+103783,BRV-103783,Palsud Melon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Georgia,11.74,480,4.2,341,1,true,1.1,2,B,Aisle 2 · Shelf B
+102743,BRV-102743,Palsud Onion 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,Turkey,63.67,90,4.1,470,1.5,true,1.8,2,E,Aisle 2 · Shelf E
+102328,BRV-102328,Palsud Onion 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,Brazil,56.64,261,3.7,587,0.6,true,4,2,D,Aisle 2 · Shelf D
+102080,BRV-102080,Palsud Peach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,2kg,Russia,49.54,141,3.8,238,1.3,true,2.3,2,C,Aisle 2 · Shelf C
+103986,BRV-103986,Palsud Plum Family Pack,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,France,66.81,492,4.5,182,0.8,true,2.4,2,E,Aisle 2 · Shelf E
+103013,BRV-103013,Palsud Pomegranate 1.5L,Palsud,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Spain,9.14,309,3.4,333,1.4,true,0.5,2,B,Aisle 2 · Shelf B
+102249,BRV-102249,Palsud Potato 100g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,100g,India,79.36,298,4.6,377,0.3,true,1,2,F,Aisle 2 · Shelf F
+103073,BRV-103073,Palsud Shrimp 200g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,200g,Italy,23.32,112,3.9,707,1.1,true,2.6,2,B,Aisle 2 · Shelf B
+102624,BRV-102624,Palsud Skim Milk Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,India,21.15,432,4.4,290,0.5,true,3.1,2,E,Aisle 2 · Shelf E
+103310,BRV-103310,Palsud Turkey 5kg,Palsud,"Fresh Produce, Meat & Dairy",Poultry,5kg,France,14.42,46,3.8,133,1.4,true,3.3,2,B,Aisle 2 · Shelf B
+102871,BRV-102871,Palsud Watermelon 750g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,750g,Ukraine,43.75,238,3.1,542,1.1,true,1.1,2,C,Aisle 2 · Shelf C
+102088,BRV-102088,Palsud Watermelon Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,France,67.64,112,4.8,438,0.5,true,0.6,2,E,Aisle 2 · Shelf E
+103427,BRV-103427,Palsud Whole Milk Single,Palsud,"Fresh Produce, Meat & Dairy",Poultry,Single,Turkey,14.44,328,4,348,1.6,true,1.5,2,A,Aisle 2 · Shelf A
+103313,BRV-103313,Palsud Zucchini 500g,Palsud,"Fresh Produce, Meat & Dairy",Poultry,500g,Netherlands,59.57,293,3.7,470,0.7,true,2.3,2,C,Aisle 2 · Shelf C
+102329,BRV-102329,Pinar Beef Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Family Pack,China,77.18,407,4.7,262,1.3,true,2.5,2,C,Aisle 2 · Shelf C
+103605,BRV-103605,Pinar Bell Pepper 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,France,55.25,357,3.1,322,1,true,3,2,A,Aisle 2 · Shelf A
+103543,BRV-103543,Pinar Cabbage 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Italy,79.09,255,4.3,199,0.3,true,2.3,2,F,Aisle 2 · Shelf F
+102536,BRV-102536,Pinar Cherry 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,USA,73.73,408,4.8,644,0.9,true,3,2,C,Aisle 2 · Shelf C
+103418,BRV-103418,Pinar Dill 750g,Pinar,"Fresh Produce, Meat & Dairy",Poultry,750g,Germany,28.95,310,4.2,530,0.4,true,1.1,2,E,Aisle 2 · Shelf E
+103676,BRV-103676,Pinar Eggplant Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,France,27.67,215,4.8,636,0.3,true,3.9,2,C,Aisle 2 · Shelf C
+103478,BRV-103478,Pinar Garlic 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,France,39.38,427,3.7,596,0.9,true,1.5,2,C,Aisle 2 · Shelf C
+102560,BRV-102560,Pinar Ground Beef 5kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,5kg,Azerbaijan,0.72,251,3.9,357,1.3,true,3.3,2,B,Aisle 2 · Shelf B
+102815,BRV-102815,Pinar Lettuce 2kg,Pinar,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,58.45,247,4.6,280,1.2,true,3.4,2,E,Aisle 2 · Shelf E
+103369,BRV-103369,Pinar Lettuce Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,China,20.08,295,3.1,489,1.3,true,1.1,2,F,Aisle 2 · Shelf F
+103051,BRV-103051,Pinar Lime 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Russia,62.97,200,3.3,687,1.4,true,2.4,2,F,Aisle 2 · Shelf F
+103505,BRV-103505,Pinar Parsley 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1.5L,Turkey,16.17,319,4.3,497,0.6,true,2.1,2,F,Aisle 2 · Shelf F
+103943,BRV-103943,Pinar Pear 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,Azerbaijan,38.63,440,4.9,315,1.4,true,0.6,2,B,Aisle 2 · Shelf B
+103193,BRV-103193,Pinar Salmon 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Ukraine,78.53,302,4.9,452,1.5,true,2.2,2,E,Aisle 2 · Shelf E
+102344,BRV-102344,Pinar Skim Milk Single,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Single,Ukraine,38.96,194,3.3,213,1.1,true,1.8,2,D,Aisle 2 · Shelf D
+102982,BRV-102982,Pinar Spinach 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,China,61.97,239,3.3,133,0.4,true,2.1,2,D,Aisle 2 · Shelf D
+103924,BRV-103924,Pinar Trout Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Spain,37.18,262,4.1,578,0.6,true,0.9,2,A,Aisle 2 · Shelf A
+102085,BRV-102085,Pinar Veal 1L,Pinar,"Fresh Produce, Meat & Dairy",Poultry,1L,Iran,53.59,427,4.4,495,1.2,true,3.7,2,B,Aisle 2 · Shelf B
+102515,BRV-102515,Pinar Whole Milk 250ml,Pinar,"Fresh Produce, Meat & Dairy",Poultry,250ml,Iran,8.87,283,3.7,197,0.9,true,3.8,2,D,Aisle 2 · Shelf D
+102316,BRV-102316,Pinar Zucchini 100g,Pinar,"Fresh Produce, Meat & Dairy",Poultry,100g,Spain,60.6,395,4.4,256,1.7,true,1,2,C,Aisle 2 · Shelf C
+102874,BRV-102874,President Apple 2kg,President,"Fresh Produce, Meat & Dairy",Poultry,2kg,Italy,33.83,55,4.1,399,0.7,true,3.6,2,D,Aisle 2 · Shelf D
+102087,BRV-102087,President Carrot Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,USA,4.58,302,3.6,529,1,true,3.2,2,B,Aisle 2 · Shelf B
+102855,BRV-102855,President Chicken Thighs 250ml,President,"Fresh Produce, Meat & Dairy",Poultry,250ml,India,9.73,386,4.2,564,0.8,true,0.9,2,C,Aisle 2 · Shelf C
+102298,BRV-102298,President Cilantro 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Poland,70.66,172,4.7,283,0.5,true,2.1,2,D,Aisle 2 · Shelf D
+103120,BRV-103120,President Cucumber 2kg,President,"Fresh Produce, Meat & Dairy",Poultry,2kg,Spain,64.34,195,4.3,478,0.9,true,3.8,2,E,Aisle 2 · Shelf E
+102053,BRV-102053,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Italy,13.9,437,4.2,430,1,true,1.1,2,A,Aisle 2 · Shelf A
+103074,BRV-103074,President Feta Cheese 250g,President,"Fresh Produce, Meat & Dairy",Poultry,250g,Brazil,13.87,137,3.7,404,0.8,true,2.8,2,E,Aisle 2 · Shelf E
+103357,BRV-103357,President Feta Cheese Bulk,President,"Fresh Produce, Meat & Dairy",Poultry,Bulk,India,34.54,2,3.3,582,0.6,true,3.9,2,E,Aisle 2 · Shelf E
+102189,BRV-102189,President Garlic Bulk,President,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Germany,74.13,408,4.5,694,0.7,true,3.9,2,E,Aisle 2 · Shelf E
+102884,BRV-102884,President Garlic Pack of 4,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Georgia,79.9,56,4.1,338,0.5,true,1.5,2,C,Aisle 2 · Shelf C
+103107,BRV-103107,President Kiwi 5kg,President,"Fresh Produce, Meat & Dairy",Poultry,5kg,Turkey,55.94,400,4.7,267,0.4,true,0.8,2,B,Aisle 2 · Shelf B
+103029,BRV-103029,President Lactose-Free Milk 250g,President,"Fresh Produce, Meat & Dairy",Poultry,250g,Italy,70.44,29,3.9,602,1.2,true,1.5,2,A,Aisle 2 · Shelf A
+103764,BRV-103764,President Parsley 500ml,President,"Fresh Produce, Meat & Dairy",Poultry,500ml,Iran,0.71,167,4.2,716,0.5,true,1.3,2,E,Aisle 2 · Shelf E
+103704,BRV-103704,President Pear 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Poland,0.67,217,4.3,426,1.3,true,1.8,2,C,Aisle 2 · Shelf C
+103977,BRV-103977,President Pear Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,China,76.9,320,3.1,458,0.2,true,2.6,2,C,Aisle 2 · Shelf C
+102829,BRV-102829,President Quail Eggs 1L,President,"Fresh Produce, Meat & Dairy",Poultry,1L,Georgia,63.3,406,4.9,593,0.6,true,2.6,2,D,Aisle 2 · Shelf D
+103485,BRV-103485,President Trout 750g,President,"Fresh Produce, Meat & Dairy",Poultry,750g,Russia,10.91,56,3.6,348,1.4,true,1.8,2,E,Aisle 2 · Shelf E
+103526,BRV-103526,President Trout Pack of 12,President,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Germany,71.13,493,3.1,632,1.3,true,3.2,2,C,Aisle 2 · Shelf C
+102817,BRV-102817,Sehiyye Ayran Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Russia,58.95,226,4.5,430,0.5,true,2.6,2,C,Aisle 2 · Shelf C
+103820,BRV-103820,Sehiyye Basil 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,1kg,China,35.78,389,3.2,127,0.5,true,2.3,2,F,Aisle 2 · Shelf F
+102120,BRV-102120,Sehiyye Beef 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,Poland,61.63,339,3.1,645,0.7,true,1.4,2,D,Aisle 2 · Shelf D
+102137,BRV-102137,Sehiyye Beef 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,500ml,Turkey,68.76,28,4.9,237,0.6,true,2.5,2,D,Aisle 2 · Shelf D
+103234,BRV-103234,Sehiyye Chicken Breast 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,200g,Spain,65.2,7,4.7,554,0.8,true,3.4,2,C,Aisle 2 · Shelf C
+102644,BRV-102644,Sehiyye Feta Cheese Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 12,Germany,26.28,385,3.5,588,0.4,true,2.5,2,A,Aisle 2 · Shelf A
+102988,BRV-102988,Sehiyye Feta Cheese Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 24,USA,78.51,457,3.9,627,0.8,true,2.1,2,D,Aisle 2 · Shelf D
+103071,BRV-103071,Sehiyye Kefir 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250g,Brazil,26.56,174,3.2,565,1.2,true,3.1,2,B,Aisle 2 · Shelf B
+103847,BRV-103847,Sehiyye Kiwi Single,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Single,Brazil,52.75,52,3.7,602,1.3,true,1.9,2,E,Aisle 2 · Shelf E
+103365,BRV-103365,Sehiyye Lactose-Free Milk Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 4,Spain,53.52,173,3.4,573,1.3,true,1.7,2,B,Aisle 2 · Shelf B
+103147,BRV-103147,Sehiyye Lamb 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,750g,Turkey,52.1,438,3.7,383,0.8,true,3.2,2,F,Aisle 2 · Shelf F
+103950,BRV-103950,Sehiyye Melon 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,France,15.98,93,4.1,259,0.7,true,2.7,2,D,Aisle 2 · Shelf D
+103581,BRV-103581,Sehiyye Onion Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Bulk,Netherlands,72.15,347,4.6,445,1,true,3.9,2,B,Aisle 2 · Shelf B
+102056,BRV-102056,Sehiyye Peach 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250ml,Italy,18.71,159,3.3,551,0.3,true,1,2,B,Aisle 2 · Shelf B
+103715,BRV-103715,Sehiyye Potato 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,2L,China,34.66,301,4.1,616,1.6,true,0.6,2,C,Aisle 2 · Shelf C
+103651,BRV-103651,Sehiyye Salmon 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,250g,Poland,24.12,200,4.8,337,1.1,true,2.9,2,D,Aisle 2 · Shelf D
+103840,BRV-103840,Sehiyye Skim Milk 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,100g,India,45.11,397,4.7,693,0.9,true,1.6,2,F,Aisle 2 · Shelf F
+102045,BRV-102045,Sehiyye Spinach Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Pack of 6,Germany,18.96,433,3.2,571,1.6,true,3.8,2,F,Aisle 2 · Shelf F
+103516,BRV-103516,Sehiyye Spinach Single,Sehiyye,"Fresh Produce, Meat & Dairy",Poultry,Single,Brazil,48.58,106,3,593,1.6,true,0.8,2,B,Aisle 2 · Shelf B
+103288,BRV-103288,Atena Cherry Bulk,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Azerbaijan,50.75,170,4.5,551,1,true,3.8,2,F,Aisle 2 · Shelf F
+102020,BRV-102020,Atena Dill Family Pack,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Italy,20.14,385,3.8,636,0.9,true,2.5,2,A,Aisle 2 · Shelf A
+102655,BRV-102655,Atena Eggplant Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Ukraine,6.23,289,4.5,418,1.2,true,3.9,2,A,Aisle 2 · Shelf A
+102840,BRV-102840,Atena Greek Yogurt 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Poland,26.56,450,3.3,706,1.4,true,3.3,2,C,Aisle 2 · Shelf C
+103395,BRV-103395,Atena Greek Yogurt Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Georgia,16.66,69,4.6,692,0.9,true,3.5,2,C,Aisle 2 · Shelf C
+103533,BRV-103533,Atena Ground Beef 250ml,Atena,"Fresh Produce, Meat & Dairy",Vegetables,250ml,France,78.73,360,3,478,0.4,true,2.5,2,A,Aisle 2 · Shelf A
+102057,BRV-102057,Atena Kiwi Bulk,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Turkey,46.02,400,4.6,154,1.1,true,3.1,2,C,Aisle 2 · Shelf C
+103644,BRV-103644,Atena Lactose-Free Milk Family Pack,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Russia,49.97,408,4.3,667,1.2,true,1.2,2,B,Aisle 2 · Shelf B
+102742,BRV-102742,Atena Lactose-Free Milk Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,21.34,275,3.1,627,0.6,true,1.5,2,D,Aisle 2 · Shelf D
+103667,BRV-103667,Atena Lamb 100g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,100g,China,6.62,108,4.3,646,0.5,true,1,2,E,Aisle 2 · Shelf E
+103558,BRV-103558,Atena Lamb 500ml,Atena,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Iran,53.55,310,3.5,695,1.7,true,3,2,D,Aisle 2 · Shelf D
+102369,BRV-102369,Atena Melon 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,8.81,467,3.4,242,1.4,true,2.3,2,E,Aisle 2 · Shelf E
+102402,BRV-102402,Atena Mozzarella 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,47.29,341,3.9,284,1.4,true,1,2,E,Aisle 2 · Shelf E
+102861,BRV-102861,Atena Mozzarella 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,Ukraine,62.16,392,4.7,309,1.7,true,1.4,2,B,Aisle 2 · Shelf B
+102098,BRV-102098,Atena Orange 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Azerbaijan,65.8,98,4.6,561,0.9,true,2.8,2,D,Aisle 2 · Shelf D
+103634,BRV-103634,Atena Orange 5kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Iran,35.99,36,3.1,374,1.2,true,0.9,2,A,Aisle 2 · Shelf A
+103108,BRV-103108,Atena Parsley Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Brazil,40.41,474,3,316,1.2,true,3.6,2,E,Aisle 2 · Shelf E
+102466,BRV-102466,Atena Peach 1kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Turkey,16.71,128,3.5,190,1.6,true,1.2,2,A,Aisle 2 · Shelf A
+103525,BRV-103525,Atena Peach 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Iran,57.45,142,3.3,467,1.2,true,3.4,2,B,Aisle 2 · Shelf B
+102489,BRV-102489,Atena Peach Single,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Single,Brazil,2.89,471,4.6,391,1.6,true,1,2,D,Aisle 2 · Shelf D
+102979,BRV-102979,Atena Pear Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Brazil,26.7,50,3.3,411,1.2,true,1.4,2,F,Aisle 2 · Shelf F
+102194,BRV-102194,Atena Pineapple 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,Russia,21.14,170,4.1,268,0.9,true,1.2,2,A,Aisle 2 · Shelf A
+103400,BRV-103400,Atena Pineapple 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,Brazil,24.48,496,3.2,333,1.3,true,2.3,2,B,Aisle 2 · Shelf B
+103015,BRV-103015,Atena Plum 2L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,2L,France,28.17,24,3.6,247,0.3,true,1.4,2,B,Aisle 2 · Shelf B
+103380,BRV-103380,Atena Salmon 1kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1kg,China,56.35,196,4.4,426,1.6,true,0.7,2,E,Aisle 2 · Shelf E
+103781,BRV-103781,Atena Salmon 200g,Atena,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,29.16,281,3.6,483,0.8,true,0.6,2,D,Aisle 2 · Shelf D
+102968,BRV-102968,Atena Spinach 5kg,Atena,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Netherlands,55.91,481,4.8,625,1.2,true,2.3,2,D,Aisle 2 · Shelf D
+103315,BRV-103315,Atena Spinach Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Azerbaijan,27.27,485,3.3,644,0.5,true,2.3,2,E,Aisle 2 · Shelf E
+102893,BRV-102893,Atena Veal 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,Russia,14.07,220,4.1,674,0.4,true,3.5,2,A,Aisle 2 · Shelf A
+103162,BRV-103162,Atena Whole Milk 1L,Atena,"Fresh Produce, Meat & Dairy",Vegetables,1L,India,21.22,367,4.6,228,1.4,true,2.7,2,C,Aisle 2 · Shelf C
+103596,BRV-103596,Bravo Farm Bell Pepper 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,24.34,175,3,129,1.1,true,1.3,2,B,Aisle 2 · Shelf B
+103455,BRV-103455,Bravo Farm Chicken Breast 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Turkey,51.87,94,4.4,215,0.6,true,0.7,2,D,Aisle 2 · Shelf D
+102148,BRV-102148,Bravo Farm Chicken Thighs Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,58.44,64,3.3,615,0.6,true,2.9,2,B,Aisle 2 · Shelf B
+102370,BRV-102370,Bravo Farm Chicken Wings Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Iran,57.98,338,4.5,476,1,true,1.8,2,C,Aisle 2 · Shelf C
+102628,BRV-102628,Bravo Farm Cucumber 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Netherlands,65.32,416,3.9,230,0.3,true,1.2,2,C,Aisle 2 · Shelf C
+102038,BRV-102038,Bravo Farm Eggplant 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Russia,22.55,280,4.1,239,1.5,true,3.1,2,D,Aisle 2 · Shelf D
+103941,BRV-103941,Bravo Farm Ground Beef 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Italy,29.29,493,3.6,309,0.8,true,3.5,2,F,Aisle 2 · Shelf F
+103621,BRV-103621,Bravo Farm Kefir 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Brazil,38.95,347,4.3,344,0.7,true,3.8,2,A,Aisle 2 · Shelf A
+102924,BRV-102924,Bravo Farm Kefir 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,48.33,112,3.1,513,1.1,true,1.7,2,F,Aisle 2 · Shelf F
+102973,BRV-102973,Bravo Farm Kiwi 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Poland,73.07,378,3.9,285,0.6,true,3.8,2,B,Aisle 2 · Shelf B
+103225,BRV-103225,Bravo Farm Lettuce 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,74.32,373,4,296,0.4,true,3.3,2,A,Aisle 2 · Shelf A
+102974,BRV-102974,Bravo Farm Parmesan 1L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1L,France,4.22,51,3.7,266,0.5,true,3.5,2,E,Aisle 2 · Shelf E
+102241,BRV-102241,Bravo Farm Parmesan 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,54.95,37,3.6,561,0.7,true,1.7,2,D,Aisle 2 · Shelf D
+103863,BRV-103863,Bravo Farm Parsley 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2kg,USA,8.51,39,3.9,568,0.4,true,2.1,2,C,Aisle 2 · Shelf C
+102719,BRV-102719,Bravo Farm Parsley Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Poland,55.64,408,4.3,259,1.2,true,1.3,2,D,Aisle 2 · Shelf D
+103483,BRV-103483,Bravo Farm Peach Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Iran,60.18,448,3.8,462,0.5,true,1.3,2,A,Aisle 2 · Shelf A
+102024,BRV-102024,Bravo Farm Spinach Pack of 4,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Russia,45.15,360,4.8,160,0.3,true,2.5,2,C,Aisle 2 · Shelf C
+103718,BRV-103718,Bravo Farm Strawberry 2kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Ukraine,63.79,486,4.4,225,1.6,true,2,2,D,Aisle 2 · Shelf D
+102095,BRV-102095,Bravo Farm Strawberry 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,750g,China,39.67,47,4.9,368,1.4,true,1.8,2,C,Aisle 2 · Shelf C
+102826,BRV-102826,Bravo Farm Suluguni 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Iran,6.18,381,4.2,646,0.6,true,2.9,2,A,Aisle 2 · Shelf A
+103923,BRV-103923,Bravo Farm Watermelon Pack of 12,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Brazil,31.68,451,3.9,613,0.6,true,3.5,2,B,Aisle 2 · Shelf B
+102578,BRV-102578,Bravo Farm Zucchini 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Spain,73.41,245,4.1,250,1.6,true,2.9,2,A,Aisle 2 · Shelf A
+102461,BRV-102461,Bravo Farm Zucchini 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Vegetables,500g,Russia,14.56,363,5,529,0.5,true,0.5,2,F,Aisle 2 · Shelf F
+103011,BRV-103011,Local Farm Ayran 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Ukraine,62.71,221,5,707,1.3,true,3.9,2,D,Aisle 2 · Shelf D
+102958,BRV-102958,Local Farm Banana 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,India,42.05,1,3.9,148,0.3,true,2.1,2,A,Aisle 2 · Shelf A
+102763,BRV-102763,Local Farm Basil 1L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,32.78,458,4,656,0.9,true,1.3,2,E,Aisle 2 · Shelf E
+103083,BRV-103083,Local Farm Beef 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,China,20.88,212,4.7,434,0.6,true,1.1,2,E,Aisle 2 · Shelf E
+103653,BRV-103653,Local Farm Cheddar Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Georgia,54.89,89,4.3,519,1.4,true,1.4,2,F,Aisle 2 · Shelf F
+103962,BRV-103962,Local Farm Chicken Wings 100g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,100g,Georgia,29.52,369,3.2,428,1.2,true,3.7,2,A,Aisle 2 · Shelf A
+102936,BRV-102936,Local Farm Chicken Wings Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,India,41.1,432,3.5,408,0.4,true,1.7,2,E,Aisle 2 · Shelf E
+103560,BRV-103560,Local Farm Cilantro Pack of 12,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,USA,69.64,64,4.3,614,0.3,true,2.2,2,E,Aisle 2 · Shelf E
+103362,BRV-103362,Local Farm Cucumber 2L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Italy,29.89,126,4.7,562,0.9,true,2.7,2,E,Aisle 2 · Shelf E
+102623,BRV-102623,Local Farm Eggplant 250g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,250g,Ukraine,25.81,107,3.7,637,0.6,true,3.3,2,B,Aisle 2 · Shelf B
+102060,BRV-102060,Local Farm Feta Cheese Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,Netherlands,58,78,4.1,696,0.9,true,2.8,2,C,Aisle 2 · Shelf C
+103284,BRV-103284,Local Farm Garlic Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Turkey,44.85,154,3.7,499,0.6,true,1.5,2,D,Aisle 2 · Shelf D
+102954,BRV-102954,Local Farm Ground Beef Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,China,4.12,383,3.2,352,0.5,true,1.6,2,C,Aisle 2 · Shelf C
+103983,BRV-103983,Local Farm Lactose-Free Milk 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Italy,31.98,466,3.1,719,1.5,true,1.4,2,F,Aisle 2 · Shelf F
+102192,BRV-102192,Local Farm Lamb 2L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,4.7,92,4.1,150,1.3,true,0.9,2,E,Aisle 2 · Shelf E
+103880,BRV-103880,Local Farm Mini Ground Beef Single,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Single,Iran,64.9,442,3.6,705,0.9,true,2,2,D,Aisle 2 · Shelf D
+103198,BRV-103198,Local Farm Mint 200g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Spain,56.1,194,3,567,1.2,true,3.3,2,D,Aisle 2 · Shelf D
+103821,BRV-103821,Local Farm Mozzarella Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Ukraine,27.1,137,4.2,194,0.3,true,3.6,2,E,Aisle 2 · Shelf E
+103773,BRV-103773,Local Farm Organic Zucchini 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,Italy,43.27,482,4.7,176,0.2,true,1.6,2,E,Aisle 2 · Shelf E
+102343,BRV-102343,Local Farm Salmon 1kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Italy,72.04,245,3.9,210,1.4,true,0.8,2,C,Aisle 2 · Shelf C
+103898,BRV-103898,Local Farm Sturgeon 200g,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,200g,Georgia,44.41,377,4.7,430,0.6,true,2.5,2,E,Aisle 2 · Shelf E
+102801,BRV-102801,Local Farm Sturgeon 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Iran,50.85,237,4,499,0.8,true,0.5,2,D,Aisle 2 · Shelf D
+102891,BRV-102891,Local Farm Turkey Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Poland,57.76,12,4.9,716,0.9,true,3.2,2,A,Aisle 2 · Shelf A
+102975,BRV-102975,Local Farm Zucchini 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,USA,56.01,206,4.4,271,1.1,true,1.3,2,F,Aisle 2 · Shelf F
+103188,BRV-103188,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Turkey,47.59,84,3.1,484,1.6,true,3.4,2,E,Aisle 2 · Shelf E
+103699,BRV-103699,Milla Banana 1L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,1L,USA,25.9,136,3.4,141,0.7,true,3.9,2,D,Aisle 2 · Shelf D
+103971,BRV-103971,Milla Basil 250g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,250g,Italy,24.38,294,4.9,256,1.6,true,3.6,2,A,Aisle 2 · Shelf A
+102400,BRV-102400,Milla Basil 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,Brazil,2.01,29,5,354,0.5,true,2.2,2,A,Aisle 2 · Shelf A
+103202,BRV-103202,Milla Broccoli 250g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,250g,China,40.02,48,3.6,169,1.4,true,3.1,2,F,Aisle 2 · Shelf F
+103732,BRV-103732,Milla Cheddar 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,Poland,51.59,257,4.7,609,0.9,true,2.6,2,D,Aisle 2 · Shelf D
+103901,BRV-103901,Milla Chicken Breast 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,62.59,174,4.9,337,0.4,true,1.1,2,D,Aisle 2 · Shelf D
+102226,BRV-102226,Milla Chicken Thighs Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,11.21,329,3.6,664,0.3,true,3.5,2,E,Aisle 2 · Shelf E
+102591,BRV-102591,Milla Chicken Wings 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,Russia,54.86,333,3.3,649,1.5,true,3,2,B,Aisle 2 · Shelf B
+102972,BRV-102972,Milla Chicken Wings Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Iran,23.44,437,3.6,624,0.8,true,2.2,2,E,Aisle 2 · Shelf E
+103689,BRV-103689,Milla Dill 500ml,Milla,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Azerbaijan,56.65,92,3.6,374,1.6,true,3.6,2,E,Aisle 2 · Shelf E
+103628,BRV-103628,Milla Eggplant 200g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,200g,Ukraine,22.3,26,3,661,1.5,true,3.3,2,F,Aisle 2 · Shelf F
+103325,BRV-103325,Milla Free-Range Eggs Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,China,44.52,456,3.8,641,1.6,true,1,2,D,Aisle 2 · Shelf D
+102957,BRV-102957,Milla Grapes Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Spain,18.26,271,3.3,451,0.9,true,2.7,2,B,Aisle 2 · Shelf B
+102617,BRV-102617,Milla Greek Yogurt 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,India,69.67,141,3.3,256,1.4,true,3,2,A,Aisle 2 · Shelf A
+103625,BRV-103625,Milla Ground Beef 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Russia,63.05,226,3.4,300,0.9,true,1.5,2,E,Aisle 2 · Shelf E
+102671,BRV-102671,Milla Lettuce 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Netherlands,34.42,17,3.5,568,0.6,true,1.1,2,C,Aisle 2 · Shelf C
+103204,BRV-103204,Milla Lime Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Spain,24.95,290,3.5,171,0.2,true,3.1,2,D,Aisle 2 · Shelf D
+102837,BRV-102837,Milla Melon Family Pack,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Russia,1.33,490,4.7,552,1.3,true,1.8,2,A,Aisle 2 · Shelf A
+103813,BRV-103813,Milla Mini Basil 750g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,750g,France,17.17,223,4.8,453,0.8,true,2.3,2,D,Aisle 2 · Shelf D
+103697,BRV-103697,Milla Mini Free-Range Eggs Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Turkey,25.23,325,3.3,183,0.8,true,2.4,2,B,Aisle 2 · Shelf B
+103454,BRV-103454,Milla Mini Veal 5kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Germany,49.71,250,4.2,386,0.4,true,1.8,2,A,Aisle 2 · Shelf A
+102562,BRV-102562,Milla Mint 2L,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2L,Spain,20.78,460,3.8,499,1.1,true,2.8,2,D,Aisle 2 · Shelf D
+103474,BRV-103474,Milla Mint Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,China,27.73,36,4.8,240,0.5,true,3.1,2,A,Aisle 2 · Shelf A
+103041,BRV-103041,Milla Onion 200g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,39.07,302,3.9,232,0.7,true,3.4,2,E,Aisle 2 · Shelf E
+103671,BRV-103671,Milla Strawberry Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Turkey,31.66,500,4.9,595,0.5,true,3.4,2,B,Aisle 2 · Shelf B
+102064,BRV-102064,Milla Sturgeon 1kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Turkey,5.83,193,3.3,476,0.8,true,3.8,2,C,Aisle 2 · Shelf C
+103412,BRV-103412,Milla Suluguni 100g,Milla,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,40.98,489,4.9,484,0.4,true,0.9,2,A,Aisle 2 · Shelf A
+103887,BRV-103887,Milla Tomato 2kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,2kg,France,26.23,499,3.1,398,1.5,true,3.5,2,C,Aisle 2 · Shelf C
+103059,BRV-103059,Milla Veal 5kg,Milla,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Netherlands,61.16,275,4.2,263,1.6,true,3.4,2,F,Aisle 2 · Shelf F
+102832,BRV-102832,Milla Veal Bulk,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Brazil,66.83,40,3.6,121,1.5,true,3.2,2,F,Aisle 2 · Shelf F
+103033,BRV-103033,Milla Veal Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Spain,49.96,407,3.2,487,0.9,true,3,2,F,Aisle 2 · Shelf F
+102911,BRV-102911,Milla Whole Milk Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Russia,74.4,267,4.8,181,0.2,true,3.5,2,B,Aisle 2 · Shelf B
+103323,BRV-103323,Palsud Apple 1L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1L,USA,73.26,142,3.3,203,1.6,true,0.5,2,D,Aisle 2 · Shelf D
+102196,BRV-102196,Palsud Basil Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,India,6.18,369,4.3,226,0.4,true,1.5,2,E,Aisle 2 · Shelf E
+103370,BRV-103370,Palsud Cabbage 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Brazil,47.42,121,4.2,663,0.3,true,4,2,B,Aisle 2 · Shelf B
+103536,BRV-103536,Palsud Cabbage Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,Azerbaijan,2.94,16,3.3,183,1.4,true,2.1,2,D,Aisle 2 · Shelf D
+103361,BRV-103361,Palsud Carrot 2L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,2L,USA,29.99,170,4.1,497,1,true,0.7,2,D,Aisle 2 · Shelf D
+102949,BRV-102949,Palsud Cheddar 5kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Azerbaijan,9.92,205,3.1,290,0.7,true,1.4,2,A,Aisle 2 · Shelf A
+102714,BRV-102714,Palsud Cherry 1L,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1L,Turkey,64.31,299,4.6,322,1.4,true,3.5,2,E,Aisle 2 · Shelf E
+103219,BRV-103219,Palsud Chicken Breast Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Azerbaijan,64.08,247,3.7,265,1.4,true,1,2,F,Aisle 2 · Shelf F
+103654,BRV-103654,Palsud Eggplant 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,France,9.46,203,5,168,0.9,true,1.5,2,E,Aisle 2 · Shelf E
+103296,BRV-103296,Palsud Feta Cheese 2kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Georgia,26.17,174,4.3,590,0.9,true,0.9,2,A,Aisle 2 · Shelf A
+102405,BRV-102405,Palsud Garlic 200g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,200g,Ukraine,49.04,256,3.1,315,0.7,true,1.4,2,F,Aisle 2 · Shelf F
+102129,BRV-102129,Palsud Grapes 750g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,750g,Spain,13.25,417,4.4,400,1.3,true,2.3,2,A,Aisle 2 · Shelf A
+102447,BRV-102447,Palsud Melon Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Italy,5.16,351,4.6,289,0.8,true,1.9,2,D,Aisle 2 · Shelf D
+103888,BRV-103888,Palsud Melon Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Italy,43.57,466,3.8,521,0.2,true,3.8,2,B,Aisle 2 · Shelf B
+103415,BRV-103415,Palsud Mint Single,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Single,Iran,1.11,208,3.3,139,1.1,true,1.8,2,D,Aisle 2 · Shelf D
+103276,BRV-103276,Palsud Parsley 500ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Iran,70.97,421,3.7,696,1.4,true,1.5,2,A,Aisle 2 · Shelf A
+102009,BRV-102009,Palsud Plum 750g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,35.33,187,4.6,539,1.4,true,3.3,2,B,Aisle 2 · Shelf B
+102602,BRV-102602,Palsud Potato 250ml,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Germany,62.97,340,3.3,666,0.4,true,0.7,2,C,Aisle 2 · Shelf C
+103470,BRV-103470,Palsud Potato Bulk,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Bulk,Poland,15.81,20,3.1,380,1.5,true,2.5,2,E,Aisle 2 · Shelf E
+103772,BRV-103772,Palsud Quail Eggs Single,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,26.76,413,4,597,0.6,true,1.7,2,F,Aisle 2 · Shelf F
+102278,BRV-102278,Palsud Strawberry 100g,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,9.45,384,3.8,201,1.2,true,1.8,2,F,Aisle 2 · Shelf F
+103100,BRV-103100,Palsud Trout Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Georgia,45.17,214,4.4,420,1.4,true,1.5,2,C,Aisle 2 · Shelf C
+103211,BRV-103211,Palsud Veal 1kg,Palsud,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Azerbaijan,48.48,221,4,449,1.4,true,2.3,2,D,Aisle 2 · Shelf D
+102139,BRV-102139,Pinar Basil 250g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,250g,Brazil,25.02,153,3.8,199,0.9,true,3,2,F,Aisle 2 · Shelf F
+102075,BRV-102075,Pinar Bell Pepper 2kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Poland,73.8,84,3,138,0.7,true,1.2,2,E,Aisle 2 · Shelf E
+103506,BRV-103506,Pinar Cabbage 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Poland,36.07,249,4.7,170,0.5,true,1.5,2,C,Aisle 2 · Shelf C
+103779,BRV-103779,Pinar Carrot 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1.5L,Germany,67.99,487,3.1,574,0.3,true,3.2,2,C,Aisle 2 · Shelf C
+103799,BRV-103799,Pinar Chicken Thighs Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,USA,77.05,132,3.4,124,0.8,true,3.8,2,A,Aisle 2 · Shelf A
+103946,BRV-103946,Pinar Chicken Wings Single,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,77.17,472,3.4,426,0.7,true,2.8,2,A,Aisle 2 · Shelf A
+103201,BRV-103201,Pinar Eggplant 100g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,100g,Russia,30.27,101,4.4,642,1,true,2.6,2,C,Aisle 2 · Shelf C
+102091,BRV-102091,Pinar Feta Cheese 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,32.77,221,3.3,540,1.6,true,1.8,2,A,Aisle 2 · Shelf A
+103443,BRV-103443,Pinar Garlic 1L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1L,India,22.9,489,4.2,458,1.7,true,3.9,2,E,Aisle 2 · Shelf E
+102446,BRV-102446,Pinar Garlic Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Ukraine,78.32,411,4.3,316,0.7,true,3.1,2,A,Aisle 2 · Shelf A
+102784,BRV-102784,Pinar Lamb Pack of 4,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,France,1.66,473,4.9,717,0.3,true,3.7,2,F,Aisle 2 · Shelf F
+102589,BRV-102589,Pinar Lettuce 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,China,20.65,100,3,690,0.5,true,3.7,2,E,Aisle 2 · Shelf E
+103262,BRV-103262,Pinar Lime 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Ukraine,42.37,152,3.6,283,1.3,true,2.7,2,D,Aisle 2 · Shelf D
+102674,BRV-102674,Pinar Melon 750g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,750g,USA,18.21,105,3.1,121,0.8,true,1.9,2,D,Aisle 2 · Shelf D
+103556,BRV-103556,Pinar Orange Single,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Single,Germany,54.11,379,3.5,525,1.4,true,1.6,2,B,Aisle 2 · Shelf B
+102358,BRV-102358,Pinar Pear 2L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2L,Turkey,44.06,88,3.1,142,1.6,true,1.9,2,C,Aisle 2 · Shelf C
+102588,BRV-102588,Pinar Pineapple 2kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Turkey,71.93,388,3.3,151,1.5,true,3.2,2,D,Aisle 2 · Shelf D
+102105,BRV-102105,Pinar Potato 1L,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,1L,France,57.63,222,3.8,506,0.3,true,3.6,2,C,Aisle 2 · Shelf C
+102073,BRV-102073,Pinar Potato 200g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,200g,Netherlands,37.47,197,4.8,488,1.3,true,1.4,2,E,Aisle 2 · Shelf E
+102197,BRV-102197,Pinar Skim Milk Pack of 6,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,Italy,54.67,433,3.7,359,0.3,true,0.9,2,D,Aisle 2 · Shelf D
+103830,BRV-103830,Pinar Suluguni 5kg,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,5kg,India,59.95,191,4.6,260,0.7,true,2.3,2,E,Aisle 2 · Shelf E
+102522,BRV-102522,Pinar Zucchini 100g,Pinar,"Fresh Produce, Meat & Dairy",Vegetables,100g,Brazil,5.74,402,3.7,279,1.7,true,3.2,2,B,Aisle 2 · Shelf B
+103087,BRV-103087,President Apple 1L,President,"Fresh Produce, Meat & Dairy",Vegetables,1L,Turkey,55.95,332,4.7,302,0.6,true,1.2,2,C,Aisle 2 · Shelf C
+102234,BRV-102234,President Ayran 500g,President,"Fresh Produce, Meat & Dairy",Vegetables,500g,Poland,18.45,203,4.1,665,1.5,true,3.1,2,B,Aisle 2 · Shelf B
+103954,BRV-103954,President Cabbage Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Brazil,49.75,337,4.7,703,0.5,true,2.6,2,F,Aisle 2 · Shelf F
+103085,BRV-103085,President Eggplant 250g,President,"Fresh Produce, Meat & Dairy",Vegetables,250g,Netherlands,65.41,382,4.2,232,1.3,true,1.2,2,A,Aisle 2 · Shelf A
+102740,BRV-102740,President Eggplant Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Georgia,57.04,275,3.3,333,1.4,true,2.7,2,B,Aisle 2 · Shelf B
+102462,BRV-102462,President Eggplant Single,President,"Fresh Produce, Meat & Dairy",Vegetables,Single,USA,79.47,3,4.5,362,0.6,true,2.5,2,E,Aisle 2 · Shelf E
+103396,BRV-103396,President Ground Beef 100g,President,"Fresh Produce, Meat & Dairy",Vegetables,100g,Iran,24.62,237,4.3,487,0.3,true,1.7,2,B,Aisle 2 · Shelf B
+103523,BRV-103523,President Kefir 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Spain,10.7,375,4,537,1.2,true,3.7,2,B,Aisle 2 · Shelf B
+103317,BRV-103317,President Kiwi 250ml,President,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Brazil,31.24,455,3.1,642,1.1,true,3.6,2,A,Aisle 2 · Shelf A
+103806,BRV-103806,President Lactose-Free Milk Pack of 24,President,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,58.52,286,3.3,651,1.6,true,2.6,2,F,Aisle 2 · Shelf F
+103142,BRV-103142,President Lime 500g,President,"Fresh Produce, Meat & Dairy",Vegetables,500g,Azerbaijan,16.73,415,4.1,398,0.9,true,1,2,A,Aisle 2 · Shelf A
+103666,BRV-103666,President Melon Single,President,"Fresh Produce, Meat & Dairy",Vegetables,Single,China,63.35,213,3.7,147,0.4,true,1.9,2,D,Aisle 2 · Shelf D
+102201,BRV-102201,President Mozzarella 500ml,President,"Fresh Produce, Meat & Dairy",Vegetables,500ml,Ukraine,13.16,279,4.6,445,0.4,true,3.6,2,B,Aisle 2 · Shelf B
+103141,BRV-103141,President Mozzarella 5kg,President,"Fresh Produce, Meat & Dairy",Vegetables,5kg,Turkey,69.72,374,4.9,541,1.6,true,2.3,2,D,Aisle 2 · Shelf D
+102748,BRV-102748,President Orange 1kg,President,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Ukraine,42.79,407,4.9,205,0.4,true,1.7,2,F,Aisle 2 · Shelf F
+102076,BRV-102076,President Peach 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,Azerbaijan,41.01,322,4,289,0.5,true,1.9,2,D,Aisle 2 · Shelf D
+103912,BRV-103912,President Pear 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,Azerbaijan,26.73,493,3.8,233,1.1,true,3.2,2,D,Aisle 2 · Shelf D
+103955,BRV-103955,President Pomegranate 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,China,10.96,238,3.6,698,1.4,true,1.3,2,E,Aisle 2 · Shelf E
+103140,BRV-103140,President Potato 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,India,74.43,75,4.7,320,1.2,true,1.5,2,E,Aisle 2 · Shelf E
+102374,BRV-102374,President Strawberry 100g,President,"Fresh Produce, Meat & Dairy",Vegetables,100g,USA,50.22,71,4.8,456,0.6,true,3.8,2,E,Aisle 2 · Shelf E
+102237,BRV-102237,President Strawberry 200g,President,"Fresh Produce, Meat & Dairy",Vegetables,200g,Poland,10.84,274,3.8,234,0.5,true,3.5,2,E,Aisle 2 · Shelf E
+102411,BRV-102411,President Sturgeon 1kg,President,"Fresh Produce, Meat & Dairy",Vegetables,1kg,China,67.93,489,4.3,712,1.3,true,1.6,2,E,Aisle 2 · Shelf E
+102100,BRV-102100,President Suluguni 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Russia,37.26,436,3.5,579,0.8,true,3.7,2,D,Aisle 2 · Shelf D
+102293,BRV-102293,President Trout 2L,President,"Fresh Produce, Meat & Dairy",Vegetables,2L,Iran,58.73,267,4.3,472,0.3,true,2.8,2,C,Aisle 2 · Shelf C
+103349,BRV-103349,President Watermelon 750g,President,"Fresh Produce, Meat & Dairy",Vegetables,750g,Azerbaijan,32.6,245,3.1,587,1.2,true,1.6,2,F,Aisle 2 · Shelf F
+102778,BRV-102778,President Zucchini Family Pack,President,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Azerbaijan,21.59,161,3,656,0.7,true,3.2,2,E,Aisle 2 · Shelf E
+103663,BRV-103663,Sehiyye Broccoli 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,200g,Brazil,27.11,229,4.1,570,1.4,true,1.8,2,C,Aisle 2 · Shelf C
+102331,BRV-102331,Sehiyye Cheddar 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,11.32,435,3,325,1.3,true,1.6,2,B,Aisle 2 · Shelf B
+102131,BRV-102131,Sehiyye Cheddar 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Italy,15.62,326,4,151,1.6,true,3.4,2,D,Aisle 2 · Shelf D
+103892,BRV-103892,Sehiyye Chicken Thighs 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1kg,Georgia,40.17,21,3.6,472,1.1,true,3,2,E,Aisle 2 · Shelf E
+103823,BRV-103823,Sehiyye Chicken Wings Pack of 6,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 6,China,19.39,369,3,148,0.6,true,2.9,2,C,Aisle 2 · Shelf C
+103270,BRV-103270,Sehiyye Cilantro 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,250ml,Italy,16.52,256,4,346,0.8,true,0.8,2,A,Aisle 2 · Shelf A
+102576,BRV-102576,Sehiyye Cilantro 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Netherlands,26.92,281,3.2,128,1.3,true,1.4,2,C,Aisle 2 · Shelf C
+102219,BRV-102219,Sehiyye Dill 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500ml,China,63.47,441,3.6,622,1.1,true,2.3,2,C,Aisle 2 · Shelf C
+103509,BRV-103509,Sehiyye Eggplant Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 4,China,9.47,291,4.1,357,0.3,true,2.8,2,D,Aisle 2 · Shelf D
+103800,BRV-103800,Sehiyye Free-Range Eggs 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Netherlands,34.8,68,3.4,489,1.6,true,3,2,F,Aisle 2 · Shelf F
+102408,BRV-102408,Sehiyye Lettuce 500g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500g,Iran,17.69,146,4.9,210,0.5,true,2.2,2,E,Aisle 2 · Shelf E
+103545,BRV-103545,Sehiyye Onion 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,Spain,7.34,12,4.1,237,0.2,true,1.4,2,B,Aisle 2 · Shelf B
+103344,BRV-103344,Sehiyye Orange Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 24,Spain,34.15,65,3.7,154,0.3,true,2,2,A,Aisle 2 · Shelf A
+102256,BRV-102256,Sehiyye Parsley 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,India,14.33,110,3.6,557,1.2,true,3.8,2,F,Aisle 2 · Shelf F
+102259,BRV-102259,Sehiyye Peach 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1L,Azerbaijan,44.17,434,4.6,266,1.3,true,3.3,2,E,Aisle 2 · Shelf E
+103007,BRV-103007,Sehiyye Pomegranate Single,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Single,Azerbaijan,69.53,230,3.9,190,0.7,true,1.4,2,C,Aisle 2 · Shelf C
+103376,BRV-103376,Sehiyye Potato 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2kg,Poland,62.75,226,3.8,365,0.2,true,3.9,2,F,Aisle 2 · Shelf F
+103695,BRV-103695,Sehiyye Salmon 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,250g,Spain,33.61,140,3,657,0.7,true,3.7,2,B,Aisle 2 · Shelf B
+103809,BRV-103809,Sehiyye Skim Milk Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Pack of 12,Germany,51.35,419,4.1,532,1.1,true,0.9,2,A,Aisle 2 · Shelf A
+102383,BRV-102383,Sehiyye Spinach Family Pack,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,Family Pack,Azerbaijan,33.28,66,3.3,462,1,true,1.2,2,A,Aisle 2 · Shelf A
+102413,BRV-102413,Sehiyye Strawberry 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,200g,Italy,53.03,337,3.1,294,0.9,true,1.1,2,A,Aisle 2 · Shelf A
+102567,BRV-102567,Sehiyye Strawberry 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,2L,India,17.99,69,4.2,194,1.5,true,1.4,2,E,Aisle 2 · Shelf E
+103272,BRV-103272,Sehiyye Veal 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,1kg,France,51.91,112,3.3,684,1.7,true,2,2,A,Aisle 2 · Shelf A
+102847,BRV-102847,Sehiyye Watermelon 500ml,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,500ml,France,31.73,347,4.2,301,0.8,true,3.9,2,B,Aisle 2 · Shelf B
+102035,BRV-102035,Sehiyye Zucchini 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Vegetables,100g,Russia,15.52,478,3.5,238,1.5,true,2.1,2,C,Aisle 2 · Shelf C
+102463,BRV-102463,Atena Apple Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,USA,38.76,253,5,423,1.6,true,2,2,D,Aisle 2 · Shelf D
+103424,BRV-103424,Atena Banana 100g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,100g,Poland,8.63,147,4.8,439,1,true,1.6,2,D,Aisle 2 · Shelf D
+102028,BRV-102028,Atena Basil 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Ukraine,74.77,447,3.6,444,1.6,true,2.2,2,E,Aisle 2 · Shelf E
+102919,BRV-102919,Atena Bell Pepper Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Ukraine,55.26,463,3.3,133,0.9,true,1.3,2,D,Aisle 2 · Shelf D
+102885,BRV-102885,Atena Cheddar Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Azerbaijan,36.66,156,3.5,519,0.5,true,1.5,2,D,Aisle 2 · Shelf D
+103302,BRV-103302,Atena Chicken Breast 200g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,200g,India,70.33,230,4.2,676,1.6,true,2.3,2,E,Aisle 2 · Shelf E
+102827,BRV-102827,Atena Chicken Breast 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,Poland,42.54,96,4.3,715,1.4,true,2.3,2,F,Aisle 2 · Shelf F
+103460,BRV-103460,Atena Feta Cheese 500ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Spain,30.46,225,4.5,143,1.3,true,3.5,2,B,Aisle 2 · Shelf B
+102019,BRV-102019,Atena Greek Yogurt 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,Iran,68.7,74,4.7,644,0.3,true,1.9,2,A,Aisle 2 · Shelf A
+103763,BRV-103763,Atena Ground Beef 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,58.79,256,3.7,563,1,true,3.7,2,B,Aisle 2 · Shelf B
+103289,BRV-103289,Atena Kefir 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,67.86,401,4.5,290,0.8,true,3.9,2,E,Aisle 2 · Shelf E
+103426,BRV-103426,Atena Lactose-Free Milk 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Poland,37.83,209,4.6,545,1.6,true,3.3,2,D,Aisle 2 · Shelf D
+102816,BRV-102816,Atena Mini Pomegranate Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Georgia,34.28,244,3.4,379,0.9,true,3.7,2,B,Aisle 2 · Shelf B
+103371,BRV-103371,Atena Mozzarella Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Georgia,28.68,114,4.3,234,0.8,true,2.3,2,A,Aisle 2 · Shelf A
+102651,BRV-102651,Atena Onion Single,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Single,Spain,12.31,454,4.3,222,1.1,true,2.9,2,E,Aisle 2 · Shelf E
+103391,BRV-103391,Atena Orange Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Turkey,20.09,73,3.2,704,0.7,true,0.6,2,A,Aisle 2 · Shelf A
+102282,BRV-102282,Atena Orange Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Ukraine,23.14,27,3.5,406,1.6,true,3,2,A,Aisle 2 · Shelf A
+103113,BRV-103113,Atena Orange Pack of 6,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Italy,32.47,270,3.3,156,1.3,true,3.5,2,E,Aisle 2 · Shelf E
+102318,BRV-102318,Atena Parmesan 500g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500g,Brazil,48.12,84,3.1,434,1.7,true,3.9,2,E,Aisle 2 · Shelf E
+102127,BRV-102127,Atena Parsley Pack of 12,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Ukraine,62.95,182,4.6,354,1.1,true,2.3,2,C,Aisle 2 · Shelf C
+102901,BRV-102901,Atena Plum 5kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,5kg,China,25.83,221,3.4,686,0.7,true,3,2,C,Aisle 2 · Shelf C
+102476,BRV-102476,Atena Pomegranate Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,USA,77,423,3.1,397,0.8,true,0.7,2,D,Aisle 2 · Shelf D
+102389,BRV-102389,Atena Pomegranate Pack of 24,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Georgia,3.58,13,4.6,312,1.2,true,3.8,2,A,Aisle 2 · Shelf A
+102480,BRV-102480,Atena Potato Pack of 4,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Netherlands,79.12,142,3.5,274,0.8,true,2.2,2,A,Aisle 2 · Shelf A
+102765,BRV-102765,Atena Premium Basil 250ml,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250ml,France,49.88,239,4.2,122,0.9,true,3.7,2,A,Aisle 2 · Shelf A
+102125,BRV-102125,Atena Shrimp 250g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,250g,Iran,69.92,436,4.9,500,0.6,true,3,2,E,Aisle 2 · Shelf E
+103372,BRV-103372,Atena Strawberry 2L,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2L,Germany,55.72,45,3.1,473,0.7,true,1.2,2,D,Aisle 2 · Shelf D
+103195,BRV-103195,Atena Strawberry Single,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Single,Azerbaijan,50.63,61,4.4,262,0.4,true,2.4,2,C,Aisle 2 · Shelf C
+102275,BRV-102275,Atena Tomato 2kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Germany,16.61,118,3.2,672,1.1,true,2.7,2,C,Aisle 2 · Shelf C
+103899,BRV-103899,Atena Veal 2kg,Atena,"Fresh Produce, Meat & Dairy",Yogurt,2kg,USA,79.48,72,4.2,435,0.6,true,3.2,2,B,Aisle 2 · Shelf B
+103416,BRV-103416,Atena Whole Milk 500g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,500g,Netherlands,69.68,337,3.3,440,1.4,true,2.5,2,E,Aisle 2 · Shelf E
+102079,BRV-102079,Atena Whole Milk 750g,Atena,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,26.75,365,3.9,270,1.3,true,2.7,2,A,Aisle 2 · Shelf A
+102542,BRV-102542,Atena Zucchini Bulk,Atena,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,11.81,412,3.6,189,1.5,true,1.9,2,D,Aisle 2 · Shelf D
+102296,BRV-102296,Bravo Farm Ayran 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Iran,71.43,19,4.7,609,0.6,true,3.3,2,F,Aisle 2 · Shelf F
+103283,BRV-103283,Bravo Farm Beef Pack of 6,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Germany,37.29,33,3.7,140,1.4,true,0.6,2,A,Aisle 2 · Shelf A
+103072,BRV-103072,Bravo Farm Broccoli 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Brazil,49.77,289,3.4,406,0.2,true,0.7,2,E,Aisle 2 · Shelf E
+103796,BRV-103796,Bravo Farm Cabbage 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Turkey,23.4,14,3.3,587,0.5,true,2.9,2,B,Aisle 2 · Shelf B
+102062,BRV-102062,Bravo Farm Cilantro 2L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Iran,13.78,240,3.3,166,1.7,true,3.3,2,E,Aisle 2 · Shelf E
+102265,BRV-102265,Bravo Farm Cucumber 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,38.53,114,3,671,0.8,true,1.3,2,B,Aisle 2 · Shelf B
+103929,BRV-103929,Bravo Farm Dill Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,India,70.71,455,3.9,667,0.5,true,2.7,2,D,Aisle 2 · Shelf D
+102629,BRV-102629,Bravo Farm Grapes 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Spain,52.1,337,5,339,0.3,true,1.9,2,B,Aisle 2 · Shelf B
+102879,BRV-102879,Bravo Farm Ground Beef 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Spain,37.46,309,3.6,262,0.7,true,1.3,2,E,Aisle 2 · Shelf E
+103004,BRV-103004,Bravo Farm Kiwi 1.5L,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Italy,75.23,427,3.8,349,0.3,true,3.8,2,D,Aisle 2 · Shelf D
+102365,BRV-102365,Bravo Farm Lemon Bulk,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Germany,72.98,295,3.8,510,1.4,true,1.1,2,A,Aisle 2 · Shelf A
+103756,BRV-103756,Bravo Farm Mint 250ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,58.78,210,3.8,567,1.2,true,2.8,2,D,Aisle 2 · Shelf D
+103184,BRV-103184,Bravo Farm Onion 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Netherlands,39.15,284,4.8,208,1.2,true,1.6,2,A,Aisle 2 · Shelf A
+103976,BRV-103976,Bravo Farm Organic Ayran 1kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Turkey,21.98,273,4.3,463,1.5,true,0.6,2,D,Aisle 2 · Shelf D
+103148,BRV-103148,Bravo Farm Pear 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Brazil,52.88,125,4.3,256,0.5,true,0.8,2,E,Aisle 2 · Shelf E
+103341,BRV-103341,Bravo Farm Pomegranate 500g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500g,Brazil,77.22,43,3.6,339,0.2,true,2.5,2,F,Aisle 2 · Shelf F
+103192,BRV-103192,Bravo Farm Spinach 750g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,India,28.23,417,4.9,449,1.6,true,3.3,2,B,Aisle 2 · Shelf B
+102523,BRV-102523,Bravo Farm Turkey 250g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Georgia,46.16,499,3,378,0.3,true,1.9,2,E,Aisle 2 · Shelf E
+103429,BRV-103429,Bravo Farm Turkey 5kg,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,5kg,India,44.89,395,3.2,438,0.3,true,0.7,2,C,Aisle 2 · Shelf C
+102229,BRV-102229,Bravo Farm Whole Milk 100g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,17.09,13,5,191,0.3,true,3,2,B,Aisle 2 · Shelf B
+103502,BRV-103502,Bravo Farm Whole Milk 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Ukraine,51.23,31,3.6,518,0.4,true,0.6,2,A,Aisle 2 · Shelf A
+102951,BRV-102951,Bravo Farm Zucchini 200g,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,200g,Germany,13.47,357,3.4,657,1,true,2.8,2,F,Aisle 2 · Shelf F
+103088,BRV-103088,Bravo Farm Zucchini 500ml,Bravo Farm,"Fresh Produce, Meat & Dairy",Yogurt,500ml,France,29.39,385,4.8,393,0.2,true,0.8,2,F,Aisle 2 · Shelf F
+103951,BRV-103951,Local Farm Apple 100g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Azerbaijan,26.27,359,3.1,222,1.1,true,2,2,A,Aisle 2 · Shelf A
+103571,BRV-103571,Local Farm Beef 250g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Georgia,67.4,157,4.1,220,1.1,true,0.9,2,E,Aisle 2 · Shelf E
+102301,BRV-102301,Local Farm Cabbage 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Brazil,16.08,393,4.9,448,0.8,true,4,2,E,Aisle 2 · Shelf E
+102415,BRV-102415,Local Farm Chicken Breast 750g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Georgia,7.14,227,4.9,692,0.3,true,1.6,2,C,Aisle 2 · Shelf C
+103909,BRV-103909,Local Farm Chicken Thighs Family Pack,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Azerbaijan,74.57,173,4.6,529,0.3,true,3.6,2,F,Aisle 2 · Shelf F
+103286,BRV-103286,Local Farm Cilantro Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Germany,42.25,440,3.3,357,1.5,true,3.8,2,D,Aisle 2 · Shelf D
+103045,BRV-103045,Local Farm Dill 200g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,200g,China,39.67,195,4.7,148,0.8,true,2.9,2,A,Aisle 2 · Shelf A
+102162,BRV-102162,Local Farm Grapes 1.5L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Poland,51.72,230,3.4,383,0.3,true,1.1,2,D,Aisle 2 · Shelf D
+103816,BRV-103816,Local Farm Kiwi 250ml,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Ukraine,46.18,425,4.1,556,0.7,true,1.1,2,E,Aisle 2 · Shelf E
+102713,BRV-102713,Local Farm Kiwi 750g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,750g,Brazil,50.5,173,4,557,1.5,true,2.1,2,D,Aisle 2 · Shelf D
+102371,BRV-102371,Local Farm Lactose-Free Milk 5kg,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Germany,74.08,382,4.5,161,0.5,true,1.5,2,F,Aisle 2 · Shelf F
+102270,BRV-102270,Local Farm Lemon Pack of 4,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Iran,4.5,188,3.4,193,1.4,true,2.7,2,B,Aisle 2 · Shelf B
+103801,BRV-103801,Local Farm Mint 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Netherlands,34.33,466,5,188,0.6,true,3.1,2,A,Aisle 2 · Shelf A
+102468,BRV-102468,Local Farm Pomegranate Single,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Single,Netherlands,77.91,325,3.3,700,1.5,true,2.1,2,E,Aisle 2 · Shelf E
+102744,BRV-102744,Local Farm Quail Eggs Pack of 6,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Brazil,19.94,160,4,193,0.4,true,1.1,2,F,Aisle 2 · Shelf F
+103095,BRV-103095,Local Farm Shrimp 2L,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,2L,Azerbaijan,59.48,161,4.6,719,0.4,true,2.6,2,B,Aisle 2 · Shelf B
+102251,BRV-102251,Local Farm Turkey 250g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,250g,Poland,12.04,401,3.7,122,0.5,true,3.3,2,E,Aisle 2 · Shelf E
+102575,BRV-102575,Local Farm Veal 100g,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,100g,Netherlands,45.46,222,3.2,459,0.2,true,3.3,2,D,Aisle 2 · Shelf D
+102101,BRV-102101,Local Farm Watermelon Bulk,Local Farm,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,France,55.28,16,3.8,478,0.9,true,2.7,2,E,Aisle 2 · Shelf E
+102231,BRV-102231,Milla Apple 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,Spain,38.05,359,4,664,0.4,true,1.2,2,E,Aisle 2 · Shelf E
+103012,BRV-103012,Milla Apple Family Pack,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Turkey,59.44,387,4.9,640,1.2,true,1,2,A,Aisle 2 · Shelf A
+103706,BRV-103706,Milla Beef 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Ukraine,17.09,189,3.2,604,1.1,true,3,2,E,Aisle 2 · Shelf E
+103561,BRV-103561,Milla Cheddar Pack of 4,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,France,34.88,269,4.8,651,0.6,true,3,2,D,Aisle 2 · Shelf D
+103913,BRV-103913,Milla Cheddar Single,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Single,Spain,17.1,229,3.8,588,1,true,3.9,2,C,Aisle 2 · Shelf C
+102054,BRV-102054,Milla Chicken Breast 200g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,200g,USA,29.48,389,3.5,137,0.4,true,2.6,2,B,Aisle 2 · Shelf B
+103428,BRV-103428,Milla Chicken Wings 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,USA,18.15,176,4,347,1.1,true,2.1,2,F,Aisle 2 · Shelf F
+103438,BRV-103438,Milla Cucumber Pack of 12,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,USA,49.47,82,4.3,360,1.4,true,1.1,2,C,Aisle 2 · Shelf C
+103997,BRV-103997,Milla Dill 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,India,16.25,423,4.6,688,0.6,true,1.7,2,E,Aisle 2 · Shelf E
+103657,BRV-103657,Milla Feta Cheese 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Azerbaijan,22.63,112,4,171,1.3,true,2.8,2,D,Aisle 2 · Shelf D
+103587,BRV-103587,Milla Garlic 750g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,750g,Azerbaijan,68.92,415,3.9,255,1.4,true,1.3,2,B,Aisle 2 · Shelf B
+102032,BRV-102032,Milla Garlic Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Italy,9.82,370,4.8,473,1.1,true,1.9,2,D,Aisle 2 · Shelf D
+102762,BRV-102762,Milla Greek Yogurt 1.5L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Italy,37.16,307,4.5,285,0.7,true,2.1,2,D,Aisle 2 · Shelf D
+103382,BRV-103382,Milla Kiwi 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,France,48.21,16,3.2,428,0.3,true,2.5,2,A,Aisle 2 · Shelf A
+103844,BRV-103844,Milla Lactose-Free Milk Pack of 24,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Spain,53.21,243,3.5,169,1.3,true,3.4,2,F,Aisle 2 · Shelf F
+102426,BRV-102426,Milla Lamb 1L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1L,USA,28.65,398,4.9,690,0.8,true,3.8,2,A,Aisle 2 · Shelf A
+103948,BRV-103948,Milla Mint 250g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250g,Ukraine,64.21,412,3.6,264,0.2,true,2.8,2,C,Aisle 2 · Shelf C
+102842,BRV-102842,Milla Mint 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,USA,11.62,225,3.2,644,0.7,true,3.7,2,E,Aisle 2 · Shelf E
+103703,BRV-103703,Milla Mozzarella Bulk,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,66.94,406,3.5,717,0.4,true,3.7,2,B,Aisle 2 · Shelf B
+102692,BRV-102692,Milla Onion 250ml,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Spain,32.03,113,3.2,233,1.3,true,1.3,2,F,Aisle 2 · Shelf F
+102899,BRV-102899,Milla Parmesan 2L,Milla,"Fresh Produce, Meat & Dairy",Yogurt,2L,Iran,66.77,402,3.7,380,1.6,true,1.5,2,E,Aisle 2 · Shelf E
+103090,BRV-103090,Milla Pineapple 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,USA,38.9,225,4.3,510,0.8,true,0.7,2,A,Aisle 2 · Shelf A
+103538,BRV-103538,Milla Quail Eggs 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Spain,23.48,256,4.4,501,1.5,true,1,2,D,Aisle 2 · Shelf D
+103705,BRV-103705,Milla Skim Milk 250ml,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,15.71,412,3.6,503,0.5,true,1.1,2,F,Aisle 2 · Shelf F
+103493,BRV-103493,Milla Spinach 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Georgia,5.86,70,4.8,225,1.6,true,3.3,2,F,Aisle 2 · Shelf F
+102531,BRV-102531,Milla Strawberry 250g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,250g,Turkey,21,23,3.3,595,0.3,true,1.1,2,B,Aisle 2 · Shelf B
+102425,BRV-102425,Milla Turkey 1kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Brazil,23.09,457,4.6,345,0.7,true,1,2,F,Aisle 2 · Shelf F
+102767,BRV-102767,Milla Turkey Single,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Single,Poland,28.32,254,3.4,124,1.1,true,1.3,2,C,Aisle 2 · Shelf C
+102782,BRV-102782,Milla Watermelon 100g,Milla,"Fresh Produce, Meat & Dairy",Yogurt,100g,Germany,70.06,411,3.1,543,1.4,true,1.1,2,F,Aisle 2 · Shelf F
+103998,BRV-103998,Milla Watermelon 5kg,Milla,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Azerbaijan,74.77,119,3.6,215,0.9,true,0.6,2,D,Aisle 2 · Shelf D
+103885,BRV-103885,Milla Watermelon Pack of 6,Milla,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,China,41.28,399,3.2,400,0.4,true,0.8,2,A,Aisle 2 · Shelf A
+102986,BRV-102986,Palsud Banana Pack of 6,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 6,Poland,65.8,430,3.6,505,1.7,true,3.3,2,B,Aisle 2 · Shelf B
+102946,BRV-102946,Palsud Cheddar 250g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250g,Ukraine,47.14,214,4.1,301,0.5,true,3.5,2,B,Aisle 2 · Shelf B
+102210,BRV-102210,Palsud Cherry 250g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250g,Turkey,21.79,24,4.9,483,0.9,true,0.9,2,B,Aisle 2 · Shelf B
+102521,BRV-102521,Palsud Cherry 250ml,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,250ml,India,19.61,69,5,676,0.3,true,2.4,2,C,Aisle 2 · Shelf C
+103787,BRV-103787,Palsud Chicken Thighs 1kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Ukraine,11.15,378,3.2,713,1.4,true,2.2,2,B,Aisle 2 · Shelf B
+102872,BRV-102872,Palsud Dill 2L,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2L,Ukraine,69.31,294,3.8,701,1.4,true,3.5,2,B,Aisle 2 · Shelf B
+103290,BRV-103290,Palsud Feta Cheese 100g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,1.06,205,3.8,708,0.4,true,1.2,2,C,Aisle 2 · Shelf C
+103959,BRV-103959,Palsud Mint 5kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Germany,32.13,362,4.3,294,1,true,1.7,2,E,Aisle 2 · Shelf E
+102304,BRV-102304,Palsud Mint 750g,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,750g,Spain,41.53,100,4,289,0.9,true,1.1,2,F,Aisle 2 · Shelf F
+102761,BRV-102761,Palsud Mozzarella 2kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2kg,France,57.49,78,3.2,126,1.2,true,3.1,2,C,Aisle 2 · Shelf C
+103241,BRV-103241,Palsud Peach 2kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,2kg,India,42.31,279,4.3,478,0.3,true,2.9,2,A,Aisle 2 · Shelf A
+103303,BRV-103303,Palsud Pomegranate 5kg,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Poland,64.44,321,3.5,601,1.3,true,3.3,2,B,Aisle 2 · Shelf B
+103247,BRV-103247,Palsud Pomegranate Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Russia,31.04,67,3,684,0.9,true,3.4,2,E,Aisle 2 · Shelf E
+102814,BRV-102814,Palsud Spinach 1L,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,1L,Russia,25.42,62,3.9,197,1.5,true,1.6,2,D,Aisle 2 · Shelf D
+103586,BRV-103586,Palsud Spinach Pack of 4,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Brazil,17.66,200,4.7,250,1.7,true,3.3,2,A,Aisle 2 · Shelf A
+102995,BRV-102995,Palsud Suluguni Pack of 12,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Germany,46.43,380,3.2,561,0.2,true,2.8,2,D,Aisle 2 · Shelf D
+102244,BRV-102244,Palsud Turkey Bulk,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Germany,78.72,425,3.5,576,1.6,true,0.8,2,C,Aisle 2 · Shelf C
+102769,BRV-102769,Palsud Zucchini Bulk,Palsud,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Netherlands,46.19,48,3.3,446,0.5,true,2.7,2,C,Aisle 2 · Shelf C
+103264,BRV-103264,Pinar Apple Pack of 12,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,France,46.06,346,3,201,1.5,true,1.1,2,D,Aisle 2 · Shelf D
+102326,BRV-102326,Pinar Basil 2L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2L,Italy,71.27,478,3.7,393,1.2,true,3.7,2,F,Aisle 2 · Shelf F
+102555,BRV-102555,Pinar Bell Pepper 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Netherlands,55.04,174,3.3,369,1.1,true,3.8,2,D,Aisle 2 · Shelf D
+102569,BRV-102569,Pinar Broccoli Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Italy,7.47,303,4.5,416,1.7,true,3.5,2,E,Aisle 2 · Shelf E
+102540,BRV-102540,Pinar Carrot 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Turkey,39.72,358,3.6,443,0.4,true,2.3,2,F,Aisle 2 · Shelf F
+103048,BRV-103048,Pinar Carrot Pack of 24,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Germany,66.45,277,3.3,501,0.2,true,2.6,2,B,Aisle 2 · Shelf B
+102308,BRV-102308,Pinar Cherry 1.5L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Ukraine,20.47,478,4,421,1.4,true,3,2,F,Aisle 2 · Shelf F
+102777,BRV-102777,Pinar Chicken Thighs 2kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2kg,USA,58.78,274,4.6,183,0.7,true,3.2,2,D,Aisle 2 · Shelf D
+102520,BRV-102520,Pinar Chicken Wings 250ml,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Azerbaijan,5.14,248,4,153,1.6,true,1,2,B,Aisle 2 · Shelf B
+103770,BRV-103770,Pinar Feta Cheese 1kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Georgia,39.37,308,3.7,211,1.4,true,2.8,2,F,Aisle 2 · Shelf F
+102813,BRV-102813,Pinar Grapes 1kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Brazil,43.69,100,3,682,1,true,2.5,2,C,Aisle 2 · Shelf C
+102029,BRV-102029,Pinar Kiwi 1L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,1L,France,45.5,178,4.9,369,0.6,true,2.7,2,D,Aisle 2 · Shelf D
+102169,BRV-102169,Pinar Lettuce 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,15.88,55,4.5,572,1.5,true,0.9,2,A,Aisle 2 · Shelf A
+102228,BRV-102228,Pinar Mint 2L,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,2L,Georgia,37.21,256,4.7,186,0.6,true,1.6,2,A,Aisle 2 · Shelf A
+102342,BRV-102342,Pinar Parsley 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Italy,61.47,206,4,639,1.6,true,2.7,2,F,Aisle 2 · Shelf F
+102922,BRV-102922,Pinar Pear 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Georgia,55.09,480,3.1,595,1,true,3.3,2,F,Aisle 2 · Shelf F
+102495,BRV-102495,Pinar Potato 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Russia,47.38,386,3.1,588,0.6,true,3.1,2,A,Aisle 2 · Shelf A
+102151,BRV-102151,Pinar Potato 750g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,750g,USA,77.91,210,4.8,449,0.4,true,3.5,2,D,Aisle 2 · Shelf D
+103958,BRV-103958,Pinar Quail Eggs 500ml,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Germany,16.53,293,4.9,243,0.7,true,2.7,2,F,Aisle 2 · Shelf F
+103883,BRV-103883,Pinar Salmon 250g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,250g,Germany,30.87,230,3.4,122,0.8,true,2.4,2,A,Aisle 2 · Shelf A
+102279,BRV-102279,Pinar Salmon 750g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,750g,India,39.91,293,5,500,1.4,true,2,2,E,Aisle 2 · Shelf E
+102928,BRV-102928,Pinar Sturgeon 100g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,100g,Brazil,58.97,222,4.5,173,0.6,true,2.9,2,D,Aisle 2 · Shelf D
+102319,BRV-102319,Pinar Suluguni Family Pack,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,France,21.9,19,3.2,495,0.5,true,3.4,2,D,Aisle 2 · Shelf D
+103683,BRV-103683,Pinar Tomato 5kg,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Georgia,25.46,111,4.6,520,1.2,true,1,2,E,Aisle 2 · Shelf E
+102200,BRV-102200,Pinar Turkey 200g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,200g,Azerbaijan,57.68,180,3.6,184,0.6,true,2,2,E,Aisle 2 · Shelf E
+102136,BRV-102136,Pinar Whole Milk 500g,Pinar,"Fresh Produce, Meat & Dairy",Yogurt,500g,Turkey,63,326,3.6,544,1.1,true,3,2,C,Aisle 2 · Shelf C
+102017,BRV-102017,President Apple 750g,President,"Fresh Produce, Meat & Dairy",Yogurt,750g,Spain,73.7,440,4,654,1.5,true,3.5,2,A,Aisle 2 · Shelf A
+102989,BRV-102989,President Basil 200g,President,"Fresh Produce, Meat & Dairy",Yogurt,200g,India,33.62,128,3.3,294,0.2,true,2.3,2,C,Aisle 2 · Shelf C
+102896,BRV-102896,President Basil 500ml,President,"Fresh Produce, Meat & Dairy",Yogurt,500ml,India,21.08,261,4.5,667,1.1,true,0.9,2,B,Aisle 2 · Shelf B
+102417,BRV-102417,President Cabbage 500ml,President,"Fresh Produce, Meat & Dairy",Yogurt,500ml,Iran,13.28,61,3.9,490,0.9,true,2,2,C,Aisle 2 · Shelf C
+103940,BRV-103940,President Carrot Single,President,"Fresh Produce, Meat & Dairy",Yogurt,Single,Brazil,62.5,174,3.5,552,0.3,true,3,2,E,Aisle 2 · Shelf E
+102166,BRV-102166,President Cheddar 2L,President,"Fresh Produce, Meat & Dairy",Yogurt,2L,Azerbaijan,5.51,490,4.8,419,0.7,true,2.3,2,D,Aisle 2 · Shelf D
+102221,BRV-102221,President Cherry 1L,President,"Fresh Produce, Meat & Dairy",Yogurt,1L,Iran,37.52,425,4.4,343,1.1,true,2.6,2,D,Aisle 2 · Shelf D
+102416,BRV-102416,President Cilantro Pack of 24,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Azerbaijan,65.32,435,3.1,279,0.9,true,3.3,2,F,Aisle 2 · Shelf F
+102014,BRV-102014,President Eggplant Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Russia,77.68,336,3.4,373,1.4,true,1.7,2,B,Aisle 2 · Shelf B
+103858,BRV-103858,President Feta Cheese 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,Germany,33.14,122,3.4,130,1.7,true,1.4,2,E,Aisle 2 · Shelf E
+103828,BRV-103828,President Feta Cheese Pack of 4,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Turkey,76.42,411,4.3,199,1.6,true,1.9,2,B,Aisle 2 · Shelf B
+102776,BRV-102776,President Greek Yogurt 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,China,37.23,147,4.7,178,1,true,1.7,2,C,Aisle 2 · Shelf C
+103640,BRV-103640,President Ground Beef Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,China,38.83,23,3.1,207,1.2,true,2.8,2,F,Aisle 2 · Shelf F
+102253,BRV-102253,President Kefir Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Germany,76.29,455,3.4,572,1,true,1.8,2,C,Aisle 2 · Shelf C
+103870,BRV-103870,President Lime 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,Germany,18.82,176,4.6,128,1.4,true,1.1,2,C,Aisle 2 · Shelf C
+103952,BRV-103952,President Mint 1L,President,"Fresh Produce, Meat & Dairy",Yogurt,1L,Russia,12.43,10,3.3,717,0.8,true,1.6,2,D,Aisle 2 · Shelf D
+102382,BRV-102382,President Mint 200g,President,"Fresh Produce, Meat & Dairy",Yogurt,200g,Italy,48.13,31,3.9,227,1.4,true,2.6,2,B,Aisle 2 · Shelf B
+103829,BRV-103829,President Orange 100g,President,"Fresh Produce, Meat & Dairy",Yogurt,100g,Germany,16.12,153,4.1,138,0.6,true,0.9,2,E,Aisle 2 · Shelf E
+103615,BRV-103615,President Orange Pack of 24,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Netherlands,68.09,46,4.3,425,1.4,true,3.5,2,B,Aisle 2 · Shelf B
+103729,BRV-103729,President Original Turkey Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,France,68.83,444,3.1,585,1.1,true,3.7,2,F,Aisle 2 · Shelf F
+102594,BRV-102594,President Parmesan 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,USA,31.65,77,4.1,480,0.5,true,2.1,2,A,Aisle 2 · Shelf A
+102513,BRV-102513,President Peach 250g,President,"Fresh Produce, Meat & Dairy",Yogurt,250g,USA,75.23,223,3.5,567,0.3,true,2.5,2,D,Aisle 2 · Shelf D
+102441,BRV-102441,President Pear Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Turkey,43.96,489,4.8,371,0.5,true,1,2,D,Aisle 2 · Shelf D
+103662,BRV-103662,President Plum Pack of 12,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Georgia,41.73,10,3.2,503,1.6,true,3.5,2,D,Aisle 2 · Shelf D
+103082,BRV-103082,President Quail Eggs 250ml,President,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Germany,36.83,202,4.5,511,1.3,true,3.8,2,B,Aisle 2 · Shelf B
+103124,BRV-103124,President Quail Eggs Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,India,32.7,417,4.9,202,1,true,2.2,2,C,Aisle 2 · Shelf C
+102788,BRV-102788,President Salmon Pack of 4,President,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,India,45.77,257,4.5,177,1.4,true,2.2,2,D,Aisle 2 · Shelf D
+102484,BRV-102484,President Salmon Single,President,"Fresh Produce, Meat & Dairy",Yogurt,Single,USA,64.41,290,4.2,678,0.7,true,1.3,2,E,Aisle 2 · Shelf E
+103019,BRV-103019,President Spinach 100g,President,"Fresh Produce, Meat & Dairy",Yogurt,100g,China,59.98,186,4.5,451,1.5,true,3.3,2,F,Aisle 2 · Shelf F
+103102,BRV-103102,President Spinach Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Ukraine,14.14,300,3.6,682,0.6,true,3.8,2,C,Aisle 2 · Shelf C
+102086,BRV-102086,President Trout Bulk,President,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,France,18.48,11,3.9,428,0.8,true,2.1,2,C,Aisle 2 · Shelf C
+103664,BRV-103664,President Turkey Family Pack,President,"Fresh Produce, Meat & Dairy",Yogurt,Family Pack,Brazil,71.6,297,4.2,205,1.5,true,3.4,2,D,Aisle 2 · Shelf D
+102106,BRV-102106,President Whole Milk 2kg,President,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Brazil,52.67,186,3.3,145,0.8,true,2.5,2,F,Aisle 2 · Shelf F
+102808,BRV-102808,President Whole Milk 500g,President,"Fresh Produce, Meat & Dairy",Yogurt,500g,India,9.97,297,3.6,486,1.1,true,3.1,2,C,Aisle 2 · Shelf C
+102475,BRV-102475,Sehiyye Beef 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Russia,71.87,181,4.4,630,1.3,true,1.7,2,C,Aisle 2 · Shelf C
+102066,BRV-102066,Sehiyye Bell Pepper 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,13.77,439,4,298,1,true,2.6,2,A,Aisle 2 · Shelf A
+103093,BRV-103093,Sehiyye Broccoli 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1L,Germany,40.44,168,4.4,397,1.5,true,1.7,2,B,Aisle 2 · Shelf B
+103811,BRV-103811,Sehiyye Cabbage 1L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1L,USA,55.26,76,4.2,403,1.2,true,3.9,2,D,Aisle 2 · Shelf D
+103831,BRV-103831,Sehiyye Cabbage Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Georgia,74.32,167,3.5,561,0.5,true,2.1,2,B,Aisle 2 · Shelf B
+103814,BRV-103814,Sehiyye Carrot Single,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Single,Poland,54.68,425,3.8,218,1.3,true,3.4,2,E,Aisle 2 · Shelf E
+103933,BRV-103933,Sehiyye Chicken Breast 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Italy,53.02,16,3.8,210,1.2,true,3,2,E,Aisle 2 · Shelf E
+103869,BRV-103869,Sehiyye Chicken Breast 200g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,200g,Brazil,5.09,65,3.3,126,1.2,true,2.7,2,C,Aisle 2 · Shelf C
+102849,BRV-102849,Sehiyye Chicken Breast 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2L,China,0.87,468,3.5,263,0.4,true,0.9,2,F,Aisle 2 · Shelf F
+103207,BRV-103207,Sehiyye Chicken Thighs Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Poland,67.89,207,4.2,368,0.5,true,2.2,2,E,Aisle 2 · Shelf E
+103050,BRV-103050,Sehiyye Cucumber Pack of 12,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 12,Iran,52.85,398,3.3,290,0.7,true,1.5,2,C,Aisle 2 · Shelf C
+102114,BRV-102114,Sehiyye Cucumber Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Germany,35.08,486,4.5,572,0.7,true,2.2,2,C,Aisle 2 · Shelf C
+103893,BRV-103893,Sehiyye Greek Yogurt Single,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Single,Turkey,52.71,52,4,237,1,true,1.1,2,B,Aisle 2 · Shelf B
+103168,BRV-103168,Sehiyye Lamb 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,Azerbaijan,52.98,273,4.1,642,1.7,true,0.8,2,A,Aisle 2 · Shelf A
+102609,BRV-102609,Sehiyye Mint 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,100g,Netherlands,78.42,136,3.7,625,0.8,true,4,2,D,Aisle 2 · Shelf D
+103788,BRV-103788,Sehiyye Peach Pack of 24,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 24,Iran,12.58,42,4.3,502,1.5,true,1.7,2,A,Aisle 2 · Shelf A
+102149,BRV-102149,Sehiyye Pineapple 100g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,100g,Ukraine,46.35,373,4.6,226,0.7,true,1.6,2,A,Aisle 2 · Shelf A
+102534,BRV-102534,Sehiyye Pomegranate 250ml,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250ml,China,3.59,219,3.9,602,1.1,true,3.3,2,C,Aisle 2 · Shelf C
+102255,BRV-102255,Sehiyye Pomegranate Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Azerbaijan,79.21,242,3.3,398,0.4,true,1.4,2,A,Aisle 2 · Shelf A
+103363,BRV-103363,Sehiyye Pomegranate Pack of 4,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Pack of 4,Poland,8.87,242,4.6,223,0.3,true,2.6,2,D,Aisle 2 · Shelf D
+103480,BRV-103480,Sehiyye Potato 1kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1kg,Italy,22.66,410,4.2,245,0.7,true,2.6,2,D,Aisle 2 · Shelf D
+103524,BRV-103524,Sehiyye Quail Eggs 2kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2kg,Azerbaijan,62.53,31,3,134,0.6,true,3.6,2,E,Aisle 2 · Shelf E
+102532,BRV-102532,Sehiyye Salmon 5kg,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,5kg,Italy,5.96,456,3.6,128,0.7,true,3.6,2,A,Aisle 2 · Shelf A
+102011,BRV-102011,Sehiyye Shrimp 250g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,250g,Russia,7.44,449,4.9,260,1.3,true,0.9,2,E,Aisle 2 · Shelf E
+102266,BRV-102266,Sehiyye Spinach 2L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,2L,Russia,79.88,59,4.7,580,1.4,true,1.2,2,E,Aisle 2 · Shelf E
+102315,BRV-102315,Sehiyye Sturgeon 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,Netherlands,2.54,330,4,619,1.3,true,2.1,2,D,Aisle 2 · Shelf D
+102895,BRV-102895,Sehiyye Trout 750g,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,750g,Germany,37.36,30,4.8,200,1.5,true,3.8,2,E,Aisle 2 · Shelf E
+102261,BRV-102261,Sehiyye Zucchini 1.5L,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,1.5L,China,50.61,472,4.7,531,1.6,true,2.8,2,D,Aisle 2 · Shelf D
+103707,BRV-103707,Sehiyye Zucchini Bulk,Sehiyye,"Fresh Produce, Meat & Dairy",Yogurt,Bulk,Ukraine,58.67,259,3.9,577,1.2,true,1.8,2,B,Aisle 2 · Shelf B
 104363,BRV-104363,Badamli Apple Juice Pack of 4,Badamli,Beverages,Beer,Pack of 4,USA,9.9,157,3.8,204,25,false,,5,A,Aisle 5 · Shelf A
 105772,BRV-105772,Badamli Black Tea 200g,Badamli,Beverages,Beer,200g,France,62.26,80,4.4,177,69,false,,5,B,Aisle 5 · Shelf B
 105096,BRV-105096,Badamli Energy Drink 250g,Badamli,Beverages,Beer,250g,Brazil,51.22,425,3.5,202,58,false,,5,C,Aisle 5 · Shelf C
