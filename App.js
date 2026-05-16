@@ -3686,11 +3686,8 @@ const SEVERITY_LABEL = {
 
 const AdminScreen = ({ user, onLogout, onSelect }) => {
   const analytics = useMemo(() => getAnalytics(), []);
-  const critical = useMemo(() => getCriticalActions(15), []);
   const health = useMemo(() => getStockHealth(), []);
-  const restockPlan = useMemo(() => getRestockPlan(8), []);
   const traffic = useMemo(() => getTrafficByAisle(), []);
-  const placements = useMemo(() => getPlacementSuggestions(3), []);
   const missions = useMemo(() => getMorningMissions(), []);
   const topCategories = useMemo(
     () => analytics.categories.slice(0, 5),
@@ -3863,107 +3860,97 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
           <KpiInline label="Overstock" value={analytics.overstocked.length} accent={ORANGE} last />
         </View>
 
-        {/* 1. CRITICAL ACTIONS (top) */}
-        <View style={{ paddingHorizontal: 12, paddingTop: 12 }}>
-          <View
+        {/* AI Store Manager — soft, light, scannable. Was a heavy dark card. */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 16 }}>
+          <TouchableOpacity
+            onPress={loadInsights}
+            disabled={insightsLoading}
+            activeOpacity={0.85}
             style={{
+              backgroundColor: "white",
+              borderRadius: R.md,
+              padding: 14,
               flexDirection: "row",
               alignItems: "center",
-              marginBottom: 8,
+              ...Platform.select({
+                ios: {
+                  shadowColor: "#000",
+                  shadowOffset: { width: 0, height: 1 },
+                  shadowOpacity: 0.05,
+                  shadowRadius: 4,
+                },
+                android: { elevation: 1 },
+              }),
             }}
           >
-            <Text style={{ fontSize: 14 }}>⚡</Text>
-            <Text
-              style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}
-            >
-              Critical Actions
-            </Text>
-            <Text style={{ fontSize: 11, color: GRAY }}>{critical.length}</Text>
-          </View>
-          {critical.slice(0, 3).map((p) => (
-            <CriticalCard key={p.product_id} product={p} onPress={() => onSelect(p)} />
-          ))}
-        </View>
-
-        {/* 2. AI summary card */}
-        <View
-          style={{
-            marginHorizontal: 12,
-            marginTop: 4,
-            marginBottom: 12,
-            backgroundColor: DARK,
-            borderRadius: 12,
-            padding: 12,
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
             <View
               style={{
-                width: 26,
-                height: 26,
-                borderRadius: 13,
-                backgroundColor: GREEN,
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+                backgroundColor: `${GREEN}1A`,
                 alignItems: "center",
                 justifyContent: "center",
+                marginRight: 10,
               }}
             >
-              <Icon name="robot" size={14} color="white" />
+              <Icon name="robot" size={16} color={GREEN} />
             </View>
-            <Text style={{ fontWeight: "800", fontSize: 13, color: "white", marginLeft: 8, flex: 1 }}>
-              AI Store Manager
-            </Text>
-            <TouchableOpacity
-              onPress={loadInsights}
-              disabled={insightsLoading}
-              style={{
-                backgroundColor: GREEN,
-                paddingHorizontal: 10,
-                paddingVertical: 6,
-                borderRadius: 8,
-                opacity: insightsLoading ? 0.6 : 1,
-              }}
-            >
-              <Text style={{ color: "white", fontSize: 11, fontWeight: "700" }}>
-                {insights ? "Refresh" : "Generate"}
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 13, fontWeight: "700", color: TEXT_TITLE }}>
+                AI Store Manager
               </Text>
-            </TouchableOpacity>
-          </View>
-          {insightsLoading && (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <ActivityIndicator size="small" color={GREEN} />
-              <Text style={{ color: "#aaa", marginLeft: 8, fontSize: 12 }}>Analyzing…</Text>
+              <Text style={{ fontSize: 11, color: TEXT_MUTED, marginTop: 1 }} numberOfLines={1}>
+                {insightsLoading
+                  ? "Analyzing…"
+                  : insights
+                  ? "Briefing ready · tap to refresh"
+                  : "Tap for a 130-word manager briefing"}
+              </Text>
             </View>
-          )}
+            <Text style={{ fontSize: 12, fontWeight: "700", color: GREEN }}>
+              {insights ? "Refresh" : "Generate"}
+            </Text>
+          </TouchableOpacity>
           {insightsError && (
-            <Text style={{ color: "#FCA5A5", fontSize: 12 }}>⚠️ {insightsError}</Text>
+            <Text style={{ color: RED, fontSize: 12, marginTop: 6, paddingHorizontal: 4 }}>
+              ⚠️ {insightsError}
+            </Text>
           )}
           {insights && !insightsLoading && (
-            <Text style={{ fontSize: 12, color: "#E5E7EB", lineHeight: 18 }}>{insights}</Text>
-          )}
-          {!insights && !insightsLoading && !insightsError && (
-            <Text style={{ fontSize: 12, color: "#9CA3AF", fontStyle: "italic" }}>
-              Tap "Generate" for a 130-word manager briefing.
-            </Text>
+            <View
+              style={{
+                backgroundColor: SOFT_BG,
+                borderRadius: R.md,
+                padding: 12,
+                marginTop: 8,
+              }}
+            >
+              <Text style={{ fontSize: 13, color: TEXT_TITLE, lineHeight: 19 }}>
+                {insights}
+              </Text>
+            </View>
           )}
         </View>
 
-        {/* 3. Charts row — donut + bars side by side */}
-        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
+        {/* Charts: Stock Health + Top Categories */}
+        <SectionHeader title="At a glance" />
+        <View style={{ paddingHorizontal: 12, marginBottom: 8 }}>
           <View
             style={{
               backgroundColor: "white",
-              borderRadius: 12,
-              borderWidth: 1,
-              borderColor: BORDER,
-              padding: 12,
+              borderRadius: R.md,
+              padding: 14,
               flexDirection: "row",
               alignItems: "center",
+              marginBottom: 10,
+              ...adminShadow(),
             }}
           >
             <Donut health={health} />
-            <View style={{ flex: 1, marginLeft: 12 }}>
-              <Text style={{ fontWeight: "800", fontSize: 12, color: DARK, marginBottom: 6 }}>
-                Stock Health
+            <View style={{ flex: 1, marginLeft: 14 }}>
+              <Text style={{ fontWeight: "700", fontSize: 13, color: TEXT_TITLE, marginBottom: 8 }}>
+                Stock health
               </Text>
               <Legend color={GREEN} label="Healthy" value={health.ok} total={health.total} />
               <Legend color="#EF4444" label="Low" value={health.low} total={health.total} />
@@ -3971,221 +3958,87 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
               <Legend color="#DC2626" label="Expiring" value={health.exp} total={health.total} />
             </View>
           </View>
-        </View>
-
-        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
           <View
             style={{
               backgroundColor: "white",
-              borderRadius: 12,
-              borderWidth: 1,
-              borderColor: BORDER,
-              padding: 12,
+              borderRadius: R.md,
+              padding: 14,
+              ...adminShadow(),
             }}
           >
-            <Text style={{ fontWeight: "800", fontSize: 12, color: DARK, marginBottom: 8 }}>
-              Top Categories (30d revenue)
+            <Text style={{ fontWeight: "700", fontSize: 13, color: TEXT_TITLE, marginBottom: 10 }}>
+              Top categories · 30-day revenue
             </Text>
             <CategoryBars categories={topCategories} />
           </View>
         </View>
 
-        {/* 3b. Restock Plan */}
-        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
-          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
-            <Text style={{ fontSize: 14 }}>📦</Text>
-            <Text style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}>
-              Restock Plan
-            </Text>
-            <Text style={{ fontSize: 11, color: GRAY }}>{restockPlan.length} orders</Text>
-          </View>
-          {restockPlan.slice(0, 4).map((p) => (
-            <TouchableOpacity
-              key={p.product_id}
-              onPress={() => onSelect(p)}
-              activeOpacity={0.85}
-              style={{
-                backgroundColor: "white",
-                borderRadius: 10,
-                borderWidth: 1,
-                borderColor: BORDER,
-                marginBottom: 6,
-                overflow: "hidden",
-              }}
-            >
-              <View
-                style={{
-                  paddingHorizontal: 10,
-                  paddingVertical: 4,
-                  backgroundColor: p.urgency === "today" ? RED : p.urgency === "within 24h" ? ORANGE : "#1E40AF",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ color: "white", fontSize: 9, fontWeight: "800", letterSpacing: 1 }}>
-                  ORDER {p.urgency.toUpperCase()} · {p.reorderQty} UNITS
-                </Text>
-                <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>
-                  AISLE {p.aisle_num}
-                </Text>
-              </View>
-              <View style={{ padding: 10 }}>
-                <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
-                  {p.name}
-                </Text>
-                <Text style={{ fontSize: 11, color: DARK, lineHeight: 16, marginTop: 4 }} numberOfLines={3}>
-                  {p.narrative}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          ))}
-          {restockPlan.length === 0 && (
-            <View
-              style={{
-                backgroundColor: "white",
-                borderRadius: 10,
-                padding: 14,
-                alignItems: "center",
-              }}
-            >
-              <Text style={{ color: GRAY, fontSize: 12 }}>No urgent restocks. 🎯</Text>
-            </View>
-          )}
-        </View>
-
-        {/* 3c. Aisle Traffic + Smart Placement */}
-        <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
+        {/* Aisle Traffic — compact list */}
+        <SectionHeader title="Aisle traffic this week" />
+        <View style={{ paddingHorizontal: 12, marginBottom: 8 }}>
           <View
             style={{
               backgroundColor: "white",
-              borderRadius: 12,
-              borderWidth: 1,
-              borderColor: BORDER,
+              borderRadius: R.md,
               padding: 12,
+              ...adminShadow(),
             }}
           >
-            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
-              <Text style={{ fontSize: 14 }}>👥</Text>
-              <Text style={{ fontWeight: "800", fontSize: 13, color: DARK, marginLeft: 6, flex: 1 }}>
-                Aisle Traffic (weekly)
-              </Text>
-            </View>
             {traffic.slice(0, 6).map((a, i) => {
               const max = traffic[0].visitors;
               const w = `${Math.max(8, (a.visitors / max) * 100)}%`;
               const isHigh = i < 2;
               const isLow = i >= 4;
               return (
-                <View key={a.aisle} style={{ marginBottom: 6 }}>
+                <View
+                  key={a.aisle}
+                  style={{
+                    marginBottom: i === 5 ? 0 : 8,
+                  }}
+                >
                   <View
                     style={{
                       flexDirection: "row",
                       justifyContent: "space-between",
-                      marginBottom: 2,
+                      marginBottom: 3,
                     }}
                   >
-                    <Text style={{ fontSize: 11, color: DARK, fontWeight: "700" }}>
-                      Aisle {a.aisle} · {a.name}
+                    <Text style={{ fontSize: 12, color: TEXT_TITLE, fontWeight: "600" }}>
+                      A{a.aisle} · {a.name}{" "}
+                      {isHigh ? "🔥" : isLow ? "🐢" : ""}
                     </Text>
-                    <Text style={{ fontSize: 11, color: GRAY }}>
-                      {a.visitors.toLocaleString()} visits
-                      {isHigh ? " 🔥" : isLow ? " 🐢" : ""}
+                    <Text style={{ fontSize: 11, color: TEXT_MUTED }}>
+                      {a.visitors.toLocaleString()}
                     </Text>
                   </View>
                   <View
-                    style={{ height: 6, backgroundColor: LIGHT_GRAY, borderRadius: 3, overflow: "hidden" }}
+                    style={{ height: 4, backgroundColor: SOFT_BG, borderRadius: 2, overflow: "hidden" }}
                   >
                     <View
                       style={{
-                        height: 6,
-                        backgroundColor: isHigh ? GREEN : isLow ? "#D1D5DB" : GREEN_MID,
+                        height: 4,
+                        backgroundColor: isHigh ? GREEN : isLow ? "#D1D1D6" : GREEN_MID,
                         width: w,
-                        borderRadius: 3,
+                        borderRadius: 2,
                       }}
                     />
                   </View>
                 </View>
               );
             })}
-            <Text
-              style={{
-                fontSize: 11,
-                color: GRAY,
-                fontStyle: "italic",
-                marginTop: 4,
-                lineHeight: 16,
-              }}
-            >
-              More shoppers spend time near {traffic[0].name} and {traffic[1].name}. {" "}
-              {placements[0]
-                ? "Consider moving slow-movers to a secondary display there."
-                : ""}
-            </Text>
           </View>
         </View>
 
-        {placements.length > 0 && (
-          <View style={{ paddingHorizontal: 12, marginBottom: 12 }}>
-            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
-              <Text style={{ fontSize: 14 }}>🔄</Text>
-              <Text style={{ fontWeight: "800", fontSize: 14, color: DARK, marginLeft: 6, flex: 1 }}>
-                Smart Placement
-              </Text>
-            </View>
-            {placements.map((s) => (
-              <TouchableOpacity
-                key={s.product.product_id}
-                onPress={() => onSelect(s.product)}
-                activeOpacity={0.85}
-                style={{
-                  backgroundColor: "white",
-                  borderRadius: 10,
-                  borderWidth: 1,
-                  borderColor: BORDER,
-                  marginBottom: 6,
-                  overflow: "hidden",
-                }}
-              >
-                <View
-                  style={{
-                    paddingHorizontal: 10,
-                    paddingVertical: 4,
-                    backgroundColor: "#8B5CF6",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Text style={{ color: "white", fontSize: 9, fontWeight: "800", letterSpacing: 1 }}>
-                    MOVE FROM A{s.currentAisle} → A{s.suggestedAisle}
-                  </Text>
-                  <Text style={{ color: "white", fontSize: 9, fontWeight: "700" }}>
-                    {s.suggestedDept.toUpperCase()}
-                  </Text>
-                </View>
-                <View style={{ padding: 10 }}>
-                  <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
-                    {s.product.name}
-                  </Text>
-                  <Text style={{ fontSize: 11, color: DARK, lineHeight: 16, marginTop: 4 }} numberOfLines={4}>
-                    {s.narrative}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
-
-        {/* 4. Full lists */}
+        {/* Full lists — iOS grouped-table-style rows */}
+        <SectionHeader title="Inventory issues" />
         <View
           style={{
             flexDirection: "row",
             marginHorizontal: 12,
-            backgroundColor: "white",
+            backgroundColor: SOFT_BG,
             borderRadius: 10,
             padding: 3,
             marginBottom: 10,
-            borderWidth: 1,
-            borderColor: BORDER,
           }}
         >
           {[
@@ -4196,19 +4049,31 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
             <TouchableOpacity
               key={t.id}
               onPress={() => setTab(t.id)}
+              activeOpacity={0.7}
               style={{
                 flex: 1,
-                paddingVertical: 7,
-                borderRadius: 7,
-                backgroundColor: tab === t.id ? GREEN : "transparent",
+                paddingVertical: 8,
+                borderRadius: 8,
+                backgroundColor: tab === t.id ? "white" : "transparent",
                 alignItems: "center",
+                ...(tab === t.id
+                  ? Platform.select({
+                      ios: {
+                        shadowColor: "#000",
+                        shadowOffset: { width: 0, height: 1 },
+                        shadowOpacity: 0.08,
+                        shadowRadius: 2,
+                      },
+                      android: { elevation: 1 },
+                    })
+                  : {}),
               }}
             >
               <Text
                 style={{
-                  fontSize: 11,
-                  fontWeight: "700",
-                  color: tab === t.id ? "white" : GRAY,
+                  fontSize: 12,
+                  fontWeight: tab === t.id ? "700" : "500",
+                  color: tab === t.id ? TEXT_TITLE : TEXT_MUTED,
                 }}
               >
                 {t.label}
@@ -4218,62 +4083,105 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
         </View>
 
         <View style={{ paddingHorizontal: 12 }}>
-          {list.slice(0, 30).map((p) => (
-            <TouchableOpacity
-              key={p.product_id}
-              onPress={() => onSelect(p)}
-              activeOpacity={0.85}
-              style={{
-                backgroundColor: "white",
-                borderRadius: 10,
-                borderWidth: 1,
-                borderColor: BORDER,
-                padding: 10,
-                marginBottom: 6,
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <View
-                style={{
-                  width: 5,
-                  height: 36,
-                  borderRadius: 3,
-                  backgroundColor: SEVERITY_COLOR[p.status] || GRAY,
-                  marginRight: 10,
-                }}
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: R.md,
+              overflow: "hidden",
+              ...adminShadow(),
+            }}
+          >
+            {list.slice(0, 30).map((p, i) => (
+              <InventoryRow
+                key={p.product_id}
+                product={p}
+                onPress={() => onSelect(p)}
+                isLast={i === Math.min(list.length, 30) - 1}
               />
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }} numberOfLines={1}>
-                  {p.name}
-                </Text>
-                <Text style={{ fontSize: 10, color: GRAY, marginTop: 1 }} numberOfLines={1}>
-                  {p.location} · Stock {p.stock_qty} · Sold/30d {p.units_sold}
-                  {p.is_fresh ? ` · Exp ${p.expires_in_days}d` : ""}
+            ))}
+            {list.length === 0 && (
+              <View style={{ padding: 24, alignItems: "center" }}>
+                <Text style={{ color: TEXT_MUTED, fontSize: 13 }}>
+                  Nothing flagged in this bucket. 🎉
                 </Text>
               </View>
-              <Text style={{ fontSize: 12, fontWeight: "700", color: DARK }}>
-                {p.price_azn.toFixed(2)} ₼
-              </Text>
-            </TouchableOpacity>
-          ))}
-          {list.length === 0 && (
-            <View
-              style={{
-                backgroundColor: "white",
-                borderRadius: 10,
-                padding: 18,
-                alignItems: "center",
-              }}
-            >
-              <Text style={{ color: GRAY, fontSize: 12 }}>Nothing flagged. 🎉</Text>
-            </View>
-          )}
+            )}
+          </View>
         </View>
       </ScrollView>
     </View>
   );
 };
+
+function adminShadow() {
+  return Platform.select({
+    ios: {
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.05,
+      shadowRadius: 4,
+    },
+    android: { elevation: 1 },
+    default: {},
+  });
+}
+
+const SectionHeader = ({ title }) => (
+  <Text
+    style={{
+      fontSize: 13,
+      fontWeight: "700",
+      color: TEXT_MUTED,
+      letterSpacing: 0.3,
+      textTransform: "uppercase",
+      paddingHorizontal: 16,
+      marginBottom: 8,
+      marginTop: 4,
+    }}
+  >
+    {title}
+  </Text>
+);
+
+const InventoryRow = ({ product, onPress, isLast }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    activeOpacity={0.6}
+    style={{
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: 14,
+      paddingVertical: 11,
+      borderBottomWidth: isLast ? 0 : 0.5,
+      borderBottomColor: SUBTLE_BORDER,
+    }}
+  >
+    <View
+      style={{
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        backgroundColor: SEVERITY_COLOR[product.status] || GRAY,
+        marginRight: 12,
+      }}
+    />
+    <View style={{ flex: 1 }}>
+      <Text style={{ fontSize: 14, fontWeight: "600", color: TEXT_TITLE }} numberOfLines={1}>
+        {product.name}
+      </Text>
+      <Text style={{ fontSize: 12, color: TEXT_MUTED, marginTop: 1 }} numberOfLines={1}>
+        A{product.aisle_num} · Stk {product.stock_qty} · Sold/30d {product.units_sold}
+        {product.is_fresh ? ` · Exp ${product.expires_in_days}d` : ""}
+      </Text>
+    </View>
+    <View style={{ alignItems: "flex-end", marginLeft: 8 }}>
+      <Text style={{ fontSize: 13, fontWeight: "700", color: TEXT_TITLE }}>
+        {product.price_azn.toFixed(2)} ₼
+      </Text>
+      <Text style={{ fontSize: 14, color: "#C7C7CC", marginTop: -2 }}>›</Text>
+    </View>
+  </TouchableOpacity>
+);
 
 const KpiInline = ({ label, value, accent, last }) => (
   <View
