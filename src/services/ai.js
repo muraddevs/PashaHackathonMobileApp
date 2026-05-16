@@ -271,6 +271,149 @@ export async function getRecipe(query) {
   };
 }
 
+// ── Sunday Meal Plan ───────────────────────────────────────────────────────
+const MEAL_PLAN_SYSTEM = `You are a weekly meal planner + nutritionist for a Bravo Premium member. Return ONE week of dinners — 7 dishes total, one per day, Monday through Sunday — tuned to the user's body, goal, and dietary preferences.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "intro": "A short one-line summary of the week (e.g. 'High-protein Mediterranean dinners tuned for muscle gain at ~2800 kcal/day').",
+  "language": "en|az|ru",
+  "days": [
+    {
+      "day": "Monday",
+      "dish": "Grilled chicken with quinoa & roasted vegetables",
+      "tags": ["high-protein", "mediterranean"],
+      "calories": 650,
+      "protein_g": 45,
+      "ingredients": ["chicken breast", "quinoa", "broccoli", "olive oil", "lemon", "garlic"]
+    },
+    ... 7 entries total, in order Mon-Sun
+  ]
+}
+
+Rules:
+- 7 distinct dinners. Vary cuisines (Mediterranean, Azerbaijani, Asian, comfort, etc.) and protein sources. Don't repeat the same protein 3+ times.
+- 4–7 essential ingredients per dish. Generic English nouns ("pasta" not "Barilla 500g"). Skip salt/water/pepper unless they're definitional.
+- Calorie target per dinner = user's daily target ÷ 3 (rounded to nearest 25). Protein target follows the goal:
+  • Muscle gain → high protein (35–50g per dinner)
+  • Weight loss → moderate protein (25–35g), low calories, more vegetables
+  • Maintain / healthy → balanced (20–30g protein)
+- Honor every dietary preference (halal → no pork/alcohol; vegetarian → no meat; vegan → no animal products; gluten-free → no wheat/bread/pasta; lactose-free → no dairy; quick → ≤30-min prep; comfort → hearty familiar; mediterranean → olive oil/fish/vegetables).
+- If the user tags "azerbaijani" or speaks Azerbaijani → include 2–3 Caucasian classics (plov, dolma, küfte, dovğa, qutab, levengi).
+- "intro" is in the user's language and references the calorie target + goal.
+- Output JSON only.`;
+
+// Mifflin-St Jeor BMR × activity multiplier → daily calorie target.
+export function calorieTargetFor({ weight, height, age, gender, activity, goal }) {
+  const bmr =
+    gender === "female"
+      ? 10 * weight + 6.25 * height - 5 * age - 161
+      : 10 * weight + 6.25 * height - 5 * age + 5;
+  const mul =
+    { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725 }[activity] ||
+    1.55;
+  const tdee = Math.round(bmr * mul);
+  if (goal === "weightloss") return Math.max(1200, tdee - 500);
+  if (goal === "musclegain") return tdee + 300;
+  return tdee;
+}
+
+export async function getMealPlan({
+  preferences = [],
+  goal = "maintain",
+  bodyMeasures = null,
+  language = "en",
+} = {}) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  const goalLabel =
+    { weightloss: "weight loss", musclegain: "muscle gain", maintain: "maintain weight", healthy: "healthy eating" }[
+      goal
+    ] || "maintain weight";
+  const calorieTarget = bodyMeasures
+    ? calorieTargetFor({ ...bodyMeasures, goal })
+    : null;
+
+  const profileLines = [];
+  if (bodyMeasures) {
+    profileLines.push(
+      `Body: ${bodyMeasures.weight} kg, ${bodyMeasures.height} cm, ${bodyMeasures.age} yo, ${bodyMeasures.gender}, ${bodyMeasures.activity} activity`
+    );
+  }
+  profileLines.push(`Goal: ${goalLabel}.`);
+  if (calorieTarget) {
+    profileLines.push(`Daily calorie target: ~${calorieTarget} kcal (≈${Math.round(calorieTarget / 3)} kcal per dinner).`);
+  }
+  const prefText = preferences.length
+    ? `Dietary / style preferences: ${preferences.join(", ")}.`
+    : "No specific dietary preferences — pick a balanced variety.";
+
+  const userPrompt = `${profileLines.join("\n")}\n${prefText}\nUser's language: ${language}.\nGenerate the 7-dinner meal plan now.`;
+
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "system", content: MEAL_PLAN_SYSTEM },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.7,
+      max_tokens: 1200,
+      response_format: { type: "json_object" },
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error?.message || `AI error (${res.status})`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(data.choices[0].message.content);
+  } catch (_) {
+    return null;
+  }
+  if (!parsed?.days || !Array.isArray(parsed.days) || parsed.days.length === 0) {
+    return null;
+  }
+
+  // Resolve every ingredient to a catalog product. Bias smart-additions
+  // toward cold aisles isn't applied here — meal planning prioritises
+  // semantic match.
+  const seen = new Set();
+  const days = parsed.days.slice(0, 7).map((d) => {
+    const ingredients = (d.ingredients || []).map((name) => {
+      const hits = findRelevant(name, 4);
+      const product =
+        hits.find((h) => !seen.has(h.product_id)) || hits[0] || null;
+      if (product) seen.add(product.product_id);
+      return { name, product };
+    });
+    return {
+      day: d.day || "",
+      dish: d.dish || "",
+      tags: d.tags || [],
+      calories: d.calories || null,
+      protein_g: d.protein_g || null,
+      ingredients,
+    };
+  });
+  return {
+    intro: parsed.intro || "",
+    language: parsed.language || language,
+    calorieTarget,
+    goal,
+    days,
+  };
+}
+
 const PRODUCT_ANALYSIS_SYSTEM = `You are a senior retail inventory analyst at Bravo, speaking directly to the store manager about ONE specific product.
 
 Write a 3–4 sentence conversational analysis. Use the exact numbers provided. Cover:
