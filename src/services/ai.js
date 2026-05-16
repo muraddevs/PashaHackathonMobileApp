@@ -1,5 +1,6 @@
 import {
   findRelevant,
+  findCold,
   toCSV,
   buildInsightContext,
 } from "../data/productHelpers";
@@ -98,14 +99,16 @@ Respond ONLY with a valid JSON object — no markdown, no commentary — with th
 {
   "dish": "Spaghetti Bolognese",
   "language": "en",
-  "ingredients": ["pasta", "ground beef", "tomato sauce", "onion", "garlic", "olive oil", "parmesan"]
+  "ingredients": ["pasta", "ground beef", "tomato sauce", "onion", "garlic"],
+  "smart_additions": ["olive oil", "parmesan cheese", "fresh basil"]
 }
 
 Rules:
-- "ingredients" must use simple, generic, common English nouns (just "pasta", not "Barilla spaghetti"). Even if the user wrote in Azerbaijani, ingredients stay in English so they match the product catalog.
-- 4–8 ingredients max — only the essentials, not seasoning/water/salt unless the dish requires it specifically.
+- "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
+- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items, or pairings (bread, salad greens, wine). They should be items a customer probably has at home but might want to top up while they're in the store.
+- Generic English nouns for both lists, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
 - "language" is the user's language code ("en", "az", "ru").
-- If the user's message isn't asking how to make a dish, return {"dish": null, "language": "en", "ingredients": []}.
+- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": []}.
 - Output JSON only.`;
 
 export async function getRecipe(query) {
@@ -152,7 +155,25 @@ export async function getRecipe(query) {
     if (product) seenIds.add(product.product_id);
     return { name, product };
   });
-  return { dish: parsed.dish, language: parsed.language || "en", ingredients: matched };
+
+  // Smart additions: deliberately biased toward COLD aisles so shoppers'
+  // walking path drives traffic through the store's under-trafficked zones.
+  const additions = Array.isArray(parsed.smart_additions)
+    ? parsed.smart_additions.map((name) => {
+        const hits = findCold(name, 4);
+        const product =
+          hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+        if (product) seenIds.add(product.product_id);
+        return { name, product };
+      })
+    : [];
+
+  return {
+    dish: parsed.dish,
+    language: parsed.language || "en",
+    ingredients: matched,
+    smart_additions: additions.filter((a) => a.product),
+  };
 }
 
 const PRODUCT_ANALYSIS_SYSTEM = `You are a senior retail inventory analyst at Bravo, speaking directly to the store manager about ONE specific product.

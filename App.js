@@ -35,6 +35,8 @@ import {
   getPlacementSuggestions,
   getRestockPlan,
   getProducts,
+  getMorningMissions,
+  aislePopularity,
 } from "./src/data/productHelpers";
 import Svg, {
   Path,
@@ -1866,6 +1868,48 @@ const INITIAL_BOT_GREETING = {
   text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
 };
 
+const RecipeIngredientRow = ({ ingredient, product, onPress, cold }) => {
+  const aisleBg = cold ? "#FEF3C7" : GREEN_LIGHT;
+  const aisleColor = cold ? "#B45309" : GREEN;
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.7}
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        paddingVertical: 7,
+      }}
+    >
+      <View
+        style={{
+          width: 28,
+          height: 28,
+          borderRadius: 14,
+          backgroundColor: aisleBg,
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: 10,
+        }}
+      >
+        <Text style={{ color: aisleColor, fontWeight: "800", fontSize: 12 }}>
+          {product.aisle_num || "?"}
+        </Text>
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={{ fontSize: 13, color: DARK, fontWeight: "600" }} numberOfLines={1}>
+          {ingredient.name}
+        </Text>
+        <Text style={{ fontSize: 11, color: TEXT_MUTED }} numberOfLines={1}>
+          {product.name} · Aisle {product.aisle_num} ·{" "}
+          {effectivePrice(product).toFixed(2)} ₼
+          {cold ? " · less crowded" : ""}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
 const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
   return (
     <View
@@ -1889,53 +1933,59 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
           </Text>
         </View>
       </View>
+      <Text style={{ fontSize: 9, fontWeight: "800", color: TEXT_MUTED, letterSpacing: 0.5, marginTop: 2 }}>
+        INGREDIENTS
+      </Text>
       {recipe.ingredients.map((ing, i) => {
         const p = ing.product;
         if (!p) return null;
-        const aisleNum = p.aisle_num;
         return (
-          <TouchableOpacity
-            key={`${i}-${p.product_id}`}
+          <RecipeIngredientRow
+            key={`ing-${i}-${p.product_id}`}
+            ingredient={ing}
+            product={p}
             onPress={() => onProduct && onProduct(p)}
-            activeOpacity={0.7}
+            cold={false}
+          />
+        );
+      })}
+      {recipe.smart_additions && recipe.smart_additions.length > 0 && (
+        <View
+          style={{
+            marginTop: 10,
+            paddingTop: 8,
+            borderTopWidth: 1,
+            borderTopColor: BORDER,
+          }}
+        >
+          <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              paddingVertical: 6,
-              borderTopWidth: 1,
-              borderTopColor: BORDER,
+              marginBottom: 4,
             }}
           >
-            <View
-              style={{
-                width: 26,
-                height: 26,
-                borderRadius: 13,
-                backgroundColor: GREEN_LIGHT,
-                alignItems: "center",
-                justifyContent: "center",
-                marginRight: 8,
-              }}
-            >
-              <Text style={{ color: GREEN, fontWeight: "800", fontSize: 11 }}>
-                {aisleNum || "?"}
-              </Text>
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text style={{ fontSize: 12, color: DARK }} numberOfLines={1}>
-                <Text style={{ fontWeight: "700" }}>{ing.name}</Text>
-                {" — "}
-                <Text style={{ color: GRAY }}>{p.name}</Text>
-              </Text>
-              <Text style={{ fontSize: 10, color: GRAY }}>
-                Aisle {aisleNum} · {p.subcategory || p.category} ·{" "}
-                {effectivePrice(p).toFixed(2)} ₼
-              </Text>
-            </View>
-          </TouchableOpacity>
-        );
-      })}
-      <View style={{ flexDirection: "row", gap: 8, marginTop: 10 }}>
+            <Text style={{ fontSize: 14, marginRight: 4 }}>✨</Text>
+            <Text style={{ fontSize: 10, fontWeight: "800", color: "#B45309", letterSpacing: 0.5 }}>
+              SMART ADDITIONS · OFTEN FORGOTTEN
+            </Text>
+          </View>
+          {recipe.smart_additions.map((ing, i) => {
+            const p = ing.product;
+            if (!p) return null;
+            return (
+              <RecipeIngredientRow
+                key={`add-${i}-${p.product_id}`}
+                ingredient={ing}
+                product={p}
+                onPress={() => onProduct && onProduct(p)}
+                cold={aislePopularity(p.aisle_num) < 0.55}
+              />
+            );
+          })}
+        </View>
+      )}
+      <View style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
         <TouchableOpacity
           onPress={onAddAll}
           style={{
@@ -1955,7 +2005,10 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            const items = recipe.ingredients
+            const items = [
+              ...recipe.ingredients,
+              ...(recipe.smart_additions || []),
+            ]
               .map((ing) => ing.product)
               .filter(Boolean);
             if (onShowRoute) onShowRoute(items);
@@ -2157,7 +2210,11 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList, onShowRoute })
                       recipe={m.recipe}
                       onProduct={onProduct}
                       onAddAll={() => {
-                        for (const ing of m.recipe.ingredients) {
+                        const all = [
+                          ...m.recipe.ingredients,
+                          ...(m.recipe.smart_additions || []),
+                        ];
+                        for (const ing of all) {
                           if (ing.product) onAddToList && onAddToList(ing.product);
                         }
                       }}
@@ -3634,6 +3691,7 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
   const restockPlan = useMemo(() => getRestockPlan(8), []);
   const traffic = useMemo(() => getTrafficByAisle(), []);
   const placements = useMemo(() => getPlacementSuggestions(3), []);
+  const missions = useMemo(() => getMorningMissions(), []);
   const topCategories = useMemo(
     () => analytics.categories.slice(0, 5),
     [analytics]
@@ -3643,6 +3701,18 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
   const [insights, setInsights] = useState(null);
   const [insightsLoading, setInsightsLoading] = useState(false);
   const [insightsError, setInsightsError] = useState(null);
+  const [missionDone, setMissionDone] = useState(new Set());
+  const [missionSnoozed, setMissionSnoozed] = useState(new Set());
+  const [missionExpanded, setMissionExpanded] = useState(null);
+  const activeMissions = missions.filter(
+    (m) => !missionDone.has(m.id) && !missionSnoozed.has(m.id)
+  );
+  const totalImpact = activeMissions.reduce((s, m) => s + m.impact, 0);
+
+  const approveMission = (m) =>
+    setMissionDone((s) => new Set([...s, m.id]));
+  const snoozeMission = (m) =>
+    setMissionSnoozed((s) => new Set([...s, m.id]));
 
   const loadInsights = async () => {
     setInsightsLoading(true);
@@ -3720,6 +3790,62 @@ const AdminScreen = ({ user, onLogout, onSelect }) => {
         decelerationRate="fast"
         scrollEventThrottle={16}
       >
+        {/* Morning Mission — today's 3 highest-impact actions */}
+        <View style={{ paddingHorizontal: 12, paddingTop: 14, paddingBottom: 4 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 10,
+            }}
+          >
+            <Text style={{ fontSize: 18, marginRight: 6 }}>☀️</Text>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontWeight: "800", fontSize: 16, color: TEXT_TITLE }}>
+                Morning Mission
+              </Text>
+              <Text style={{ fontSize: 11, color: TEXT_MUTED }}>
+                {activeMissions.length === 0
+                  ? "All clear — nothing to action right now."
+                  : `${activeMissions.length} action${
+                      activeMissions.length === 1 ? "" : "s"
+                    } · ₼${totalImpact.toLocaleString()} impact today`}
+              </Text>
+            </View>
+          </View>
+          {activeMissions.map((m) => (
+            <MissionCard
+              key={m.id}
+              mission={m}
+              expanded={missionExpanded === m.id}
+              onToggleExpand={() =>
+                setMissionExpanded((cur) => (cur === m.id ? null : m.id))
+              }
+              onApprove={() => approveMission(m)}
+              onSnooze={() => snoozeMission(m)}
+              onTap={() => onSelect(m.product)}
+            />
+          ))}
+          {activeMissions.length === 0 && missions.length > 0 && (
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: R.md,
+                padding: 16,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ fontSize: 24, marginBottom: 6 }}>🎯</Text>
+              <Text style={{ fontWeight: "700", fontSize: 13, color: TEXT_TITLE }}>
+                Today's missions are handled
+              </Text>
+              <Text style={{ fontSize: 11, color: TEXT_MUTED, marginTop: 2 }}>
+                Approved {missionDone.size} · Snoozed {missionSnoozed.size}
+              </Text>
+            </View>
+          )}
+        </View>
+
         {/* Compact KPI strip — counts only, no big cards */}
         <View
           style={{
@@ -4353,6 +4479,155 @@ const ManagerStat = ({ label, value }) => (
     <Text style={{ fontSize: 13, fontWeight: "800", color: DARK, marginTop: 2 }}>{value}</Text>
   </View>
 );
+
+const MISSION_THEME = {
+  discount: { color: "#F97316", emoji: "↓", verb: "DISCOUNT" },
+  restock: { color: "#1E40AF", emoji: "+", verb: "REORDER" },
+  move: { color: "#8B5CF6", emoji: "→", verb: "MOVE" },
+};
+
+const MissionCard = ({ mission, expanded, onToggleExpand, onApprove, onSnooze, onTap }) => {
+  const theme = MISSION_THEME[mission.type] || { color: GREEN, emoji: "•", verb: "ACTION" };
+  return (
+    <View
+      style={{
+        backgroundColor: "white",
+        borderRadius: R.md,
+        marginBottom: 10,
+        overflow: "hidden",
+        ...Platform.select({
+          ios: {
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.06,
+            shadowRadius: 6,
+          },
+          android: { elevation: 2 },
+        }),
+      }}
+    >
+      {/* Coloured spine + impact badge at the top */}
+      <View
+        style={{
+          paddingHorizontal: 14,
+          paddingVertical: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          backgroundColor: `${theme.color}14`,
+        }}
+      >
+        <View
+          style={{
+            width: 28,
+            height: 28,
+            borderRadius: 14,
+            backgroundColor: theme.color,
+            alignItems: "center",
+            justifyContent: "center",
+            marginRight: 10,
+          }}
+        >
+          <Text style={{ color: "white", fontWeight: "800", fontSize: 14 }}>
+            {theme.emoji}
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontSize: 10, fontWeight: "800", letterSpacing: 0.8, color: theme.color }}>
+            {theme.verb} · {mission.impactLabel}
+          </Text>
+          <Text style={{ fontWeight: "800", fontSize: 18, color: TEXT_TITLE, marginTop: 1 }}>
+            ₼ +{mission.impact.toLocaleString()}
+          </Text>
+        </View>
+      </View>
+
+      {/* Product + action */}
+      <TouchableOpacity onPress={onTap} activeOpacity={0.7} style={{ padding: 14 }}>
+        <Text style={{ fontSize: 14, fontWeight: "700", color: TEXT_TITLE }} numberOfLines={1}>
+          {mission.product.name}
+        </Text>
+        <Text style={{ fontSize: 12, color: TEXT_MUTED, marginTop: 2 }} numberOfLines={1}>
+          {mission.product.brand} · Aisle {mission.product.aisle_num} ·{" "}
+          {mission.product.location}
+        </Text>
+        <View
+          style={{
+            backgroundColor: SOFT_BG,
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+            borderRadius: R.sm,
+            marginTop: 10,
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontSize: 13, color: TEXT_TITLE, fontWeight: "600", flex: 1 }}>
+            {mission.action}
+          </Text>
+        </View>
+
+        {expanded && (
+          <Text style={{ fontSize: 12, color: TEXT_MUTED, lineHeight: 18, marginTop: 10 }}>
+            {mission.narrative}
+          </Text>
+        )}
+      </TouchableOpacity>
+
+      {/* Action row */}
+      <View
+        style={{
+          flexDirection: "row",
+          borderTopWidth: 0.5,
+          borderTopColor: SUBTLE_BORDER,
+        }}
+      >
+        <TouchableOpacity
+          onPress={onToggleExpand}
+          activeOpacity={0.7}
+          style={{
+            flex: 1,
+            paddingVertical: 12,
+            alignItems: "center",
+            borderRightWidth: 0.5,
+            borderRightColor: SUBTLE_BORDER,
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "600", color: TEXT_MUTED }}>
+            {expanded ? "Hide" : "Why?"}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onSnooze}
+          activeOpacity={0.7}
+          style={{
+            flex: 1,
+            paddingVertical: 12,
+            alignItems: "center",
+            borderRightWidth: 0.5,
+            borderRightColor: SUBTLE_BORDER,
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "600", color: TEXT_MUTED }}>
+            Snooze
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onApprove}
+          activeOpacity={0.7}
+          style={{
+            flex: 1,
+            paddingVertical: 12,
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "800", color: theme.color }}>
+            Approve
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
 
 const CriticalCard = ({ product, onPress }) => {
   const rec = product.recommendation;

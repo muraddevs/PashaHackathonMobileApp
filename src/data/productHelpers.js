@@ -313,6 +313,25 @@ export function getTrafficByAisle() {
 }
 
 // ── Smart placement (move overstocked items to high-traffic aisles) ────────
+// ── Traffic-aware product lookup ───────────────────────────────────────────
+// Returns matches for the query but biased toward COLD aisles. The point is
+// to route shoppers through under-trafficked sections of the store so the
+// store's cold zones see more impressions/conversion without moving stock.
+export function findCold(query, limit = 5) {
+  const matches = findRelevant(query, 24);
+  return matches
+    .map((p) => ({
+      ...p,
+      _coldScore: 1 - (AISLE_POPULARITY[p.aisle_num] ?? 0.5), // colder = higher
+    }))
+    .sort((a, b) => b._coldScore - a._coldScore)
+    .slice(0, limit);
+}
+
+export function aislePopularity(aisleNum) {
+  return AISLE_POPULARITY[aisleNum] ?? 0.5;
+}
+
 export function getPlacementSuggestions(limit = 3) {
   const a = getAnalytics();
   const traffic = getTrafficByAisle();
@@ -535,6 +554,83 @@ export function getCriticalActions(limit = 12) {
 }
 
 // Stock-health breakdown for the donut chart.
+// ── Morning Mission ─────────────────────────────────────────────────────────
+// Three highest-impact actions for the manager, today. Each has a quantified
+// ₼ impact, a one-line action, and the supporting product reference so the
+// card can show the manager exactly what to approve.
+export function getMorningMissions() {
+  const a = getAnalytics();
+  const missions = [];
+
+  // Discount mission: top overstocked SKU by stock value.
+  const overstockRanked = [...a.overstocked].sort(
+    (x, y) => y.stock_qty * y.price_azn - x.stock_qty * x.price_azn
+  );
+  const topOver = overstockRanked[0];
+  if (topOver) {
+    const rec = recommend(topOver);
+    const expectedClear = Math.round(topOver.stock_qty * 0.4);
+    const expectedRevenue = Math.round(
+      expectedClear * topOver.price_azn * (1 - rec.markdownPct / 100)
+    );
+    missions.push({
+      id: `discount-${topOver.product_id}`,
+      type: "discount",
+      title: "Discount today",
+      impact: expectedRevenue,
+      impactLabel: "Expected 2-wk revenue",
+      product: topOver,
+      action: `Drop price ${rec.markdownPct}% until Friday`,
+      narrative: rec.narrative,
+      recommendation: rec,
+    });
+  }
+
+  // Reorder mission: most urgent low-stock SKU.
+  const restocks = getRestockPlan(3);
+  if (restocks.length > 0) {
+    const p = restocks[0];
+    const daily = p.units_sold / 30;
+    // Lost sales avoided if we restock in time vs running out
+    const lostSalesAvoided = Math.round(
+      daily * Math.max(0, p.targetCoverDays - p.days_of_stock) * p.price_azn * 0.6
+    );
+    missions.push({
+      id: `restock-${p.product_id}`,
+      type: "restock",
+      title: "Reorder",
+      impact: lostSalesAvoided,
+      impactLabel: "Lost-sales avoided",
+      product: p,
+      action: `Order ${p.reorderQty} units · ${p.urgency}`,
+      narrative: p.narrative,
+    });
+  }
+
+  // Move-stock mission: overstocked items currently in cold aisles.
+  const placements = getPlacementSuggestions(3);
+  if (placements.length > 0) {
+    const ps = placements[0];
+    const extraSold = Math.round(ps.product.stock_qty * 0.35);
+    const extraRevenue = Math.round(extraSold * ps.product.price_azn);
+    missions.push({
+      id: `move-${ps.product.product_id}`,
+      type: "move",
+      title: "Move stock",
+      impact: extraRevenue,
+      impactLabel: "Extra revenue (2 wk)",
+      product: ps.product,
+      action: `Move ~${Math.round(ps.product.stock_qty * 0.3)} units to Aisle ${
+        ps.suggestedAisle
+      } end-cap`,
+      narrative: ps.narrative,
+      suggestion: ps,
+    });
+  }
+
+  return missions.sort((a, b) => b.impact - a.impact);
+}
+
 export function getStockHealth() {
   const products = getProducts();
   let ok = 0, low = 0, over = 0, exp = 0;
