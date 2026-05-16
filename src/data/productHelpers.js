@@ -40,14 +40,46 @@ function fromRow(obj) {
   };
 }
 
+// RFC-4180-ish parser: handles fields with embedded commas wrapped in
+// double-quotes (e.g. "Fresh Produce, Meat & Dairy") and escaped "" quotes.
+function parseCSVLine(line) {
+  const out = [];
+  let cur = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') {
+          cur += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        cur += ch;
+      }
+    } else if (ch === ",") {
+      out.push(cur);
+      cur = "";
+    } else if (ch === '"' && cur === "") {
+      inQuotes = true;
+    } else {
+      cur += ch;
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
 export function getProducts() {
   if (_parsed) return _parsed;
   const lines = PRODUCTS_CSV.trim().split("\n");
   _headerLine = lines[0];
-  const headers = _headerLine.split(",");
+  const headers = parseCSVLine(_headerLine);
   _parsed = [];
   for (let i = 1; i < lines.length; i++) {
-    const cols = lines[i].split(",");
+    const cols = parseCSVLine(lines[i]);
     const obj = {};
     for (let j = 0; j < headers.length; j++) obj[headers[j]] = cols[j];
     _parsed.push(fromRow(obj));
@@ -187,12 +219,20 @@ function sample(arr, n) {
   return out;
 }
 
+function csvCell(v) {
+  const s = v == null ? "" : String(v);
+  if (s.includes(",") || s.includes('"') || s.includes("\n")) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
 export function toCSV(products) {
   const header = getHeader();
   const lines = [header];
-  const keys = header.split(",");
+  const keys = parseCSVLine(header);
   for (const p of products) {
-    lines.push(keys.map((k) => p[k] ?? "").join(","));
+    lines.push(keys.map((k) => csvCell(p[k])).join(","));
   }
   return lines.join("\n");
 }

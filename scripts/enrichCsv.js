@@ -52,9 +52,43 @@ const SRC = path.join(__dirname, "..", "assets", "bravo_dataset.csv");
 const OUT_CSV = SRC; // overwrite in place
 const OUT_JS = path.join(__dirname, "..", "src", "data", "products.js");
 
+// RFC-4180-ish parser that handles "quoted, fields, with commas".
+function parseCSVLine(line) {
+  const out = [];
+  let cur = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; } else { inQuotes = false; }
+      } else {
+        cur += ch;
+      }
+    } else if (ch === ',') {
+      out.push(cur);
+      cur = "";
+    } else if (ch === '"' && cur === "") {
+      inQuotes = true;
+    } else {
+      cur += ch;
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
+function csvCell(v) {
+  const s = v == null ? "" : String(v);
+  if (s.includes(",") || s.includes('"') || s.includes("\n")) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
 const text = fs.readFileSync(SRC, "utf8").replace(/\r/g, "");
 const lines = text.trim().split("\n");
-const oldHeader = lines[0].split(",");
+const oldHeader = parseCSVLine(lines[0]);
 
 // Drop any of our derived columns if a prior run added them, so we always
 // regenerate from the original 11 source columns.
@@ -83,11 +117,11 @@ const newHeader = [
   "location",
 ];
 
-const out = [newHeader.join(",")];
+const out = [newHeader.map(csvCell).join(",")];
 let freshCount = 0;
 let fattyCount = 0;
 for (let li = 1; li < lines.length; li++) {
-  const cols = lines[li].split(",");
+  const cols = parseCSVLine(lines[li]);
   const row = {};
   oldHeader.forEach((h, i) => (row[h] = cols[i]));
 
@@ -128,7 +162,9 @@ for (let li = 1; li < lines.length; li++) {
       aisle_num,
       shelf_letter,
       location,
-    ].join(",")
+    ]
+      .map(csvCell)
+      .join(",")
   );
 }
 
