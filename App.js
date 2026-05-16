@@ -545,12 +545,12 @@ const LoginScreen = ({ onLogin }) => {
 };
 
 // ── SCREEN 2: Home ───────────────────────────────────────────────────────────
-const HomeScreen = ({ onNav, shoppingListCount = 0, user }) => {
+const HomeScreen = ({ onNav, shoppingListCount = 0, user, onSearch }) => {
   const categories = [
-    { name: "Vegetables", emoji: "🥦" },
-    { name: "Sea Fish", emoji: "🐟" },
-    { name: "Eggs", emoji: "🥚" },
-    { name: "Fruits", emoji: "🍊" },
+    { name: "Vegetables", emoji: "🥦", query: "vegetable produce" },
+    { name: "Sea Fish", emoji: "🐟", query: "fish seafood" },
+    { name: "Eggs", emoji: "🥚", query: "egg dairy" },
+    { name: "Fruits", emoji: "🍊", query: "fruit produce" },
   ];
   const deals = [
     { name: "Premium Extra Virgin Olive Oil 1L", aisle: "Aisle 4, Shelf B", price: "10.15", orig: "14.50", discount: "-30%" },
@@ -836,12 +836,15 @@ const HomeScreen = ({ onNav, shoppingListCount = 0, user }) => {
       <View style={{ paddingHorizontal: 20, paddingBottom: 12 }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 12 }}>
           <Text style={{ fontSize: 16, fontWeight: "700" }}>Shop by Category</Text>
-          <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>See All</Text>
+          <TouchableOpacity onPress={() => onSearch && onSearch("")}>
+            <Text style={{ fontSize: 13, color: GREEN, fontWeight: "600" }}>See All</Text>
+          </TouchableOpacity>
         </View>
         <View style={{ flexDirection: "row", gap: 10 }}>
           {categories.map((c) => (
             <TouchableOpacity
               key={c.name}
+              onPress={() => onSearch && onSearch(c.query || c.name)}
               activeOpacity={0.8}
               style={{
                 flex: 1,
@@ -1197,10 +1200,29 @@ const OnSiteScreen = ({ onNav }) => {
 };
 
 // ── SCREEN 4: Search Results ─────────────────────────────────────────────────
-const SearchScreen = ({ onProduct, onNav, onBack, onAddToList, inList = [], user }) => {
-  const [query, setQuery] = useState("Milk");
+const SearchScreen = ({
+  onProduct,
+  onNav,
+  onBack,
+  onAddToList,
+  inList = [],
+  user,
+  initialQuery,
+  onConsumed,
+}) => {
+  const [query, setQuery] = useState(
+    initialQuery != null ? initialQuery : "Milk"
+  );
   const [activeFilter, setActiveFilter] = useState("All");
   const [diet, setDiet] = useState(null);
+  // If a new initialQuery comes in (e.g. user taps another category tile
+  // while we're already on the Search screen), update the field.
+  useEffect(() => {
+    if (initialQuery != null) {
+      setQuery(initialQuery);
+      onConsumed && onConsumed();
+    }
+  }, [initialQuery]);
   const filters = ["All", "Dairy", "Bakery", "Snacks", "Beverages"];
   const diets = [
     { id: "halal", label: "Halal" },
@@ -5353,6 +5375,13 @@ export default function App() {
   // Chat state lives at the root so the conversation survives tab switches.
   const [chatMessages, setChatMessages] = useState([INITIAL_BOT_GREETING]);
   const [chatInput, setChatInput] = useState("");
+  // Seed query when the user lands on Search via a category tile / link.
+  const [pendingSearch, setPendingSearch] = useState(null);
+
+  const searchFor = (query) => {
+    setPendingSearch(query || "");
+    nav("onsite-search");
+  };
   const [routeProducts, setRouteProducts] = useState(null);
 
   const addToList = (product) => {
@@ -5444,6 +5473,7 @@ export default function App() {
             onNav={nav}
             shoppingListCount={shoppingList.length}
             user={user}
+            onSearch={searchFor}
           />
         );
       case "premium":
@@ -5467,6 +5497,8 @@ export default function App() {
             inList={shoppingList}
             onShowRoute={handleShowRoute}
             user={user}
+            initialQuery={pendingSearch}
+            onConsumed={() => setPendingSearch(null)}
           />
         );
       case "product":
