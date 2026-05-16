@@ -18,6 +18,7 @@ import {
   analyzeProduct,
   getRecipe,
   isRecipeIntent,
+  getMealPlan,
 } from "./src/services/ai";
 import { login } from "./src/services/auth";
 import {
@@ -3485,7 +3486,572 @@ const PriceWithDiscount = ({ product, size = 14, user }) => {
 };
 
 // ── SCREEN 12: Premium perks (early-access deals + loyalty) ────────────────
-const PremiumScreen = ({ user, onBack, onProduct, onAddToList }) => {
+// ── SCREEN 13: Weekly Meal Plan (premium) ──────────────────────────────────
+const GOALS = [
+  { id: "weightloss", label: "Weight loss", emoji: "🪶" },
+  { id: "maintain", label: "Maintain", emoji: "⚖️" },
+  { id: "musclegain", label: "Muscle gain", emoji: "💪" },
+  { id: "healthy", label: "Healthy eating", emoji: "🥗" },
+];
+const ACTIVITY_LEVELS = [
+  { id: "sedentary", label: "Sedentary" },
+  { id: "light", label: "Light" },
+  { id: "moderate", label: "Moderate" },
+  { id: "active", label: "Active" },
+];
+const DIET_PREFS = [
+  { id: "halal", label: "Halal" },
+  { id: "vegetarian", label: "Vegetarian" },
+  { id: "vegan", label: "Vegan" },
+  { id: "glutenfree", label: "Gluten-free" },
+  { id: "lactosefree", label: "Lactose-free" },
+  { id: "quick", label: "Quick (≤30 min)" },
+  { id: "mediterranean", label: "Mediterranean" },
+  { id: "azerbaijani", label: "Azerbaijani" },
+  { id: "comfort", label: "Comfort" },
+];
+
+const MealPlanScreen = ({ user, onBack, onProduct, onAddToList, onShowRoute }) => {
+  const [goal, setGoal] = useState("maintain");
+  const [weight, setWeight] = useState("72");
+  const [height, setHeight] = useState("172");
+  const [age, setAge] = useState("28");
+  const [gender, setGender] = useState("male");
+  const [activity, setActivity] = useState("moderate");
+  const [prefs, setPrefs] = useState(new Set(["halal"]));
+  const [plan, setPlan] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const togglePref = (id) =>
+    setPrefs((s) => {
+      const n = new Set(s);
+      n.has(id) ? n.delete(id) : n.add(id);
+      return n;
+    });
+
+  const generate = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await getMealPlan({
+        preferences: [...prefs],
+        goal,
+        bodyMeasures: {
+          weight: parseFloat(weight) || 70,
+          height: parseFloat(height) || 170,
+          age: parseInt(age, 10) || 30,
+          gender,
+          activity,
+        },
+        language: "en",
+      });
+      if (!result) throw new Error("Could not generate plan — try again.");
+      setPlan(result);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const addAll = () => {
+    if (!plan) return;
+    for (const d of plan.days) {
+      for (const ing of d.ingredients) {
+        if (ing.product) onAddToList && onAddToList(ing.product);
+      }
+    }
+  };
+
+  const showWeekRoute = () => {
+    if (!plan) return;
+    const items = plan.days
+      .flatMap((d) => d.ingredients.map((i) => i.product))
+      .filter(Boolean);
+    if (onShowRoute) onShowRoute(items);
+  };
+
+  const totalIngredients = plan
+    ? plan.days.reduce((s, d) => s + d.ingredients.filter((i) => i.product).length, 0)
+    : 0;
+
+  return (
+    <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
+      <View
+        style={{
+          backgroundColor: "white",
+          paddingHorizontal: 16,
+          paddingTop: 14,
+          paddingBottom: 12,
+          borderBottomWidth: 0.5,
+          borderBottomColor: SUBTLE_BORDER,
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity onPress={onBack} style={{ padding: 4 }}>
+          <Icon name="back" size={22} color={DARK} />
+        </TouchableOpacity>
+        <View style={{ marginLeft: 8, flex: 1 }}>
+          <Text style={{ fontSize: 17, fontWeight: "800", color: TEXT_TITLE }}>
+            🍳 Weekly Meal Plan
+          </Text>
+          <Text style={{ fontSize: 11, color: TEXT_MUTED }}>
+            7 dinners, tuned to your goal
+          </Text>
+        </View>
+      </View>
+
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 24 }}
+        decelerationRate="fast"
+        scrollEventThrottle={16}
+        keyboardShouldPersistTaps="handled"
+      >
+        {/* Goal */}
+        <Text style={mealStyles.sectionLabel}>YOUR GOAL</Text>
+        <View style={{ paddingHorizontal: 12, marginBottom: 14 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+            {GOALS.map((g) => {
+              const active = goal === g.id;
+              return (
+                <TouchableOpacity
+                  key={g.id}
+                  onPress={() => setGoal(g.id)}
+                  activeOpacity={0.7}
+                  style={{
+                    flexGrow: 1,
+                    minWidth: "47%",
+                    paddingVertical: 12,
+                    paddingHorizontal: 12,
+                    borderRadius: R.md,
+                    backgroundColor: active ? GREEN : "white",
+                    borderWidth: 1,
+                    borderColor: active ? GREEN : SUBTLE_BORDER,
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontSize: 18, marginRight: 8 }}>{g.emoji}</Text>
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      fontWeight: "700",
+                      color: active ? "white" : TEXT_TITLE,
+                    }}
+                  >
+                    {g.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+
+        {/* Body measurements */}
+        <Text style={mealStyles.sectionLabel}>YOU</Text>
+        <View
+          style={{
+            marginHorizontal: 12,
+            backgroundColor: "white",
+            borderRadius: R.md,
+            padding: 12,
+            marginBottom: 14,
+          }}
+        >
+          <View style={{ flexDirection: "row", gap: 10, marginBottom: 10 }}>
+            <BodyInput label="Weight" suffix="kg" value={weight} onChange={setWeight} />
+            <BodyInput label="Height" suffix="cm" value={height} onChange={setHeight} />
+            <BodyInput label="Age" suffix="yrs" value={age} onChange={setAge} />
+          </View>
+          <View style={{ flexDirection: "row", gap: 10 }}>
+            <SegmentedToggle
+              label="Gender"
+              value={gender}
+              onChange={setGender}
+              options={[
+                { id: "male", label: "Male" },
+                { id: "female", label: "Female" },
+              ]}
+            />
+          </View>
+          <Text style={{ fontSize: 10, fontWeight: "700", color: TEXT_MUTED, letterSpacing: 0.5, marginTop: 10, marginBottom: 6 }}>
+            ACTIVITY
+          </Text>
+          <View style={{ flexDirection: "row", gap: 6, flexWrap: "wrap" }}>
+            {ACTIVITY_LEVELS.map((a) => {
+              const active = activity === a.id;
+              return (
+                <TouchableOpacity
+                  key={a.id}
+                  onPress={() => setActivity(a.id)}
+                  activeOpacity={0.7}
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 7,
+                    borderRadius: 16,
+                    backgroundColor: active ? GREEN : SOFT_BG,
+                  }}
+                >
+                  <Text style={{ fontSize: 12, fontWeight: "600", color: active ? "white" : TEXT_TITLE }}>
+                    {a.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+
+        {/* Dietary preferences */}
+        <Text style={mealStyles.sectionLabel}>PREFERENCES</Text>
+        <View style={{ paddingHorizontal: 12, marginBottom: 14 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+            {DIET_PREFS.map((d) => {
+              const active = prefs.has(d.id);
+              return (
+                <TouchableOpacity
+                  key={d.id}
+                  onPress={() => togglePref(d.id)}
+                  activeOpacity={0.7}
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 7,
+                    borderRadius: 16,
+                    backgroundColor: active ? GREEN_LIGHT : "white",
+                    borderWidth: 1,
+                    borderColor: active ? GREEN : SUBTLE_BORDER,
+                  }}
+                >
+                  <Text style={{ fontSize: 12, fontWeight: "600", color: active ? GREEN : TEXT_MUTED }}>
+                    {d.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+
+        {/* Generate button */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 16 }}>
+          <TouchableOpacity
+            onPress={generate}
+            disabled={loading}
+            activeOpacity={0.85}
+            style={{
+              backgroundColor: loading ? "#94A3B8" : GREEN,
+              paddingVertical: 14,
+              borderRadius: R.md,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {loading ? (
+              <>
+                <ActivityIndicator size="small" color="white" />
+                <Text style={{ color: "white", fontWeight: "800", fontSize: 14, marginLeft: 8 }}>
+                  Planning your week…
+                </Text>
+              </>
+            ) : (
+              <Text style={{ color: "white", fontWeight: "800", fontSize: 14 }}>
+                {plan ? "Re-generate plan" : "Generate my week"}
+              </Text>
+            )}
+          </TouchableOpacity>
+          {error && (
+            <Text style={{ color: RED, fontSize: 12, marginTop: 8, paddingHorizontal: 4 }}>
+              ⚠️ {error}
+            </Text>
+          )}
+        </View>
+
+        {/* Result */}
+        {plan && (
+          <View style={{ paddingHorizontal: 12 }}>
+            <View
+              style={{
+                backgroundColor: "#F5F3FF",
+                borderRadius: R.md,
+                padding: 12,
+                marginBottom: 12,
+                borderLeftWidth: 3,
+                borderLeftColor: "#8B5CF6",
+              }}
+            >
+              <Text style={{ fontSize: 10, fontWeight: "800", color: "#7C3AED", letterSpacing: 0.5, marginBottom: 4 }}>
+                YOUR WEEK · {plan.calorieTarget ? `~${plan.calorieTarget} KCAL/DAY` : "TUNED PLAN"}
+              </Text>
+              <Text style={{ fontSize: 13, color: TEXT_TITLE, lineHeight: 19 }}>{plan.intro}</Text>
+            </View>
+
+            {plan.days.map((d, i) => (
+              <DayCard
+                key={`${i}-${d.day}`}
+                day={d}
+                onProduct={onProduct}
+                onAddToList={onAddToList}
+              />
+            ))}
+
+            <View style={{ flexDirection: "row", gap: 8, marginTop: 6 }}>
+              <TouchableOpacity
+                onPress={addAll}
+                activeOpacity={0.85}
+                style={{
+                  flex: 1,
+                  paddingVertical: 13,
+                  borderRadius: R.md,
+                  backgroundColor: GREEN,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon name="list" size={14} color="white" />
+                <Text style={{ color: "white", fontSize: 13, fontWeight: "800", marginLeft: 6 }}>
+                  Add all · {totalIngredients} items
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={showWeekRoute}
+                activeOpacity={0.85}
+                style={{
+                  flex: 1,
+                  paddingVertical: 13,
+                  borderRadius: R.md,
+                  backgroundColor: "white",
+                  borderWidth: 1,
+                  borderColor: SUBTLE_BORDER,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon name="navigate" size={14} color={DARK} />
+                <Text style={{ color: TEXT_TITLE, fontSize: 13, fontWeight: "800", marginLeft: 6 }}>
+                  Route the store
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
+      </ScrollView>
+    </View>
+  );
+};
+
+const mealStyles = StyleSheet.create({
+  sectionLabel: {
+    fontSize: 11,
+    fontWeight: "800",
+    color: TEXT_MUTED,
+    letterSpacing: 0.5,
+    paddingHorizontal: 16,
+    marginTop: 14,
+    marginBottom: 8,
+  },
+});
+
+const BodyInput = ({ label, suffix, value, onChange }) => (
+  <View style={{ flex: 1 }}>
+    <Text style={{ fontSize: 10, fontWeight: "700", color: TEXT_MUTED, letterSpacing: 0.5, marginBottom: 4 }}>
+      {label.toUpperCase()}
+    </Text>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: SOFT_BG,
+        borderRadius: R.sm,
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+      }}
+    >
+      <TextInput
+        value={value}
+        onChangeText={onChange}
+        keyboardType="numeric"
+        style={{ flex: 1, fontSize: 15, fontWeight: "700", color: TEXT_TITLE, paddingVertical: 0 }}
+      />
+      <Text style={{ fontSize: 11, color: TEXT_MUTED, marginLeft: 4 }}>{suffix}</Text>
+    </View>
+  </View>
+);
+
+const SegmentedToggle = ({ label, value, onChange, options }) => (
+  <View style={{ flex: 1 }}>
+    <Text style={{ fontSize: 10, fontWeight: "700", color: TEXT_MUTED, letterSpacing: 0.5, marginBottom: 4 }}>
+      {label.toUpperCase()}
+    </Text>
+    <View
+      style={{
+        flexDirection: "row",
+        backgroundColor: SOFT_BG,
+        borderRadius: R.sm,
+        padding: 3,
+      }}
+    >
+      {options.map((opt) => {
+        const active = value === opt.id;
+        return (
+          <TouchableOpacity
+            key={opt.id}
+            onPress={() => onChange(opt.id)}
+            style={{
+              flex: 1,
+              paddingVertical: 7,
+              borderRadius: 7,
+              alignItems: "center",
+              backgroundColor: active ? "white" : "transparent",
+            }}
+          >
+            <Text style={{ fontSize: 12, fontWeight: active ? "700" : "500", color: active ? TEXT_TITLE : TEXT_MUTED }}>
+              {opt.label}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  </View>
+);
+
+const DayCard = ({ day, onProduct, onAddToList }) => {
+  const [expanded, setExpanded] = useState(false);
+  const validIngredients = day.ingredients.filter((i) => i.product);
+
+  return (
+    <View
+      style={{
+        backgroundColor: "white",
+        borderRadius: R.md,
+        marginBottom: 8,
+        overflow: "hidden",
+        ...Platform.select({
+          ios: {
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.04,
+            shadowRadius: 4,
+          },
+          android: { elevation: 1 },
+        }),
+      }}
+    >
+      <TouchableOpacity
+        onPress={() => setExpanded((v) => !v)}
+        activeOpacity={0.85}
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          padding: 12,
+        }}
+      >
+        <View
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            backgroundColor: "#F5F3FF",
+            alignItems: "center",
+            justifyContent: "center",
+            marginRight: 10,
+          }}
+        >
+          <Text style={{ color: "#7C3AED", fontSize: 11, fontWeight: "800" }}>
+            {(day.day || "").slice(0, 3).toUpperCase()}
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontSize: 14, fontWeight: "700", color: TEXT_TITLE }} numberOfLines={2}>
+            {day.dish}
+          </Text>
+          <View style={{ flexDirection: "row", alignItems: "center", marginTop: 2, flexWrap: "wrap" }}>
+            {day.calories ? (
+              <View
+                style={{
+                  backgroundColor: "#FEF3C7",
+                  paddingHorizontal: 5,
+                  paddingVertical: 1,
+                  borderRadius: 4,
+                  marginRight: 5,
+                }}
+              >
+                <Text style={{ fontSize: 9, fontWeight: "800", color: "#B45309" }}>
+                  {day.calories} kcal
+                </Text>
+              </View>
+            ) : null}
+            {day.protein_g ? (
+              <View
+                style={{
+                  backgroundColor: "#DBEAFE",
+                  paddingHorizontal: 5,
+                  paddingVertical: 1,
+                  borderRadius: 4,
+                  marginRight: 5,
+                }}
+              >
+                <Text style={{ fontSize: 9, fontWeight: "800", color: "#1E40AF" }}>
+                  {day.protein_g}g protein
+                </Text>
+              </View>
+            ) : null}
+            <Text style={{ fontSize: 11, color: TEXT_MUTED }}>
+              {validIngredients.length} ingredients
+            </Text>
+          </View>
+        </View>
+        <Text style={{ fontSize: 16, color: "#C7C7CC", marginLeft: 4 }}>
+          {expanded ? "›" : "›"}
+        </Text>
+      </TouchableOpacity>
+
+      {expanded && validIngredients.length > 0 && (
+        <View
+          style={{
+            paddingHorizontal: 12,
+            paddingBottom: 12,
+            borderTopWidth: 0.5,
+            borderTopColor: SUBTLE_BORDER,
+          }}
+        >
+          {validIngredients.map((ing, i) => (
+            <RecipeIngredientRow
+              key={`${i}-${ing.product.product_id}`}
+              ingredient={ing}
+              product={ing.product}
+              onPress={() => onProduct && onProduct(ing.product)}
+              cold={false}
+            />
+          ))}
+          <TouchableOpacity
+            onPress={() => {
+              for (const ing of validIngredients) {
+                if (ing.product) onAddToList && onAddToList(ing.product);
+              }
+            }}
+            style={{
+              marginTop: 8,
+              paddingVertical: 9,
+              borderRadius: 10,
+              backgroundColor: GREEN_LIGHT,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: GREEN, fontWeight: "800", fontSize: 12 }}>
+              + Add {validIngredients.length} items to list
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  );
+};
+
+const PremiumScreen = ({ user, onBack, onProduct, onAddToList, onNav }) => {
   const upcoming = useMemo(() => getUpcomingDeals(40), []);
   const totalPreviewSaving = upcoming.reduce(
     (s, p) => s + p.price_azn * (p.previewDiscount / 100),
@@ -3580,6 +4146,66 @@ const PremiumScreen = ({ user, onBack, onProduct, onAddToList }) => {
               </Text>
             </View>
           </LinearGradient>
+        </View>
+
+        {/* Sunday Meal Plan CTA */}
+        <View style={{ paddingHorizontal: 12, marginBottom: 16 }}>
+          <TouchableOpacity
+            onPress={() => onNav && onNav("mealplan")}
+            activeOpacity={0.9}
+            style={{ borderRadius: R.lg, overflow: "hidden" }}
+          >
+            <LinearGradient
+              colors={["#7C3AED", "#9333EA", "#A855F7"]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={{ padding: 16 }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginBottom: 6,
+                }}
+              >
+                <Text style={{ fontSize: 22, marginRight: 6 }}>🍳</Text>
+                <Text
+                  style={{
+                    fontSize: 10,
+                    fontWeight: "800",
+                    letterSpacing: 1,
+                    color: "#F3E8FF",
+                  }}
+                >
+                  NEW THIS SUNDAY
+                </Text>
+              </View>
+              <Text style={{ color: "white", fontSize: 18, fontWeight: "800", marginBottom: 4 }}>
+                Your week of dinners
+              </Text>
+              <Text style={{ color: "#E9D5FF", fontSize: 12, lineHeight: 17, marginBottom: 10 }}>
+                7 dinners, tuned to your goal (weight loss, muscle gain, healthy
+                eating) and dietary preferences. Each ingredient is mapped to
+                its aisle — one tap and the whole week is on your shopping
+                list.
+              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  alignSelf: "flex-start",
+                  backgroundColor: "rgba(255,255,255,0.18)",
+                  paddingHorizontal: 12,
+                  paddingVertical: 7,
+                  borderRadius: 999,
+                }}
+              >
+                <Text style={{ color: "white", fontSize: 12, fontWeight: "800" }}>
+                  Build my week →
+                </Text>
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
 
         {/* Upcoming deals list */}
@@ -5483,6 +6109,17 @@ export default function App() {
             onBack={goBack}
             onProduct={handleProduct}
             onAddToList={addToList}
+            onNav={nav}
+          />
+        );
+      case "mealplan":
+        return (
+          <MealPlanScreen
+            user={user}
+            onBack={goBack}
+            onProduct={handleProduct}
+            onAddToList={addToList}
+            onShowRoute={handleShowRoute}
           />
         );
       case "onsite":
@@ -5572,7 +6209,7 @@ export default function App() {
   };
 
   const noBottomNav =
-    ["login", "scanner", "admin", "rescue", "list", "premium"].includes(screen) ||
+    ["login", "scanner", "admin", "rescue", "list", "premium", "mealplan"].includes(screen) ||
     user?.role === "admin";
   const activeTab =
     ["home", "onsite", "onsite-search", "assistant", "map"].find((t) =>
