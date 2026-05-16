@@ -9,36 +9,80 @@ const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
 const ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
-const SYSTEM_INSTRUCTION_BASE = `You are Bravo Assistant, an in-store AI shopping helper for Bravo, an Azerbaijani supermarket chain.
+const SYSTEM_INSTRUCTION_BASE = `You are Bravo Assistant — a warm, helpful in-store concierge for Bravo, an Azerbaijani supermarket chain. Shoppers chat with you for product help, recipes, prices, dietary advice, and casual questions.
 
-You receive the user question PLUS a CSV slice of products the system thinks might be relevant. The CSV may contain irrelevant items — you must filter them yourself.
+LANGUAGE — this is the most important rule:
+- Reply in the SAME language as the user's MOST RECENT message, even if previous turns were in a different language. Switch immediately when they switch.
+- English → English. Azerbaijani → reply with proper ə, ş, ğ, ı, ü, ö, ç. Russian → reply in Russian.
+- "salam", "necə", "təşəkkür" → Azerbaijani. "hi/hello/thanks" → English. "привет/спасибо" → Russian.
+- Never mix two languages in the same reply.
 
-HARD RULES (do not break):
-1. LANGUAGE — this is critical. Reply STRICTLY in the same language the user wrote:
-   • English question → English reply
-   • Azerbaijani (Azərbaycan dili) → Azerbaijani reply with correct ə, ş, ğ, ı, ü, ö, ç letters
-   • Russian (Русский) → Russian reply
-   Never mix languages. If the user uses Azerbaijani words ("qəlyanaltı", "süd", "ucuz", "altı"), the entire reply must be in Azerbaijani.
-2. Be concise — 1–3 short sentences.
-3. SEMANTIC RELEVANCE: never recommend an item whose category/name doesn't actually match the user's intent.
-   • Snacks (qəlyanaltı / снеки) → only Snacks / Biscuits / Chips / Nuts / Chocolate. NEVER shampoo, oil, mustard, baby products.
-   • Drinks (içki / напитки) → only Beverages.
-   • Halal / vegan / diet → only items plausibly matching.
-4. PRICE: if the user named a price ceiling (e.g. "5 AZN altı", "under 5 AZN", "до 5 AZN"), every item you suggest MUST be at or below that price. Re-read each candidate's price column before suggesting it.
-5. If nothing in the provided CSV truly matches, say so honestly in the user's language — do NOT recommend off-topic products. Examples:
-   • AZ: "Təəssüf, uyğun məhsul tapa bilmədim."
-   • EN: "Sorry, nothing in our catalogue matches that."
-   • RU: "К сожалению, ничего подходящего не нашёл."
-6. Format each suggestion as: <Product Name> — <price> ₼ (<aisle/location>). Maximum 3 suggestions.
+WHAT TO REPLY:
+1. GREETING / SMALL TALK (salam, hi, привет, "how are you", "thanks", "ok"):
+   Just reply warmly and conversationally — DO NOT mention products or say "nothing matches". One short sentence.
+   • AZ: "Salam! Sizə necə kömək edə bilərəm?"
+   • EN: "Hi! How can I help you in-store today?"
+   • RU: "Привет! Чем могу помочь?"
+2. GENERAL QUESTION not about products (store hours, location, "what is X"):
+   Answer briefly and helpfully. Don't force products into the response.
+3. PRODUCT QUESTION (looking for items, prices, recipes, dietary advice):
+   Use the provided catalog CSV. Filter for semantic relevance — e.g. snacks/qəlyanaltı/снеки means only Snacks / Biscuits / Chips / Nuts / Chocolate, never shampoo or oil.
+   If they named a price ceiling ("5 AZN altı", "under 5 AZN", "до 5 AZN"), every suggestion MUST be at or below that price.
+   Format each suggestion as: Product Name — price ₼ (Aisle X).
+   Maximum 3 suggestions.
+   If genuinely nothing matches, say so in the user's language ("Təəssüf, uyğun tapa bilmədim." / "Sorry, nothing matches." / "К сожалению, ничего не нашлось.") — only for product queries, never for greetings.
+
+TONE: 1–3 short sentences. Warm but efficient. Match the user's tone — informal if they're informal.
 
 Never invent products or prices not in the CSV.`;
 
-// Lightweight, deterministic language detection. Used only to nudge the LLM
-// with an explicit hint — the system prompt is the real enforcer.
+// Tri-lingual detection. Bravo is in Azerbaijan, so we lean toward AZ when
+// a message is ambiguous (e.g. single Latin word like "salam").
+const AZ_WORDS = new Set([
+  "salam", "salaməleyküm", "salameleyküm", "salameleykum",
+  "necə", "nece", "necesən", "necesen",
+  "sağ", "sag", "olun", "ol",
+  "təşəkkür", "teshekkur", "teshekkurler", "təşəkkürlər",
+  "altı", "alti", "üstü", "ustu",
+  "ucuz", "baha",
+  "manat", "azn",
+  "süd", "sud", "ət", "et", "toyuq", "çörək", "corek",
+  "qəlyanaltı", "qelyanaltı", "qelyanalti",
+  "məhsul", "mehsul", "qiymət", "qiymet",
+  "harada", "harda", "var", "yox", "var?",
+  "axtarıram", "axtariram", "tapmaq",
+  "olar", "olmaz", "bəli", "beli", "xeyr",
+  "yemək", "yemek", "hazırla", "hazirla", "bişir", "bisir",
+  "süpermarket", "supermarket", "bravo",
+  "hörmətli", "hormetli",
+  "günaydın", "gunaydin", "axşam", "axsham", "axsam",
+]);
+const EN_WORDS = new Set([
+  "hi", "hello", "hey", "thanks", "thank", "ok", "yes", "no", "please",
+  "good", "morning", "evening", "afternoon", "bye", "what", "where", "when",
+  "how", "do", "you", "have", "i", "want", "make", "cook", "need", "find",
+  "show", "tell", "the", "and", "for", "with", "on", "in", "at",
+]);
+
 function detectLanguage(text) {
-  if (/[Ѐ-ӿ]/.test(text)) return "Russian"; // Cyrillic
-  if (/[əəıİöşşğçÇŞĞÜÖƏıİ]/i.test(text)) return "Azerbaijani";
-  return "English";
+  if (!text) return "Azerbaijani";
+  const t = text.trim();
+  // Cyrillic → Russian (strong signal)
+  if (/[Ѐ-ӿ]/.test(t)) return "Russian";
+  // AZ-specific characters → Azerbaijani (strong signal)
+  if (/[əƏşŞğĞıİöÖüÜçÇ]/.test(t)) return "Azerbaijani";
+  // Otherwise score by known word lists; tie-break toward AZ since the
+  // user base is overwhelmingly AZ-speaking.
+  const tokens = t.toLowerCase().replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(Boolean);
+  let az = 0, en = 0;
+  for (const tok of tokens) {
+    if (AZ_WORDS.has(tok)) az++;
+    if (EN_WORDS.has(tok)) en++;
+  }
+  if (az > en) return "Azerbaijani";
+  if (en > az) return "English";
+  // Tie or no signal — default to Azerbaijani (Bravo is in Azerbaijan).
+  return "Azerbaijani";
 }
 
 export async function askAI({ message, history = [] }) {
@@ -54,16 +98,19 @@ export async function askAI({ message, history = [] }) {
 
   const systemContent = `${SYSTEM_INSTRUCTION_BASE}
 
-The user's message is detected as ${lang}. Reply STRICTLY in ${lang}. Do not switch languages mid-reply.`;
+The user's CURRENT message is detected as ${lang}. Reply STRICTLY in ${lang}, even if previous messages were in another language. The conversation history might be in mixed languages — ignore that and follow the CURRENT message's language. Do not mix languages in your reply.`;
 
   const userTurnText = `User question: ${message}
 
 Relevant catalog rows (CSV):
 ${catalogCsv}`;
 
+  // Keep only the last 4 turns of history so the conversation context
+  // doesn't anchor the model into a prior language.
+  const trimmedHistory = history.slice(-4);
   const messages = [
     { role: "system", content: systemContent },
-    ...history.map((m) => ({
+    ...trimmedHistory.map((m) => ({
       role: m.from === "user" ? "user" : "assistant",
       content: m.text,
     })),
