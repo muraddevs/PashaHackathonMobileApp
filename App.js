@@ -1865,7 +1865,10 @@ const ScannerScreen = ({ onBack, onProduct }) => {
 // ── SCREEN 7: Assistant ──────────────────────────────────────────────────────
 const INITIAL_BOT_GREETING = {
   from: "bot",
-  text: "Salam! Mən Bravo alış-veriş asistanıyam. Sizə necə kömək edə bilərəm?",
+  text:
+    "Salam! Mən Bravo köməkçisiyəm. Sizə necə kömək edə bilərəm?\n" +
+    "Hi! I'm the Bravo assistant — how can I help?\n" +
+    "Привет! Я ассистент Bravo. Чем могу помочь?",
 };
 
 const RecipeIngredientRow = ({ ingredient, product, onPress, cold }) => {
@@ -2036,14 +2039,24 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
   );
 };
 
-const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList, onShowRoute }) => {
-  const [messages, setMessages] = useState([INITIAL_BOT_GREETING]);
-  const [input, setInput] = useState("");
+const AssistantScreen = ({
+  onNav,
+  onProduct,
+  onBack,
+  onAddToList,
+  onShowRoute,
+  messages,
+  setMessages,
+  chatInput,
+  setChatInput,
+}) => {
   const [loading, setLoading] = useState(false);
+  const input = chatInput;
+  const setInput = setChatInput;
   const chips = [
     "I want to make pasta today",
     "5 AZN altı qəlyanaltılar",
-    "Halal protein",
+    "Что приготовить сегодня?",
   ];
   const scrollRef = useRef();
   useEffect(() => {
@@ -2406,8 +2419,17 @@ const AssistantScreen = ({ onNav, onProduct, onBack, onAddToList, onShowRoute })
             value={input}
             onChangeText={setInput}
             onSubmitEditing={() => send(input)}
-            placeholder="Ask anything…"
+            placeholder="Soruşun · Ask · Спросите…"
             placeholderTextColor={TEXT_MUTED}
+            autoCorrect={false}
+            autoCapitalize="sentences"
+            autoComplete="off"
+            spellCheck={false}
+            keyboardType="default"
+            textContentType="none"
+            multiline={false}
+            blurOnSubmit={false}
+            returnKeyType="send"
             style={{
               flex: 1,
               fontSize: 15,
@@ -4936,6 +4958,9 @@ export default function App() {
   const [stack, setStack] = useState(["login"]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [shoppingList, setShoppingList] = useState([]);
+  // Chat state lives at the root so the conversation survives tab switches.
+  const [chatMessages, setChatMessages] = useState([INITIAL_BOT_GREETING]);
+  const [chatInput, setChatInput] = useState("");
   const [routeProducts, setRouteProducts] = useState(null);
 
   const addToList = (product) => {
@@ -4976,6 +5001,9 @@ export default function App() {
     setUser(null);
     setStack(["login"]);
     setSelectedProduct(null);
+    setShoppingList([]);
+    setChatMessages([INITIAL_BOT_GREETING]);
+    setChatInput("");
   };
 
   const canGoBack = stack.length > 1;
@@ -5053,6 +5081,10 @@ export default function App() {
             onBack={canGoBack ? goBack : null}
             onAddToList={addToList}
             onShowRoute={handleShowRoute}
+            messages={chatMessages}
+            setMessages={setChatMessages}
+            chatInput={chatInput}
+            setChatInput={setChatInput}
           />
         );
       case "map":

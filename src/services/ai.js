@@ -9,22 +9,37 @@ const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
 const ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
-const SYSTEM_INSTRUCTION = `You are Bravo Assistant, an in-store AI shopping helper for Bravo, an Azerbaijani supermarket chain.
+const SYSTEM_INSTRUCTION_BASE = `You are Bravo Assistant, an in-store AI shopping helper for Bravo, an Azerbaijani supermarket chain.
 
 You receive the user question PLUS a CSV slice of products the system thinks might be relevant. The CSV may contain irrelevant items — you must filter them yourself.
 
 HARD RULES (do not break):
-1. Answer in the same language the user wrote (Azerbaijani or English).
+1. LANGUAGE — this is critical. Reply STRICTLY in the same language the user wrote:
+   • English question → English reply
+   • Azerbaijani (Azərbaycan dili) → Azerbaijani reply with correct ə, ş, ğ, ı, ü, ö, ç letters
+   • Russian (Русский) → Russian reply
+   Never mix languages. If the user uses Azerbaijani words ("qəlyanaltı", "süd", "ucuz", "altı"), the entire reply must be in Azerbaijani.
 2. Be concise — 1–3 short sentences.
 3. SEMANTIC RELEVANCE: never recommend an item whose category/name doesn't actually match the user's intent.
-   • If they ask for snacks (qəlyanaltı), only suggest items from Snacks / Biscuits / Chips / Nuts / Chocolate. NEVER recommend shampoo, oil, mustard, baby products, etc.
-   • If they ask for drinks (içki), only Beverages.
-   • If they ask for halal / vegan / diet, only items plausibly matching.
-4. PRICE: if the user named a price ceiling (e.g. "5 AZN altı", "under 5 AZN"), every item you suggest MUST be at or below that price. Re-read each candidate's price column before suggesting it.
-5. If nothing in the provided CSV truly matches, say so honestly — do NOT recommend off-topic products to fill space. Example: "Təəssüf, 5 AZN altında uyğun qəlyanaltı tapa bilmədim."
+   • Snacks (qəlyanaltı / снеки) → only Snacks / Biscuits / Chips / Nuts / Chocolate. NEVER shampoo, oil, mustard, baby products.
+   • Drinks (içki / напитки) → only Beverages.
+   • Halal / vegan / diet → only items plausibly matching.
+4. PRICE: if the user named a price ceiling (e.g. "5 AZN altı", "under 5 AZN", "до 5 AZN"), every item you suggest MUST be at or below that price. Re-read each candidate's price column before suggesting it.
+5. If nothing in the provided CSV truly matches, say so honestly in the user's language — do NOT recommend off-topic products. Examples:
+   • AZ: "Təəssüf, uyğun məhsul tapa bilmədim."
+   • EN: "Sorry, nothing in our catalogue matches that."
+   • RU: "К сожалению, ничего подходящего не нашёл."
 6. Format each suggestion as: <Product Name> — <price> ₼ (<aisle/location>). Maximum 3 suggestions.
 
-Match the user's tone. Never invent products or prices not in the CSV.`;
+Never invent products or prices not in the CSV.`;
+
+// Lightweight, deterministic language detection. Used only to nudge the LLM
+// with an explicit hint — the system prompt is the real enforcer.
+function detectLanguage(text) {
+  if (/[Ѐ-ӿ]/.test(text)) return "Russian"; // Cyrillic
+  if (/[əəıİöşşğçÇŞĞÜÖƏıİ]/i.test(text)) return "Azerbaijani";
+  return "English";
+}
 
 export async function askAI({ message, history = [] }) {
   if (!API_KEY) {
@@ -35,6 +50,11 @@ export async function askAI({ message, history = [] }) {
 
   const relevant = findRelevant(message, 30);
   const catalogCsv = toCSV(relevant);
+  const lang = detectLanguage(message);
+
+  const systemContent = `${SYSTEM_INSTRUCTION_BASE}
+
+The user's message is detected as ${lang}. Reply STRICTLY in ${lang}. Do not switch languages mid-reply.`;
 
   const userTurnText = `User question: ${message}
 
@@ -42,7 +62,7 @@ Relevant catalog rows (CSV):
 ${catalogCsv}`;
 
   const messages = [
-    { role: "system", content: SYSTEM_INSTRUCTION },
+    { role: "system", content: systemContent },
     ...history.map((m) => ({
       role: m.from === "user" ? "user" : "assistant",
       content: m.text,
@@ -87,7 +107,7 @@ Each paragraph must be 2–3 sentences max. Total reply ≤ 130 words. Never inv
 
 // ── Recipe → ingredients flow ─────────────────────────────────────────────
 const RECIPE_INTENT_RE =
-  /(i\s*want\s*to\s*(make|cook|prepare)|how\s*(do\s*i|to)\s*(make|cook|prepare)|recipe\s*(for|of)|give\s*me\s*(a\s*)?recipe|hazırla|hazırlaya|bişir|necə\s*hazırlanır|necə\s*bişiril|reseptini|resept|готовить|рецепт)/i;
+  /(i\s*want\s*to\s*(make|cook|prepare)|how\s*(do\s*i|to)\s*(make|cook|prepare)|recipe\s*(for|of)|give\s*me\s*(a\s*)?recipe|hazırla|hazırlaya|bişir|necə\s*hazırlanır|necə\s*bişiril|reseptini|resept|yemək|готовить|рецепт|приготовить|что\s*приготовить|сделать\s*на\s*ужин|сделать\s*на\s*обед)/i;
 
 export function isRecipeIntent(text) {
   return RECIPE_INTENT_RE.test(text);
