@@ -138,7 +138,35 @@ ${catalogCsv}`;
   }
   const text = data?.choices?.[0]?.message?.content?.trim() ||
     "Sorry, I couldn't generate a response.";
-  return { text, relevant };
+
+  // Parse "<name> — <price> ₼" (or "-", various dashes) lines out of the
+  // reply and resolve each to a catalog product. This is more reliable than
+  // string-matching catalog SKU names, because the AI often uses generic
+  // localised names (e.g. "Dəniz duzu") that don't match SKU titles
+  // ("Bravo Salt 1kg") but DO match via findRelevant.
+  const suggestions = extractSuggestions(text);
+  return { text, relevant, suggestions };
+}
+
+const SUGGESTION_RE =
+  /(?:^|\n)[\s•\-*]*([^\n—\-–·:]{2,60}?)\s*[—\-–]\s*(\d+[.,]?\d*)\s*(?:₼|AZN|manat|ман)/gi;
+
+function extractSuggestions(reply) {
+  const matches = [];
+  const seen = new Set();
+  let m;
+  // reset lastIndex defensively in case the regex was used recently
+  SUGGESTION_RE.lastIndex = 0;
+  while ((m = SUGGESTION_RE.exec(reply)) !== null) {
+    const rawName = m[1].trim().replace(/^[\d.)\s•\-*]+/, "");
+    if (!rawName || rawName.length < 2) continue;
+    const hits = findRelevant(rawName, 4);
+    const product = hits.find((h) => !seen.has(h.product_id)) || hits[0];
+    if (!product) continue;
+    seen.add(product.product_id);
+    matches.push(product);
+  }
+  return matches.slice(0, 4);
 }
 
 const ADMIN_SYSTEM = `You are a senior retail inventory analyst speaking directly to the store manager at a Bravo supermarket. You receive a structured snapshot of stock levels, 30-day sales velocity, and expiry status for the most flagged SKUs.

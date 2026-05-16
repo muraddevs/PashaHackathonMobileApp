@@ -2096,17 +2096,21 @@ const AssistantScreen = ({
         // fall through to normal chat if recipe match was empty
       }
 
-      const { text: reply, relevant } = await askAI({
+      const { text: reply, relevant, suggestions } = await askAI({
         message: trimmed,
         history,
       });
-      // Only surface product cards for items the AI actually named in its
-      // reply — otherwise we risk showing irrelevant cards (e.g. shampoo
-      // suggested as a snack) when the AI correctly said "nothing matches".
-      const replyLower = reply.toLowerCase();
-      const mentioned = relevant.filter((p) =>
-        replyLower.includes(p.name.toLowerCase().split(" ").slice(0, 2).join(" "))
-      );
+      // Prefer the AI service's parsed suggestions (regex-extracted
+      // "<name> — <price> ₼" lines from the reply, then resolved against the
+      // catalogue). Fall back to literal name-matching against the relevant
+      // set if no suggestions were extracted.
+      let mentioned = suggestions || [];
+      if (mentioned.length === 0) {
+        const replyLower = reply.toLowerCase();
+        mentioned = relevant.filter((p) =>
+          replyLower.includes(p.name.toLowerCase().split(" ").slice(0, 2).join(" "))
+        );
+      }
       const products = mentioned.slice(0, 3).map((p) => ({
         ...p, // keep full enriched product so we can navigate to its detail screen
         displayPrice: effectivePrice(p).toFixed(2),
