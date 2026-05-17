@@ -220,29 +220,16 @@ Respond ONLY with a valid JSON object — no markdown, no commentary — with th
   "pairings": [
     { "name": "red wine", "reason": "Complements the rich tomato sauce" },
     { "name": "sparkling water", "reason": "Cleanses the palate between bites" }
-  ],
-  "upgrades": [
-    {
-      "dish": "Pasta Carbonara",
-      "tagline": "Creamy Roman classic",
-      "extras": ["bacon", "egg", "parmesan cheese"]
-    },
-    {
-      "dish": "Pasta Alfredo",
-      "tagline": "Rich and indulgent",
-      "extras": ["heavy cream", "butter", "parmesan cheese"]
-    }
   ]
 }
 
 Rules:
 - "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
-- "smart_additions" = ALWAYS include 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store. NEVER leave this array empty for a valid recipe.
-- "pairings" = ALWAYS include 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish (a drink, a dessert, a salad, etc.). Each has a short "reason" (≤8 words) describing why it pairs. These are NOT essentials — they're "treat yourself" suggestions. NEVER leave this array empty for a valid recipe.
-- "upgrades" = ALWAYS include 1–2 RELATED DISH VARIATIONS the shopper could make if they pick up a couple more items. Each upgrade has "dish" (e.g. "BBQ Chicken Pizza"), "tagline" (≤6 words like "Smoky, sweet, savory"), and "extras" (2–3 EXTRA ingredients beyond the base recipe). The upgrade should share most ingredients with the base dish. Example: base "Pizza Margherita" → upgrade "BBQ Chicken Pizza" with extras ["BBQ sauce", "chicken breast", "red onion"]. NEVER leave this array empty for a valid recipe.
+- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store.
+- "pairings" = 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish. Each has a short "reason" (≤8 words). These are NOT essentials — they're "treat yourself" suggestions.
 - Generic English nouns everywhere, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
 - "language" is the user's language code ("en", "az", "ru").
-- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": [], "upgrades": []}.
+- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": []}.
 - Output JSON only.`;
 
 export async function getRecipe(query) {
@@ -257,8 +244,8 @@ export async function getRecipe(query) {
       { role: "system", content: RECIPE_SYSTEM },
       { role: "user", content: query },
     ],
-    temperature: 0.3,
-    max_tokens: 800,
+    temperature: 0.2,
+    max_tokens: 500,
     response_format: { type: "json_object" },
   });
   let parsed;
@@ -308,49 +295,24 @@ export async function getRecipe(query) {
         .filter((p) => p && p.product)
     : [];
 
-  // Upgrade variants: 1–2 related dishes the shopper can level up to by
-  // grabbing a couple more items. Each "extra" is matched against the
-  // catalog so the UI can offer a one-tap "Add extras & navigate".
-  const upgrades = Array.isArray(parsed.upgrades)
-    ? parsed.upgrades
-        .map((u) => {
-          if (!u || !u.dish) return null;
-          const extras = Array.isArray(u.extras)
-            ? u.extras
-                .map((name) => {
-                  const hits = findRelevant(name, 4);
-                  const product =
-                    hits.find((h) => !seenIds.has(h.product_id)) ||
-                    hits[0] ||
-                    null;
-                  if (product) seenIds.add(product.product_id);
-                  return { name, product };
-                })
-                .filter((e) => e.product)
-            : [];
-          if (extras.length === 0) return null;
-          return { dish: u.dish, tagline: u.tagline || "", extras };
-        })
-        .filter(Boolean)
-    : [];
-
   let finalAdditions = additions.filter((a) => a.product);
   let finalPairings = pairings;
-  let finalUpgrades = upgrades;
 
   // Deterministic fallback — the model occasionally returns just the
-  // ingredient list and skips smart_additions / pairings / upgrades. We
-  // still want every section to render, so derive them locally from the
-  // dish name and matched ingredient categories.
+  // ingredient list and skips smart_additions / pairings. We still want
+  // both sections to render, so derive them locally from the dish name
+  // and matched ingredient categories.
   if (finalAdditions.length === 0) {
     finalAdditions = deriveFallbackAdditions(parsed.dish, matched, seenIds);
   }
   if (finalPairings.length === 0) {
     finalPairings = deriveFallbackPairings(parsed.dish, seenIds);
   }
-  if (finalUpgrades.length === 0) {
-    finalUpgrades = deriveFallbackUpgrades(parsed.dish, seenIds);
-  }
+
+  // Upgrades are computed entirely from a local dish-name table — keeping
+  // them out of the AI prompt avoids regressing the recipe JSON when the
+  // schema grows, and guarantees the upgrade block always renders.
+  const finalUpgrades = deriveFallbackUpgrades(parsed.dish, seenIds);
 
   return {
     dish: parsed.dish,
@@ -365,6 +327,13 @@ export async function getRecipe(query) {
 // Dish-name → upgrade variants table. Each upgrade is a real dish that
 // re-uses most of the base recipe's ingredients plus 2–3 extras.
 const UPGRADE_VARIANTS = [
+  {
+    match: /curry|tikka|masala|biryani|tandoori/i,
+    upgrades: [
+      { dish: "Coconut Curry", tagline: "Creamy & fragrant", extras: ["coconut milk", "lime", "cilantro"] },
+      { dish: "Curry with Naan & Raita", tagline: "Full Indian feast", extras: ["naan bread", "yogurt", "mint"] },
+    ],
+  },
   {
     match: /pizza|margherita/i,
     upgrades: [

@@ -11,6 +11,7 @@ import {
   StyleSheet,
   ActivityIndicator,
   Alert,
+  KeyboardAvoidingView,
 } from "react-native";
 import { Camera, CameraView } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
@@ -2839,7 +2840,11 @@ const AssistantScreen = ({
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <KeyboardAvoidingView
+      style={{ flex: 1, backgroundColor: "white" }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 88 : 0}
+    >
       <View
         style={{
           paddingHorizontal: 20,
@@ -3166,7 +3171,7 @@ const AssistantScreen = ({
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
