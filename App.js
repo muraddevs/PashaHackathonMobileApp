@@ -2707,6 +2707,8 @@ const AssistantScreen = ({
               recipe: {
                 dish: recipe.dish,
                 ingredients: matched,
+                smart_additions: recipe.smart_additions || [],
+                pairings: recipe.pairings || [],
               },
             },
           ]);
