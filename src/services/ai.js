@@ -225,8 +225,8 @@ Respond ONLY with a valid JSON object — no markdown, no commentary — with th
 
 Rules:
 - "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
-- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store.
-- "pairings" = 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish (a drink, a dessert, a salad, etc.). Each has a short "reason" (≤8 words) describing why it pairs. These are NOT essentials — they're "treat yourself" suggestions.
+- "smart_additions" = ALWAYS include 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store. NEVER leave this array empty for a valid recipe.
+- "pairings" = ALWAYS include 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish (a drink, a dessert, a salad, etc.). Each has a short "reason" (≤8 words) describing why it pairs. These are NOT essentials — they're "treat yourself" suggestions. NEVER leave this array empty for a valid recipe.
 - Generic English nouns everywhere, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
 - "language" is the user's language code ("en", "az", "ru").
 - If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": []}.
@@ -245,7 +245,7 @@ export async function getRecipe(query) {
       { role: "user", content: query },
     ],
     temperature: 0.2,
-    max_tokens: 300,
+    max_tokens: 500,
     response_format: { type: "json_object" },
   });
   let parsed;
@@ -295,13 +295,138 @@ export async function getRecipe(query) {
         .filter((p) => p && p.product)
     : [];
 
+  let finalAdditions = additions.filter((a) => a.product);
+  let finalPairings = pairings;
+
+  // Deterministic fallback — the model occasionally returns just the
+  // ingredient list and skips smart_additions / pairings entirely. We still
+  // want both sections to render, so derive them locally from the dish name
+  // and matched ingredient categories.
+  if (finalAdditions.length === 0) {
+    finalAdditions = deriveFallbackAdditions(parsed.dish, matched, seenIds);
+  }
+  if (finalPairings.length === 0) {
+    finalPairings = deriveFallbackPairings(parsed.dish, seenIds);
+  }
+
   return {
     dish: parsed.dish,
     language: parsed.language || "en",
     ingredients: matched,
-    smart_additions: additions.filter((a) => a.product),
-    pairings,
+    smart_additions: finalAdditions,
+    pairings: finalPairings,
   };
+}
+
+// Maps a dish name (free-form English) to a small set of beverage / side
+// keywords used as a last-resort pairing fallback when the model skips the
+// pairings field.
+function pairingKeywordsForDish(dishName) {
+  const d = (dishName || "").toLowerCase();
+  if (/curry|biryani|spicy|tandoori|tikka|masala/.test(d))
+    return [
+      { kw: "yogurt", reason: "Cools the spice" },
+      { kw: "mango juice", reason: "Sweet contrast to heat" },
+    ];
+  if (/pasta|spaghet|lasagna|pizza|risotto|carbonara|bolognese/.test(d))
+    return [
+      { kw: "red wine", reason: "Classic Italian pairing" },
+      { kw: "parmesan cheese", reason: "Finishes the dish" },
+    ];
+  if (/steak|grill|burger|bbq|barbecue|beef/.test(d))
+    return [
+      { kw: "red wine", reason: "Stands up to rich meat" },
+      { kw: "beer", reason: "Cuts through the fat" },
+    ];
+  if (/fish|salmon|tuna|seafood|sushi/.test(d))
+    return [
+      { kw: "white wine", reason: "Bright pairing for fish" },
+      { kw: "lemon", reason: "Brightens the flavour" },
+    ];
+  if (/chicken|poultry|turkey/.test(d))
+    return [
+      { kw: "white wine", reason: "Light, balanced match" },
+      { kw: "green salad", reason: "Adds fresh crunch" },
+    ];
+  if (/salad|vegetable|vegan|vegetarian/.test(d))
+    return [
+      { kw: "feta cheese", reason: "Salty contrast" },
+      { kw: "sparkling water", reason: "Keeps it light" },
+    ];
+  if (/dessert|cake|cookie|sweet|chocolate|pastry/.test(d))
+    return [
+      { kw: "coffee", reason: "Balances the sweetness" },
+      { kw: "tea", reason: "Cleanses the palate" },
+    ];
+  if (/soup|stew|broth/.test(d))
+    return [
+      { kw: "bread", reason: "Perfect for dipping" },
+      { kw: "white wine", reason: "Warm-weather match" },
+    ];
+  if (/rice|pilaf|plov/.test(d))
+    return [
+      { kw: "yogurt", reason: "Traditional accompaniment" },
+      { kw: "salad", reason: "Adds fresh contrast" },
+    ];
+  if (/breakfast|pancake|eggs|omelette/.test(d))
+    return [
+      { kw: "orange juice", reason: "Brightens the morning" },
+      { kw: "coffee", reason: "Wakes you up" },
+    ];
+  return [
+    { kw: "sparkling water", reason: "Refreshes between bites" },
+    { kw: "fruit juice", reason: "A light, sweet finish" },
+  ];
+}
+
+function deriveFallbackPairings(dish, seenIds) {
+  const result = [];
+  for (const { kw, reason } of pairingKeywordsForDish(dish)) {
+    if (result.length >= 2) break;
+    const hits = findRelevant(kw, 6);
+    const product = hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+    if (!product) continue;
+    seenIds.add(product.product_id);
+    result.push({ name: kw, reason, product });
+  }
+  return result;
+}
+
+function deriveFallbackAdditions(dish, matchedIngredients, seenIds) {
+  // Derive 2–3 staple keywords from the matched ingredient categories.
+  const haystack = [
+    dish || "",
+    ...matchedIngredients
+      .map((m) => m.product)
+      .filter(Boolean)
+      .map((p) => `${p.name} ${p.category} ${p.subcategory}`),
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  const candidates = [];
+  if (/meat|chicken|beef|lamb|fish/.test(haystack)) candidates.push("olive oil", "garlic", "spice");
+  if (/pasta|rice|noodle/.test(haystack)) candidates.push("tomato sauce", "parmesan cheese", "olive oil");
+  if (/salad|vegetable|tomato/.test(haystack)) candidates.push("olive oil", "feta cheese", "lemon");
+  if (/bread|bakery/.test(haystack)) candidates.push("butter", "jam");
+  if (/curry|spice/.test(haystack)) candidates.push("yogurt", "rice");
+  if (/cake|dessert|sweet/.test(haystack)) candidates.push("butter", "vanilla");
+  if (candidates.length === 0) candidates.push("olive oil", "garlic", "salt");
+
+  // Dedup keyword list, preserve order, take up to 3.
+  const seen = new Set();
+  const result = [];
+  for (const kw of candidates) {
+    if (seen.has(kw)) continue;
+    seen.add(kw);
+    if (result.length >= 3) break;
+    const hits = findCold(kw, 6);
+    const product = hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+    if (!product) continue;
+    seenIds.add(product.product_id);
+    result.push({ name: kw, product });
+  }
+  return result;
 }
 
 // ── List scan: image (camera/gallery) → list of products ───────────────────
