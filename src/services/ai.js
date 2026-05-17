@@ -202,11 +202,82 @@ Structure:
 Each paragraph must be 2–3 sentences max. Total reply ≤ 130 words. Never invent numbers — only use what's in the snapshot. Match the manager's professional tone, not casual.`;
 
 // ── Recipe → ingredients flow ─────────────────────────────────────────────
-const RECIPE_INTENT_RE =
-  /(i\s*want\s*to\s*(make|cook|prepare)|how\s*(do\s*i|to)\s*(make|cook|prepare)|recipe\s*(for|of)|give\s*me\s*(a\s*)?recipe|hazırla|hazırlaya|bişir|necə\s*hazırlanır|necə\s*bişiril|reseptini|resept|yemək|готовить|рецепт|приготовить|что\s*приготовить|сделать\s*на\s*ужин|сделать\s*на\s*обед)/i;
+// Catalog of dish keywords used both for direct intent matching (e.g. "curry
+// tonight") and for the loose "single dish word" heuristic below. Stored
+// once so both checks stay in sync.
+const DISH_KEYWORDS = [
+  "curry", "pasta", "spaghetti", "lasagna", "carbonara", "bolognese",
+  "pizza", "margherita",
+  "salad", "soup", "stew", "broth", "risotto", "ramen", "noodle", "noodles",
+  "burger", "cheeseburger", "sandwich", "wrap", "taco", "tacos", "burrito",
+  "biryani", "tikka", "tandoori", "masala",
+  "sushi", "kebab", "kebap", "shawarma",
+  "chili", "fajita", "enchilada", "quesadilla", "paella", "gumbo",
+  "omelette", "omelet", "pancake", "waffle", "crepe",
+  "stir-fry", "stir fry", "stirfry",
+  "pie", "cake", "cookie", "brownie", "tart", "smoothie",
+  "salmon", "steak", "roast",
+  "plov", "dolma", "qutab", "levengi", "dovğa", "küfte", "piti",
+  "şəkərbura", "baklava",
+];
+
+const RECIPE_INTENT_RE = new RegExp(
+  [
+    // English cooking verbs + intent
+    "i\\s*want\\s*to\\s*(make|cook|prepare|eat|have|fix)",
+    "i\\s*wanna\\s*(make|cook|eat|have)",
+    "i'?d?\\s*like\\s*to\\s*(make|cook|prepare|eat|have)",
+    "how\\s*(do\\s*i|to)\\s*(make|cook|prepare)",
+    "what\\s*(to|can\\s*i|should\\s*i)\\s*(cook|make|eat|prepare)",
+    "what(['']?s|\\s+is)\\s*for\\s*(dinner|lunch|breakfast)",
+    "(dinner|lunch|breakfast)\\s*(idea|tonight|today|tomorrow)",
+    "cook(ing)?\\s*(tonight|today|dinner|lunch|breakfast)",
+    "make\\s+me\\s+(a|some|the)\\s+",
+    "let'?s\\s*(make|cook|eat|have)",
+    "recipe\\s*(for|of)?",
+    "\\b\\w+\\s+recipe\\b",
+    "ingredients?\\s*for",
+    "give\\s*me\\s*(a\\s*)?recipe",
+    // English: "<verb> <dish>" — make/cook/prepare/eat directly
+    "(make|cook|prepare|eat|have)\\s+(?:a|some|the)?\\s*(?:" +
+      DISH_KEYWORDS.map((d) => d.replace(/[-\s]/g, "[\\s-]?")).join("|") +
+      ")",
+    // English: "<dish> tonight/today/tomorrow/for dinner..."
+    "(?:" +
+      DISH_KEYWORDS.map((d) => d.replace(/[-\s]/g, "[\\s-]?")).join("|") +
+      ")\\s+(tonight|today|tomorrow|for\\s+(dinner|lunch|breakfast))",
+    // English: "i want <dish>"
+    "i\\s*want\\s+(a\\s+|some\\s+|the\\s+)?(?:" +
+      DISH_KEYWORDS.map((d) => d.replace(/[-\s]/g, "[\\s-]?")).join("|") +
+      ")",
+    // Azerbaijani
+    "hazırla", "hazırlaya", "hazırlamaq", "bişir", "bişirir",
+    "necə\\s*hazırlanır", "necə\\s*bişiril",
+    "resept(?:i|in|ini|ləri)?", "reseptini",
+    "yemək(\\s*hazırla|\\s*bişir|\\s*qoy)?",
+    "axşam\\s*yeməyi", "günorta\\s*yeməyi",
+    // Russian
+    "готов(?:ить|лю)", "рецепт", "приготовить",
+    "что\\s*(приготовить|сделать|поесть)",
+    "сделать\\s*на\\s*(ужин|обед|завтрак)",
+    "хочу\\s*(приготовить|сделать|съесть|есть)",
+    "(на|для)\\s*(ужин|обед|завтрак)",
+  ].join("|"),
+  "i"
+);
+
+// Bare dish-name shortcut: a short message that is just a dish keyword
+// (possibly with "for dinner" or "please") counts as a cooking request.
+const DISH_ONLY_RE = new RegExp(
+  "^\\s*(?:" +
+    DISH_KEYWORDS.map((d) => d.replace(/[-\s]/g, "[\\s-]?")).join("|") +
+    ")\\s*(?:\\?|please|плз|пжл|zəhmət olmasa)?\\s*$",
+  "i"
+);
 
 export function isRecipeIntent(text) {
-  return RECIPE_INTENT_RE.test(text);
+  if (!text) return false;
+  return RECIPE_INTENT_RE.test(text) || DISH_ONLY_RE.test(text.trim());
 }
 
 const RECIPE_SYSTEM = `You are a recipe assistant. The user wants to cook something.
