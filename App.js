@@ -12,6 +12,7 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
+import { Camera, CameraView } from "expo-camera";
 import {
   askAI,
   getInsights,
@@ -1805,11 +1806,40 @@ const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [],
 
 // ── SCREEN 6: AI Scanner ─────────────────────────────────────────────────────
 const ScannerScreen = ({ onBack, onProduct }) => {
+  const [hasPermission, setHasPermission] = useState(null);
   const [found, setFound] = useState(false);
+  const [scannedData, setScannedData] = useState(null);
+  const [permissionError, setPermissionError] = useState(false);
+  const isWeb = Platform.OS === "web";
+  const barcodeTypes = useMemo(
+    () => [
+      "ean13",
+      "ean8",
+      "upc_a",
+      "upc_e",
+      "code128",
+      "code39",
+    ],
+    []
+  );
+
   useEffect(() => {
-    const t = setTimeout(() => setFound(true), 1500);
-    return () => clearTimeout(t);
-  }, []);
+    if (isWeb) {
+      setHasPermission(false);
+      return;
+    }
+
+    (async () => {
+      try {
+        const { status } = await Camera.requestCameraPermissionsAsync();
+        setHasPermission(status === "granted");
+      } catch (error) {
+        setPermissionError(true);
+        setHasPermission(false);
+      }
+    })();
+  }, [isWeb]);
+
   const scannedProduct = {
     name: "Milla Full Cream Milk 1L",
     price: "2.45",
@@ -1818,7 +1848,21 @@ const ScannerScreen = ({ onBack, onProduct }) => {
     shelf: "Shelf B",
     status: "In Stock",
     statusColor: GREEN,
+    barcode: scannedData?.data || "Unknown",
   };
+
+  const handleBarCodeScanned = ({ data }) => {
+    if (!found) {
+      setScannedData({ data });
+      setFound(true);
+    }
+  };
+
+  const resetScanner = () => {
+    setFound(false);
+    setScannedData(null);
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: DARK }}>
       <View
@@ -1844,7 +1888,7 @@ const ScannerScreen = ({ onBack, onProduct }) => {
           <Icon name="back" size={18} color="white" />
         </TouchableOpacity>
         <Text style={{ color: "white", fontSize: 17, fontWeight: "700" }}>AI Scanner</Text>
-        <View style={{ flexDirection: "row", gap: 12 }}>
+        <View style={{ flexDirection: "row" }}>
           <TouchableOpacity
             style={{
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -1859,6 +1903,7 @@ const ScannerScreen = ({ onBack, onProduct }) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{
+              marginLeft: 12,
               backgroundColor: "rgba(255,255,255,0.15)",
               borderRadius: 18,
               width: 36,
@@ -1886,12 +1931,58 @@ const ScannerScreen = ({ onBack, onProduct }) => {
             backgroundColor: "rgba(255,255,255,0.05)",
             alignItems: "center",
             justifyContent: "center",
+            overflow: "hidden",
           }}
         >
-          <View style={{ position: "absolute", top: -2, left: -2, width: 20, height: 20, borderTopWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
-          <View style={{ position: "absolute", top: -2, right: -2, width: 20, height: 20, borderTopWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
-          <View style={{ position: "absolute", bottom: -2, left: -2, width: 20, height: 20, borderBottomWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
-          <View style={{ position: "absolute", bottom: -2, right: -2, width: 20, height: 20, borderBottomWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+          {hasPermission === null ? (
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+              <ActivityIndicator size="large" color="white" />
+            </View>
+          ) : hasPermission === false ? (
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 16 }}>
+              <Text style={{ color: "white", fontSize: 14, textAlign: "center" }}>
+                {isWeb
+                  ? "Camera scanning is not available in a browser. Open the app on a phone to use live scan."
+                  : permissionError
+                  ? "Unable to access the camera. Please try again later."
+                  : "Camera permission is required to scan products."}
+              </Text>
+              {isWeb ? null : (
+                <Text style={{ color: "#aaa", fontSize: 12, marginTop: 8, textAlign: "center" }}>
+                  Please allow camera access in your phone settings and reopen the scanner.
+                </Text>
+              )}
+            </View>
+          ) : (
+            <>
+              <CameraView
+                style={{ flex: 1, width: "100%" }}
+                facing="back"
+                barcodeScannerSettings={{ barcodeTypes }}
+                onBarcodeScanned={found ? undefined : handleBarCodeScanned}
+              />
+              <View
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  justifyContent: "space-between",
+                  paddingVertical: 14,
+                }}
+              >
+                <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 12 }}>
+                  <View style={{ width: 20, height: 20, borderTopWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+                  <View style={{ width: 20, height: 20, borderTopWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+                </View>
+                <View style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 12 }}>
+                  <View style={{ width: 20, height: 20, borderBottomWidth: 3, borderLeftWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+                  <View style={{ width: 20, height: 20, borderBottomWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
+                </View>
+              </View>
+            </>
+          )}
           <View
             style={{
               position: "absolute",
@@ -1905,7 +1996,6 @@ const ScannerScreen = ({ onBack, onProduct }) => {
           >
             <Text style={{ color: "white", fontSize: 11, fontWeight: "600" }}>● AI Active</Text>
           </View>
-          <Text style={{ fontSize: 60, opacity: 0.3 }}>🥛</Text>
         </View>
       </View>
 
@@ -1957,7 +2047,7 @@ const ScannerScreen = ({ onBack, onProduct }) => {
               </View>
             </View>
           </View>
-          <View style={{ flexDirection: "row", gap: 12 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => onProduct(scannedProduct)}
               style={{
@@ -1974,6 +2064,7 @@ const ScannerScreen = ({ onBack, onProduct }) => {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
+                marginLeft: 12,
                 flex: 1,
                 paddingVertical: 13,
                 borderRadius: 12,
@@ -2834,6 +2925,7 @@ const MapScreen = ({ onBack, product, products, shoppingList = [], onProduct, on
   const target = stops[0]
     ? { aisle: stops[0].aisle, label: stops[0].g.label }
     : null;
+
   const start = plan.entrance;
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>

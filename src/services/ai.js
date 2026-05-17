@@ -9,6 +9,38 @@ const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
 const ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
+async function groqFetch(endpoint, body) {
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      body: JSON.stringify(body),
+    });
+  } catch (error) {
+    throw new Error(
+      "Network request failed. Check your phone's internet connection and try again."
+    );
+  }
+
+  let data;
+  try {
+    data = await response.json();
+  } catch (error) {
+    throw new Error("Invalid response from AI service. Please try again.");
+  }
+
+  if (!response.ok) {
+    const msg = data?.error?.message || `AI error (${response.status})`;
+    throw new Error(msg);
+  }
+
+  return data;
+}
+
 const SYSTEM_INSTRUCTION_BASE = `You are Bravo Assistant — a warm, helpful in-store concierge for Bravo, an Azerbaijani supermarket chain. Shoppers chat with you for product help, recipes, prices, dietary advice, and casual questions.
 
 LANGUAGE — this is the most important rule:
@@ -117,25 +149,12 @@ ${catalogCsv}`;
     { role: "user", content: userTurnText },
   ];
 
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages,
-      temperature: 0.4,
-      max_tokens: 512,
-    }),
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages,
+    temperature: 0.4,
+    max_tokens: 512,
   });
-
-  const data = await res.json();
-  if (!res.ok) {
-    const msg = data?.error?.message || `AI error (${res.status})`;
-    throw new Error(msg);
-  }
   const text = data?.choices?.[0]?.message?.content?.trim() ||
     "Sorry, I couldn't generate a response.";
 
@@ -212,27 +231,16 @@ export async function getRecipe(query) {
       "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
     );
   }
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: RECIPE_SYSTEM },
-        { role: "user", content: query },
-      ],
-      temperature: 0.2,
-      max_tokens: 300,
-      response_format: { type: "json_object" },
-    }),
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: RECIPE_SYSTEM },
+      { role: "user", content: query },
+    ],
+    temperature: 0.2,
+    max_tokens: 300,
+    response_format: { type: "json_object" },
   });
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error(data?.error?.message || `AI error (${res.status})`);
-  }
   let parsed;
   try {
     parsed = JSON.parse(data.choices[0].message.content);
@@ -353,27 +361,16 @@ export async function getMealPlan({
 
   const userPrompt = `${profileLines.join("\n")}\n${prefText}\nUser's language: ${language}.\nGenerate the 7-dinner meal plan now.`;
 
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: MEAL_PLAN_SYSTEM },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0.7,
-      max_tokens: 1200,
-      response_format: { type: "json_object" },
-    }),
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: MEAL_PLAN_SYSTEM },
+      { role: "user", content: userPrompt },
+    ],
+    temperature: 0.7,
+    max_tokens: 1200,
+    response_format: { type: "json_object" },
   });
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error(data?.error?.message || `AI error (${res.status})`);
-  }
   let parsed;
   try {
     parsed = JSON.parse(data.choices[0].message.content);
@@ -449,26 +446,15 @@ export async function analyzeProduct(product) {
     .filter(Boolean)
     .join("\n");
 
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: PRODUCT_ANALYSIS_SYSTEM },
-        { role: "user", content: lines },
-      ],
-      temperature: 0.3,
-      max_tokens: 250,
-    }),
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: PRODUCT_ANALYSIS_SYSTEM },
+      { role: "user", content: lines },
+    ],
+    temperature: 0.3,
+    max_tokens: 250,
   });
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error(data?.error?.message || `AI error (${res.status})`);
-  }
   return (
     data?.choices?.[0]?.message?.content?.trim() ||
     "Could not generate analysis."
@@ -482,27 +468,15 @@ export async function getInsights() {
     );
   }
   const context = buildInsightContext();
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: ADMIN_SYSTEM },
-        { role: "user", content: context },
-      ],
-      temperature: 0.3,
-      max_tokens: 700,
-    }),
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: ADMIN_SYSTEM },
+      { role: "user", content: context },
+    ],
+    temperature: 0.3,
+    max_tokens: 700,
   });
-  const data = await res.json();
-  if (!res.ok) {
-    const msg = data?.error?.message || `AI error (${res.status})`;
-    throw new Error(msg);
-  }
   return (
     data?.choices?.[0]?.message?.content?.trim() ||
     "Could not generate insights."
