@@ -7,6 +7,8 @@ import {
 
 const API_KEY = process.env.EXPO_PUBLIC_GROQ_API_KEY;
 const MODEL = process.env.EXPO_PUBLIC_GROQ_MODEL || "llama-3.3-70b-versatile";
+const VISION_MODEL =
+  process.env.EXPO_PUBLIC_GROQ_VISION_MODEL || "meta-llama/llama-4-scout-17b-16e-instruct";
 const ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
 async function groqFetch(endpoint, body) {
@@ -214,15 +216,20 @@ Respond ONLY with a valid JSON object — no markdown, no commentary — with th
   "dish": "Spaghetti Bolognese",
   "language": "en",
   "ingredients": ["pasta", "ground beef", "tomato sauce", "onion", "garlic"],
-  "smart_additions": ["olive oil", "parmesan cheese", "fresh basil"]
+  "smart_additions": ["olive oil", "parmesan cheese", "fresh basil"],
+  "pairings": [
+    { "name": "red wine", "reason": "Complements the rich tomato sauce" },
+    { "name": "sparkling water", "reason": "Cleanses the palate between bites" }
+  ]
 }
 
 Rules:
 - "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
-- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items, or pairings (bread, salad greens, wine). They should be items a customer probably has at home but might want to top up while they're in the store.
-- Generic English nouns for both lists, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
+- "smart_additions" = 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store.
+- "pairings" = 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish (a drink, a dessert, a salad, etc.). Each has a short "reason" (≤8 words) describing why it pairs. These are NOT essentials — they're "treat yourself" suggestions.
+- Generic English nouns everywhere, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
 - "language" is the user's language code ("en", "az", "ru").
-- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": []}.
+- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": []}.
 - Output JSON only.`;
 
 export async function getRecipe(query) {
@@ -271,12 +278,97 @@ export async function getRecipe(query) {
       })
     : [];
 
+  // Pairings: deliberately matched WITHOUT cold-aisle bias — these are the
+  // "treat yourself" beverage / dessert / side suggestions framed as
+  // "Pairs perfectly with your dish — add to cart?". The reason text comes
+  // from the model.
+  const pairings = Array.isArray(parsed.pairings)
+    ? parsed.pairings
+        .map((p) => {
+          if (!p || !p.name) return null;
+          const hits = findRelevant(p.name, 4);
+          const product =
+            hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+          if (product) seenIds.add(product.product_id);
+          return { name: p.name, reason: p.reason || "", product };
+        })
+        .filter((p) => p && p.product)
+    : [];
+
   return {
     dish: parsed.dish,
     language: parsed.language || "en",
     ingredients: matched,
     smart_additions: additions.filter((a) => a.product),
+    pairings,
   };
+}
+
+// ── List scan: image (camera/gallery) → list of products ───────────────────
+const LIST_SCAN_SYSTEM = `You are an OCR assistant. The user shows you a photo of a handwritten or printed shopping list. Read every line and return the items.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "items": ["milk", "bread", "eggs", "tomatoes"]
+}
+
+Rules:
+- Each entry is the GENERIC English noun for the product ("milk" not "Milla Süd 1L", "tomatoes" not "Bakı pomidorları").
+- If the list is written in Azerbaijani or Russian, translate to generic English nouns so they match an English product catalogue.
+- Strip quantities and units ("2 kg apples" → "apples"; "1L milk" → "milk").
+- Ignore non-grocery scribbles, dates, names, or instructions.
+- If you cannot read any items, return {"items": []}.
+- Output JSON only.`;
+
+export async function scanListFromImage(base64Image) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  if (!base64Image) {
+    throw new Error("No image provided.");
+  }
+  const dataUrl = base64Image.startsWith("data:")
+    ? base64Image
+    : `data:image/jpeg;base64,${base64Image}`;
+
+  const data = await groqFetch(ENDPOINT, {
+    model: VISION_MODEL,
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "text", text: LIST_SCAN_SYSTEM },
+          { type: "image_url", image_url: { url: dataUrl } },
+        ],
+      },
+    ],
+    temperature: 0.1,
+    max_tokens: 500,
+    response_format: { type: "json_object" },
+  });
+
+  let parsed;
+  try {
+    parsed = JSON.parse(data.choices[0].message.content);
+  } catch (_) {
+    return { items: [], matched: [] };
+  }
+  const names = Array.isArray(parsed.items) ? parsed.items.filter(Boolean) : [];
+
+  // Resolve each name to a single catalog product (top relevant hit, dedup).
+  const seenIds = new Set();
+  const matched = names
+    .map((name) => {
+      const hits = findRelevant(name, 4);
+      const product =
+        hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+      if (product) seenIds.add(product.product_id);
+      return { name, product };
+    })
+    .filter((m) => m.product);
+  return { items: names, matched };
 }
 
 // ── Sunday Meal Plan ───────────────────────────────────────────────────────

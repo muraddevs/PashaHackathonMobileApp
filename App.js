@@ -13,6 +13,7 @@ import {
   Alert,
 } from "react-native";
 import { Camera, CameraView } from "expo-camera";
+import * as ImagePicker from "expo-image-picker";
 import {
   askAI,
   getInsights,
@@ -20,6 +21,7 @@ import {
   getRecipe,
   isRecipeIntent,
   getMealPlan,
+  scanListFromImage,
 } from "./src/services/ai";
 import { login } from "./src/services/auth";
 import {
@@ -43,6 +45,7 @@ import {
   premiumPrice,
   totalDiscountPct,
   loyaltyDiscount,
+  getListSuggestions,
 } from "./src/data/productHelpers";
 import Svg, {
   Path,
@@ -1805,11 +1808,18 @@ const ProductScreen = ({ product, onBack, onNav, user, onAddToList, inList = [],
 };
 
 // ── SCREEN 6: AI Scanner ─────────────────────────────────────────────────────
-const ScannerScreen = ({ onBack, onProduct }) => {
+const ScannerScreen = ({ onBack, onProduct, onAddToList, onShowRoute }) => {
   const [hasPermission, setHasPermission] = useState(null);
   const [found, setFound] = useState(false);
   const [scannedData, setScannedData] = useState(null);
   const [permissionError, setPermissionError] = useState(false);
+  // mode: "barcode" (live scan) | "list" (photo of a paper shopping list)
+  const [mode, setMode] = useState("barcode");
+  const [listLoading, setListLoading] = useState(false);
+  const [listError, setListError] = useState(null);
+  // Result of a successful list scan: { items: [string], matched: [{name, product}] }
+  const [listResult, setListResult] = useState(null);
+  const cameraRef = useRef(null);
   const isWeb = Platform.OS === "web";
   const barcodeTypes = useMemo(
     () => [
@@ -1861,6 +1871,79 @@ const ScannerScreen = ({ onBack, onProduct }) => {
   const resetScanner = () => {
     setFound(false);
     setScannedData(null);
+    setListResult(null);
+    setListError(null);
+  };
+
+  const processImage = async (base64) => {
+    if (!base64) return;
+    setListLoading(true);
+    setListError(null);
+    setListResult(null);
+    try {
+      const result = await scanListFromImage(base64);
+      if (!result.matched || result.matched.length === 0) {
+        setListError(
+          "Couldn't read any products from the list. Try a clearer, better-lit photo."
+        );
+      } else {
+        setListResult(result);
+      }
+    } catch (err) {
+      setListError(err.message || "Could not scan list.");
+    } finally {
+      setListLoading(false);
+    }
+  };
+
+  const captureListFromCamera = async () => {
+    if (!cameraRef.current || listLoading) return;
+    try {
+      const photo = await cameraRef.current.takePictureAsync({
+        base64: true,
+        quality: 0.5,
+        skipProcessing: true,
+      });
+      await processImage(photo.base64);
+    } catch (err) {
+      setListError("Could not capture photo. Please try again.");
+    }
+  };
+
+  const pickListFromGallery = async () => {
+    if (listLoading) return;
+    try {
+      const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!perm.granted) {
+        setListError("Gallery permission is required to upload a list photo.");
+        return;
+      }
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions
+          ? ImagePicker.MediaTypeOptions.Images
+          : "Images",
+        base64: true,
+        quality: 0.5,
+      });
+      if (result.canceled) return;
+      const asset = result.assets?.[0];
+      if (!asset?.base64) {
+        setListError("Could not read the selected image.");
+        return;
+      }
+      await processImage(asset.base64);
+    } catch (err) {
+      setListError(err.message || "Could not open gallery.");
+    }
+  };
+
+  const navigateScannedList = () => {
+    if (!listResult?.matched?.length) return;
+    const products = listResult.matched.map((m) => m.product).filter(Boolean);
+    if (onAddToList) {
+      for (const p of products) onAddToList(p);
+    }
+    if (onShowRoute) onShowRoute(products);
   };
 
   return (
@@ -1890,6 +1973,8 @@ const ScannerScreen = ({ onBack, onProduct }) => {
         <Text style={{ color: "white", fontSize: 17, fontWeight: "700" }}>AI Scanner</Text>
         <View style={{ flexDirection: "row" }}>
           <TouchableOpacity
+            onPress={pickListFromGallery}
+            disabled={listLoading}
             style={{
               backgroundColor: "rgba(255,255,255,0.15)",
               borderRadius: 18,
@@ -1897,9 +1982,10 @@ const ScannerScreen = ({ onBack, onProduct }) => {
               height: 36,
               alignItems: "center",
               justifyContent: "center",
+              opacity: listLoading ? 0.5 : 1,
             }}
           >
-            <Icon name="lightning" size={18} color="white" />
+            <Text style={{ fontSize: 16 }}>🖼️</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -1917,9 +2003,59 @@ const ScannerScreen = ({ onBack, onProduct }) => {
         </View>
       </View>
 
+      {/* Mode toggle: Barcode | List */}
+      <View
+        style={{
+          flexDirection: "row",
+          alignSelf: "center",
+          backgroundColor: "rgba(255,255,255,0.1)",
+          borderRadius: 18,
+          padding: 3,
+          marginBottom: 12,
+        }}
+      >
+        {[
+          { id: "barcode", label: "Barcode" },
+          { id: "list", label: "Scan List" },
+        ].map((opt) => {
+          const active = mode === opt.id;
+          return (
+            <TouchableOpacity
+              key={opt.id}
+              onPress={() => {
+                setMode(opt.id);
+                resetScanner();
+              }}
+              style={{
+                paddingHorizontal: 16,
+                paddingVertical: 7,
+                borderRadius: 15,
+                backgroundColor: active ? GREEN : "transparent",
+              }}
+            >
+              <Text
+                style={{
+                  color: "white",
+                  fontSize: 12,
+                  fontWeight: "700",
+                }}
+              >
+                {opt.label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: 20 }}>
-        <Text style={{ color: "white", fontSize: 22, fontWeight: "700", marginBottom: 6 }}>Scan Product...</Text>
-        <Text style={{ color: "#aaa", fontSize: 13, marginBottom: 32 }}>Point camera at barcode or label</Text>
+        <Text style={{ color: "white", fontSize: 22, fontWeight: "700", marginBottom: 6 }}>
+          {mode === "list" ? "Scan a Shopping List" : "Scan Product..."}
+        </Text>
+        <Text style={{ color: "#aaa", fontSize: 13, marginBottom: 32 }}>
+          {mode === "list"
+            ? "Point camera at a written list or upload a photo"
+            : "Point camera at barcode or label"}
+        </Text>
         <View
           style={{
             width: "100%",
@@ -1956,10 +2092,13 @@ const ScannerScreen = ({ onBack, onProduct }) => {
           ) : (
             <>
               <CameraView
+                ref={cameraRef}
                 style={{ flex: 1, width: "100%" }}
                 facing="back"
-                barcodeScannerSettings={{ barcodeTypes }}
-                onBarcodeScanned={found ? undefined : handleBarCodeScanned}
+                barcodeScannerSettings={mode === "barcode" ? { barcodeTypes } : undefined}
+                onBarcodeScanned={
+                  mode === "barcode" && !found ? handleBarCodeScanned : undefined
+                }
               />
               <View
                 style={{
@@ -1981,6 +2120,25 @@ const ScannerScreen = ({ onBack, onProduct }) => {
                   <View style={{ width: 20, height: 20, borderBottomWidth: 3, borderRightWidth: 3, borderColor: GREEN, borderRadius: 2 }} />
                 </View>
               </View>
+              {listLoading && (
+                <View
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: "rgba(0,0,0,0.55)",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <ActivityIndicator size="large" color="white" />
+                  <Text style={{ color: "white", marginTop: 10, fontWeight: "600" }}>
+                    Reading your list...
+                  </Text>
+                </View>
+              )}
             </>
           )}
           <View
@@ -1994,12 +2152,186 @@ const ScannerScreen = ({ onBack, onProduct }) => {
               borderRadius: 20,
             }}
           >
-            <Text style={{ color: "white", fontSize: 11, fontWeight: "600" }}>● AI Active</Text>
+            <Text style={{ color: "white", fontSize: 11, fontWeight: "600" }}>
+              {mode === "list" ? "● List Scan" : "● AI Active"}
+            </Text>
           </View>
         </View>
+
+        {/* List-mode capture & gallery buttons */}
+        {mode === "list" && hasPermission && !listResult && (
+          <View style={{ flexDirection: "row", gap: 10, marginTop: 24 }}>
+            <TouchableOpacity
+              onPress={captureListFromCamera}
+              disabled={listLoading}
+              activeOpacity={0.85}
+              style={{
+                paddingHorizontal: 22,
+                paddingVertical: 13,
+                borderRadius: 14,
+                backgroundColor: GREEN,
+                flexDirection: "row",
+                alignItems: "center",
+                opacity: listLoading ? 0.6 : 1,
+              }}
+            >
+              <Text style={{ fontSize: 18, marginRight: 8 }}>📸</Text>
+              <Text style={{ color: "white", fontSize: 14, fontWeight: "800" }}>
+                Capture List
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={pickListFromGallery}
+              disabled={listLoading}
+              activeOpacity={0.85}
+              style={{
+                paddingHorizontal: 18,
+                paddingVertical: 13,
+                borderRadius: 14,
+                borderWidth: 1,
+                borderColor: "rgba(255,255,255,0.25)",
+                flexDirection: "row",
+                alignItems: "center",
+                opacity: listLoading ? 0.6 : 1,
+              }}
+            >
+              <Text style={{ fontSize: 18, marginRight: 6 }}>🖼️</Text>
+              <Text style={{ color: "white", fontSize: 14, fontWeight: "700" }}>
+                Gallery
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {/* Gallery-only fallback when the camera isn't available (e.g. web). */}
+        {mode === "list" && hasPermission === false && !isWeb && (
+          <TouchableOpacity
+            onPress={pickListFromGallery}
+            disabled={listLoading}
+            activeOpacity={0.85}
+            style={{
+              marginTop: 16,
+              paddingHorizontal: 22,
+              paddingVertical: 13,
+              borderRadius: 14,
+              backgroundColor: GREEN,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 18, marginRight: 8 }}>🖼️</Text>
+            <Text style={{ color: "white", fontSize: 14, fontWeight: "800" }}>
+              Upload from Gallery
+            </Text>
+          </TouchableOpacity>
+        )}
+
+        {listError && (
+          <Text
+            style={{
+              color: "#FCA5A5",
+              fontSize: 12,
+              marginTop: 12,
+              textAlign: "center",
+              paddingHorizontal: 20,
+            }}
+          >
+            {listError}
+          </Text>
+        )}
       </View>
 
-      {found && (
+      {listResult && (
+        <View
+          style={{
+            backgroundColor: "white",
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            padding: 20,
+            maxHeight: "55%",
+          }}
+        >
+          <View
+            style={{
+              width: 40,
+              height: 4,
+              backgroundColor: BORDER,
+              borderRadius: 2,
+              alignSelf: "center",
+              marginBottom: 16,
+            }}
+          />
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 12 }}>
+            <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: GREEN, marginRight: 6 }} />
+            <Text style={{ fontSize: 11, fontWeight: "700", color: GREEN, letterSpacing: 1, flex: 1 }}>
+              {listResult.matched.length} ITEM{listResult.matched.length === 1 ? "" : "S"} FOUND
+            </Text>
+            <TouchableOpacity onPress={resetScanner}>
+              <Text style={{ fontSize: 11, color: GRAY, fontWeight: "600" }}>Rescan</Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView style={{ maxHeight: 220 }} showsVerticalScrollIndicator={false}>
+            {listResult.matched.map((m, i) => (
+              <TouchableOpacity
+                key={`${m.product.product_id}-${i}`}
+                activeOpacity={0.7}
+                onPress={() => onProduct && onProduct(m.product)}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingVertical: 8,
+                  borderBottomWidth: i < listResult.matched.length - 1 ? 1 : 0,
+                  borderBottomColor: BORDER,
+                }}
+              >
+                <View
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: 14,
+                    backgroundColor: GREEN_LIGHT,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: 10,
+                  }}
+                >
+                  <Text style={{ color: GREEN, fontWeight: "800", fontSize: 11 }}>
+                    {m.product.aisle_num}
+                  </Text>
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                    {m.product.name}
+                  </Text>
+                  <Text style={{ fontSize: 11, color: GRAY }} numberOfLines={1}>
+                    "{m.name}" · Aisle {m.product.aisle_num} · {effectivePrice(m.product).toFixed(2)} ₼
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+          <TouchableOpacity
+            onPress={navigateScannedList}
+            activeOpacity={0.85}
+            style={{
+              marginTop: 14,
+              paddingVertical: 13,
+              borderRadius: 12,
+              backgroundColor: GREEN,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Icon name="navigate" size={16} color="white" />
+            <Text style={{ color: "white", fontSize: 14, fontWeight: "800", marginLeft: 6 }}>
+              Add all & Navigate Store
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {found && mode === "barcode" && (
         <View
           style={{
             backgroundColor: "white",
@@ -2135,7 +2467,7 @@ const RecipeIngredientRow = ({ ingredient, product, onPress, cold }) => {
   );
 };
 
-const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
+const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute, onAddToList }) => {
   return (
     <View
       style={{
@@ -2206,6 +2538,71 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute }) => {
                 onPress={() => onProduct && onProduct(p)}
                 cold={aislePopularity(p.aisle_num) < 0.55}
               />
+            );
+          })}
+        </View>
+      )}
+      {recipe.pairings && recipe.pairings.length > 0 && (
+        <View
+          style={{
+            marginTop: 12,
+            padding: 10,
+            borderRadius: 10,
+            backgroundColor: "#FEF7E6",
+            borderWidth: 1,
+            borderColor: "#FBD38D",
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
+            <Text style={{ fontSize: 14, marginRight: 4 }}>🥂</Text>
+            <Text style={{ fontSize: 10, fontWeight: "800", color: "#B45309", letterSpacing: 0.5 }}>
+              PAIRS PERFECTLY WITH
+            </Text>
+          </View>
+          {recipe.pairings.map((pairing, i) => {
+            const p = pairing.product;
+            if (!p) return null;
+            return (
+              <View
+                key={`pair-${i}-${p.product_id}`}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingVertical: 6,
+                  borderTopWidth: i > 0 ? 1 : 0,
+                  borderTopColor: "#FBD38D",
+                }}
+              >
+                <TouchableOpacity
+                  onPress={() => onProduct && onProduct(p)}
+                  activeOpacity={0.7}
+                  style={{ flex: 1, flexDirection: "row", alignItems: "center" }}
+                >
+                  <Text style={{ fontSize: 18, marginRight: 8 }}>{emojiFor(p.category)}</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                      {p.name}
+                    </Text>
+                    <Text style={{ fontSize: 11, color: "#92400E" }} numberOfLines={1}>
+                      {pairing.reason || `Pairs with ${recipe.dish}`} · {effectivePrice(p).toFixed(2)} ₼
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => onAddToList && onAddToList(p)}
+                  activeOpacity={0.7}
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 6,
+                    borderRadius: 8,
+                    backgroundColor: "#B45309",
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
+                    + Cart
+                  </Text>
+                </TouchableOpacity>
+              </View>
             );
           })}
         </View>
@@ -2457,6 +2854,7 @@ const AssistantScreen = ({
                           if (ing.product) onAddToList && onAddToList(ing.product);
                         }
                       }}
+                      onAddToList={onAddToList}
                       onNav={onNav}
                       onShowRoute={onShowRoute}
                     />
@@ -4644,6 +5042,13 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
   const original = list.reduce((s, p) => s + p.price_azn, 0);
   const saving = original - subtotal;
 
+  // "Often bought with" — products that complement what's already in the
+  // list. Recomputes whenever the list contents change.
+  const suggestions = useMemo(
+    () => getListSuggestions(list, 4),
+    [list]
+  );
+
   return (
     <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
       <View
@@ -4739,6 +5144,82 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
             </TouchableOpacity>
           </TouchableOpacity>
         ))}
+        {list.length > 0 && suggestions.length > 0 && (
+          <View
+            style={{
+              marginTop: 14,
+              backgroundColor: "white",
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: BORDER,
+              padding: 12,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+              <Text style={{ fontSize: 14, marginRight: 4 }}>✨</Text>
+              <Text style={{ fontSize: 10, fontWeight: "800", color: GREEN, letterSpacing: 0.5 }}>
+                OFTEN BOUGHT WITH YOUR LIST
+              </Text>
+            </View>
+            {suggestions.map((p, i) => (
+              <View
+                key={p.product_id}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingVertical: 8,
+                  borderTopWidth: i > 0 ? 1 : 0,
+                  borderTopColor: BORDER,
+                }}
+              >
+                <TouchableOpacity
+                  onPress={() => onProduct(p)}
+                  activeOpacity={0.7}
+                  style={{ flex: 1, flexDirection: "row", alignItems: "center" }}
+                >
+                  <View
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: 14,
+                      backgroundColor: GREEN_LIGHT,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginRight: 10,
+                    }}
+                  >
+                    <Text style={{ color: GREEN, fontWeight: "800", fontSize: 11 }}>
+                      {p.aisle_num}
+                    </Text>
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
+                      {p.name}
+                    </Text>
+                    <Text style={{ fontSize: 11, color: GRAY }} numberOfLines={1}>
+                      {p.reason} · {effectivePrice(p).toFixed(2)} ₼
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => onAddToList && onAddToList(p)}
+                  activeOpacity={0.7}
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 7,
+                    borderRadius: 8,
+                    backgroundColor: GREEN,
+                    marginLeft: 8,
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
+                    + Add
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
+        )}
         {list.length === 0 && (
           <View
             style={{
@@ -6240,7 +6721,14 @@ export default function App() {
           />
         );
       case "scanner":
-        return <ScannerScreen onBack={goBack} onProduct={handleProduct} />;
+        return (
+          <ScannerScreen
+            onBack={goBack}
+            onProduct={handleProduct}
+            onAddToList={addToList}
+            onShowRoute={handleShowRoute}
+          />
+        );
       case "assistant":
         return (
           <AssistantScreen

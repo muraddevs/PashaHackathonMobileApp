@@ -436,6 +436,75 @@ export function aislePopularity(aisleNum) {
   return AISLE_POPULARITY[aisleNum] ?? 0.5;
 }
 
+// ── Related-item suggestions for a shopping list ───────────────────────────
+// Given the items currently in the user's list, surface a small set of
+// products that "go with" them — drinks for snacks, sauce for pasta, etc.
+// The goal is the same as the AI's smart_additions: nudge shoppers toward
+// the staples they probably forgot.
+const LIST_PAIRINGS = [
+  { match: /meat|chicken|beef|lamb|turkey|kebab/i, suggest: ["olive oil", "spice", "garlic"] },
+  { match: /fish|seafood|tuna|salmon/i, suggest: ["lemon", "olive oil", "rice"] },
+  { match: /pasta|spaghet|noodle|macaroni/i, suggest: ["tomato sauce", "parmesan cheese", "olive oil"] },
+  { match: /rice|biryani|pilaf/i, suggest: ["soy sauce", "spice"] },
+  { match: /bread|bakery|baguette|bun|toast/i, suggest: ["butter", "jam", "cheese"] },
+  { match: /cereal|granola|oat|muesli/i, suggest: ["milk", "honey", "fruit"] },
+  { match: /chip|crisp|snack|nut|pretzel/i, suggest: ["cola", "juice", "beer"] },
+  { match: /chocolate|candy|sweet|cookie|biscuit/i, suggest: ["milk", "coffee"] },
+  { match: /fruit|apple|banana|orange|berry|grape/i, suggest: ["yogurt", "honey"] },
+  { match: /vegetable|salad|tomato|cucumber|lettuce/i, suggest: ["olive oil", "feta cheese"] },
+  { match: /coffee|espresso/i, suggest: ["milk", "biscuit", "sugar"] },
+  { match: /\btea\b/i, suggest: ["biscuit", "honey", "lemon"] },
+  { match: /beverage|juice|water|soda|cola|drink/i, suggest: ["chips", "biscuit", "snack"] },
+  { match: /milk|dairy|yogurt|kefir/i, suggest: ["cereal", "coffee", "fruit"] },
+  { match: /cheese|feta|mozzarella/i, suggest: ["bread", "wine", "olive"] },
+  { match: /wine|beer|alcohol/i, suggest: ["cheese", "nuts"] },
+  { match: /\begg|eggs\b/i, suggest: ["bread", "butter", "milk"] },
+  { match: /curry|spice|masala/i, suggest: ["yogurt", "rice", "naan"] },
+  { match: /pizza|dough/i, suggest: ["cola", "olive", "cheese"] },
+];
+
+function pickComplementsFor(p) {
+  const hay = `${p.name} ${p.category} ${p.subcategory}`;
+  const out = new Set();
+  for (const pair of LIST_PAIRINGS) {
+    if (pair.match.test(hay)) {
+      for (const s of pair.suggest) out.add(s);
+    }
+  }
+  return out;
+}
+
+export function getListSuggestions(items, limit = 4) {
+  if (!items || items.length === 0) return [];
+  const inListIds = new Set(items.map((p) => p.product_id));
+  const inListCats = new Set(items.map((p) => (p.subcategory || "").toLowerCase()));
+
+  // Aggregate every complement keyword each list item suggests, then resolve
+  // each keyword to a single catalog product. Bias toward cold aisles so the
+  // walking path drives traffic through under-trafficked sections.
+  const keywords = new Set();
+  for (const item of items) {
+    for (const kw of pickComplementsFor(item)) keywords.add(kw);
+  }
+
+  const suggestions = [];
+  const seen = new Set(inListIds);
+  for (const kw of keywords) {
+    const hits = findCold(kw, 6);
+    for (const h of hits) {
+      if (seen.has(h.product_id)) continue;
+      // Don't suggest something from the same subcategory as an item the
+      // user already has — they don't need two yogurts.
+      if (inListCats.has((h.subcategory || "").toLowerCase())) continue;
+      seen.add(h.product_id);
+      suggestions.push({ ...h, reason: `Goes with your ${kw}` });
+      break;
+    }
+    if (suggestions.length >= limit) break;
+  }
+  return suggestions.slice(0, limit);
+}
+
 export function getPlacementSuggestions(limit = 3) {
   const a = getAnalytics();
   const traffic = getTrafficByAisle();
