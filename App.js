@@ -2609,88 +2609,115 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute, onAddToLi
           })}
         </View>
       )}
-      {recipe.upgrades && recipe.upgrades.length > 0 && (
+      {recipe.bonusMealLoading && (
         <View
           style={{
             marginTop: 12,
             padding: 10,
             borderRadius: 10,
-            backgroundColor: "#EEF2FF",
-            borderWidth: 1,
-            borderColor: "#C7D2FE",
+            backgroundColor: GREEN_LIGHT,
+            flexDirection: "row",
+            alignItems: "center",
           }}
         >
-          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
-            <Text style={{ fontSize: 14, marginRight: 4 }}>🚀</Text>
-            <Text style={{ fontSize: 10, fontWeight: "800", color: "#4338CA", letterSpacing: 0.5 }}>
-              UPGRADE THIS RECIPE
+          <ActivityIndicator size="small" color={GREEN} />
+          <Text style={{ fontSize: 12, color: GREEN, marginLeft: 8, fontWeight: "700" }}>
+            Looking for a second meal you could make...
+          </Text>
+        </View>
+      )}
+      {recipe.bonusMeal && (
+        <>
+          <View
+            style={{
+              marginTop: 12,
+              padding: 12,
+              borderRadius: 10,
+              backgroundColor: GREEN_LIGHT,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
+              <Text style={{ fontSize: 16, marginRight: 6 }}>💡</Text>
+              <Text style={{ fontSize: 13, fontWeight: "800", color: GREEN, flex: 1 }}>
+                Recommended for another meal
+              </Text>
+            </View>
+            <Text style={{ fontSize: 12, color: DARK, lineHeight: 17, marginBottom: 8 }}>
+              With these{" "}
+              <Text style={{ fontWeight: "800" }}>
+                {(recipe.bonusMeal.uses || []).length || "current"} items
+              </Text>
+              , you can make a simple{" "}
+              <Text style={{ fontWeight: "800", color: GREEN }}>{recipe.bonusMeal.name}</Text>.
             </Text>
-          </View>
-          {recipe.upgrades.map((up, i) => (
-            <View
-              key={`up-${i}-${up.dish}`}
-              style={{
-                paddingTop: i > 0 ? 8 : 4,
-                paddingBottom: 4,
-                borderTopWidth: i > 0 ? 1 : 0,
-                borderTopColor: "#C7D2FE",
-              }}
-            >
-              <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 4 }}>
+            {(recipe.bonusMeal.extras || []).map((ex) => (
+              <TouchableOpacity
+                key={`bm-ex-${ex.product.product_id}`}
+                onPress={() => onProduct && onProduct(ex.product)}
+                activeOpacity={0.7}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingVertical: 4,
+                }}
+              >
+                <Text style={{ fontSize: 14, color: GREEN, fontWeight: "800", marginRight: 8 }}>
+                  +
+                </Text>
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
-                    {up.dish}
-                  </Text>
-                  {up.tagline ? (
-                    <Text style={{ fontSize: 11, color: "#4338CA" }} numberOfLines={1}>
-                      {up.tagline}
-                    </Text>
-                  ) : null}
-                </View>
-                <TouchableOpacity
-                  onPress={() => {
-                    for (const ex of up.extras || []) {
-                      if (ex.product) onAddToList && onAddToList(ex.product);
-                    }
-                  }}
-                  activeOpacity={0.7}
-                  style={{
-                    paddingHorizontal: 12,
-                    paddingVertical: 7,
-                    borderRadius: 8,
-                    backgroundColor: "#4338CA",
-                  }}
-                >
-                  <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
-                    + Add extras
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              {(up.extras || []).map((ex) => (
-                <TouchableOpacity
-                  key={`up-ex-${ex.product.product_id}`}
-                  onPress={() => onProduct && onProduct(ex.product)}
-                  activeOpacity={0.7}
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    paddingVertical: 3,
-                  }}
-                >
-                  <Text style={{ fontSize: 11, color: "#4338CA", fontWeight: "700", marginRight: 6 }}>
-                    +
-                  </Text>
-                  <Text style={{ fontSize: 12, color: DARK, flex: 1 }} numberOfLines={1}>
+                  <Text style={{ fontSize: 13, fontWeight: "700", color: DARK }} numberOfLines={1}>
                     {ex.name}
                   </Text>
                   <Text style={{ fontSize: 11, color: TEXT_MUTED }} numberOfLines={1}>
-                    Aisle {ex.product.aisle_num} · {effectivePrice(ex.product).toFixed(2)} ₼
+                    {ex.product.name} · Aisle {ex.product.aisle_num} ·{" "}
+                    {effectivePrice(ex.product).toFixed(2)} ₼
                   </Text>
-                </TouchableOpacity>
-              ))}
+                </View>
+              </TouchableOpacity>
+            ))}
+            <TouchableOpacity
+              onPress={() => {
+                for (const ex of recipe.bonusMeal.extras || []) {
+                  if (ex.product && onAddToList) onAddToList(ex.product);
+                }
+              }}
+              activeOpacity={0.85}
+              style={{
+                marginTop: 10,
+                paddingVertical: 9,
+                borderRadius: 8,
+                backgroundColor: GREEN,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 12, fontWeight: "800" }}>
+                + Add {(recipe.bonusMeal.extras || []).length} extras to list
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              marginTop: 8,
+              padding: 10,
+              borderRadius: 10,
+              backgroundColor: GREEN_LIGHT,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 16, marginRight: 8 }}>🍽️</Text>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 12, fontWeight: "800", color: GREEN }}>
+                Bonus: Make 2 meals with your list!
+              </Text>
+              <Text style={{ fontSize: 11, color: DARK, marginTop: 2 }}>
+                You can cook both <Text style={{ fontWeight: "700" }}>{recipe.dish}</Text>{" "}
+                and <Text style={{ fontWeight: "700" }}>{recipe.bonusMeal.name}</Text>.
+              </Text>
             </View>
-          ))}
-        </View>
+          </View>
+        </>
       )}
       <View style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
         <TouchableOpacity
@@ -2784,20 +2811,73 @@ const AssistantScreen = ({
         if (recipe && recipe.ingredients.some((i) => i.product)) {
           const matched = recipe.ingredients.filter((i) => i.product);
           const reply = `For ${recipe.dish}, here's where to find each ingredient in-store:`;
+          // Stable token used to find this message later when the
+          // background bonus-meal fetch resolves.
+          const recipeMsgToken = `recipe-${Date.now()}-${Math.random()}`;
           setMessages((m) => [
             ...m,
             {
               from: "bot",
               text: reply,
+              recipeMsgToken,
               recipe: {
                 dish: recipe.dish,
                 ingredients: matched,
                 smart_additions: recipe.smart_additions || [],
                 pairings: recipe.pairings || [],
-                upgrades: recipe.upgrades || [],
+                bonusMealLoading: true,
+                bonusMeal: null,
               },
             },
           ]);
+
+          // Cross-recipe suggestion: a SECOND dish the shopper can cook by
+          // reusing some of these ingredients plus a couple of extras.
+          // Fire-and-forget; updates the message when it lands.
+          (async () => {
+            try {
+              const ingredientProducts = matched
+                .map((i) => i.product)
+                .filter(Boolean);
+              const result = await suggestDishesFromList(ingredientProducts);
+              // Prefer a dish that isn't a near-duplicate of the current one.
+              const baseDishLower = recipe.dish.toLowerCase();
+              const bonus =
+                (result.dishes || []).find(
+                  (d) => !d.name.toLowerCase().includes(baseDishLower) &&
+                    !baseDishLower.includes(d.name.toLowerCase())
+                ) || (result.dishes || [])[0] || null;
+              setMessages((msgs) =>
+                msgs.map((msg) =>
+                  msg.recipeMsgToken === recipeMsgToken
+                    ? {
+                        ...msg,
+                        recipe: {
+                          ...msg.recipe,
+                          bonusMealLoading: false,
+                          bonusMeal: bonus,
+                        },
+                      }
+                    : msg
+                )
+              );
+            } catch {
+              setMessages((msgs) =>
+                msgs.map((msg) =>
+                  msg.recipeMsgToken === recipeMsgToken
+                    ? {
+                        ...msg,
+                        recipe: {
+                          ...msg.recipe,
+                          bonusMealLoading: false,
+                        },
+                      }
+                    : msg
+                )
+              );
+            }
+          })();
+
           return;
         }
         // fall through to normal chat if recipe match was empty
