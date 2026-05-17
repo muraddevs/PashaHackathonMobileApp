@@ -220,6 +220,18 @@ Respond ONLY with a valid JSON object — no markdown, no commentary — with th
   "pairings": [
     { "name": "red wine", "reason": "Complements the rich tomato sauce" },
     { "name": "sparkling water", "reason": "Cleanses the palate between bites" }
+  ],
+  "upgrades": [
+    {
+      "dish": "Pasta Carbonara",
+      "tagline": "Creamy Roman classic",
+      "extras": ["bacon", "egg", "parmesan cheese"]
+    },
+    {
+      "dish": "Pasta Alfredo",
+      "tagline": "Rich and indulgent",
+      "extras": ["heavy cream", "butter", "parmesan cheese"]
+    }
   ]
 }
 
@@ -227,9 +239,10 @@ Rules:
 - "ingredients" = the 4–6 ESSENTIALS the dish actually needs. Generic English nouns ("pasta" not "Barilla spaghetti"). No water/salt/black-pepper unless it's the defining seasoning.
 - "smart_additions" = ALWAYS include 2–3 common STAPLES OR COMPLEMENTS shoppers usually forget — oil, garlic, herbs, condiments, side items they probably have at home but might want to top up while they're in the store. NEVER leave this array empty for a valid recipe.
 - "pairings" = ALWAYS include 1–2 BEVERAGES or SIDE DISHES that go perfectly with this dish (a drink, a dessert, a salad, etc.). Each has a short "reason" (≤8 words) describing why it pairs. These are NOT essentials — they're "treat yourself" suggestions. NEVER leave this array empty for a valid recipe.
+- "upgrades" = ALWAYS include 1–2 RELATED DISH VARIATIONS the shopper could make if they pick up a couple more items. Each upgrade has "dish" (e.g. "BBQ Chicken Pizza"), "tagline" (≤6 words like "Smoky, sweet, savory"), and "extras" (2–3 EXTRA ingredients beyond the base recipe). The upgrade should share most ingredients with the base dish. Example: base "Pizza Margherita" → upgrade "BBQ Chicken Pizza" with extras ["BBQ sauce", "chicken breast", "red onion"]. NEVER leave this array empty for a valid recipe.
 - Generic English nouns everywhere, even if the user wrote in Azerbaijani — they have to match the English product catalogue.
 - "language" is the user's language code ("en", "az", "ru").
-- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": []}.
+- If the message isn't a cooking request, return {"dish": null, "language": "en", "ingredients": [], "smart_additions": [], "pairings": [], "upgrades": []}.
 - Output JSON only.`;
 
 export async function getRecipe(query) {
@@ -244,8 +257,8 @@ export async function getRecipe(query) {
       { role: "system", content: RECIPE_SYSTEM },
       { role: "user", content: query },
     ],
-    temperature: 0.2,
-    max_tokens: 500,
+    temperature: 0.3,
+    max_tokens: 800,
     response_format: { type: "json_object" },
   });
   let parsed;
@@ -295,18 +308,48 @@ export async function getRecipe(query) {
         .filter((p) => p && p.product)
     : [];
 
+  // Upgrade variants: 1–2 related dishes the shopper can level up to by
+  // grabbing a couple more items. Each "extra" is matched against the
+  // catalog so the UI can offer a one-tap "Add extras & navigate".
+  const upgrades = Array.isArray(parsed.upgrades)
+    ? parsed.upgrades
+        .map((u) => {
+          if (!u || !u.dish) return null;
+          const extras = Array.isArray(u.extras)
+            ? u.extras
+                .map((name) => {
+                  const hits = findRelevant(name, 4);
+                  const product =
+                    hits.find((h) => !seenIds.has(h.product_id)) ||
+                    hits[0] ||
+                    null;
+                  if (product) seenIds.add(product.product_id);
+                  return { name, product };
+                })
+                .filter((e) => e.product)
+            : [];
+          if (extras.length === 0) return null;
+          return { dish: u.dish, tagline: u.tagline || "", extras };
+        })
+        .filter(Boolean)
+    : [];
+
   let finalAdditions = additions.filter((a) => a.product);
   let finalPairings = pairings;
+  let finalUpgrades = upgrades;
 
   // Deterministic fallback — the model occasionally returns just the
-  // ingredient list and skips smart_additions / pairings entirely. We still
-  // want both sections to render, so derive them locally from the dish name
-  // and matched ingredient categories.
+  // ingredient list and skips smart_additions / pairings / upgrades. We
+  // still want every section to render, so derive them locally from the
+  // dish name and matched ingredient categories.
   if (finalAdditions.length === 0) {
     finalAdditions = deriveFallbackAdditions(parsed.dish, matched, seenIds);
   }
   if (finalPairings.length === 0) {
     finalPairings = deriveFallbackPairings(parsed.dish, seenIds);
+  }
+  if (finalUpgrades.length === 0) {
+    finalUpgrades = deriveFallbackUpgrades(parsed.dish, seenIds);
   }
 
   return {
@@ -315,7 +358,111 @@ export async function getRecipe(query) {
     ingredients: matched,
     smart_additions: finalAdditions,
     pairings: finalPairings,
+    upgrades: finalUpgrades,
   };
+}
+
+// Dish-name → upgrade variants table. Each upgrade is a real dish that
+// re-uses most of the base recipe's ingredients plus 2–3 extras.
+const UPGRADE_VARIANTS = [
+  {
+    match: /pizza|margherita/i,
+    upgrades: [
+      { dish: "BBQ Chicken Pizza", tagline: "Smoky, sweet, savory", extras: ["BBQ sauce", "chicken breast", "red onion"] },
+      { dish: "Hawaiian Pizza", tagline: "Sweet & salty tropics", extras: ["ham", "pineapple"] },
+    ],
+  },
+  {
+    match: /pasta|spaghet|bolognese|noodle/i,
+    upgrades: [
+      { dish: "Pasta Alfredo", tagline: "Creamy & indulgent", extras: ["heavy cream", "parmesan cheese", "butter"] },
+      { dish: "Pasta Carbonara", tagline: "Roman classic", extras: ["bacon", "egg", "parmesan cheese"] },
+    ],
+  },
+  {
+    match: /burger|patty/i,
+    upgrades: [
+      { dish: "Bacon Cheeseburger", tagline: "The stacked classic", extras: ["bacon", "cheddar cheese", "lettuce"] },
+      { dish: "Mushroom Swiss Burger", tagline: "Earthy & rich", extras: ["mushroom", "swiss cheese", "onion"] },
+    ],
+  },
+  {
+    match: /chicken|poultry/i,
+    upgrades: [
+      { dish: "Chicken Curry", tagline: "Warm & aromatic", extras: ["curry powder", "coconut milk", "onion"] },
+      { dish: "Lemon Garlic Chicken", tagline: "Bright & zesty", extras: ["lemon", "garlic", "butter"] },
+    ],
+  },
+  {
+    match: /beef|steak|mince/i,
+    upgrades: [
+      { dish: "Beef Stroganoff", tagline: "Creamy & comforting", extras: ["sour cream", "mushroom", "onion"] },
+      { dish: "Beef Tacos", tagline: "Mexican night", extras: ["taco shell", "salsa", "cheddar cheese"] },
+    ],
+  },
+  {
+    match: /fish|salmon|tuna|seafood/i,
+    upgrades: [
+      { dish: "Fish Tacos", tagline: "Fresh & zesty", extras: ["taco shell", "lime", "cabbage"] },
+      { dish: "Salmon Teriyaki", tagline: "Sweet glazed Asian", extras: ["soy sauce", "honey", "ginger"] },
+    ],
+  },
+  {
+    match: /rice|pilaf|plov|risotto/i,
+    upgrades: [
+      { dish: "Chicken Biryani", tagline: "Fragrant & spiced", extras: ["chicken breast", "yogurt", "spice"] },
+      { dish: "Mushroom Risotto", tagline: "Creamy Italian", extras: ["mushroom", "parmesan cheese", "white wine"] },
+    ],
+  },
+  {
+    match: /salad/i,
+    upgrades: [
+      { dish: "Caesar Salad", tagline: "Crispy & creamy", extras: ["parmesan cheese", "croutons", "caesar dressing"] },
+      { dish: "Greek Salad", tagline: "Bright Mediterranean", extras: ["feta cheese", "olive", "red onion"] },
+    ],
+  },
+  {
+    match: /soup|stew|broth/i,
+    upgrades: [
+      { dish: "Hearty Bread Soup Bowl", tagline: "Comforting & filling", extras: ["bread", "cheese", "cream"] },
+    ],
+  },
+  {
+    match: /pancake|waffle|breakfast/i,
+    upgrades: [
+      { dish: "Berry Stack", tagline: "Sweet morning treat", extras: ["strawberry", "blueberry", "whipped cream"] },
+      { dish: "Savory Breakfast", tagline: "Hearty & filling", extras: ["bacon", "egg", "maple syrup"] },
+    ],
+  },
+];
+
+function upgradeVariantsForDish(dishName) {
+  const d = (dishName || "").toLowerCase();
+  for (const entry of UPGRADE_VARIANTS) {
+    if (entry.match.test(d)) return entry.upgrades;
+  }
+  return [
+    { dish: `Deluxe ${dishName}`, tagline: "Upgraded version", extras: ["cheese", "herbs", "spice"] },
+  ];
+}
+
+function deriveFallbackUpgrades(dish, seenIds) {
+  const variants = upgradeVariantsForDish(dish);
+  const result = [];
+  for (const v of variants) {
+    if (result.length >= 2) break;
+    const extras = [];
+    for (const name of v.extras) {
+      const hits = findRelevant(name, 4);
+      const product = hits.find((h) => !seenIds.has(h.product_id)) || hits[0] || null;
+      if (!product) continue;
+      seenIds.add(product.product_id);
+      extras.push({ name, product });
+    }
+    if (extras.length === 0) continue;
+    result.push({ dish: v.dish, tagline: v.tagline, extras });
+  }
+  return result;
 }
 
 // Maps a dish name (free-form English) to a small set of beverage / side
@@ -698,4 +845,105 @@ export async function getInsights() {
     data?.choices?.[0]?.message?.content?.trim() ||
     "Could not generate insights."
   );
+}
+// ── List → possible dishes (My List screen) ────────────────────────────────
+const LIST_TO_DISH_SYSTEM = `You are a meal-idea assistant. The user gives you their shopping list. Suggest 2 specific dishes they could cook by adding 2–4 EXTRA ingredients on top of what they already have.
+
+Respond ONLY with a valid JSON object — no markdown, no commentary — with this exact shape:
+{
+  "dishes": [
+    {
+      "name": "Beef Bolognese",
+      "tagline": "Hearty Italian classic",
+      "uses": ["beef", "onion"],
+      "extras": ["spaghetti", "tomato sauce", "garlic"]
+    },
+    {
+      "name": "Beef Stew",
+      "tagline": "Slow-cooked comfort",
+      "uses": ["beef", "onion"],
+      "extras": ["potato", "carrot", "beef broth"]
+    }
+  ]
+}
+
+Rules:
+- "name" = the actual dish title.
+- "tagline" = ≤6 words selling the dish.
+- "uses" = which items from the user's list this dish uses (subset of the input list, generic English nouns).
+- "extras" = 2–4 EXTRA ingredients beyond the list that the shopper still needs to buy. Generic English nouns (match a real grocery catalogue).
+- Suggest dishes that share AS MANY items from the list as possible — minimise the extras.
+- 2 different cuisines / cooking styles when possible. Real dishes only.
+- If the list is empty or unrelated, return {"dishes": []}.
+- Output JSON only.`;
+
+export async function suggestDishesFromList(listProducts) {
+  if (!API_KEY) {
+    throw new Error(
+      "EXPO_PUBLIC_GROQ_API_KEY is not set. Get a free key at https://console.groq.com/keys and add it to .env, then restart Expo."
+    );
+  }
+  if (!Array.isArray(listProducts) || listProducts.length === 0) {
+    return { dishes: [] };
+  }
+
+  // Send the model a compact list of generic-noun ingredients so it can
+  // think in terms of recipes, not SKUs.
+  const itemNames = listProducts
+    .map((p) => p.name || "")
+    .filter(Boolean)
+    .join(", ");
+
+  const data = await groqFetch(ENDPOINT, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: LIST_TO_DISH_SYSTEM },
+      { role: "user", content: `Shopping list: ${itemNames}` },
+    ],
+    temperature: 0.4,
+    max_tokens: 500,
+    response_format: { type: "json_object" },
+  });
+
+  let parsed;
+  try {
+    parsed = JSON.parse(data.choices[0].message.content);
+  } catch (_) {
+    return { dishes: [] };
+  }
+  if (!parsed?.dishes || !Array.isArray(parsed.dishes)) {
+    return { dishes: [] };
+  }
+
+  // Match each "extra" to a single catalog product so the UI can offer
+  // one-tap "Add all & navigate".
+  const seenIds = new Set(listProducts.map((p) => p.product_id));
+  const dishes = parsed.dishes
+    .slice(0, 2)
+    .map((d) => {
+      if (!d || !d.name) return null;
+      const extras = Array.isArray(d.extras)
+        ? d.extras
+            .map((name) => {
+              const hits = findRelevant(name, 4);
+              const product =
+                hits.find((h) => !seenIds.has(h.product_id)) ||
+                hits[0] ||
+                null;
+              if (product) seenIds.add(product.product_id);
+              return { name, product };
+            })
+            .filter((e) => e.product)
+        : [];
+      if (extras.length === 0) return null;
+      return {
+        name: d.name,
+        tagline: d.tagline || "",
+        uses: Array.isArray(d.uses) ? d.uses : [],
+        extras,
+      };
+    })
+    .filter(Boolean);
+
+  return { dishes };
 }

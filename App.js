@@ -22,6 +22,7 @@ import {
   isRecipeIntent,
   getMealPlan,
   scanListFromImage,
+  suggestDishesFromList,
 } from "./src/services/ai";
 import { login } from "./src/services/auth";
 import {
@@ -2607,6 +2608,89 @@ const RecipeCard = ({ recipe, onProduct, onAddAll, onNav, onShowRoute, onAddToLi
           })}
         </View>
       )}
+      {recipe.upgrades && recipe.upgrades.length > 0 && (
+        <View
+          style={{
+            marginTop: 12,
+            padding: 10,
+            borderRadius: 10,
+            backgroundColor: "#EEF2FF",
+            borderWidth: 1,
+            borderColor: "#C7D2FE",
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 6 }}>
+            <Text style={{ fontSize: 14, marginRight: 4 }}>🚀</Text>
+            <Text style={{ fontSize: 10, fontWeight: "800", color: "#4338CA", letterSpacing: 0.5 }}>
+              UPGRADE THIS RECIPE
+            </Text>
+          </View>
+          {recipe.upgrades.map((up, i) => (
+            <View
+              key={`up-${i}-${up.dish}`}
+              style={{
+                paddingTop: i > 0 ? 8 : 4,
+                paddingBottom: 4,
+                borderTopWidth: i > 0 ? 1 : 0,
+                borderTopColor: "#C7D2FE",
+              }}
+            >
+              <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 4 }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
+                    {up.dish}
+                  </Text>
+                  {up.tagline ? (
+                    <Text style={{ fontSize: 11, color: "#4338CA" }} numberOfLines={1}>
+                      {up.tagline}
+                    </Text>
+                  ) : null}
+                </View>
+                <TouchableOpacity
+                  onPress={() => {
+                    for (const ex of up.extras || []) {
+                      if (ex.product) onAddToList && onAddToList(ex.product);
+                    }
+                  }}
+                  activeOpacity={0.7}
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 7,
+                    borderRadius: 8,
+                    backgroundColor: "#4338CA",
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
+                    + Add extras
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              {(up.extras || []).map((ex) => (
+                <TouchableOpacity
+                  key={`up-ex-${ex.product.product_id}`}
+                  onPress={() => onProduct && onProduct(ex.product)}
+                  activeOpacity={0.7}
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    paddingVertical: 3,
+                  }}
+                >
+                  <Text style={{ fontSize: 11, color: "#4338CA", fontWeight: "700", marginRight: 6 }}>
+                    +
+                  </Text>
+                  <Text style={{ fontSize: 12, color: DARK, flex: 1 }} numberOfLines={1}>
+                    {ex.name}
+                  </Text>
+                  <Text style={{ fontSize: 11, color: TEXT_MUTED }} numberOfLines={1}>
+                    Aisle {ex.product.aisle_num} · {effectivePrice(ex.product).toFixed(2)} ₼
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          ))}
+        </View>
+      )}
       <View style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
         <TouchableOpacity
           onPress={onAddAll}
@@ -2709,6 +2793,7 @@ const AssistantScreen = ({
                 ingredients: matched,
                 smart_additions: recipe.smart_additions || [],
                 pairings: recipe.pairings || [],
+                upgrades: recipe.upgrades || [],
               },
             },
           ]);
@@ -5051,6 +5136,46 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
     [list]
   );
 
+  // Dynamic dish ideas — the AI looks at the current list and suggests
+  // 1–2 specific dishes the shopper could cook by adding a couple of
+  // extra ingredients. Debounced so rapid additions don't fire 5 calls.
+  const [dishIdeas, setDishIdeas] = useState([]);
+  const [dishLoading, setDishLoading] = useState(false);
+  const [dishError, setDishError] = useState(null);
+  // Refresh counter — bumped by the "Try other ideas" button to force a
+  // re-fetch without changing the list contents.
+  const [dishRefreshKey, setDishRefreshKey] = useState(0);
+  // Stable signature so the effect doesn't refire on identical content.
+  const listSignature = useMemo(
+    () => list.map((p) => p.product_id).sort().join(","),
+    [list]
+  );
+
+  useEffect(() => {
+    if (list.length === 0) {
+      setDishIdeas([]);
+      setDishError(null);
+      return;
+    }
+    let cancelled = false;
+    const timer = setTimeout(async () => {
+      setDishLoading(true);
+      setDishError(null);
+      try {
+        const result = await suggestDishesFromList(list);
+        if (!cancelled) setDishIdeas(result.dishes || []);
+      } catch (err) {
+        if (!cancelled) setDishError(err.message || "Could not load ideas.");
+      } finally {
+        if (!cancelled) setDishLoading(false);
+      }
+    }, 600);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [listSignature, dishRefreshKey]);
+
   return (
     <View style={{ flex: 1, backgroundColor: LIGHT_GRAY }}>
       <View
@@ -5146,6 +5271,128 @@ const ListScreen = ({ list, onProduct, onRemove, onClear, onBack, onStartRoute, 
             </TouchableOpacity>
           </TouchableOpacity>
         ))}
+        {list.length > 0 && (dishLoading || dishIdeas.length > 0 || dishError) && (
+          <View
+            style={{
+              marginTop: 14,
+              backgroundColor: "#EEF2FF",
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: "#C7D2FE",
+              padding: 12,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 8 }}>
+              <Text style={{ fontSize: 14, marginRight: 4 }}>🍳</Text>
+              <Text
+                style={{
+                  fontSize: 10,
+                  fontWeight: "800",
+                  color: "#4338CA",
+                  letterSpacing: 0.5,
+                  flex: 1,
+                }}
+              >
+                TURN THIS INTO A MEAL
+              </Text>
+              {!dishLoading && dishIdeas.length > 0 && (
+                <TouchableOpacity
+                  onPress={() => setDishRefreshKey((k) => k + 1)}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Text style={{ fontSize: 11, color: "#4338CA", fontWeight: "700" }}>
+                    Try other ideas
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </View>
+            {dishLoading && (
+              <View style={{ flexDirection: "row", alignItems: "center", paddingVertical: 6 }}>
+                <ActivityIndicator size="small" color="#4338CA" />
+                <Text style={{ fontSize: 12, color: "#4338CA", marginLeft: 8 }}>
+                  Thinking of dishes you can make...
+                </Text>
+              </View>
+            )}
+            {!dishLoading && dishError && (
+              <Text style={{ fontSize: 11, color: "#B91C1C" }}>{dishError}</Text>
+            )}
+            {!dishLoading &&
+              dishIdeas.map((idea, i) => (
+                <View
+                  key={`idea-${i}-${idea.name}`}
+                  style={{
+                    paddingTop: i > 0 ? 10 : 4,
+                    paddingBottom: 4,
+                    borderTopWidth: i > 0 ? 1 : 0,
+                    borderTopColor: "#C7D2FE",
+                  }}
+                >
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      marginBottom: 4,
+                    }}
+                  >
+                    <View style={{ flex: 1 }}>
+                      <Text style={{ fontSize: 13, fontWeight: "800", color: DARK }} numberOfLines={1}>
+                        {idea.name}
+                      </Text>
+                      {idea.tagline ? (
+                        <Text style={{ fontSize: 11, color: "#4338CA" }} numberOfLines={1}>
+                          {idea.tagline}
+                        </Text>
+                      ) : null}
+                    </View>
+                    <TouchableOpacity
+                      onPress={() => {
+                        for (const ex of idea.extras || []) {
+                          if (ex.product && onAddToList) onAddToList(ex.product);
+                        }
+                      }}
+                      activeOpacity={0.7}
+                      style={{
+                        paddingHorizontal: 12,
+                        paddingVertical: 7,
+                        borderRadius: 8,
+                        backgroundColor: "#4338CA",
+                      }}
+                    >
+                      <Text style={{ color: "white", fontSize: 11, fontWeight: "800" }}>
+                        + Add extras
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                  <Text style={{ fontSize: 10, fontWeight: "800", color: "#6366F1", marginTop: 4 }}>
+                    YOU STILL NEED
+                  </Text>
+                  {(idea.extras || []).map((ex) => (
+                    <TouchableOpacity
+                      key={`idea-ex-${idea.name}-${ex.product.product_id}`}
+                      onPress={() => onProduct && onProduct(ex.product)}
+                      activeOpacity={0.7}
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        paddingVertical: 3,
+                      }}
+                    >
+                      <Text style={{ fontSize: 11, color: "#4338CA", fontWeight: "700", marginRight: 6 }}>
+                        +
+                      </Text>
+                      <Text style={{ fontSize: 12, color: DARK, flex: 1 }} numberOfLines={1}>
+                        {ex.name}
+                      </Text>
+                      <Text style={{ fontSize: 11, color: TEXT_MUTED }} numberOfLines={1}>
+                        Aisle {ex.product.aisle_num} · {effectivePrice(ex.product).toFixed(2)} ₼
+                      </Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              ))}
+          </View>
+        )}
         {list.length > 0 && suggestions.length > 0 && (
           <View
             style={{
